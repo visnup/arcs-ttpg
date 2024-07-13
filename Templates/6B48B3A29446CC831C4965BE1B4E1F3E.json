@@ -1,35 +1,35 @@
 {
-	"Type": "Card Holder",
-	"GUID": "7E70F7ECC648097FAF095580188BA9BD",
+	"Type": "Generic",
+	"GUID": "6B48B3A29446CC831C4965BE1B4E1F3E",
 	"Name": "player",
 	"Metadata": "",
-	"CollisionType": "Regular",
+	"CollisionType": "Ground",
 	"Friction": 0.7,
 	"Restitution": 0.3,
 	"Density": 1,
-	"SurfaceType": "Cardboard",
+	"SurfaceType": "Wood",
 	"Roughness": 1,
 	"Metallic": 0,
 	"PrimaryColor":
 	{
-		"R": 200,
-		"G": 200,
-		"B": 200
+		"R": 255,
+		"G": 255,
+		"B": 255
 	},
 	"SecondaryColor":
 	{
-		"R": 20,
-		"G": 20,
-		"B": 20
+		"R": 0,
+		"G": 0,
+		"B": 0
 	},
 	"Flippable": false,
 	"AutoStraighten": false,
 	"ShouldSnap": true,
-	"ScriptName": "player-board.js",
-	"Blueprint": "",
+	"ScriptName": "",
+	"Blueprint": "Blueprints/Board.json",
 	"Models": [
 		{
-			"Model": "uv-cube.obj",
+			"Model": "StaticMesh'/Game/Meshes/Generic/BoardSurface.BoardSurface'",
 			"Offset":
 			{
 				"X": 0,
@@ -38,9 +38,9 @@
 			},
 			"Scale":
 			{
-				"X": 10.41,
-				"Y": 26,
-				"Z": 0.20000000000000001
+				"X": 0.26034444410247098,
+				"Y": 0.64997901388216139,
+				"Z": 0.99996772512655496
 			},
 			"Rotation":
 			{
@@ -57,51 +57,6 @@
 			"IsTwoSided": false,
 			"UseOverrides": true,
 			"SurfaceType": "Plastic"
-		},
-		{
-			"Model": "uv-cube.obj",
-			"Offset":
-			{
-				"X": 10.6,
-				"Y": 0,
-				"Z": 0
-			},
-			"Scale":
-			{
-				"X": 10.41,
-				"Y": 26,
-				"Z": 0.20000000000000001
-			},
-			"Rotation":
-			{
-				"X": -0,
-				"Y": 0,
-				"Z": 0
-			},
-			"Texture": "",
-			"NormalMap": "",
-			"ExtraMap": "",
-			"ExtraMap2": "",
-			"IsTransparent": true,
-			"Alpha": 0.1,
-			"CastShadow": true,
-			"IsTwoSided": false,
-			"UseOverrides": false,
-			"Roughness": 1,
-			"Metallic": 0,
-			"PrimaryColor":
-			{
-				"R": 0,
-				"G": 0,
-				"B": 0
-			},
-			"SecondaryColor":
-			{
-				"R": 0,
-				"G": 0,
-				"B": 0
-			},
-			"SurfaceType": "Plastic"
 		}
 	],
 	"Collision": [],
@@ -110,8 +65,8 @@
 	"SnapPoints": [
 		{
 			"X": 2.6000000000000001,
-			"Y": -10.534000000000001,
-			"Z": 0.10000000000000001,
+			"Y": -10.438000000000001,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -123,8 +78,8 @@
 		},
 		{
 			"X": 2.6000000000000001,
-			"Y": -7.5049999999999999,
-			"Z": 0.10000000000000001,
+			"Y": -7.4380000000000006,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -136,8 +91,60 @@
 		},
 		{
 			"X": 2.7999999999999998,
-			"Y": -4.5199999999999996,
-			"Z": 0.10000000000000001,
+			"Y": 10.635,
+			"Z": 0.5,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.7999999999999998,
+			"Y": 7.5960000000000001,
+			"Z": 0.5,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.7999999999999998,
+			"Y": 3.0800000000000001,
+			"Z": 0.5,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.7999999999999998,
+			"Y": -1.427,
+			"Z": 0.5,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.7999999999999998,
+			"Y": -4.4438000000000004,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -149,8 +156,8 @@
 		},
 		{
 			"X": 2.6000000000000001,
-			"Y": -4.5199999999999996,
-			"Z": 0.10000000000000001,
+			"Y": -4.4380000000000006,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -161,22 +168,9 @@
 			]
 		},
 		{
-			"X": 2.7999999999999998,
-			"Y": -1.45,
-			"Z": 0.10000000000000001,
-			"Range": 2,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
 			"X": 2.6000000000000001,
-			"Y": -1.45,
-			"Z": 0.10000000000000001,
+			"Y": -1.4380000000000002,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -188,8 +182,8 @@
 		},
 		{
 			"X": 2.6000000000000001,
-			"Y": 1.607,
-			"Z": 0.10000000000000001,
+			"Y": 1.5619999999999998,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
@@ -200,125 +194,80 @@
 			]
 		},
 		{
-			"X": 2.7999999999999998,
-			"Y": 3.1280000000000001,
-			"Z": 0.10000000000000001,
-			"Range": 2,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
 			"X": 2.6000000000000001,
-			"Y": 4.6669999999999998,
-			"Z": 0.10000000000000001,
+			"Y": 4.5619999999999994,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
-				"building"
+				"resource"
 			]
 		},
 		{
-			"X": 2.7999999999999998,
-			"Y": 7.6980000000000004,
-			"Z": 0.10000000000000001,
-			"Range": 2,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
-			"X": 2.7999999999999998,
-			"Y": 10.776999999999999,
-			"Z": 0.10000000000000001,
-			"Range": 2,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
-			"X": -4.1700000476837156,
-			"Y": -6.9459999999999997,
-			"Z": 0.10000000000000001,
+			"X": -4.190000047683716,
+			"Y": -6.8520000000000003,
+			"Z": 0.5,
 			"Range": 1,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
 				"agent"
 			]
 		},
 		{
-			"X": -3.0700000238418577,
-			"Y": -6.9459999999999997,
-			"Z": 0.10000000000000001,
+			"X": -3.0900000238418581,
+			"Y": -6.8520000000000003,
+			"Z": 0.5,
 			"Range": 1,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
 				"agent"
 			]
 		},
 		{
-			"X": -1.97,
-			"Y": -6.9459999999999997,
-			"Z": 0.10000000000000001,
+			"X": -1.99,
+			"Y": -6.8520000000000003,
+			"Z": 0.5,
 			"Range": 1,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
 				"agent"
 			]
 		},
 		{
-			"X": -0.86999997615814206,
-			"Y": -6.9459999999999997,
-			"Z": 0.10000000000000001,
+			"X": -0.88999997615814208,
+			"Y": -6.8520000000000003,
+			"Z": 0.5,
 			"Range": 1,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
 				"agent"
 			]
 		},
 		{
-			"X": 0.23000004768371585,
-			"Y": -6.9459999999999997,
-			"Z": 0.10000000000000001,
+			"X": 0.21000004768371583,
+			"Y": -6.8520000000000003,
+			"Z": 0.5,
 			"Range": 1,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource",
 				"agent"
 			]
 		}
@@ -330,14 +279,5 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
-	"CardsCenter":
-	{
-		"X": 10.6,
-		"Y": 0,
-		"Z": 0.20000000000000001
-	},
-	"CardsWidth": 26,
-	"MaxCards": 24,
-	"MaxCardHeight": 10
+	"Tags": []
 }

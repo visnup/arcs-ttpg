@@ -1,7 +1,7 @@
 {
 	"Type": "Card Holder",
 	"GUID": "A86010E7BE44A8377F90F990AA8F9EAA",
-	"Name": "player court",
+	"Name": "player cards",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
