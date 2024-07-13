@@ -1,7 +1,7 @@
 {
 	"Type": "Card",
-	"GUID": "5C59CCA07A46391F22E03EA90BE80CD7",
-	"Name": "ambition 4 2",
+	"GUID": "871C71EB33486868087AF1B9A83ECF07",
+	"Name": "ambition",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
@@ -39,17 +39,19 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
-	"FrontTexture": "Ambition4-2.jpg",
-	"BackTexture": "Ambition4-2(back).jpg",
+	"Tags": [
+		"ambition"
+	],
+	"FrontTexture": "ambition.jpg",
+	"BackTexture": "ambition back.jpg",
 	"HiddenTexture": "",
-	"BackIndex": -2,
+	"BackIndex": -3,
 	"HiddenIndex": -1,
-	"NumHorizontal": 1,
+	"NumHorizontal": 3,
 	"NumVertical": 1,
 	"Width": 3.12,
 	"Height": 3.12231,
-	"Thickness": 0.231111,
+	"Thickness": 0.233336,
 	"HiddenInHand": false,
 	"UsedWithCardHolders": false,
 	"CanStack": false,
@@ -57,9 +59,9 @@
 	"FrontTextureOverrideExposed": false,
 	"AllowFlippedInStack": false,
 	"MirrorBack": true,
-	"EmissiveFront": false,
+	"EmissiveFront": true,
 	"Model": "Hexagonal",
-	"Indices": [ 0 ],
+	"Indices": [ 0, 1, 2 ],
 	"CardNames":
 	{
 	},
@@ -69,6 +71,12 @@
 	"CardTags":
 	{
 		"0": [
+			"ambition"
+		],
+		"1": [
+			"ambition"
+		],
+		"2": [
 			"ambition"
 		]
 	}
