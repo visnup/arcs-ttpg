@@ -1,0 +1,128 @@
+{
+	"Type": "Card",
+	"GUID": "13966E46F44AE8B1ADDB90A45D11FD01",
+	"Name": "lore",
+	"Metadata": "",
+	"CollisionType": "Regular",
+	"Friction": 0.7,
+	"Restitution": 0,
+	"Density": 0.5,
+	"SurfaceType": "Cardboard",
+	"Roughness": 1,
+	"Metallic": 0,
+	"PrimaryColor":
+	{
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
+	"SecondaryColor":
+	{
+		"R": 0,
+		"G": 0,
+		"B": 0
+	},
+	"Flippable": true,
+	"AutoStraighten": false,
+	"ShouldSnap": true,
+	"ScriptName": "",
+	"Blueprint": "",
+	"Models": [],
+	"Collision": [],
+	"Lights": [],
+	"SnapPointsGlobal": false,
+	"SnapPoints": [],
+	"ZoomViewDirection":
+	{
+		"X": 0,
+		"Y": 0,
+		"Z": 0
+	},
+	"GroundAccessibility": "Nothing",
+	"Tags": [],
+	"FrontTexture": "lore.jpg",
+	"BackTexture": "lore back.jpg",
+	"HiddenTexture": "",
+	"BackIndex": -2,
+	"HiddenIndex": -3,
+	"NumHorizontal": 7,
+	"NumVertical": 2,
+	"Width": 6.2,
+	"Height": 8.8,
+	"Thickness": 0.0500988,
+	"HiddenInHand": true,
+	"UsedWithCardHolders": true,
+	"CanStack": true,
+	"UsePrimaryColorForSide": false,
+	"FrontTextureOverrideExposed": false,
+	"AllowFlippedInStack": false,
+	"MirrorBack": true,
+	"EmissiveFront": false,
+	"Model": "Rounded",
+	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ],
+	"CardNames":
+	{
+	},
+	"CardMetadata":
+	{
+	},
+	"CardTags":
+	{
+		"0": [
+			"lore",
+			"card"
+		],
+		"1": [
+			"lore",
+			"card"
+		],
+		"2": [
+			"lore",
+			"card"
+		],
+		"3": [
+			"lore",
+			"card"
+		],
+		"4": [
+			"lore",
+			"card"
+		],
+		"5": [
+			"lore",
+			"card"
+		],
+		"6": [
+			"lore",
+			"card"
+		],
+		"7": [
+			"lore",
+			"card"
+		],
+		"8": [
+			"lore",
+			"card"
+		],
+		"9": [
+			"lore",
+			"card"
+		],
+		"10": [
+			"lore",
+			"card"
+		],
+		"11": [
+			"lore",
+			"card"
+		],
+		"12": [
+			"lore",
+			"card"
+		],
+		"13": [
+			"lore",
+			"card"
+		]
+	}
+}
