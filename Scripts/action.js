@@ -5,5 +5,5 @@ refCard.onCustomAction.add(drawBottom);
 
 function drawBottom(obj, player, identifier) {
   obj.moveCardInStack(0, obj.getStackSize() - 1);
-  obj.deal(1, player.getSlot());
+  obj.deal(1, [player.getSlot()]);
 }
