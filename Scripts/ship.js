@@ -1,5 +1,6 @@
 const { refObject } = require("@tabletop-playground/api");
 
+// r to toggle ship damage
 refObject.onPrimaryAction.add(toggle);
 refObject.onCustomAction.add((obj, player, identifier) => {
   if (identifier === "toggle") toggle(obj, player);

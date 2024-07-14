@@ -63,13 +63,9 @@
 	"Model": "building mask.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
-	"Indices": [ 0, 1, 2, 3 ],
+	"Indices": [ 3, 1, 2, 3 ],
 	"CardNames":
 	{
-		"0": "yellow",
-		"1": "blue",
-		"2": "red",
-		"3": "white"
 	},
 	"CardMetadata":
 	{
