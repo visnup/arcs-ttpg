@@ -1,14 +1,6 @@
-const { Color, Vector, refObject, world } = require("@tabletop-playground/api");
+const { Vector, refObject, world } = require("@tabletop-playground/api");
 
 function checkAmbitions() {
-  // world.drawDebugBox(
-  //   refObject.getExtentCenter(),
-  //   refObject.getExtent(),
-  //   refObject.getRotation(),
-  //   new Color(1, 0, 1, 0.5),
-  //   1,
-  //   0.5,
-  // );
   const above = world.boxTrace(
     refObject.getExtentCenter(),
     refObject.getExtentCenter().add(new Vector(0, 0, 20)),
@@ -34,8 +26,10 @@ function checkAmbitions() {
         }
         break;
       case "agent":
-        ambitions.tyrant++;
-        // todo warlord
+        const position = obj.getPosition().subtract(refObject.getPosition());
+        const captive = position[1] / refObject.getSize()[1] >= 0.25;
+        if (captive) ambitions.tyrant++;
+        else ambitions.warlord++;
         break;
       case "city":
       case "ship":
@@ -44,12 +38,13 @@ function checkAmbitions() {
         break;
     }
   }
+  // todo court cards
 
   const map = world.getObjectById("map");
   for (const [ambition, count] of Object.entries(ambitions))
     map.ambitions[ambition].setScore(color, count);
 }
 
-// check this board against
+// Check this board against
 refObject.onHit.add(checkAmbitions);
 refObject.onSnappedTo.add(checkAmbitions);
