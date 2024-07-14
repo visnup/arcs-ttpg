@@ -25,7 +25,7 @@
 	"Flippable": true,
 	"AutoStraighten": false,
 	"ShouldSnap": true,
-	"ScriptName": "",
+	"ScriptName": "building.js",
 	"Blueprint": "",
 	"Models": [],
 	"Collision": [],
@@ -66,6 +66,10 @@
 	"Indices": [ 0, 1, 2, 3 ],
 	"CardNames":
 	{
+		"0": "yellow",
+		"1": "blue",
+		"2": "red",
+		"3": "white"
 	},
 	"CardMetadata":
 	{

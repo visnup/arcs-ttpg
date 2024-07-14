@@ -62,6 +62,11 @@
 	"Indices": [ 0, 1, 2, 3, 4 ],
 	"CardNames":
 	{
+		"0": "fuel",
+		"1": "material",
+		"2": "weapons",
+		"3": "relics",
+		"4": "psionic"
 	},
 	"CardMetadata":
 	{
