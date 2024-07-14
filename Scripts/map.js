@@ -24,6 +24,7 @@ class Ambition {
 
   setScore(color, score) {
     colors.set(color.toHex(), color);
+    if (this.scores.get(color.toHex()) === score) return;
     this.scores.set(color.toHex(), score);
     this.ui.widget.removeAllChildren();
     for (const [hex, score] of [...this.scores.entries()].sort(
