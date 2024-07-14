@@ -13568,16 +13568,16 @@
 			{
 				"rotation":
 				{
-					"x": -0,
-					"y": 0,
-					"z": -0.70710678115186487,
-					"w": 0.70710678122123016
+					"x": 3.7481880080296286e-09,
+					"y": 4.0902499347542358e-09,
+					"z": -0.70712651217028422,
+					"w": 0.70708704965222557
 				},
 				"translation":
 				{
-					"x": 17,
-					"y": -34.100000000000001,
-					"z": 87.39727836492024
+					"x": 16.999817048604772,
+					"y": -34.070178227488448,
+					"z": 87.397278354324527
 				},
 				"scale3D":
 				{
@@ -13598,13 +13598,13 @@
 					"flipped": false
 				},
 				{
-					"index": 3,
+					"index": 4,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 4,
+					"index": 3,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13628,19 +13628,13 @@
 					"flipped": false
 				},
 				{
-					"index": 10,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
 					"index": 11,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 12,
+					"index": 10,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13652,7 +13646,7 @@
 					"flipped": false
 				},
 				{
-					"index": 16,
+					"index": 12,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13664,7 +13658,7 @@
 					"flipped": false
 				},
 				{
-					"index": 19,
+					"index": 16,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13677,6 +13671,18 @@
 				},
 				{
 					"index": 22,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 19,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 25,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13695,12 +13701,6 @@
 				},
 				{
 					"index": 26,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 25,
 					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
@@ -13743,7 +13743,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "v0x",
+			"uniqueId": "9d1",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,

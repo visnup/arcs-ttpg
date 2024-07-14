@@ -20,5 +20,7 @@ function sortCard(holder, card, _player, inserted) {
         return;
       }
     }
+    // belongs at the end
+    holder.moveCard(card, holder.getNumCards());
   }
 }
