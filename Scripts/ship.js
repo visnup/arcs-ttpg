@@ -1,4 +1,4 @@
-const { refObject } = require("@tabletop-playground/api");
+const { refObject, world } = require("@tabletop-playground/api");
 
 // r to toggle ship damage
 refObject.onPrimaryAction.add(toggle);
@@ -14,3 +14,7 @@ function toggle(obj, _player) {
   if (Math.abs(r.pitch) < 1) obj.setRotation(new Rotator(-90, r.yaw, r.roll));
   else obj.setRotation(new Rotator(0, r.yaw + r.roll, 0));
 }
+
+// Update ambitions on grab
+refObject.onGrab.add(world.updateAmbitionsBelow);
+refObject.onReleased.add(world.updateAmbitionsBelow);

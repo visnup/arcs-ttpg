@@ -1,9 +1,4 @@
-const {
-  ObjectType,
-  Vector,
-  refObject,
-  world,
-} = require("@tabletop-playground/api");
+const { Vector, refObject, world } = require("@tabletop-playground/api");
 
 const color = refObject.getPrimaryColor();
 
@@ -28,7 +23,8 @@ function updateAmbitions() {
     refObject.getExtent(),
   );
   for (const { object: obj } of above) {
-    if (obj.getPrimaryColor().toHex() === color.toHex()) continue;
+    if (obj.getPrimaryColor().toHex() === color.toHex() || obj.isHeld())
+      continue;
     // Based on the object type, increment the appropriate ambition
     switch (obj.getTemplateName()) {
       case "resource":
@@ -70,7 +66,5 @@ function updateAmbitions() {
     map.ambitions[ambition].setScore(color, count);
 }
 
-// Check this board against
-refObject.onHit.add(updateAmbitions);
-refObject.onSnappedTo.add(updateAmbitions);
+// Check this board for ambitions
 refObject.updateAmbitions = updateAmbitions;
