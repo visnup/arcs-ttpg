@@ -1,0 +1,185 @@
+{
+	"Type": "Generic",
+	"GUID": "0CD5E688A1484A32EE65F9AB12D44859",
+	"Name": "dice tray",
+	"Metadata": "",
+	"CollisionType": "Regular",
+	"Friction": 0.7,
+	"Restitution": 0.3,
+	"Density": 1,
+	"SurfaceType": "Wood",
+	"Roughness": 1,
+	"Metallic": 0,
+	"PrimaryColor":
+	{
+		"R": 106,
+		"G": 81,
+		"B": 40
+	},
+	"SecondaryColor":
+	{
+		"R": 0,
+		"G": 0,
+		"B": 0
+	},
+	"Flippable": false,
+	"AutoStraighten": false,
+	"ShouldSnap": true,
+	"ScriptName": "",
+	"Blueprint": "",
+	"Models": [
+		{
+			"Model": "dice tray.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 0.50000005298191208,
+				"Y": 0.50000005298191208,
+				"Z": 0.50000005298191208
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Texture": "E4F8201B8E24C0DAB503B7D98A77196BDAD7D66E_httpsiimgurcombEPzdCijpg.jpg",
+			"NormalMap": "wood texture n.jpg",
+			"ExtraMap": "",
+			"ExtraMap2": "",
+			"IsTransparent": false,
+			"CastShadow": true,
+			"IsTwoSided": false,
+			"UseOverrides": true,
+			"SurfaceType": "Plastic"
+		}
+	],
+	"Collision": [
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": 8.75,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 18,
+				"Y": 0.5,
+				"Z": 3.5
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		},
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": -8.75,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 18,
+				"Y": 0.5,
+				"Z": 3.5
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		},
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 8.75,
+				"Y": 0,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 0.5,
+				"Y": 18,
+				"Z": 3.5
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		},
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": -8.75,
+				"Y": 0,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 0.5,
+				"Y": 18,
+				"Z": 3.5
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		},
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": 0,
+				"Z": -1.5
+			},
+			"Scale":
+			{
+				"X": 18,
+				"Y": 18,
+				"Z": 0.5
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		}
+	],
+	"Lights": [],
+	"SnapPointsGlobal": false,
+	"SnapPoints": [],
+	"ZoomViewDirection":
+	{
+		"X": 0,
+		"Y": 0,
+		"Z": 0
+	},
+	"GroundAccessibility": "Nothing",
+	"Tags": []
+}
