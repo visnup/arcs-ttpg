@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "special.obj",
+			"Model": "agent.obj",
 			"Offset":
 			{
 				"X": 0,
