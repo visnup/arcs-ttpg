@@ -1,4 +1,4 @@
-const { refHolder } = require("@tabletop-playground/api");
+import { refHolder } from "@tabletop-playground/api";
 
 const courtSuits = ["tycoon", "tycoon", , "empath", "keeper"];
 refHolder.getAmbitions = () => {

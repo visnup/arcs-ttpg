@@ -1,9 +1,14 @@
-const { refHolder } = require("@tabletop-playground/api");
+import { Card, CardHolder, Player, refHolder } from "@tabletop-playground/api";
 
 refHolder.onCardFlipped.add(sortCard);
 refHolder.onInserted.add(sortCard);
 
-function sortCard(holder, card, _player, inserted) {
+function sortCard(
+  holder: CardHolder,
+  card: Card,
+  _player: Player,
+  inserted: number = holder.getNumCards(),
+) {
   if (!holder.isCardFaceUp(card)) {
     // move to end
     holder.moveCard(card, holder.getNumCards());

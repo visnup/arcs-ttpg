@@ -1,10 +1,10 @@
-const { globalEvents, world } = require("@tabletop-playground/api");
+import { globalEvents, world } from "@tabletop-playground/api";
 
-globalEvents.onDiceRolled.add(function (player, dice) {
-  const total = {};
+globalEvents.onDiceRolled.add((player, dice) => {
+  const total: Record<string, number> = {};
   for (const d of dice)
     for (const f of d.getCurrentFaceMetadata().split(" "))
-      if (f) total[f] = (total[f] || 0) + 1;
+      if (f) total[f] = (total[f] ?? 0) + 1;
   player.showMessage(`You rolled ${JSON.stringify(total)}`);
 });
 

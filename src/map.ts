@@ -1,15 +1,19 @@
-const {
+import {
   refObject,
   HorizontalBox,
   Text,
   UIElement,
   Vector,
-} = require("@tabletop-playground/api");
+  world,
+} from "@tabletop-playground/api";
 
 const size = refObject.getSize();
 
 class Ambition {
-  constructor(offset) {
+  scores: Map<number, number>;
+  ui: UIElement;
+
+  constructor(offset: number) {
     this.scores = new Map();
     this.ui = new UIElement();
     this.ui.position = new Vector(
@@ -21,7 +25,7 @@ class Ambition {
     refObject.addUI(this.ui);
   }
 
-  setScore(slot, score) {
+  setScore(slot: number, score: number) {
     if (this.scores.get(slot) === score) return;
     this.scores.set(slot, score);
     this.ui.widget.removeAllChildren();

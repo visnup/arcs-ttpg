@@ -1,0 +1,25 @@
+{
+  "name": "arcs-ttpg",
+  "version": "0.0.1",
+  "scripts": {
+    "setup": "ttpg-scripts setup",
+    "dev": "ttpg-scripts dev",
+    "clean": "ttpg-scripts clean",
+    "reset": "ttpg-scripts reset",
+    "build": "ttpg-scripts build",
+    "purge": "ttpg-scripts purge",
+    "libpack": "ttpg-scripts libpack",
+    "watch": "ttpg-scripts watch",
+    "postpublish": "ttpg-scripts postpublish"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "jsx-in-ttpg": "^2.2.4"
+  },
+  "devDependencies": {
+    "@tabletop-playground/api": "^0.41.0",
+    "ttpg-scripts": "^1.5.0",
+    "typescript": "^5.3.3"
+  }
+}

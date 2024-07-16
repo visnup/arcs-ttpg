@@ -1,4 +1,4 @@
-const { Vector, refObject, world } = require("@tabletop-playground/api");
+import { Card, Vector, refObject, world } from "@tabletop-playground/api";
 
 // Setup zone
 const zoneId = `zone-${refObject.getId()}`;
@@ -35,7 +35,7 @@ function updateAmbitions() {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
     switch (obj.getTemplateName()) {
       case "resource":
-        switch (obj.getCardDetails().name) {
+        switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
             ambitions.tycoon++;
