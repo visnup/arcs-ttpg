@@ -9,12 +9,9 @@ globalEvents.onDiceRolled.add(function (player, dice) {
 });
 
 // Set owning player slots by matching color
-const colors = {
-  [world.getSlotColor(0).toHex()]: 0,
-  [world.getSlotColor(1).toHex()]: 1,
-  [world.getSlotColor(2).toHex()]: 2,
-  [world.getSlotColor(3).toHex()]: 3,
-};
+const colors = Object.fromEntries(
+  [0, 1, 2, 3].map((i) => [world.getSlotColor(i).toHex(), i]),
+);
 for (const obj of world.getAllObjects())
   if (obj.getOwningPlayerSlot() === -1) {
     const c = obj.getPrimaryColor().toHex();
