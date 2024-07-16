@@ -79,10 +79,10 @@
 		},
 		{
 			"X": 9.25,
-			"Y": -30,
+			"Y": -31,
 			"Z": 0.5,
 			"Range": 3,
-			"SecondaryRange": 3,
+			"SecondaryRange": 4,
 			"SnapRotation": 2,
 			"RotationOffset": -90,
 			"Shape": 2,
@@ -107,7 +107,7 @@
 		},
 		{
 			"X": 4.2000000000000002,
-			"Y": -30,
+			"Y": -31,
 			"Z": 0.5,
 			"Range": 3,
 			"SecondaryRange": 3,
@@ -135,7 +135,7 @@
 		},
 		{
 			"X": -9.3000000000000007,
-			"Y": -30,
+			"Y": -31,
 			"Z": 0.5,
 			"Range": 3,
 			"SecondaryRange": 3,
@@ -149,12 +149,13 @@
 		},
 		{
 			"X": -1.5,
-			"Y": -30,
+			"Y": -31,
 			"Z": 0.5,
 			"Range": 3,
+			"SecondaryRange": 3,
 			"SnapRotation": 2,
 			"RotationOffset": -90,
-			"Shape": 1,
+			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
 				"card"
@@ -179,7 +180,7 @@
 			"Y": -34.100000000000001,
 			"Z": 0.5,
 			"Range": 3,
-			"SecondaryRange": 4.5,
+			"SecondaryRange": 2,
 			"SnapRotation": 2,
 			"RotationOffset": -90,
 			"Shape": 2,
