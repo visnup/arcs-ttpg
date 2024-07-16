@@ -49,7 +49,7 @@ function updateAmbitions() {
         }
         break;
       case "agent":
-        // todo fix
+        // todo fix for tyrant
         const position = obj.getPosition().subtract(refObject.getPosition());
         const captive = position[1] / refObject.getSize()[1] >= 0.25;
         if (captive) ambitions.tyrant++;
