@@ -280,8 +280,8 @@
 				"rotation":
 				{
 					"x": 9.0903043963414381e-09,
-					"y": 1.3349753406564439e-09,
-					"z": -4.573850643242421e-06,
+					"y": 1.3349753406564485e-09,
+					"z": -4.573850642746368e-06,
 					"w": 0.99999999998953992
 				},
 				"translation":
@@ -339,7 +339,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -421,16 +421,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.2613807804733461e-06,
-					"y": 3.1186748332134482e-05,
-					"z": 0.0023709080219801769,
-					"w": 0.99999718890199962
+					"x": 4.4240806093414483e-06,
+					"y": -4.4458669090309694e-05,
+					"z": 0.0023713642276102006,
+					"w": 0.99999718731382148
 				},
 				"translation":
 				{
-					"x": -43.269452539980819,
-					"y": 41.392673235826614,
-					"z": 86.788935194277386
+					"x": -43.269403037798078,
+					"y": 41.392664011243745,
+					"z": 86.78894510929706
 				},
 				"scale3D":
 				{
@@ -471,8 +471,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -483,7 +483,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -493,16 +493,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.0666860976635382e-06,
-					"y": -3.0848701346928762e-05,
-					"z": -0.00011961017269432461,
-					"w": 0.99999999236617976
+					"x": 4.3731466409496962e-06,
+					"y": 4.4412588125771182e-05,
+					"z": -0.00012065569269582827,
+					"w": 0.99999999172530063
 				},
 				"translation":
 				{
-					"x": -44.596924993892713,
-					"y": 41.350609769465855,
-					"z": 86.788934839325663
+					"x": -44.596962940120441,
+					"y": 41.350601773659761,
+					"z": 86.788945096820896
 				},
 				"scale3D":
 				{
@@ -543,8 +543,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -555,7 +555,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -566,7 +566,7 @@
 				"rotation":
 				{
 					"x": -3.4011374825666025e-06,
-					"y": -3.3900247589393158e-05,
+					"y": -3.3900247589393151e-05,
 					"z": 0.0002223047453579304,
 					"w": 0.99999997470990243
 				},
@@ -615,8 +615,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -627,7 +627,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -637,9 +637,9 @@
 			{
 				"rotation":
 				{
-					"x": -3.4890336028611171e-06,
-					"y": 3.3957071487626671e-05,
-					"z": 7.6346911193466156e-05,
+					"x": -3.4890336025185884e-06,
+					"y": 3.3957071484154357e-05,
+					"z": 7.6346911185976759e-05,
 					"w": 0.99999999650294669
 				},
 				"translation":
@@ -687,8 +687,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -699,7 +699,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -709,8 +709,8 @@
 			{
 				"rotation":
 				{
-					"x": 2.6326365420480363e-06,
-					"y": -3.3879784935354845e-05,
+					"x": 2.6326365420480359e-06,
+					"y": -3.3879784935354851e-05,
 					"z": -0.024402440256533778,
 					"w": 0.99970221553958538
 				},
@@ -759,8 +759,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -771,7 +771,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -782,8 +782,8 @@
 				"rotation":
 				{
 					"x": 1.728385301792562e-07,
-					"y": -3.4808493483299855e-07,
-					"z": 4.8160079915881516e-05,
+					"y": -3.4808493483299839e-07,
+					"z": 4.8160079915881509e-05,
 					"w": 0.99999999884022772
 				},
 				"translation":
@@ -841,7 +841,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -851,9 +851,9 @@
 			{
 				"rotation":
 				{
-					"x": -5.2307498007547116e-08,
-					"y": 6.3250857538780849e-07,
-					"z": 0.0002186688545525784,
+					"x": -5.230749800241589e-08,
+					"y": 6.3250857538781071e-07,
+					"z": 0.00021866885453112757,
 					"w": 0.99999997609176439
 				},
 				"translation":
@@ -911,7 +911,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -921,8 +921,8 @@
 			{
 				"rotation":
 				{
-					"x": 3.3434380095086252e-06,
-					"y": -3.3866654870461472e-05,
+					"x": 3.3434380095086257e-06,
+					"y": -3.3866654870461465e-05,
 					"z": -0.0022268287838945059,
 					"w": 0.99999752003464404
 				},
@@ -971,8 +971,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -983,7 +983,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -993,16 +993,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.2748726265239909e-06,
-					"y": 3.1299077132505027e-05,
-					"z": -0.0022254125219920537,
-					"w": 0.99999752327130798
+					"x": -4.4157266467621503e-06,
+					"y": -4.4591967399381136e-05,
+					"z": -0.0022249779767471453,
+					"w": 0.99999752372946438
 				},
 				"translation":
 				{
-					"x": -44.690933454180708,
-					"y": 42.987021170987489,
-					"z": 86.788934647316523
+					"x": -44.690883033928294,
+					"y": 42.987017954047843,
+					"z": 86.788946073599774
 				},
 				"scale3D":
 				{
@@ -1043,8 +1043,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -1055,7 +1055,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1065,16 +1065,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.1096675997774004e-06,
-					"y": 3.1098521425223236e-05,
-					"z": 0.00017772340142204905,
-					"w": 0.99999998371880205
+					"x": 4.3692390329357077e-06,
+					"y": -4.4404070644824765e-05,
+					"z": 0.00017783651087717467,
+					"w": 0.99999998319168171
 				},
 				"translation":
 				{
-					"x": -43.374236536179524,
-					"y": 43.030470725777832,
-					"z": 86.78893505814824
+					"x": -43.374187660950895,
+					"y": 43.030460101781088,
+					"z": 86.788945085938451
 				},
 				"scale3D":
 				{
@@ -1115,8 +1115,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -1127,7 +1127,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1207,9 +1207,9 @@
 			{
 				"rotation":
 				{
-					"x": -4.7054924498868461e-08,
-					"y": 5.7124843039099767e-07,
-					"z": 8.0038108658551363e-05,
+					"x": -4.7054924494252502e-08,
+					"y": 5.7124843039099841e-07,
+					"z": 8.0038108650699855e-05,
 					"w": 0.99999999679678631
 				},
 				"translation":
@@ -1267,7 +1267,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1337,7 +1337,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1347,9 +1347,9 @@
 			{
 				"rotation":
 				{
-					"x": -4.867701315285411e-08,
-					"y": 5.7816368795183857e-07,
-					"z": 5.0225444309964018e-05,
+					"x": -4.8677013148079028e-08,
+					"y": 5.781636879518391e-07,
+					"z": 5.0225444305037045e-05,
 					"w": 0.99999999873853407
 				},
 				"translation":
@@ -1407,7 +1407,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1477,7 +1477,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1487,9 +1487,9 @@
 			{
 				"rotation":
 				{
-					"x": -5.233704918520196e-08,
-					"y": 6.1493493772226502e-07,
-					"z": 7.5529866033246243e-05,
+					"x": -5.2337049180067836e-08,
+					"y": 6.1493493772226587e-07,
+					"z": 7.5529866025836995e-05,
 					"w": 0.99999999714742926
 				},
 				"translation":
@@ -1547,7 +1547,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1557,16 +1557,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.8496406792774913e-06,
-					"y": -2.8947766256748417e-05,
-					"z": -0.0010457182427623059,
-					"w": 0.99999945281583158
+					"x": -5.1370263550154348e-08,
+					"y": 5.9704511951700005e-07,
+					"z": 1.2709311492604351e-06,
+					"w": 0.99999999999901279
 				},
 				"translation":
 				{
-					"x": -41.274008711565287,
-					"y": 41.666523321562494,
-					"z": 86.726232214160063
+					"x": -35.922046632675396,
+					"y": 45.061363940095205,
+					"z": 86.726217015676994
 				},
 				"scale3D":
 				{
@@ -1613,11 +1613,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "8oj",
+			"uniqueId": "pxa",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1627,9 +1627,9 @@
 			{
 				"rotation":
 				{
-					"x": -4.3230734647968677e-08,
-					"y": 5.4863684878741821e-07,
-					"z": 7.7966073734643898e-05,
+					"x": -4.3230734643727854e-08,
+					"y": 5.4863684878741884e-07,
+					"z": 7.7966073726995651e-05,
 					"w": 0.99999999696049424
 				},
 				"translation":
@@ -1687,7 +1687,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1697,9 +1697,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.6959153794579163e-07,
-					"y": -2.8739797302361168e-07,
-					"z": 0.00021943121889186483,
+					"x": 1.6959153794577924e-07,
+					"y": -2.8739797299541866e-07,
+					"z": 0.00021943121887033927,
 					"w": 0.99999997592491419
 				},
 				"translation":
@@ -1757,7 +1757,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1827,7 +1827,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1837,9 +1837,9 @@
 			{
 				"rotation":
 				{
-					"x": -5.4006869765904088e-08,
-					"y": 6.3320129918635845e-07,
-					"z": 7.6468046847952831e-05,
+					"x": -5.4006869760606155e-08,
+					"y": 6.332012991863593e-07,
+					"z": 7.6468046840451535e-05,
 					"w": 0.99999999707611698
 				},
 				"translation":
@@ -1897,7 +1897,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1967,7 +1967,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2037,7 +2037,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2047,7 +2047,7 @@
 			{
 				"rotation":
 				{
-					"x": -3.3539154413150062e-06,
+					"x": -3.3539154413150054e-06,
 					"y": 3.4033813008024602e-05,
 					"z": -0.0021683257212338687,
 					"w": 0.99999764859424412
@@ -2097,8 +2097,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -2109,7 +2109,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2119,10 +2119,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.3931167356621451e-06,
-					"y": -3.3934192755211766e-05,
-					"z": -0.0037323590108577316,
-					"w": 0.9999930341423241
+					"x": 3.3931167351909386e-06,
+					"y": -3.3934192751881104e-05,
+					"z": -0.0037323590104916477,
+					"w": 0.99999303414232554
 				},
 				"translation":
 				{
@@ -2169,8 +2169,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -2181,7 +2181,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2191,9 +2191,9 @@
 			{
 				"rotation":
 				{
-					"x": 3.1355943637268392e-08,
-					"y": 4.367900651335304e-06,
-					"z": 4.8983881972321682e-05,
+					"x": 3.1355943637313682e-08,
+					"y": 4.3679006508392502e-06,
+					"z": 4.8983881967516504e-05,
 					"w": 0.99999999879074997
 				},
 				"translation":
@@ -2251,7 +2251,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2261,7 +2261,7 @@
 			{
 				"rotation":
 				{
-					"x": -2.5188724272738501e-08,
+					"x": -2.5188724270267447e-08,
 					"y": 4.4087792295279379e-07,
 					"z": -2.4847298321090406e-06,
 					"w": 0.99999999999681555
@@ -2321,7 +2321,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2391,7 +2391,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2401,9 +2401,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.4731744177560593e-08,
-					"y": -9.6224683666045461e-07,
-					"z": 7.6613152013941291e-05,
+					"x": 5.4731744177546127e-08,
+					"y": -9.6224683656606083e-07,
+					"z": 7.661315200642575e-05,
 					"w": 0.99999999706474807
 				},
 				"translation":
@@ -2461,7 +2461,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2471,9 +2471,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.5492567220197289e-08,
-					"y": -9.7554829803934245e-07,
-					"z": 7.6613155305097091e-05,
+					"x": 5.5492567220182632e-08,
+					"y": -9.7554829794364382e-07,
+					"z": 7.661315529758155e-05,
 					"w": 0.99999999706473486
 				},
 				"translation":
@@ -2531,7 +2531,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2601,7 +2601,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2611,9 +2611,9 @@
 			{
 				"rotation":
 				{
-					"x": 4.5863224805208926e-08,
-					"y": -8.0138685488384301e-07,
-					"z": 0.00021911134611577054,
+					"x": 4.5863224805174475e-08,
+					"y": -8.0138685480522915e-07,
+					"z": 0.00021911134609427634,
 					"w": 0.99999997599478663
 				},
 				"translation":
@@ -2671,7 +2671,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2681,9 +2681,9 @@
 			{
 				"rotation":
 				{
-					"x": 4.3457573166390766e-08,
-					"y": -7.6031770064172962e-07,
-					"z": 0.00021961963650976549,
+					"x": 4.3457573166358009e-08,
+					"y": -7.6031770056714456e-07,
+					"z": 0.00021961963648822142,
 					"w": 0.99999997588331735
 				},
 				"translation":
@@ -2741,7 +2741,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2751,9 +2751,9 @@
 			{
 				"rotation":
 				{
-					"x": 4.2884817315386677e-08,
-					"y": -7.5533680430743144e-07,
-					"z": 7.4892340305126364e-05,
+					"x": 4.288481731537558e-08,
+					"y": -7.5533680423333512e-07,
+					"z": 7.4892340297779648e-05,
 					"w": 0.99999999719528254
 				},
 				"translation":
@@ -2811,7 +2811,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2881,7 +2881,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2891,9 +2891,9 @@
 			{
 				"rotation":
 				{
-					"x": 4.9431748329710858e-08,
-					"y": 8.6900652540997561e-07,
-					"z": 5.0512768912081033e-05,
+					"x": 4.9431748329715166e-08,
+					"y": 8.6900652540997529e-07,
+					"z": 5.0512768907125863e-05,
 					"w": 0.99999999872385126
 				},
 				"translation":
@@ -2951,7 +2951,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -2961,9 +2961,9 @@
 			{
 				"rotation":
 				{
-					"x": 2.9594447800762238e-08,
-					"y": 4.3367885783826382e-06,
-					"z": 4.7994692983294095e-05,
+					"x": 2.9594447800806462e-08,
+					"y": 4.3367885778865861e-06,
+					"z": 4.7994692978585961e-05,
 					"w": 0.99999999883885049
 				},
 				"translation":
@@ -3021,7 +3021,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3091,7 +3091,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3101,9 +3101,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.2566983593031233e-08,
-					"y": -9.2401106787579531e-07,
-					"z": 7.4538145091522588e-05,
+					"x": 5.256698359301772e-08,
+					"y": -9.2401106778515251e-07,
+					"z": 7.4538145084210593e-05,
 					"w": 0.99999999722160426
 				},
 				"translation":
@@ -3161,7 +3161,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3171,9 +3171,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.4334057807279392e-08,
-					"y": -9.541639323809998e-07,
-					"z": 7.6115650758375693e-05,
+					"x": 5.4334057807265138e-08,
+					"y": -9.5416393228739906e-07,
+					"z": 7.6115650750908982e-05,
 					"w": 0.99999999710274723
 				},
 				"translation":
@@ -3231,7 +3231,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3242,7 +3242,7 @@
 				"rotation":
 				{
 					"x": -2.8225109667298119e-06,
-					"y": -4.3009664120016746e-05,
+					"y": -4.3009664120016753e-05,
 					"z": -0.0032295232245509601,
 					"w": 0.99999478414736942
 				},
@@ -3291,8 +3291,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3303,7 +3303,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3363,8 +3363,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3375,7 +3375,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3386,7 +3386,7 @@
 				"rotation":
 				{
 					"x": 5.6126494514447704e-06,
-					"y": -4.6972679123958292e-05,
+					"y": -4.6972679123958279e-05,
 					"z": -0.0008810712905280442,
 					"w": 0.99999961073764743
 				},
@@ -3435,8 +3435,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3447,7 +3447,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3507,8 +3507,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3519,7 +3519,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3529,10 +3529,10 @@
 			{
 				"rotation":
 				{
-					"x": 6.8825981508623154e-06,
-					"y": 4.7196893866399762e-05,
-					"z": -0.024246912598728177,
-					"w": 0.99970599925903869
+					"x": 6.8825981501459203e-06,
+					"y": 4.7196893861964996e-05,
+					"z": -0.024246912596350801,
+					"w": 0.99970599925909631
 				},
 				"translation":
 				{
@@ -3579,8 +3579,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3591,7 +3591,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3651,8 +3651,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3663,7 +3663,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3723,8 +3723,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3735,7 +3735,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3795,8 +3795,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3807,7 +3807,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3819,7 +3819,7 @@
 				{
 					"x": 5.7111730189867873e-06,
 					"y": -4.683164509719223e-05,
-					"z": 0.0012185877210492209,
+					"z": 0.0012185877210492211,
 					"w": 0.99999925640879628
 				},
 				"translation":
@@ -3867,8 +3867,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3879,7 +3879,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3889,10 +3889,10 @@
 			{
 				"rotation":
 				{
-					"x": 5.7176287856128714e-06,
-					"y": -4.6915980320072434e-05,
-					"z": 0.0010699703497496253,
-					"w": 0.99999942646466067
+					"x": 5.7176287851069699e-06,
+					"y": -4.6915980315470646e-05,
+					"z": 0.0010699703496446641,
+					"w": 0.99999942646466078
 				},
 				"translation":
 				{
@@ -3939,8 +3939,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -3951,7 +3951,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3961,16 +3961,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.3684373739077856e-06,
-					"y": -5.2184644774780206e-05,
-					"z": -0.003616681495399177,
-					"w": 0.99999345841005549
+					"x": 5.2033194320589103e-06,
+					"y": 5.1500603098100653e-05,
+					"z": -0.00361667748747638,
+					"w": 0.99999345846088661
 				},
 				"translation":
 				{
-					"x": 30.614586076648479,
-					"y": 48.119319523248343,
-					"z": 86.788921879144141
+					"x": 30.614572580318107,
+					"y": 48.119314431990695,
+					"z": 86.788920253992501
 				},
 				"scale3D":
 				{
@@ -4011,8 +4011,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4023,7 +4023,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4033,16 +4033,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.450779578061257e-06,
-					"y": -5.1933696927484458e-05,
-					"z": -0.023883303925682671,
-					"w": 0.99971475184418079
+					"x": 6.3403748476935534e-06,
+					"y": 5.1330155682610708e-05,
+					"z": -0.023884303677487916,
+					"w": 0.99971472799136885
 				},
 				"translation":
 				{
-					"x": 31.770036284815298,
-					"y": 48.23705260275846,
-					"z": 86.788921804990878
+					"x": 31.770021955874888,
+					"y": 48.23704862193361,
+					"z": 86.788920272045956
 				},
 				"scale3D":
 				{
@@ -4083,8 +4083,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4095,7 +4095,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4105,8 +4105,8 @@
 			{
 				"rotation":
 				{
-					"x": 6.0559730514410726e-08,
-					"y": -1.0526582176665349e-06,
+					"x": 6.0559730514410925e-08,
+					"y": -1.0526582175632721e-06,
 					"z": -1.9856811795868548e-06,
 					"w": 0.99999999999747269
 				},
@@ -4165,7 +4165,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4175,9 +4175,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.9288516288982952e-08,
-					"y": -1.0327122653483808e-06,
-					"z": 7.5050045954904224e-05,
+					"x": 5.9288516288967745e-08,
+					"y": -1.0327122652470742e-06,
+					"z": 7.5050045947542003e-05,
 					"w": 0.99999999718321031
 				},
 				"translation":
@@ -4235,7 +4235,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4245,10 +4245,10 @@
 			{
 				"rotation":
 				{
-					"x": -4.667036214325789e-06,
-					"y": -4.674957250995477e-05,
-					"z": -0.0029248891501173248,
-					"w": 0.99999572139892468
+					"x": -4.6670362138545626e-06,
+					"y": -4.6749572505370106e-05,
+					"z": -0.0029248891498306071,
+					"w": 0.99999572139892556
 				},
 				"translation":
 				{
@@ -4295,8 +4295,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4307,7 +4307,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4317,16 +4317,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2936317880287061e-06,
-					"y": -5.2130039725001552e-05,
-					"z": -0.0013073399401900788,
-					"w": 0.99999914405799228
+					"x": 5.1100576503261982e-06,
+					"y": 5.1550699040608235e-05,
+					"z": -0.0013074554624952282,
+					"w": 0.99999914393794676
 				},
 				"translation":
 				{
-					"x": 31.802157525964503,
-					"y": 46.379861875085368,
-					"z": 86.788921864105831
+					"x": 31.802144189321019,
+					"y": 46.379857439943706,
+					"z": 86.788920299572069
 				},
 				"scale3D":
 				{
@@ -4367,8 +4367,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4379,7 +4379,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4449,7 +4449,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4459,9 +4459,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.3966727581660855e-08,
-					"y": -1.1226601602746697e-06,
-					"z": 7.6573756479820382e-05,
+					"x": 6.3966727581643981e-08,
+					"y": -1.1226601601645399e-06,
+					"z": 7.657375647230869e-05,
 					"w": 0.99999999706759779
 				},
 				"translation":
@@ -4519,7 +4519,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4529,16 +4529,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2550624629807086e-06,
-					"y": 5.239995610408269e-05,
-					"z": -0.0010665758211938297,
-					"w": 0.99999942982116063
+					"x": -4.8958864040715576e-06,
+					"y": 4.9423567786554878e-05,
+					"z": -0.0010653105861315681,
+					"w": 0.99999943132318658
 				},
 				"translation":
 				{
-					"x": 30.679234437973111,
-					"y": 44.772071138310842,
-					"z": 86.788922122910876
+					"x": 30.679227199620602,
+					"y": 44.772064116868506,
+					"z": 86.788919627997586
 				},
 				"scale3D":
 				{
@@ -4579,8 +4579,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4591,7 +4591,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4601,16 +4601,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.106046985963386e-06,
-					"y": -5.2004885428433933e-05,
-					"z": 0.0011315861526267927,
-					"w": 0.99999935839089371
+					"x": 4.9738192255868696e-06,
+					"y": 5.1573107166549197e-05,
+					"z": 0.0011309564069160935,
+					"w": 0.99999935912633542
 				},
 				"translation":
 				{
-					"x": 31.836316403438442,
-					"y": 44.740576686553744,
-					"z": 86.788921714893078
+					"x": 31.836301751106149,
+					"y": 44.740572022258355,
+					"z": 86.788920300844325
 				},
 				"scale3D":
 				{
@@ -4651,8 +4651,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -4663,7 +4663,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4673,9 +4673,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.7150141457372841e-08,
-					"y": -1.1712545307295447e-06,
-					"z": 0.00021498760502691182,
+					"x": 6.7150141457323436e-08,
+					"y": -1.1712545306146479e-06,
+					"z": 0.00021498760500582219,
 					"w": 0.99999997688947651
 				},
 				"translation":
@@ -4733,7 +4733,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4744,7 +4744,7 @@
 				"rotation":
 				{
 					"x": 5.7493833880703825e-08,
-					"y": -1.0045876881249991e-06,
+					"y": -1.0045876881249989e-06,
 					"z": 0.00022112834403503946,
 					"w": 0.99999997555062115
 				},
@@ -4803,7 +4803,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4813,9 +4813,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.7595669335190838e-08,
-					"y": -1.1778622393004482e-06,
-					"z": 0.0002204594944801452,
+					"x": 6.7595669335139897e-08,
+					"y": -1.1778622391849034e-06,
+					"z": 0.0002204594944585188,
 					"w": 0.9999999756981095
 				},
 				"translation":
@@ -4873,7 +4873,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4883,9 +4883,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.4938870761337381e-08,
-					"y": -1.1341930051489743e-06,
-					"z": 7.9267334880998229e-05,
+					"x": 6.4938870761319739e-08,
+					"y": -1.1341930050377133e-06,
+					"z": 7.9267334873222317e-05,
 					"w": 0.99999999685769958
 				},
 				"translation":
@@ -4943,7 +4943,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4953,9 +4953,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.045524111877707e-08,
-					"y": -1.0554706788323535e-06,
-					"z": 8.2706044679549967e-05,
+					"x": 6.0455241118759944e-08,
+					"y": -1.0554706787288149e-06,
+					"z": 8.270604467143672e-05,
 					"w": 0.99999999657929628
 				},
 				"translation":
@@ -5013,7 +5013,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5023,16 +5023,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.349332750278752e-06,
-					"y": -5.2189176796874278e-05,
-					"z": -0.0033117811339410945,
-					"w": 0.99999451466165323
+					"x": 5.1689151181185496e-06,
+					"y": 5.1604977908186031e-05,
+					"z": -0.0033118924899750942,
+					"w": 0.99999451432412534
 				},
 				"translation":
 				{
-					"x": 30.418408578198708,
-					"y": 42.77637224640393,
-					"z": 86.788921879025736
+					"x": 30.418394476490292,
+					"y": 42.776366505576391,
+					"z": 86.788920320718262
 				},
 				"scale3D":
 				{
@@ -5073,8 +5073,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -5085,7 +5085,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5095,16 +5095,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.133762210065633e-06,
-					"y": -5.2255297424765447e-05,
-					"z": 0.001161417399762015,
-					"w": 0.9999993241760976
+					"x": 4.9677083662163644e-06,
+					"y": 5.156729982761898e-05,
+					"z": 0.0011614213953661167,
+					"w": 0.99999932420801063
 				},
 				"translation":
 				{
-					"x": 31.735110171579507,
-					"y": 42.825967935471695,
-					"z": 86.788921924612453
+					"x": 31.735096344665664,
+					"y": 42.82596321728888,
+					"z": 86.788920292650786
 				},
 				"scale3D":
 				{
@@ -5145,8 +5145,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -5157,7 +5157,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5167,9 +5167,9 @@
 			{
 				"rotation":
 				{
-					"x": 3.0808194513901463e-08,
-					"y": 4.3586579810344364e-06,
-					"z": 4.7511532020580422e-05,
+					"x": 3.0808194513945343e-08,
+					"y": 4.3586579805383842e-06,
+					"z": 4.7511532015919674e-05,
 					"w": 0.99999999886182778
 				},
 				"translation":
@@ -5227,7 +5227,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5237,9 +5237,9 @@
 			{
 				"rotation":
 				{
-					"x": 4.6655528076676704e-08,
-					"y": 8.1673706492767306e-07,
-					"z": 4.8407332182289866e-05,
+					"x": 4.6655528076680589e-08,
+					"y": 8.1673706492767274e-07,
+					"z": 4.8407332177541251e-05,
 					"w": 0.99999999882803048
 				},
 				"translation":
@@ -5297,7 +5297,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5307,9 +5307,9 @@
 			{
 				"rotation":
 				{
-					"x": 2.6606263408880225e-08,
-					"y": 4.2748754547266937e-06,
-					"z": 4.7478329960156794e-05,
+					"x": 2.6606263408923685e-08,
+					"y": 4.2748754542306408e-06,
+					"z": 4.7478329955499299e-05,
 					"w": 0.99999999886376656
 				},
 				"translation":
@@ -5367,7 +5367,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5377,10 +5377,10 @@
 			{
 				"rotation":
 				{
-					"x": -4.3387243469916694e-06,
-					"y": -4.6923874023730348e-05,
-					"z": 0.0010305067889936038,
-					"w": 0.99999946791740024
+					"x": -4.3387243465707965e-06,
+					"y": -4.6923874019126806e-05,
+					"z": 0.0010305067888925141,
+					"w": 0.99999946791740035
 				},
 				"translation":
 				{
@@ -5427,8 +5427,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -5439,7 +5439,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5449,16 +5449,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2136731730954993e-06,
-					"y": 5.2132054292101734e-05,
-					"z": 0.00084384901664373211,
-					"w": 0.99999964258688789
+					"x": 5.0798932129609417e-06,
+					"y": -5.1260178517057392e-05,
+					"z": 0.00084472284862675004,
+					"w": 0.99999964189488466
 				},
 				"translation":
 				{
-					"x": 30.517845682060535,
-					"y": 41.140039325267963,
-					"z": 86.788921819891613
+					"x": 30.517848873541869,
+					"y": 41.140035486673902,
+					"z": 86.788920076503928
 				},
 				"scale3D":
 				{
@@ -5499,8 +5499,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -5511,7 +5511,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5581,7 +5581,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5591,9 +5591,9 @@
 			{
 				"rotation":
 				{
-					"x": 5.9574989633486414e-08,
-					"y": -1.038577825129533e-06,
-					"z": 7.7083187052402315e-05,
+					"x": 5.9574989633470711e-08,
+					"y": -1.0385778250276512e-06,
+					"z": 7.7083187044840656e-05,
 					"w": 0.99999999702855003
 				},
 				"translation":
@@ -5651,7 +5651,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5661,9 +5661,9 @@
 			{
 				"rotation":
 				{
-					"x": 6.6499893442493256e-08,
-					"y": -1.1558921288716944e-06,
-					"z": 7.8163215474481008e-05,
+					"x": 6.6499893442475522e-08,
+					"y": -1.1558921287583044e-06,
+					"z": 7.8163215466813381e-05,
 					"w": 0.99999999694458563
 				},
 				"translation":
@@ -5721,7 +5721,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5731,16 +5731,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4814937451034031e-06,
-					"y": -4.605722913036372e-05,
-					"z": -4.3334431948908122e-05,
-					"w": 0.9999999979903873
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": -44.955651775527173,
-					"y": -4.0420806609659126,
-					"z": 86.788947289242188
+					"x": 38.000000566244125,
+					"y": 26.000000387430191,
+					"z": 86.522251609564492
 				},
 				"scale3D":
 				{
@@ -5749,12 +5749,12 @@
 					"z": 1
 				}
 			},
-			"simulatingPhysics": true,
+			"simulatingPhysics": false,
 			"primaryColor":
 			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
+				"b": 203,
+				"g": 210,
+				"r": 215,
 				"a": 255
 			},
 			"secondaryColor":
@@ -5769,11 +5769,11 @@
 			"friction": 0.69999998807907104,
 			"restitution": 0.30000001192092896,
 			"density": 1,
-			"surfaceType": "SurfaceType2",
+			"surfaceType": "SurfaceType4",
 			"objectName": "",
 			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"collisionType": "CB_Ground",
+			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -5782,18 +5782,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptName": "player-board.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "5yx",
+			"uniqueId": "D7D2CBFF",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5803,16 +5801,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2085290120602206e-06,
-					"y": -5.2156891297690594e-05,
-					"z": -4.1987911518625773e-05,
-					"w": 0.99999999774477255
+					"x": 4.7378059982001773e-06,
+					"y": 4.7811959996787075e-05,
+					"z": -4.3376477631118629e-05,
+					"w": 0.99999999790502547
 				},
 				"translation":
 				{
-					"x": -43.366199851068345,
-					"y": -4.2655613209011758,
-					"z": 86.78895238242616
+					"x": -43.366237723065311,
+					"y": -4.2655637518939349,
+					"z": 86.788947832316296
 				},
 				"scale3D":
 				{
@@ -5853,8 +5851,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -5865,7 +5863,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5935,7 +5933,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6005,7 +6003,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6015,16 +6013,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.3398940273487539e-06,
-					"y": -5.2089937356984867e-05,
-					"z": -0.0028094615970279662,
-					"w": 0.9999960520840363
+					"x": 4.9048175474615511e-06,
+					"y": 4.7778913830863271e-05,
+					"z": -0.002811905352156115,
+					"w": 0.99999604543288512
 				},
 				"translation":
 				{
-					"x": -45.076417806048909,
-					"y": -5.9124169079725348,
-					"z": 86.788952332609341
+					"x": -45.076456807716923,
+					"y": -5.9124180644893976,
+					"z": 86.788947838108868
 				},
 				"scale3D":
 				{
@@ -6065,8 +6063,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6077,7 +6075,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6087,16 +6085,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2595810511592274e-06,
-					"y": -5.218836501290301e-05,
-					"z": -0.001335654427530904,
-					"w": 0.99999910663758174
+					"x": 4.7985442831060575e-06,
+					"y": 4.7851935732855444e-05,
+					"z": -0.0013368250372491224,
+					"w": 0.99999910529259284
 				},
 				"translation":
 				{
-					"x": -43.876656919797028,
-					"y": -5.9340526979112385,
-					"z": 86.788952397602955
+					"x": -43.876698145345586,
+					"y": -5.9340565417720068,
+					"z": 86.788947866006652
 				},
 				"scale3D":
 				{
@@ -6137,8 +6135,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6149,7 +6147,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6159,8 +6157,8 @@
 			{
 				"rotation":
 				{
-					"x": -1.1987547934751422e-08,
-					"y": -1.9238796243562252e-07,
+					"x": -1.198754793475142e-08,
+					"y": -1.9238796243562246e-07,
 					"z": -8.9303998473609699e-07,
 					"w": 0.99999999999958256
 				},
@@ -6219,7 +6217,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6229,9 +6227,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.9404914297839856e-08,
-					"y": 2.0724022611310086e-07,
-					"z": 7.4894647895764496e-05,
+					"x": 1.9404914297841378e-08,
+					"y": 2.0724022611310073e-07,
+					"z": 7.4894647888417562e-05,
 					"w": 0.99999999719537425
 				},
 				"translation":
@@ -6289,7 +6287,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6299,16 +6297,16 @@
 			{
 				"rotation":
 				{
-					"x": -5.2156079038674694e-06,
-					"y": -5.2296276180889839e-05,
-					"z": -0.0010931451467115589,
-					"w": 0.99999940113561325
+					"x": 4.8060061598664133e-06,
+					"y": 4.7952544327405501e-05,
+					"z": -0.0010955085869868769,
+					"w": 0.99999939876901511
 				},
 				"translation":
 				{
-					"x": -44.999604130873124,
-					"y": -7.5417836620597463,
-					"z": 86.788952452953595
+					"x": -44.9996449541609,
+					"y": -7.5417853079232815,
+					"z": 86.788947951407195
 				},
 				"scale3D":
 				{
@@ -6349,8 +6347,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6361,7 +6359,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6371,16 +6369,16 @@
 			{
 				"rotation":
 				{
-					"x": 5.1150182710503291e-06,
-					"y": 5.2331974516558254e-05,
-					"z": 0.0011042826675472406,
-					"w": 0.99999938889730888
+					"x": -4.6731754300977726e-06,
+					"y": -4.7950112562548705e-05,
+					"z": 0.0011042964037440641,
+					"w": 0.99999938910401376
 				},
 				"translation":
 				{
-					"x": -43.842507580587913,
-					"y": -7.5732914131891311,
-					"z": 86.788951444178679
+					"x": -43.842451574350285,
+					"y": -7.57328593423256,
+					"z": 86.788948875160784
 				},
 				"scale3D":
 				{
@@ -6421,8 +6419,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6433,7 +6431,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6493,8 +6491,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6505,7 +6503,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6515,10 +6513,10 @@
 			{
 				"rotation":
 				{
-					"x": -3.6259371315461774e-06,
-					"y": 3.4444495751698079e-05,
-					"z": 0.0011703192230255342,
-					"w": 0.99999931457643787
+					"x": -3.6259371311864201e-06,
+					"y": 3.4444495748226552e-05,
+					"z": 0.0011703192229107291,
+					"w": 0.99999931457643809
 				},
 				"translation":
 				{
@@ -6565,8 +6563,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -6577,7 +6575,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6588,7 +6586,7 @@
 				"rotation":
 				{
 					"x": -4.9487102801564893e-09,
-					"y": -6.6401444452614354e-08,
+					"y": -6.6401444452614341e-08,
 					"z": 0.00021172912576631524,
 					"w": 0.99999997758538617
 				},
@@ -6647,7 +6645,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6717,7 +6715,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6727,10 +6725,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.5203895437832774e-08,
-					"y": 1.7841874447264306e-07,
-					"z": 0.00022018153583461576,
-					"w": 0.9999999757600293
+					"x": 1.5203895437836629e-08,
+					"y": 1.7841874447264275e-07,
+					"z": 0.00022018153581301655,
+					"w": 0.99999997576002941
 				},
 				"translation":
 				{
@@ -6787,7 +6785,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6797,9 +6795,9 @@
 			{
 				"rotation":
 				{
-					"x": -1.6354845031623555e-08,
-					"y": -2.635839374144111e-07,
-					"z": 7.7149182123504594e-05,
+					"x": -1.6354845030021184e-08,
+					"y": -2.635839373885541e-07,
+					"z": 7.7149182115936456e-05,
 					"w": 0.99999999702396702
 				},
 				"translation":
@@ -6857,7 +6855,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6867,9 +6865,9 @@
 			{
 				"rotation":
 				{
-					"x": -9.8649201553688997e-09,
-					"y": -1.5810814477599629e-07,
-					"z": 8.3698813180416081e-05,
+					"x": -9.8649201544024781e-09,
+					"y": -1.5810814476048629e-07,
+					"z": 8.3698813172205459e-05,
 					"w": 0.99999999649724181
 				},
 				"translation":
@@ -6927,7 +6925,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -6937,9 +6935,9 @@
 			{
 				"rotation":
 				{
-					"x": -9.2108491918102358e-09,
-					"y": -1.3201711309919174e-07,
-					"z": 4.8118850308577011e-05,
+					"x": -9.2108491909072986e-09,
+					"y": -1.3201711308624121e-07,
+					"z": 4.8118850303856686e-05,
 					"w": 0.99999999884227941
 				},
 				"translation":
@@ -6997,7 +6995,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7007,9 +7005,9 @@
 			{
 				"rotation":
 				{
-					"x": 2.5572973529558895e-08,
-					"y": 2.6194273560310021e-07,
-					"z": 4.8742885928551902e-05,
+					"x": 2.5572973529560149e-08,
+					"y": 2.6194273560310011e-07,
+					"z": 4.8742885923770361e-05,
 					"w": 0.99999999881203094
 				},
 				"translation":
@@ -7067,7 +7065,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7077,16 +7075,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.7439748008905243e-08,
-					"y": 2.7515236343358645e-07,
-					"z": 4.771241480545277e-05,
-					"w": 0.99999999886172453
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": -37.803088561319122,
-					"y": -3.6433577145002887,
-					"z": 86.72621706176642
+					"x": 38.000000566244125,
+					"y": -26.000000387430191,
+					"z": 86.522254164121705
 				},
 				"scale3D":
 				{
@@ -7095,12 +7093,12 @@
 					"z": 1
 				}
 			},
-			"simulatingPhysics": true,
+			"simulatingPhysics": false,
 			"primaryColor":
 			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
+				"b": 61,
+				"g": 83,
+				"r": 225,
 				"a": 255
 			},
 			"secondaryColor":
@@ -7115,11 +7113,11 @@
 			"friction": 0.69999998807907104,
 			"restitution": 0.30000001192092896,
 			"density": 1,
-			"surfaceType": "SurfaceType2",
+			"surfaceType": "SurfaceType4",
 			"objectName": "",
 			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"collisionType": "CB_Ground",
+			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -7128,16 +7126,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "ship.js",
+			"objectScriptName": "player-board.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "nty",
+			"uniqueId": "E1533DFF",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7147,10 +7145,10 @@
 			{
 				"rotation":
 				{
-					"x": -3.6321734908872542e-06,
-					"y": 3.4494905304547736e-05,
-					"z": 0.0010446871664247126,
-					"w": 0.99999945371266741
+					"x": -3.6321734905273211e-06,
+					"y": 3.4494905301076107e-05,
+					"z": 0.0010446871663222317,
+					"w": 0.99999945371266752
 				},
 				"translation":
 				{
@@ -7197,8 +7195,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -7209,7 +7207,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7221,7 +7219,7 @@
 				{
 					"x": -3.6262914399112045e-06,
 					"y": 3.4348039769706297e-05,
-					"z": 0.00098546965578834279,
+					"z": 0.00098546965578834257,
 					"w": 0.99999951382819163
 				},
 				"translation":
@@ -7269,8 +7267,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "agent.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -7281,7 +7279,7 @@
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7291,9 +7289,9 @@
 			{
 				"rotation":
 				{
-					"x": -1.601699705268707e-08,
-					"y": -2.5127726950693789e-07,
-					"z": 7.4358878016899375e-05,
+					"x": -1.6016997051117677e-08,
+					"y": -2.5127726948228818e-07,
+					"z": 7.4358878009604985e-05,
 					"w": 0.99999999723534694
 				},
 				"translation":
@@ -7351,7 +7349,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7361,9 +7359,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.9253982332239891e-08,
-					"y": 2.1922366062608053e-07,
-					"z": 7.5342435979927844e-05,
+					"x": 1.9253982332241509e-08,
+					"y": 2.192236606260804e-07,
+					"z": 7.5342435972536973e-05,
 					"w": 0.99999999716173449
 				},
 				"translation":
@@ -7421,7 +7419,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7431,16 +7429,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.2312246472726281e-08,
-					"y": -1.9870739429061328e-07,
-					"z": 7.5189355797893522e-05,
-					"w": 0.99999999717326049
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": -36.487273107236369,
-					"y": -3.7851219525962629,
-					"z": 86.726217107490186
+					"x": -38.000000057972208,
+					"y": -25.999998435053602,
+					"z": 86.522281598433949
 				},
 				"scale3D":
 				{
@@ -7449,7 +7447,7 @@
 					"z": 1
 				}
 			},
-			"simulatingPhysics": true,
+			"simulatingPhysics": false,
 			"primaryColor":
 			{
 				"b": 169,
@@ -7469,11 +7467,11 @@
 			"friction": 0.69999998807907104,
 			"restitution": 0.30000001192092896,
 			"density": 1,
-			"surfaceType": "SurfaceType2",
+			"surfaceType": "SurfaceType4",
 			"objectName": "",
 			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"collisionType": "CB_Ground",
+			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -7482,16 +7480,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "ship.js",
+			"objectScriptName": "player-board.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "mff",
+			"uniqueId": "0095A9FF",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7561,7 +7559,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7631,7 +7629,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7701,7 +7699,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7841,7 +7839,7 @@
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7851,226 +7849,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.8496406790930744e-06,
+					"y": -2.8947766253908912e-05,
+					"z": -0.001045718242659623,
+					"w": 0.99999945281583169
 				},
 				"translation":
 				{
-					"x": -38.000000057972208,
-					"y": -25.999998435053602,
-					"z": 86.522281598433949
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": false,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Ground",
-			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "player-board.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "0095A9FF",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": 38.000000566244125,
-					"y": -26.000000387430191,
-					"z": 86.522254164121705
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": false,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Ground",
-			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "player-board.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "E1533DFF",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": 38.000000566244125,
-					"y": 26.000000387430191,
-					"z": 86.522251609564492
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": false,
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Ground",
-			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "player-board.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "D7D2CBFF",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -5.1370263555193639e-08,
-					"y": 5.9704511951700005e-07,
-					"z": 1.2709311493851097e-06,
-					"w": 0.99999999999901279
-				},
-				"translation":
-				{
-					"x": -35.922046632675396,
-					"y": 45.061363940095205,
-					"z": 86.726217015676994
+					"x": -41.274008711565287,
+					"y": 41.666523321562494,
+					"z": 86.726232214160063
 				},
 				"scale3D":
 				{
@@ -8117,11 +7905,223 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "pxa",
+			"uniqueId": "8oj",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -4.4814937451034023e-06,
+					"y": -4.6057229130363713e-05,
+					"z": -4.3334431948908122e-05,
+					"w": 0.9999999979903873
+				},
+				"translation":
+				{
+					"x": -44.955651775527173,
+					"y": -4.0420806609659126,
+					"z": 86.788947289242188
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "5yx",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.743974800890653e-08,
+					"y": 2.7515236343358629e-07,
+					"z": 4.7712414800772316e-05,
+					"w": 0.99999999886172453
+				},
+				"translation":
+				{
+					"x": -37.803088561319122,
+					"y": -3.6433577145002887,
+					"z": 86.72621706176642
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "nty",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.2312246472726281e-08,
+					"y": -1.9870739429061328e-07,
+					"z": 7.5189355797893509e-05,
+					"w": 0.99999999717326049
+				},
+				"translation":
+				{
+					"x": -36.487273107236369,
+					"y": -3.7851219525962629,
+					"z": 86.726217107490186
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "mff",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8138,9 +8138,9 @@
 				},
 				"translation":
 				{
-					"x": 17.435970686354938,
-					"y": 44.662367598196653,
-					"z": 87.377247371692818
+					"x": 17.435971637623112,
+					"y": 44.662368684071396,
+					"z": 87.377247373417561
 				},
 				"scale3D":
 				{
@@ -8386,16 +8386,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.0062595231878818398,
-					"y": 0.043138391515948234,
-					"z": -0.0059615530959634408,
-					"w": 0.99903170992294399
+					"x": -0.0061328062188400548,
+					"y": 0.043285184488807568,
+					"z": -0.0058741210660265795,
+					"w": 0.99902666440558729
 				},
 				"translation":
 				{
-					"x": 10.188372270301901,
-					"y": 66.87912100189132,
-					"z": 87.070679001158737
+					"x": 10.18848632544907,
+					"y": 66.879086902309524,
+					"z": 87.070565226994532
 				},
 				"scale3D":
 				{
@@ -8460,9 +8460,9 @@
 			{
 				"rotation":
 				{
-					"x": -3.3957813823994331e-10,
-					"y": 4.6172427818179702e-09,
-					"z": -0.00024022541714712557,
+					"x": -3.3957813820663269e-10,
+					"y": 4.6172427818179536e-09,
+					"z": -0.00024022541712331505,
 					"w": 0.99999997114587402
 				},
 				"translation":
@@ -8757,8 +8757,8 @@
 				"rotation":
 				{
 					"x": 0.99999147315653369,
-					"y": 0.0041296021872641153,
-					"z": 4.2894275984539219e-09,
+					"y": 0.0041296021872641144,
+					"z": 4.2894275984539211e-09,
 					"w": 1.9010142171071881e-08
 				},
 				"translation":
@@ -8822,7 +8822,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8832,16 +8832,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.1618343291061983e-06,
-					"y": 0.00026621790655943295,
-					"z": 0.0021279129308988272,
-					"w": 0.99999770052134085
+					"x": 9.8820518742414437e-06,
+					"y": 0.00028642030129133575,
+					"z": 0.0021244128894790481,
+					"w": 0.99999770236517604
 				},
 				"translation":
 				{
-					"x": 8.0693836806546866,
-					"y": 66.864949613350106,
-					"z": 86.922459368497655
+					"x": 8.0689812470509246,
+					"y": 66.864791696533956,
+					"z": 86.922489314257916
 				},
 				"scale3D":
 				{
@@ -8906,16 +8906,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.0011393168127311812,
-					"y": 0.057358077115812575,
-					"z": -0.026552471791270165,
-					"w": 0.99799985931289104
+					"x": -0.0011083113086070636,
+					"y": 0.057389441212603511,
+					"z": -0.026552822390750776,
+					"w": 0.99799808181500704
 				},
 				"translation":
 				{
-					"x": 9.6310281750717071,
-					"y": 59.086410342650289,
-					"z": 87.077863492309248
+					"x": 9.630949042998358,
+					"y": 59.086363494972012,
+					"z": 87.077928826096525
 				},
 				"scale3D":
 				{
@@ -8980,16 +8980,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.0528577197319107e-06,
-					"y": 2.984979936797419e-05,
-					"z": 0.0013812756542655247,
-					"w": 0.99999904558816277
+					"x": 2.7737048388666587e-05,
+					"y": 2.0907826635381577e-05,
+					"z": 0.0013745989829811421,
+					"w": 0.9999990546351305
 				},
 				"translation":
 				{
-					"x": 8.0686026131010422,
-					"y": 59.192867374547816,
-					"z": 86.922169128854449
+					"x": 8.0685567317726239,
+					"y": 59.192878202549679,
+					"z": 86.922209766807313
 				},
 				"scale3D":
 				{
@@ -9055,9 +9055,9 @@
 				"rotation":
 				{
 					"x": -0.999999999991243,
-					"y": 4.1142229204960501e-06,
-					"z": 2.2552699721784969e-07,
-					"w": 7.3235840393218713e-07
+					"y": 4.1142229199999979e-06,
+					"z": 2.2552699721785004e-07,
+					"w": 7.3235840393218703e-07
 				},
 				"translation":
 				{
@@ -9171,7 +9171,7 @@
 			{
 				"rotation":
 				{
-					"x": -1.7977334324915827e-09,
+					"x": -1.7977334323152286e-09,
 					"y": 1.0185859314951654e-08,
 					"z": -1.3869896318015754e-06,
 					"w": 0.9999999999990381
@@ -9264,9 +9264,9 @@
 			{
 				"rotation":
 				{
-					"x": 8.5265532114030784e-10,
-					"y": -2.7343709405323387e-09,
-					"z": -9.4241074336867209e-05,
+					"x": 8.5265532114035891e-10,
+					"y": -2.7343709402641039e-09,
+					"z": -9.4241074327442212e-05,
 					"w": 0.99999999555930996
 				},
 				"translation":
@@ -9451,7 +9451,7 @@
 				"rotation":
 				{
 					"x": -0.99998785368385346,
-					"y": -0.0049287406854831217,
+					"y": -0.0049287406854831208,
 					"z": -7.3315161656044855e-09,
 					"w": 1.2363436087183345e-07
 				},
@@ -9516,7 +9516,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -9526,10 +9526,10 @@
 			{
 				"rotation":
 				{
-					"x": 0.99998648527633338,
-					"y": 0.0051989676280229363,
-					"z": -1.3575913125867731e-07,
-					"w": 5.1978500072143987e-07
+					"x": 0.99998648527633593,
+					"y": 0.0051989676275129449,
+					"z": -1.3575913125894238e-07,
+					"w": 5.1978500072137052e-07
 				},
 				"translation":
 				{
@@ -9592,7 +9592,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -9602,10 +9602,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.70710702881937593,
-					"y": 0.70710653355355113,
-					"z": 2.3925008345465506e-07,
-					"w": 2.4049058940534849e-07
+					"x": -0.70710702885405863,
+					"y": 0.70710653351886843,
+					"z": 2.3925008346645084e-07,
+					"w": 2.4049058939361359e-07
 				},
 				"translation":
 				{
@@ -10091,7 +10091,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10167,7 +10167,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10243,7 +10243,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10253,10 +10253,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.99998840867552008,
-					"y": -0.0048148223801406358,
-					"z": -5.8156262890455766e-09,
-					"w": 2.2106497625554277e-07
+					"x": -0.9999884086755223,
+					"y": -0.0048148223796683261,
+					"z": -5.8156262884750933e-09,
+					"w": 2.2106497625553676e-07
 				},
 				"translation":
 				{
@@ -10319,7 +10319,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10395,7 +10395,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10471,7 +10471,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10481,10 +10481,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999977262616713,
-					"y": -0.00067434973517302671,
-					"z": -2.8289248286948413e-09,
-					"w": 2.2054218730343738e-07
+					"x": -0.99999977262616724,
+					"y": -0.00067434973510687476,
+					"z": -2.8289248284173313e-09,
+					"w": 2.2054218730343701e-07
 				},
 				"translation":
 				{
@@ -10547,7 +10547,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10557,10 +10557,10 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999980037440728,
-					"y": 0.00063186323304645787,
-					"z": 4.2284995405575119e-09,
-					"w": 1.7565835497320125e-08
+					"x": 0.99999980037440739,
+					"y": 0.00063186323298447381,
+					"z": 4.2284995401427073e-09,
+					"w": 1.7565835497320652e-08
 				},
 				"translation":
 				{
@@ -10623,7 +10623,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10699,7 +10699,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10775,7 +10775,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10787,7 +10787,7 @@
 				{
 					"x": 0.99997347298428274,
 					"y": 0.0072837715333563908,
-					"z": 3.3662263933500488e-08,
+					"z": 3.3662263933500501e-08,
 					"w": 2.5227676056319855e-08
 				},
 				"translation":
@@ -10851,7 +10851,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10861,16 +10861,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999998632742837,
-					"y": 0.00016536362268804885,
-					"z": 1.1570511882463556e-07,
-					"w": 4.367936528421741e-08
+					"x": 0.99999183409201031,
+					"y": 0.0040412559058764569,
+					"z": 3.9590142623854023e-09,
+					"w": 1.9807490507748547e-08
 				},
 				"translation":
 				{
-					"x": -32.137214752311756,
-					"y": -4.4754436546322625,
-					"z": 86.941750368885721
+					"x": -30.325054514803085,
+					"y": 43.183110472226502,
+					"z": 86.941750115844712
 				},
 				"scale3D":
 				{
@@ -10880,15 +10880,15 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 1,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
 			"primaryColor":
 			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
+				"b": 0,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -10921,13 +10921,13 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "sdy",
+			"uniqueId": "8ri",
 			"drawingLines": [],
 			"objectTags": [
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10939,7 +10939,7 @@
 				{
 					"x": 0.99998869873848606,
 					"y": 0.0047541976503277482,
-					"z": 1.0069125712156681e-07,
+					"z": 1.0069125712156678e-07,
 					"w": 2.7367804114610236e-08
 				},
 				"translation":
@@ -11003,7 +11003,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11079,7 +11079,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11089,10 +11089,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999342565774862,
-					"y": -0.0036261055236490132,
-					"z": -8.7242384005219044e-08,
-					"w": 6.8278259495702062e-08
+					"x": -0.99999342565774985,
+					"y": -0.0036261055232933068,
+					"z": -8.7242383996660928e-08,
+					"w": 6.827825949563991e-08
 				},
 				"translation":
 				{
@@ -11155,7 +11155,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11244,8 +11244,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "resource.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -11265,7 +11265,7 @@
 				"rotation":
 				{
 					"x": -1.4939127430560231e-06,
-					"y": 6.206706023422728e-07,
+					"y": 6.2067060234227302e-07,
 					"z": -0.70710760892691726,
 					"w": 0.70710595344335825
 				},
@@ -11343,8 +11343,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "resource.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -11365,10 +11365,10 @@
 			{
 				"rotation":
 				{
-					"x": -2.5808130348121413e-08,
-					"y": -5.4855274655511719e-09,
-					"z": -0.70710651795674984,
-					"w": 0.70710704441624683
+					"x": -2.5808130345320645e-08,
+					"y": -5.4855274662789089e-09,
+					"z": -0.70710651792206713,
+					"w": 0.70710704445092942
 				},
 				"translation":
 				{
@@ -11444,8 +11444,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "resource.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -11466,10 +11466,10 @@
 			{
 				"rotation":
 				{
-					"x": -8.6054264799002012e-09,
-					"y": 2.8330690683006937e-10,
-					"z": -0.70710677848667891,
-					"w": 0.70710678388641612
+					"x": -8.6054264790699303e-09,
+					"y": 2.8330690638019396e-10,
+					"z": -0.70710677845199632,
+					"w": 0.70710678392109871
 				},
 				"translation":
 				{
@@ -11545,8 +11545,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "resource.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -11567,10 +11567,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.7283387841990442e-08,
-					"y": 5.5794380730392572e-08,
-					"z": -0.7071071896943969,
-					"w": 0.70710637267845999
+					"x": 1.7283387841142708e-08,
+					"y": 5.5794380729351376e-08,
+					"z": -0.7071071896597142,
+					"w": 0.70710637271314269
 				},
 				"translation":
 				{
@@ -11646,8 +11646,8 @@
 				"y": 0,
 				"z": 0
 			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "resource.js",
+			"objectScriptPackage": "00000000000000000000000000000000",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
@@ -11668,16 +11668,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.6655372678583679e-06,
-					"y": -1.966234959754322e-06,
-					"z": -0.707222888693262,
-					"w": 0.7069906546039959
+					"x": -4.551339347099532e-09,
+					"y": 6.9570905014311231e-09,
+					"z": -0.7072225465909141,
+					"w": 0.70699099682631206
 				},
 				"translation":
 				{
-					"x": 14.70012735123697,
-					"y": 30.794632553212182,
-					"z": 87.138661502329285
+					"x": 14.699866482078569,
+					"y": 30.79463305128834,
+					"z": 87.138655051821843
 				},
 				"scale3D":
 				{
@@ -11744,16 +11744,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.667375691132986e-06,
-					"y": -1.9675052557723288e-06,
-					"z": -0.70722133662054398,
-					"w": 0.70699220718312406
+					"x": -4.4143203060998675e-09,
+					"y": 6.6449931220985763e-09,
+					"z": -0.70722103414030146,
+					"w": 0.70699250976903749
 				},
 				"translation":
 				{
-					"x": 14.700478441189546,
-					"y": 36.794617569800202,
-					"z": 87.138661506603285
+					"x": 14.700218611935782,
+					"y": 36.794618574848826,
+					"z": 87.138655053819122
 				},
 				"scale3D":
 				{
@@ -11820,16 +11820,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5879036558517819e-09,
-					"y": 7.6064223547206406e-09,
-					"z": -0.7072173149096086,
-					"w": 0.70699623018234226
+					"x": -2.0809085371252891e-07,
+					"y": 4.3079415183209529e-09,
+					"z": -0.70720911295587141,
+					"w": 0.70700443460570039
 				},
 				"translation":
 				{
-					"x": 14.7000909074509,
-					"y": 33.794634041252827,
-					"z": 87.138655049710437
+					"x": 14.70020941187938,
+					"y": 33.794323521484863,
+					"z": 87.138655489581453
 				},
 				"scale3D":
 				{
@@ -11897,8 +11897,8 @@
 				"rotation":
 				{
 					"x": -0.99999999999999989,
-					"y": -1.5827294810709641e-08,
-					"z": 9.6914229645485386e-25,
+					"y": -1.5827294809157026e-08,
+					"z": 9.6914229635978355e-25,
 					"w": 6.1232339957367648e-17
 				},
 				"translation":
@@ -11962,7 +11962,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11973,9 +11973,9 @@
 				"rotation":
 				{
 					"x": 0.99999998777942445,
-					"y": -0.00015633665799420177,
-					"z": -8.8452283912962558e-09,
-					"w": 1.7497200912721751e-08
+					"y": -0.00015633665797882415,
+					"z": -8.8452283912959862e-09,
+					"w": 1.7497200912721886e-08
 				},
 				"translation":
 				{
@@ -12038,7 +12038,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -12114,1375 +12114,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1,
-					"y": -0,
-					"z": 0,
-					"w": 6.123233995736766e-17
-				},
-				"translation":
-				{
-					"x": -35.200004786004534,
-					"y": 21.559546209812467,
-					"z": 87.141753253685422
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "85a",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1,
-					"y": -0,
-					"z": 0,
-					"w": 6.123233995736766e-17
-				},
-				"translation":
-				{
-					"x": 40.800000566244137,
-					"y": 21.556200387430195,
-					"z": 87.141723254412568
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "1fo",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999998777375698,
-					"y": -0.00015637290603042031,
-					"z": -8.7801237092795748e-09,
-					"w": 1.7665809021343499e-08
-				},
-				"translation":
-				{
-					"x": 40.799658902729796,
-					"y": 29.080066724077803,
-					"z": 87.14172321307025
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "q5k",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999998785853095,
-					"y": -0.00015582983578949096,
-					"z": -8.9481151506236839e-09,
-					"w": 1.7589334765007011e-08
-				},
-				"translation":
-				{
-					"x": 40.799659465444961,
-					"y": 33.59606640202125,
-					"z": 87.141723213404646
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "pe7",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1,
-					"y": -0,
-					"z": 0,
-					"w": 6.123233995736766e-17
-				},
-				"translation":
-				{
-					"x": -35.200004786004534,
-					"y": 24.576346209812471,
-					"z": 87.141753183174274
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "dxw",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999947670944145,
-					"y": -0.0010230253381759821,
-					"z": -1.9156833069621356e-09,
-					"w": 2.5178597760719635e-08
-				},
-				"translation":
-				{
-					"x": -35.204455341403467,
-					"y": 29.080894177708558,
-					"z": 87.1417531881157
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "jca",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999999997424,
-					"y": 2.2694602315327853e-07,
-					"z": -1.3896436041694184e-23,
-					"w": 6.1232339957366083e-17
-				},
-				"translation":
-				{
-					"x": -35.200001045284324,
-					"y": 33.599344939119149,
-					"z": 87.141752790320041
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "zn6",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999998360669329,
-					"y": 0.00018107073317893911,
-					"z": -5.1724193645180853e-08,
-					"w": 5.3608442583320637e-09
-				},
-				"translation":
-				{
-					"x": -35.199967135868377,
-					"y": 36.641541138842072,
-					"z": 87.141753075454517
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "y2p",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999688142127,
-					"y": 7.8975667299755134e-05,
-					"z": 3.448455851813675e-08,
-					"w": 1.8171585751446992e-08
-				},
-				"translation":
-				{
-					"x": 40.799399973283073,
-					"y": 36.634768515447462,
-					"z": 87.141723175403627
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "hqw",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999980081147977,
-					"y": 0.00063117113394450439,
-					"z": 3.2421027392237336e-09,
-					"w": 1.8665337099558704e-08
-				},
-				"translation":
-				{
-					"x": 43.737571633387304,
-					"y": 42.392532432471825,
-					"z": 86.941719599673462
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "kry",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999979066591083,
-					"y": 0.00064704569703232136,
-					"z": 3.0770807983749017e-09,
-					"w": 1.9715742403672619e-08
-				},
-				"translation":
-				{
-					"x": 44.18608453332871,
-					"y": 48.184642118265998,
-					"z": 86.941719600010515
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "r9e",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999183409201031,
-					"y": 0.0040412559058764586,
-					"z": 3.9590142623854039e-09,
-					"w": 1.9807490507748547e-08
-				},
-				"translation":
-				{
-					"x": -30.325054514803085,
-					"y": 43.183110472226502,
-					"z": 86.941750115844712
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "8ri",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999977470814283,
-					"y": 0.00067125528722023538,
-					"z": 4.2552714762250844e-08,
-					"w": 3.4888988820140172e-08
-				},
-				"translation":
-				{
-					"x": 46.304050972799956,
-					"y": 43.755214341891218,
-					"z": 86.941719504422053
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "7v4",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999999643401327,
-					"y": 8.4451001526261629e-05,
-					"z": 3.3061143239499052e-08,
-					"w": 2.5210353009696739e-08
-				},
-				"translation":
-				{
-					"x": 45.842065391024931,
-					"y": -8.1012517037450511,
-					"z": 86.941719526720192
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "ogx",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999999999989,
-					"y": -1.5827294810709641e-08,
-					"z": 9.6914229645485386e-25,
-					"w": 6.1232339957367648e-17
-				},
-				"translation":
-				{
-					"x": -35.199999719789417,
-					"y": -27.426998346409121,
-					"z": 87.141752249058698
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "c85",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999999999989,
-					"y": -1.5827294810709641e-08,
-					"z": 9.6914229645485386e-25,
-					"w": 6.1232339957367648e-17
-				},
-				"translation":
-				{
-					"x": -35.199999862456657,
-					"y": -22.91999834640912,
-					"z": 87.141752289980388
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "sxq",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999999999989,
-					"y": -1.5827294810709641e-08,
-					"z": 9.6914229645485386e-25,
-					"w": 6.1232339957367648e-17
-				},
-				"translation":
-				{
-					"x": -35.200000005408782,
-					"y": -18.403998346409121,
-					"z": 87.141753024409581
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "lea",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.99999999567325892,
-					"y": 9.30240924563962e-05,
-					"z": -1.0424088763407042e-08,
-					"w": 2.1551368866729633e-08
-				},
-				"translation":
-				{
-					"x": -35.200589025422182,
-					"y": -15.36365292651093,
-					"z": 87.141753201102404
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
-			"objectScriptName": "building.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "7wh",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -13558,7 +12190,7 @@
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -13568,10 +12200,770 @@
 			{
 				"rotation":
 				{
-					"x": -2.9113287236191052e-09,
-					"y": 4.8182064485854783e-09,
-					"z": -0.70705363890633777,
-					"w": 0.70715991947317414
+					"x": -1,
+					"y": -0,
+					"z": 0,
+					"w": 6.123233995736766e-17
+				},
+				"translation":
+				{
+					"x": 40.800000566244137,
+					"y": 21.556200387430195,
+					"z": 87.141723254412568
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "1fo",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998777375698,
+					"y": -0.00015637290601504267,
+					"z": -8.7801237092793034e-09,
+					"w": 1.7665809021343635e-08
+				},
+				"translation":
+				{
+					"x": 40.799658902729796,
+					"y": 29.080066724077803,
+					"z": 87.14172321307025
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "q5k",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998785853095,
+					"y": -0.00015582983577411332,
+					"z": -8.9481151506234125e-09,
+					"w": 1.758933476500715e-08
+				},
+				"translation":
+				{
+					"x": 40.799659465444961,
+					"y": 33.59606640202125,
+					"z": 87.141723213404646
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "pe7",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1,
+					"y": -0,
+					"z": 0,
+					"w": 6.123233995736766e-17
+				},
+				"translation":
+				{
+					"x": -35.200000057972211,
+					"y": -15.364998435053602,
+					"z": 87.14175314895266
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "7wh",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999947670944145,
+					"y": -0.0010230253381759821,
+					"z": -1.9156833069621356e-09,
+					"w": 2.5178597760719635e-08
+				},
+				"translation":
+				{
+					"x": -35.204455341403467,
+					"y": 29.080894177708558,
+					"z": 87.1417531881157
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "jca",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999997424,
+					"y": 2.2694602315327853e-07,
+					"z": -1.3896436041694184e-23,
+					"w": 6.1232339957366083e-17
+				},
+				"translation":
+				{
+					"x": -35.200001045284324,
+					"y": 33.599344939119149,
+					"z": 87.141752790320041
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "zn6",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998360669329,
+					"y": 0.00018107073317893911,
+					"z": -5.1724193645180853e-08,
+					"w": 5.3608442583320637e-09
+				},
+				"translation":
+				{
+					"x": -35.199967458283012,
+					"y": 36.641541475237112,
+					"z": 87.141753133275003
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "y2p",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999688142127,
+					"y": 7.89756672918183e-05,
+					"z": 3.4484558518136895e-08,
+					"w": 1.8171585751446721e-08
+				},
+				"translation":
+				{
+					"x": 40.799399973283073,
+					"y": 36.634768515447462,
+					"z": 87.141723175403627
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "hqw",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999980081147977,
+					"y": 0.00063117113394450439,
+					"z": 3.2421027392237336e-09,
+					"w": 1.8665337099558704e-08
+				},
+				"translation":
+				{
+					"x": 43.737571633387304,
+					"y": 42.392532432471825,
+					"z": 86.941719599673462
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "kry",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999979066591083,
+					"y": 0.00064704569703232136,
+					"z": 3.0770807983749017e-09,
+					"w": 1.9715742403672619e-08
+				},
+				"translation":
+				{
+					"x": 44.18608453332871,
+					"y": 48.184642118265998,
+					"z": 86.941719600010515
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "r9e",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.9113287234762875e-09,
+					"y": 4.8182064480635935e-09,
+					"z": -0.70705363887165251,
+					"w": 0.70715991950785417
 				},
 				"translation":
 				{
@@ -13748,6 +13140,614 @@
 			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999977470814294,
+					"y": 0.00067125528715438723,
+					"z": 4.255271475807654e-08,
+					"w": 3.4888988820145771e-08
+				},
+				"translation":
+				{
+					"x": 46.304050972799956,
+					"y": 43.755214341891218,
+					"z": 86.941719504422053
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "7v4",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999643401327,
+					"y": 8.4451001517977226e-05,
+					"z": 3.3061143236255842e-08,
+					"w": 2.5210353009697289e-08
+				},
+				"translation":
+				{
+					"x": 45.842065391024931,
+					"y": -8.1012517037450511,
+					"z": 86.941719526720192
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ogx",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999999989,
+					"y": -1.5827294809157026e-08,
+					"z": 9.6914229635978355e-25,
+					"w": 6.1232339957367648e-17
+				},
+				"translation":
+				{
+					"x": -35.199999719789417,
+					"y": -27.426998346409121,
+					"z": 87.141752249058698
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "c85",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999999989,
+					"y": -1.5827294809157026e-08,
+					"z": 9.6914229635978355e-25,
+					"w": 6.1232339957367648e-17
+				},
+				"translation":
+				{
+					"x": -35.199999862456657,
+					"y": -22.91999834640912,
+					"z": 87.141752289980388
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "sxq",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999999989,
+					"y": -1.5827294809157026e-08,
+					"z": 9.6914229635978355e-25,
+					"w": 6.1232339957367648e-17
+				},
+				"translation":
+				{
+					"x": -35.200000005408782,
+					"y": -18.403998346409121,
+					"z": 87.141753024409581
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "lea",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999998632742837,
+					"y": 0.00016536362267167913,
+					"z": 1.1570511882463628e-07,
+					"w": 4.3679365284215517e-08
+				},
+				"translation":
+				{
+					"x": -32.137214752311756,
+					"y": -4.4754436546322625,
+					"z": 86.941750368885721
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "sdy",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1,
+					"y": -0,
+					"z": 0,
+					"w": 6.123233995736766e-17
+				},
+				"translation":
+				{
+					"x": -35.200004786004534,
+					"y": 21.559546209812467,
+					"z": 87.141753253685422
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "85a",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1,
+					"y": -0,
+					"z": 0,
+					"w": 6.123233995736766e-17
+				},
+				"translation":
+				{
+					"x": -35.200004786004534,
+					"y": 24.576346209812471,
+					"z": 87.141753183174274
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "4BBC177E0C46CE29D6FD8A8727B9AD05",
+			"objectScriptName": "building.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "dxw",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -15349,9 +15349,9 @@
 			{
 				"rotation":
 				{
-					"x": -0.42537472066835974,
+					"x": -0.4253747206683598,
 					"y": -0.56485072985375073,
-					"z": -0.42537472066835968,
+					"z": -0.42537472066835974,
 					"w": 0.56485072985375084
 				},
 				"translation":
@@ -15419,10 +15419,10 @@
 			{
 				"rotation":
 				{
-					"x": 5.3082367841605431e-06,
-					"y": 1.8480777736318054e-06,
-					"z": -0.99920120778718957,
-					"w": 0.039961810832704454
+					"x": 5.3082367836640556e-06,
+					"y": 1.8480777734725655e-06,
+					"z": -0.99920120778703303,
+					"w": 0.039961810836618414
 				},
 				"translation":
 				{
@@ -15559,7 +15559,7 @@
 			{
 				"rotation":
 				{
-					"x": -1.8466948377811173e-06,
+					"x": -1.8466948377811167e-06,
 					"y": 1.1574536152168717e-06,
 					"z": -0.98564021236558386,
 					"w": 0.16885902926162016
@@ -15979,9 +15979,9 @@
 			{
 				"rotation":
 				{
-					"x": -4.4450359915854326e-10,
+					"x": -4.4450359911492602e-10,
 					"y": 2.6544790147832776e-07,
-					"z": -1.0598996856020281e-05,
+					"z": -1.0598996855028175e-05,
 					"w": 0.9999999999437954
 				},
 				"translation":
@@ -16230,6 +16230,194 @@
 					"x": -25.5,
 					"y": 9.4999988675118843,
 					"z": 19.999997615814497
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.60000002384185791,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions":
+			{
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-FFB700FF",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": -38.000004786004538,
+					"y": 26.003346209812463,
+					"z": 86.522281600315182
+				},
+				"scale3D":
+				{
+					"x": 10.413777764098825,
+					"y": 25.999160766601562,
+					"z": 20.200000002980232
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.60000002384185791,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions":
+			{
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-0095A9FF",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": -38.000000057972208,
+					"y": -25.999998435053602,
+					"z": 86.522281598433949
+				},
+				"scale3D":
+				{
+					"x": 10.413777764098825,
+					"y": 25.999160766601562,
+					"z": 20.200000002980232
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.60000002384185791,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions":
+			{
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-E1533DFF",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": 38.000000566244125,
+					"y": -26.000000387430191,
+					"z": 86.522254164121705
+				},
+				"scale3D":
+				{
+					"x": 10.413777764098825,
+					"y": 25.999160766601562,
+					"z": 20.200000002980232
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.60000002384185791,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions":
+			{
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-D7D2CBFF",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": 38.000000566244125,
+					"y": 26.000000387430191,
+					"z": 86.522251609564492
+				},
+				"scale3D":
+				{
+					"x": 10.413777764098825,
+					"y": 25.999160766601562,
+					"z": 20.200000002980232
 				}
 			},
 			"bCanBeDamaged": true

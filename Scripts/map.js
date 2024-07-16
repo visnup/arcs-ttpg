@@ -7,7 +7,6 @@ const {
 } = require("@tabletop-playground/api");
 
 const size = refObject.getSize();
-const colors = new Map();
 
 class Ambition {
   constructor(offset) {
@@ -22,17 +21,16 @@ class Ambition {
     refObject.addUI(this.ui);
   }
 
-  setScore(color, score) {
-    colors.set(color.toHex(), color);
-    if (this.scores.get(color.toHex()) === score) return;
-    this.scores.set(color.toHex(), score);
+  setScore(slot, score) {
+    if (this.scores.get(slot) === score) return;
+    this.scores.set(slot, score);
     this.ui.widget.removeAllChildren();
-    for (const [hex, score] of [...this.scores.entries()].sort(
+    for (const [slot, score] of [...this.scores.entries()].sort(
       (a, b) => b[1] - a[1],
     )) {
       if (score) {
         const text = new Text()
-          .setTextColor(colors.get(hex))
+          .setTextColor(world.getSlotColor(slot))
           .setFontSize(8)
           .setText(score);
         this.ui.widget.addChild(text);

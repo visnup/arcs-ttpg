@@ -1,4 +1,4 @@
-const { globalEvents } = require("@tabletop-playground/api");
+const { globalEvents, world } = require("@tabletop-playground/api");
 
 globalEvents.onDiceRolled.add(function (player, dice) {
   const total = {};
@@ -8,11 +8,15 @@ globalEvents.onDiceRolled.add(function (player, dice) {
   player.showMessage(`You rolled ${JSON.stringify(total)}`);
 });
 
-// Update ambitions on grab
-world.updateAmbitionsBelow = function (obj) {
-  for (const { object: below } of world.lineTrace(
-    obj.getPosition(),
-    obj.getPosition().add(new Vector(0, 0, -20)),
-  ))
-    if (below.getTemplateName() === "player") return below.updateAmbitions();
+// Set owning player slots by matching color
+const colors = {
+  [world.getSlotColor(0).toHex()]: 0,
+  [world.getSlotColor(1).toHex()]: 1,
+  [world.getSlotColor(2).toHex()]: 2,
+  [world.getSlotColor(3).toHex()]: 3,
 };
+for (const obj of world.getAllObjects())
+  if (obj.getOwningPlayerSlot() === -1) {
+    const c = obj.getPrimaryColor().toHex();
+    if (c in colors) obj.setOwningPlayerSlot(colors[c]);
+  }

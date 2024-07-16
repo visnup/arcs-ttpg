@@ -1,11 +1,4 @@
-const { refHolder, world } = require("@tabletop-playground/api");
-
-function updateAmbitions() {
-  world.getObjectById(refHolder.getPrimaryColor().toHex()).updateAmbitions();
-}
-
-refHolder.onInserted.add(updateAmbitions);
-refHolder.onRemoved.add(updateAmbitions);
+const { refHolder } = require("@tabletop-playground/api");
 
 const courtSuits = ["tycoon", "tycoon", , "empath", "keeper"];
 refHolder.getAmbitions = () => {

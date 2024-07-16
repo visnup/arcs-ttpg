@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "dice tray.obj",
+			"Model": "uv-cube.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -48,8 +48,8 @@
 				"Y": 0,
 				"Z": 0
 			},
-			"Texture": "E4F8201B8E24C0DAB503B7D98A77196BDAD7D66E_httpsiimgurcombEPzdCijpg.jpg",
-			"NormalMap": "wood texture n.jpg",
+			"Texture": "",
+			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
@@ -139,28 +139,6 @@
 				"X": 0.5,
 				"Y": 18,
 				"Z": 12
-			},
-			"Rotation":
-			{
-				"X": -0,
-				"Y": 0,
-				"Z": 0
-			},
-			"Type": "Convex"
-		},
-		{
-			"Model": "uv-cube.obj",
-			"Offset":
-			{
-				"X": 0,
-				"Y": 0,
-				"Z": -1.5
-			},
-			"Scale":
-			{
-				"X": 18,
-				"Y": 18,
-				"Z": 0.5
 			},
 			"Rotation":
 			{
