@@ -1,5 +1,5 @@
 import {
-  refObject,
+  refObject as _refObject,
   HorizontalBox,
   Text,
   UIElement,
@@ -7,6 +7,7 @@ import {
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
+const refObject = _refObject;
 
 refObject.setId("map");
 

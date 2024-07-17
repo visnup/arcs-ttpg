@@ -2,13 +2,13 @@ import {
   Card,
   CardHolder,
   Vector,
-  refObject,
+  refObject as _refObject,
   world,
 } from "@tabletop-playground/api";
 import type { Ambition, MapBoard } from "./map-board";
-import { PlayerCourtHolder } from "./player-court-holder";
+const refObject = _refObject;
 
-// Setup zone
+// Detection zone
 const zoneId = `zone-${refObject.getId()}`;
 const zone =
   world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
@@ -19,20 +19,38 @@ zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 
 // Card holders
-let _holders: CardHolder[] | undefined;
-function getHolders() {
-  return (_holders ??= world
-    .getAllObjects()
-    .filter(
-      (obj) =>
-        obj.getTemplateName() === "player cards" &&
-        obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot(),
-    ) as CardHolder[]);
-}
-for (const holder of getHolders()) {
+const holders = world
+  .getAllObjects()
+  .filter(
+    (obj) =>
+      obj instanceof CardHolder &&
+      !obj.getOnlyOwnerTakesCards() &&
+      obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot(),
+  ) as CardHolder[];
+for (const holder of holders) {
   holder.onCardFlipped.add(updateAmbitions);
   holder.onInserted.add(updateAmbitions);
   holder.onRemoved.add(updateAmbitions);
+}
+
+const courtSuits: (Ambition | undefined)[] = [
+  "tycoon",
+  "tycoon",
+  ,
+  "empath",
+  "keeper",
+];
+function getHolderAmbitions(holder: CardHolder) {
+  const ambitions = { tycoon: 0, tyrant: 0, warlord: 0, keeper: 0, empath: 0 };
+  for (const card of holder.getCards()) {
+    // hack: use the index in the base court deck to infer the resource type
+    // 0-9 (0-1): tycoon, 15-19 (3): empath, 20-24 (4): keeper
+    if (holder.isCardFaceUp(card)) {
+      const suit = courtSuits[Math.floor(card.getCardDetails().index / 5)];
+      if (suit && suit in ambitions) ambitions[suit]++;
+    }
+  }
+  return new Map(Object.entries(ambitions) as [Ambition, number][]);
 }
 
 function updateAmbitions() {
@@ -72,12 +90,9 @@ function updateAmbitions() {
   }
 
   // Court cards
-  for (const court of getHolders())
-    if ("getAmbitions" in court)
-      for (const [ambition, count] of Object.entries(
-        (court as PlayerCourtHolder).getAmbitions(),
-      ))
-        ambitions[ambition as Ambition] += count;
+  for (const court of holders)
+    for (const [ambition, count] of getHolderAmbitions(court))
+      ambitions[ambition] += count;
 
   // Update the ambitions on the map
   const map = world.getObjectById("map")! as MapBoard;
