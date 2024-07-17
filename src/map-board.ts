@@ -5,9 +5,26 @@ import {
   UIElement,
   Vector,
   world,
+  ZonePermission,
 } from "@tabletop-playground/api";
 
-export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
+refObject.setId("map");
+
+// Card zone
+const zoneId = `zone-action-${refObject.getId()}`;
+const zone =
+  world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
+{
+  const { x, y } = refObject.getSize();
+  const size = new Vector(x * 0.62, y * 0.15, 20);
+  zone.setId(zoneId);
+  zone.setPosition(
+    refObject.getPosition().add(new Vector(0, (size.y - y) / 2, 0)),
+  );
+  zone.setRotation(refObject.getRotation());
+  zone.setStacking(ZonePermission.Nobody);
+  zone.setScale(size);
+}
 
 const size = refObject.getSize();
 class AmbitionSection {
@@ -46,6 +63,7 @@ class AmbitionSection {
   }
 }
 
+export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
 const ambitions = Object.fromEntries(
   ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
     name,
@@ -53,7 +71,5 @@ const ambitions = Object.fromEntries(
   ]),
 ) as Record<Ambition, AmbitionSection>;
 
-refObject.setId("map");
 (refObject as any).ambitions = ambitions;
-
 export type MapBoard = typeof refObject & { ambitions: typeof ambitions };
