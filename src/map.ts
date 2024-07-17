@@ -7,11 +7,14 @@ import {
   world,
 } from "@tabletop-playground/api";
 
+export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
+
 const size = refObject.getSize();
 
-class Ambition {
+class AmbitionSection {
   scores: Map<number, number>;
   ui: UIElement;
+  widget: HorizontalBox;
 
   constructor(offset: number) {
     this.scores = new Map();
@@ -21,14 +24,14 @@ class Ambition {
       size.y / 2 - 5,
       size.z + 0.35,
     );
-    this.ui.widget = new HorizontalBox().setChildDistance(2);
+    this.ui.widget = this.widget = new HorizontalBox().setChildDistance(2);
     refObject.addUI(this.ui);
   }
 
   setScore(slot: number, score: number) {
     if (this.scores.get(slot) === score) return;
     this.scores.set(slot, score);
-    this.ui.widget.removeAllChildren();
+    this.widget.removeAllChildren();
     for (const [slot, score] of [...this.scores.entries()].sort(
       (a, b) => b[1] - a[1],
     )) {
@@ -36,17 +39,20 @@ class Ambition {
         const text = new Text()
           .setTextColor(world.getSlotColor(slot))
           .setFontSize(8)
-          .setText(score);
-        this.ui.widget.addChild(text);
+          .setText(String(score));
+        this.widget.addChild(text);
       }
     }
     refObject.updateUI(this.ui);
   }
 }
 
-refObject.ambitions = Object.fromEntries(
+const ambitions = Object.fromEntries(
   ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
     name,
-    new Ambition(i),
+    new AmbitionSection(i),
   ]),
-);
+) as Record<Ambition, AmbitionSection>;
+(refObject as any).ambitions = ambitions;
+
+export type MapObject = typeof refObject & { ambitions: typeof ambitions };

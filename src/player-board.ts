@@ -1,4 +1,12 @@
-import { Card, Vector, refObject, world } from "@tabletop-playground/api";
+import {
+  Card,
+  CardHolder,
+  Vector,
+  refObject,
+  world,
+} from "@tabletop-playground/api";
+import type { Ambition, MapObject } from "./map";
+import { PlayerCourtHolder } from "./player-court";
 
 // Setup zone
 const zoneId = `zone-${refObject.getId()}`;
@@ -11,7 +19,7 @@ zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 
 // Card holders
-let _holders;
+let _holders: CardHolder[] | undefined;
 function getHolders() {
   return (_holders ??= world
     .getAllObjects()
@@ -19,7 +27,7 @@ function getHolders() {
       (obj) =>
         obj.getTemplateName() === "player cards" &&
         obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot(),
-    ));
+    ) as CardHolder[]);
 }
 for (const holder of getHolders()) {
   holder.onCardFlipped.add(updateAmbitions);
@@ -65,12 +73,17 @@ function updateAmbitions() {
 
   // Court cards
   for (const court of getHolders())
-    if (court.getAmbitions)
-      for (const [ambition, count] of Object.entries(court.getAmbitions()))
-        ambitions[ambition] += count;
+    if ("getAmbitions" in court)
+      for (const [ambition, count] of Object.entries(
+        (court as PlayerCourtHolder).getAmbitions(),
+      ))
+        ambitions[ambition as Ambition] += count;
 
   // Update the ambitions on the map
-  const map = world.getObjectById("map");
+  const map = world.getObjectById("map")! as MapObject;
   for (const [ambition, count] of Object.entries(ambitions))
-    map.ambitions[ambition].setScore(refObject.getOwningPlayerSlot(), count);
+    map.ambitions[ambition as Ambition].setScore(
+      refObject.getOwningPlayerSlot(),
+      count,
+    );
 }
