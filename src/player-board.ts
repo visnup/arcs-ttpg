@@ -5,8 +5,8 @@ import {
   refObject,
   world,
 } from "@tabletop-playground/api";
-import type { Ambition, MapObject } from "./map";
-import { PlayerCourtHolder } from "./player-court";
+import type { Ambition, MapBoard } from "./map-board";
+import { PlayerCourtHolder } from "./player-court-holder";
 
 // Setup zone
 const zoneId = `zone-${refObject.getId()}`;
@@ -80,7 +80,7 @@ function updateAmbitions() {
         ambitions[ambition as Ambition] += count;
 
   // Update the ambitions on the map
-  const map = world.getObjectById("map")! as MapObject;
+  const map = world.getObjectById("map")! as MapBoard;
   for (const [ambition, count] of Object.entries(ambitions))
     map.ambitions[ambition as Ambition].setScore(
       refObject.getOwningPlayerSlot(),
