@@ -39,7 +39,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"resource"
+	],
 	"FrontTexture": "resources.jpg",
 	"BackTexture": "",
 	"HiddenTexture": "",

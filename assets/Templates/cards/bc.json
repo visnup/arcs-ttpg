@@ -31,7 +31,21 @@
 	"Collision": [],
 	"Lights": [],
 	"SnapPointsGlobal": false,
-	"SnapPoints": [],
+	"SnapPoints": [
+		{
+			"X": 1.25,
+			"Y": 0,
+			"Z": -0.5,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource"
+			]
+		}
+	],
 	"ZoomViewDirection":
 	{
 		"X": 0,

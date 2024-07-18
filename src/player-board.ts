@@ -83,7 +83,9 @@ function updateAmbitions() {
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
-            ambitions.tycoon++;
+            obj.onDestroyed.clear();
+            obj.onDestroyed.add(updateAmbitions);
+            ambitions.tycoon += (obj as Card).getStackSize();
             break;
           case "relics":
             ambitions.keeper++;
