@@ -1,7 +1,8 @@
 import { globalEvents, world } from "@tabletop-playground/api";
 
 // Reset all zones
-for (const zone of world.getAllZones()) zone.destroy();
+for (const zone of world.getAllZones())
+  if (zone.getId().startsWith("zone-")) zone.destroy();
 
 // Set owning player slots by matching color
 const colors = Object.fromEntries(
