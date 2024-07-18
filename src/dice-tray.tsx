@@ -3,10 +3,20 @@ import {
   Dice,
   GameObject,
   globalEvents,
+  ScreenUIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
+import { boxChild, render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
+
+// Dice summary UI element
+let diceSummary = new ScreenUIElement();
+diceSummary.relativePositionX = diceSummary.relativePositionY = false;
+diceSummary.positionX = 50;
+diceSummary.positionY = 10;
+diceSummary.width = 220;
+diceSummary.height = 200;
 
 // Zone
 const zoneId = `zone-${refObject.getId()}`;
@@ -20,6 +30,7 @@ zone.onBeginOverlap.add((_zone, obj) => {
 });
 zone.onEndOverlap.add((_zone, obj) => {
   if (obj instanceof Dice) obj.onPrimaryAction.remove(onRoll);
+  world.removeScreenUIElement(diceSummary);
 });
 
 // Put up guard walls when dice are rolled
@@ -32,6 +43,7 @@ function onRoll() {
     );
     walls!.toggleLock();
   }
+  world.removeScreenUIElement(diceSummary);
 }
 
 globalEvents.onDiceRolled.add((player, dice) => {
@@ -45,5 +57,26 @@ globalEvents.onDiceRolled.add((player, dice) => {
     if (d instanceof Dice)
       for (const f of d.getCurrentFaceMetadata().split(" "))
         if (f) total[f] = (total[f] ?? 0) + 1;
-  player.showMessage(`You rolled ${JSON.stringify(total)}`);
+  const rows = [
+    ["self", "Hit Your Ships"],
+    ["intercept", "Intercept Your Ships"],
+    ["hit", "Hit Ships First"],
+    ["building", "Hit Buildings"],
+    ["key", "Raid Cards and Resources"],
+  ];
+  diceSummary.widget = render(
+    <verticalbox>
+      {
+        rows.map(
+          ([key, label]) =>
+            total[key] && (
+              <horizontalbox>
+                {boxChild(1, <text>{label}</text>)}
+                {boxChild(0, <text>{total[key]}</text>}
+              </horizontalbox>
+            ),
+        )}
+    </verticalbox>,
+  );
+  world.addScreenUI(diceSummary);
 });
