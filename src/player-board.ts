@@ -9,14 +9,33 @@ import type { Ambition, MapBoard } from "./map-board";
 const refObject = _refObject;
 
 // Detection zone
+const { x, y } = refObject.getSize();
+const captivePercent = 0.735;
 const zoneId = `zone-${refObject.getId()}`;
 const zone =
-  world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
+  world.getZoneById(zoneId) ??
+  world.createZone(
+    refObject
+      .getPosition()
+      .add(new Vector(0, (-y * (1 - captivePercent)) / 2, 0)),
+  );
 zone.setId(zoneId);
 zone.setRotation(refObject.getRotation());
-zone.setScale(refObject.getSize().add(new Vector(0, 0, 20)));
+zone.setScale(new Vector(x, y * captivePercent, 20));
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
+// Captive zone
+const captiveZoneId = `captive-zone-${refObject.getId()}`;
+const captiveZone =
+  world.getZoneById(captiveZoneId) ??
+  world.createZone(
+    refObject.getPosition().add(new Vector(0, (y * captivePercent) / 2, 0)),
+  );
+captiveZone.setId(captiveZoneId);
+captiveZone.setRotation(refObject.getRotation());
+captiveZone.setScale(new Vector(x, y * (1 - captivePercent), 20));
+captiveZone.onBeginOverlap.add(updateAmbitions);
+captiveZone.onEndOverlap.add(updateAmbitions);
 
 // Card holders
 const holders = world
@@ -75,18 +94,16 @@ function updateAmbitions() {
         }
         break;
       case "agent":
-        // todo fix for tyrant
-        const position = obj.getPosition().subtract(refObject.getPosition());
-        const captive = position[1] / refObject.getSize()[1] >= 0.25;
-        if (captive) ambitions.tyrant++;
-        else ambitions.warlord++;
-        break;
       case "city":
       case "ship":
       case "starport":
         ambitions.warlord++;
         break;
     }
+  }
+  for (const obj of captiveZone.getOverlappingObjects()) {
+    if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
+    if (obj.getTemplateName() === "agent") ambitions.tyrant++;
   }
 
   // Court cards
