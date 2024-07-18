@@ -63,7 +63,7 @@
 	"Model": "player/building-mask.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
-	"Indices": [ 3, 1, 2, 3 ],
+	"Indices": [ 0, 1, 2, 3 ],
 	"CardNames":
 	{
 	},
