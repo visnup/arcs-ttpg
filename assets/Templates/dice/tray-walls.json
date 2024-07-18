@@ -12,9 +12,9 @@
 	"Metallic": 0,
 	"PrimaryColor":
 	{
-		"R": 106,
-		"G": 81,
-		"B": 40
+		"R": 0,
+		"G": 0,
+		"B": 0
 	},
 	"SecondaryColor":
 	{
@@ -32,15 +32,15 @@
 			"Model": "uv-cube.obj",
 			"Offset":
 			{
-				"X": 0,
-				"Y": 0,
-				"Z": 0
+				"X": -8.9000000000000004,
+				"Y": -8.9000000000000004,
+				"Z": -1.3999999999999999
 			},
 			"Scale":
 			{
-				"X": 0.50000005298191208,
-				"Y": 0.50000005298191208,
-				"Z": 0.50000005298191208
+				"X": 0.10000000000000001,
+				"Y": 0.10000000000000001,
+				"Z": 0.10000000000000001
 			},
 			"Rotation":
 			{
@@ -52,8 +52,9 @@
 			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
-			"IsTransparent": false,
-			"CastShadow": true,
+			"IsTransparent": true,
+			"Alpha": 0.1,
+			"CastShadow": false,
 			"IsTwoSided": false,
 			"UseOverrides": true,
 			"SurfaceType": "Plastic"
