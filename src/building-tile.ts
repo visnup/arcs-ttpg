@@ -1,4 +1,4 @@
 import { refCard } from "@tabletop-playground/api";
 
-// Card image index matches player slot
+// Set owning player slots by card image index
 refCard.setOwningPlayerSlot(refCard.getCardDetails().index);

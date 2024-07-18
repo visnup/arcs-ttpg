@@ -6,7 +6,7 @@ refHolder.onInserted.add(sortCard);
 function sortCard(
   holder: CardHolder,
   card: Card,
-  _player: Player,
+  player: Player,
   inserted: number = holder.getNumCards(),
 ) {
   if (!holder.isCardFaceUp(card)) {

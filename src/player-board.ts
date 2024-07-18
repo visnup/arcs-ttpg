@@ -24,7 +24,7 @@ zone.setRotation(refObject.getRotation());
 zone.setScale(new Vector(x, y * captivePercent, 20));
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
-// Captive zone
+// Captives zone
 const captiveZoneId = `captive-zone-${refObject.getId()}`;
 const captiveZone =
   world.getZoneById(captiveZoneId) ??
