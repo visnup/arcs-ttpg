@@ -26,11 +26,18 @@ zone.setId(zoneId);
 zone.setRotation(refObject.getRotation());
 zone.setScale(refObject.getSize().add(new Vector(0, 0, 20)));
 zone.onBeginOverlap.add((_zone, obj) => {
-  if (obj instanceof Dice) obj.onPrimaryAction.add(onRoll);
+  if (obj instanceof Dice) {
+    obj.onPrimaryAction.add(onRoll);
+    obj.onMovementStopped.add(sumDice);
+  }
+  sumDice();
 });
 zone.onEndOverlap.add((_zone, obj) => {
-  if (obj instanceof Dice) obj.onPrimaryAction.remove(onRoll);
-  world.removeScreenUIElement(diceSummary);
+  if (obj instanceof Dice) {
+    obj.onPrimaryAction.remove(onRoll);
+    obj.onMovementStopped.remove(sumDice);
+  }
+  sumDice();
 });
 
 // Put up guard walls when dice are rolled
@@ -43,14 +50,15 @@ function onRoll() {
     );
     walls!.toggleLock();
   }
-  world.removeScreenUIElement(diceSummary);
 }
 
 globalEvents.onDiceRolled.add((player, dice) => {
   // Bring down walls
   walls?.destroy();
   walls = undefined;
+});
 
+function sumDice() {
   // Total roll
   const total: Record<string, number> = {};
   for (const d of zone.getOverlappingObjects())
@@ -69,7 +77,7 @@ globalEvents.onDiceRolled.add((player, dice) => {
       {rows.map(
         ([key, label]) =>
           total[key] && (
-            <horizontalbox>
+            <horizontalbox gap={10}>
               {boxChild(1, <text>{label}</text>)}
               {boxChild(0, <text>{total[key]}</text>)}
             </horizontalbox>
@@ -77,5 +85,6 @@ globalEvents.onDiceRolled.add((player, dice) => {
       )}
     </verticalbox>,
   );
+  world.removeScreenUI(0);
   world.addScreenUI(diceSummary);
-});
+}
