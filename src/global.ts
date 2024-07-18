@@ -1,5 +1,8 @@
 import { globalEvents, world } from "@tabletop-playground/api";
 
+// Reset all zones
+for (const zone of world.getAllZones()) zone.destroy();
+
 globalEvents.onDiceRolled.add((player, dice) => {
   const total: Record<string, number> = {};
   for (const d of dice)
