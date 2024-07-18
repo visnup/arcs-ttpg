@@ -16,15 +16,12 @@ function sortCard(
     // put it in order
     const index = card.getCardDetails().index;
     const cards = holder.getCards();
-    for (let i = 0; i < cards.length; i++) {
+    for (let i = 0; i < cards.length; i++)
       if (
         cards[i].getCardDetails().index > index ||
         !holder.isCardFaceUp(cards[i])
-      ) {
-        holder.moveCard(card, i - (i > inserted ? 1 : 0));
-        return;
-      }
-    }
+      )
+        return holder.moveCard(card, i - (i > inserted ? 1 : 0));
     // belongs at the end
     holder.moveCard(card, holder.getNumCards());
   }
