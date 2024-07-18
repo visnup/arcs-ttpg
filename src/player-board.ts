@@ -93,10 +93,14 @@ function updateAmbitions() {
             break;
         }
         break;
-      case "agent":
       case "city":
-      case "ship":
       case "starport":
+        obj.onDestroyed.clear();
+        obj.onDestroyed.add(updateAmbitions);
+        ambitions.warlord += (obj as Card).getStackSize();
+        break;
+      case "agent":
+      case "ship":
         ambitions.warlord++;
         break;
     }
