@@ -66,16 +66,15 @@ globalEvents.onDiceRolled.add((player, dice) => {
   ];
   diceSummary.widget = render(
     <verticalbox>
-      {
-        rows.map(
-          ([key, label]) =>
-            total[key] && (
-              <horizontalbox>
-                {boxChild(1, <text>{label}</text>)}
-                {boxChild(0, <text>{total[key]}</text>}
-              </horizontalbox>
-            ),
-        )}
+      {rows.map(
+        ([key, label]) =>
+          total[key] && (
+            <horizontalbox>
+              {boxChild(1, <text>{label}</text>)}
+              {boxChild(0, <text>{total[key]}</text>)}
+            </horizontalbox>
+          ),
+      )}
     </verticalbox>,
   );
   world.addScreenUI(diceSummary);
