@@ -7,6 +7,7 @@ import {
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
+import { render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
 
 refObject.setId("map");
@@ -52,13 +53,14 @@ class AmbitionSection {
     for (const [slot, score] of [...this.scores.entries()].sort(
       (a, b) => b[1] - a[1],
     )) {
-      if (score) {
-        const text = new Text()
-          .setTextColor(world.getSlotColor(slot))
-          .setFontSize(8)
-          .setText(String(score));
-        this.widget.addChild(text);
-      }
+      if (score)
+        this.widget.addChild(
+          render(
+            <text color={world.getSlotColor(slot)} size={9}>
+              {score}
+            </text>,
+          ),
+        );
     }
     refObject.updateUI(this.ui);
   }
