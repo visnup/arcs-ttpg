@@ -71,7 +71,10 @@ function sumDice() {
   const rows = [
     ["self", "Hit Your Ships"],
     ["intercept", "Intercept\nYour Ships"],
-    ["hit", "Hit Ships First"],
+    [
+      "hit",
+      "Hit Ships First\n[size=10]then buildings if\nno ships remain[/size]",
+    ],
     ["building", "Hit Buildings"],
     ["key", "Raid Cards\n& Resources"],
   ];
@@ -89,7 +92,7 @@ function sumDice() {
                   width={20}
                 />,
               )}
-              {boxChild(1, <text size={14}>{label}</text>)}
+              {boxChild(1, <richtext size={14}>{label}</richtext>)}
               {boxChild(0, <text size={16}>{total[key]}</text>)}
             </horizontalbox>
           ),
