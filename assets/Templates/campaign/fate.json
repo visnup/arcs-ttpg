@@ -1,7 +1,7 @@
 {
 	"Type": "Card",
-	"GUID": "FC7BE8EF9150452FA7D03AB1DF994ADA",
-	"Name": "f04",
+	"GUID": "6C466780044B6FF2509B3B9B64985E5C",
+	"Name": "fate",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
@@ -40,15 +40,15 @@
 	},
 	"GroundAccessibility": "Nothing",
 	"Tags": [],
-	"FrontTexture": "campaign/f04.jpg",
-	"BackTexture": "campaign/f04b.jpg",
+	"FrontTexture": "campaign/fate.jpg",
+	"BackTexture": "campaign/fate-back.jpg",
 	"HiddenTexture": "",
 	"BackIndex": -3,
 	"HiddenIndex": -1,
 	"NumHorizontal": 7,
 	"NumVertical": 4,
-	"Width": 6.1,
-	"Height": 8.6,
+	"Width": 7,
+	"Height": 12,
 	"Thickness": 0.05,
 	"HiddenInHand": true,
 	"UsedWithCardHolders": true,
@@ -59,7 +59,7 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 ],
+	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 ],
 	"CardNames":
 	{
 	},
@@ -68,83 +68,5 @@
 	},
 	"CardTags":
 	{
-		"0": [
-			"fate"
-		],
-		"1": [
-			"fate"
-		],
-		"2": [
-			"fate"
-		],
-		"3": [
-			"fate"
-		],
-		"4": [
-			"fate"
-		],
-		"5": [
-			"fate"
-		],
-		"6": [
-			"fate"
-		],
-		"7": [
-			"fate"
-		],
-		"8": [
-			"fate"
-		],
-		"9": [
-			"fate"
-		],
-		"10": [
-			"fate"
-		],
-		"11": [
-			"fate"
-		],
-		"12": [
-			"fate"
-		],
-		"13": [
-			"fate"
-		],
-		"14": [
-			"fate"
-		],
-		"15": [
-			"fate"
-		],
-		"16": [
-			"fate"
-		],
-		"17": [
-			"fate"
-		],
-		"18": [
-			"fate"
-		],
-		"19": [
-			"fate"
-		],
-		"20": [
-			"fate"
-		],
-		"21": [
-			"fate"
-		],
-		"22": [
-			"fate"
-		],
-		"23": [
-			"fate"
-		],
-		"24": [
-			"fate"
-		],
-		"25": [
-			"fate"
-		]
 	}
 }
