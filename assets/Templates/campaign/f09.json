@@ -1,0 +1,150 @@
+{
+	"Type": "Card",
+	"GUID": "AC4ADF9302324F398D113E16A4F03B97",
+	"Name": "f09",
+	"Metadata": "",
+	"CollisionType": "Regular",
+	"Friction": 0.7,
+	"Restitution": 0,
+	"Density": 0.5,
+	"SurfaceType": "Cardboard",
+	"Roughness": 1,
+	"Metallic": 0,
+	"PrimaryColor":
+	{
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
+	"SecondaryColor":
+	{
+		"R": 0,
+		"G": 0,
+		"B": 0
+	},
+	"Flippable": true,
+	"AutoStraighten": false,
+	"ShouldSnap": true,
+	"ScriptName": "",
+	"Blueprint": "",
+	"Models": [],
+	"Collision": [],
+	"Lights": [],
+	"SnapPointsGlobal": false,
+	"SnapPoints": [],
+	"ZoomViewDirection":
+	{
+		"X": 0,
+		"Y": 0,
+		"Z": 0
+	},
+	"GroundAccessibility": "Nothing",
+	"Tags": [],
+	"FrontTexture": "campaign/f09.jpg",
+	"BackTexture": "campaign/f09b.jpg",
+	"HiddenTexture": "",
+	"BackIndex": -3,
+	"HiddenIndex": -1,
+	"NumHorizontal": 7,
+	"NumVertical": 2,
+	"Width": 6.2,
+	"Height": 8.8,
+	"Thickness": 0.052,
+	"HiddenInHand": true,
+	"UsedWithCardHolders": true,
+	"CanStack": true,
+	"UsePrimaryColorForSide": false,
+	"FrontTextureOverrideExposed": false,
+	"AllowFlippedInStack": false,
+	"MirrorBack": true,
+	"EmissiveFront": false,
+	"Model": "Rounded",
+	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+	"CardNames":
+	{
+	},
+	"CardMetadata":
+	{
+	},
+	"CardTags":
+	{
+		"0": [
+			"fate"
+		],
+		"1": [
+			"fate"
+		],
+		"2": [
+			"fate"
+		],
+		"3": [
+			"fate"
+		],
+		"4": [
+			"fate"
+		],
+		"5": [
+			"fate"
+		],
+		"6": [
+			"fate"
+		],
+		"7": [
+			"fate"
+		],
+		"8": [
+			"fate"
+		],
+		"9": [
+			"fate"
+		],
+		"10": [
+			"fate"
+		],
+		"11": [
+			"fate"
+		],
+		"12": [
+			"fate"
+		],
+		"13": [
+			"fate"
+		],
+		"14": [
+			"fate"
+		],
+		"15": [
+			"fate"
+		],
+		"16": [
+			"fate"
+		],
+		"17": [
+			"fate"
+		],
+		"18": [
+			"fate"
+		],
+		"19": [
+			"fate"
+		],
+		"20": [
+			"fate"
+		],
+		"21": [
+			"fate"
+		],
+		"22": [
+			"fate"
+		],
+		"23": [
+			"fate"
+		],
+		"24": [
+			"fate"
+		],
+		"25": [
+			"fate"
+		]
+	}
+}
