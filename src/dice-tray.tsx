@@ -1,22 +1,25 @@
 import {
   refObject as _refObject,
+  refPackageId as _refPackageId,
   Dice,
   GameObject,
   globalEvents,
   ScreenUIElement,
   Vector,
+  VerticalAlignment,
   world,
 } from "@tabletop-playground/api";
 import { boxChild, render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
+const refPackageId = _refPackageId;
 
 // Dice summary UI element
 let diceSummary = new ScreenUIElement();
 diceSummary.relativePositionX = diceSummary.relativePositionY = false;
 diceSummary.positionX = 50;
 diceSummary.positionY = 10;
-diceSummary.width = 220;
-diceSummary.height = 200;
+diceSummary.width = 200;
+diceSummary.height = 250;
 
 // Zone
 const zoneId = `zone-${refObject.getId()}`;
@@ -67,19 +70,27 @@ function sumDice() {
         if (f) total[f] = (total[f] ?? 0) + 1;
   const rows = [
     ["self", "Hit Your Ships"],
-    ["intercept", "Intercept Your Ships"],
+    ["intercept", "Intercept\nYour Ships"],
     ["hit", "Hit Ships First"],
     ["building", "Hit Buildings"],
-    ["key", "Raid Cards and Resources"],
+    ["key", "Raid Cards\n& Resources"],
   ];
   diceSummary.widget = render(
-    <verticalbox>
+    <verticalbox gap={10}>
       {rows.map(
         ([key, label]) =>
           total[key] && (
-            <horizontalbox gap={10}>
-              {boxChild(1, <text>{label}</text>)}
-              {boxChild(0, <text>{total[key]}</text>)}
+            <horizontalbox gap={20} valign={VerticalAlignment.Center}>
+              {boxChild(
+                0,
+                <image
+                  src={`dice/${key}.png`}
+                  srcPackage={refPackageId}
+                  width={20}
+                />,
+              )}
+              {boxChild(1, <text size={14}>{label}</text>)}
+              {boxChild(0, <text size={16}>{total[key]}</text>)}
             </horizontalbox>
           ),
       )}
