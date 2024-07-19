@@ -1,6 +1,6 @@
 .DS_Store
-assets/Thumbnails/
-node_modules/
+/assets/Thumbnails/
+/node_modules/
 
 # production
 /build
@@ -8,4 +8,5 @@ node_modules/
 
 # local build for development
 /dev
+/wip/campaign
 ttpgcfg.local.json
