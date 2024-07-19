@@ -3,11 +3,13 @@ players
 2. blue 0095A9
 3. red E1533D
 4. gray D7D2CB
+5. purple 912AAD
 
 Arcs Base Game with Leaders and Lore
 
-Nothing scripted yet so you’ll have to do setup yourself.
+Press "R" to toggle ship damage.
+There’s a card holder to place face up discard into if you wish.
+Resource, card, and piece counts will show under ambition boxes. Player court cards should be kept below or above your player board to count.
+Rolling in the dice tray sums results in it.
 
-Press "R" to toggle ship damage. There’s a card tray to place face up discard into if you wish. Playing an
-extra card to seize the initiative can be finicky as TTP wants to stack the cards and would reveal your face
-down card, so be careful when aiming for the snap point below the action card play area.
+I’m working on campaign content and automated setup.
