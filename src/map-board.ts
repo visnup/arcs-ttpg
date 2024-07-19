@@ -41,7 +41,7 @@ class AmbitionSection {
       size.y / 2 - 5,
       size.z + 0.35,
     );
-    this.ui.widget = this.widget = new HorizontalBox().setChildDistance(2);
+    this.ui.widget = this.widget = new HorizontalBox().setChildDistance(6);
     refObject.addUI(this.ui);
   }
 
