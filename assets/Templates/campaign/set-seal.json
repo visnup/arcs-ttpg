@@ -56,7 +56,7 @@
 	"UsePrimaryColorForSide": false,
 	"FrontTextureOverrideExposed": false,
 	"AllowFlippedInStack": false,
-	"MirrorBack": true,
+	"MirrorBack": false,
 	"EmissiveFront": false,
 	"Model": "campaign/seal-mask.png",
 	"ShapeAccuracy": 10,
