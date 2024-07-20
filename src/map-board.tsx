@@ -1,6 +1,8 @@
 import {
   refObject as _refObject,
+  refPackageId as _refPackageId,
   HorizontalBox,
+  refPackageId,
   Text,
   UIElement,
   Vector,
@@ -9,6 +11,7 @@ import {
 } from "@tabletop-playground/api";
 import { render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
+const refPackageId = _refPackageId;
 
 refObject.setId("map");
 
@@ -56,7 +59,12 @@ class AmbitionSection {
       if (score)
         this.widget.addChild(
           render(
-            <text color={world.getSlotColor(slot)} size={9}>
+            <text
+              color={world.getSlotColor(slot)}
+              size={8}
+              font="FMBP700.ttf"
+              fontPackage={refPackageId}
+            >
               {score}
             </text>,
           ),
