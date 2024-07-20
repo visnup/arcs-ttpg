@@ -47,7 +47,7 @@
 	"HiddenTexture": "",
 	"BackIndex": -3,
 	"HiddenIndex": -1,
-	"NumHorizontal": 4,
+	"NumHorizontal": 5,
 	"NumVertical": 1,
 	"Width": 2.5,
 	"Height": 2.23,
@@ -63,7 +63,7 @@
 	"Model": "player/building-mask.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
-	"Indices": [ 0, 1, 2, 3 ],
+	"Indices": [ 0, 1, 2, 3, 4 ],
 	"CardNames":
 	{
 	},
