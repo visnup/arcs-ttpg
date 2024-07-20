@@ -1,7 +1,7 @@
 {
 	"Type": "Dice",
-	"GUID": "5324122F6D4F55CF943BE8AE4EF68C4C",
-	"Name": "raid",
+	"GUID": "E56F7329614F0A995D4BECA278DA1A52",
+	"Name": "number",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
@@ -48,8 +48,8 @@
 				"Y": 0,
 				"Z": 0
 			},
-			"Texture": "dice/raid.png",
-			"NormalMap": "dice/raid-n.png",
+			"Texture": "dice/number.png",
+			"NormalMap": "dice/number-n.png",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
@@ -76,43 +76,43 @@
 			"X": 0,
 			"Y": 0,
 			"Z": 1,
-			"Name": "",
-			"Metadata": "intercept key key"
+			"Name": "1",
+			"Metadata": ""
 		},
 		{
 			"X": -1,
 			"Y": 0,
 			"Z": 0,
-			"Name": "",
-			"Metadata": "self key"
+			"Name": "2",
+			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": 1,
 			"Z": 0,
-			"Name": "",
-			"Metadata": "self building"
+			"Name": "3",
+			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": -1,
 			"Z": 0,
-			"Name": "",
-			"Metadata": "self building"
+			"Name": "4",
+			"Metadata": ""
 		},
 		{
 			"X": 1,
 			"Y": 0,
 			"Z": 0,
-			"Name": "",
-			"Metadata": "building key"
+			"Name": "5",
+			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": 0,
 			"Z": -1,
-			"Name": "",
-			"Metadata": "intercept"
+			"Name": "6",
+			"Metadata": ""
 		}
 	]
 }

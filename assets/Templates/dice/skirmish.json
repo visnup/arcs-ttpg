@@ -8,8 +8,8 @@
 	"Restitution": 0.5,
 	"Density": 1,
 	"SurfaceType": "Plastic",
-	"Roughness": 0.3,
-	"Metallic": 0.2,
+	"Roughness": 0.2,
+	"Metallic": 0,
 	"PrimaryColor":
 	{
 		"R": 255,
