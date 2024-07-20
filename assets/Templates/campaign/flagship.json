@@ -1,7 +1,7 @@
 {
 	"Type": "Generic",
-	"GUID": "5B24A477D74343B61EECDF8037563339",
-	"Name": "agent",
+	"GUID": "7156FB49F4459B260FA4419F4BA433FA",
+	"Name": "flagship",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "agent.obj",
+			"Model": "flagship.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -46,7 +46,7 @@
 			{
 				"X": -0,
 				"Y": 0,
-				"Z": 89.999999999999986
+				"Z": 0
 			},
 			"Texture": "",
 			"NormalMap": "",
@@ -70,7 +70,5 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [
-		"agent"
-	]
+	"Tags": []
 }

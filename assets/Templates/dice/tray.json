@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "dice tray.obj",
+			"Model": "dice-tray.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -38,9 +38,9 @@
 			},
 			"Scale":
 			{
-				"X": 0.50000005298191208,
-				"Y": 0.50000005298191208,
-				"Z": 0.50000005298191208
+				"X": 1,
+				"Y": 1,
+				"Z": 1
 			},
 			"Rotation":
 			{
