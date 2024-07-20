@@ -1,0 +1,2022 @@
+{
+	"saveStateVersion": "1.1",
+	"gameState":
+	{
+		"measureUnit": 1,
+		"rotationStep": 45,
+		"notes": "Run the primary action (R) on any fate card to spawn its fate set including cards and any tokens it requires. Can highlight all cards and run them all at once.",
+		"turnInfo":
+		{
+		},
+		"slotTeams": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+		"globalScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+		"globalScriptName": "",
+		"backgroundTexture":
+		{
+			"resourceName": "",
+			"packageGuid": "00000000000000000000000000000000"
+		},
+		"phases": [],
+		"spectatorsSeeEverything": false,
+		"persistentData": "",
+		"persistentKeyData":
+		{
+		},
+		"permissions":
+		{
+			"delete": -1,
+			"objectLibrary": -1,
+			"copyPaste": -1,
+			"cardPeek": -1,
+			"cardExplorer": -1,
+			"containerExplorer": -1,
+			"changeOwner": -1,
+			"changeTeam": -1,
+			"editZones": -1,
+			"draw": -1,
+			"ground": -1,
+			"throw": -1,
+			"editLabels": -1,
+			"saveGame": -1,
+			"spectators": -1
+		},
+		"physicsLocked": false,
+		"measureAngles": "None",
+		"alwaysSnap": false,
+		"liftOverRegular": true,
+		"gravityMultiplier": 1,
+		"slotIds": [
+			"000286efea3a41b79727001b2c081a96",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"mapName": "Ruins",
+		"currentTurn": 0,
+		"bCanBeDamaged": false
+	},
+	"requiredPackages": [
+		{
+			"name": "Arcs (Dev)",
+			"guid": "8878F08F55344ED182D61F6E91585D56"
+		},
+		{
+			"name": "General",
+			"guid": "D74C7D5D6745CD565913DAA5FB3E9C93"
+		}
+	],
+	"storedCameraSetups": [
+		{
+			"location":
+			{
+				"x": -21.398977309426261,
+				"y": 0,
+				"z": 165.54588180428374
+			},
+			"pawnRotation":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0,
+				"w": 1
+			},
+			"controlRotation":
+			{
+				"pitch": 284.47065590691136,
+				"yaw": 0,
+				"roll": 0
+			},
+			"playerScale": 1,
+			"flying": true
+		},
+		false, false, false, false, false, false, false, false, false ],
+	"playerCameraSetups": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ],
+	"playerSlotNames": [
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9",
+		"10",
+		"11",
+		"12",
+		"13",
+		"14",
+		"15",
+		"16",
+		"17",
+		"18",
+		"19",
+		"20"
+	],
+	"customPlayerColors": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ],
+	"lighting":
+	{
+		"intensity": 1,
+		"specular": 1,
+		"altitude": 90,
+		"azimuth": 0,
+		"color":
+		{
+			"r": 255,
+			"g": 255,
+			"b": 255
+		}
+	},
+	"floorHidden": false,
+	"grid":
+	{
+		"type": 0,
+		"snapType": 0,
+		"visibility": 0,
+		"size":
+		{
+			"x": 5.0799999237060547,
+			"y": 5.0799999237060547
+		},
+		"offset":
+		{
+			"x": 0,
+			"y": 0
+		},
+		"rotation": 0,
+		"color":
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0,
+			"a": 179
+		},
+		"thickLines": false
+	},
+	"objects": [
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999966183,
+					"y": 7.8211239467375389e-07,
+					"z": 2.5434644299900946e-07,
+					"w": 3.3456507910898386e-10
+				},
+				"translation":
+				{
+					"x": -15.240006562444158,
+					"y": -35.560009007266665,
+					"z": 86.847262576293929
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 16,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "nw9",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.9999999925833376,
+					"y": -0.00012179187246955206,
+					"z": -2.543614550149245e-07,
+					"w": 2.5785045034321195e-12
+				},
+				"translation":
+				{
+					"x": 0.0027752523233251798,
+					"y": 35.562134222831254,
+					"z": 86.847256472302078
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 15,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "056",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999998257564726,
+					"y": 0.00018667790564809246,
+					"z": 2.5432856375714296e-07,
+					"w": 7.3104198078408494e-11
+				},
+				"translation":
+				{
+					"x": -15.237888771362201,
+					"y": -25.399145881196702,
+					"z": 86.847262575687523
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 17,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ll5",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999999996037,
+					"y": -1.2137583505277883e-07,
+					"z": -2.5433467342691719e-07,
+					"w": 1.4954315401544134e-11
+				},
+				"translation":
+				{
+					"x": -15.240002982188102,
+					"y": -15.240010435763526,
+					"z": 86.847262575602983
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 18,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "yna",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999999968514,
+					"y": 7.5168016367201474e-07,
+					"z": 2.543375435797829e-07,
+					"w": 6.1533614055691279e-12
+				},
+				"translation":
+				{
+					"x": -15.240019962896847,
+					"y": 35.560006795282661,
+					"z": 86.847262576046091
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 23,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "o4o",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999059375744,
+					"y": 0.00013715861240469343,
+					"z": 2.6193521170742382e-11,
+					"w": 1.0148780926733267e-10
+				},
+				"translation":
+				{
+					"x": 15.238027211197849,
+					"y": -25.399529280301255,
+					"z": 86.84724731700868
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "k3b",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999999505373,
+					"y": 3.1349456991137321e-06,
+					"z": -2.5429722828522977e-07,
+					"w": 4.115032346609325e-11
+				},
+				"translation":
+				{
+					"x": -15.239989811046787,
+					"y": 25.399775765021477,
+					"z": 86.847262575575158
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 22,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "0wx",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999955416710573,
+					"y": -0.00094428046139219705,
+					"z": -4.59911985025819e-11,
+					"w": 3.0128733125606286e-11
+				},
+				"translation":
+				{
+					"x": 15.239574699042354,
+					"y": 25.393625416454217,
+					"z": 86.847247317065694
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 6,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "v1j",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999998556521,
+					"y": -5.3670202934115185e-06,
+					"z": 2.5434525331491868e-07,
+					"w": 1.0740353482032875e-10
+				},
+				"translation":
+				{
+					"x": 6.5587511804121999e-05,
+					"y": 25.400707353876083,
+					"z": 86.847256472186643
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 14,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "h25",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.9999999998873591,
+					"y": -1.5007237229117674e-05,
+					"z": 2.5432451718435301e-07,
+					"w": 5.995323114335793e-11
+				},
+				"translation":
+				{
+					"x": 0.00031652373834323386,
+					"y": 15.240195662901465,
+					"z": 86.847256472532464
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 13,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "uc0",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999745501211,
+					"y": -7.1343612738246004e-05,
+					"z": 2.5434887896063389e-07,
+					"w": 2.6851232567753327e-11
+				},
+				"translation":
+				{
+					"x": -15.240713699217864,
+					"y": 15.239587412308069,
+					"z": 86.847262575848305
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 21,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "f1f",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.9999999973917858,
+					"y": -7.2224398503306856e-05,
+					"z": 2.5431535105916672e-07,
+					"w": 1.6454211137609033e-11
+				},
+				"translation":
+				{
+					"x": -0.00040739862325658252,
+					"y": 5.0831225965172164,
+					"z": 86.847256472602851
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 12,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "tqx",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999989125954,
+					"y": -1.4745043781479422e-05,
+					"z": -2.5433503264696585e-07,
+					"w": 3.7187133631838301e-11
+				},
+				"translation":
+				{
+					"x": -0.00044412314310415379,
+					"y": -5.0799510507427819,
+					"z": 86.847256472144522
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 11,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "jd3",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999998976118198,
+					"y": 0.00014309986463190052,
+					"z": 2.5433395191895898e-07,
+					"w": 9.6178727782608392e-11
+				},
+				"translation":
+				{
+					"x": 0.00017580509990564692,
+					"y": -15.239980949059817,
+					"z": 86.847256472087778
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 10,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "rfc",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999947689255,
+					"y": -3.2344245477432707e-05,
+					"z": 2.5432535911707952e-07,
+					"w": -2.0088737218348005e-12
+				},
+				"translation":
+				{
+					"x": -15.239223464623542,
+					"y": 5.0798109147187631,
+					"z": 86.84726257603954
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 20,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "sa1",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998797636835,
+					"y": -0.00015507159130663829,
+					"z": -2.5433785356033292e-07,
+					"w": -1.6887444129591511e-11
+				},
+				"translation":
+				{
+					"x": 0.00027743219365949841,
+					"y": -25.399845022652869,
+					"z": 86.847256472270786
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 9,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "gvv",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999964620723,
+					"y": -2.6599267417976185e-05,
+					"z": -2.5434482481498473e-07,
+					"w": 3.1360882446331161e-12
+				},
+				"translation":
+				{
+					"x": -15.239567476423851,
+					"y": -5.0794166299333927,
+					"z": 86.847262575988282
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 19,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "a68",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998923284072,
+					"y": -0.00014674554136236536,
+					"z": -2.5430094677163451e-07,
+					"w": 4.6616180528730068e-12
+				},
+				"translation":
+				{
+					"x": -0.00011278764314583349,
+					"y": -35.559228223302199,
+					"z": 86.847256472201863
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 8,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "3e5",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999994861163721,
+					"y": -0.00032058808927854594,
+					"z": 3.4730136971103876e-10,
+					"w": 5.9462964490973672e-10
+				},
+				"translation":
+				{
+					"x": 15.240037988223447,
+					"y": -35.561448916523872,
+					"z": 86.847247317081212
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ddc",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998364916343,
+					"y": -0.00018083603863322672,
+					"z": -3.5529838655513108e-11,
+					"w": 5.9524252721594897e-12
+				},
+				"translation":
+				{
+					"x": 15.242012637101499,
+					"y": -5.0802851343779469,
+					"z": 86.847247316856041
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "i91",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999996921418854,
+					"y": -0.00024813629727840923,
+					"z": -2.1632538528852036e-11,
+					"w": 1.0071479544272436e-10
+				},
+				"translation":
+				{
+					"x": 15.2417225123171,
+					"y": -15.241160137711999,
+					"z": 86.847247316856325
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "95i",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999998966894843,
+					"y": 0.00014374318404810173,
+					"z": 2.3681790325726115e-12,
+					"w": 6.8846664377828432e-11
+				},
+				"translation":
+				{
+					"x": 15.240697216301482,
+					"y": 35.560000308280436,
+					"z": 86.84724731712862
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 7,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "8yj",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999998712711746,
+					"y": -0.00016045486856156371,
+					"z": -4.754189115743455e-11,
+					"w": 4.7792197666482883e-11
+				},
+				"translation":
+				{
+					"x": 15.23997195811809,
+					"y": 15.24000117191142,
+					"z": 86.847247317231776
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 5,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "1su",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999983245014,
+					"y": 1.830573059343595e-05,
+					"z": 1.2422460700245884e-11,
+					"w": 6.4016858468196012e-11
+				},
+				"translation":
+				{
+					"x": 15.240908794621479,
+					"y": 5.0804804461780533,
+					"z": 86.847247317168041
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 4,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6C466780044B6FF2509B3B9B64985E5C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "campaign-fate-card.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "5tu",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Table",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType1",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Static",
+			"templateId": "D7BC36B74A60E6D1B9553B933D953904",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "D74C7D5D6745CD565913DAA5FB3E9C93",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ohs",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		}
+	],
+	"zones": [],
+	"labels": []
+}
