@@ -76,42 +76,42 @@
 			"X": 0,
 			"Y": 0,
 			"Z": 1,
-			"Name": "1",
+			"Name": "arrow",
 			"Metadata": ""
 		},
 		{
 			"X": -1,
 			"Y": 0,
 			"Z": 0,
-			"Name": "2",
+			"Name": "crescent",
 			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": 1,
 			"Z": 0,
-			"Name": "3",
+			"Name": "hexagon",
 			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": -1,
 			"Z": 0,
-			"Name": "4",
+			"Name": "crescent edict",
 			"Metadata": ""
 		},
 		{
 			"X": 1,
 			"Y": 0,
 			"Z": 0,
-			"Name": "5",
+			"Name": "hexagon edict",
 			"Metadata": ""
 		},
 		{
 			"X": 0,
 			"Y": 0,
 			"Z": -1,
-			"Name": "6",
+			"Name": "arrow edict",
 			"Metadata": ""
 		}
 	]

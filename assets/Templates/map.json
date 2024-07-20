@@ -969,6 +969,19 @@
 			]
 		},
 		{
+			"X": -16.300000000000001,
+			"Y": 33.759999999999998,
+			"Z": 0.5,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter-overlay"
+			]
+		},
+		{
 			"X": -17.538,
 			"Y": 33.776000000000003,
 			"Z": 0.5,

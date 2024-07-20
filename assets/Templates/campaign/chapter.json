@@ -31,7 +31,99 @@
 	"Collision": [],
 	"Lights": [],
 	"SnapPointsGlobal": false,
-	"SnapPoints": [],
+	"SnapPoints": [
+		{
+			"X": -0.5,
+			"Y": -3.073,
+			"Z": 0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -0.5,
+			"Y": -1.0169999999999999,
+			"Z": 0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -0.5,
+			"Y": 1.0569999999999999,
+			"Z": 0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -0.5,
+			"Y": 3.1110000000000002,
+			"Z": 0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -1.0700000000000001,
+			"Y": -2.1000000000000001,
+			"Z": -0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -1.0700000000000001,
+			"Y": -0.021000000000000001,
+			"Z": -0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		},
+		{
+			"X": -1.0700000000000001,
+			"Y": 2,
+			"Z": -0.40000000000000002,
+			"Range": 0.5,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"chapter"
+			]
+		}
+	],
 	"ZoomViewDirection":
 	{
 		"X": 0,
@@ -47,8 +139,8 @@
 	"HiddenIndex": -1,
 	"NumHorizontal": 1,
 	"NumVertical": 1,
-	"Width": 10.5,
-	"Height": 4.3,
+	"Width": 11.289,
+	"Height": 5.1819,
 	"Thickness": 0.2,
 	"HiddenInHand": false,
 	"UsedWithCardHolders": false,
@@ -68,5 +160,8 @@
 	},
 	"CardTags":
 	{
+		"0": [
+			"chapter-overlay"
+		]
 	}
 }
