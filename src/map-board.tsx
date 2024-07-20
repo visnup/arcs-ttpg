@@ -2,7 +2,6 @@ import {
   refObject as _refObject,
   refPackageId as _refPackageId,
   HorizontalBox,
-  refPackageId,
   Text,
   UIElement,
   Vector,
