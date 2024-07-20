@@ -72,13 +72,23 @@ refCard.onPrimaryAction.add((card) => {
           const start = names.findIndex((n) => n === fate);
           const matched = item.takeCards(n, true, start)!;
           matched.setObjectType(ObjectType.Regular);
-          // todo: duplicate using metadata
+          // duplicate if specified
           height += matched.getSize().z + dh;
         }
         item.destroy();
       } else if (item.getCardDetails(0)?.name === fate) {
         // single card match
-        // todo: duplicate using metadata
+        // duplicate if specified
+        const n = +(item.getCardDetails(0)!.metadata || 1);
+        const json = item.toJSONString();
+        for (let i = 0; i < n - 1; i++) {
+          item.addCards(
+            world.createObjectFromJSON(
+              json,
+              item.getPosition().add(new Vector(0, 0, item.getSize().z)),
+            ) as Card,
+          );
+        }
         height += item.getSize().z + dh;
       } else {
         // no match
