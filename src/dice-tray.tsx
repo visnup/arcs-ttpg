@@ -19,7 +19,7 @@ diceSummary.relativePositionX = diceSummary.relativePositionY = false;
 diceSummary.positionX = 50;
 diceSummary.positionY = 10;
 diceSummary.width = 200;
-diceSummary.height = 250;
+diceSummary.height = 300;
 
 // Zone
 const zoneId = `zone-${refObject.getId()}`;
