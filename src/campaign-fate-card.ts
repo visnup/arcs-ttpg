@@ -68,27 +68,15 @@ refCard.onPrimaryAction.add((card) => {
         const names = item.getAllCardDetails().map((d) => d.name);
         const n = names.filter((n) => n === fate).length;
         if (n) {
-          item.setObjectType(ObjectType.Penetrable);
           const start = names.findIndex((n) => n === fate);
           const matched = item.takeCards(n, true, start)!;
-          matched.setObjectType(ObjectType.Regular);
-          // duplicate if specified
+          maybeCopy(matched);
           height += matched.getSize().z + dh;
         }
         item.destroy();
       } else if (item.getCardDetails(0)?.name === fate) {
         // single card match
-        // duplicate if specified
-        const n = +(item.getCardDetails(0)!.metadata || 1);
-        const json = item.toJSONString();
-        for (let i = 0; i < n - 1; i++) {
-          item.addCards(
-            world.createObjectFromJSON(
-              json,
-              item.getPosition().add(new Vector(0, 0, item.getSize().z)),
-            ) as Card,
-          );
-        }
+        maybeCopy(item);
         height += item.getSize().z + dh;
       } else {
         // no match
@@ -97,3 +85,31 @@ refCard.onPrimaryAction.add((card) => {
     }
   }
 });
+
+// check metadata for if we need multiple copies
+function maybeCopy(item: Card) {
+  if (item.getStackSize() === 1) {
+    // for a single card, copy via json; add immediately
+    const n = +(item.getCardDetails(0)!.metadata || 1);
+    const json = item.toJSONString();
+    for (let i = 0; i < n - 1; i++) {
+      item.addCards(
+        world.createObjectFromJSON(
+          json,
+          item.getPosition().add(new Vector(0, 0, item.getSize().z)),
+        ) as Card,
+      );
+    }
+  } else {
+    // for a deck, can take cards with copying; add them after
+    const copies: Card[] = [];
+    for (const [i, { metadata }] of item.getAllCardDetails().entries()) {
+      const d = +(metadata || 1);
+      for (let j = 0; j < d - 1; j++) {
+        const c = item.takeCards(1, true, i, true);
+        if (c) copies.push(c);
+      }
+    }
+    for (const c of copies) item.addCards(c);
+  }
+}
