@@ -46,7 +46,7 @@
 	"BackIndex": -3,
 	"HiddenIndex": -1,
 	"NumHorizontal": 6,
-	"NumVertical": 7,
+	"NumVertical": 6,
 	"Width": 2.7,
 	"Height": 2.7,
 	"Thickness": 0.2,
@@ -61,7 +61,7 @@
 	"Model": "campaign/seal-mask.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
-	"Indices": [ 0, 1, 2, 7, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35 ],
+	"Indices": [ 0, 1, 2, 7, 24, 25, 26, 27, 28, 29, 31, 32, 33, 34 ],
 	"CardNames":
 	{
 		"0": "f1",
@@ -77,15 +77,16 @@
 		"32": "f23",
 		"33": "f23",
 		"34": "f23",
-		"35": "f23"
+		"35": "f23",
+		"24": "f16"
 	},
 	"CardMetadata":
 	{
 		"7": "5",
-		"35": "2",
-		"34": "2",
+		"32": "2",
 		"33": "2",
-		"32": "2"
+		"34": "2",
+		"35": "2"
 	},
 	"CardTags":
 	{
