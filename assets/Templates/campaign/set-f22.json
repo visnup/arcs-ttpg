@@ -61,14 +61,13 @@
 	"Model": "campaign/set-f22.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
-	"Indices": [ 0 ],
+	"Indices": [ 0, 0, 0, 0, 0, 0 ],
 	"CardNames":
 	{
 		"0": "f22"
 	},
 	"CardMetadata":
 	{
-		"0": "6"
 	},
 	"CardTags":
 	{
