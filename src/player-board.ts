@@ -97,14 +97,23 @@ function updateAmbitions() {
   ];
   for (const obj of courtZone.getOverlappingObjects()) {
     switch (obj.getTemplateName()) {
-      case "bc":
+      case "bc": {
         // hack: use the index in the base court deck to infer the resource type
         // 0-9 (0-1): tycoon, 15-19 (3): empath, 20-24 (4): keeper
         const suit =
           courtSuits[Math.floor((obj as Card).getCardDetails().index / 5)];
         if (suit && suit in ambitions) ambitions[suit]++;
         break;
-      case "resource":
+      }
+      case "cc": {
+        // same hack: but less cards
+        // 0-3: tycoon, 6-7: empath, 8-9: keeper
+        const suit =
+          courtSuits[Math.floor((obj as Card).getCardDetails().index / 2)];
+        if (suit && suit in ambitions) ambitions[suit]++;
+        break;
+      }
+      case "resource": {
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
@@ -114,6 +123,12 @@ function updateAmbitions() {
             break;
         }
         break;
+      }
+      default: {
+        if (!(obj instanceof Card)) break;
+        const suit = obj.getCardDetails().metadata;
+        if (suit && suit in ambitions) ambitions[suit as Ambition]++;
+      }
     }
   }
 
