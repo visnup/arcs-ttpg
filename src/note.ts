@@ -7,7 +7,7 @@ import {
 } from "@tabletop-playground/api";
 
 const text = new RichText();
-text.setFont("MarkerFelt.ttc");
+text.setFont("MarkerFelt-Thin.ttf");
 text.setFontSize(9);
 text.setText(refObject.getDescription());
 text.setTextColor(new Color(0, 0, 0, 1));
