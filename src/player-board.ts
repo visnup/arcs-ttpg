@@ -41,7 +41,7 @@ const courtZone =
   );
 courtZone.setId(courtZoneId);
 courtZone.setRotation(refObject.getRotation());
-courtZone.setScale(new Vector(courtZoneHeight, y, 20));
+courtZone.setScale(new Vector(courtZoneHeight, y * 1.5, 20));
 courtZone.onBeginOverlap.add(updateAmbitions);
 courtZone.onEndOverlap.add(updateAmbitions);
 
