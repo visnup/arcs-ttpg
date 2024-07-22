@@ -1,7 +1,17 @@
 import { refCard } from "@tabletop-playground/api";
 
+refCard.addCustomAction("Shuffle and deal");
 refCard.addCustomAction("Draw from bottom");
-refCard.onCustomAction.add((obj, player) => {
-  obj.moveCardInStack(0, obj.getStackSize() - 1);
-  obj.deal(1, [player.getSlot()]);
+
+refCard.onCustomAction.add((card, player, identifier) => {
+  switch (identifier) {
+    case "Shuffle and deal":
+      card.shuffle();
+      card.deal(6);
+      break;
+    case "Draw from bottom":
+      card.moveCardInStack(0, card.getStackSize() - 1);
+      card.deal(1, [player.getSlot()]);
+      break;
+  }
 });
