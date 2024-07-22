@@ -1,6 +1,6 @@
 {
 	"Type": "Generic",
-	"GUID": "6F4FD66B74425CF752B59590D6BCA630",
+	"GUID": "C5887CCE63457CD417BD95A56EB5922F",
 	"Name": "initiative",
 	"Metadata": "",
 	"CollisionType": "Regular",
@@ -8,13 +8,13 @@
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Wood",
-	"Roughness": 1,
-	"Metallic": 0,
+	"Roughness": 0.6,
+	"Metallic": 1,
 	"PrimaryColor":
 	{
-		"R": 255,
-		"G": 255,
-		"B": 200
+		"R": 221,
+		"G": 221,
+		"B": 221
 	},
 	"SecondaryColor":
 	{
@@ -29,7 +29,8 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "StaticMesh'/Game/Meshes/Chess/Rook.Rook'",
+			"Model": "initiative.png",
+			"ShapeAccuracy": 10,
 			"Offset":
 			{
 				"X": 0,
@@ -38,19 +39,19 @@
 			},
 			"Scale":
 			{
-				"X": 1,
-				"Y": 1,
-				"Z": 1
+				"X": 7.0160200000000001,
+				"Y": 6.6652199999999997,
+				"Z": 1.2
 			},
 			"Rotation":
 			{
-				"X": -0,
-				"Y": 0,
+				"X": 0,
+				"Y": 90,
 				"Z": 0
 			},
-			"Texture": "Texture2D'/Game/Textures/Chess/T_ChessPieces.T_ChessPieces'",
-			"NormalMap": "Texture2D'/Game/Textures/Chess/N_ChessPieces.N_ChessPieces'",
-			"ExtraMap": "Texture2D'/Game/Textures/Chess/T_ChessPieces_Extra.T_ChessPieces_Extra'",
+			"Texture": "",
+			"NormalMap": "",
+			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
 			"CastShadow": true,
