@@ -247,8 +247,8 @@
 		"visibility": 0,
 		"size":
 		{
-			"x": 2.0000000298023224,
-			"y": 2.0000000298023224
+			"x": 1.5000000223517418,
+			"y": 1.5000000223517418
 		},
 		"offset":
 		{
@@ -692,9 +692,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.163759216299113e-07,
-					"y": 1.4856615244052585e-07,
-					"z": 4.0921291446238525e-05,
+					"x": 1.1637592162991487e-07,
+					"y": 1.4856615244052305e-07,
+					"z": 4.0921291422152946e-05,
 					"w": 0.99999999916270621
 				},
 				"translation":
@@ -762,16 +762,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.1273343382984369e-06,
-					"y": -4.0151759783903709e-05,
-					"z": -0.0045624781077415657,
-					"w": 0.99998959102798546
+					"x": -4.0311605381707409e-06,
+					"y": 4.8001749659562519e-05,
+					"z": -0.0045762996188538872,
+					"w": 0.99998952752585391
 				},
 				"translation":
 				{
-					"x": -39.99247785173533,
-					"y": -2.0006673706761231,
-					"z": 86.788942660263672
+					"x": -34.499917471463228,
+					"y": -4.5000036174469633,
+					"z": 86.788942834363525
 				},
 				"scale3D":
 				{
@@ -834,16 +834,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5080913425361729e-06,
-					"y": 4.5793113460756198e-05,
-					"z": -3.0288010172976369e-05,
-					"w": 0.99999999848265209
+					"x": 5.1247560648970662e-05,
+					"y": -5.0340084452633354e-06,
+					"z": 0.99999999853231092,
+					"w": 1.684412251221257e-05
 				},
 				"translation":
 				{
-					"x": -39.999982685592897,
-					"y": 45.999991046340426,
-					"z": 86.788947107795664
+					"x": -32.999989426195519,
+					"y": 43.499994163857693,
+					"z": 86.788945654784953
 				},
 				"scale3D":
 				{
@@ -890,7 +890,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "ti9",
+			"uniqueId": "nbg",
 			"drawingLines": [],
 			"objectTags": [
 				"agent"
@@ -906,16 +906,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.475223859271952e-06,
-					"y": 4.5751962210193477e-05,
-					"z": -3.269513736912806e-05,
-					"w": 0.9999999984088791
+					"x": -2.7402868236875707e-07,
+					"y": -5.7368290614783239e-07,
+					"z": -0.38265376045877336,
+					"w": 0.92389182245886092
 				},
 				"translation":
 				{
-					"x": -39.99990342845183,
-					"y": 47.999904424219523,
-					"z": 86.788947051943865
+					"x": -29.999990076676365,
+					"y": 42.000006558239392,
+					"z": 86.726210996330451
 				},
 				"scale3D":
 				{
@@ -948,7 +948,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -957,16 +957,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "ship.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "pzh",
+			"uniqueId": "wxg",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
 			"lightsOn": true,
@@ -978,16 +976,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.505453017240933e-06,
-					"y": -4.6002452817405348e-05,
-					"z": -1.6922139404790356e-05,
-					"w": 0.99999999878855816
+					"x": 1.5776911551679628e-07,
+					"y": 4.4656259361397414e-07,
+					"z": -0.38268295902357735,
+					"w": 0.92387972857549738
 				},
 				"translation":
 				{
-					"x": -39.999917000776293,
-					"y": 49.999922545927383,
-					"z": 86.788947260215792
+					"x": -23.999992777690153,
+					"y": 42.000008329828205,
+					"z": 86.726210887340812
 				},
 				"scale3D":
 				{
@@ -1020,7 +1018,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -1029,16 +1027,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "ship.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "8f2",
+			"uniqueId": "heh",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
 			"lightsOn": true,
@@ -1190,9 +1186,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.9589265194924565e-07,
-					"y": 9.8710084647783655e-08,
-					"z": -2.8836342319505543e-05,
+					"x": 1.9589265194924391e-07,
+					"y": 9.8710084647787163e-08,
+					"z": -2.8836342301647655e-05,
 					"w": 0.9999999995842086
 				},
 				"translation":
@@ -1260,16 +1256,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.457883539629574e-06,
-					"y": -4.5859315607617429e-05,
-					"z": -1.7334592444531588e-05,
-					"w": 0.99999999878828116
+					"x": -3.6158071862680454e-07,
+					"y": -1.0182904947972167e-06,
+					"z": -0.38269099009347934,
+					"w": 0.92387640196083842
 				},
 				"translation":
 				{
-					"x": -37.999982123808195,
-					"y": 47.999990864983886,
-					"z": 86.788946222560938
+					"x": -29.999982952138232,
+					"y": -4.5000106823517241,
+					"z": 86.726209926182776
 				},
 				"scale3D":
 				{
@@ -1281,9 +1277,79 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
 				"b": 0,
-				"g": 183,
-				"r": 255,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "8bh",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 4.2495478925191848e-06,
+					"y": 4.4139123254584658e-05,
+					"z": -2.8128734670908814e-05,
+					"w": 0.99999999862122679
+				},
+				"translation":
+				{
+					"x": -32.99991571816809,
+					"y": -4.49999098503055,
+					"z": 86.788938907272495
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
 				"a": 255
 			},
 			"secondaryColor":
@@ -1316,13 +1382,13 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "9lq",
+			"uniqueId": "zho",
 			"drawingLines": [],
 			"objectTags": [
 				"agent"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -1332,858 +1398,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4735755742755664e-06,
-					"y": 4.5744308698240921e-05,
-					"z": -6.0282772024346859e-06,
-					"w": 0.99999999892555269
+					"x": 2.3307918585740892e-07,
+					"y": 6.7046206523412648e-07,
+					"z": -0.38268024171288079,
+					"w": 0.9238808541159772
 				},
 				"translation":
 				{
-					"x": -37.999929730583752,
-					"y": 49.999916655008555,
-					"z": 86.788947044582756
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "w31",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 3.4737377521829193e-07,
-					"y": 6.1100640791638848e-06,
-					"z": 2.6504987789104343e-05,
-					"w": 0.99999999963001607
-				},
-				"translation":
-				{
-					"x": -34.000085840994892,
-					"y": 42.000018035827431,
-					"z": 86.726206954675831
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "wxg",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 4.6286017884316096e-07,
-					"y": -8.1464328965438794e-06,
-					"z": -8.3621637595479063e-06,
-					"w": 0.99999999993174782
-				},
-				"translation":
-				{
-					"x": -25.999969748186857,
-					"y": 41.999997669518059,
-					"z": 86.726205647232291
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "heh",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.30367885455628e-07,
-					"y": -2.2719503851947451e-06,
-					"z": -8.2713972127814325e-06,
-					"w": 0.99999999996320266
-				},
-				"translation":
-				{
-					"x": -27.999971935199007,
-					"y": 41.999997427841549,
-					"z": 86.726209718988173
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "6bz",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.9015807981226073e-07,
-					"y": 3.3174399894193676e-06,
-					"z": 3.6372136900993413e-06,
-					"w": 0.99999999998786449
-				},
-				"translation":
-				{
-					"x": -32.000010341208444,
-					"y": 41.999999761161497,
-					"z": 86.726208743223552
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "aqi",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 5.8426824971701699e-08,
-					"y": 1.0198137921811723e-06,
-					"z": 3.5801193991239446e-06,
-					"w": 0.99999999999306965
-				},
-				"translation":
-				{
-					"x": -30.000009647040454,
-					"y": 41.999999749815998,
-					"z": 86.72621035887903
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "t40",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 7.9541827945881728e-07,
-					"y": 1.4044951153323871e-05,
-					"z": 5.622938781591097e-05,
-					"w": 0.99999999832018138
-				},
-				"translation":
-				{
-					"x": -30.000185989940316,
-					"y": 46.000002164372553,
-					"z": 86.7262018734462
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "l01",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -7.4895918249962916e-07,
-					"y": 1.3193069851950564e-05,
-					"z": 5.3955929348074314e-05,
-					"w": 0.99999999845706988
-				},
-				"translation":
-				{
-					"x": -32.000177180714971,
-					"y": 45.999996264766651,
-					"z": 86.726202976027253
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "xr6",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -9.3213384165104718e-07,
-					"y": 1.6454221814407999e-05,
-					"z": 6.0716574683317189e-05,
-					"w": 0.99999999802094364
-				},
-				"translation":
-				{
-					"x": -34.000200965246215,
-					"y": 45.999989444147189,
-					"z": 86.726201025574056
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "rzc",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1.5235433126588774e-07,
-					"y": -2.6573510703841772e-06,
-					"z": -9.3880839758266016e-06,
-					"w": 0.99999999995238953
-				},
-				"translation":
-				{
-					"x": -25.9999672448524,
-					"y": 45.999994295963383,
-					"z": 86.726209636076817
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "hh0",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 4.4422711460712936e-07,
-					"y": -7.8034943869102009e-06,
-					"z": -8.087160011541593e-06,
-					"w": 0.99999999993675304
-				},
-				"translation":
-				{
-					"x": -27.999970954860011,
-					"y": 46.000000328083729,
-					"z": 86.726205866192799
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "238",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -5.2740663380298083e-07,
-					"y": -9.2766266733647992e-06,
-					"z": -1.7958906653486249e-05,
-					"w": 0.99999999979557175
-				},
-				"translation":
-				{
-					"x": -27.999936155890158,
-					"y": 49.999998213892219,
-					"z": 86.726205315705585
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "pcn",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 5.8653636043752925e-07,
-					"y": -1.0318688359978014e-05,
-					"z": -4.3445310782975894e-05,
-					"w": 0.99999999900284275
-				},
-				"translation":
-				{
-					"x": -25.999848527515695,
-					"y": 50.000001045757756,
-					"z": 86.726204257545533
+					"x": -23.999993130052875,
+					"y": 48.000009102701881,
+					"z": 86.726211046427608
 				},
 				"scale3D":
 				{
@@ -2244,16 +1468,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.606485391670535e-07,
-					"y": 1.1613325330109718e-05,
-					"z": 4.8952198110560605e-05,
-					"w": 0.99999999873418832
+					"x": -2.2636924496341712e-07,
+					"y": -4.642608416077854e-07,
+					"z": -0.38273065419569163,
+					"w": 0.92385997117456664
 				},
 				"translation":
 				{
-					"x": -34.00016029269888,
-					"y": 49.999967789301763,
-					"z": 86.726203920395278
+					"x": -29.999990679289176,
+					"y": 48.000008768554238,
+					"z": 86.726210925583814
 				},
 				"scale3D":
 				{
@@ -2314,16 +1538,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.2644487726913082e-08,
-					"y": -1.1143374703545854e-06,
-					"z": -1.4100392569689351e-06,
-					"w": 0.99999999999838307
+					"x": 2.3528896165094067e-07,
+					"y": 6.765385003544617e-07,
+					"z": -0.38267980465044404,
+					"w": 0.9238810351512714
 				},
 				"translation":
 				{
-					"x": -31.999993034858445,
-					"y": 49.999997363934668,
-					"z": 86.726209922838791
+					"x": -28.499992183482057,
+					"y": 48.000010793409345,
+					"z": 86.726211049856829
 				},
 				"scale3D":
 				{
@@ -2384,16 +1608,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.3790563509946749e-07,
-					"y": -7.1262907836178021e-06,
-					"z": 5.7027956819494009e-06,
-					"w": 0.99999999995831879
+					"x": 1.3659153411379037e-07,
+					"y": 3.9498454267919635e-07,
+					"z": -0.38267916228077603,
+					"w": 0.92388130122646639
 				},
 				"translation":
 				{
-					"x": -30.000016601121573,
-					"y": 49.999998389225155,
-					"z": 86.726206129698326
+					"x": -26.999991887894282,
+					"y": 48.000008664568838,
+					"z": 86.72621086089255
 				},
 				"scale3D":
 				{
@@ -2454,16 +1678,798 @@
 			{
 				"rotation":
 				{
-					"x": 4.4613433661672703e-06,
-					"y": 4.5996132962508216e-05,
-					"z": -6.808088357820216e-06,
-					"w": 0.999999998909051
+					"x": 5.509861511918241e-05,
+					"y": -5.0651380092953978e-06,
+					"z": 0.99999999843874399,
+					"w": 7.8101840910610272e-06
 				},
 				"translation":
 				{
-					"x": -37.999987831025116,
-					"y": -9.9999972264948767,
-					"z": 86.788946325825265
+					"x": -34.499989214757569,
+					"y": 41.999996044631928,
+					"z": 86.78894875845333
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "8ey",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.5557504651141494e-08,
+					"y": -7.0435330821481101e-08,
+					"z": -0.38268521520756554,
+					"w": 0.92387879403173534
+				},
+				"translation":
+				{
+					"x": -26.99999456871554,
+					"y": -4.5000036539577284,
+					"z": 86.72621055344149
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ish",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.3608661321420321e-06,
+					"y": 2.2855300027175048e-05,
+					"z": -2.4997576649836644e-05,
+					"w": 0.99999999942545226
+				},
+				"translation":
+				{
+					"x": 31.500000469386578,
+					"y": -10.500000156462193,
+					"z": 86.788906024349785
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "lau",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -5.5064827129951025e-05,
+					"y": 5.0324394192009478e-06,
+					"z": -0.9999999983777863,
+					"w": 1.3673574349831883e-05
+				},
+				"translation":
+				{
+					"x": -34.499989689363353,
+					"y": 43.499994163500929,
+					"z": 86.788948708254679
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "y7x",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 5.1285567375615384e-05,
+					"y": 5.0928717861863455e-06,
+					"z": -0.9999999986200504,
+					"w": 1.0185899351083902e-05
+				},
+				"translation":
+				{
+					"x": -32.999983658524499,
+					"y": 41.999997925013545,
+					"z": 86.788945728616284
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "y2p",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 5.124597328802306e-05,
+					"y": -5.0341714814034183e-06,
+					"z": 0.99999999846085963,
+					"w": 2.0658849407285191e-05
+				},
+				"translation":
+				{
+					"x": -32.999987517592551,
+					"y": 44.999994163769927,
+					"z": 86.788945653364465
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "mzu",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -5.0791898241029212e-06,
+					"y": 5.1344778367780211e-05,
+					"z": -1.63826944684042e-05,
+					"w": 0.9999999985347614
+				},
+				"translation":
+				{
+					"x": 29.999988737219191,
+					"y": -10.499999566115223,
+					"z": 86.788921348244074
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "aiy",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.3733634807688106e-08,
+					"y": 4.1081433570647206e-08,
+					"z": -0.38268821445418982,
+					"w": 0.92387755169062435
+				},
+				"translation":
+				{
+					"x": -25.499994457963215,
+					"y": -4.5000034879501625,
+					"z": 86.726210627095114
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "r11",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.1062424662786628e-07,
+					"y": -4.3774024018301515e-07,
+					"z": -0.38268256307058468,
+					"w": 0.92387989258425374
+				},
+				"translation":
+				{
+					"x": -25.499992671211174,
+					"y": 42.000008791705795,
+					"z": 86.726210899043068
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "6bz",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.862848044103138e-07,
+					"y": -3.847566821928118e-07,
+					"z": -0.38267497887863766,
+					"w": 0.92388303401461558
+				},
+				"translation":
+				{
+					"x": -28.499991279839943,
+					"y": 42.000009071113972,
+					"z": 86.726210864764653
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "aqi",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.4844435402435864e-07,
+					"y": 7.1440869460874996e-07,
+					"z": -0.38266983885671596,
+					"w": 0.92388516300934431
+				},
+				"translation":
+				{
+					"x": -26.99999391426876,
+					"y": 42.0000094747978,
+					"z": 86.72621107552709
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "t40",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -4.2733428132840716e-06,
+					"y": 4.4244778063764396e-05,
+					"z": -1.2593473475718667e-05,
+					"w": 0.99999999893277125
+				},
+				"translation":
+				{
+					"x": -33.000005793753949,
+					"y": -10.500007130207194,
+					"z": 86.788939857630055
 				},
 				"scale3D":
 				{
@@ -2526,16 +2532,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.4828496751657927e-06,
-					"y": -4.6036920972021354e-05,
-					"z": -1.8114425138412013e-05,
-					"w": 0.99999999876618673
+					"x": -4.248764717360718e-06,
+					"y": 4.421206613415115e-05,
+					"z": -2.3937850412726893e-05,
+					"w": 0.99999999872711043
 				},
 				"translation":
 				{
-					"x": -37.999978612913971,
-					"y": -7.999996456765107,
-					"z": 86.788946368850532
+					"x": -33.000005289602534,
+					"y": -9.0000072449902131,
+					"z": 86.788939814457081
 				},
 				"scale3D":
 				{
@@ -2598,16 +2604,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5387361447914329e-06,
-					"y": -4.582257688671547e-05,
-					"z": -6.3708604636412443e-06,
-					"w": 0.9999999989195516
+					"x": -5.0735585209089852e-06,
+					"y": 5.1326527351470803e-05,
+					"z": -3.7965882143790008e-05,
+					"w": 0.99999999794921912
 				},
 				"translation":
 				{
-					"x": 32.000011185391877,
-					"y": 49.999976991684015,
-					"z": 86.78891663514986
+					"x": 29.999988137975585,
+					"y": 47.999994801872241,
+					"z": 86.788921330921312
 				},
 				"scale3D":
 				{
@@ -2670,16 +2676,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4831406980406588e-06,
-					"y": 4.5792085888248219e-05,
-					"z": -6.3264796504980715e-05,
-					"w": 0.99999999694027586
+					"x": -4.2587568503871023e-06,
+					"y": 4.4154554415565368e-05,
+					"z": -7.7442953700684595e-05,
+					"w": 0.99999999601741352
 				},
 				"translation":
 				{
-					"x": -37.999961626964435,
-					"y": -5.9999959040850293,
-					"z": 86.788947089303477
+					"x": -32.999910056794754,
+					"y": -7.5000002555244265,
+					"z": 86.788939780997225
 				},
 				"scale3D":
 				{
@@ -2742,16 +2748,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4477663396135432e-06,
-					"y": 4.5765231309855513e-05,
-					"z": -3.5254870698754969e-05,
-					"w": 0.99999999832142761
+					"x": -4.2644167779144936e-06,
+					"y": 4.4159410608520562e-05,
+					"z": -4.9411035784805083e-05,
+					"w": 0.99999999779515536
 				},
 				"translation":
 				{
-					"x": -37.999922097739436,
-					"y": -3.9999923982010288,
-					"z": 86.788947041124999
+					"x": -32.999910306548443,
+					"y": -6.0000017164061434,
+					"z": 86.788939788107498
 				},
 				"scale3D":
 				{
@@ -2814,16 +2820,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.3669635618913072e-07,
+					"y": -3.8451563253481966e-07,
+					"z": -0.38268474001516845,
+					"w": 0.92387899086371494
 				},
 				"translation":
 				{
-					"x": -30.000000447034836,
-					"y": -10.000000149011612,
-					"z": 86.726210978345222
+					"x": -26.999995144418968,
+					"y": -10.499982899829178,
+					"z": 86.72621058803395
 				},
 				"scale3D":
 				{
@@ -2884,16 +2890,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.3654162662730191e-07,
+					"y": -3.8426860355875937e-07,
+					"z": -0.38268474006821113,
+					"w": 0.92387899084174396
 				},
 				"translation":
 				{
-					"x": -32.000000476837158,
-					"y": -10.000000149011612,
-					"z": 86.72620954455482
+					"x": -28.499995144383593,
+					"y": -10.499982899851659,
+					"z": 86.72621058835162
 				},
 				"scale3D":
 				{
@@ -2954,16 +2960,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.032782916814056e-07,
+					"y": -2.8903885285731319e-07,
+					"z": -0.38268656738660645,
+					"w": 0.92387823393657353
 				},
 				"translation":
 				{
-					"x": -34.000000506639481,
-					"y": -10.000000149011612,
-					"z": 86.726213144215095
+					"x": -29.999988194855412,
+					"y": -10.499987480808585,
+					"z": 86.726210588166865
 				},
 				"scale3D":
 				{
@@ -3024,16 +3030,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.6003594284683541e-08,
-					"y": -8.0239786252536457e-07,
-					"z": -2.8524640122962545e-06,
-					"w": 0.99999999999560862
+					"x": 1.4443849199138496e-07,
+					"y": 4.0533605751235884e-07,
+					"z": -0.38267986597935111,
+					"w": 0.92388100974846354
 				},
 				"translation":
 				{
-					"x": -25.999989444919507,
-					"y": -9.9999992010213035,
-					"z": 86.726210469704768
+					"x": -24.00000891060829,
+					"y": -10.499972025946036,
+					"z": 86.726210587931348
 				},
 				"scale3D":
 				{
@@ -3094,16 +3100,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.3665905023287077e-07,
+					"y": -3.8454905359720909e-07,
+					"z": -0.38268474005338449,
+					"w": 0.92387899084788527
 				},
 				"translation":
 				{
-					"x": -27.999995310763815,
-					"y": -10.000026373345079,
-					"z": 86.726211059961884
+					"x": -25.499995144430887,
+					"y": -10.499982899844738,
+					"z": 86.726210588420045
 				},
 				"scale3D":
 				{
@@ -3234,16 +3240,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4748489933031718e-06,
-					"y": 4.5754562544414509e-05,
-					"z": -2.2186677694713034e-06,
-					"w": 0.99999999894078662
+					"x": 1.4909911422543916e-07,
+					"y": 4.2173465740062124e-07,
+					"z": -0.38263311560032981,
+					"w": 0.92390037279231796
 				},
 				"translation":
 				{
-					"x": -39.999943079629475,
-					"y": 41.999938020796208,
-					"z": 86.788947052617686
+					"x": -29.999993761728089,
+					"y": 45.00000779887921,
+					"z": 86.72621087038938
 				},
 				"scale3D":
 				{
@@ -3276,7 +3282,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -3285,16 +3291,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "ship.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "8ey",
+			"uniqueId": "rzc",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
 			"lightsOn": true,
@@ -3306,16 +3310,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4757327476378985e-06,
-					"y": 4.5757362601026816e-05,
-					"z": -3.2695125074612693e-05,
-					"w": 0.99999999840863019
+					"x": 2.1842078282725122e-05,
+					"y": -2.602968309246235e-05,
+					"z": -0.70711736957581406,
+					"w": 0.70709619182227301
 				},
 				"translation":
 				{
-					"x": -39.999933946254615,
-					"y": 43.999944097072131,
-					"z": 86.788947056927569
+					"x": -45.999979203598599,
+					"y": 98.000000907544262,
+					"z": 86.770029193612856
 				},
 				"scale3D":
 				{
@@ -3327,9 +3331,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
+				"b": 169,
+				"g": 149,
+				"r": 0,
 				"a": 255
 			},
 			"secondaryColor":
@@ -3348,7 +3352,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -3362,13 +3366,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "y7x",
+			"uniqueId": "ouy",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": 1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3378,16 +3380,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4412098180103945e-06,
-					"y": 4.5706904475821529e-05,
-					"z": -8.4354038882290609e-06,
-					"w": 0.99999999890999913
+					"x": 2.1844980334902147e-05,
+					"y": -2.5977691941766297e-05,
+					"z": -0.70711901735241156,
+					"w": 0.70709454399430649
 				},
 				"translation":
 				{
-					"x": -37.999945078179614,
-					"y": 41.999945999534134,
-					"z": 86.788946991402355
+					"x": -43.99997839004385,
+					"y": 98.000004642710238,
+					"z": 86.770029112588432
 				},
 				"scale3D":
 				{
@@ -3399,9 +3401,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
+				"b": 61,
+				"g": 83,
+				"r": 225,
 				"a": 255
 			},
 			"secondaryColor":
@@ -3420,7 +3422,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -3434,13 +3436,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "y2p",
+			"uniqueId": "922",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -3522,16 +3522,86 @@
 			{
 				"rotation":
 				{
-					"x": -4.4754403567793353e-06,
-					"y": 4.5754660825219059e-05,
-					"z": -2.8885589118366776e-05,
-					"w": 0.99999999852605215
+					"x": 2.1844750075775528e-05,
+					"y": -2.5977512766049309e-05,
+					"z": -0.70711901734803895,
+					"w": 0.70709454399869298
 				},
 				"translation":
 				{
-					"x": -37.99998391600797,
-					"y": 45.9999929284781,
-					"z": 86.788947053609149
+					"x": -41.999975338328255,
+					"y": 98.000004642694137,
+					"z": 86.770029114324032
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "q3m",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.1842478378885623e-05,
+					"y": -2.6030026660297688e-05,
+					"z": -0.70711736958264204,
+					"w": 0.70709619181541994
+				},
+				"translation":
+				{
+					"x": -47.999979203591003,
+					"y": 98.000000907538706,
+					"z": 86.770029194876329
 				},
 				"scale3D":
 				{
@@ -3564,7 +3634,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -3578,11 +3648,9 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "mzu",
+			"uniqueId": "yfu",
 			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
 			"lightsOn": true,
@@ -3594,88 +3662,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.5396311436389031e-06,
-					"y": -4.5836564582107586e-05,
-					"z": -2.40713448119152e-05,
-					"w": 0.99999999864948574
+					"x": -1.1799579480831969e-07,
+					"y": -3.328929068586497e-07,
+					"z": -0.38268348721464884,
+					"w": 0.92387950979178601
 				},
 				"translation":
 				{
-					"x": -37.99997837280953,
-					"y": 43.999994628734818,
-					"z": 86.788946252295659
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 0,
-				"g": 183,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "nbg",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": 45.999996814215621,
-					"y": 45.999996048496257,
-					"z": 86.726180446578383
+					"x": 40.500002292517195,
+					"y": 44.99999706140423,
+					"z": 86.726179900151465
 				},
 				"scale3D":
 				{
@@ -3736,16 +3732,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.7425675471824159e-07,
+					"y": 1.7432453107212663e-06,
+					"z": -0.38268295592651919,
+					"w": 0.92387972985679945
 				},
 				"translation":
 				{
-					"x": 43.99999681387655,
-					"y": 45.999996048494495,
-					"z": 86.726180445774219
+					"x": 39.000004206252072,
+					"y": 44.999995896868114,
+					"z": 86.726182336592046
 				},
 				"scale3D":
 				{
@@ -3806,16 +3802,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.1046526367798305e-06,
+					"y": 5.3656918674864192e-08,
+					"z": -0.38269193891999304,
+					"w": 0.92387600893433397
 				},
 				"translation":
 				{
-					"x": 41.999996813558312,
-					"y": 45.999996048490551,
-					"z": 86.726180444906731
+					"x": 37.500002563236926,
+					"y": 44.999999145474192,
+					"z": 86.726183326351887
 				},
 				"scale3D":
 				{
@@ -3876,16 +3872,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5388020626794574e-06,
-					"y": -4.5822438472570727e-05,
-					"z": -6.3708636988071975e-06,
-					"w": 0.99999999891955782
+					"x": 4.2400366026366389e-06,
+					"y": 4.4239742931709087e-05,
+					"z": -1.6784664350099964e-05,
+					"w": 0.99999999887157121
 				},
 				"translation":
 				{
-					"x": 34.000011185372294,
-					"y": 49.999976991682217,
-					"z": 86.788916634915751
+					"x": 31.49999245141532,
+					"y": 47.999996924137918,
+					"z": 86.788914561758133
 				},
 				"scale3D":
 				{
@@ -3948,16 +3944,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.9286881562645789e-09,
+					"y": 2.2292560458757098e-06,
+					"z": -0.38269145937592747,
+					"w": 0.92387620757098909
 				},
 				"translation":
 				{
-					"x": 43.999996813916823,
-					"y": 49.999996048497565,
-					"z": 86.726180445842203
+					"x": 39.000003347013148,
+					"y": 47.999998644792726,
+					"z": 86.726182099794102
 				},
 				"scale3D":
 				{
@@ -4018,16 +4014,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.1127389108545695e-06,
+					"y": 3.7227286014425208e-08,
+					"z": -0.38269194044710658,
+					"w": 0.92387600830175731
 				},
 				"translation":
 				{
-					"x": 41.999996813608902,
-					"y": 49.999996048497451,
-					"z": 86.726180445258706
+					"x": 37.500002566472581,
+					"y": 47.99999914334353,
+					"z": 86.726183317693483
 				},
 				"scale3D":
 				{
@@ -4088,16 +4084,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4233807443698759e-06,
-					"y": -4.5810123256044128e-05,
-					"z": -6.29583112088198e-06,
-					"w": 0.99999999892111446
+					"x": 5.062629448466609e-06,
+					"y": -5.1291726620208095e-05,
+					"z": -3.7966206174352685e-05,
+					"w": 0.99999999795104788
 				},
 				"translation":
 				{
-					"x": 32.000011288336481,
-					"y": 41.999980191654259,
-					"z": 86.788916536358784
+					"x": 30.000004246589569,
+					"y": 41.999995815868715,
+					"z": 86.788920282430141
 				},
 				"scale3D":
 				{
@@ -4160,16 +4156,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4409273791873175e-06,
-					"y": -4.5707243883688433e-05,
-					"z": -6.7686028829555709e-06,
-					"w": 0.99999999892265612
+					"x": 5.0623730817965744e-06,
+					"y": -5.1291836677601239e-05,
+					"z": -3.7966198984759438e-05,
+					"w": 0.99999999795104377
 				},
 				"translation":
 				{
-					"x": 32.00001068314463,
-					"y": 43.999979583065709,
-					"z": 86.788916473183406
+					"x": 30.000004246609464,
+					"y": 43.499995815854057,
+					"z": 86.788920282652811
 				},
 				"scale3D":
 				{
@@ -4232,16 +4228,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.5275567995073255e-06,
-					"y": -4.5853184465661749e-05,
-					"z": -1.5193043116374789e-05,
-					"w": 0.99999999882307899
+					"x": 4.2402452195873524e-06,
+					"y": 4.7958614819082117e-05,
+					"z": -2.9448925724659631e-05,
+					"w": 0.9999999984073763
 				},
 				"translation":
 				{
-					"x": -39.999978921504635,
-					"y": -3.999998295675141,
-					"z": 86.788946257353388
+					"x": -34.499917649785985,
+					"y": -5.9999899287419396,
+					"z": 86.788941957336363
 				},
 				"scale3D":
 				{
@@ -4304,16 +4300,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4491345269500639e-06,
-					"y": 4.5989277463217058e-05,
-					"z": -1.4737622566746148e-06,
-					"w": 0.99999999893150981
+					"x": -4.2547141482524897e-06,
+					"y": 4.7963102479775061e-05,
+					"z": -1.510365107188686e-05,
+					"w": 0.99999999872665901
 				},
 				"translation":
 				{
-					"x": -39.999936218631802,
-					"y": -5.9999835152950958,
-					"z": 86.788947208184254
+					"x": -34.499911653471592,
+					"y": -7.4999997932855429,
+					"z": 86.7889428226826
 				},
 				"scale3D":
 				{
@@ -4376,16 +4372,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.4527575512660675e-06,
-					"y": 3.6530823203613814e-05,
-					"z": -1.5423722121661429e-05,
-					"w": 0.99999999920784322
+					"x": -4.2730860965279202e-06,
+					"y": 4.8061262583535366e-05,
+					"z": -2.0222800400412775e-05,
+					"w": 0.99999999863144695
 				},
 				"translation":
 				{
-					"x": -39.999991358061635,
-					"y": -8.0000707639210518,
-					"z": 86.788939533546355
+					"x": -34.500006812987401,
+					"y": -9.0000078927988749,
+					"z": 86.788942910936953
 				},
 				"scale3D":
 				{
@@ -4448,16 +4444,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4965605930417214e-06,
-					"y": -4.60108430804955e-05,
-					"z": -0.00021360639899954329,
-					"w": 0.99999997611754443
+					"x": -4.2579158465314027e-06,
+					"y": 4.805058128833475e-05,
+					"z": -0.00021858000723079882,
+					"w": 0.99999997494789583
 				},
 				"translation":
 				{
-					"x": -39.999794783734615,
-					"y": -9.9999608042093371,
-					"z": 86.788947253680817
+					"x": -34.500005315171997,
+					"y": -10.500007833477808,
+					"z": 86.788942897829997
 				},
 				"scale3D":
 				{
@@ -4520,16 +4516,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -7.708511309937162e-08,
+					"y": -2.1697659839428679e-07,
+					"z": -0.38269169714108475,
+					"w": 0.92387610908564088
 				},
 				"translation":
 				{
-					"x": 39.999996813226915,
-					"y": 45.999996048489692,
-					"z": 86.72618044416528
+					"x": 36.000003531033762,
+					"y": 44.999998839700709,
+					"z": 86.726186065646516
 				},
 				"scale3D":
 				{
@@ -4590,16 +4586,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.513700282624351e-06,
-					"y": -4.5794361263121579e-05,
-					"z": -6.4702664877340343e-06,
-					"w": 0.99999999892031932
+					"x": -5.0908916203776864e-06,
+					"y": 5.1330005986738345e-05,
+					"z": -2.51983941238925e-05,
+					"w": 0.99999999835217701
 				},
 				"translation":
 				{
-					"x": 32.00001105985492,
-					"y": -8.0000101533956727,
-					"z": 86.788916595011983
+					"x": 29.999989480116014,
+					"y": -9.0000001881753615,
+					"z": 86.788921347408362
 				},
 				"scale3D":
 				{
@@ -4662,16 +4658,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.8394363718157511e-09,
-					"y": 3.8870314842008549e-06,
-					"z": 4.2087552520605384e-08,
-					"w": 0.9999999999924446
+					"x": -5.2828929571117123e-08,
+					"y": -1.4803418641951729e-07,
+					"z": -0.3826962815475507,
+					"w": 0.92387421010094928
 				},
 				"translation":
 				{
-					"x": 37.999996033228889,
-					"y": 49.999996048411504,
-					"z": 86.726183381056899
+					"x": 34.50000320736833,
+					"y": 47.999998692200087,
+					"z": 86.726186103081673
 				},
 				"scale3D":
 				{
@@ -4732,16 +4728,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4811859858514424e-06,
-					"y": -4.581699663299971e-05,
-					"z": -6.4821046141340152e-06,
-					"w": 0.99999999891935198
+					"x": -5.0630410370419139e-06,
+					"y": 5.1326371695430053e-05,
+					"z": -2.5217167965346993e-05,
+					"w": 0.99999999835203179
 				},
 				"translation":
 				{
-					"x": 32.000011197693702,
-					"y": -6.0000108803012395,
-					"z": 86.788916586841566
+					"x": 29.999989454383087,
+					"y": -7.5000001511153132,
+					"z": 86.788921322747854
 				},
 				"scale3D":
 				{
@@ -4804,16 +4800,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4830471876379076e-06,
-					"y": -4.5804688895044183e-05,
-					"z": -6.466805807133085e-06,
-					"w": 0.99999999892000657
+					"x": -5.0762953455623532e-06,
+					"y": 5.1328047438389141e-05,
+					"z": -2.5282358511084328e-05,
+					"w": 0.99999999835023246
 				},
 				"translation":
 				{
-					"x": 32.000011141677923,
-					"y": -4.0000112612640413,
-					"z": 86.788916578197501
+					"x": 29.999989447682545,
+					"y": -6.0000004743200455,
+					"z": 86.788921333993244
 				},
 				"scale3D":
 				{
@@ -4876,16 +4872,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.483378051649594e-06,
-					"y": -4.5804570609230348e-05,
-					"z": -6.5040056464601628e-06,
-					"w": 0.99999999891976932
+					"x": -4.5371374503217517e-06,
+					"y": -4.6791367643024463e-05,
+					"z": -2.4373859575117602e-05,
+					"w": 0.99999999859794853
 				},
 				"translation":
 				{
-					"x": 32.000011131871027,
-					"y": -2.0000118717695443,
-					"z": 86.78891657891603
+					"x": 30.000004021833487,
+					"y": -4.4999998361035507,
+					"z": 86.788917552655164
 				},
 				"scale3D":
 				{
@@ -4948,16 +4944,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5059364501867498e-06,
-					"y": 4.6042849835610714e-05,
-					"z": -5.4617321254348745e-06,
-					"w": 0.99999999891496094
+					"x": 5.0689096655054861e-06,
+					"y": -5.1342805195689188e-05,
+					"z": -8.7625893784130835e-06,
+					"w": 0.99999999863071987
 				},
 				"translation":
 				{
-					"x": 33.999921321890987,
-					"y": -1.999996396341863,
-					"z": 86.78891677341143
+					"x": 31.500002649599089,
+					"y": -4.4999983893645084,
+					"z": 86.788920323651752
 				},
 				"scale3D":
 				{
@@ -5020,16 +5016,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.5001252910085456e-06,
-					"y": 4.5851701788146346e-05,
-					"z": -3.0375567800634086e-05,
-					"w": 0.99999999847734755
+					"x": -1.2803603456480354e-06,
+					"y": 2.2786595206314061e-05,
+					"z": -3.6337151179684041e-05,
+					"w": 0.99999999907937165
 				},
 				"translation":
 				{
-					"x": 34.000004843770476,
-					"y": -4.0000000287506854,
-					"z": 86.788916627074201
+					"x": 31.500000469386578,
+					"y": -6.0000000894069672,
+					"z": 86.788905980328764
 				},
 				"scale3D":
 				{
@@ -5092,16 +5088,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.8462193757987023e-06,
-					"y": 3.7363567279417561e-05,
-					"z": -3.5254582824128204e-05,
-					"w": 0.99999999867314249
+					"x": -1.3156808148319918e-06,
+					"y": 2.2786654673873e-05,
+					"z": -4.1462181059785265e-05,
+					"w": 0.99999999887996249
 				},
 				"translation":
 				{
-					"x": 34.000009724786828,
-					"y": -5.9999998782110042,
-					"z": 86.788909951107897
+					"x": 31.500000469386578,
+					"y": -7.500000111758709,
+					"z": 86.788905980101759
 				},
 				"scale3D":
 				{
@@ -5164,16 +5160,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4832809235383609e-06,
-					"y": 4.5834295018257513e-05,
-					"z": -4.9122456912678674e-06,
-					"w": 0.99999999892749358
+					"x": -1.3076611137976736e-06,
+					"y": 2.2775677113380273e-05,
+					"z": -9.6400431565288597e-06,
+					"w": 0.9999999996933141
 				},
 				"translation":
 				{
-					"x": 33.999922039467748,
-					"y": -7.9999826623186001,
-					"z": 86.788916600703772
+					"x": 31.500000469386578,
+					"y": -9.0000001341104507,
+					"z": 86.788905965207348
 				},
 				"scale3D":
 				{
@@ -5236,16 +5232,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4255772918655706e-06,
-					"y": -4.5810801621245129e-05,
-					"z": -6.8909192812669021e-06,
-					"w": 0.99999999891714986
+					"x": -5.0737295494459897e-06,
+					"y": 5.1326229810890007e-05,
+					"z": -3.7965890417621986e-05,
+					"w": 0.99999999794923333
 				},
 				"translation":
 				{
-					"x": 32.000011131598797,
-					"y": 47.999979579040399,
-					"z": 86.78891653866323
+					"x": 29.999988138025188,
+					"y": 46.499994801859202,
+					"z": 86.788921331822678
 				},
 				"scale3D":
 				{
@@ -5308,16 +5304,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.8597327039043424e-09,
-					"y": 3.8872279065682863e-06,
-					"z": 4.2087752211467989e-08,
-					"w": 0.99999999999244382
+					"x": -1.0892318287846496e-07,
+					"y": -3.075364110156849e-07,
+					"z": -0.38269155308072084,
+					"w": 0.92387616875886525
 				},
 				"translation":
 				{
-					"x": 37.999996033190726,
-					"y": 45.999996048409173,
-					"z": 86.726183380913142
+					"x": 34.500000850623927,
+					"y": 44.999999496317514,
+					"z": 86.72618601891196
 				},
 				"scale3D":
 				{
@@ -5378,16 +5374,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -7.5902850519549218e-08,
+					"y": -2.1442365974511939e-07,
+					"z": -0.38269405935458184,
+					"w": 0.92387513059647841
 				},
 				"translation":
 				{
-					"x": 39.999996813283218,
-					"y": 49.999996048491376,
-					"z": 86.726180444322381
+					"x": 36.000002407689557,
+					"y": 47.999997599847575,
+					"z": 86.726186066632891
 				},
 				"scale3D":
 				{
@@ -5448,16 +5444,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.4327994481025489e-06,
+					"y": 1.0224784259834938e-05,
+					"z": -0.38268438555489137,
+					"w": 0.9238791376267842
 				},
 				"translation":
 				{
-					"x": 42.00000062584877,
-					"y": -10.000000149011612,
-					"z": 86.726185138553262
+					"x": 37.500000558793545,
+					"y": -10.500000156462193,
+					"z": 86.726201871815988
 				},
 				"scale3D":
 				{
@@ -5518,16 +5514,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.4327788429001427e-06,
+					"y": 1.0224652656683681e-05,
+					"z": -0.38268438554136691,
+					"w": 0.92387913763238794
 				},
 				"translation":
 				{
-					"x": 44.000000655651093,
-					"y": -10.000000149011612,
-					"z": 86.72618249584275
+					"x": 39.000000581145287,
+					"y": -10.500000156462193,
+					"z": 86.726200727137098
 				},
 				"scale3D":
 				{
@@ -5588,16 +5584,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.2741129606226975e-06,
+					"y": 9.7793361367379905e-06,
+					"z": -0.38268594594445476,
+					"w": 0.92387849129406119
 				},
 				"translation":
 				{
-					"x": 39.999996693025395,
-					"y": -9.9999993613429226,
-					"z": 86.726180427564714
+					"x": 36.000000536441803,
+					"y": -10.500000156462193,
+					"z": 86.726203089667706
 				},
 				"scale3D":
 				{
@@ -5658,16 +5654,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.1957584731236699e-09,
-					"y": 3.9214030274629674e-06,
-					"z": 3.5363557810481126e-08,
-					"w": 0.9999999999923106
+					"x": 2.2378665303391064e-06,
+					"y": 9.677370493787043e-06,
+					"z": -0.38268599917974672,
+					"w": 0.92387846924427208
 				},
 				"translation":
 				{
-					"x": 37.999995912965467,
-					"y": -9.9999993614261271,
-					"z": 86.72618336430628
+					"x": 34.500000514090061,
+					"y": -10.500000156462193,
+					"z": 86.72620573858336
 				},
 				"scale3D":
 				{
@@ -5728,16 +5724,16 @@
 			{
 				"rotation":
 				{
-					"x": 6.2219395188761689e-08,
-					"y": -1.0842978962884659e-06,
-					"z": -3.5524531321513319e-06,
-					"w": 0.9999999999931003
+					"x": 2.4895805051413272e-06,
+					"y": 1.0385162052100728e-05,
+					"z": -0.38268787416777894,
+					"w": 0.9238776925821387
 				},
 				"translation":
 				{
-					"x": 46.000009778091716,
-					"y": -9.999999500113006,
-					"z": 86.726179807972528
+					"x": 40.500000603497028,
+					"y": -10.500000156462193,
+					"z": 86.726197933321828
 				},
 				"scale3D":
 				{
@@ -5798,16 +5794,16 @@
 			{
 				"rotation":
 				{
-					"x": 9.6661515779722491e-08,
-					"y": 1.6860794689181254e-06,
-					"z": 6.1254267535051838e-06,
-					"w": 0.99999999997981348
+					"x": -7.6763308450114436e-08,
+					"y": -2.1630251633915204e-07,
+					"z": -0.38267369598996837,
+					"w": 0.9238835653897759
 				},
 				"translation":
 				{
-					"x": 45.999977314918056,
-					"y": -5.9999997634058957,
-					"z": 86.726179500848843
+					"x": 40.500002322969692,
+					"y": -7.5000014810798952,
+					"z": 86.726179962572417
 				},
 				"scale3D":
 				{
@@ -5868,16 +5864,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.536318960882684e-09,
-					"y": 3.928487297263582e-06,
-					"z": 3.1988447399203923e-08,
-					"w": 0.99999999999228295
+					"x": 2.1264891672052396e-06,
+					"y": 9.3634543307378042e-06,
+					"z": -0.38268732650903581,
+					"w": 0.92387791944453912
 				},
 				"translation":
 				{
-					"x": 37.999995854834772,
-					"y": -5.9999993550515116,
-					"z": 86.726183361120547
+					"x": 34.500000514090061,
+					"y": -7.500000111758709,
+					"z": 86.726204768366756
 				},
 				"scale3D":
 				{
@@ -5938,16 +5934,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.1439504890745626e-06,
+					"y": 9.412992324240781e-06,
+					"z": -0.38268734094469842,
+					"w": 0.92387791346447667
 				},
 				"translation":
 				{
-					"x": 39.999996634895183,
-					"y": -5.9999993549602806,
-					"z": 86.726180424436976
+					"x": 36.000000536441803,
+					"y": -7.500000111758709,
+					"z": 86.726204038269003
 				},
 				"scale3D":
 				{
@@ -6008,16 +6004,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.9162444805142745e-06,
+					"y": 1.1587781896760352e-05,
+					"z": -0.38267921111525416,
+					"w": 0.92388128092164834
 				},
 				"translation":
 				{
-					"x": 41.999996635222786,
-					"y": -5.999999354960817,
-					"z": 86.726180425307973
+					"x": 37.500000558793545,
+					"y": -7.500000111758709,
+					"z": 86.726200984250795
 				},
 				"scale3D":
 				{
@@ -6078,16 +6074,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.9162899232875274e-06,
+					"y": 1.1587588459952385e-05,
+					"z": -0.38267921114214093,
+					"w": 0.9238812809105138
 				},
 				"translation":
 				{
-					"x": 43.999996635545301,
-					"y": -5.9999993549549417,
-					"z": 86.726180426084767
+					"x": 39.000000581145287,
+					"y": -7.500000111758709,
+					"z": 86.726199840051777
 				},
 				"scale3D":
 				{
@@ -6148,16 +6144,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 3.0842120453741057e-06,
+					"y": 1.2061311686629167e-05,
+					"z": -0.38267502554814858,
+					"w": 0.92388301460019073
 				},
 				"translation":
 				{
-					"x": 43.999996660781918,
-					"y": -1.9999997387583381,
-					"z": 86.726180428420221
+					"x": 39.000000581145287,
+					"y": -4.5000000670552254,
+					"z": 86.726199546441038
 				},
 				"scale3D":
 				{
@@ -6218,16 +6214,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.1240692199116103e-06,
+					"y": 9.4853103992286572e-06,
+					"z": -0.38268507462694201,
+					"w": 0.92387885221131061
 				},
 				"translation":
 				{
-					"x": 41.999996660457299,
-					"y": -1.9999997387581061,
-					"z": 86.726180427595239
+					"x": 37.500000558793545,
+					"y": -4.5000000670552254,
+					"z": 86.726203377902976
 				},
 				"scale3D":
 				{
@@ -6288,16 +6284,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": 2.1241223737105398e-06,
+					"y": 9.4854409375713521e-06,
+					"z": -0.38268507457427203,
+					"w": 0.92387885223312594
 				},
 				"translation":
 				{
-					"x": 39.999996660106149,
-					"y": -1.9999997387595898,
-					"z": 86.726180426780417
+					"x": 36.000000536441803,
+					"y": -4.5000000670552254,
+					"z": 86.726202187867926
 				},
 				"scale3D":
 				{
@@ -6358,16 +6354,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.2117115174443866e-09,
-					"y": 3.9235375151923981e-06,
-					"z": 3.3671938760240292e-08,
-					"w": 0.99999999999230238
+					"x": -6.1516255018701738e-08,
+					"y": -1.7298527851777759e-07,
+					"z": -0.38268514736034503,
+					"w": 0.92387882213510952
 				},
 				"translation":
 				{
-					"x": 37.999995880065022,
-					"y": -1.9999997388452546,
-					"z": 86.726183363405482
+					"x": 34.500000779759965,
+					"y": -4.5000007807988096,
+					"z": 86.726186089702026
 				},
 				"scale3D":
 				{
@@ -6428,16 +6424,16 @@
 			{
 				"rotation":
 				{
-					"x": 1.9271934512142741e-07,
-					"y": 3.2824612730700106e-06,
-					"z": 3.0822468416055971e-06,
-					"w": 0.99999999998984412
+					"x": -2.553189324951605e-08,
+					"y": -7.1415329453336596e-08,
+					"z": -0.38267190353497238,
+					"w": 0.9238843078248028
 				},
 				"translation":
 				{
-					"x": 45.999985155956551,
-					"y": -1.9999894153276898,
-					"z": 86.726178242422804
+					"x": 40.500002761360548,
+					"y": -4.5000023392253174,
+					"z": 86.726180039346957
 				},
 				"scale3D":
 				{
@@ -6498,16 +6494,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4414100941130526e-06,
-					"y": -4.5707394287881629e-05,
-					"z": -6.7685919444169836e-06,
-					"w": 0.99999999892264713
+					"x": -5.0736744400995093e-06,
+					"y": 5.1326619610738513e-05,
+					"z": -3.7965888433268807e-05,
+					"w": 0.99999999794921357
 				},
 				"translation":
 				{
-					"x": 32.000010683178594,
-					"y": 45.999979583050909,
-					"z": 86.788916473926236
+					"x": 29.999988137993366,
+					"y": 44.999994801857213,
+					"z": 86.788921332108785
 				},
 				"scale3D":
 				{
@@ -6570,16 +6566,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -8.2894851991237862e-08,
+					"y": -2.3339251410000361e-07,
+					"z": -0.38269169782036849,
+					"w": 0.92387610880426074
 				},
 				"translation":
 				{
-					"x": 45.999996814266495,
-					"y": 49.999996048500037,
-					"z": 86.726180446740841
+					"x": 40.500003533232871,
+					"y": 47.999998838522885,
+					"z": 86.726179953289375
 				},
 				"scale3D":
 				{
@@ -6640,16 +6636,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4273576507892158e-06,
-					"y": 4.6033493954734169e-05,
-					"z": 5.1518161775810071e-06,
-					"w": 0.99999999891738733
+					"x": 4.9698522281487318e-06,
+					"y": -5.1189099458365359e-05,
+					"z": -7.0498891966599575e-06,
+					"w": 0.99999999865263778
 				},
 				"translation":
 				{
-					"x": 33.999922413341373,
-					"y": 41.999908175606954,
-					"z": 86.788916705381496
+					"x": 31.500003833555684,
+					"y": 41.999996279496202,
+					"z": 86.788920151240177
 				},
 				"scale3D":
 				{
@@ -6712,16 +6708,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.4409775837149009e-06,
-					"y": -4.5707366976484209e-05,
-					"z": -6.7686084038837958e-06,
-					"w": 0.99999999892265012
+					"x": 5.0332346061448095e-06,
+					"y": -5.1266001648376761e-05,
+					"z": -1.7488269045471861e-05,
+					"w": 0.99999999852031207
 				},
 				"translation":
 				{
-					"x": 34.000010683183966,
-					"y": 43.999979583069575,
-					"z": 86.788916473671662
+					"x": 31.500003095069758,
+					"y": 43.49999393677566,
+					"z": 86.788920245982055
 				},
 				"scale3D":
 				{
@@ -6784,16 +6780,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.441117506594476e-06,
-					"y": -4.5707219400527119e-05,
-					"z": -6.7685924069733921e-06,
-					"w": 0.99999999892265645
+					"x": 4.2399278809672915e-06,
+					"y": 4.4239707272800935e-05,
+					"z": -1.6784669399913054e-05,
+					"w": 0.99999999887157309
 				},
 				"translation":
 				{
-					"x": 34.00001068314937,
-					"y": 45.999979583062384,
-					"z": 86.788916473564996
+					"x": 31.499992451409589,
+					"y": 44.999996924137236,
+					"z": 86.788914561222043
 				},
 				"scale3D":
 				{
@@ -6856,16 +6852,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.425643266727335e-06,
-					"y": -4.581067768191274e-05,
-					"z": -6.8909244049859213e-06,
-					"w": 0.9999999989171553
+					"x": 4.2397497711281549e-06,
+					"y": 4.4239948922791745e-05,
+					"z": -1.6784662040568729e-05,
+					"w": 0.99999999887156332
 				},
 				"translation":
 				{
-					"x": 34.000011131569316,
-					"y": 47.999979579028839,
-					"z": 86.788916538135481
+					"x": 31.499992451366428,
+					"y": 46.499996924114299,
+					"z": 86.788914561639061
 				},
 				"scale3D":
 				{
@@ -6928,16 +6924,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.1013434281751066e-06,
+					"y": 5.6967719962295971e-08,
+					"z": -0.38268683265837145,
+					"w": 0.92387812405570424
 				},
 				"translation":
 				{
-					"x": 42.00000062584877,
-					"y": 42.00000062584877,
-					"z": 86.726185767279333
+					"x": 37.500001206465832,
+					"y": 42.000000157215567,
+					"z": 86.726183331457293
 				},
 				"scale3D":
 				{
@@ -6998,16 +6994,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -3.9919469969389645e-08,
+					"y": 2.1216546843384255e-06,
+					"z": -0.38267985332839372,
+					"w": 0.92388101498626762
 				},
 				"translation":
 				{
-					"x": 43.999996346339294,
-					"y": 41.999999151129771,
-					"z": 86.726180413967484
+					"x": 39.00000248551234,
+					"y": 41.999996376219158,
+					"z": 86.726182157782034
 				},
 				"scale3D":
 				{
@@ -7068,16 +7064,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.0284401423742137e-07,
+					"y": -2.8903813976179096e-07,
+					"z": -0.3826768663630768,
+					"w": 0.92388225221098474
 				},
 				"translation":
 				{
-					"x": 45.999996346684284,
-					"y": 41.999999151126623,
-					"z": 86.726180414880474
+					"x": 40.500001827929374,
+					"y": 41.999998663518397,
+					"z": 86.726179926549463
 				},
 				"scale3D":
 				{
@@ -7138,16 +7134,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -1.1980547282127912e-07,
+					"y": -3.3764675931248311e-07,
+					"z": -0.38268690184380699,
+					"w": 0.9238780953984459
 				},
 				"translation":
 				{
-					"x": 39.99999634570284,
-					"y": 41.99999915112344,
-					"z": 86.726180412751035
+					"x": 36.000000838541176,
+					"y": 41.999999816539116,
+					"z": 86.726186003557757
 				},
 				"scale3D":
 				{
@@ -7208,16 +7204,16 @@
 			{
 				"rotation":
 				{
-					"x": -7.4936496807249645e-09,
-					"y": 3.9565242335633983e-06,
-					"z": 1.5100280230874443e-08,
-					"w": 0.99999999999217282
+					"x": -7.6299827447617667e-08,
+					"y": -2.1459545846823221e-07,
+					"z": -0.3826870445530734,
+					"w": 0.92387803628573295
 				},
 				"translation":
 				{
-					"x": 37.999995565636247,
-					"y": 41.999999151041237,
-					"z": 86.726183349141877
+					"x": 34.500003514633015,
+					"y": 41.999999162244762,
+					"z": 86.726186067131437
 				},
 				"scale3D":
 				{
@@ -7278,16 +7274,16 @@
 			{
 				"rotation":
 				{
-					"x": 1.4861327676116806e-07,
-					"y": -2.5938568518547877e-06,
-					"z": -8.7523051070803038e-06,
-					"w": 0.99999999995832345
+					"x": 2.5720613110966107e-07,
+					"y": 7.2465791804563744e-07,
+					"z": -0.38270242947221156,
+					"w": 0.92387166342272653
 				},
 				"translation":
 				{
-					"x": -27.999970890270841,
-					"y": -5.9999982549200457,
-					"z": 86.726209555041748
+					"x": -25.500005984607725,
+					"y": -7.4999952730735586,
+					"z": 86.726210244328115
 				},
 				"scale3D":
 				{
@@ -7348,16 +7344,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.4221101379493223e-07,
-					"y": -4.2594150808730147e-06,
-					"z": -1.9881485080409669e-05,
-					"w": 0.9999999997932626
+					"x": 2.4318731864596157e-07,
+					"y": 6.8474145004520318e-07,
+					"z": -0.38271287597846781,
+					"w": 0.92386733601733206
 				},
 				"translation":
 				{
-					"x": -25.999931771595101,
-					"y": -5.9999994034630513,
-					"z": 86.726208141740415
+					"x": -24.000006500455193,
+					"y": -7.4999949581998342,
+					"z": 86.726210263512712
 				},
 				"scale3D":
 				{
@@ -7418,16 +7414,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -8.4856132298393062e-07,
+					"y": -2.3930728525869572e-06,
+					"z": -0.38269679821919456,
+					"w": 0.92387399607648346
 				},
 				"translation":
 				{
-					"x": -34.000000506639481,
-					"y": -6.0000000894069672,
-					"z": 86.726214303790243
+					"x": -29.999969634446359,
+					"y": -7.5000207495063655,
+					"z": 86.72620901739586
 				},
 				"scale3D":
 				{
@@ -7488,16 +7484,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -8.4867644563091654e-07,
+					"y": -2.3933144151018027e-06,
+					"z": -0.38269679816268859,
+					"w": 0.92387399609988929
 				},
 				"translation":
 				{
-					"x": -32.000000476837158,
-					"y": -6.0000000894069672,
-					"z": 86.726214528085961
+					"x": -28.499969634421262,
+					"y": -7.5000207495196349,
+					"z": 86.726209017176828
 				},
 				"scale3D":
 				{
@@ -7558,16 +7554,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -8.2857249651351168e-07,
+					"y": -2.336215702269989e-06,
+					"z": -0.38269688109071393,
+					"w": 0.92387396174873093
 				},
 				"translation":
 				{
-					"x": -30.000000447034836,
-					"y": -6.0000000894069672,
-					"z": 86.726212804751981
+					"x": -26.999968292052639,
+					"y": -7.5000210178521503,
+					"z": 86.726209055057211
 				},
 				"scale3D":
 				{
@@ -7628,16 +7624,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -3.6170269713981746e-07,
+					"y": -1.0185971882320483e-06,
+					"z": -0.38269099013241326,
+					"w": 0.92387640194471066
 				},
 				"translation":
 				{
-					"x": -32.000000476837158,
-					"y": -2.0000000298023224,
-					"z": 86.726212452032655
+					"x": -28.499982952101757,
+					"y": -4.5000106823776251,
+					"z": 86.726209926316983
 				},
 				"scale3D":
 				{
@@ -7698,16 +7694,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.2795038705393084e-07,
-					"y": 7.5399647633040569e-06,
-					"z": 7.6737016981830988e-06,
-					"w": 0.99999999994204003
+					"x": -4.1243661485054446e-08,
+					"y": -1.1397947047020481e-07,
+					"z": -0.38267825230990515,
+					"w": 0.92388167814337663
 				},
 				"translation":
 				{
-					"x": -26.000024559580165,
-					"y": -1.9999997648294148,
-					"z": 86.726206355248394
+					"x": -23.999993052754778,
+					"y": -4.5000048830859898,
+					"z": 86.72621052428714
 				},
 				"scale3D":
 				{
@@ -7768,442 +7764,16 @@
 			{
 				"rotation":
 				{
-					"x": 1.5677164857536387e-07,
-					"y": -2.7593514515093082e-06,
-					"z": -3.1823649699090079e-06,
-					"w": 0.99999999999111699
+					"x": -4.7400085628331269e-05,
+					"y": -5.028194305817604e-06,
+					"z": 0.9999999987104502,
+					"w": 1.7522808821183399e-05
 				},
 				"translation":
 				{
-					"x": -27.999988685355614,
-					"y": -1.9999994765044808,
-					"z": 86.726209103764631
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "r11",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -4.4747013294726907e-06,
-					"y": 4.582042611144957e-05,
-					"z": 2.003109895670904e-07,
-					"w": 0.99999999894021285
-				},
-				"translation":
-				{
-					"x": 31.999928697287164,
-					"y": -9.9999783726240139,
-					"z": 86.788916582984712
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "aiy",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -4.4848161506857589e-06,
-					"y": -4.5789042454803871e-05,
-					"z": -2.1838669249981076e-05,
-					"w": 0.99999999870316136
-				},
-				"translation":
-				{
-					"x": 34.00000340542433,
-					"y": -9.9999988106329099,
-					"z": 86.788916567679905
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "lau",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": -30.000000447034836,
-					"y": -2.0000000298023224,
-					"z": 86.726209821781381
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "ish",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 4.4900561334742423e-06,
-					"y": -4.6032865865547816e-05,
-					"z": -1.4304021757253143e-05,
-					"w": 0.99999999882810486
-				},
-				"translation":
-				{
-					"x": -37.999979777899846,
-					"y": -1.9999991213778541,
-					"z": 86.788946369424764
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "zho",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": -34.000000506639481,
-					"y": -2.0000000298023224,
-					"z": 86.726212843223209
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "8bh",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.0446299071895343e-05,
-					"y": -1.2523767328976739e-05,
-					"z": -0.70711757234097472,
-					"w": 0.70709598967936205
-				},
-				"translation":
-				{
-					"x": -47.999982965930208,
-					"y": 98.000000532514946,
-					"z": 86.770009300783784
+					"x": -34.499981442223941,
+					"y": 44.999994163003919,
+					"z": 86.78894867861041
 				},
 				"scale3D":
 				{
@@ -8236,7 +7806,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -8250,7 +7820,367 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "yfu",
+			"uniqueId": "ti9",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -4.7400323736104574e-05,
+					"y": -5.0279373958623744e-06,
+					"z": 0.99999999863632016,
+					"w": 2.1337494318780356e-05
+				},
+				"translation":
+				{
+					"x": -34.4999825855935,
+					"y": 46.499994162763159,
+					"z": 86.788948678751169
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "pzh",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 5.5062454777956988e-05,
+					"y": -5.0330198927167742e-06,
+					"z": 0.99999999847014087,
+					"w": 1.5852612028420951e-06
+				},
+				"translation":
+				{
+					"x": -34.499988159052066,
+					"y": 47.999994164002715,
+					"z": 86.788948706606291
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "8f2",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 5.1246338837878312e-05,
+					"y": -5.033482621830557e-06,
+					"z": 0.99999999863178368,
+					"w": 9.214634981771384e-06
+				},
+				"translation":
+				{
+					"x": -32.999987139690482,
+					"y": 46.499994163943619,
+					"z": 86.788945653404895
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "9lq",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -5.1248184935277136e-05,
+					"y": 5.032367005884149e-06,
+					"z": -0.99999999858066546,
+					"w": 1.3673623427446009e-05
+				},
+				"translation":
+				{
+					"x": -32.999989435103416,
+					"y": 47.999994163432987,
+					"z": 86.788945654208689
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "w31",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.6800489224352838e-07,
+					"y": -3.4958708887252209e-07,
+					"z": -0.38263132910641878,
+					"w": 0.92390111266634201
+				},
+				"translation":
+				{
+					"x": -26.999991714304702,
+					"y": 45.000008287845958,
+					"z": 86.726210836164299
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "l01",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -8264,16 +8194,16 @@
 			{
 				"rotation":
 				{
-					"x": 1.0554159371607482e-05,
-					"y": -1.2485314938884169e-05,
-					"z": -0.70711857927272459,
-					"w": 0.70709498271452209
+					"x": -1.7378265113295015e-07,
+					"y": -3.5888647533690172e-07,
+					"z": -0.38263542676580675,
+					"w": 0.9238994156203314
 				},
 				"translation":
 				{
-					"x": -41.999980901057768,
-					"y": 98.000005239637971,
-					"z": 86.770009233579756
+					"x": -28.499992826004661,
+					"y": 45.000007699670853,
+					"z": 86.726210846951119
 				},
 				"scale3D":
 				{
@@ -8284,220 +8214,10 @@
 			},
 			"simulatingPhysics": true,
 			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
 			{
 				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "q3m",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.0454610344707456e-05,
-					"y": -1.2440229741321712e-05,
-					"z": -0.70711885579019595,
-					"w": 0.70709470618998815
-				},
-				"translation":
-				{
-					"x": -43.999983356160016,
-					"y": 98.000004754686245,
-					"z": 86.770009171897186
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "922",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.0446333652278491e-05,
-					"y": -1.2523769200082129e-05,
-					"z": -0.70711757240904771,
-					"w": 0.70709598961128628
-				},
-				"translation":
-				{
-					"x": -45.999982965937626,
-					"y": 98.000000532516822,
-					"z": 86.770009300760265
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 169,
-				"g": 149,
-				"r": 0,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "7156FB49F4459B260FA4419F4BA433FA",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "ouy",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -7.7199104954702434e-09,
-					"y": 1.2948194015019749e-07,
-					"z": -4.8118955829077937e-05,
-					"w": 0.99999999884227464
-				},
-				"translation":
-				{
-					"x": -35.999965138138485,
-					"y": 73.999982260359289,
-					"z": 86.726216636010577
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -8530,11 +8250,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "jsw",
+			"uniqueId": "xr6",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8544,16 +8264,16 @@
 			{
 				"rotation":
 				{
-					"x": -8.6107735733983901e-09,
-					"y": 1.3124756310269972e-07,
-					"z": -4.7323603201711698e-05,
-					"w": 0.99999999888022961
+					"x": 1.6210899063096662e-07,
+					"y": 4.6491534530177673e-07,
+					"z": -0.38268673952060561,
+					"w": 0.92387816263555322
 				},
 				"translation":
 				{
-					"x": -33.999966843479882,
-					"y": 73.999982845250187,
-					"z": 86.726210527078891
+					"x": -23.999993138064127,
+					"y": 45.000008345185428,
+					"z": 86.726210905792755
 				},
 				"scale3D":
 				{
@@ -8565,9 +8285,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
+				"b": 0,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -8600,11 +8320,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "eg5",
+			"uniqueId": "hh0",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8614,16 +8334,16 @@
 			{
 				"rotation":
 				{
-					"x": -7.7959168774910035e-09,
-					"y": 1.2944985219298807e-07,
-					"z": -4.8118956124219541e-05,
-					"w": 0.99999999884227475
+					"x": 2.0183846292483432e-07,
+					"y": 5.7640028672642316e-07,
+					"z": -0.38268214720933946,
+					"w": 0.92388006483897922
 				},
 				"translation":
 				{
-					"x": -37.999965138132509,
-					"y": 73.999982260343259,
-					"z": 86.726216635686001
+					"x": -25.499993338771262,
+					"y": 45.000008830439299,
+					"z": 86.726210979124687
 				},
 				"scale3D":
 				{
@@ -8635,9 +8355,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
+				"b": 0,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -8670,11 +8390,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "l4n",
+			"uniqueId": "238",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8684,16 +8404,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.4715293086798165e-10,
-					"y": -1.2606970547994639e-08,
-					"z": -4.839080288392728e-05,
-					"w": 0.99999999882916502
+					"x": -1.9775761774505055e-07,
+					"y": -4.1125383804381773e-07,
+					"z": -0.38268256500329412,
+					"w": 0.92387989178371621
 				},
 				"translation":
 				{
-					"x": -37.999964419391183,
-					"y": 77.999981914387149,
-					"z": 86.726216702960244
+					"x": -25.49999267702546,
+					"y": 48.000008796074894,
+					"z": 86.726210880241126
 				},
 				"scale3D":
 				{
@@ -8705,9 +8425,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
+				"b": 0,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -8740,11 +8460,11 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "uhf",
+			"uniqueId": "pcn",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -8754,156 +8474,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.025241457555571e-10,
-					"y": -1.2534014556947839e-08,
-					"z": -4.8390802473692554e-05,
-					"w": 0.99999999882916502
+					"x": -1.8750041599203377e-06,
+					"y": -3.934963193553903e-06,
+					"z": -0.38270006574642174,
+					"w": 0.92387264255344459
 				},
 				"translation":
 				{
-					"x": -37.999964419406005,
-					"y": 81.999981914379021,
-					"z": 86.726216703035817
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "pf4",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 8.3992578868212031e-10,
-					"y": -1.2538409376054171e-08,
-					"z": -4.8390802861605068e-05,
-					"w": 0.99999999882916502
-				},
-				"translation":
-				{
-					"x": -37.99996441940467,
-					"y": 85.999981914385444,
-					"z": 86.726216703264413
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "pes",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -3.6713339896821023e-09,
-					"y": 6.2140253461321517e-08,
-					"z": -4.6701861440678392e-05,
-					"w": 0.99999999890946623
-				},
-				"translation":
-				{
-					"x": -37.999965804359029,
-					"y": 89.999977239521286,
-					"z": 86.726216667892913
+					"x": -37.499964188627601,
+					"y": 88.499946814253462,
+					"z": 86.726214156806918
 				},
 				"scale3D":
 				{
@@ -8964,16 +8544,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.7488682822622049e-09,
-					"y": 6.2212305718432881e-08,
-					"z": -4.6701861833050752e-05,
-					"w": 0.99999999890946611
+					"x": -5.814137291170745e-08,
+					"y": -1.3007002240005991e-07,
+					"z": -0.38269359991859203,
+					"w": 0.92387532090717106
 				},
 				"translation":
 				{
-					"x": -35.999965804372927,
-					"y": 89.999977239504943,
-					"z": 86.726216667754443
+					"x": -37.500068379283384,
+					"y": 85.49983872431028,
+					"z": 86.726216773464103
 				},
 				"scale3D":
 				{
@@ -9020,7 +8600,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "iht",
+			"uniqueId": "pes",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -9034,16 +8614,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.4840959807455736e-10,
-					"y": -1.2634283656786484e-08,
-					"z": -4.839080287251803e-05,
-					"w": 0.99999999882916502
+					"x": -2.3398905875401466e-07,
+					"y": -6.6820221709368757e-07,
+					"z": -0.38269047306831566,
+					"w": 0.92387661612481975
 				},
 				"translation":
 				{
-					"x": -35.999964419385925,
-					"y": 85.999981914387405,
-					"z": 86.726216702902946
+					"x": -37.49999815121177,
+					"y": 82.499874310864143,
+					"z": 86.726216240343661
 				},
 				"scale3D":
 				{
@@ -9090,7 +8670,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "5rg",
+			"uniqueId": "pf4",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -9104,16 +8684,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.3655656308813089e-10,
-					"y": -1.268270043562682e-08,
-					"z": -4.839080320040878e-05,
-					"w": 0.99999999882916502
+					"x": -1.8606558817148801e-06,
+					"y": -1.5442787456414069e-06,
+					"z": -0.38269196791692178,
+					"w": 0.92387599692059685
 				},
 				"translation":
 				{
-					"x": -35.999964419376774,
-					"y": 81.999981914383625,
-					"z": 86.726216703192904
+					"x": -34.499983134916569,
+					"y": 88.499970637170534,
+					"z": 86.726212779847572
 				},
 				"scale3D":
 				{
@@ -9160,7 +8740,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "lfn",
+			"uniqueId": "r24",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -9174,226 +8754,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.600214804151554e-10,
-					"y": -1.2597588598015482e-08,
-					"z": -4.8390802854163978e-05,
-					"w": 0.99999999882916502
+					"x": -5.2994010342566084e-07,
+					"y": 1.234157289343098e-06,
+					"z": -0.38268745909521534,
+					"w": 0.9238778645737995
 				},
 				"translation":
 				{
-					"x": -35.999964419394651,
-					"y": 77.999981914389082,
-					"z": 86.726216702950808
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "4z9",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -7.5258020180785851e-10,
-					"y": -1.1547274340046145e-08,
-					"z": -4.7922643110442273e-05,
-					"w": 0.99999999885170998
-				},
-				"translation":
-				{
-					"x": -33.999965660946792,
-					"y": 77.999979749874683,
-					"z": 86.726210587976539
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "mks",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1.0722627994399541e-08,
-					"y": 1.6365532958519227e-07,
-					"z": -4.8213873700573038e-05,
-					"w": 0.99999999883769763
-				},
-				"translation":
-				{
-					"x": -33.999967057664612,
-					"y": 81.999980066624687,
-					"z": 86.726210683870079
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 173,
-				"g": 42,
-				"r": 145,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "edc",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -6.8258882364144038e-10,
-					"y": -1.1462817270840862e-08,
-					"z": -4.7922642385212786e-05,
-					"w": 0.99999999885171009
-				},
-				"translation":
-				{
-					"x": -33.999965660963348,
-					"y": 85.999979749886123,
-					"z": 86.726210588122399
+					"x": -34.500002357620666,
+					"y": 85.499849140297115,
+					"z": 86.726214585376866
 				},
 				"scale3D":
 				{
@@ -9454,16 +8824,16 @@
 			{
 				"rotation":
 				{
-					"x": -3.6835540578398729e-09,
-					"y": 6.2133050854988414e-08,
-					"z": -4.6701861485818424e-05,
-					"w": 0.99999999890946623
+					"x": 1.4883154314378989e-06,
+					"y": 3.6059416577624879e-06,
+					"z": -0.38268342453331022,
+					"w": 0.92387953574708015
 				},
 				"translation":
 				{
-					"x": -33.999965804357082,
-					"y": 89.999977239518856,
-					"z": 86.726210564188591
+					"x": -34.499985471948861,
+					"y": 82.499971863104363,
+					"z": 86.726213634999965
 				},
 				"scale3D":
 				{
@@ -9510,7 +8880,1197 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "r24",
+			"uniqueId": "edc",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.1754130226181581e-07,
+					"y": 2.1762425641942707e-06,
+					"z": -0.3826902675474172,
+					"w": 0.92387670125387211
+				},
+				"translation":
+				{
+					"x": -34.500122083190263,
+					"y": 79.4998936575318,
+					"z": 86.726214856832257
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "mks",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.8372602092560112e-06,
+					"y": 4.4387399939173944e-06,
+					"z": -0.38267351177298142,
+					"w": 0.92388364168019321
+				},
+				"translation":
+				{
+					"x": -36.000020757676296,
+					"y": 79.500030676604766,
+					"z": 86.726213714126459
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "4z9",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.0455068672847983e-07,
+					"y": -2.9869174048169392e-07,
+					"z": -0.3826838636392641,
+					"w": 0.92387935387150244
+				},
+				"translation":
+				{
+					"x": -35.999998677907435,
+					"y": 82.499959296086217,
+					"z": 86.726216880804714
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "lfn",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 3.670387753009707e-07,
+					"y": 1.1907537392699285e-06,
+					"z": -0.38268466606061896,
+					"w": 0.9238790214960616
+				},
+				"translation":
+				{
+					"x": -36.000075558463003,
+					"y": 85.499924392649817,
+					"z": 86.726215337985678
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "5rg",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -3.0158155607200497e-06,
+					"y": -4.0858279435578976e-06,
+					"z": -0.38270749051913833,
+					"w": 0.92386956691664779
+				},
+				"translation":
+				{
+					"x": -35.999954906352606,
+					"y": 88.499917981807243,
+					"z": 86.726211787012232
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "iht",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.2568122214909377e-07,
+					"y": -2.3772082790938688e-07,
+					"z": -0.38268353750398121,
+					"w": 0.92387948896128591
+				},
+				"translation":
+				{
+					"x": -37.500003676691669,
+					"y": 79.499994838705447,
+					"z": 86.726216861664341
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "uhf",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -8.8593512787581256e-09,
+					"y": -2.7394781987189273e-08,
+					"z": -0.38268517871087188,
+					"w": 0.92387880914924503
+				},
+				"translation":
+				{
+					"x": -37.500017138841663,
+					"y": 76.4999853436194,
+					"z": 86.726216719547054
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "l4n",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -1.3966230050416031e-06,
+					"y": -8.940451031446824e-07,
+					"z": -0.38268065859751499,
+					"w": 0.9238806814370687
+				},
+				"translation":
+				{
+					"x": -34.50009948898915,
+					"y": 76.499900377452704,
+					"z": 86.72621318358928
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "eg5",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.705008512943438e-07,
+					"y": 6.0175790775621449e-07,
+					"z": -0.3826804008855122,
+					"w": 0.92388078818520325
+				},
+				"translation":
+				{
+					"x": -36.00005696905734,
+					"y": 76.499941651745331,
+					"z": 86.726215715883484
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 173,
+				"g": 42,
+				"r": 145,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "jsw",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": -45.000000670552254,
+					"y": 43.500000648200512,
+					"z": 87.072272436874158
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5A4104890D4F23AC286B0D9BCDE5655A",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "uco",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation":
+				{
+					"x": -45.000000670552254,
+					"y": 46.500000692903996,
+					"z": 87.322269035472289
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 0,
+				"g": 183,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.15999999642372131,
+			"density": 1.1200000047683716,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "jqq",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.5402386692521736e-06,
+					"y": -3.756399169626784e-06,
+					"z": 2.5242625830069497e-07,
+					"w": 0.99999999999172673
+				},
+				"translation":
+				{
+					"x": -45.000000670552254,
+					"y": -9.0000001341104507,
+					"z": 87.072278699759721
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5A4104890D4F23AC286B0D9BCDE5655A",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "5ma",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.8590879789211519e-07,
+					"y": 8.2033065615596324e-08,
+					"z": 6.0610690465391102e-06,
+					"w": 0.99999999998158751
+				},
+				"translation":
+				{
+					"x": -45.000000670552254,
+					"y": -6.0000000894069672,
+					"z": 87.322271074929105
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 169,
+				"g": 149,
+				"r": 0,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.15999999642372131,
+			"density": 1.1200000047683716,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "eyl",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.5419960764861545e-06,
+					"y": -3.7516553297157378e-06,
+					"z": 1.4084214591464136e-06,
+					"w": 0.99999999999078193
+				},
+				"translation":
+				{
+					"x": 45.145925420505826,
+					"y": -9.0201241170158788,
+					"z": 87.072239242369449
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5A4104890D4F23AC286B0D9BCDE5655A",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "z22",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.7674583026267593e-07,
+					"y": 7.9888001003757224e-08,
+					"z": 6.0899012800594307e-06,
+					"w": 0.99999999998141498
+				},
+				"translation":
+				{
+					"x": 45.145907647919458,
+					"y": -6.0201044049788814,
+					"z": 87.322235457366418
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.15999999642372131,
+			"density": 1.1200000047683716,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "a61",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.5519727194713912e-06,
+					"y": -3.7785098309623668e-06,
+					"z": 3.3532693529126661e-06,
+					"w": 0.99999999998603495
+				},
+				"translation":
+				{
+					"x": 45.275385791266274,
+					"y": 43.593361906679071,
+					"z": 87.072239272601863
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5A4104890D4F23AC286B0D9BCDE5655A",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "luk",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.6960700114137342e-07,
+					"y": 7.9048038926840537e-08,
+					"z": 6.1187016482223551e-06,
+					"w": 0.99999999998124134
+				},
+				"translation":
+				{
+					"x": 45.275369363535361,
+					"y": 46.593380883154147,
+					"z": 87.322235451332403
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.15999999642372131,
+			"density": 1.1200000047683716,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "d5l",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -9524,10 +10084,10 @@
 			{
 				"rotation":
 				{
-					"x": 0.70710701069298854,
-					"y": -0.70710655167988334,
-					"z": -3.3175291655173638e-07,
-					"w": 3.1723448519830694e-07
+					"x": 0.70710701090108441,
+					"y": -0.70710655147178736,
+					"z": -3.3175291645837678e-07,
+					"w": 3.1723448529593924e-07
 				},
 				"translation":
 				{
@@ -9905,9 +10465,9 @@
 				"rotation":
 				{
 					"x": -0.99999999999965028,
-					"y": -6.7671055989384379e-07,
-					"z": 3.1932736673705389e-07,
-					"w": 3.7383918917901458e-07
+					"y": -6.7671055949554317e-07,
+					"z": 3.1932736673705378e-07,
+					"w": 3.7383918917901474e-07
 				},
 				"translation":
 				{
@@ -10057,10 +10617,10 @@
 			{
 				"rotation":
 				{
-					"x": -1.5314245393308795e-06,
-					"y": 1.8273496088845019e-06,
-					"z": -0.70710689417620753,
-					"w": 0.70710666819285006
+					"x": -1.5314245388801963e-06,
+					"y": 1.827349607445358e-06,
+					"z": -0.70710689396811166,
+					"w": 0.70710666840094594
 				},
 				"translation":
 				{
@@ -10389,7 +10949,7 @@
 				{
 					"x": -0.99999998386287292,
 					"y": 0.00017965036325761521,
-					"z": -2.4882442239813427e-08,
+					"z": -2.488244223981339e-08,
 					"w": 1.1393174933235686e-08
 				},
 				"translation":
@@ -10539,16 +11099,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.0060391743560426845,
-					"y": -0.049872648336660864,
-					"z": 0.0013403885903909582,
-					"w": 0.99873642703138232
+					"x": -0.0052889313107294328,
+					"y": -0.049877587430923652,
+					"z": 0.0014454325546693547,
+					"w": 0.99874028866487152
 				},
 				"translation":
 				{
-					"x": 21.992082386802391,
-					"y": 96.000643971652266,
-					"z": 87.071149031403934
+					"x": 21.99204758484963,
+					"y": 96.000597684573108,
+					"z": 87.071198129303369
 				},
 				"scale3D":
 				{
@@ -10806,16 +11366,16 @@
 			{
 				"rotation":
 				{
-					"x": 5.3462239408413658e-07,
-					"y": -5.9195437284723593e-05,
-					"z": -0.00027441513614879956,
-					"w": 0.99999996059597296
+					"x": 5.0311067870468798e-07,
+					"y": -5.1734686695857244e-05,
+					"z": -0.00023572324211022585,
+					"w": 0.99999997087891057
 				},
 				"translation":
 				{
-					"x": 26.000111102499574,
-					"y": 91.999812643466385,
-					"z": 86.922002368897552
+					"x": 26.000199461180014,
+					"y": 91.999647996024109,
+					"z": 86.922033274373504
 				},
 				"scale3D":
 				{
@@ -10880,16 +11440,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.2185753858475497e-05,
-					"y": -2.532739676732613e-05,
-					"z": 8.0160658413438508e-05,
-					"w": 0.99999999622029201
+					"x": 2.0141607334110241e-05,
+					"y": -2.2964464004809387e-05,
+					"z": 0.00010795498449879949,
+					"w": 0.99999999370633508
 				},
 				"translation":
 				{
-					"x": 27.99977702213695,
-					"y": 84.000260617639711,
-					"z": 86.922181896507141
+					"x": 27.999596653983737,
+					"y": 84.000450497577518,
+					"z": 86.922187760892896
 				},
 				"scale3D":
 				{
@@ -10954,16 +11514,16 @@
 			{
 				"rotation":
 				{
-					"x": 8.6254101497550102e-05,
-					"y": -0.050122894141151161,
-					"z": -0.00040469600914803955,
-					"w": 0.99874297207253726
+					"x": 8.4650844565570282e-05,
+					"y": -0.05012466869378307,
+					"z": -0.0003516405643033726,
+					"w": 0.99874290323961068
 				},
 				"translation":
 				{
-					"x": 25.999702742345892,
-					"y": 84.00012414507124,
-					"z": 87.056801537632765
+					"x": 25.999425030946512,
+					"y": 84.000219927709793,
+					"z": 87.056790495803298
 				},
 				"scale3D":
 				{
@@ -11028,16 +11588,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0076202469525281742,
-					"y": -0.050101229712416338,
-					"z": 0.0015952143654596579,
-					"w": 0.99871379979892849
+					"x": 0.0077287828426863981,
+					"y": -0.050119400366313037,
+					"z": 0.0015401929985920688,
+					"w": 0.99871214042296441
 				},
 				"translation":
 				{
-					"x": 23.999955313113297,
-					"y": 91.99965826076,
-					"z": 87.072031936651285
+					"x": 23.999988413130641,
+					"y": 91.999365793949679,
+					"z": 87.072057141396854
 				},
 				"scale3D":
 				{
@@ -11102,10 +11662,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.0627380224122474e-07,
-					"y": -5.4121062186866266e-07,
-					"z": -0.7071073924722896,
-					"w": 0.70710616990000363
+					"x": 3.0627380246963851e-07,
+					"y": -5.4121062170938902e-07,
+					"z": -0.70710739226419395,
+					"w": 0.70710617010809973
 				},
 				"translation":
 				{
@@ -11413,16 +11973,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.1322070854814538e-05,
-					"y": -9.5513105649780108e-05,
-					"z": -0.00010328431869343305,
-					"w": 0.99999998961426195
+					"x": 3.3750405249796835e-05,
+					"y": -7.7233892063419184e-05,
+					"z": -0.00011109169092472016,
+					"w": 0.99999999027723607
 				},
 				"translation":
 				{
-					"x": 21.999799293496398,
-					"y": 83.999812025395499,
-					"z": 86.922100150485562
+					"x": 21.999787737343645,
+					"y": 83.999744188710366,
+					"z": 86.922132137948324
 				},
 				"scale3D":
 				{
@@ -11487,16 +12047,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.5467878451684183e-05,
-					"y": -0.050128689256357134,
-					"z": 0.00074791657333600405,
-					"w": 0.99874248677773958
+					"x": -1.0642064672419551e-05,
+					"y": -0.050176712525123089,
+					"z": 0.00074039321145465782,
+					"w": 0.99874008091435396
 				},
 				"translation":
 				{
-					"x": 19.999724857118544,
-					"y": 83.999916114253907,
-					"z": 87.081231142852005
+					"x": 19.999749970922785,
+					"y": 83.999864922432437,
+					"z": 87.081263548576132
 				},
 				"scale3D":
 				{
@@ -11561,16 +12121,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0077737782415708946,
-					"y": -0.050131971840593384,
-					"z": -0.00037135971798840775,
-					"w": 0.99871227881867186
+					"x": 0.0078532730841970547,
+					"y": -0.050141138527386046,
+					"z": -0.00041790078062274604,
+					"w": 0.9987111783133199
 				},
 				"translation":
 				{
-					"x": 22.000000537455104,
-					"y": 91.999934709765796,
-					"z": 87.071949976738892
+					"x": 22.000004390306074,
+					"y": 91.999828094632448,
+					"z": 87.071939648200186
 				},
 				"scale3D":
 				{
@@ -11812,10 +12372,10 @@
 			{
 				"rotation":
 				{
-					"x": -6.2089479377536667e-07,
-					"y": 1.5076739653968977e-06,
-					"z": -0.70710686843433046,
-					"w": 0.70710669393687398
+					"x": -6.2089479359264409e-07,
+					"y": 1.5076739645877542e-06,
+					"z": -0.70710686822623459,
+					"w": 0.70710669414496996
 				},
 				"translation":
 				{
@@ -11913,16 +12473,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999995875932,
-					"y": 8.935039337033007e-06,
-					"z": 7.232564818005945e-07,
-					"w": 1.4571149411069541e-06
+					"x": 0.99999999982568533,
+					"y": 1.8608259081889713e-05,
+					"z": 5.085238685658835e-07,
+					"w": 1.4504066545555313e-06
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
-					"y": 50.00000074505806,
-					"z": 86.941741001582272
+					"x": 24.000000357627869,
+					"y": 48.000000715255737,
+					"z": 86.941737370036165
 				},
 				"scale3D":
 				{
@@ -12299,16 +12859,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999995875932,
-					"y": 8.935039337033007e-06,
-					"z": 7.232564818005945e-07,
-					"w": 1.4571149411069541e-06
+					"x": 0.9999606289670232,
+					"y": 0.0088735852869014486,
+					"z": -1.7697488482172184e-07,
+					"w": 1.8644808336531601e-08
 				},
 				"translation":
 				{
-					"x": 28.000000417232513,
-					"y": 48.000000715255737,
-					"z": 86.941732139420566
+					"x": 27.000000402331352,
+					"y": 46.500000692903996,
+					"z": 86.941724055027521
 				},
 				"scale3D":
 				{
@@ -12527,16 +13087,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999986211,
-					"y": -3.8227961844329532e-07,
-					"z": -3.5837763657376319e-07,
-					"w": 3.7309958740405198e-08
+					"x": -0.99999996449156126,
+					"y": -0.00026648967730051034,
+					"z": 3.4761294088993982e-07,
+					"w": 8.4922866457174482e-08
 				},
 				"translation":
 				{
-					"x": -20.000000298023224,
-					"y": 74.000001102685928,
-					"z": 86.886549744950685
+					"x": -20.001741732393246,
+					"y": 73.99810518958752,
+					"z": 86.886547392264845
 				},
 				"scale3D":
 				{
@@ -12919,9 +13479,9 @@
 				"rotation":
 				{
 					"x": 0.99999999893996894,
-					"y": -4.604276549056423e-05,
+					"y": -4.6042765463777403e-05,
 					"z": -3.5479597697736531e-07,
-					"w": 7.5591850009469644e-11
+					"w": 7.5591850018973509e-11
 				},
 				"translation":
 				{
@@ -13065,16 +13625,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999489064,
-					"y": -3.1961708452198978e-06,
-					"z": 3.6954962239470994e-08,
-					"w": 4.2297853490099565e-08
+					"x": 0.99999329875615628,
+					"y": 0.0036609346866632139,
+					"z": 2.0747919899906285e-08,
+					"w": 1.223528314413612e-08
 				},
 				"translation":
 				{
-					"x": -46.000000685453415,
-					"y": -6.0000000894069672,
-					"z": 86.941755652228721
+					"x": -40.501108704798781,
+					"y": -7.5348129098019916,
+					"z": 86.941756177439885
 				},
 				"scale3D":
 				{
@@ -13141,16 +13701,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.9999999999974416,
-					"y": 2.5901269073164382e-07,
-					"z": 2.2470779929661523e-06,
-					"w": 1.8789972707175846e-08
+					"x": 0.9999999983576201,
+					"y": 5.7307265224095641e-05,
+					"z": -7.8554671324513682e-07,
+					"w": 1.4255227227044772e-07
 				},
 				"translation":
 				{
-					"x": 28.000000417232513,
-					"y": -4.0000000596046448,
-					"z": 86.941731147530788
+					"x": 27.000000402331352,
+					"y": -6.0000000894069672,
+					"z": 86.94173130075319
 				},
 				"scale3D":
 				{
@@ -13369,16 +13929,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999999999899525,
-					"y": 1.3301055366425058e-06,
-					"z": -4.5570983796844462e-07,
-					"w": 1.8076503815012989e-07
+					"x": -0.99999999999661038,
+					"y": 2.6030806642152017e-06,
+					"z": 4.8309938990063639e-08,
+					"w": 2.7593408141704587e-08
 				},
 				"translation":
 				{
-					"x": 28.000000417232513,
-					"y": -8.0000001192092896,
-					"z": 86.941732872133684
+					"x": 27.000000402331352,
+					"y": -9.0000001341104507,
+					"z": 86.941725858935797
 				},
 				"scale3D":
 				{
@@ -13445,16 +14005,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999995875932,
-					"y": 8.935039337033007e-06,
-					"z": 7.2325648180059471e-07,
-					"w": 1.4571149411069541e-06
+					"x": 0.99999999999511779,
+					"y": -2.7514406213675546e-06,
+					"z": 3.2646828949346469e-07,
+					"w": 1.4447703450697337e-06
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
+					"x": 24.000000357627869,
 					"y": 42.00000062584877,
-					"z": 86.941732653701024
+					"z": 86.941732216945823
 				},
 				"scale3D":
 				{
@@ -13521,16 +14081,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999998459799,
-					"y": 5.5498212964255383e-06,
-					"z": -4.5537140804022571e-08,
-					"w": 3.933677215998674e-08
+					"x": -0.99999999994704791,
+					"y": -1.025136502682135e-05,
+					"z": 8.9965736501724111e-07,
+					"w": 6.6027129734907547e-08
 				},
 				"translation":
 				{
-					"x": -46.000000685453415,
-					"y": -2.0000000298023224,
-					"z": 86.941753277499572
+					"x": -40.500000603497028,
+					"y": -4.5000000670552254,
+					"z": 86.94175871918145
 				},
 				"scale3D":
 				{
@@ -13597,16 +14157,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999997948896,
-					"y": 6.3684957422797243e-06,
-					"z": -6.8127447103106428e-07,
-					"w": 1.7923386778325316e-08
+					"x": 0.99998412295641514,
+					"y": 0.0056350541108768932,
+					"z": -5.0662857457417001e-07,
+					"w": 9.6541424919914101e-09
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
-					"y": -10.000000149011612,
-					"z": 86.941733406959841
+					"x": 24.000000357627869,
+					"y": -10.500000156462193,
+					"z": 86.941732253655175
 				},
 				"scale3D":
 				{
@@ -13673,16 +14233,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999267553,
-					"y": 3.3649797565623323e-06,
-					"z": 1.8210920966922249e-06,
-					"w": 9.6473619869772224e-08
+					"x": 0.99979777242316814,
+					"y": 0.020110053646591637,
+					"z": -3.0168101993766281e-09,
+					"w": 4.4988400983207795e-08
 				},
 				"translation":
 				{
-					"x": -44.000000655651093,
-					"y": -4.0000000596046448,
-					"z": 86.941762773782742
+					"x": -37.507170120210361,
+					"y": -6.0202301567546037,
+					"z": 86.941756147849816
 				},
 				"scale3D":
 				{
@@ -13749,16 +14309,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999960281127,
-					"y": -2.8183741828757959e-05,
-					"z": -2.3026566219784649e-07,
-					"w": 3.2532431661320654e-08
+					"x": -0.99999911834844035,
+					"y": -0.0013278939448782316,
+					"z": 1.0786025730638937e-07,
+					"w": 3.796393378113523e-08
 				},
 				"translation":
 				{
-					"x": -46.000000685453415,
-					"y": -10.000000149011612,
-					"z": 86.941754123737965
+					"x": -40.473421339502579,
+					"y": -10.491668822727384,
+					"z": 86.941756456253103
 				},
 				"scale3D":
 				{
@@ -13825,16 +14385,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999513556,
-					"y": 4.1138926719790016e-07,
-					"z": 3.088903560489347e-06,
-					"w": 1.353523007796386e-07
+					"x": -0.99999510731429242,
+					"y": -0.0031281540023433926,
+					"z": -8.8826811698318414e-08,
+					"w": 8.098856159050405e-08
 				},
 				"translation":
 				{
-					"x": -44.000000655651093,
-					"y": -8.0000001192092896,
-					"z": 86.941759904181325
+					"x": -37.497130766382433,
+					"y": -9.0034591145610534,
+					"z": 86.941756018772551
 				},
 				"scale3D":
 				{
@@ -14060,16 +14620,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.106380453555765e-06,
-					"y": -6.7692940173647527e-05,
-					"z": -0.0021763444063247588,
-					"w": 0.9999976294679237
+					"x": -8.1575378658694508e-07,
+					"y": -5.6774248711186685e-05,
+					"z": -0.0022273865811699863,
+					"w": 0.99999751775943779
 				},
 				"translation":
 				{
-					"x": 25.999527311866984,
-					"y": 96.000175002180541,
-					"z": 86.921967870237111
+					"x": 25.999746063740481,
+					"y": 96.000387413455442,
+					"z": 86.922013192863929
 				},
 				"scale3D":
 				{
@@ -14134,16 +14694,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.0059009703058354335,
-					"y": -0.050282000379494818,
-					"z": -0.0012601880280489282,
-					"w": 0.99871683219690466
+					"x": -0.005232712260582079,
+					"y": -0.050324203129933083,
+					"z": -0.0011419112627567667,
+					"w": 0.99871857364344785
 				},
 				"translation":
 				{
-					"x": 24.006261688749746,
-					"y": 95.999590808939686,
-					"z": 87.072577985837484
+					"x": 24.006492838102098,
+					"y": 95.999757346663387,
+					"z": 87.07260718894446
 				},
 				"scale3D":
 				{
@@ -14436,16 +14996,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999995875932,
-					"y": 8.935039337033007e-06,
-					"z": 7.232564818005945e-07,
-					"w": 1.4571149411069541e-06
+					"x": -0.99992282073725891,
+					"y": 0.012423870921018897,
+					"z": 4.2249202724839888e-07,
+					"w": 5.3547579222258771e-08
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
-					"y": 46.000000685453415,
-					"z": 86.941723480132168
+					"x": 24.000000357627869,
+					"y": 45.000000670552254,
+					"z": 86.941724341098919
 				},
 				"scale3D":
 				{
@@ -14512,16 +15072,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999976421239,
-					"y": -2.1715709775417871e-05,
-					"z": 3.3467538256259704e-08,
-					"w": 4.425203412815086e-08
+					"x": -0.99999851971812181,
+					"y": 0.0017206282462346426,
+					"z": 4.8798120566960838e-08,
+					"w": 2.810447214612698e-08
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
-					"y": -6.0000000894069672,
-					"z": 86.941729196751112
+					"x": 24.000000357627869,
+					"y": -7.500000111758709,
+					"z": 86.9417270041927
 				},
 				"scale3D":
 				{
@@ -14588,16 +15148,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999970506426,
-					"y": -2.4287179685598492e-05,
-					"z": 4.9872283014717044e-08,
-					"w": 4.379491355143274e-08
+					"x": -0.99999999988145583,
+					"y": -1.523418668949928e-05,
+					"z": 2.2373283776562372e-06,
+					"w": 4.888571195816624e-08
 				},
 				"translation":
 				{
-					"x": 26.000000387430191,
-					"y": -2.0000000298023224,
-					"z": 86.941723294112947
+					"x": 24.000000357627869,
+					"y": -4.5000000670552254,
+					"z": 86.941729907493936
 				},
 				"scale3D":
 				{
@@ -14664,16 +15224,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999995875932,
-					"y": 8.935039337033007e-06,
-					"z": 7.232564818005945e-07,
-					"w": 1.4571149411069541e-06
+					"x": 0.99999983280013927,
+					"y": -0.00057827301116684861,
+					"z": -4.2586464514299053e-08,
+					"w": 1.2741750074171877e-07
 				},
 				"translation":
 				{
-					"x": 28.000000417232513,
-					"y": 44.000000655651093,
-					"z": 86.941722527762209
+					"x": 27.000000402331352,
+					"y": 43.500000648200512,
+					"z": 86.941724637238011
 				},
 				"scale3D":
 				{
@@ -14969,9 +15529,9 @@
 				"rotation":
 				{
 					"x": 0.99999999999880052,
-					"y": 1.4207710475457411e-06,
-					"z": 4.7771018004624861e-07,
-					"w": 3.9012312904778078e-07
+					"y": 1.4207710467094985e-06,
+					"z": 4.7771017976507549e-07,
+					"w": 3.9012312904778158e-07
 				},
 				"translation":
 				{
@@ -15199,16 +15759,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.70694413413613089,
-					"y": -0.70726939083378149,
-					"z": 1.1575329284199109e-07,
-					"w": 3.3836806236912202e-07
+					"x": -0.70710638726306629,
+					"y": -0.70710717510971888,
+					"z": 1.1567565668064436e-07,
+					"w": 3.3839461115316775e-07
 				},
 				"translation":
 				{
-					"x": 17.985415344015838,
-					"y": 43.999008061139733,
-					"z": 87.377249129819859
+					"x": -16.000000238418579,
+					"y": 44.000000655651093,
+					"z": 87.37726443628668
 				},
 				"scale3D":
 				{
@@ -15454,16 +16014,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999993006,
-					"y": -2.2757597281573408e-07,
-					"z": 2.7705907066258605e-07,
-					"w": 1.0674465183693852e-07
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": -44.000000655651093,
-					"y": 48.000000715255737,
-					"z": 86.941756002340753
+					"x": -20.000000298023224,
+					"y": 98.000001460313797,
+					"z": 86.847263464219225
 				},
 				"scale3D":
 				{
@@ -15500,7 +16060,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "BC75DE5F27437DD6A0319EAF6935C464",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -15509,18 +16069,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "a0u",
+			"uniqueId": "s5w",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -15716,16 +16274,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.9999999999961422,
-					"y": 2.6235774617677596e-06,
-					"z": 9.0501684203450761e-07,
-					"w": 1.1529669697681994e-07
+					"x": 9.6042804420148789e-08,
+					"y": -3.4866443343686042e-08,
+					"z": -0.70710635504282393,
+					"w": 0.70710720733000676
 				},
 				"translation":
 				{
-					"x": -44.000000655651093,
-					"y": 44.000000655651093,
-					"z": 86.941755104022434
+					"x": -8.0000003799631987,
+					"y": -43.999997666300203,
+					"z": 87.234044637820375
 				},
 				"scale3D":
 				{
@@ -15738,7 +16296,32 @@
 			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [],
+			"stackSerialization": [
+				{
+					"index": 0,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 0,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 0,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 0,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
 			"primaryColor":
 			{
 				"b": 255,
@@ -15759,10 +16342,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "",
+			"objectName": "Fuel",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "778AF3269B41783929449B90FDB9D4DD",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -15771,18 +16354,18 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "8qi",
+			"uniqueId": "ptf",
 			"drawingLines": [],
 			"objectTags": [
-				"building"
+				"resource"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -15868,16 +16451,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999999997276912,
-					"y": 7.3274293165417889e-06,
-					"z": 8.7669535730913463e-07,
-					"w": 4.3648924043899585e-08
+					"x": 0.99998696781670293,
+					"y": -0.0051053105928288347,
+					"z": -5.7798629301074869e-07,
+					"w": 4.1618459770531116e-07
 				},
 				"translation":
 				{
-					"x": -46.000000685453415,
-					"y": 46.000000685453415,
-					"z": 86.941761096697533
+					"x": -8.0087042908634327,
+					"y": 102.05025403189302,
+					"z": 88.586096254466952
 				},
 				"scale3D":
 				{
@@ -15887,10 +16470,149 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 0,
+			"atlasIndex": 35,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [],
+			"stackSerialization": [
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
 			"primaryColor":
 			{
 				"b": 255,
@@ -15914,7 +16636,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "2B60ABD93449333EED932DA5E4106C86",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -15923,18 +16645,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "lap",
+			"uniqueId": "bt9",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -16020,16 +16740,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.99999999999670652,
-					"y": -2.5654486329888888e-06,
-					"z": -6.9407574565181383e-08,
-					"w": 2.2402010548392223e-08
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
 					"x": -46.000000685453415,
-					"y": 42.00000062584877,
-					"z": 86.941750907682263
+					"y": 82.000001221895218,
+					"z": 86.922273409088064
 				},
 				"scale3D":
 				{
@@ -16066,7 +16786,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "E30D55AFDB43A74FF0AD9296F0489103",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -16075,18 +16795,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "wze",
+			"uniqueId": "y9f",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -16096,16 +16814,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.9999999999339364,
-					"y": 1.1425115414702817e-05,
-					"z": 1.2552905724155296e-06,
-					"w": 1.3448910789862813e-07
+					"x": 0.99999999705410458,
+					"y": -7.6758001242666478e-05,
+					"z": -6.1205122779393105e-09,
+					"w": 1.0177913927585263e-10
 				},
 				"translation":
 				{
-					"x": -46.000000685453415,
-					"y": 50.00000074505806,
-					"z": 86.941757534120768
+					"x": -27.996196572531847,
+					"y": 74.008193172745607,
+					"z": 86.92226565828561
 				},
 				"scale3D":
 				{
@@ -16142,7 +16860,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "055DF160BE47AA046E01109CB04B6EF4",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -16151,18 +16869,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "2hx",
+			"uniqueId": "2y0",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -16673,16 +17389,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.9999999999998157,
-					"y": 6.0527543161239209e-07,
-					"z": 4.5270327060536541e-08,
-					"w": 1.4293932453794669e-08
+					"x": 0.999999999976388,
+					"y": 6.8308865311969915e-06,
+					"z": -7.4657895173429007e-07,
+					"w": 7.421134722809826e-08
 				},
 				"translation":
 				{
-					"x": -28.000000417232513,
-					"y": 74.000001102685928,
-					"z": 86.922262035658889
+					"x": -37.500000558793545,
+					"y": 46.500000692903996,
+					"z": 86.941752348029127
 				},
 				"scale3D":
 				{
@@ -16719,7 +17435,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "055DF160BE47AA046E01109CB04B6EF4",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -16728,404 +17444,18 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "2y0",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": -46.000000685453415,
-					"y": 82.000001221895218,
-					"z": 86.922273409088064
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E30D55AFDB43A74FF0AD9296F0489103",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "y9f",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -1.3708924746720028e-07,
-					"y": -6.5806846852905425e-08,
-					"z": 2.5749185310539887e-06,
-					"w": 0.99999999999667322
-				},
-				"translation":
-				{
-					"x": -7.9999892842886444,
-					"y": 102.0000268360192,
-					"z": 88.586095333031494
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 35,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "2B60ABD93449333EED932DA5E4106C86",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "bt9",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 9.6042804420148789e-08,
-					"y": -3.4866443343686042e-08,
-					"z": -0.70710635504282393,
-					"w": 0.70710720733000676
-				},
-				"translation":
-				{
-					"x": -8.0000003799631987,
-					"y": -43.999997666300203,
-					"z": 87.234044637820375
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 0,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 0,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 0,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 0,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "Fuel",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "778AF3269B41783929449B90FDB9D4DD",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "ptf",
+			"uniqueId": "a0u",
 			"drawingLines": [],
 			"objectTags": [
-				"resource"
+				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -17135,16 +17465,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -0.99999999994630129,
+					"y": 1.0220861879770858e-05,
+					"z": 1.7063798587308457e-06,
+					"w": 1.4052137478377674e-07
 				},
 				"translation":
 				{
-					"x": -20.000000298023224,
-					"y": 98.000001460313797,
-					"z": 86.847263464219225
+					"x": -37.500000558793545,
+					"y": 43.500000648200512,
+					"z": 86.941752743744075
 				},
 				"scale3D":
 				{
@@ -17181,7 +17511,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "BC75DE5F27437DD6A0319EAF6935C464",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -17190,16 +17520,246 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "s5w",
+			"uniqueId": "8qi",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"building"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 0.99999999998640765,
+					"y": 5.2137343477631563e-06,
+					"z": 3.2500146048764501e-08,
+					"w": 2.5950296612749553e-08
+				},
+				"translation":
+				{
+					"x": -40.500000603497028,
+					"y": 45.000000670552254,
+					"z": 86.941751204608252
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "lap",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.9999999999005732,
+					"y": 1.4041886857819111e-05,
+					"z": 1.2956858125569044e-06,
+					"w": 1.6098341150132761e-08
+				},
+				"translation":
+				{
+					"x": -40.500000603497028,
+					"y": 42.00000062584877,
+					"z": 86.94175722531304
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "wze",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999996700495,
+					"y": -8.0176578111933013e-06,
+					"z": 1.2995726981826553e-06,
+					"w": 1.358971577283454e-07
+				},
+				"translation":
+				{
+					"x": -40.500000603497028,
+					"y": 48.000000715255737,
+					"z": 86.941757088413738
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "2hx",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -17720,9 +18280,9 @@
 				"rotation":
 				{
 					"x": -0.49999995385446955,
-					"y": -0.5000000132513901,
-					"z": 0.49999999656662114,
-					"w": 0.50000003632751533
+					"y": -0.50000001320234111,
+					"z": 0.49999999656662109,
+					"w": 0.50000003637656443
 				},
 				"translation":
 				{
@@ -17859,10 +18419,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.2543893314833416e-06,
-					"y": 4.1846939815872869e-06,
-					"z": 0.82682831962009462,
-					"w": 0.56245438023550665
+					"x": 3.2543893307906813e-06,
+					"y": 4.1846939783471919e-06,
+					"z": 0.82682831946613855,
+					"w": 0.56245438046182772
 				},
 				"translation":
 				{
