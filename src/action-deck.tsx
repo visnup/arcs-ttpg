@@ -28,9 +28,10 @@ refCard.onPrimaryAction.add((card) => {
   if (card.getUIs().length) return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.5, 0, 0);
+  ui.scale = 0.2;
   ui.widget = render(
     <button
-      size={10}
+      size={48}
       onClick={() => {
         card.deal(6);
         getInitiative()?.stand();
@@ -61,9 +62,10 @@ refCard.onReleased.add((card, player) => {
   ) {
     const ui = new UIElement();
     ui.position = new Vector(-card.getExtent(false, false).x - 1.5, 0, 0);
+    ui.scale = 0.2;
     ui.widget = render(
       <button
-        size={10}
+        size={48}
         onClick={() => {
           getInitiative()?.seize(player);
           card.removeUI(index);

@@ -42,6 +42,7 @@ class AmbitionSection {
       size.y / 2 - 5,
       size.z + 0.35,
     );
+    this.ui.scale = 0.15;
     this.ui.widget = this.widget = new HorizontalBox().setChildDistance(6);
     refObject.addUI(this.ui);
   }
@@ -58,7 +59,7 @@ class AmbitionSection {
           render(
             <text
               color={world.getSlotColor(slot)}
-              size={8}
+              size={48}
               font="FMBP700.ttf"
               fontPackage={refPackageId}
             >
