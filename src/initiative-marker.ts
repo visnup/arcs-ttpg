@@ -4,20 +4,30 @@ import {
   refObject,
   Rotator,
   Vector,
+  world,
 } from "@tabletop-playground/api";
 
-const seize = (obj: GameObject, player: Player) =>
+const seize = (obj: GameObject, player: Player | number) =>
   moveToPlayer(obj, player, new Rotator(-90, 0, 0));
-const take = (obj: GameObject, player: Player) => moveToPlayer(obj, player);
+const take = (obj: GameObject, player: Player | number) =>
+  moveToPlayer(obj, player);
 
 function moveToPlayer(
   obj: GameObject,
-  player: Player,
+  player: Player | number,
   rotation = new Rotator(0, 0, 0),
 ) {
-  const board = player
-    .getOwnedObjects()
-    .find((d) => d.getTemplateName() === "board");
+  const board =
+    player instanceof Player
+      ? player.getOwnedObjects().find((d) => d.getTemplateName() === "board")
+      : world
+          .getAllObjects()
+          .find(
+            (d) =>
+              d.getTemplateName() === "board" &&
+              d.getPrimaryColor().toHex() ===
+                world.getSlotColor(player).toHex(),
+          );
   if (!board) return;
   const p = board.getPosition();
   const { x, y } = board.getSize();
@@ -46,10 +56,10 @@ refObject.onPrimaryAction.add(take);
 refObject.onSecondaryAction.add(seize);
 
 const ext = Object.assign(refObject, {
-  seize: function (player: Player) {
+  seize: function (player: Player | number) {
     seize(this as typeof ext, player);
   },
-  take: function (player: Player) {
+  take: function (player: Player | number) {
     take(this as typeof ext, player);
   },
   stand: function () {

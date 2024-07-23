@@ -1030,7 +1030,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-6",
+				"system-0"
 			]
 		},
 		{
@@ -1043,7 +1045,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-5",
+				"system-0"
 			]
 		},
 		{
@@ -1056,7 +1060,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-4",
+				"system-0"
 			]
 		},
 		{
@@ -1069,7 +1075,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-3",
+				"system-0"
 			]
 		},
 		{
@@ -1082,7 +1090,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-2",
+				"system-0"
 			]
 		},
 		{
@@ -1095,7 +1105,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"block"
+				"block",
+				"cluster-1",
+				"system-0"
 			]
 		},
 		{
@@ -1108,7 +1120,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-1",
+				"system-1"
 			]
 		},
 		{
@@ -1121,7 +1135,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-6",
+				"system-3"
 			]
 		},
 		{
@@ -1134,7 +1150,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-6",
+				"system-2"
 			]
 		},
 		{
@@ -1147,7 +1165,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-6",
+				"system-2"
 			]
 		},
 		{
@@ -1160,7 +1180,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-6",
+				"system-1"
 			]
 		},
 		{
@@ -1173,7 +1195,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-5",
+				"system-3"
 			]
 		},
 		{
@@ -1186,7 +1210,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-5",
+				"system-3"
 			]
 		},
 		{
@@ -1199,7 +1225,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-5",
+				"system-2"
 			]
 		},
 		{
@@ -1212,7 +1240,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-5",
+				"system-1"
 			]
 		},
 		{
@@ -1225,7 +1255,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-4",
+				"system-3"
 			]
 		},
 		{
@@ -1238,7 +1270,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-4",
+				"system-2"
 			]
 		},
 		{
@@ -1251,7 +1285,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-4",
+				"system-2"
 			]
 		},
 		{
@@ -1264,7 +1300,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-4",
+				"system-1"
 			]
 		},
 		{
@@ -1277,7 +1315,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-4",
+				"system-1"
 			]
 		},
 		{
@@ -1290,7 +1330,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-3",
+				"system-3"
 			]
 		},
 		{
@@ -1303,7 +1345,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-3",
+				"system-3"
 			]
 		},
 		{
@@ -1316,7 +1360,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-3",
+				"system-2"
 			]
 		},
 		{
@@ -1329,7 +1375,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-3",
+				"system-1"
 			]
 		},
 		{
@@ -1342,7 +1390,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-2",
+				"system-3"
 			]
 		},
 		{
@@ -1355,7 +1405,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"system-3",
+				"cluster-2"
 			]
 		},
 		{
@@ -1368,7 +1420,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-2",
+				"system-2"
 			]
 		},
 		{
@@ -1381,7 +1435,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"system-1",
+				"cluster-2"
 			]
 		},
 		{
@@ -1394,7 +1450,8 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"system-3"
 			]
 		},
 		{
@@ -1407,7 +1464,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"system-3",
+				"cluster-1"
 			]
 		},
 		{
@@ -1420,7 +1479,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-1",
+				"system-2"
 			]
 		},
 		{
@@ -1433,7 +1494,9 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"cluster-1",
+				"system-1"
 			]
 		}
 	],
