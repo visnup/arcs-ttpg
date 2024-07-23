@@ -9,16 +9,14 @@ import {
 import type { InitiativeMarker } from "./initiative-marker";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 
-refCard.addCustomAction("Shuffle and deal");
+function getInitiative() {
+  return world.getObjectById("initiative") as InitiativeMarker;
+}
+
 refCard.addCustomAction("Draw from bottom");
 
 refCard.onCustomAction.add((card, player, identifier) => {
   switch (identifier) {
-    case "Shuffle and deal":
-      card.shuffle();
-      card.deal(6);
-      (world.getObjectById("initiative") as InitiativeMarker)?.stand();
-      break;
     case "Draw from bottom":
       card.moveCardInStack(0, card.getStackSize() - 1);
       card.deal(1, [player.getSlot()]);
@@ -26,9 +24,24 @@ refCard.onCustomAction.add((card, player, identifier) => {
   }
 });
 
-function getInitiative() {
-  return world.getObjectById("initiative") as InitiativeMarker;
-}
+refCard.onPrimaryAction.add((card) => {
+  if (card.getUIs().length) return;
+  const ui = new UIElement();
+  ui.position = new Vector(-card.getExtent(false, false).x - 1.5, 0, 0);
+  ui.widget = render(
+    <button
+      size={10}
+      onClick={() => {
+        card.deal(6);
+        getInitiative()?.stand();
+        card.removeUI(index);
+      }}
+    >
+      Deal
+    </button>,
+  );
+  const index = card.addUI(ui);
+});
 
 refCard.onReleased.add((card, player) => {
   if (card.getUIs().length) return;
