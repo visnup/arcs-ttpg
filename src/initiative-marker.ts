@@ -55,6 +55,9 @@ const ext = Object.assign(refObject, {
   stand: function () {
     stand(this as typeof ext);
   },
+  isSeized: function () {
+    return Math.abs((this as typeof ext).getRotation().pitch) > 10;
+  },
 });
 refObject.setId("initiative");
 export type InitiativeMarker = typeof ext;
