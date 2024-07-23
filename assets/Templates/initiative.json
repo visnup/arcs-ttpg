@@ -22,7 +22,7 @@
 		"G": 0,
 		"B": 0
 	},
-	"Flippable": true,
+	"Flippable": false,
 	"AutoStraighten": true,
 	"ShouldSnap": true,
 	"ScriptName": "initiative-marker.js",

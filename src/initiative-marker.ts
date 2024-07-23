@@ -19,8 +19,9 @@ function moveToPlayer(
     .getOwnedObjects()
     .find((d) => d.getTemplateName() === "board");
   if (!board) return;
+  const p = board.getPosition();
   const { x, y } = board.getSize();
-  const pos = board.getPosition().add(new Vector(x / 2 + 4, -y / 2 - 2, 1));
+  const pos = p.add(new Vector((-Math.sign(p.x) * (x + 8)) / 2, -y / 2 - 2, 1));
   obj.setRotation(rotation);
   obj.setPosition(pos);
   obj.snapToGround();
