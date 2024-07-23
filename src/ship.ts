@@ -18,4 +18,5 @@ function toggle(obj: GameObject) {
   const r = obj.getRotation();
   if (Math.abs(r.pitch) < 1) obj.setRotation(new Rotator(-90, r.yaw, r.roll));
   else obj.setRotation(new Rotator(0, r.yaw + r.roll, 0));
+  obj.snapToGround();
 }
