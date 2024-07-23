@@ -25,7 +25,7 @@
 	"Flippable": true,
 	"AutoStraighten": true,
 	"ShouldSnap": true,
-	"ScriptName": "",
+	"ScriptName": "initiative-marker.js",
 	"Blueprint": "",
 	"Models": [
 		{

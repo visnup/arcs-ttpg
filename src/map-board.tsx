@@ -12,8 +12,6 @@ import { render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 
-refObject.setId("map");
-
 // Card zone
 const zoneId = `zone-action-${refObject.getId()}`;
 const zone =
@@ -74,12 +72,14 @@ class AmbitionSection {
 }
 
 export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
-const ambitions = Object.fromEntries(
-  ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
-    name,
-    new AmbitionSection(i),
-  ]),
-) as Record<Ambition, AmbitionSection>;
 
-(refObject as any).ambitions = ambitions;
-export type MapBoard = typeof refObject & { ambitions: typeof ambitions };
+const ext = Object.assign(refObject, {
+  ambitions: Object.fromEntries(
+    ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
+      name,
+      new AmbitionSection(i),
+    ]),
+  ) as Record<Ambition, AmbitionSection>,
+});
+refObject.setId("map");
+export type MapBoard = typeof ext;
