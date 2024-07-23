@@ -31,18 +31,18 @@ function stand(obj: GameObject) {
   obj.snapToGround();
 }
 
-refObject.addCustomAction("Seize initiative");
 refObject.addCustomAction("Take initiative");
+refObject.addCustomAction("Seize initiative");
 refObject.onCustomAction.add((obj, player, action) => {
   switch (action) {
-    case "Seize initiative":
-      return seize(obj, player);
     case "Take initiative":
       return take(obj, player);
+    case "Seize initiative":
+      return seize(obj, player);
   }
 });
-refObject.onPrimaryAction.add(seize);
-refObject.onSecondaryAction.add(take);
+refObject.onPrimaryAction.add(take);
+refObject.onSecondaryAction.add(seize);
 
 const ext = Object.assign(refObject, {
   seize: function (player: Player) {
