@@ -9,7 +9,9 @@ import {
 } from "@tabletop-playground/api";
 import { InitiativeMarker } from "./initiative-marker";
 
+const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 const above = new Vector(0, 0, 0.1);
+
 refCard.onPrimaryAction.add((card, player) => {
   if (card.getStackSize() > 1) return;
 
@@ -72,7 +74,7 @@ refCard.onPrimaryAction.add((card, player) => {
   // TODO 2p: out of play resources
 
   // power markers
-  for (const missing of getPowerMarkers().filter(
+  for (const missing of getAllObjectsByTemplateName("power").filter(
     (d) => !slots.includes(d.getOwningPlayerSlot()),
   ))
     missing.destroy();
@@ -85,46 +87,19 @@ refCard.onPrimaryAction.add((card, player) => {
     // A: 3 ships, 1 city
     if (!occupied(snaps[0])) {
       const a = getPosition(snaps[0]);
-      const a_ = shipPlacement(a);
-      const shipsA = takeShips(slots[i], 3, a_);
-      for (const [j, ship] of shipsA.entries()) {
-        ship.setPosition(a_.add(new Vector(0, 0, j * 1)));
-        ship.snap();
-      }
-      const city = takeCities(slots[i], 1)[0];
-      city.setPosition(a.add(above));
-      city.snap();
+      placeShips(slots[i], 3, shipPlacement(a));
+      placeCities(slots[i], 1, a);
     }
     // B: 3 ships, 1 starport
     if (!occupied(snaps[1])) {
       const b = getPosition(snaps[1]);
-      const b_ = shipPlacement(b);
-      const shipsB = takeShips(slots[i], 3, b_);
-      for (const [j, ship] of shipsB.entries()) {
-        ship.setPosition(b_.add(new Vector(0, 0, j * 1)));
-        ship.snap();
-      }
-      const starport = takeStarports(slots[i], 1, b)[0];
-      starport.setPosition(b.add(above));
-      starport.snap();
+      placeShips(slots[i], 3, shipPlacement(b));
+      placeStarports(slots[i], 1, b);
     }
     // C: 2 ships
-    if (!occupied(snaps[2])) {
-      const c = getPosition(snaps[2]);
-      const shipsC = takeShips(slots[i], 2, c);
-      for (const [j, ship] of shipsC.entries()) {
-        ship.setPosition(c.add(new Vector(0, 0, j * 1)));
-        ship.snap();
-      }
-    }
-    if (snaps[3] && !occupied(snaps[3])) {
-      const c = shipPlacement(getPosition(snaps[3]));
-      const shipsC = takeShips(slots[i], 2, c);
-      for (const [j, ship] of shipsC.entries()) {
-        ship.setPosition(c.add(new Vector(0, 0, j * 1)));
-        ship.snap();
-      }
-    }
+    if (!occupied(snaps[2])) placeShips(slots[i], 2, getPosition(snaps[2]));
+    if (snaps[3] && !occupied(snaps[3]))
+      placeShips(slots[i], 2, shipPlacement(getPosition(snaps[3])));
   }
 
   // TODO resource tokens
@@ -132,6 +107,13 @@ refCard.onPrimaryAction.add((card, player) => {
   // deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
 });
+
+function getAllObjectsByTemplateName(name: string) {
+  return world.getAllObjects().filter((d) => d.getTemplateName() === name);
+}
+function getObjectByTemplateName(name: string) {
+  return world.getAllObjects().find((d) => d.getTemplateName() === name);
+}
 
 function onMap(obj: GameObject) {
   return world
@@ -158,23 +140,17 @@ function getPosition(snaps: SnapPoint | SnapPoint[]) {
 
 function getActionDecks() {
   return (
-    world
-      .getAllObjects()
-      .filter(
-        (d) => d.getTemplateName() === "action" && !(d as Card).isInHolder(),
-      ) as Card[]
+    getAllObjectsByTemplateName("action").filter(
+      (d) => !(d as Card).isInHolder(),
+    ) as Card[]
   ).sort((a, b) => b.getStackSize() - a.getStackSize());
 }
 
 function getCourtDeck() {
-  return world
-    .getAllObjects()
-    .find((d) => d.getTemplateName() === "bc") as Card;
+  return getObjectByTemplateName("bc") as Card;
 }
 function getCourtPoints() {
-  const board = world
-    .getAllObjects()
-    .find((d) => d.getTemplateName() === "court");
+  const board = getObjectByTemplateName("court");
   if (!board) return [];
   return board
     .getAllSnapPoints()
@@ -199,67 +175,61 @@ function getSystems() {
     });
 }
 
-const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 function takeBlock(type: "small" | "large" | "round") {
-  return world
-    .getAllObjects()
-    .filter((d) => d.getTemplateName() === `block ${type}` && !onMap(d))
+  return getAllObjectsByTemplateName(`block ${type}`)
+    .filter((d) => !onMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(origin) - b.getPosition().distance(origin),
     )[0];
 }
 
-function getPowerMarkers() {
-  return world.getAllObjects().filter((d) => d.getTemplateName() === "power");
-}
-
 function shipPlacement(building: Vector) {
-  return Vector.lerp(origin, building, 0.7);
+  const direction = building.subtract(origin).unit();
+  const ring = origin.add(direction.multiply(11));
+  return Vector.lerp(ring, building, building.distance(ring) > 5 ? 0.5 : 2);
 }
 
-// Find _n_ ships belonging to _slot_ player closest to _target_
-function takeShips(slot: number, n: number, target: Vector) {
-  return world
-    .getAllObjects()
-    .filter(
-      (d) =>
-        d.getTemplateName() === "ship" &&
-        d.getOwningPlayerSlot() === slot &&
-        !onMap(d),
-    )
+// Find _n_ ships belonging to _slot_ player closest to _target_ and place them
+function placeShips(slot: number, n: number, target: Vector) {
+  const ships = getAllObjectsByTemplateName("ship")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(target) - b.getPosition().distance(target),
     )
     .slice(0, n);
+  const yaw = Math.random() * 360 - 180;
+  for (const [j, ship] of ships.entries()) {
+    ship.setRotation(new Rotator(0, yaw, 0));
+    ship.setPosition(target.add(new Vector(0, 0, j * 1)));
+    ship.snap();
+  }
+  return ships;
 }
-// Find _n_ cities belonging to _slot_ player on player board from left to right
-function takeCities(slot: number, n: number) {
-  return world
-    .getAllObjects()
-    .filter(
-      (d) =>
-        d.getTemplateName() === "city" &&
-        d.getOwningPlayerSlot() === slot &&
-        !onMap(d),
-    )
+// Find _n_ cities belonging to _slot_ player on player board from left to right and place them
+function placeCities(slot: number, n: number, target: Vector) {
+  const cities = getAllObjectsByTemplateName("city")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort((a, b) => a.getPosition().y - b.getPosition().y)
     .slice(0, n);
+  for (const city of cities) {
+    city.setPosition(target.add(above));
+    city.snap();
+  }
+  return cities;
 }
-// Find _n_ starports belonging to _slot_ player closest to _target_
-function takeStarports(slot: number, n: number, target: Vector) {
-  return world
-    .getAllObjects()
-    .filter(
-      (d) =>
-        d.getTemplateName() === "starport" &&
-        d.getOwningPlayerSlot() === slot &&
-        !onMap(d),
-    )
+// Find _n_ starports belonging to _slot_ player closest to _target_ and place them
+function placeStarports(slot: number, n: number, target: Vector) {
+  const starports = getAllObjectsByTemplateName("starport")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(target) - b.getPosition().distance(target),
     )
     .slice(0, n);
+  for (const starport of starports) {
+    starport.setPosition(target.add(above));
+    starport.snap();
+  }
 }
