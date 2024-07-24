@@ -22,6 +22,7 @@ refCard.onPrimaryAction.add((card, player) => {
   const slots = [
     ...new Set([...world.getAllPlayers().map((p) => p.getSlot()), 0, 1, 2, 3]),
   ]
+    .filter((s) => 0 <= s && s <= 3)
     .slice(0, setup.length)
     .map((s) => [s, Math.random()])
     .sort((a, b) => a[1] - b[1])
