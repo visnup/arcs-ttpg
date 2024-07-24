@@ -87,19 +87,19 @@ refCard.onPrimaryAction.add((card, player) => {
     // A: 3 ships, 1 city
     if (!occupied(snaps[0])) {
       const a = getPosition(snaps[0]);
-      placeShips(slots[i], 3, shipPlacement(a));
       placeCities(slots[i], 1, a);
+      placeShips(slots[i], 3, nearby(a));
     }
     // B: 3 ships, 1 starport
     if (!occupied(snaps[1])) {
       const b = getPosition(snaps[1]);
-      placeShips(slots[i], 3, shipPlacement(b));
       placeStarports(slots[i], 1, b);
+      placeShips(slots[i], 3, nearby(b));
     }
     // C: 2 ships
     if (!occupied(snaps[2])) placeShips(slots[i], 2, getPosition(snaps[2]));
     if (snaps[3] && !occupied(snaps[3]))
-      placeShips(slots[i], 2, shipPlacement(getPosition(snaps[3])));
+      placeShips(slots[i], 2, nearby(getPosition(snaps[3])));
   }
 
   // TODO resource tokens
@@ -184,7 +184,7 @@ function takeBlock(type: "small" | "large" | "round") {
     )[0];
 }
 
-function shipPlacement(building: Vector) {
+function nearby(building: Vector) {
   const direction = building.subtract(origin).unit();
   const ring = origin.add(direction.multiply(11));
   return Vector.lerp(ring, building, building.distance(ring) > 5 ? 0.5 : 2);
@@ -199,10 +199,14 @@ function placeShips(slot: number, n: number, target: Vector) {
         a.getPosition().distance(target) - b.getPosition().distance(target),
     )
     .slice(0, n);
-  const yaw = Math.random() * 360 - 180;
+  const direction = target.subtract(origin).unit();
+  const rotation = direction.toRotator();
+  rotation.yaw += Math.random() > 0.5 ? 180 : 0;
+  rotation.yaw += Math.random() * 30 - 15;
+  const half = (ships.length - 1) / 2;
   for (const [j, ship] of ships.entries()) {
-    ship.setRotation(new Rotator(0, yaw, 0));
-    ship.setPosition(target.add(new Vector(0, 0, j * 1)));
+    ship.setRotation(rotation);
+    ship.setPosition(target.add(direction.multiply(j - half)));
     ship.snap();
   }
   return ships;
