@@ -43,7 +43,7 @@ class AmbitionSection {
       size.z + 0.35,
     );
     this.ui.scale = 0.15;
-    this.ui.widget = this.widget = new HorizontalBox().setChildDistance(6);
+    this.ui.widget = this.widget = new HorizontalBox();
     refObject.addUI(this.ui);
   }
 
@@ -63,7 +63,7 @@ class AmbitionSection {
               font="FMBP700.ttf"
               fontPackage={refPackageId}
             >
-              {score}
+              {` ${score} `}
             </text>,
           ),
         );

@@ -1525,6 +1525,76 @@
 				"system:1",
 				"resource:weapon"
 			]
+		},
+		{
+			"X": -11.406000381469728,
+			"Y": 28.753,
+			"Z": 0.5,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource",
+				"resource:psionic"
+			]
+		},
+		{
+			"X": -6.1060001907348633,
+			"Y": 28.753,
+			"Z": 0.5,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource",
+				"resource:relic"
+			]
+		},
+		{
+			"X": -0.80600000000000005,
+			"Y": 28.753,
+			"Z": 0.5,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource",
+				"resource:weapon"
+			]
+		},
+		{
+			"X": 8.4909999999999997,
+			"Y": 28.753,
+			"Z": 0.5,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource",
+				"resource:material"
+			]
+		},
+		{
+			"X": 11.247999999999999,
+			"Y": 28.753,
+			"Z": 0.5,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"resource",
+				"resource:fuel"
+			]
 		}
 	],
 	"ZoomViewDirection":

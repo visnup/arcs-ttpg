@@ -26,7 +26,6 @@ refCard.onPrimaryAction.add((card, player) => {
     .map((s) => [s, Math.random()])
     .sort((a, b) => a[1] - b[1])
     .map((d) => d[0]);
-  const colors = slots.map((s) => world.getSlotColor(s).toHex());
 
   // initiative marker to a random first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);
@@ -57,21 +56,25 @@ refCard.onPrimaryAction.add((card, player) => {
   const systems = getSystems();
   for (const cluster of block.split(" ")) {
     for (let i of "0123") {
-      const snaps = systems
+      const system = systems
         .filter((d) => d.id === `${cluster}.${i}`)
         .map((d) => d.snap);
-      if (occupied(snaps)) continue;
+      if (occupied(system)) continue;
       const size =
         i === "0" ? ("14".includes(cluster) ? "large" : "small") : "round";
       const block = takeBlock(size);
-      block.setPosition(getPosition(snaps));
+      block.setPosition(getPosition(system));
       block.setRotation(new Rotator(0, 0, 0));
       block.snap();
       block.freeze();
+
+      // 2p: out of play resources
+      if (slots.length === 2) {
+        const resource = systemResource(system[0]);
+        if (resource) placeResources(resource, 1, blockedResources[resource]);
+      }
     }
   }
-
-  // TODO 2p: out of play resources
 
   // power markers
   for (const missing of getAllObjectsByTemplateName("power").filter(
@@ -79,30 +82,30 @@ refCard.onPrimaryAction.add((card, player) => {
   ))
     missing.destroy();
 
-  // player pieces
+  // starting pieces, gain resources
   for (const [i, line] of setup.entries()) {
-    const snaps = line
+    const system = line
       .split(" ")
       .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
     // A: 3 ships, 1 city
-    if (!occupied(snaps[0])) {
-      const a = getPosition(snaps[0]);
+    if (!occupied(system[0])) {
+      const a = getPosition(system[0]);
       placeCities(slots[i], 1, a);
       placeShips(slots[i], 3, nearby(a));
+      gainResource(slots[i], system[0][0]);
     }
     // B: 3 ships, 1 starport
-    if (!occupied(snaps[1])) {
-      const b = getPosition(snaps[1]);
+    if (!occupied(system[1])) {
+      const b = getPosition(system[1]);
       placeStarports(slots[i], 1, b);
       placeShips(slots[i], 3, nearby(b));
+      gainResource(slots[i], system[1][0]);
     }
     // C: 2 ships
-    if (!occupied(snaps[2])) placeShips(slots[i], 2, getPosition(snaps[2]));
-    if (snaps[3] && !occupied(snaps[3]))
-      placeShips(slots[i], 2, nearby(getPosition(snaps[3])));
+    if (!occupied(system[2])) placeShips(slots[i], 2, getPosition(system[2]));
+    if (system[3] && !occupied(system[3]))
+      placeShips(slots[i], 2, nearby(getPosition(system[3])));
   }
-
-  // TODO resource tokens
 
   // deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
@@ -115,25 +118,30 @@ function getObjectByTemplateName(name: string) {
   return world.getAllObjects().find((d) => d.getTemplateName() === name);
 }
 
+function onTable(obj: GameObject) {
+  return world
+    .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
+    .every(({ object }) => object.getTemplateName() === "resource");
+}
 function onMap(obj: GameObject) {
   return world
     .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
     .some(({ object }) => object.getTemplateName() === "map");
 }
 
-function occupied(snaps: SnapPoint | SnapPoint[]) {
-  return snaps instanceof SnapPoint
-    ? snaps.getSnappedObject()
-    : snaps.some((d) => d.getSnappedObject());
+function occupied(system: SnapPoint | SnapPoint[]) {
+  return system instanceof SnapPoint
+    ? system.getSnappedObject()
+    : system.some((d) => d.getSnappedObject());
 }
-function getPosition(snaps: SnapPoint | SnapPoint[]) {
-  return snaps instanceof SnapPoint
-    ? snaps.getGlobalPosition()
-    : snaps.length === 1
-      ? snaps[0].getGlobalPosition()
+function getPosition(system: SnapPoint | SnapPoint[]) {
+  return system instanceof SnapPoint
+    ? system.getGlobalPosition()
+    : system.length === 1
+      ? system[0].getGlobalPosition()
       : Vector.lerp(
-          snaps[0].getGlobalPosition(),
-          snaps[1].getGlobalPosition(),
+          system[0].getGlobalPosition(),
+          system[1].getGlobalPosition(),
           0.5,
         );
 }
@@ -237,3 +245,54 @@ function placeStarports(slot: number, n: number, target: Vector) {
     starport.snap();
   }
 }
+
+function systemResource(system: SnapPoint): string | undefined {
+  return system
+    .getTags()
+    .find((t) => t.startsWith("resource:"))!
+    ?.replace("resource:", "");
+}
+function placeResources(
+  resource: string | undefined,
+  n: number,
+  target: Vector,
+) {
+  const supply = getAllObjectsByTemplateName("resource").find(
+    (d) => (d as Card).getCardDetails(0)!.name === resource && onTable(d),
+  ) as Card | undefined;
+  if (!supply) return;
+  if (n >= supply.getStackSize()) {
+    // take all
+    supply.setPosition(target.add(above));
+    supply.snap();
+  } else {
+    // take some
+    const some = supply.takeCards(n);
+    some?.setPosition(target.add(above));
+    some?.snap();
+  }
+}
+function gainResource(slot: number, system: SnapPoint) {
+  const board = getAllObjectsByTemplateName("board").find(
+    (d) => d.getOwningPlayerSlot() === slot,
+  )!;
+  const empty = board
+    .getAllSnapPoints()
+    .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
+    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
+  placeResources(systemResource(system), 1, empty.getGlobalPosition());
+}
+
+const blockedResources = Object.fromEntries(
+  world
+    .getObjectById("map")!
+    .getAllSnapPoints()
+    .filter((d) => d.getTags().includes("resource"))
+    .map((d) => [
+      d
+        .getTags()
+        .find((d) => d.startsWith("resource:"))
+        ?.replace("resource:", ""),
+      d.getGlobalPosition(),
+    ]),
+);
