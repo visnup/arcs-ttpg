@@ -54,6 +54,7 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // out of play
   const systems = getSystems();
+  const resources = new Map<string, number>();
   for (const cluster of block.split(" ")) {
     for (let i of "0123") {
       const system = systems
@@ -70,11 +71,13 @@ refCard.onPrimaryAction.add((card, player) => {
 
       // 2p: out of play resources
       if (slots.length === 2) {
-        const resource = systemResource(system[0]);
-        if (resource) placeResources(resource, 1, blockedResources[resource]);
+        const r = systemResource(system[0]);
+        if (r) resources.set(r, (resources.get(r) || 0) + 1);
       }
     }
   }
+  for (const [r, n] of resources.entries())
+    placeResources(r, n, blockedResources[r]);
 
   // power markers
   for (const missing of getAllObjectsByTemplateName("power").filter(
