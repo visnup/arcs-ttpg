@@ -18,7 +18,7 @@ let diceSummary = new ScreenUIElement();
 diceSummary.relativePositionX = diceSummary.relativePositionY = false;
 diceSummary.positionX = 50;
 diceSummary.positionY = 10;
-diceSummary.width = 200;
+diceSummary.width = 210;
 diceSummary.height = 300;
 
 // Zone
