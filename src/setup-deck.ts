@@ -1,5 +1,6 @@
 import {
   Card,
+  GameObject,
   refCard,
   Rotator,
   SnapPoint,
@@ -43,30 +44,27 @@ refCard.onPrimaryAction.add((card, player) => {
   // deal court; 2p: 3 cards, 3-4p: 4 cards
   const courtPoints = getCourtPoints();
   for (let i = 0; i < (setup.length === 2 ? 3 : 4); i++) {
-    if (courtPoints[i].getSnappedObject()) continue;
+    if (occupied(courtPoints[i])) continue;
     const card = court.takeCards(1);
     if (!card) break;
-    card.setPosition(courtPoints[i].getGlobalPosition().add(above));
+    card.setPosition(getPosition(courtPoints[i]).add(above));
     card.snap();
   }
 
   // out of play
-  const systems = getSystemPoints();
+  const systems = getSystems();
   for (const cluster of block.split(" ")) {
     for (let i of "0123") {
-      for (const { snap } of systems.filter(
-        (d) => d.id === `${cluster}.${i}`,
-      )) {
-        if (snap.getSnappedObject()) continue;
-        const size =
-          i === "0" ? ("14".includes(cluster) ? "large" : "small") : "circle";
-        const obj = world.createObjectFromTemplate(
-          blocks[size],
-          snap.getGlobalPosition().add(above),
-        )!;
-        obj.snap();
-        obj.freeze();
-      }
+      const snaps = systems
+        .filter((d) => d.id === `${cluster}.${i}`)
+        .map((d) => d.snap);
+      if (occupied(snaps)) continue;
+      const size =
+        i === "0" ? ("14".includes(cluster) ? "large" : "small") : "round";
+      const block = takeBlock(size);
+      block.setPosition(getPosition(snaps));
+      block.snap();
+      block.freeze();
     }
   }
 
@@ -74,17 +72,88 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // power markers
   for (const missing of getPowerMarkers().filter(
-    (d) => !colors.includes(d.getPrimaryColor().toHex()),
+    (d) => !slots.includes(d.getOwningPlayerSlot()),
   ))
     missing.destroy();
 
   // TODO player pieces
+  for (const [i, line] of setup.entries()) {
+    const snaps = line
+      .split(" ")
+      .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
+    // A: 3 ships, 1 city
+    if (!occupied(snaps[0])) {
+      const a = getPosition(snaps[0]);
+      const a_ = shipPlacement(a);
+      const shipsA = takeShips(slots[i], 3, a_);
+      for (const [j, ship] of shipsA.entries()) {
+        ship.setPosition(a_.add(new Vector(0, 0, j * 1)));
+        ship.snap();
+      }
+      const city = takeCities(slots[i], 1)[0];
+      city.setPosition(a.add(above));
+      city.snap();
+    }
+    // B: 3 ships, 1 starport
+    if (!occupied(snaps[1])) {
+      const b = getPosition(snaps[1]);
+      const b_ = shipPlacement(b);
+      const shipsB = takeShips(slots[i], 3, b_);
+      for (const [j, ship] of shipsB.entries()) {
+        ship.setPosition(b_.add(new Vector(0, 0, j * 1)));
+        ship.snap();
+      }
+      const starport = takeStarports(slots[i], 1, b)[0];
+      starport.setPosition(b.add(above));
+      starport.snap();
+    }
+    // C: 2 ships
+    if (!occupied(snaps[2])) {
+      const c = getPosition(snaps[2]);
+      const shipsC = takeShips(slots[i], 2, c);
+      for (const [j, ship] of shipsC.entries()) {
+        ship.setPosition(c.add(new Vector(0, 0, j * 1)));
+        ship.snap();
+      }
+    }
+    if (snaps[3] && !occupied(snaps[3])) {
+      const c = shipPlacement(getPosition(snaps[3]));
+      const shipsC = takeShips(slots[i], 2, c);
+      for (const [j, ship] of shipsC.entries()) {
+        ship.setPosition(c.add(new Vector(0, 0, j * 1)));
+        ship.snap();
+      }
+    }
+  }
 
   // TODO resource tokens
 
   // deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
 });
+
+function onMap(obj: GameObject) {
+  return world
+    .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
+    .some(({ object }) => object.getTemplateName() === "map");
+}
+
+function occupied(snaps: SnapPoint | SnapPoint[]) {
+  return snaps instanceof SnapPoint
+    ? snaps.getSnappedObject()
+    : snaps.some((d) => d.getSnappedObject());
+}
+function getPosition(snaps: SnapPoint | SnapPoint[]) {
+  return snaps instanceof SnapPoint
+    ? snaps.getGlobalPosition()
+    : snaps.length === 1
+      ? snaps[0].getGlobalPosition()
+      : Vector.lerp(
+          snaps[0].getGlobalPosition(),
+          snaps[1].getGlobalPosition(),
+          0.5,
+        );
+}
 
 function getActionDecks() {
   return (
@@ -112,13 +181,7 @@ function getCourtPoints() {
     .slice(1);
 }
 
-const blocks = {
-  small: "0E24FDAF2A4F9064B4A75C9C636781E3",
-  large: "CF5D85683847813F1E8E42A12E617293",
-  circle: "9DCAD3B92D45B6569168CDA2E9DD167D",
-};
-
-function getSystemPoints() {
+function getSystems() {
   const map = world.getObjectById("map");
   if (!map) return [];
   return map
@@ -135,6 +198,67 @@ function getSystemPoints() {
     });
 }
 
+const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
+function takeBlock(type: "small" | "large" | "round") {
+  return world
+    .getAllObjects()
+    .filter((d) => d.getTemplateName() === `block ${type}` && !onMap(d))
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(origin) - b.getPosition().distance(origin),
+    )[0];
+}
+
 function getPowerMarkers() {
   return world.getAllObjects().filter((d) => d.getTemplateName() === "power");
+}
+
+function shipPlacement(building: Vector) {
+  return Vector.lerp(origin, building, 0.7);
+}
+
+// Find _n_ ships belonging to _slot_ player closest to _target_
+function takeShips(slot: number, n: number, target: Vector) {
+  return world
+    .getAllObjects()
+    .filter(
+      (d) =>
+        d.getTemplateName() === "ship" &&
+        d.getOwningPlayerSlot() === slot &&
+        !onMap(d),
+    )
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(target) - b.getPosition().distance(target),
+    )
+    .slice(0, n);
+}
+// Find _n_ cities belonging to _slot_ player on player board from left to right
+function takeCities(slot: number, n: number) {
+  return world
+    .getAllObjects()
+    .filter(
+      (d) =>
+        d.getTemplateName() === "city" &&
+        d.getOwningPlayerSlot() === slot &&
+        !onMap(d),
+    )
+    .sort((a, b) => a.getPosition().y - b.getPosition().y)
+    .slice(0, n);
+}
+// Find _n_ starports belonging to _slot_ player closest to _target_
+function takeStarports(slot: number, n: number, target: Vector) {
+  return world
+    .getAllObjects()
+    .filter(
+      (d) =>
+        d.getTemplateName() === "starport" &&
+        d.getOwningPlayerSlot() === slot &&
+        !onMap(d),
+    )
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(target) - b.getPosition().distance(target),
+    )
+    .slice(0, n);
 }
