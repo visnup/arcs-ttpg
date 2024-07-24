@@ -18,21 +18,21 @@ refCard.onPrimaryAction.add((card, player) => {
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
 
-  // players
+  // Players
   const needed = [
     ...new Set([...world.getAllPlayers().map((p) => p.getSlot()), 0, 1, 2, 3]),
   ]
     .filter((s) => 0 <= s && s <= 3)
     .slice(0, setup.length)
     .sort();
-  // randomly pick first player
+  // Randomly pick first player
   const first = Math.floor(Math.random() * needed.length);
   const slots = needed.slice(first).concat(needed.slice(0, first));
 
-  // initiative marker to first player
+  // Initiative marker to first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);
 
-  // shuffle action deck
+  // Shuffle action deck
   const action = getActionDecks();
   // 4p: add 1, 7s
   if (setup.length === 4) action[0]?.addCards(action[1]);
@@ -40,21 +40,20 @@ refCard.onPrimaryAction.add((card, player) => {
   action[0]?.setRotation(new Rotator(0, -90, 0));
   action[0]?.shuffle();
 
-  // shuffle court deck
+  // Shuffle court deck
   const court = getCourtDeck();
   court.setRotation(new Rotator(0, 90, 0));
   court.shuffle();
-  // deal court; 2p: 3 cards, 3-4p: 4 cards
-  const courtPoints = getCourtPoints();
-  for (let i = 0; i < (setup.length === 2 ? 3 : 4); i++) {
-    if (occupied(courtPoints[i])) continue;
+  // Deal court; 2p: 3 cards, 3-4p: 4 cards
+  for (const snap of getCourtSnaps().slice(0, setup.length === 2 ? 3 : 4)) {
+    if (occupied(snap)) continue;
     const card = court.takeCards(1);
     if (!card) break;
-    card.setPosition(getPosition(courtPoints[i]).add(above));
+    card.setPosition(getPosition(snap).add(above));
     card.snap();
   }
 
-  // out of play
+  // Out of play
   const systems = getSystems();
   const resources = new Map<string, number>();
   for (const cluster of block.split(" ")) {
@@ -66,7 +65,7 @@ refCard.onPrimaryAction.add((card, player) => {
       const size =
         i === "0" ? ("14".includes(cluster) ? "large" : "small") : "round";
       const block = takeBlock(size);
-      block.setPosition(getPosition(system));
+      block.setPosition(getPosition(system).add(above));
       block.setRotation(new Rotator(0, 0, 0));
       block.snap();
       block.freeze();
@@ -79,15 +78,15 @@ refCard.onPrimaryAction.add((card, player) => {
     }
   }
   for (const [r, n] of resources.entries())
-    placeResources(r, n, blockedResources[r]);
+    placeResources(r, n, blockedResourceSnaps[r]);
 
-  // power markers
+  // Power markers
   for (const missing of getAllObjectsByTemplateName("power").filter(
     (d) => !slots.includes(d.getOwningPlayerSlot()),
   ))
     missing.destroy();
 
-  // starting pieces, gain resources
+  // Starting pieces, gain resources
   for (const [i, line] of setup.entries()) {
     const system = line
       .split(" ")
@@ -112,7 +111,7 @@ refCard.onPrimaryAction.add((card, player) => {
       placeShips(slots[i], 2, nearby(getPosition(system[3])));
   }
 
-  // deal action cards
+  // Deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
 });
 
@@ -162,7 +161,7 @@ function getActionDecks() {
 function getCourtDeck() {
   return getObjectByTemplateName("bc") as Card;
 }
-function getCourtPoints() {
+function getCourtSnaps() {
   const board = getObjectByTemplateName("court");
   if (!board) return [];
   return board
@@ -281,7 +280,7 @@ function gainResource(slot: number, system: SnapPoint) {
   placeResources(systemResource(system), 1, empty.getGlobalPosition());
 }
 
-const blockedResources = Object.fromEntries(
+const blockedResourceSnaps = Object.fromEntries(
   world
     .getObjectById("map")!
     .getAllSnapPoints()
