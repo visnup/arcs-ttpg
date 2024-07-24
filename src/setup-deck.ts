@@ -63,6 +63,7 @@ refCard.onPrimaryAction.add((card, player) => {
         i === "0" ? ("14".includes(cluster) ? "large" : "small") : "round";
       const block = takeBlock(size);
       block.setPosition(getPosition(snaps));
+      block.setRotation(new Rotator(0, 0, 0));
       block.snap();
       block.freeze();
     }
@@ -76,7 +77,7 @@ refCard.onPrimaryAction.add((card, player) => {
   ))
     missing.destroy();
 
-  // TODO player pieces
+  // player pieces
   for (const [i, line] of setup.entries()) {
     const snaps = line
       .split(" ")
