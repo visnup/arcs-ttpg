@@ -262,20 +262,13 @@ function placeResources(
   n: number,
   target: Vector,
 ) {
-  const supply = getAllObjectsByTemplateName("resource").find(
+  let supply = getAllObjectsByTemplateName("resource").find(
     (d) => (d as Card).getCardDetails(0)!.name === resource && onTable(d),
   ) as Card | undefined;
   if (!supply) return;
-  if (n >= supply.getStackSize()) {
-    // take all
-    supply.setPosition(target.add(above));
-    supply.snap();
-  } else {
-    // take some
-    const some = supply.takeCards(n);
-    some?.setPosition(target.add(above));
-    some?.snap();
-  }
+  if (n < supply.getStackSize()) supply = supply.takeCards(n);
+  supply?.setPosition(target.add(above));
+  supply?.snap();
 }
 function gainResource(slot: number, system: SnapPoint) {
   const board = getAllObjectsByTemplateName("board").find(
