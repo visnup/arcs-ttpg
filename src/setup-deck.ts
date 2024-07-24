@@ -19,16 +19,17 @@ refCard.onPrimaryAction.add((card, player) => {
   const [block, ...setup] = metadata.trim().split("\n");
 
   // players
-  const slots = [
+  const needed = [
     ...new Set([...world.getAllPlayers().map((p) => p.getSlot()), 0, 1, 2, 3]),
   ]
     .filter((s) => 0 <= s && s <= 3)
     .slice(0, setup.length)
-    .map((s) => [s, Math.random()])
-    .sort((a, b) => a[1] - b[1])
-    .map((d) => d[0]);
+    .sort();
+  // randomly pick first player
+  const first = Math.floor(Math.random() * needed.length);
+  const slots = needed.slice(first).concat(needed.slice(0, first));
 
-  // initiative marker to a random first player
+  // initiative marker to first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);
 
   // shuffle action deck
