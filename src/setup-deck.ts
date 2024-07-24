@@ -83,14 +83,16 @@ refCard.onPrimaryAction.add((card, player) => {
   // TODO resource tokens
 
   // deal action cards
-  action[0].deal(6, slots, false, true);
+  if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
 });
 
 function getActionDecks() {
   return (
     world
       .getAllObjects()
-      .filter((d) => d.getTemplateName() === "action") as Card[]
+      .filter(
+        (d) => d.getTemplateName() === "action" && !(d as Card).isInHolder(),
+      ) as Card[]
   ).sort((a, b) => b.getStackSize() - a.getStackSize());
 }
 
