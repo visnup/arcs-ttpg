@@ -23,16 +23,18 @@ refCard.onPrimaryAction.add((card, player) => {
     .map((s) => [s, Math.random()])
     .sort((a, b) => a[1] - b[1])
     .map((d) => d[0]);
+  const colors = slots.map((s) => world.getSlotColor(s).toHex());
 
   // initiative marker to a random first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);
 
   // shuffle action deck
-  // 4p: add 1, 7s
   const action = getActionDecks();
-  if (setup.length === 4) action[0].addCards(action[1]);
-  action[0].setRotation(new Rotator(0, -90, 0));
-  action[0].shuffle();
+  // 4p: add 1, 7s
+  if (setup.length === 4) action[0]?.addCards(action[1]);
+  else action[1]?.destroy();
+  action[0]?.setRotation(new Rotator(0, -90, 0));
+  action[0]?.shuffle();
 
   // shuffle court deck
   const court = getCourtDeck();
@@ -68,13 +70,17 @@ refCard.onPrimaryAction.add((card, player) => {
     }
   }
 
-  // 2p: out of play resources
+  // TODO 2p: out of play resources
 
   // power markers
+  for (const missing of getPowerMarkers().filter(
+    (d) => !colors.includes(d.getPrimaryColor().toHex()),
+  ))
+    missing.destroy();
 
-  // player pieces
+  // TODO player pieces
 
-  // resource tokens
+  // TODO resource tokens
 
   // deal action cards
   action[0].deal(6, slots, false, true);
@@ -125,4 +131,8 @@ function getSystemPoints() {
         snap,
       };
     });
+}
+
+function getPowerMarkers() {
+  return world.getAllObjects().filter((d) => d.getTemplateName() === "power");
 }
