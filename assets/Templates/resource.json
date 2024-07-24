@@ -66,8 +66,8 @@
 	{
 		"0": "fuel",
 		"1": "material",
-		"2": "weapons",
-		"3": "relics",
+		"2": "weapon",
+		"3": "relic",
 		"4": "psionic"
 	},
 	"CardMetadata":
