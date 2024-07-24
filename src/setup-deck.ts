@@ -163,13 +163,13 @@ function getSystems() {
   if (!map) return [];
   return map
     .getAllSnapPoints()
-    .filter((d) => d.getTags().some((t) => t.startsWith("cluster-")))
+    .filter((d) => d.getTags().some((t) => t.startsWith("cluster:")))
     .map((snap) => {
       const tags = snap.getTags();
-      const cluster = tags.find((t) => t.startsWith("cluster-"));
-      const system = tags.find((t) => t.startsWith("system-"));
+      const cluster = tags.find((t) => t.startsWith("cluster:"));
+      const system = tags.find((t) => t.startsWith("system:"));
       return {
-        id: `${cluster?.replace("cluster-", "")}.${system?.replace("system-", "")}`,
+        id: `${cluster?.replace("cluster:", "")}.${system?.replace("system:", "")}`,
         snap,
       };
     });
