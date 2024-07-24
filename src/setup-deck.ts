@@ -8,6 +8,7 @@ import {
 } from "@tabletop-playground/api";
 import { InitiativeMarker } from "./initiative-marker";
 
+const above = new Vector(0, 0, 0.1);
 refCard.onPrimaryAction.add((card, player) => {
   if (card.getStackSize() > 1) return;
 
@@ -28,17 +29,27 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // shuffle action deck
   // 4p: add 1, 7s
-  const action = getActionCards();
+  const action = getActionDecks();
   if (setup.length === 4) action[0].addCards(action[1]);
   action[0].setRotation(new Rotator(0, -90, 0));
   action[0].shuffle();
 
   // shuffle court deck
+  const court = getCourtDeck();
+  court.setRotation(new Rotator(0, 90, 0));
+  court.shuffle();
   // deal court; 2p: 3 cards, 3-4p: 4 cards
-
-  const systems = getSystems();
+  const courtPoints = getCourtPoints();
+  for (let i = 0; i < (setup.length === 2 ? 3 : 4); i++) {
+    if (courtPoints[i].getSnappedObject()) continue;
+    const card = court.takeCards(1);
+    if (!card) break;
+    card.setPosition(courtPoints[i].getGlobalPosition().add(above));
+    card.snap();
+  }
 
   // out of play
+  const systems = getSystemPoints();
   for (const cluster of block.split(" ")) {
     for (let i of "0123") {
       for (const { snap } of systems.filter(
@@ -49,7 +60,7 @@ refCard.onPrimaryAction.add((card, player) => {
           i === "0" ? ("14".includes(cluster) ? "large" : "small") : "circle";
         const obj = world.createObjectFromTemplate(
           blocks[size],
-          snap.getGlobalPosition().add(new Vector(0, 0, 0.1)),
+          snap.getGlobalPosition().add(above),
         )!;
         obj.snap();
         obj.freeze();
@@ -69,12 +80,28 @@ refCard.onPrimaryAction.add((card, player) => {
   action[0].deal(6, slots, false, true);
 });
 
-function getActionCards() {
+function getActionDecks() {
   return (
     world
       .getAllObjects()
       .filter((d) => d.getTemplateName() === "action") as Card[]
   ).sort((a, b) => b.getStackSize() - a.getStackSize());
+}
+
+function getCourtDeck() {
+  return world
+    .getAllObjects()
+    .find((d) => d.getTemplateName() === "bc") as Card;
+}
+function getCourtPoints() {
+  const board = world
+    .getAllObjects()
+    .find((d) => d.getTemplateName() === "court");
+  if (!board) return [];
+  return board
+    .getAllSnapPoints()
+    .sort((a, b) => b.getLocalPosition().y - a.getLocalPosition().y)
+    .slice(1);
 }
 
 const blocks = {
@@ -83,7 +110,7 @@ const blocks = {
   circle: "9DCAD3B92D45B6569168CDA2E9DD167D",
 };
 
-function getSystems() {
+function getSystemPoints() {
   const map = world.getObjectById("map");
   if (!map) return [];
   return map
