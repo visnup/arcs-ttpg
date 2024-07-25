@@ -91,29 +91,59 @@ refCard.onPrimaryAction.add((card, player) => {
     const system = line
       .split(" ")
       .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
-    // A: 3 ships, 1 city
-    if (!occupied(system[0])) {
-      const a = getPosition(system[0]);
-      placeCities(slots[i], 1, a);
-      placeShips(slots[i], 3, nearby(a));
-      gainResource(slots[i], system[0][0]);
-    }
-    // B: 3 ships, 1 starport
-    if (!occupied(system[1])) {
-      const b = getPosition(system[1]);
-      placeStarports(slots[i], 1, b);
-      placeShips(slots[i], 3, nearby(b));
-      gainResource(slots[i], system[1][0]);
-    }
-    // C: 2 ships
-    if (!occupied(system[2])) placeShips(slots[i], 2, getPosition(system[2]));
-    if (system[3] && !occupied(system[3]))
-      placeShips(slots[i], 2, nearby(getPosition(system[3])));
+    const { placements, resources } =
+      getLeader(slots[i]) ?? getPlacement(slots[i]);
+    for (let j = 0; j < system.length; j++)
+      if (!occupied(system[j])) (placements[j] ?? placements[2])(system[j]);
+    resources(system);
   }
 
   // Deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
 });
+
+const createPlacement =
+  (slot: number) => (spec: string) => (system: SnapPoint[]) => {
+    const [ships, building] = spec.split(" ");
+    const p = getPosition(system);
+    placeShips(slot, +ships, nearby(p));
+    if (building === "city") placeCities(slot, 1, p);
+    if (building === "starport") placeStarports(slot, 1, p);
+  };
+function getPlacement(slot: number) {
+  return {
+    placements: [
+      "3 city", // A
+      "3 starport", // B
+      "2", // C
+    ].map(createPlacement(slot)),
+    resources: (systems: SnapPoint[][]) => {
+      // gain from first two systems
+      gainResource(slot, systemResource(systems[0][0]));
+      gainResource(slot, systemResource(systems[1][0]));
+    },
+  };
+}
+function getLeader(slot: number) {
+  const board = getAllObjectsByTemplateName("board").find(
+    (d) => d.getOwningPlayerSlot() === slot,
+  )!;
+  const card = getAllObjectsByTemplateName("leader").find(
+    (d) =>
+      (d as Card).getStackSize() === 1 &&
+      d.getPosition().distance(board.getPosition()) < 18,
+  ) as Card;
+  if (card) {
+    const { metadata } = card.getCardDetails(0)!;
+    const [a, b, c, resources] = metadata.trim().split("\n");
+    return {
+      placements: [a, b, c].map(createPlacement(slot)),
+      resources: () => {
+        for (const r of resources.split(" ")) gainResource(slot, r);
+      },
+    };
+  }
+}
 
 function getAllObjectsByTemplateName(name: string) {
   return world.getAllObjects().filter((d) => d.getTemplateName() === name);
@@ -197,6 +227,7 @@ function takeBlock(type: "small" | "large" | "round") {
 }
 
 function nearby(building: Vector) {
+  if (building.distance(origin) < 11) return building;
   const direction = building.subtract(origin).unit();
   const ring = origin.add(direction.multiply(11));
   return Vector.lerp(ring, building, building.distance(ring) > 5 ? 0.5 : 2);
@@ -269,7 +300,7 @@ function placeResources(
   supply?.setPosition(target.add(above));
   supply?.snap();
 }
-function gainResource(slot: number, system: SnapPoint) {
+function gainResource(slot: number, resource: string | undefined) {
   const board = getAllObjectsByTemplateName("board").find(
     (d) => d.getOwningPlayerSlot() === slot,
   )!;
@@ -277,7 +308,7 @@ function gainResource(slot: number, system: SnapPoint) {
     .getAllSnapPoints()
     .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
     .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
-  placeResources(systemResource(system), 1, empty.getGlobalPosition());
+  placeResources(resource, 1, empty.getGlobalPosition());
 }
 
 const blockedResourceSnaps = Object.fromEntries(
