@@ -123,6 +123,10 @@ function rgbToHsl({ r, g, b }: Color) {
   return [h, s, l];
 }
 
+world.clearConsole();
+function clamp(value: number) {
+  return Math.min(Math.max(value, 0), 1);
+}
 function hslToRgb([h, s, l]: number[]) {
   let r, g, b;
 
@@ -146,5 +150,5 @@ function hslToRgb([h, s, l]: number[]) {
     b = hue2rgb(p, q, h - 1 / 3);
   }
 
-  return new Color(r, g, b);
+  return new Color(clamp(r), clamp(g), clamp(b));
 }
