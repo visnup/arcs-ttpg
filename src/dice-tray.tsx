@@ -92,8 +92,26 @@ function sumDice() {
                   width={20}
                 />,
               )}
-              {boxChild(1, <richtext size={14}>{label}</richtext>)}
-              {boxChild(0, <text size={16}>{total[key]}</text>)}
+              {boxChild(
+                1,
+                <richtext
+                  size={14}
+                  font="NeueKabelW01-Book.ttf"
+                  fontPackage={refPackageId}
+                >
+                  {label}
+                </richtext>,
+              )}
+              {boxChild(
+                0,
+                <text
+                  size={16}
+                  font="NeueKabelW01-Book.ttf"
+                  fontPackage={refPackageId}
+                >
+                  {total[key]}
+                </text>,
+              )}
             </horizontalbox>
           ),
       )}

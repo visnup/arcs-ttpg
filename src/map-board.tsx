@@ -61,7 +61,7 @@ class AmbitionSection {
             <text
               color={saturate(world.getSlotColor(slot), 0.75)}
               size={48}
-              font="FMBP700.ttf"
+              font="FMBolyarPro-700.ttf"
               fontPackage={refPackageId}
             >
               {` ${score} `}

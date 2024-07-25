@@ -1,15 +1,15 @@
 import {
-  Button,
+  refPackageId as _refPackageId,
   Card,
-  Player,
   refCard,
   Rotator,
   UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
-import type { InitiativeMarker } from "./initiative-marker";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
+import type { InitiativeMarker } from "./initiative-marker";
+const refPackageId = _refPackageId;
 
 function getInitiative() {
   return world.getObjectById("initiative") as InitiativeMarker;
@@ -34,6 +34,8 @@ refCard.onPrimaryAction.add((card) => {
   ui.widget = render(
     <button
       size={48}
+      font="NeueKabelW01-Book.ttf"
+      fontPackage={refPackageId}
       onClick={() => {
         card.deal(6);
         getInitiative()?.stand();
@@ -106,6 +108,8 @@ refCard.onReleased.add((card, player) => {
     ui.widget = render(
       <button
         size={48}
+        font="NeueKabelW01-Book.ttf"
+        fontPackage={refPackageId}
         onClick={() => {
           getInitiative()?.seize(player);
           card.removeUI(index);
@@ -123,6 +127,8 @@ refCard.onReleased.add((card, player) => {
     ui.widget = render(
       <button
         size={48}
+        font="NeueKabelW01-Book.ttf"
+        fontPackage={refPackageId}
         onClick={() => {
           getInitiative()?.take(player);
           card.removeUI(index);
