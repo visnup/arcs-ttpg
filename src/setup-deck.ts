@@ -92,7 +92,7 @@ refCard.onPrimaryAction.add((card, player) => {
       .split(" ")
       .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
     const { placements, resources } =
-      getLeader(slots[i]) ?? getPlacement(slots[i]);
+      getLeader(slots[i]) ?? getDefaultPlacement(slots[i]);
     for (let j = 0; j < system.length; j++)
       if (!occupied(system[j])) (placements[j] ?? placements[2])(system[j]);
     resources(system);
@@ -110,7 +110,7 @@ const createPlacement =
     if (building === "city") placeCities(slot, 1, p);
     if (building === "starport") placeStarports(slot, 1, p);
   };
-function getPlacement(slot: number) {
+function getDefaultPlacement(slot: number) {
   return {
     placements: [
       "3 city", // A
