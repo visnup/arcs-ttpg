@@ -3,18 +3,18 @@
 	"GUID": "0CD5E688A1484A32EE65F9AB12D44859",
 	"Name": "tray",
 	"Metadata": "",
-	"CollisionType": "Regular",
+	"CollisionType": "Ground",
 	"Friction": 0.7,
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Wood",
-	"Roughness": 1,
-	"Metallic": 0,
+	"Roughness": 0.8,
+	"Metallic": 1,
 	"PrimaryColor":
 	{
-		"R": 106,
-		"G": 81,
-		"B": 40
+		"R": 78,
+		"G": 60,
+		"B": 35
 	},
 	"SecondaryColor":
 	{
