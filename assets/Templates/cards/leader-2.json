@@ -1,7 +1,7 @@
 {
 	"Type": "Card",
 	"GUID": "545E0D05174D224FF56446B06085F093",
-	"Name": "leader 2",
+	"Name": "leader",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,
@@ -65,6 +65,14 @@
 	},
 	"CardMetadata":
 	{
+		"0": "3 city\n3 city\n2\nrelic relic",
+		"1": "city 3\nstarport 3\n2\nfuel material",
+		"2": "4 starport\n3\n2\nfuel weapon",
+		"3": "3 city\n3 starport\n2\npsionic psionic",
+		"4": "4\n3\n2\nrelic weapon",
+		"5": "3 city\n3\n3\nrelic material",
+		"6": "3 city\n4 starport\n2\nfuel material",
+		"7": "4 starport\n3\n2\nfuel weapon"
 	},
 	"CardTags":
 	{
