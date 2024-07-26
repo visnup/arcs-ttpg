@@ -27,7 +27,7 @@ const zone =
   world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
 zone.setId(zoneId);
 zone.setRotation(refObject.getRotation());
-zone.setScale(refObject.getSize().add(new Vector(0, 0, 20)));
+zone.setScale(refObject.getSize().add(new Vector(0, 0, 3)));
 zone.onBeginOverlap.add((_zone, obj) => {
   if (obj instanceof Dice) {
     obj.onPrimaryAction.add(onRoll);

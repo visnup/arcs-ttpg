@@ -19,7 +19,7 @@ const zone =
   world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
 {
   const { x, y } = refObject.getSize();
-  const size = new Vector(x * 0.62, y * 0.15, 20);
+  const size = new Vector(x * 0.62, y * 0.15, 2);
   zone.setId(zoneId);
   zone.setPosition(
     refObject.getPosition().add(new Vector(0, (size.y - y) / 2, 0)),
