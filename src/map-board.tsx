@@ -123,7 +123,6 @@ function rgbToHsl({ r, g, b }: Color) {
   return [h, s, l];
 }
 
-world.clearConsole();
 function clamp(value: number) {
   return Math.min(Math.max(value, 0), 1);
 }
