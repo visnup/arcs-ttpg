@@ -131,7 +131,7 @@ function getLeader(slot: number) {
   const card = getAllObjectsByTemplateName("leader").find(
     (d) =>
       (d as Card).getStackSize() === 1 &&
-      d.getPosition().distance(board.getPosition()) < 18,
+      d.getPosition().distance(board.getPosition()) < 20,
   ) as Card;
   if (card) {
     const { metadata } = card.getCardDetails(0)!;
