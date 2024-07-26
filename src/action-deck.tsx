@@ -15,8 +15,8 @@ function getInitiative() {
   return world.getObjectById("initiative") as InitiativeMarker;
 }
 
+// Draw from bottom
 refCard.addCustomAction("Draw from bottom");
-
 refCard.onCustomAction.add((card, player, identifier) => {
   switch (identifier) {
     case "Draw from bottom":
@@ -26,8 +26,9 @@ refCard.onCustomAction.add((card, player, identifier) => {
   }
 });
 
+// Deal option after shuffle
 refCard.onPrimaryAction.add((card) => {
-  if (card.getUIs().length) return;
+  if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.5, 0, 0);
   ui.scale = 0.2;
@@ -55,7 +56,7 @@ refCard.onPrimaryAction.add((card) => {
   const index = card.addUI(ui);
 });
 
-function isSecondAction(card: Card) {
+function isSecond(card: Card) {
   return String(
     world
       .boxTrace(
@@ -74,7 +75,7 @@ function suit(card: Card) {
 function rank(card: Card) {
   return (card.getCardDetails(0)!.index % 7) + 1;
 }
-function getPlayedActions() {
+function getPlayed() {
   const zone = world
     .getAllZones()
     .find((z) => z.getId().startsWith("zone-action-"));
@@ -86,7 +87,7 @@ function getPlayedActions() {
   );
 }
 function getSurpassing() {
-  const played = getPlayedActions();
+  const played = getPlayed();
   const lead = played.find((c) => c.isFaceUp());
   if (!lead) return [];
   return played.filter((c) => c.isFaceUp() && suit(c) === suit(lead));
@@ -100,12 +101,18 @@ function isSurpassing(card: Card) {
   );
 }
 
+// Stand up initiative when lead card is played
+refCard.onSnapped.add((card, player, snap) => {
+  if (snap.getTags().includes("card-lead")) getInitiative()?.stand();
+});
+
+// Seize or surpass option card is played
 refCard.onReleased.add((card, player) => {
-  if (card.getUIs().length) return;
+  if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
   const isFaceUp = card.isFaceUp();
   if (
-    (!isFaceUp && isSecondAction(card)) ||
+    (!isFaceUp && isSecond(card)) ||
     (isFaceUp && rank(card) === 7 && isSurpassing(card))
   ) {
     const ui = new UIElement();
@@ -149,6 +156,7 @@ refCard.onReleased.add((card, player) => {
   }
 });
 
+// Remove UI when card is grabbed
 refCard.onGrab.add((card) => {
   while (card.getUIs().length) card.removeUI(0);
 });

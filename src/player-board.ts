@@ -43,7 +43,7 @@ const courtZone =
 courtZone.setId(courtZoneId);
 courtZone.setRotation(refObject.getRotation());
 courtZone.setScale(new Vector(courtZoneHeight, y * 1.5, 8));
-courtZone.onBeginOverlap.add((_zone, obj) => {
+courtZone.onBeginOverlap.add((zone, obj) => {
   if (obj instanceof Card) obj.setRotation(new Rotator(0, 0, 180));
 });
 courtZone.onBeginOverlap.add(updateAmbitions);

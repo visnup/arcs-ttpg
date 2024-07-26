@@ -28,14 +28,14 @@ const zone =
 zone.setId(zoneId);
 zone.setRotation(refObject.getRotation());
 zone.setScale(refObject.getSize().add(new Vector(0, 0, 3)));
-zone.onBeginOverlap.add((_zone, obj) => {
+zone.onBeginOverlap.add((zone, obj) => {
   if (obj instanceof Dice) {
     obj.onPrimaryAction.add(onRoll);
     obj.onMovementStopped.add(sumDice);
   }
   sumDice();
 });
-zone.onEndOverlap.add((_zone, obj) => {
+zone.onEndOverlap.add((zone, obj) => {
   if (obj instanceof Dice) {
     obj.onPrimaryAction.remove(onRoll);
     obj.onMovementStopped.remove(sumDice);

@@ -74,7 +74,8 @@
 			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
-				"card"
+				"card",
+				"card-discard"
 			]
 		},
 		{
@@ -186,7 +187,8 @@
 			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
-				"card"
+				"card",
+				"card-lead"
 			]
 		},
 		{
