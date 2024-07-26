@@ -14,9 +14,12 @@ refObject.addCustomAction(
 );
 
 function toggle(obj: GameObject) {
-  obj.setPosition(obj.getPosition().add(new Vector(0, 0, obj.getSize().z * 2)));
-  const r = obj.getRotation();
-  if (Math.abs(r.pitch) < 1) obj.setRotation(new Rotator(-90, r.yaw, r.roll));
-  else obj.setRotation(new Rotator(0, r.yaw + r.roll, 0));
+  obj.setPosition(obj.getPosition().add(new Vector(0, 0, obj.getSize().z)));
+  const center = obj.getExtentCenter(true, false);
+  const { pitch, yaw, roll } = obj.getRotation();
+  if (Math.abs(pitch) < 1) obj.setRotation(new Rotator(-90, yaw, roll));
+  else obj.setRotation(new Rotator(0, yaw + roll, 0));
+  const delta = center.subtract(obj.getExtentCenter(true, false));
+  obj.setPosition(obj.getPosition().add(delta));
   obj.snapToGround();
 }
