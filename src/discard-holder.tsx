@@ -34,8 +34,7 @@ process.nextTick(() => {
       // discard button
       if (refHolder.getUIs().length === 1) {
         const button = new UIElement();
-        button.rotation = new Rotator(0, 0, -90);
-        button.position = new Vector(0, refHolder.getSize().y / 2 + 1.5, 0);
+        button.position = new Vector(-refHolder.getSize().x / 2 - 0.5, 0, 0);
         button.scale = 0.2;
         button.widget = render(
           <button

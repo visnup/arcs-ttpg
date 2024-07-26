@@ -13,6 +13,11 @@ import { render, jsxInTTPG } from "jsx-in-ttpg";
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 
+// Global map id
+refObject.setId("map");
+
+export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
+
 // Card zone
 const zoneId = `zone-action-${refObject.getId()}`;
 const zone =
@@ -25,10 +30,11 @@ const zone =
     refObject.getPosition().add(new Vector(0, (size.y - y) / 2, 0)),
   );
   zone.setRotation(refObject.getRotation());
-  zone.setStacking(ZonePermission.Nobody);
   zone.setScale(size);
+  zone.setStacking(ZonePermission.Nobody);
 }
 
+// Ambition ranks
 const size = refObject.getSize();
 class AmbitionSection {
   scores: Map<number, number>;
@@ -72,8 +78,6 @@ class AmbitionSection {
   }
 }
 
-export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
-
 const ext = Object.assign(refObject, {
   ambitions: Object.fromEntries(
     ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
@@ -82,5 +86,4 @@ const ext = Object.assign(refObject, {
     ]),
   ) as Record<Ambition, AmbitionSection>,
 });
-refObject.setId("map");
 export type MapBoard = typeof ext;
