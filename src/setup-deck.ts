@@ -15,6 +15,10 @@ const above = new Vector(0, 0, 0.1);
 refCard.onPrimaryAction.add((card, player) => {
   if (card.getStackSize() > 1) return;
 
+  // Clean up
+  removeNotes();
+  removeCampaign();
+
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
 
@@ -157,12 +161,37 @@ function getObjectByTemplateName(name: string) {
 function onTable(obj: GameObject) {
   return world
     .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
-    .every(({ object }) => object.getTemplateName() === "resource");
+    .every(({ object }) => object.getTemplateName() === obj.getTemplateName());
 }
 function onMap(obj: GameObject) {
   return world
     .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
     .some(({ object }) => object.getTemplateName() === "map");
+}
+
+function removeNotes() {
+  for (const obj of getAllObjectsByTemplateName("note")) obj.destroy();
+}
+function removeCampaign() {
+  for (const t of [
+    "fate",
+    "set-round",
+    "cc",
+    "dc",
+    "book-of-law",
+    "first-regent",
+    "chapter",
+    "number",
+    "icon",
+    "flagship-board",
+    "flagship",
+    "objective",
+  ])
+    for (const obj of getAllObjectsByTemplateName(t)) obj.destroy();
+  for (const obj of getAllObjectsByTemplateName("power"))
+    if (onTable(obj)) obj.destroy();
+  for (const obj of world.getAllObjects())
+    if (obj.getOwningPlayerSlot() === 4) obj.destroy();
 }
 
 function occupied(system: SnapPoint | SnapPoint[]) {

@@ -6,7 +6,7 @@ for (const zone of world.getAllZones())
 
 // Set owning player slots by matching color
 const colors = Object.fromEntries(
-  [0, 1, 2, 3].map((i) => [world.getSlotColor(i).toHex(), i]),
+  [0, 1, 2, 3, 4].map((i) => [world.getSlotColor(i).toHex(), i]),
 );
 for (const obj of world.getAllObjects())
   if (obj.getOwningPlayerSlot() === -1) {
