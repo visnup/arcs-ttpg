@@ -38,6 +38,13 @@ refCard.onPrimaryAction.add((card) => {
       fontPackage={refPackageId}
       onClick={() => {
         card.deal(6);
+        for (const holder of world.getAllObjects())
+          if (
+            holder.getTemplateName() === "cards" &&
+            "sort" in holder &&
+            typeof holder.sort === "function"
+          )
+            holder.sort();
         getInitiative()?.stand();
         card.removeUI(index);
       }}

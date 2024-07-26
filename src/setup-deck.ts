@@ -100,6 +100,8 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // Deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
+  for (const holder of getAllObjectsByTemplateName("cards"))
+    if ("sort" in holder && typeof holder.sort === "function") holder.sort();
 });
 
 const createPlacement =
