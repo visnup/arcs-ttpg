@@ -12,9 +12,9 @@
 	"Metallic": 1,
 	"PrimaryColor":
 	{
-		"R": 78,
-		"G": 60,
-		"B": 35
+		"R": 255,
+		"G": 255,
+		"B": 255
 	},
 	"SecondaryColor":
 	{
@@ -48,8 +48,8 @@
 				"Y": 0,
 				"Z": 0
 			},
-			"Texture": "wood-texture.jpg",
-			"NormalMap": "wood-texture-n.jpg",
+			"Texture": "dice/dice-tray-t.jpg",
+			"NormalMap": "dice/dice-tray-n.jpg",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
