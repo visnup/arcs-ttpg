@@ -5,7 +5,6 @@ import {
   refHolder as _refHolder,
   refPackageId as _refPackageId,
   UIElement,
-  Rotator,
   Vector,
   world,
   Button,
@@ -17,24 +16,21 @@ const refPackageId = _refPackageId;
 refHolder.onCardFlipped.add(sortCard);
 refHolder.onInserted.add(sortCard);
 
-const label = new UIElement();
-label.scale = 0.2;
-label.widget = render(
-  <text size={24} font="FMBolyarPro-700.ttf">
-    Face Up Action Discard
-  </text>,
-);
-refHolder.addUI(label);
-
+// Ensure zone has been created
 process.nextTick(() => {
   const zone = getActionZone();
   if (!zone) return;
+  // Show discard button when action card is played
   zone.onBeginOverlap.add((zone, obj) => {
     if (obj instanceof Card && obj.getTemplateName() === "action") {
-      // discard button
-      if (refHolder.getUIs().length === 1) {
+      if (!refHolder.getUIs().length) {
+        // Create button
         const button = new UIElement();
-        button.position = new Vector(-refHolder.getSize().x / 2 - 0.5, 0, 0);
+        button.position = new Vector(
+          -refHolder.getExtent(false, false).x - 1.1,
+          0,
+          0,
+        );
         button.scale = 0.2;
         button.widget = render(
           <button
@@ -48,7 +44,8 @@ process.nextTick(() => {
         );
         refHolder.addUI(button);
       } else {
-        (refHolder.getUIs()[1].widget as Button).setText("Discard");
+        // Update button text
+        (refHolder.getUIs()[0].widget as Button).setText("Discard");
       }
     }
   });
@@ -59,6 +56,7 @@ function discardOrEndRound(button: Button, player: Player) {
   else endRound(button, player);
 }
 
+// Put all cards in the action zone into the discard pile, self-discard anything that supports it
 function discard(button: Button, player: Player) {
   const zone = getActionZone();
   if (!zone) return;
@@ -67,6 +65,7 @@ function discard(button: Button, player: Player) {
       obj instanceof Card &&
       ["action", "dc"].includes(obj.getTemplateName())
     ) {
+      // todo: rotate if face down
       refHolder.insert(obj, 0);
       sortCard(refHolder, obj, player, 0);
     }
@@ -84,15 +83,17 @@ function endRound(button: Button, player: Player) {
   if (!snap) return;
   let discard = snap.getSnappedObject();
   if (discard === undefined) {
+    // Empty discard: make a new one
     discard = refHolder.removeAt(0)!;
     discard.setPosition(snap.getGlobalPosition());
     discard.snap();
   }
   if (discard instanceof Card) {
-    for (const card of refHolder.getCards()) discard.addCards(card);
+    for (const c of world.getAllObjects())
+      if (c.getTemplateName() === "action") discard.addCards(c as Card);
     discard.shuffle();
   }
-  refHolder.removeUI(1);
+  refHolder.removeUI(0);
 }
 
 function getActionZone() {
@@ -106,10 +107,10 @@ function sortCard(
   inserted: number = holder.getNumCards(),
 ) {
   if (!holder.isCardFaceUp(card)) {
-    // move to end
+    // Move to end
     holder.moveCard(card, holder.getNumCards());
   } else {
-    // put it in order
+    // Put it in order
     const index = card.getCardDetails().index;
     const cards = holder.getCards();
     for (let i = 0; i < cards.length; i++)
@@ -118,7 +119,7 @@ function sortCard(
         !holder.isCardFaceUp(cards[i])
       )
         return holder.moveCard(card, i - (i > inserted ? 1 : 0));
-    // belongs at the end
+    // Belongs at the end
     holder.moveCard(card, holder.getNumCards());
   }
 }

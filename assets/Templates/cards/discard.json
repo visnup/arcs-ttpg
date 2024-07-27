@@ -8,13 +8,13 @@
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Cardboard",
-	"Roughness": 0.5,
-	"Metallic": 1,
+	"Roughness": 1,
+	"Metallic": 0,
 	"PrimaryColor":
 	{
-		"R": 200,
-		"G": 200,
-		"B": 200
+		"R": 240,
+		"G": 240,
+		"B": 240
 	},
 	"SecondaryColor":
 	{
@@ -22,7 +22,7 @@
 		"G": 20,
 		"B": 20
 	},
-	"Flippable": false,
+	"Flippable": true,
 	"AutoStraighten": false,
 	"ShouldSnap": true,
 	"ScriptName": "discard-holder.js",
@@ -39,8 +39,8 @@
 			"Scale":
 			{
 				"X": 10,
-				"Y": 32.999999789788411,
-				"Z": 0.20000000000000001
+				"Y": 33,
+				"Z": 0.10000000000000001
 			},
 			"Rotation":
 			{
@@ -48,29 +48,44 @@
 				"Y": 0,
 				"Z": 0
 			},
-			"Texture": "",
+			"Texture": "cards/discard face up.jpg",
 			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
-			"IsTransparent": true,
-			"Alpha": 0.1,
+			"IsTransparent": false,
 			"CastShadow": false,
 			"IsTwoSided": false,
-			"UseOverrides": false,
-			"Roughness": 1,
-			"Metallic": 0,
-			"PrimaryColor":
+			"UseOverrides": true,
+			"SurfaceType": "Plastic"
+		},
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
 			{
-				"R": 0,
-				"G": 0,
-				"B": 0
+				"X": 0,
+				"Y": 0,
+				"Z": -0.10000000000000001
 			},
-			"SecondaryColor":
+			"Scale":
 			{
-				"R": 0,
-				"G": 0,
-				"B": 0
+				"X": 10,
+				"Y": 33,
+				"Z": 0.10000000000000001
 			},
+			"Rotation":
+			{
+				"X": 180,
+				"Y": 0,
+				"Z": 0
+			},
+			"Texture": "cards/discard face down.jpg",
+			"NormalMap": "",
+			"ExtraMap": "",
+			"ExtraMap2": "",
+			"IsTransparent": false,
+			"CastShadow": true,
+			"IsTwoSided": false,
+			"UseOverrides": true,
 			"SurfaceType": "Plastic"
 		}
 	],

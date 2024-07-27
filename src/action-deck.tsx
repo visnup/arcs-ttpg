@@ -30,7 +30,7 @@ refCard.onCustomAction.add((card, player, identifier) => {
 refCard.onPrimaryAction.add((card) => {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
-  ui.position = new Vector(-card.getExtent(false, false).x - 1.5, 0, 0);
+  ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
   ui.scale = 0.2;
   ui.widget = render(
     <button
@@ -115,8 +115,9 @@ refCard.onReleased.add((card, player) => {
     (!isFaceUp && isSecond(card)) ||
     (isFaceUp && rank(card) === 7 && isSurpassing(card))
   ) {
+    // Seize
     const ui = new UIElement();
-    ui.position = new Vector(-5.5, 0, 0);
+    ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
     if (isFaceUp) ui.rotation = new Rotator(180, 180, 0);
     ui.scale = 0.2;
     ui.widget = render(
@@ -134,8 +135,9 @@ refCard.onReleased.add((card, player) => {
     );
     const index = card.addUI(ui);
   } else if (isFaceUp && isSurpassing(card)) {
+    // Surpass
     const ui = new UIElement();
-    ui.position = new Vector(-5.5, 0, 0);
+    ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
     ui.rotation = new Rotator(180, 180, 0);
     ui.scale = 0.2;
     ui.widget = render(
