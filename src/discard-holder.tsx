@@ -8,6 +8,7 @@ import {
   Vector,
   world,
   Button,
+  Rotator,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 const refHolder = _refHolder;
@@ -15,6 +16,10 @@ const refPackageId = _refPackageId;
 
 refHolder.onCardFlipped.add(sortCard);
 refHolder.onInserted.add(sortCard);
+
+function discardFaceDown() {
+  return refHolder.getRotation().yaw > 0;
+}
 
 // Ensure zone has been created
 process.nextTick(() => {
@@ -27,10 +32,12 @@ process.nextTick(() => {
         // Create button
         const button = new UIElement();
         button.position = new Vector(
-          -refHolder.getExtent(false, false).x - 1.1,
+          (discardFaceDown() ? 1 : -1) *
+            (refHolder.getExtent(false, false).x + 1.1),
           0,
           0,
         );
+        if (discardFaceDown()) button.rotation = new Rotator(0, 180, 0);
         button.scale = 0.2;
         button.widget = render(
           <button
@@ -65,8 +72,8 @@ function discard(button: Button, player: Player) {
       obj instanceof Card &&
       ["action", "dc"].includes(obj.getTemplateName())
     ) {
-      // todo: rotate if face down
       refHolder.insert(obj, 0);
+      if (obj.isFaceUp() && discardFaceDown()) refHolder.flipCard(obj);
       sortCard(refHolder, obj, player, 0);
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
