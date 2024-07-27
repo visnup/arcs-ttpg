@@ -836,10 +836,10 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604848566224e-08,
-					"y": 1.5122890807549196e-07,
-					"z": 0.70693617635721129,
-					"w": 0.70727734486367799
+					"x": 9.4700605034004513e-08,
+					"y": 1.512289079593692e-07,
+					"z": 0.70693617548994125,
+					"w": 0.70727734573052969
 				},
 				"translation":
 				{
@@ -5242,16 +5242,16 @@
 			{
 				"rotation":
 				{
-					"x": 2.2582836970852784e-08,
-					"y": 4.2275402009117405e-08,
-					"z": -0.38268057836037639,
-					"w": 0.92388071467358035
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": 34.199993962762015,
-					"y": 48.000007519895235,
-					"z": 86.722241185436303
+					"x": -17.538000144583375,
+					"y": 29.689999964518552,
+					"z": 87.722256572830531
 				},
 				"scale3D":
 				{
@@ -5263,9 +5263,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
+				"b": 255,
+				"g": 255,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -5277,14 +5277,14 @@
 			},
 			"metallic": 0,
 			"roughness": 1,
-			"friction": 0.69999998807907104,
+			"friction": 1,
 			"restitution": 0.30000001192092896,
 			"density": 1,
 			"surfaceType": "SurfaceType2",
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"templateId": "831024D93C441226F2BFD784AF70E335",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -5293,16 +5293,18 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "bs0",
+			"uniqueId": "zwd",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"chapter"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": 3,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5666,7 +5668,363 @@
 			{
 				"rotation":
 				{
-					"x": 2.9254865092454274e-08,
+					"x": -7.4640297340384207e-07,
+					"y": 1.0236891124171139e-06,
+					"z": -0.38205930285390111,
+					"w": 0.92413780850108374
+				},
+				"translation":
+				{
+					"x": 37.799949761763855,
+					"y": 45.000045587255045,
+					"z": 86.722238272921231
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "qnh",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.6049230574647606e-06,
+					"y": -2.5960808035381738e-05,
+					"z": -3.8647311387967697e-06,
+					"w": 0.99999999965215725
+				},
+				"translation":
+				{
+					"x": 31.499948313799628,
+					"y": -4.4999932443685351,
+					"z": 86.788899994504661
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "rvi",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.5418047324073231e-06,
+					"y": 2.5748881845015042e-05,
+					"z": -2.6876689789723514e-05,
+					"w": 0.99999999930408889
+				},
+				"translation":
+				{
+					"x": 29.999972615407518,
+					"y": -4.4999971343023635,
+					"z": 86.788899800150887
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "5wx",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.5982506229126293e-06,
+					"y": -2.5948369604702095e-05,
+					"z": -2.4193187765378404e-05,
+					"w": 0.99999999936731054
+				},
+				"translation":
+				{
+					"x": 29.999940151884573,
+					"y": -5.9999904284842449,
+					"z": 86.788899982089276
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "mab",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.2582836969386567e-08,
+					"y": 4.2275402009900639e-08,
+					"z": -0.38268057832833391,
+					"w": 0.92388071468685262
+				},
+				"translation":
+				{
+					"x": 34.199993962762015,
+					"y": 48.000007519895235,
+					"z": 86.722241185436303
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "bs0",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 2.9254865092454268e-08,
 					"y": 9.5645050899932276e-08,
 					"z": -0.38264208346164447,
 					"w": 0.92389665870384108
@@ -5736,9 +6094,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.54023866925217e-06,
-					"y": -3.7563991622569346e-06,
-					"z": 2.5242625780544767e-07,
+					"x": 1.5402386692521698e-06,
+					"y": -3.7563991618884422e-06,
+					"z": 2.524262577806853e-07,
 					"w": 0.99999999999172673
 				},
 				"translation":
@@ -5946,9 +6304,9 @@
 			{
 				"rotation":
 				{
-					"x": -1.0187066537637565e-06,
-					"y": 4.3918763734614034e-06,
-					"z": 4.8069914554708028e-06,
+					"x": -1.0187066536638218e-06,
+					"y": 4.3918763729653521e-06,
+					"z": 4.8069914549992503e-06,
 					"w": 0.99999999997828337
 				},
 				"translation":
@@ -6016,10 +6374,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.1872181726640264e-06,
-					"y": 1.0011003007884431e-05,
-					"z": -0.3841251717716489,
-					"w": 0.92328102563684422
+					"x": 3.1872181720164104e-06,
+					"y": 1.0011003007045306e-05,
+					"z": -0.38412517173952732,
+					"w": 0.9232810256502082
 				},
 				"translation":
 				{
@@ -6086,9 +6444,9 @@
 			{
 				"rotation":
 				{
-					"x": -2.8590879733117757e-07,
-					"y": 8.2033065615603126e-08,
-					"z": 6.0610690346476164e-06,
+					"x": -2.8590879730313073e-07,
+					"y": 8.203306561560347e-08,
+					"z": 6.0610690340530416e-06,
 					"w": 0.99999999998158751
 				},
 				"translation":
@@ -6226,10 +6584,10 @@
 			{
 				"rotation":
 				{
-					"x": -9.2209799221080502e-06,
-					"y": -1.7250056729280893e-05,
-					"z": -0.38397332756186514,
-					"w": 0.9233441846562298
+					"x": -9.2209799206035553e-06,
+					"y": -1.7250056727909407e-05,
+					"z": -0.38397332752975194,
+					"w": 0.92334418466958412
 				},
 				"translation":
 				{
@@ -6296,9 +6654,9 @@
 			{
 				"rotation":
 				{
-					"x": 1.5519727194713416e-06,
-					"y": -3.7785098235491324e-06,
-					"z": 3.3532693463337264e-06,
+					"x": 1.5519727194713391e-06,
+					"y": -3.7785098231784703e-06,
+					"z": 3.3532693460047795e-06,
 					"w": 0.99999999998603495
 				},
 				"translation":
@@ -6366,10 +6724,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.0948341449951371e-06,
-					"y": 7.4967116061146092e-06,
-					"z": -0.38226372585671908,
-					"w": 0.92405326893893935
+					"x": 1.094834144713807e-06,
+					"y": 7.4967116056246438e-06,
+					"z": -0.38226372582469942,
+					"w": 0.92405326895218531
 				},
 				"translation":
 				{
@@ -6436,9 +6794,9 @@
 			{
 				"rotation":
 				{
-					"x": -2.696070006124177e-07,
-					"y": 7.9048038926847022e-08,
-					"z": 6.1187016362178196e-06,
+					"x": -2.6960700058596989e-07,
+					"y": 7.904803892684734e-08,
+					"z": 6.1187016356175925e-06,
 					"w": 0.99999999998124134
 				},
 				"translation":
@@ -6506,225 +6864,9 @@
 			{
 				"rotation":
 				{
-					"x": 2.5982506229126293e-06,
-					"y": -2.5948369604702095e-05,
-					"z": -2.4193187765378404e-05,
-					"w": 0.99999999936731054
-				},
-				"translation":
-				{
-					"x": 29.999940151884573,
-					"y": -5.9999904284842449,
-					"z": 86.788899982089276
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "mab",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 2.5418047324073231e-06,
-					"y": 2.5748881845015042e-05,
-					"z": -2.6876689789723514e-05,
-					"w": 0.99999999930408889
-				},
-				"translation":
-				{
-					"x": 29.999972615407518,
-					"y": -4.4999971343023635,
-					"z": 86.788899800150887
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "5wx",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 2.6049230574647606e-06,
-					"y": -2.5960808035381738e-05,
-					"z": -3.8647311387967697e-06,
-					"w": 0.99999999965215725
-				},
-				"translation":
-				{
-					"x": 31.499948313799628,
-					"y": -4.4999932443685351,
-					"z": 86.788899994504661
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "rvi",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.5419960764861338e-06,
-					"y": -3.7516553223552066e-06,
-					"z": 1.4084214563831624e-06,
+					"x": 1.5419960764861327e-06,
+					"y": -3.7516553219871797e-06,
+					"z": 1.4084214562449997e-06,
 					"w": 0.99999999999078193
 				},
 				"translation":
@@ -6862,10 +7004,10 @@
 			{
 				"rotation":
 				{
-					"x": -3.3829956347857365e-08,
-					"y": -5.9274502583155046e-08,
-					"z": -0.38355503557109871,
-					"w": 0.92351802077060119
+					"x": -3.382995634247907e-08,
+					"y": -5.9274502578515906e-08,
+					"z": -0.38355503553900833,
+					"w": 0.92351802078392897
 				},
 				"translation":
 				{
@@ -6932,10 +7074,10 @@
 			{
 				"rotation":
 				{
-					"x": 5.2549282261691059e-06,
-					"y": 1.0991095561570022e-05,
-					"z": -0.38784739385607719,
-					"w": 0.92172360224235905
+					"x": 5.2549282253988793e-06,
+					"y": 1.0991095560839859e-05,
+					"z": -0.38784739382375377,
+					"w": 0.92172360225596028
 				},
 				"translation":
 				{
@@ -7002,10 +7144,10 @@
 			{
 				"rotation":
 				{
-					"x": 7.0178835384361097e-06,
-					"y": 2.3956806077469e-05,
-					"z": -0.38039993758632901,
-					"w": 0.92482208389567444
+					"x": 7.0178835369037983e-06,
+					"y": 2.3956806075319519e-05,
+					"z": -0.38039993755441254,
+					"w": 0.92482208390880238
 				},
 				"translation":
 				{
@@ -7072,10 +7214,10 @@
 			{
 				"rotation":
 				{
-					"x": -4.1525149713080081e-06,
-					"y": -6.9396010734111883e-06,
-					"z": -0.37954249040863125,
-					"w": 0.92517430677089851
+					"x": -4.1525149706616161e-06,
+					"y": -6.9396010728734672e-06,
+					"z": -0.3795424903767628,
+					"w": 0.92517430678397217
 				},
 				"translation":
 				{
@@ -7142,7 +7284,7 @@
 			{
 				"rotation":
 				{
-					"x": 1.0431807035550589e-05,
+					"x": 1.0431807035550591e-05,
 					"y": 3.3783334200553839e-05,
 					"z": -0.38304053602110655,
 					"w": 0.92373153378810613
@@ -7282,7 +7424,7 @@
 			{
 				"rotation":
 				{
-					"x": -8.9834893994119708e-08,
+					"x": -8.9834893994119602e-08,
 					"y": 2.003685806524722e-06,
 					"z": -0.3809654543200835,
 					"w": 0.92458927238567368
@@ -7352,10 +7494,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.7616129381643381e-09,
-					"y": 7.4382906640476561e-09,
-					"z": -0.38268534115254876,
-					"w": 0.92387874186332342
+					"x": 1.7616129380168344e-09,
+					"y": 7.4382906640629921e-09,
+					"z": -0.3826853411205059,
+					"w": 0.92387874187659602
 				},
 				"translation":
 				{
@@ -7492,10 +7634,10 @@
 			{
 				"rotation":
 				{
-					"x": 2.8954469925120268e-06,
-					"y": 7.5630797530511627e-06,
-					"z": -0.38067001316445026,
-					"w": 0.92471094997939418
+					"x": 2.8954469918914854e-06,
+					"y": 7.5630797522262093e-06,
+					"z": -0.38067001313251886,
+					"w": 0.92471094999253922
 				},
 				"translation":
 				{
@@ -7562,86 +7704,16 @@
 			{
 				"rotation":
 				{
-					"x": -7.4640297340384207e-07,
-					"y": 1.0236891124171139e-06,
-					"z": -0.38205930285390111,
-					"w": 0.92413780850108374
+					"x": -1.2993700067885753e-10,
+					"y": 4.0691805005702651e-07,
+					"z": 0.00031977207563268085,
+					"w": 0.99999994887282573
 				},
 				"translation":
 				{
-					"x": 37.799949761763855,
-					"y": 45.000045587255045,
-					"z": 86.722238272921231
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "qnh",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -9.8512608123164567e-11,
-					"y": 4.0694767468155702e-07,
-					"z": 0.00031139901198197733,
-					"w": 0.99999995151524368
-				},
-				"translation":
-				{
-					"x": -31.466640268627447,
-					"y": 54.217170643633601,
-					"z": 86.827268676344914
+					"x": -31.466719245229701,
+					"y": 54.217207922105985,
+					"z": 86.8272686763313
 				},
 				"scale3D":
 				{
@@ -7702,16 +7774,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.3861935924239271e-06,
-					"y": -8.7417112746251727e-06,
-					"z": -1.7701007233014027e-06,
-					"w": 0.99999999995926381
+					"x": -1.6132677238858334e-08,
+					"y": -5.1569640421965188e-08,
+					"z": -0.38268547673066233,
+					"w": 0.92387868570468867
 				},
 				"translation":
 				{
-					"x": -26.792979493426248,
-					"y": 11.000408368010806,
-					"z": 89.918380581003262
+					"x": -25.199999778268534,
+					"y": 41.999997366268957,
+					"z": 86.722265598330637
 				},
 				"scale3D":
 				{
@@ -7723,9 +7795,9 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
-				"b": 221,
-				"g": 221,
-				"r": 221,
+				"b": 0,
+				"g": 183,
+				"r": 255,
 				"a": 255
 			},
 			"secondaryColor":
@@ -7735,8 +7807,8 @@
 				"r": 0,
 				"a": 255
 			},
-			"metallic": 1,
-			"roughness": 0.60000002384185791,
+			"metallic": 0,
+			"roughness": 1,
 			"friction": 0.69999998807907104,
 			"restitution": 0.30000001192092896,
 			"density": 1,
@@ -7744,7 +7816,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "C5887CCE63457CD417BD95A56EB5922F",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -7753,16 +7825,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "initiative-marker.js",
+			"objectScriptName": "ship.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "initiative",
+			"uniqueId": "6bz",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7772,9 +7844,9 @@
 			{
 				"rotation":
 				{
-					"x": -1.0174385699115024e-09,
+					"x": -1.0174385698116708e-09,
 					"y": 2.5353839528784083e-07,
-					"z": -1.6126152446690482e-05,
+					"z": -1.6126152445202323e-05,
 					"w": 0.99999999986994148
 				},
 				"translation":
@@ -7842,10 +7914,10 @@
 			{
 				"rotation":
 				{
-					"x": -2.570337274907635e-05,
-					"y": 2.1776286008956589e-05,
-					"z": -0.70711749257309897,
-					"w": 0.70709606883524911
+					"x": -2.5703372747623015e-05,
+					"y": 2.1776286005559682e-05,
+					"z": -0.70711749253841683,
+					"w": 0.70709606886993226
 				},
 				"translation":
 				{
@@ -7912,10 +7984,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.3864593822722248e-05,
-					"y": -1.1719404980721295e-05,
-					"z": -0.70711865921004791,
-					"w": 0.70709490273046993
+					"x": 1.3864593821894046e-05,
+					"y": -1.1719404978638183e-05,
+					"z": -0.70711865917536587,
+					"w": 0.70709490276515319
 				},
 				"translation":
 				{
@@ -7982,82 +8054,10 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation":
-				{
-					"x": -17.538000144583375,
-					"y": 29.689999964518552,
-					"z": 87.722256572830531
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 1,
-			"restitution": 0.30000001192092896,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "831024D93C441226F2BFD784AF70E335",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "zwd",
-			"drawingLines": [],
-			"objectTags": [
-				"chapter"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 1.3864638394071469e-05,
-					"y": -1.171946698601347e-05,
-					"z": -0.70711865920954053,
-					"w": 0.70709490273097553
+					"x": 1.386463839324327e-05,
+					"y": -1.1719466983930359e-05,
+					"z": -0.7071186591748585,
+					"w": 0.70709490276565878
 				},
 				"translation":
 				{
@@ -8124,8 +8124,8 @@
 			{
 				"rotation":
 				{
-					"x": -2.570336211856437e-05,
-					"y": 2.1776375896697757e-05,
+					"x": -2.5703362118564373e-05,
+					"y": 2.1776375896697754e-05,
 					"z": -0.70711749260827073,
 					"w": 0.70709606880007381
 				},
@@ -8264,16 +8264,16 @@
 			{
 				"rotation":
 				{
-					"x": -2.3869620199688858e-11,
-					"y": -3.7794019758306743e-11,
-					"z": -2.1554172319100816e-05,
-					"w": 0.99999999976770881
+					"x": 1.1988605595210385e-11,
+					"y": -1.1349627484185833e-11,
+					"z": -4.273966968939528e-05,
+					"w": 0.99999999908666026
 				},
 				"translation":
 				{
-					"x": 43.9509139630105,
-					"y": 75.735360098482758,
-					"z": 86.827235107107896
+					"x": 43.95038855373226,
+					"y": 75.735391536398978,
+					"z": 86.827235106952529
 				},
 				"scale3D":
 				{
@@ -8404,10 +8404,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.8748703919457275e-09,
-					"y": 5.6524702078466122e-09,
-					"z": -0.38268400813828357,
-					"w": 0.92387929401801083
+					"x": 3.8748703917496857e-09,
+					"y": 5.6524702079810034e-09,
+					"z": -0.38268400810624109,
+					"w": 0.92387929403128333
 				},
 				"translation":
 				{
@@ -8544,10 +8544,10 @@
 			{
 				"rotation":
 				{
-					"x": 7.0947043499992554e-06,
-					"y": 1.3847105870655275e-05,
-					"z": -0.37903674981915941,
-					"w": 0.92538161968155119
+					"x": 7.0947043489587423e-06,
+					"y": 1.3847105869522275e-05,
+					"z": -0.37903674978731916,
+					"w": 0.92538161969459298
 				},
 				"translation":
 				{
@@ -8614,8 +8614,8 @@
 			{
 				"rotation":
 				{
-					"x": -7.9372286448441433e-08,
-					"y": -2.5885728867515438e-07,
+					"x": -7.9372286448441407e-08,
+					"y": -2.5885728867515433e-07,
 					"z": -0.37943977239423621,
 					"w": 0.92521643906998152
 				},
@@ -8684,10 +8684,10 @@
 			{
 				"rotation":
 				{
-					"x": 7.8847349351028995e-08,
-					"y": 2.5761903068047051e-07,
-					"z": -0.38267657256363041,
-					"w": 0.9238823739042108
+					"x": 7.8847349344427022e-08,
+					"y": 2.576190306822389e-07,
+					"z": -0.38267657253158838,
+					"w": 0.92388237391748274
 				},
 				"translation":
 				{
@@ -8754,10 +8754,10 @@
 			{
 				"rotation":
 				{
-					"x": -1.3727131929761877e-06,
-					"y": -4.2045296682604119e-07,
-					"z": -0.38234900837084862,
-					"w": 0.92401798456294548
+					"x": -1.3727131928269561e-06,
+					"y": -4.2045296683237123e-07,
+					"z": -0.38234900833882429,
+					"w": 0.92401798457619677
 				},
 				"translation":
 				{
@@ -8894,10 +8894,10 @@
 			{
 				"rotation":
 				{
-					"x": -5.2106184735451194e-07,
-					"y": -9.7356730770067177e-07,
-					"z": -0.38263746723860964,
-					"w": 0.92389857054982105
+					"x": -5.21061847269635e-07,
+					"y": -9.735673076232375e-07,
+					"z": -0.38263746720656977,
+					"w": 0.92389857056309055
 				},
 				"translation":
 				{
@@ -9034,10 +9034,10 @@
 			{
 				"rotation":
 				{
-					"x": -6.3473466804279942e-07,
-					"y": -1.1989011141522413e-06,
-					"z": -0.37913143534478316,
-					"w": 0.92534283091812219
+					"x": -6.3473466793927347e-07,
+					"y": -1.1989011140564771e-06,
+					"z": -0.37913143531293736,
+					"w": 0.92534283093117009
 				},
 				"translation":
 				{
@@ -9174,10 +9174,10 @@
 			{
 				"rotation":
 				{
-					"x": 9.0705271061336522e-08,
-					"y": 1.7035024167185522e-07,
-					"z": -0.3826782054210614,
-					"w": 0.92388169756505012
+					"x": 9.0705271055428335e-08,
+					"y": 1.703502416750011e-07,
+					"z": -0.38267820538901887,
+					"w": 0.92388169757832239
 				},
 				"translation":
 				{
@@ -9244,10 +9244,10 @@
 			{
 				"rotation":
 				{
-					"x": 8.8093867081357094e-06,
-					"y": 1.6443418765770854e-05,
-					"z": -0.377736053425274,
-					"w": 0.92591331861827508
+					"x": 8.8093867068220376e-06,
+					"y": 1.6443418764235895e-05,
+					"z": -0.37773605339350647,
+					"w": 0.92591331863123505
 				},
 				"translation":
 				{
@@ -9314,10 +9314,10 @@
 			{
 				"rotation":
 				{
-					"x": 1.7088167122517397e-07,
-					"y": 3.2741569514473951e-07,
-					"z": -0.3800371284002278,
-					"w": 0.92497123254573299
+					"x": 1.708816712138835e-07,
+					"y": 3.2741569515063211e-07,
+					"z": -0.38003712836833148,
+					"w": 0.92497123255883806
 				},
 				"translation":
 				{
@@ -9454,10 +9454,10 @@
 			{
 				"rotation":
 				{
-					"x": -5.0065283311407997e-08,
-					"y": -1.6008706029620774e-07,
-					"z": -0.3826704154235111,
-					"w": 0.92388492419758073
+					"x": -5.0065283299584667e-08,
+					"y": -1.6008706028280329e-07,
+					"z": -0.38267041539146934,
+					"w": 0.92388492421085222
 				},
 				"translation":
 				{
@@ -9524,10 +9524,10 @@
 			{
 				"rotation":
 				{
-					"x": -4.839370760475958e-07,
-					"y": -9.0465641064189253e-07,
-					"z": -0.38229947594016789,
-					"w": 0.92403847901200553
+					"x": -4.8393707596877314e-07,
+					"y": -9.0465641056991834e-07,
+					"z": -0.38229947590814656,
+					"w": 0.9240384790252536
 				},
 				"translation":
 				{
@@ -9664,10 +9664,10 @@
 			{
 				"rotation":
 				{
-					"x": 2.4325559866812423e-07,
-					"y": 4.6231106738750034e-07,
-					"z": -0.38255256739475507,
-					"w": 0.92393372769880444
+					"x": 2.4325559865209444e-07,
+					"y": 4.6231106739593477e-07,
+					"z": -0.38255256736271942,
+					"w": 0.92393372771206872
 				},
 				"translation":
 				{
@@ -9734,10 +9734,10 @@
 			{
 				"rotation":
 				{
-					"x": 2.4657378021560904e-09,
-					"y": 9.9833781183596713e-09,
-					"z": -0.38268528295936488,
-					"w": 0.92387876596786811
+					"x": 2.4657378019496336e-09,
+					"y": 9.9833781183872859e-09,
+					"z": -0.38268528292732246,
+					"w": 0.9238787659811406
 				},
 				"translation":
 				{
@@ -9804,8 +9804,8 @@
 			{
 				"rotation":
 				{
-					"x": -1.1842527820063723e-08,
-					"y": -2.2973976142580954e-08,
+					"x": -1.184252782006372e-08,
+					"y": -2.297397614258095e-08,
 					"z": -0.38268510609044126,
 					"w": 0.92387883922976988
 				},
@@ -9944,10 +9944,10 @@
 			{
 				"rotation":
 				{
-					"x": -9.9053112440837652e-07,
-					"y": 3.0336296679821891e-07,
-					"z": -0.3826844840929905,
-					"w": 0.92387909687004421
+					"x": -9.9053112432172971e-07,
+					"y": 3.0336296673410561e-07,
+					"z": -0.38268448406094802,
+					"w": 0.92387909688331671
 				},
 				"translation":
 				{
@@ -10154,10 +10154,10 @@
 			{
 				"rotation":
 				{
-					"x": -3.327591012703595e-09,
-					"y": -1.7892702004036603e-08,
-					"z": -0.38264888539593184,
-					"w": 0.92389384157772736
+					"x": -3.3275910114147616e-09,
+					"y": -1.789270200253838e-08,
+					"z": -0.38264888536389119,
+					"w": 0.92389384159099763
 				},
 				"translation":
 				{
@@ -10364,16 +10364,16 @@
 			{
 				"rotation":
 				{
-					"x": -1.6132677242667239e-08,
-					"y": -5.156964042628317e-08,
-					"z": -0.38268547676270476,
-					"w": 0.92387868569141618
+					"x": 1.6980359855296335e-06,
+					"y": 1.2478391123315672e-05,
+					"z": -2.0392017458972419e-06,
+					"w": 0.99999999991862409
 				},
 				"translation":
 				{
-					"x": -25.199999778268534,
-					"y": 41.999997366268957,
-					"z": 86.722265598330637
+					"x": -26.792845759030413,
+					"y": 11.000390033683438,
+					"z": 89.918384887229749
 				},
 				"scale3D":
 				{
@@ -10385,9 +10385,79 @@
 			"simulatingPhysics": true,
 			"primaryColor":
 			{
+				"b": 221,
+				"g": 221,
+				"r": 221,
+				"a": 255
+			},
+			"secondaryColor":
+			{
 				"b": 0,
-				"g": 183,
-				"r": 255,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 1,
+			"roughness": 0.60000002384185791,
+			"friction": 0.69999998807907104,
+			"restitution": 0.30000001192092896,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "C5887CCE63457CD417BD95A56EB5922F",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "initiative-marker.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "initiative",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 1.0735675640013492e-05,
+					"y": -0.015583208607156075,
+					"z": -0.0011262347647591833,
+					"w": 0.99987794009544273
+				},
+				"translation":
+				{
+					"x": -19.287976623880127,
+					"y": -54.130409668977336,
+					"z": 86.944346784063924
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 172,
+				"g": 255,
+				"r": 159,
 				"a": 255
 			},
 			"secondaryColor":
@@ -10402,11 +10472,11 @@
 			"friction": 0.69999998807907104,
 			"restitution": 0.30000001192092896,
 			"density": 1,
-			"surfaceType": "SurfaceType2",
+			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "",
+			"objectDescription": "Rotate for\nface down\ndiscard",
 			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -10415,16 +10485,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
+			"objectScriptName": "note.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "6bz",
+			"uniqueId": "8mj",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10527,16 +10597,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.0109125784480646e-05,
-					"y": -7.054172529937396e-05,
-					"z": -4.1641845489977099e-05,
-					"w": 0.99999999619163105
+					"x": 2.0065151164761913e-05,
+					"y": -7.4207030845073067e-05,
+					"z": -6.2697545698917206e-05,
+					"w": 0.99999999507986204
 				},
 				"translation":
 				{
-					"x": 21.990718139243505,
-					"y": 83.999757638723437,
-					"z": 86.922141781195336
+					"x": 21.990701472037955,
+					"y": 83.999627589545369,
+					"z": 86.92212938089267
 				},
 				"scale3D":
 				{
@@ -11059,16 +11129,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.70703104212668055,
-					"y": -0.70718251213462291,
-					"z": -4.3265150254788976e-07,
-					"w": 1.9155583001540421e-07
+					"x": -0.99999999451554911,
+					"y": 0.00010473251346956771,
+					"z": 1.0892265477816509e-08,
+					"w": 4.6049825731327359e-08
 				},
 				"translation":
 				{
-					"x": 17.008131055440643,
-					"y": -34.099826032204568,
-					"z": 87.39754778974276
+					"x": 38.797916886189491,
+					"y": 33.596095001790005,
+					"z": 87.141722749129727
 				},
 				"scale3D":
 				{
@@ -11078,125 +11148,10 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 26,
+			"atlasIndex": 3,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 25,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 24,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 23,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 22,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 19,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 18,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 17,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 16,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 15,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 12,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 11,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 10,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 9,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 8,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 1,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
+			"stackSerialization": [],
 			"primaryColor":
 			{
 				"b": 255,
@@ -11220,7 +11175,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -11229,16 +11184,18 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "action-deck.js",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "ab0",
+			"uniqueId": "voq",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"building"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11248,16 +11205,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0023352802374763935,
-					"y": -0.050065969213926059,
-					"z": 0.001130455508098668,
-					"w": 0.99874254303260102
+					"x": 0.00302572530375322,
+					"y": -0.050236620202084845,
+					"z": 0.0012528009118987866,
+					"w": 0.99873197478949916
 				},
 				"translation":
 				{
-					"x": 24.00836733363569,
-					"y": 96.00060132000516,
-					"z": 87.07219485590295
+					"x": 24.011325547433355,
+					"y": 96.000559300412746,
+					"z": 87.07257468160401
 				},
 				"scale3D":
 				{
@@ -11893,16 +11850,16 @@
 			{
 				"rotation":
 				{
-					"x": 9.793014372623103e-06,
-					"y": -1.1697943310647602e-05,
-					"z": 0.00065523782687535326,
-					"w": 0.99999978521529953
+					"x": 1.7583154102524752e-05,
+					"y": -1.9953516295058809e-05,
+					"z": 0.00072042260842702965,
+					"w": 0.99999974014194382
 				},
 				"translation":
 				{
-					"x": 28.001496239943954,
-					"y": 84.004468410073983,
-					"z": 86.922214421002536
+					"x": 28.001914568759169,
+					"y": 84.004920079759586,
+					"z": 86.922193964858877
 				},
 				"scale3D":
 				{
@@ -12160,16 +12117,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0023519524194114392,
-					"y": -0.049748356726361291,
-					"z": 0.0010163965435157577,
-					"w": 0.99875849746618417
+					"x": 0.0029473434505128812,
+					"y": -0.049689197115425694,
+					"z": 0.00093793051390419753,
+					"w": 0.99875993969670207
 				},
 				"translation":
 				{
-					"x": 21.987479180264369,
-					"y": 95.998202484890612,
-					"z": 87.070701649895071
+					"x": 21.98720598923201,
+					"y": 95.997900066633406,
+					"z": 87.070562059290495
 				},
 				"scale3D":
 				{
@@ -12766,16 +12723,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999994710824336,
-					"y": 9.4883178881249487e-05,
-					"z": 0.0003110935648354464,
-					"w": 1.2194052261920883e-06
+					"x": -0.99999999269326834,
+					"y": 0.00012088614910033967,
+					"z": 9.2226235640654346e-09,
+					"w": 4.630966761317603e-08
 				},
 				"translation":
 				{
-					"x": 38.797931963504929,
-					"y": 24.573064806418639,
-					"z": 87.13643606848224
+					"x": 38.797436022370569,
+					"y": 24.573080212480896,
+					"z": 87.141722752479808
 				},
 				"scale3D":
 				{
@@ -12842,16 +12799,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999999602761291,
-					"y": 8.9133444105142894e-05,
-					"z": 1.0451628406681066e-08,
-					"w": 5.7076858307161698e-08
+					"x": -0.99999999532985795,
+					"y": 9.6645133212563139e-05,
+					"z": 9.1380847305004415e-09,
+					"w": 4.6151546719127382e-08
 				},
 				"translation":
 				{
-					"x": -33.201661139319697,
-					"y": -27.426952900042366,
-					"z": 87.141753293538073
+					"x": -33.201910963985647,
+					"y": -27.426948552420164,
+					"z": 87.141753268963072
 				},
 				"scale3D":
 				{
@@ -13239,16 +13196,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999999603465761,
-					"y": 8.9054371969542358e-05,
-					"z": 1.0784786965497991e-08,
-					"w": 5.7112635664954225e-08
+					"x": -0.99999999534119288,
+					"y": 9.6527778217657287e-05,
+					"z": 9.0769253265198076e-09,
+					"w": 4.6044349263408249e-08
 				},
 				"translation":
 				{
-					"x": -33.20165827977339,
-					"y": 24.573048177647792,
-					"z": 87.141753293229257
+					"x": -33.20190819266783,
+					"y": 24.573052577576529,
+					"z": 87.141753269099226
 				},
 				"scale3D":
 				{
@@ -13467,16 +13424,16 @@
 			{
 				"rotation":
 				{
-					"x": -6.7749184526582875e-06,
-					"y": -0.050569784663696708,
-					"z": 0.00071019477937498592,
-					"w": 0.99872027738328373
+					"x": -2.1801134883557316e-05,
+					"y": -0.050482382412741542,
+					"z": 0.00068775327507468009,
+					"w": 0.99872471461663392
 				},
 				"translation":
 				{
-					"x": 20.005749991795405,
-					"y": 84.000406383921529,
-					"z": 87.082511858906059
+					"x": 20.005743016220961,
+					"y": 84.00036613659239,
+					"z": 87.082575724324727
 				},
 				"scale3D":
 				{
@@ -13541,16 +13498,1027 @@
 			{
 				"rotation":
 				{
-					"x": 6.9157745740972428e-07,
-					"y": -2.4274268732098814e-05,
-					"z": 0.0001475523641996826,
-					"w": 0.99999998881929064
+					"x": -0.99999995909520967,
+					"y": 0.00028602373412543681,
+					"z": 1.0724738610235334e-08,
+					"w": 4.6056986599279737e-08
 				},
 				"translation":
 				{
-					"x": 26.002554305248481,
-					"y": 91.998081997134506,
-					"z": 86.922141671850454
+					"x": -33.204362138370961,
+					"y": 36.633789047167191,
+					"z": 87.141753266193518
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "70a",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999433339348,
+					"y": 0.00010645755285395268,
+					"z": 1.090080214393395e-08,
+					"w": 4.6118146136912596e-08
+				},
+				"translation":
+				{
+					"x": 38.797921152302891,
+					"y": -18.403901824963338,
+					"z": 87.141722748006146
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "z7q",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999436145293,
+					"y": 0.00010619365131873856,
+					"z": 1.0898778014549658e-08,
+					"w": 4.6057463582132769e-08
+				},
+				"translation":
+				{
+					"x": -33.202069491422129,
+					"y": 33.596099743968558,
+					"z": 87.141753266037256
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "dw9",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 3.1507890332021724e-07,
+					"y": -5.9142244220939571e-05,
+					"z": -0.00276222639554653,
+					"w": 0.99999618329643403
+				},
+				"translation":
+				{
+					"x": 26.004160637157653,
+					"y": 96.002576532827973,
+					"z": 86.922005391788389
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "omo",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -2.143948128686969e-09,
+					"y": 1.9897732514203866e-09,
+					"z": -0.70710582568073121,
+					"w": 0.70710773669107274
+				},
+				"translation":
+				{
+					"x": 14.700998068998281,
+					"y": 30.796003314033229,
+					"z": 87.138924442534801
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "871C71EB33486868087AF1B9A83ECF07",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "k9p",
+			"drawingLines": [],
+			"objectTags": [
+				"ambition"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999269785123,
+					"y": 0.00012084823192257452,
+					"z": 1.0811288315748079e-08,
+					"w": 4.6062688742506289e-08
+				},
+				"translation":
+				{
+					"x": -33.202560285581292,
+					"y": -15.364875014777803,
+					"z": 87.141753266236194
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "g83",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 4.5722187770021447e-08,
+					"y": -3.2850151958950337e-08,
+					"z": -0.70711396727747466,
+					"w": 0.70709959502258746
+				},
+				"translation":
+				{
+					"x": 14.701030897118706,
+					"y": 36.795960640534389,
+					"z": 87.138924619607792
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "871C71EB33486868087AF1B9A83ECF07",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "2gc",
+			"drawingLines": [],
+			"objectTags": [
+				"ambition"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999451817145,
+					"y": 0.0001047074719573779,
+					"z": 1.086246441118724e-08,
+					"w": 4.6029795912980861e-08
+				},
+				"translation":
+				{
+					"x": 38.797916885832699,
+					"y": 36.635093834622104,
+					"z": 87.141722748861028
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "dvm",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999268899564,
+					"y": 0.00012092148824429158,
+					"z": 1.0807901890367341e-08,
+					"w": 4.599683446987387e-08
+				},
+				"translation":
+				{
+					"x": -33.202560417868781,
+					"y": -18.403875035942761,
+					"z": 87.141753266165026
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "67m",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999434880993,
+					"y": 0.00010631264071640382,
+					"z": 1.0621862109852004e-08,
+					"w": 4.5997548677338526e-08
+				},
+				"translation":
+				{
+					"x": 38.797921117592828,
+					"y": -15.364902429737946,
+					"z": 87.141722748771087
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "a4a",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 3.8168759435205517e-08,
+					"y": -2.6607309561423023e-08,
+					"z": -0.70711894515909746,
+					"w": 0.70709461700474252
+				},
+				"translation":
+				{
+					"x": 14.701000862382196,
+					"y": 33.79581514947867,
+					"z": 87.138924589768806
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "871C71EB33486868087AF1B9A83ECF07",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "low",
+			"drawingLines": [],
+			"objectTags": [
+				"ambition"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.99999999891828273,
+					"y": 4.6512711765604529e-05,
+					"z": 9.9084504784430146e-09,
+					"w": 4.6273991321001183e-08
+				},
+				"translation":
+				{
+					"x": 38.798841128157058,
+					"y": -27.426959390257732,
+					"z": 87.141722750087951
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "7e1",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 3.0627380338329372e-07,
+					"y": -5.4121062107229436e-07,
+					"z": -0.70710739143181112,
+					"w": 0.70710617094048389
+				},
+				"translation":
+				{
+					"x": 8.0000001192092896,
+					"y": -44.000000655651093,
+					"z": 87.234040024778736
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 4,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 4,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.69999998807907104,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "Psionic",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "778AF3269B41783929449B90FDB9D4DD",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "mgr",
+			"drawingLines": [],
+			"objectTags": [
+				"resource"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": 6.1135494606848073e-07,
+					"y": -5.9386854702286624e-05,
+					"z": 0.00015497370730447512,
+					"w": 0.99999998622798869
+				},
+				"translation":
+				{
+					"x": 26.00258474487876,
+					"y": 91.998047683190592,
+					"z": 86.92199962592764
 				},
 				"scale3D":
 				{
@@ -13615,10 +14583,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.70782564139348114,
-					"y": -0.70638718942652445,
-					"z": 3.7281812887923869e-08,
-					"w": -3.4558273229915574e-08
+					"x": -0.70782564142812843,
+					"y": -0.70638718939180667,
+					"z": 3.7281812889618901e-08,
+					"w": -3.4558273228086963e-08
 				},
 				"translation":
 				{
@@ -13870,16 +14838,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999995154498666,
-					"y": 1.1317439758193258e-05,
-					"z": 0.00031109566885571696,
-					"w": 1.193660723394299e-06
+					"x": -0.99999999975219955,
+					"y": 2.2262050108389736e-05,
+					"z": 9.4165269213173863e-09,
+					"w": 4.589019018607016e-08
 				},
 				"translation":
 				{
-					"x": 38.799635672724378,
-					"y": -30.443796678106931,
-					"z": 87.136436071276819
+					"x": 38.799408205181081,
+					"y": -30.443790520524672,
+					"z": 87.141722750233185
 				},
 				"scale3D":
 				{
@@ -13946,16 +14914,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.70710815226173995,
-					"y": -0.70710541010852002,
-					"z": -3.5303400870978646e-07,
-					"w": 3.5339583696095873e-07
+					"x": -4.9041802125877086e-09,
+					"y": 4.1562110125952686e-09,
+					"z": -0.70710723758811755,
+					"w": 0.70710632478468283
 				},
 				"translation":
 				{
-					"x": 35.994004553257412,
-					"y": 84.000035095825808,
-					"z": 86.982578803015613
+					"x": 1.7179062583990182e-08,
+					"y": -43.922999875552364,
+					"z": 87.234038537207823
 				},
 				"scale3D":
 				{
@@ -13965,49 +14933,31 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 27,
+			"atlasIndex": 2,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [
 				{
-					"index": 21,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"index": 2,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 20,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"index": 2,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 14,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"index": 2,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 13,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 0,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"index": 2,
+					"templateId": "778AF3269B41783929449B90FDB9D4DD",
 					"frontTextureOverride": "",
 					"flipped": false
 				}
@@ -14032,10 +14982,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "",
+			"objectName": "Weapon",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+			"templateId": "778AF3269B41783929449B90FDB9D4DD",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -14044,14 +14994,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "action-deck.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "xbv",
+			"uniqueId": "edh",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"resource"
+			],
 			"objectGroupId": -1,
 			"ownerIndex": -1,
 			"lightsOn": true,
@@ -14063,16 +15015,16 @@
 			{
 				"rotation":
 				{
-					"x": -2.9778697428036138e-10,
-					"y": 5.0053096843624803e-07,
-					"z": -2.3736660418744717e-05,
-					"w": 0.99999999971816023
+					"x": -3.1863228251907876e-10,
+					"y": 5.0054959655055599e-07,
+					"z": 2.826434348103856e-05,
+					"w": 0.99999999960043817
 				},
 				"translation":
 				{
-					"x": 35.955094503812163,
-					"y": 74.000220853210962,
-					"z": 86.907604948685531
+					"x": 35.952165119741011,
+					"y": 73.999399748109994,
+					"z": 86.907604950792731
 				},
 				"scale3D":
 				{
@@ -14156,16 +15108,16 @@
 			{
 				"rotation":
 				{
-					"x": 9.9810467552162265e-05,
-					"y": -0.050010727857801175,
-					"z": 0.00021639692136457613,
-					"w": 0.99874865221905362
+					"x": 0.00010698962114532493,
+					"y": -0.04999341471966498,
+					"z": 0.00022358029712111148,
+					"w": 0.99874951667059109
 				},
 				"translation":
 				{
-					"x": 25.99621590108978,
-					"y": 84.001340733063131,
-					"z": 87.056429416105232
+					"x": 25.996177343667838,
+					"y": 84.001353289480349,
+					"z": 87.056404864498887
 				},
 				"scale3D":
 				{
@@ -14230,92 +15182,16 @@
 			{
 				"rotation":
 				{
-					"x": 4.5722187770021447e-08,
-					"y": -3.2850151958950337e-08,
-					"z": -0.70711396727747466,
-					"w": 0.70709959502258746
+					"x": -0.99999999940821493,
+					"y": 3.4403023411505986e-05,
+					"z": 9.2700191942899383e-09,
+					"w": 4.6093645272124361e-08
 				},
 				"translation":
 				{
-					"x": 14.701030897118706,
-					"y": 36.795960640534389,
-					"z": 87.138924619776546
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "871C71EB33486868087AF1B9A83ECF07",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "2gc",
-			"drawingLines": [],
-			"objectTags": [
-				"ambition"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999999928133587,
-					"y": 3.7912064386552966e-05,
-					"z": 1.0861972164629464e-08,
-					"w": 5.7103245030711033e-08
-				},
-				"translation":
-				{
-					"x": -33.200683553418202,
-					"y": 21.556236598069674,
-					"z": 87.141753292802491
+					"x": -33.200803791095545,
+					"y": 21.556236022235101,
+					"z": 87.141753268649737
 				},
 				"scale3D":
 				{
@@ -14382,16 +15258,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999999928130656,
-					"y": 3.7912839430736685e-05,
-					"z": 1.0803928113669339e-08,
-					"w": 5.7022689496683839e-08
+					"x": -0.99999999940820761,
+					"y": 3.4403235533429358e-05,
+					"z": 9.1052827081869906e-09,
+					"w": 4.610665697159437e-08
 				},
 				"translation":
 				{
-					"x": -33.200686602558029,
-					"y": -30.443764934375242,
-					"z": 87.141753292535043
+					"x": -33.200806868205454,
+					"y": -30.443765496689583,
+					"z": 87.14175326902847
 				},
 				"scale3D":
 				{
@@ -14458,16 +15334,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0084809886593142179,
-					"y": -0.050140061739627199,
-					"z": 0.00077929325461896623,
-					"w": 0.99870588250101466
+					"x": 0.0085363949045564654,
+					"y": -0.050028028633044105,
+					"z": 0.00076799364297362434,
+					"w": 0.99871103753732948
 				},
 				"translation":
 				{
-					"x": 23.999726608637818,
-					"y": 91.996460250452188,
-					"z": 87.07195524485212
+					"x": 23.999744103885547,
+					"y": 91.996396087035833,
+					"z": 87.071847586092815
 				},
 				"scale3D":
 				{
@@ -14532,92 +15408,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.8168759435205517e-08,
-					"y": -2.6607309561423023e-08,
-					"z": -0.70711894515909746,
-					"w": 0.70709461700474252
+					"x": 0.0086023088496614813,
+					"y": -0.050123918637055148,
+					"z": -0.00083588059533551363,
+					"w": 0.99870560945984055
 				},
 				"translation":
 				{
-					"x": 14.701000862382196,
-					"y": 33.79581514947867,
-					"z": 87.138924589565022
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "871C71EB33486868087AF1B9A83ECF07",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "low",
-			"drawingLines": [],
-			"objectTags": [
-				"ambition"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.008568213968873464,
-					"y": -0.050081713368248439,
-					"z": -0.0008287687305017921,
-					"w": 0.99870802582029727
-				},
-				"translation":
-				{
-					"x": 21.99910967814397,
-					"y": 91.998752239817861,
-					"z": 87.071773319231738
+					"x": 21.999101684599218,
+					"y": 91.998725450216796,
+					"z": 87.071888609807061
 				},
 				"scale3D":
 				{
@@ -14682,160 +15482,10 @@
 			{
 				"rotation":
 				{
-					"x": 2.3972944505136761e-07,
-					"y": -6.8740016448579216e-05,
-					"z": -0.0027802096606171106,
-					"w": 0.99999613284702038
-				},
-				"translation":
-				{
-					"x": 26.006759053438017,
-					"y": 96.002630400165387,
-					"z": 86.92196509664943
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "omo",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -2.143948128686969e-09,
-					"y": 1.9897732514203866e-09,
-					"z": -0.70710582568073121,
-					"w": 0.70710773669107274
-				},
-				"translation":
-				{
-					"x": 14.700998068998281,
-					"y": 30.796003314033229,
-					"z": 87.138924442331003
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "871C71EB33486868087AF1B9A83ECF07",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "k9p",
-			"drawingLines": [],
-			"objectTags": [
-				"ambition"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
 					"x": 0.99999999999880052,
-					"y": 1.4207710439220234e-06,
-					"z": 4.7771017882783184e-07,
-					"w": 3.9012312904778422e-07
+					"y": 1.4207710437826497e-06,
+					"z": 4.7771017878096964e-07,
+					"w": 3.9012312904778438e-07
 				},
 				"translation":
 				{
@@ -15519,10 +16169,10 @@
 			{
 				"rotation":
 				{
-					"x": 0.99998696781675656,
-					"y": -0.0051053105823077004,
-					"z": -5.7798629300636985e-07,
-					"w": 4.1618459771139223e-07
+					"x": 0.99998696781675911,
+					"y": -0.0051053105818066932,
+					"z": -5.7798629300616137e-07,
+					"w": 4.1618459771168181e-07
 				},
 				"translation":
 				{
@@ -15849,9 +16499,9 @@
 			{
 				"rotation":
 				{
-					"x": -4.8804344298442009e-09,
+					"x": -4.8804344293654445e-09,
 					"y": 2.5466949527660518e-07,
-					"z": 4.3978882417009196e-06,
+					"z": 4.3978882412694986e-06,
 					"w": 0.99999999999029687
 				},
 				"translation":
@@ -15967,7 +16617,7 @@
 				"rotation":
 				{
 					"x": -0.99999996449156126,
-					"y": -0.00026648967730050921,
+					"y": -0.00026648967730050915,
 					"z": 3.4761294088993982e-07,
 					"w": 8.4922866457174482e-08
 				},
@@ -16054,9 +16704,9 @@
 				"rotation":
 				{
 					"x": 0.99999999893996894,
-					"y": -4.60427653700235e-05,
+					"y": -4.6042765365559027e-05,
 					"z": -3.5479597697736531e-07,
-					"w": 7.5591850052237014e-11
+					"w": 7.5591850053820987e-11
 				},
 				"translation":
 				{
@@ -16200,9 +16850,9 @@
 			{
 				"rotation":
 				{
-					"x": -1.3955849547612345e-08,
+					"x": -1.3955849546243318e-08,
 					"y": 2.5694690625067906e-07,
-					"z": 4.336041943630582e-06,
+					"z": 4.3360419432052275e-06,
 					"w": 0.99999999999056632
 				},
 				"translation":
@@ -16551,9 +17201,9 @@
 				"rotation":
 				{
 					"x": -0.99999999994630129,
-					"y": 1.0220861855960341e-05,
+					"y": 1.0220861854968237e-05,
 					"z": 1.7063798587308491e-06,
-					"w": 1.4052137478373611e-07
+					"w": 1.4052137478373441e-07
 				},
 				"translation":
 				{
@@ -16627,9 +17277,9 @@
 				"rotation":
 				{
 					"x": 0.99999999999511779,
-					"y": -2.7514406094622956e-06,
-					"z": 3.2646828872485408e-07,
-					"w": 1.444770345513817e-06
+					"y": -2.751440608966243e-06,
+					"z": 3.2646828869282866e-07,
+					"w": 1.4447703455138166e-06
 				},
 				"translation":
 				{
@@ -16702,10 +17352,10 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999510731431551,
-					"y": -0.0031281539949787386,
-					"z": -8.8826811489192597e-08,
-					"w": 8.0988561589193836e-08
+					"x": -0.9999951073143164,
+					"y": -0.0031281539946718786,
+					"z": -8.8826811480479024e-08,
+					"w": 8.0988561589139228e-08
 				},
 				"translation":
 				{
@@ -16778,16 +17428,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.99999995790238871,
-					"y": 3.3087646343785653e-05,
-					"z": 0.00028811197979377104,
-					"w": 9.5872668471083611e-06
+					"x": -0.99999999902264125,
+					"y": 4.4212163030159091e-05,
+					"z": 9.7250257391497331e-09,
+					"w": 4.6167116544502904e-08
 				},
 				"translation":
 				{
-					"x": 38.799266878211903,
-					"y": 21.55624078624146,
-					"z": 87.136388531184622
+					"x": 38.799043565663247,
+					"y": 21.556248899925464,
+					"z": 87.141722751420559
 				},
 				"scale3D":
 				{
@@ -16855,9 +17505,9 @@
 				"rotation":
 				{
 					"x": -0.99999999988145583,
-					"y": -1.5234186653632914e-05,
+					"y": -1.5234186652138481e-05,
 					"z": 2.2373283776562355e-06,
-					"w": 4.8885711958246483e-08
+					"w": 4.8885711958249825e-08
 				},
 				"translation":
 				{
@@ -16921,690 +17571,6 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984206917159,
-					"y": 9.0797280249579394e-05,
-					"z": 0.00055433547473750721,
-					"w": 1.8156737253875862e-05
-				},
-				"translation":
-				{
-					"x": 38.798445866287565,
-					"y": 33.596051572113332,
-					"z": 87.136914527327534
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "voq",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999995816770204,
-					"y": 2.3751090363226894e-05,
-					"z": 0.00028811215896067517,
-					"w": 9.5845567203143697e-06
-				},
-				"translation":
-				{
-					"x": 38.799332256124188,
-					"y": -27.42698845831255,
-					"z": 87.136388530820966
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "7e1",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984192773217,
-					"y": 9.2342249961398088e-05,
-					"z": 0.00055433538362786199,
-					"w": 1.8157703187595428e-05
-				},
-				"translation":
-				{
-					"x": 38.798450096059241,
-					"y": -15.364945500395264,
-					"z": 87.136914526549333
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "a4a",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984047759438,
-					"y": 0.0001068994049278036,
-					"z": 0.00055433503771824236,
-					"w": 1.8165040817676516e-05
-				},
-				"translation":
-				{
-					"x": -33.202031419090524,
-					"y": -18.40391830901595,
-					"z": 87.136945043957823
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "67m",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984207947434,
-					"y": 9.0688581782958624e-05,
-					"z": 0.00055433467561752001,
-					"w": 1.8156954103311711e-05
-				},
-				"translation":
-				{
-					"x": 38.798445914863485,
-					"y": 36.63505081668567,
-					"z": 87.136914525052418
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "dvm",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984048430324,
-					"y": 0.00010683881179380448,
-					"z": 0.00055433460682528031,
-					"w": 1.8165355609761554e-05
-				},
-				"translation":
-				{
-					"x": -33.202031256296742,
-					"y": -15.364918031118933,
-					"z": 87.136945043154242
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "g83",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999984193542868,
-					"y": 9.2261265700820642e-05,
-					"z": 0.00055433498407806911,
-					"w": 1.8157697702146135e-05
-				},
-				"translation":
-				{
-					"x": -33.201540429632637,
-					"y": 33.596056270367782,
-					"z": 87.136945043023218
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "dw9",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.9999998419203413,
-					"y": 9.2427126231860076e-05,
-					"z": 0.00055433456275741919,
-					"w": 1.8157950322726581e-05
-				},
-				"translation":
-				{
-					"x": 38.798450106491856,
-					"y": -18.403945047998381,
-					"z": 87.136914524193571
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "z7q",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.99999980918722797,
-					"y": 0.00027203993232905328,
-					"z": 0.00055433445377840913,
-					"w": 1.8250919533363566e-05
-				},
-				"translation":
-				{
-					"x": -33.203833145813817,
-					"y": 36.633745284835307,
-					"z": 87.136945049779897
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.69999998807907104,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "70a",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -17917,16 +17883,16 @@
 			{
 				"rotation":
 				{
-					"x": -4.9041802125877086e-09,
-					"y": 4.1562110125952686e-09,
-					"z": -0.70710723758811755,
-					"w": 0.70710632478468283
+					"x": 0.70703104212668055,
+					"y": -0.70718251213462291,
+					"z": -4.3265150254788976e-07,
+					"w": 1.9155583001540421e-07
 				},
 				"translation":
 				{
-					"x": 1.7179062583990182e-08,
-					"y": -43.922999875552364,
-					"z": 87.234038537207823
+					"x": 17.008131055440643,
+					"y": -34.099826032204568,
+					"z": 87.39754778974276
 				},
 				"scale3D":
 				{
@@ -17936,31 +17902,121 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 2,
+			"atlasIndex": 26,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [
 				{
-					"index": 2,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 25,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 24,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 23,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 22,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 19,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 18,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 17,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 16,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 15,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 12,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 11,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 10,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 9,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 8,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
 					"index": 2,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 2,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 1,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				}
@@ -17985,10 +18041,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "Weapon",
+			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "778AF3269B41783929449B90FDB9D4DD",
+			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -17997,16 +18053,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "action-deck.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "edh",
+			"uniqueId": "ab0",
 			"drawingLines": [],
-			"objectTags": [
-				"resource"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": -1,
 			"lightsOn": true,
@@ -18018,16 +18072,16 @@
 			{
 				"rotation":
 				{
-					"x": 3.0627380334522478e-07,
-					"y": -5.4121062109883995e-07,
-					"z": -0.70710739146649371,
-					"w": 0.70710617090580119
+					"x": 0.70710815226173995,
+					"y": -0.70710541010852002,
+					"z": -3.5303400870978646e-07,
+					"w": 3.5339583696095873e-07
 				},
 				"translation":
 				{
-					"x": 8.0000001192092896,
-					"y": -44.000000655651093,
-					"z": 87.234040024778736
+					"x": 35.994004553257412,
+					"y": 84.000035095825808,
+					"z": 86.982578803015613
 				},
 				"scale3D":
 				{
@@ -18037,31 +18091,49 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 4,
+			"atlasIndex": 27,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [
 				{
-					"index": 4,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 21,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 4,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 20,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 4,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 14,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				},
 				{
-					"index": 4,
-					"templateId": "778AF3269B41783929449B90FDB9D4DD",
+					"index": 13,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 0,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 					"frontTextureOverride": "",
 					"flipped": false
 				}
@@ -18086,10 +18158,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "Psionic",
+			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "778AF3269B41783929449B90FDB9D4DD",
+			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -18098,16 +18170,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "action-deck.js",
 			"persistentData": "",
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "mgr",
+			"uniqueId": "xbv",
 			"drawingLines": [],
-			"objectTags": [
-				"resource"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": -1,
 			"lightsOn": true,
@@ -18417,14 +18487,14 @@
 				{
 					"x": -0,
 					"y": 0,
-					"z": -0.70710679601656989,
-					"w": 0.70710676635652481
+					"z": -0.7071067959818873,
+					"w": 0.70710676639120751
 				},
 				"translation":
 				{
-					"x": 3.9064517781321449e-08,
+					"x": 3.9064517781321456e-08,
 					"y": -53.99999999920648,
-					"z": 86.92225341781338
+					"z": 86.922253417813394
 				},
 				"scale3D":
 				{
@@ -18489,16 +18559,16 @@
 			{
 				"rotation":
 				{
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
+					"x": -0.014236559198206917,
+					"y": -0.70696345052781606,
+					"z": -0.014236559198206915,
+					"w": 0.70696345052781617
 				},
 				"translation":
 				{
-					"x": -27.613979982528129,
-					"y": 85.754510529375239,
-					"z": 87.572265624319414
+					"x": -6.6361874442660822,
+					"y": -64.050301196671469,
+					"z": 87.572259414529128
 				},
 				"scale3D":
 				{
@@ -18522,8 +18592,8 @@
 				"r": 0,
 				"a": 255
 			},
-			"metallic": 0,
-			"roughness": 0.20000000298023224,
+			"metallic": 0.20000000298023224,
+			"roughness": 0.30000001192092896,
 			"friction": 0.69999998807907104,
 			"restitution": 0.5,
 			"density": 1,
@@ -18531,7 +18601,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "4BA668F96D497BA9A92E198E38DDC867",
+			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -18545,7 +18615,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "rtq",
+			"uniqueId": "7p8",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -18559,16 +18629,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.4999999538544701,
-					"y": -0.50000001251565751,
-					"z": 0.49999999656662159,
-					"w": 0.50000003706324703
+					"x": -0.49474943145931177,
+					"y": 0.50519600163766909,
+					"z": 0.49474943145931172,
+					"w": 0.5051960016376692
 				},
 				"translation":
 				{
-					"x": -27.531637489958428,
-					"y": 83.158306925703712,
-					"z": 87.57226555849094
+					"x": -5.0363267326098899,
+					"y": -64.16894022937862,
+					"z": 87.572268601001298
 				},
 				"scale3D":
 				{
@@ -18592,8 +18662,8 @@
 				"r": 0,
 				"a": 255
 			},
-			"metallic": 0,
-			"roughness": 0.20000000298023224,
+			"metallic": 0.20000000298023224,
+			"roughness": 0.30000001192092896,
 			"friction": 0.69999998807907104,
 			"restitution": 0.5,
 			"density": 1,
@@ -18601,7 +18671,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E56F7329614F0A995D4BECA278DA1A52",
+			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -18615,7 +18685,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "kgh",
+			"uniqueId": "zyn",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -18769,16 +18839,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.00017786550309712085,
-					"y": -0.00022159000019044507,
-					"z": -0.97534098053753282,
-					"w": 0.22070317384627344
+					"x": -0.70685593971410188,
+					"y": 0.018832962881445148,
+					"z": -0.70685593971410188,
+					"w": -0.018832962881445037
 				},
 				"translation":
 				{
-					"x": -1.2079971374633436,
-					"y": -64.446339112301999,
-					"z": 87.572382773028195
+					"x": -6.8890111489886756,
+					"y": -67.219529520754278,
+					"z": 87.57224777978611
 				},
 				"scale3D":
 				{
@@ -18811,7 +18881,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "A2B5E5A089478117D7034F933AD661B6",
+			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -18825,7 +18895,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "ekh",
+			"uniqueId": "vo3",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -18839,16 +18909,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0019039556405921673,
-					"y": 0.99999818686557096,
-					"z": 2.8619897617684782e-05,
-					"w": 1.9984761479557517e-05
+					"x": -0.0019040887909419486,
+					"y": -0.99999818722129064,
+					"z": 8.0854548139869207e-08,
+					"w": 4.3946280737651247e-08
 				},
 				"translation":
 				{
-					"x": 5.0038742759796051,
-					"y": -67.734325478854515,
-					"z": 87.572292201452967
+					"x": 5.0039044661768415,
+					"y": -67.734282277845779,
+					"z": 87.572253317254834
 				},
 				"scale3D":
 				{
@@ -18909,16 +18979,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.0055867970256775583,
-					"y": 0.70708301144062657,
-					"z": 0.70708627236852473,
-					"w": 0.0056041109048026441
+					"x": 0.0055959358939283955,
+					"y": 0.70708460318386412,
+					"z": 0.70708467331349178,
+					"w": 0.0055959098403347719
 				},
 				"translation":
 				{
-					"x": 5.7500583428804344,
-					"y": -65.315164240855211,
-					"z": 87.572265352260501
+					"x": 5.7500788606976743,
+					"y": -65.31516419473904,
+					"z": 87.572253471362075
 				},
 				"scale3D":
 				{
@@ -19049,16 +19119,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.68653166278743594,
-					"y": -0.7270999073111194,
-					"z": -2.5493537969315194e-05,
-					"w": -1.133840682950918e-05
+					"x": 0.68653149016589121,
+					"y": -0.72710007083630801,
+					"z": -6.3216824061607274e-07,
+					"w": -1.9286645475027903e-07
 				},
 				"translation":
 				{
-					"x": 7.3915370028132177,
-					"y": -67.182934131062808,
-					"z": 87.572283128044219
+					"x": 7.3915229844497823,
+					"y": -67.182897886755981,
+					"z": 87.572252694955409
 				},
 				"scale3D":
 				{
@@ -19119,7 +19189,147 @@
 			{
 				"rotation":
 				{
-					"x": -0.58659980323356287,
+					"x": 0.70707270949174117,
+					"y": -0.0069646927004167764,
+					"z": -0.0069677318935583901,
+					"w": 0.70707222209605702
+				},
+				"translation":
+				{
+					"x": -5.0281004194633985,
+					"y": -65.696712072697579,
+					"z": 87.572256112572504
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.20000000298023224,
+			"roughness": 0.30000001192092896,
+			"friction": 0.69999998807907104,
+			"restitution": 0.5,
+			"density": 1,
+			"surfaceType": "SurfaceType1",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "los",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Dice",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -4.6020838124710449e-06,
+					"y": -5.2756555557106183e-06,
+					"z": -0.97534141946865904,
+					"w": 0.22070141689588094
+				},
+				"translation":
+				{
+					"x": -1.208178477947758,
+					"y": -64.446704533920339,
+					"z": 87.572245744110262
+				},
+				"scale3D":
+				{
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor":
+			{
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor":
+			{
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.20000000298023224,
+			"roughness": 0.30000001192092896,
+			"friction": 0.69999998807907104,
+			"restitution": 0.5,
+			"density": 1,
+			"surfaceType": "SurfaceType1",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "A2B5E5A089478117D7034F933AD661B6",
+			"shouldSnap": true,
+			"previousPosition":
+			{
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData":
+			{
+			},
+			"uniqueId": "ekh",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Dice",
+			"transform":
+			{
+				"rotation":
+				{
+					"x": -0.58659980323356309,
 					"y": 0.39484258996003108,
 					"z": -0.58659980323356298,
 					"w": -0.39484258996003097
@@ -19128,7 +19338,7 @@
 				{
 					"x": 0.22127740823523584,
 					"y": -63.323385076068746,
-					"z": 87.572260921901346
+					"z": 87.572260921901361
 				},
 				"scale3D":
 				{
@@ -19189,16 +19399,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.11672600364308025,
-					"y": -0.69745800749928788,
-					"z": -0.6973884055120998,
-					"w": 0.11651943917617358
+					"x": 0.11662580886922601,
+					"y": -0.69742423126625375,
+					"z": -0.69742200607580229,
+					"w": 0.11662078626676013
 				},
 				"translation":
 				{
-					"x": -0.6362588625499922,
-					"y": -65.920978696734593,
-					"z": 87.571872200225059
+					"x": -0.63603568536750421,
+					"y": -65.92101794786582,
+					"z": 87.572249172706393
 				},
 				"scale3D":
 				{
@@ -19259,16 +19469,16 @@
 			{
 				"rotation":
 				{
-					"x": -8.4630714009121079e-06,
-					"y": 3.6142888662218527e-05,
-					"z": 0.83095455694512821,
-					"w": 0.55634029416733199
+					"x": -2.8635243374674748e-07,
+					"y": 8.7161672890712587e-07,
+					"z": 0.83095450970095852,
+					"w": 0.55634036596924941
 				},
 				"translation":
 				{
-					"x": 1.5879599561478024,
-					"y": -66.527573408087832,
-					"z": 87.572294683067838
+					"x": 1.5879403483151471,
+					"y": -66.527623372723227,
+					"z": 87.572252401320711
 				},
 				"scale3D":
 				{
@@ -19329,16 +19539,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.58942345376796712,
-					"y": -0.39063395244153565,
-					"z": -0.39064317224712997,
-					"w": 0.58939207606214405
+					"x": 0.58940841700975821,
+					"y": -0.39063802600764264,
+					"z": -0.39063827902351789,
+					"w": 0.58940765651325511
 				},
 				"translation":
 				{
-					"x": 0.96884176046302073,
-					"y": -65.084096543516395,
-					"z": 87.572279086250944
+					"x": 0.96885310824005622,
+					"y": -65.084065407589549,
+					"z": 87.572252789351964
 				},
 				"scale3D":
 				{
@@ -19399,10 +19609,10 @@
 			{
 				"rotation":
 				{
-					"x": 3.1574918840645689e-06,
-					"y": -8.220280867160268e-06,
-					"z": -0.98733431151716167,
-					"w": 0.15865357614434603
+					"x": 3.1574918840334837e-06,
+					"y": -8.2202808661322106e-06,
+					"z": -0.98733431151472373,
+					"w": 0.15865357615951778
 				},
 				"translation":
 				{
@@ -19469,10 +19679,10 @@
 			{
 				"rotation":
 				{
-					"x": 0.5067113998044297,
-					"y": 0.49318550200700623,
-					"z": 0.49318929570564607,
-					"w": 0.50673063507123939
+					"x": 0.50671139980375668,
+					"y": 0.49318550195797151,
+					"z": 0.49318929570499093,
+					"w": 0.50673063512027372
 				},
 				"translation":
 				{
@@ -19539,16 +19749,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.5047473443774888,
-					"y": 0.495198211527483,
-					"z": 0.49521176128460936,
-					"w": 0.50475158358270666
+					"x": 0.50474734437701552,
+					"y": 0.49519821147844112,
+					"z": 0.49521176128414512,
+					"w": 0.50475158363174899
 				},
 				"translation":
 				{
-					"x": -5.1962909884049848,
+					"x": -5.1962909884049857,
 					"y": -67.218493617790941,
-					"z": 87.572261795904339
+					"z": 87.572261795904353
 				},
 				"scale3D":
 				{
@@ -19609,16 +19819,16 @@
 			{
 				"rotation":
 				{
-					"x": -0.014236624565694467,
-					"y": -0.7069634492114677,
-					"z": -0.0142366245656943,
-					"w": 0.70696344921146759
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
 				},
 				"translation":
 				{
-					"x": -6.6361872575797314,
-					"y": -64.050302838427456,
-					"z": 87.57229457836408
+					"x": -27.613979982528129,
+					"y": 85.754510529375239,
+					"z": 87.572265624319414
 				},
 				"scale3D":
 				{
@@ -19642,8 +19852,8 @@
 				"r": 0,
 				"a": 255
 			},
-			"metallic": 0.20000000298023224,
-			"roughness": 0.30000001192092896,
+			"metallic": 0,
+			"roughness": 0.20000000298023224,
 			"friction": 0.69999998807907104,
 			"restitution": 0.5,
 			"density": 1,
@@ -19651,7 +19861,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
+			"templateId": "4BA668F96D497BA9A92E198E38DDC867",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -19665,7 +19875,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "7p8",
+			"uniqueId": "rtq",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -19679,16 +19889,16 @@
 			{
 				"rotation":
 				{
-					"x": 0.70687970563608959,
-					"y": -0.017918754416402727,
-					"z": 0.70687970563608948,
-					"w": 0.017918754416402838
+					"x": -0.49999995385447016,
+					"y": -0.50000001246660875,
+					"z": 0.49999999656662164,
+					"w": 0.50000003711229568
 				},
 				"translation":
 				{
-					"x": -6.8869878406232719,
-					"y": -67.224335673571048,
-					"z": 87.572309240992652
+					"x": -27.531637489958428,
+					"y": 83.158306925703712,
+					"z": 87.57226555849094
 				},
 				"scale3D":
 				{
@@ -19712,8 +19922,8 @@
 				"r": 0,
 				"a": 255
 			},
-			"metallic": 0.20000000298023224,
-			"roughness": 0.30000001192092896,
+			"metallic": 0,
+			"roughness": 0.20000000298023224,
 			"friction": 0.69999998807907104,
 			"restitution": 0.5,
 			"density": 1,
@@ -19721,7 +19931,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
+			"templateId": "E56F7329614F0A995D4BECA278DA1A52",
 			"shouldSnap": true,
 			"previousPosition":
 			{
@@ -19735,147 +19945,7 @@
 			"persistentKeyData":
 			{
 			},
-			"uniqueId": "vo3",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Dice",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": -0.49474943145931172,
-					"y": 0.5051960016376692,
-					"z": 0.49474943145931172,
-					"w": 0.5051960016376692
-				},
-				"translation":
-				{
-					"x": -5.0363267326098899,
-					"y": -64.16894022937862,
-					"z": 87.572268601001298
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.20000000298023224,
-			"roughness": 0.30000001192092896,
-			"friction": 0.69999998807907104,
-			"restitution": 0.5,
-			"density": 1,
-			"surfaceType": "SurfaceType1",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "zyn",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Dice",
-			"transform":
-			{
-				"rotation":
-				{
-					"x": 0.70706619862251063,
-					"y": -0.0071358868274610469,
-					"z": -0.0071830253166593524,
-					"w": 0.70707487158857385
-				},
-				"translation":
-				{
-					"x": -5.0309623338867393,
-					"y": -65.700124043441633,
-					"z": 87.572287084383944
-				},
-				"scale3D":
-				{
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor":
-			{
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor":
-			{
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.20000000298023224,
-			"roughness": 0.30000001192092896,
-			"friction": 0.69999998807907104,
-			"restitution": 0.5,
-			"density": 1,
-			"surfaceType": "SurfaceType1",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5324122F6D4F55CF943BE8AE4EF68C4C",
-			"shouldSnap": true,
-			"previousPosition":
-			{
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData":
-			{
-			},
-			"uniqueId": "los",
+			"uniqueId": "kgh",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -20735,15 +20805,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": 17.738465521520578,
-					"y": 46.683124090781121,
+					"x": 17.738465521499574,
+					"y": 46.683124047250693,
 					"z": 87.022250752308253
 				},
 				"scale3D":
@@ -20782,15 +20852,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": 10.638466443299675,
-					"y": 46.686549735050704,
+					"x": 10.638466443287072,
+					"y": 46.686549708932446,
 					"z": 87.022253221528857
 				},
 				"scale3D":
@@ -20829,15 +20899,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": 3.5384673650787661,
-					"y": 46.689975379320302,
+					"x": 3.5384673650745664,
+					"y": 46.689975370614214,
 					"z": 87.022255690749489
 				},
 				"scale3D":
@@ -20876,15 +20946,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": -3.5615317131421409,
-					"y": 46.693401023589892,
+					"x": -3.5615317131379403,
+					"y": 46.693401032295974,
 					"z": 87.022258159970093
 				},
 				"scale3D":
@@ -20923,15 +20993,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": -10.661530791363049,
-					"y": 46.696826667859483,
+					"x": -10.661530791350447,
+					"y": 46.696826693977734,
 					"z": 87.022260629190725
 				},
 				"scale3D":
@@ -20970,15 +21040,15 @@
 			{
 				"rotation":
 				{
-					"x": 9.4700604855983771e-08,
-					"y": 1.5122890807084707e-07,
-					"z": 0.70693617632252048,
-					"w": 0.70727734489835214
+					"x": 9.470060504142206e-08,
+					"y": 1.5122890795472431e-07,
+					"z": 0.70693617545525045,
+					"w": 0.70727734576520385
 				},
 				"translation":
 				{
-					"x": -17.761529869583956,
-					"y": 46.700252312129074,
+					"x": -17.761529869562953,
+					"y": 46.700252355659487,
 					"z": 87.022263098411358
 				},
 				"scale3D":

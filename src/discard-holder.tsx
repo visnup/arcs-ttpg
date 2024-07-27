@@ -14,7 +14,6 @@ import { jsxInTTPG, render } from "jsx-in-ttpg";
 const refHolder = _refHolder;
 const refPackageId = _refPackageId;
 
-refHolder.onCardFlipped.add(sortCard);
 refHolder.onInserted.add(sortCard);
 
 function discardFaceDown() {
