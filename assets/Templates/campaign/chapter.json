@@ -1,7 +1,7 @@
 {
 	"Type": "Card",
 	"GUID": "055DF160BE47AA046E01109CB04B6EF4",
-	"Name": "chapter",
+	"Name": "chapter-track",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,

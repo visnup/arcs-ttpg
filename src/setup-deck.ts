@@ -180,7 +180,7 @@ function removeCampaign() {
     "dc",
     "book-of-law",
     "first-regent",
-    "chapter",
+    "chapter-track",
     "number",
     "icon",
     "flagship-board",
