@@ -27,7 +27,13 @@ refCard.onCustomAction.add((card, player, identifier) => {
 });
 
 // Deal option after shuffle
-refCard.onPrimaryAction.add((card) => {
+refCard.onPrimaryAction.add(showDeal);
+// Hack: ideally onPrimaryAction would be called on any shuffle, but it's
+// not so expose this callback and call it manually when we shuffle
+(refCard as any).showDeal = function (this: typeof refCard) {
+  showDeal(this);
+};
+function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
@@ -54,7 +60,7 @@ refCard.onPrimaryAction.add((card) => {
     </button>,
   );
   const index = card.addUI(ui);
-});
+}
 
 function isSecond(card: Card) {
   return String(
