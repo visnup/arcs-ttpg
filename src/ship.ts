@@ -17,8 +17,8 @@ function toggle(obj: GameObject) {
   obj.setPosition(obj.getPosition().add(new Vector(0, 0, obj.getSize().z)));
   const center = obj.getExtentCenter(true, false);
   const { pitch, yaw, roll } = obj.getRotation();
-  if (Math.abs(pitch) < 1) obj.setRotation(new Rotator(-90, yaw, roll));
-  else obj.setRotation(new Rotator(0, yaw + roll, 0));
+  if (Math.abs(roll) < 1) obj.setRotation(new Rotator(pitch, yaw, 90));
+  else obj.setRotation(new Rotator(pitch, yaw, 0));
   const delta = center.subtract(obj.getExtentCenter(true, false));
   obj.setPosition(obj.getPosition().add(delta));
   obj.snapToGround();
