@@ -3,6 +3,7 @@
 /node_modules/
 /wip/assets
 *.blend1
+*.mtl
 
 # production
 /build

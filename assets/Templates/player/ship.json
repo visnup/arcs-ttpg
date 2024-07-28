@@ -8,8 +8,8 @@
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Wood",
-	"Roughness": 1,
-	"Metallic": 0,
+	"Roughness": 0.6,
+	"Metallic": 0.6,
 	"PrimaryColor":
 	{
 		"R": 255,
@@ -46,10 +46,10 @@
 			{
 				"X": -0,
 				"Y": 0,
-				"Z": 89.999999999999986
+				"Z": 0
 			},
-			"Texture": "wood-texture.jpg",
-			"NormalMap": "",
+			"Texture": "",
+			"NormalMap": "player/ship-n.jpg",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
@@ -70,8 +70,8 @@
 			},
 			"Scale":
 			{
-				"X": 1.2,
-				"Y": 3,
+				"X": 3,
+				"Y": 1.2,
 				"Z": 1.2
 			},
 			"Rotation":
