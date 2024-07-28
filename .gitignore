@@ -1,6 +1,8 @@
 .DS_Store
 /assets/Thumbnails/
 /node_modules/
+/wip/assets
+*.blend1
 
 # production
 /build
