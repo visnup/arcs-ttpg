@@ -53,7 +53,7 @@ function countAgents(zone: Zone) {
         render(
           <text
             size={48}
-            color={(world as any).saturate(world.getSlotColor(slot), 0.75)}
+            color={world.saturate(world.getSlotColor(slot), 0.75)}
             font="FMBolyarPro-700.ttf"
             fontPackage={refPackageId}
           >

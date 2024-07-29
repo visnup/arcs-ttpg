@@ -1,4 +1,4 @@
-import { Color, world } from "@tabletop-playground/api";
+import { Color, GameWorld, world } from "@tabletop-playground/api";
 
 // Reset all zones
 for (const zone of world.getAllZones())
@@ -14,7 +14,24 @@ for (const obj of world.getAllObjects())
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
 
-(world as any).saturate = function (color: Color, amount: number) {
+// Extend GameWorld, Color with utility functions
+
+declare module "@tabletop-playground/api" {
+  interface GameWorld {
+    getObjectsByTemplateName<T = GameObject>(name: string): T[];
+    getObjectByTemplateName<T = GameObject>(name: string): T | undefined;
+    saturate(color: Color, amount: number): Color;
+  }
+}
+GameWorld.prototype.getObjectsByTemplateName = function <T>(name: string) {
+  return this.getAllObjects().filter(
+    (d) => d.getTemplateName() === name,
+  ) as T[];
+};
+GameWorld.prototype.getObjectByTemplateName = function <T>(name: string) {
+  return this.getAllObjects().find((d) => d.getTemplateName() === name) as T;
+};
+GameWorld.prototype.saturate = function (color: Color, amount: number) {
   let [h, s, l] = rgbToHsl(color);
   s! += s! * amount;
   return hslToRgb([h!, s!, l!]);

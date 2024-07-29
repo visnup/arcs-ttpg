@@ -46,15 +46,17 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // Shuffle court deck
   const court = getCourtDeck();
-  court.setRotation(new Rotator(0, 90, 0));
-  court.shuffle();
-  // Deal court; 2p: 3 cards, 3-4p: 4 cards
-  for (const snap of getCourtSnaps().slice(0, setup.length === 2 ? 3 : 4)) {
-    if (occupied(snap)) continue;
-    const card = court.takeCards(1);
-    if (!card) break;
-    card.setPosition(getPosition(snap).add(above));
-    card.snap();
+  if (court) {
+    court.setRotation(new Rotator(0, 90, 0));
+    court.shuffle();
+    // Deal court; 2p: 3 cards, 3-4p: 4 cards
+    for (const snap of getCourtSnaps().slice(0, setup.length === 2 ? 3 : 4)) {
+      if (occupied(snap)) continue;
+      const card = court.takeCards(1);
+      if (!card) break;
+      card.setPosition(getPosition(snap).add(above));
+      card.snap();
+    }
   }
 
   // Out of play
@@ -85,9 +87,9 @@ refCard.onPrimaryAction.add((card, player) => {
     placeResources(r, n, blockedResourceSnaps[r]);
 
   // Power markers
-  for (const missing of getAllObjectsByTemplateName("power").filter(
-    (d) => !slots.includes(d.getOwningPlayerSlot()),
-  ))
+  for (const missing of world
+    .getObjectsByTemplateName("power")
+    .filter((d) => !slots.includes(d.getOwningPlayerSlot())))
     missing.destroy();
 
   // Starting pieces, gain resources
@@ -104,7 +106,7 @@ refCard.onPrimaryAction.add((card, player) => {
 
   // Deal action cards
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
-  for (const holder of getAllObjectsByTemplateName("cards"))
+  for (const holder of world.getObjectsByTemplateName("cards"))
     if ("sort" in holder && typeof holder.sort === "function") holder.sort();
 });
 
@@ -131,14 +133,16 @@ function getDefaultPlacement(slot: number) {
   };
 }
 function getLeader(slot: number) {
-  const board = getAllObjectsByTemplateName("board").find(
-    (d) => d.getOwningPlayerSlot() === slot,
-  )!;
-  const card = getAllObjectsByTemplateName("leader").find(
-    (d) =>
-      (d as Card).getStackSize() === 1 &&
-      d.getPosition().distance(board.getPosition()) < 20,
-  ) as Card;
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot)!;
+  const card = world
+    .getObjectsByTemplateName<Card>("leader")
+    .find(
+      (d) =>
+        d.getStackSize() === 1 &&
+        d.getPosition().distance(board.getPosition()) < 20,
+    );
   if (card) {
     const { metadata } = card.getCardDetails(0)!;
     const [a, b, c, resources] = metadata.trim().split("\n");
@@ -149,13 +153,6 @@ function getLeader(slot: number) {
       },
     };
   }
-}
-
-function getAllObjectsByTemplateName(name: string) {
-  return world.getAllObjects().filter((d) => d.getTemplateName() === name);
-}
-function getObjectByTemplateName(name: string) {
-  return world.getAllObjects().find((d) => d.getTemplateName() === name);
 }
 
 function onTable(obj: GameObject) {
@@ -170,7 +167,7 @@ function onMap(obj: GameObject) {
 }
 
 function removeNotes() {
-  for (const obj of getAllObjectsByTemplateName("note")) obj.destroy();
+  for (const obj of world.getObjectsByTemplateName("note")) obj.destroy();
 }
 function removeCampaign() {
   for (const t of [
@@ -187,8 +184,8 @@ function removeCampaign() {
     "flagship",
     "objective",
   ])
-    for (const obj of getAllObjectsByTemplateName(t)) obj.destroy();
-  for (const obj of getAllObjectsByTemplateName("power"))
+    for (const obj of world.getObjectsByTemplateName(t)) obj.destroy();
+  for (const obj of world.getObjectsByTemplateName("power"))
     if (onTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
@@ -212,18 +209,17 @@ function getPosition(system: SnapPoint | SnapPoint[]) {
 }
 
 function getActionDecks() {
-  return (
-    getAllObjectsByTemplateName("action").filter(
-      (d) => !(d as Card).isInHolder(),
-    ) as Card[]
-  ).sort((a, b) => b.getStackSize() - a.getStackSize());
+  return world
+    .getObjectsByTemplateName<Card>("action")
+    .filter((d) => !d.isInHolder())
+    .sort((a, b) => b.getStackSize() - a.getStackSize());
 }
 
 function getCourtDeck() {
-  return getObjectByTemplateName("bc") as Card;
+  return world.getObjectByTemplateName<Card>("bc");
 }
 function getCourtSnaps() {
-  const board = getObjectByTemplateName("court");
+  const board = world.getObjectByTemplateName("court");
   if (!board) return [];
   return board
     .getAllSnapPoints()
@@ -249,7 +245,8 @@ function getSystems() {
 }
 
 function takeBlock(type: "small" | "large" | "round") {
-  return getAllObjectsByTemplateName(`block ${type}`)
+  return world
+    .getObjectsByTemplateName(`block ${type}`)
     .filter((d) => !onMap(d))
     .sort(
       (a, b) =>
@@ -266,7 +263,8 @@ function nearby(building: Vector) {
 
 // Find _n_ ships belonging to _slot_ player closest to _target_ and place them
 function placeShips(slot: number, n: number, target: Vector) {
-  const ships = getAllObjectsByTemplateName("ship")
+  const ships = world
+    .getObjectsByTemplateName("ship")
     .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort(
       (a, b) =>
@@ -288,7 +286,8 @@ function placeShips(slot: number, n: number, target: Vector) {
 }
 // Find _n_ cities belonging to _slot_ player on player board from left to right and place them
 function placeCities(slot: number, n: number, target: Vector) {
-  const cities = getAllObjectsByTemplateName("city")
+  const cities = world
+    .getObjectsByTemplateName("city")
     .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort((a, b) => a.getPosition().y - b.getPosition().y)
     .slice(0, n);
@@ -300,7 +299,8 @@ function placeCities(slot: number, n: number, target: Vector) {
 }
 // Find _n_ starports belonging to _slot_ player closest to _target_ and place them
 function placeStarports(slot: number, n: number, target: Vector) {
-  const starports = getAllObjectsByTemplateName("starport")
+  const starports = world
+    .getObjectsByTemplateName("starport")
     .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
     .sort(
       (a, b) =>
@@ -324,18 +324,18 @@ function placeResources(
   n: number,
   target: Vector,
 ) {
-  let supply = getAllObjectsByTemplateName("resource").find(
-    (d) => (d as Card).getCardDetails(0)!.name === resource && onTable(d),
-  ) as Card | undefined;
+  let supply = world
+    .getObjectsByTemplateName<Card>("resource")
+    .find((d) => d.getCardDetails(0)!.name === resource && onTable(d));
   if (!supply) return;
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));
   supply?.snap();
 }
 function gainResource(slot: number, resource: string | undefined) {
-  const board = getAllObjectsByTemplateName("board").find(
-    (d) => d.getOwningPlayerSlot() === slot,
-  )!;
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot)!;
   const empty = board
     .getAllSnapPoints()
     .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
