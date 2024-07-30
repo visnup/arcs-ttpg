@@ -1,3 +1,5 @@
+import { Vector } from "@tabletop-playground/api";
+import { GameObject } from "@tabletop-playground/api";
 import { Color, GameWorld, world } from "@tabletop-playground/api";
 
 // Reset all zones
@@ -20,6 +22,8 @@ declare module "@tabletop-playground/api" {
   interface GameWorld {
     getObjectsByTemplateName<T = GameObject>(name: string): T[];
     getObjectByTemplateName<T = GameObject>(name: string): T | undefined;
+    isOnMap(obj: GameObject): boolean;
+    isOnTable(obj: GameObject): boolean;
     saturate(color: Color, amount: number): Color;
   }
 }
@@ -31,6 +35,19 @@ GameWorld.prototype.getObjectsByTemplateName = function <T>(name: string) {
 GameWorld.prototype.getObjectByTemplateName = function <T>(name: string) {
   return this.getAllObjects().find((d) => d.getTemplateName() === name) as T;
 };
+GameWorld.prototype.isOnMap = function (obj: GameObject) {
+  return this.lineTrace(
+    obj.getPosition(),
+    obj.getPosition().add(new Vector(0, 0, -10)),
+  ).some(({ object }) => object.getTemplateName() === "map");
+};
+GameWorld.prototype.isOnTable = function (obj: GameObject) {
+  return this.lineTrace(
+    obj.getPosition(),
+    obj.getPosition().add(new Vector(0, 0, -10)),
+  ).every(({ object }) => object.getTemplateName() === obj.getTemplateName());
+};
+
 GameWorld.prototype.saturate = function (color: Color, amount: number) {
   let [h, s, l] = rgbToHsl(color);
   s! += s! * amount;

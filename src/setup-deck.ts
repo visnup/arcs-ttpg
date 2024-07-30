@@ -155,17 +155,6 @@ function getLeader(slot: number) {
   }
 }
 
-function onTable(obj: GameObject) {
-  return world
-    .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
-    .every(({ object }) => object.getTemplateName() === obj.getTemplateName());
-}
-function onMap(obj: GameObject) {
-  return world
-    .lineTrace(obj.getPosition(), obj.getPosition().add(new Vector(0, 0, -10)))
-    .some(({ object }) => object.getTemplateName() === "map");
-}
-
 function removeNotes() {
   for (const obj of world.getObjectsByTemplateName("note")) obj.destroy();
 }
@@ -186,7 +175,7 @@ function removeCampaign() {
   ])
     for (const obj of world.getObjectsByTemplateName(t)) obj.destroy();
   for (const obj of world.getObjectsByTemplateName("power"))
-    if (onTable(obj)) obj.destroy();
+    if (world.isOnTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
 }
@@ -247,7 +236,7 @@ function getSystems() {
 function takeBlock(type: "small" | "large" | "round") {
   return world
     .getObjectsByTemplateName(`block ${type}`)
-    .filter((d) => !onMap(d))
+    .filter((d) => !world.isOnMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(origin) - b.getPosition().distance(origin),
@@ -265,7 +254,7 @@ function nearby(building: Vector) {
 function placeShips(slot: number, n: number, target: Vector) {
   const ships = world
     .getObjectsByTemplateName("ship")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(target) - b.getPosition().distance(target),
@@ -288,7 +277,7 @@ function placeShips(slot: number, n: number, target: Vector) {
 function placeCities(slot: number, n: number, target: Vector) {
   const cities = world
     .getObjectsByTemplateName("city")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
     .sort((a, b) => a.getPosition().y - b.getPosition().y)
     .slice(0, n);
   for (const city of cities) {
@@ -301,7 +290,7 @@ function placeCities(slot: number, n: number, target: Vector) {
 function placeStarports(slot: number, n: number, target: Vector) {
   const starports = world
     .getObjectsByTemplateName("starport")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !onMap(d))
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(target) - b.getPosition().distance(target),
@@ -326,7 +315,7 @@ function placeResources(
 ) {
   let supply = world
     .getObjectsByTemplateName<Card>("resource")
-    .find((d) => d.getCardDetails(0)!.name === resource && onTable(d));
+    .find((d) => d.getCardDetails(0)!.name === resource && world.isOnTable(d));
   if (!supply) return;
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));

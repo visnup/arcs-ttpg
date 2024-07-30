@@ -96,7 +96,7 @@ function endRound(button: Button, player: Player) {
   }
   if (discard instanceof Card) {
     for (const c of world.getObjectsByTemplateName<Card>("action"))
-      discard.addCards(c);
+      if (!world.isOnTable(c)) discard.addCards(c);
     discard.shuffle();
     // Hack: need to manually call after we shuffle to show Deal button
     if ("showDeal" in discard && typeof discard.showDeal === "function")
