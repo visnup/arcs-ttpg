@@ -65,7 +65,7 @@ class AmbitionSection {
         this.widget.addChild(
           render(
             <text
-              color={world.saturate(world.getSlotColor(slot), 0.75)}
+              color={world.saturate(world.getSlotColor(slot), 0.5)}
               size={48}
               font="FMBolyarPro-700.ttf"
               fontPackage={refPackageId}
