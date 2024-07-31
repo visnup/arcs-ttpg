@@ -23,7 +23,7 @@ declare module "@tabletop-playground/api" {
     getObjectsByTemplateName<T = GameObject>(name: string): T[];
     getObjectByTemplateName<T = GameObject>(name: string): T | undefined;
     isOnMap(obj: GameObject): boolean;
-    isOnTable(obj: GameObject): boolean;
+    isOnTable(obj: GameObject, templateNames?: string[]): boolean;
     saturate(color: Color, amount: number): Color;
   }
 }
@@ -41,11 +41,18 @@ GameWorld.prototype.isOnMap = function (obj: GameObject) {
     obj.getPosition().add(new Vector(0, 0, -10)),
   ).some(({ object }) => object.getTemplateName() === "map");
 };
-GameWorld.prototype.isOnTable = function (obj: GameObject) {
+GameWorld.prototype.isOnTable = function (
+  obj: GameObject,
+  templateNames: string[] = [],
+) {
   return this.lineTrace(
     obj.getPosition(),
     obj.getPosition().add(new Vector(0, 0, -10)),
-  ).every(({ object }) => object.getTemplateName() === obj.getTemplateName());
+  ).every(
+    ({ object }) =>
+      object.getTemplateName() === obj.getTemplateName() ||
+      templateNames.includes(object.getTemplateName()),
+  );
 };
 
 GameWorld.prototype.saturate = function (color: Color, amount: number) {
