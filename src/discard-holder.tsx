@@ -15,6 +15,21 @@ const refHolder = _refHolder;
 const refPackageId = _refPackageId;
 
 refHolder.onInserted.add(sortCard);
+refHolder.onCustomAction.add(() => {
+  refHolder.setRotation(new Rotator(0, refHolder.getRotation().yaw + 180, 0));
+  updateCustomAction();
+});
+updateCustomAction();
+
+function updateCustomAction() {
+  if (discardFaceDown()) {
+    refHolder.addCustomAction("Toggle to face up");
+    refHolder.removeCustomAction("Toggle to face down");
+  } else {
+    refHolder.addCustomAction("Toggle to face down");
+    refHolder.removeCustomAction("Toggle to face up");
+  }
+}
 
 function discardFaceDown() {
   return refHolder.getRotation().yaw > 0;
