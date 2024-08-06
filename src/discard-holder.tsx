@@ -58,7 +58,7 @@ process.nextTick(() => {
             size={48}
             font="NeueKabelW01-Book.ttf"
             fontPackage={refPackageId}
-            onClick={discardOrEndRound}
+            onClick={discardOrEndChapter}
           >
             Discard
           </button>,
@@ -72,9 +72,9 @@ process.nextTick(() => {
   });
 });
 
-function discardOrEndRound(button: Button, player: Player) {
+function discardOrEndChapter(button: Button, player: Player) {
   if (getActionZone()?.getOverlappingObjects().length) discard(button, player);
-  else endRound(button, player);
+  else endChapter(button, player);
 }
 
 // Put all cards in the action zone into the discard pile, self-discard anything that supports it
@@ -92,10 +92,10 @@ function discard(button: Button, player: Player) {
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
-  button.setText("End Round");
+  button.setText("End Chapter");
 }
 
-function endRound(button: Button, player: Player) {
+function endChapter(button: Button, player: Player) {
   if (!refHolder.getNumCards()) return;
   const snap = world
     .getObjectById("map")!
