@@ -36,8 +36,8 @@ On the spectrum of skeuomorphic realism vs. video game adaptation, I prefer a re
 
 ## Suggestions?
 
-Just comment below and I'll definitely consider any ideas you have!
+Just comment on [mod.io](https://mod.io/g/tabletopplayground/m/arcs2) and I'll definitely consider any ideas you have!
 
 Shout out to Darrell's [other mod](https://mod.io/g/tabletopplayground/m/arcs1), which I learned from in building this one.
 
-* Everywhere I say "Press R" I actually mean "run the primary action on the object", which by default is bound to R.
+Everywhere I say "Press R" I actually mean "run the primary action on the object", which by default is bound to R.

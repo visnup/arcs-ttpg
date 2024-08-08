@@ -1,0 +1,6 @@
+players
+1. yellow FFB700
+2. blue 0095A9
+3. red E1533D
+4. gray D7D2CB
+5. purple 912AAD
