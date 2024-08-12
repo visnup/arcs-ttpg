@@ -1,3 +1,4 @@
+import { TextJustification } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
@@ -93,7 +94,7 @@ function sumDice() {
                 />,
               )}
               {boxChild(
-                1,
+                3,
                 <richtext
                   size={14}
                   font="NeueKabelW01-Book.ttf"
@@ -103,11 +104,12 @@ function sumDice() {
                 </richtext>,
               )}
               {boxChild(
-                0,
+                1,
                 <text
                   size={16}
                   font="NeueKabelW01-Book.ttf"
                   fontPackage={refPackageId}
+                  justify={TextJustification.Center}
                 >
                   {total[key]}
                 </text>,
