@@ -15,10 +15,7 @@ const above = new Vector(0, 0, 0.1);
 refCard.onPrimaryAction.add((card, player) => {
   if (card.getStackSize() > 1) return;
 
-  // Clean up
-  removeNotes();
-  removeCampaign();
-
+  // Setup card details
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
 
@@ -29,6 +26,12 @@ refCard.onPrimaryAction.add((card, player) => {
     .filter((s) => 0 <= s && s <= 3)
     .slice(0, setup.length)
     .sort();
+
+  // Clean up unused components
+  removeNotes();
+  removeCampaign();
+  removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
+
   // Randomly pick first player
   const first = Math.floor(Math.random() * needed.length);
   const slots = needed.slice(first).concat(needed.slice(0, first));
@@ -178,6 +181,11 @@ function removeCampaign() {
     if (world.isOnTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
+}
+function removePlayers(slots: number[]) {
+  for (const slot of slots)
+    for (const obj of world.getAllObjects())
+      if (obj.getOwningPlayerSlot() === slot) obj.destroy();
 }
 
 function occupied(system: SnapPoint | SnapPoint[]) {
