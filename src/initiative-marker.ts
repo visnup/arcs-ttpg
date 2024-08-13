@@ -42,8 +42,8 @@ function stand(obj: GameObject) {
   obj.snapToGround();
 }
 
-refObject.addCustomAction("Take initiative");
-refObject.addCustomAction("Seize initiative");
+refObject.addCustomAction("Take Initiative");
+refObject.addCustomAction("Seize Initiative");
 refObject.onCustomAction.add((obj, player, action) => {
   switch (action) {
     case "Take initiative":

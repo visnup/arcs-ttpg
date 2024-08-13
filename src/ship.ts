@@ -9,7 +9,7 @@ import {
 refObject.onPrimaryAction.add(toggle);
 refObject.onCustomAction.add(toggle);
 refObject.addCustomAction(
-  "Toggle damage",
+  "Toggle Damage",
   "Toggle ship damage from fresh to damaged or back",
 );
 

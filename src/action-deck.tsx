@@ -16,7 +16,7 @@ function getInitiative() {
 }
 
 // Draw from bottom
-refCard.addCustomAction("Draw from bottom");
+refCard.addCustomAction("Draw from Bottom");
 refCard.onCustomAction.add((card, player, identifier) => {
   switch (identifier) {
     case "Draw from bottom":

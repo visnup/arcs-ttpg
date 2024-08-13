@@ -44,7 +44,7 @@ function discard(card: typeof refCard) {
 refCard.onPrimaryAction.add(discard);
 refCard.onCustomAction.add(discard);
 refCard.addCustomAction(
-  "Discard to supply",
+  "Discard to Supply",
   "Discard this resource to its supply",
 );
 

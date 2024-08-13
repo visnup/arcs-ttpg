@@ -45,7 +45,7 @@ const cards = [
 refCard.onPrimaryAction.add(takeFateSet);
 refCard.onCustomAction.add(takeFateSet);
 refCard.addCustomAction(
-  "Take matching Fate Set",
+  "Take Matching Fate Set",
   "Spawns matching fate cards and items",
 );
 

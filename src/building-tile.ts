@@ -6,7 +6,7 @@ refCard.setOwningPlayerSlot(refCard.getCardDetails().index);
 refCard.onPrimaryAction.add(toggle);
 refCard.onCustomAction.add(toggle);
 refCard.addCustomAction(
-  "Toggle damage",
+  "Toggle Damage",
   "Toggle building damage from fresh to damaged or back",
 );
 

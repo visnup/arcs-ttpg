@@ -15,7 +15,7 @@ const above = new Vector(0, 0, 0.1);
 refCard.onPrimaryAction.add(followSetup);
 refCard.onCustomAction.add(followSetup);
 refCard.addCustomAction(
-  "Follow setup",
+  "Follow Setup",
   "Follow the setup instructions on this card",
 );
 

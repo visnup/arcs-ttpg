@@ -23,11 +23,11 @@ updateCustomAction();
 
 function updateCustomAction() {
   if (discardFaceDown()) {
-    refHolder.addCustomAction("Toggle to face up");
-    refHolder.removeCustomAction("Toggle to face down");
+    refHolder.addCustomAction("Toggle to Face Up");
+    refHolder.removeCustomAction("Toggle to Face Down");
   } else {
-    refHolder.addCustomAction("Toggle to face down");
-    refHolder.removeCustomAction("Toggle to face up");
+    refHolder.addCustomAction("Toggle to Face Down");
+    refHolder.removeCustomAction("Toggle to Face Up");
   }
 }
 
