@@ -1,3 +1,4 @@
+import type { Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   Card,
@@ -30,10 +31,10 @@ refCard.onCustomAction.add((card, player, identifier) => {
 refCard.onPrimaryAction.add(showDeal);
 // Hack: ideally onPrimaryAction would be called on any shuffle, but it's
 // not so expose this callback and call it manually when we shuffle
-(refCard as any).showDeal = function (this: typeof refCard) {
-  showDeal(this);
+(refCard as any).showDeal = function (this: typeof refCard, player: Player) {
+  showDeal(this, player);
 };
-function showDeal(card: Card) {
+function showDeal(card: Card, player: Player) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);

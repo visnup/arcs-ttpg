@@ -115,7 +115,7 @@ function endChapter(button: Button, player: Player) {
     discard.shuffle();
     // Hack: need to manually call after we shuffle to show Deal button
     if ("showDeal" in discard && typeof discard.showDeal === "function")
-      discard.showDeal();
+      discard.showDeal(player);
   }
   refHolder.removeUI(0);
 }
