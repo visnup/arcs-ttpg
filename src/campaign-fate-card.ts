@@ -42,7 +42,14 @@ const cards = [
   "86660B6732FF438BB8EE54B4C05A59CA",
 ];
 
-refCard.onPrimaryAction.add((card) => {
+refCard.onPrimaryAction.add(takeFateSet);
+refCard.onCustomAction.add(takeFateSet);
+refCard.addCustomAction(
+  "Take matching Fate Set",
+  "Spawns matching fate cards and items",
+);
+
+function takeFateSet(card: Card) {
   if (card.getStackSize() > 1) return;
   const { index } = card.getCardDetails(0)!;
 
@@ -82,4 +89,4 @@ refCard.onPrimaryAction.add((card) => {
       }
     }
   }
-});
+}

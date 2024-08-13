@@ -1,6 +1,5 @@
 import {
   Card,
-  GameObject,
   refCard,
   Rotator,
   SnapPoint,
@@ -8,11 +7,19 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { InitiativeMarker } from "./initiative-marker";
+import type { Player } from "@tabletop-playground/api";
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 const above = new Vector(0, 0, 0.1);
 
-refCard.onPrimaryAction.add((card, player) => {
+refCard.onPrimaryAction.add(followSetup);
+refCard.onCustomAction.add(followSetup);
+refCard.addCustomAction(
+  "Follow setup",
+  "Follow the setup instructions on this card",
+);
+
+function followSetup(card: Card, player: Player) {
   if (card.getStackSize() > 1) return;
 
   // Setup card details
@@ -111,7 +118,7 @@ refCard.onPrimaryAction.add((card, player) => {
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
   for (const holder of world.getObjectsByTemplateName("cards"))
     if ("sort" in holder && typeof holder.sort === "function") holder.sort();
-});
+}
 
 const createPlacement =
   (slot: number) => (spec: string) => (system: SnapPoint[]) => {
