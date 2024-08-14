@@ -34,11 +34,6 @@ function followSetup(card: Card, player: Player) {
     .slice(0, setup.length)
     .sort();
 
-  // Clean up unused components
-  removeNotes();
-  removeCampaign();
-  removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
-
   // Randomly pick first player
   const first = Math.floor(Math.random() * needed.length);
   const slots = needed.slice(first).concat(needed.slice(0, first));
@@ -119,6 +114,12 @@ function followSetup(card: Card, player: Player) {
   if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
   for (const holder of world.getObjectsByTemplateName("cards"))
     if ("sort" in holder && typeof holder.sort === "function") holder.sort();
+
+  // Clean up unused components
+  removeNotes();
+  removeBlocks();
+  removeCampaign();
+  removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
 }
 
 const createPlacement =
@@ -194,6 +195,11 @@ function removePlayers(slots: number[]) {
   for (const slot of slots)
     for (const obj of world.getAllObjects())
       if (obj.getOwningPlayerSlot() === slot) obj.destroy();
+}
+function removeBlocks() {
+  for (const t of ["block large", "block small", "block round"])
+    for (const obj of world.getObjectsByTemplateName(t))
+      if (world.isOnTable(obj)) obj.destroy();
 }
 
 function occupied(system: SnapPoint | SnapPoint[]) {
