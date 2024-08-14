@@ -8,13 +8,13 @@
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Wood",
-	"Roughness": 1,
-	"Metallic": 0,
+	"Roughness": 0.6,
+	"Metallic": 1,
 	"PrimaryColor":
 	{
-		"R": 255,
-		"G": 255,
-		"B": 255
+		"R": 221,
+		"G": 221,
+		"B": 221
 	},
 	"SecondaryColor":
 	{
