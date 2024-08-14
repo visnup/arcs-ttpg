@@ -92,6 +92,7 @@ function followSetup(card: Card, player: Player) {
         if (r) resources.set(r, (resources.get(r) || 0) + 1);
       }
     }
+    createBlock(+cluster);
   }
   for (const [r, n] of resources.entries())
     placeResources(r, n, blockedResourceSnaps[r]);
@@ -256,6 +257,23 @@ function takeBlock(type: "small" | "large" | "round") {
       (a, b) =>
         a.getPosition().distance(origin) - b.getPosition().distance(origin),
     )[0];
+}
+function createBlock(sector: number) {
+  const template = [
+    "BD6AA484E84B1EDA0E9FD19E43B1A61C",
+    "92C1A3560B4B8CEE236D9F8B8DB7D564",
+    "F6AF3FDD334BF12FF3D58080F5659475",
+    "FCA6F180B64C68A3F882619E46C99E50",
+    "0FB517B97945EF9A0FBD31A9B69A94EB",
+    "7339DACED24D5ACC5D15DF97041449DE",
+  ][sector - 1];
+  if (!template) return;
+  const block = world.createObjectFromTemplate(
+    template,
+    origin.add(new Vector(0, 0, 0.5)),
+  );
+  block?.freeze();
+  return block;
 }
 
 function nearby(building: Vector) {
