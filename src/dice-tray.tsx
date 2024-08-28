@@ -1,4 +1,3 @@
-import { TextJustification } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
@@ -6,11 +5,12 @@ import {
   GameObject,
   globalEvents,
   ScreenUIElement,
+  TextJustification,
   Vector,
   VerticalAlignment,
   world,
 } from "@tabletop-playground/api";
-import { boxChild, render, jsxInTTPG } from "jsx-in-ttpg";
+import { boxChild, jsxInTTPG, render } from "jsx-in-ttpg";
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 
@@ -80,44 +80,48 @@ function sumDice() {
     ["key", "Raid Cards\n& Resources"],
   ];
   diceSummary.widget = render(
-    <verticalbox gap={10}>
-      {rows.map(
-        ([key, label]) =>
-          total[key] && (
-            <horizontalbox gap={20} valign={VerticalAlignment.Center}>
-              {boxChild(
-                0,
-                <image
-                  src={`dice/${key}.png`}
-                  srcPackage={refPackageId}
-                  width={20}
-                />,
-              )}
-              {boxChild(
-                3,
-                <richtext
-                  size={14}
-                  font="NeueKabelW01-Book.ttf"
-                  fontPackage={refPackageId}
-                >
-                  {label}
-                </richtext>,
-              )}
-              {boxChild(
-                1,
-                <text
-                  size={16}
-                  font="NeueKabelW01-Book.ttf"
-                  fontPackage={refPackageId}
-                  justify={TextJustification.Center}
-                >
-                  {total[key]}
-                </text>,
-              )}
-            </horizontalbox>
-          ),
-      )}
-    </verticalbox>,
+    !Object.keys(total).length && zone.getOverlappingObjects().length ? (
+      <text>All Faces Blank</text>
+    ) : (
+      <verticalbox gap={10}>
+        {rows.map(
+          ([key, label]) =>
+            total[key] && (
+              <horizontalbox gap={20} valign={VerticalAlignment.Center}>
+                {boxChild(
+                  0,
+                  <image
+                    src={`dice/${key}.png`}
+                    srcPackage={refPackageId}
+                    width={20}
+                  />,
+                )}
+                {boxChild(
+                  3,
+                  <richtext
+                    size={14}
+                    font="NeueKabelW01-Book.ttf"
+                    fontPackage={refPackageId}
+                  >
+                    {label}
+                  </richtext>,
+                )}
+                {boxChild(
+                  1,
+                  <text
+                    size={16}
+                    font="NeueKabelW01-Book.ttf"
+                    fontPackage={refPackageId}
+                    justify={TextJustification.Center}
+                  >
+                    {total[key]}
+                  </text>,
+                )}
+              </horizontalbox>
+            ),
+        )}
+      </verticalbox>
+    ),
   );
   world.removeScreenUI(0);
   world.addScreenUI(diceSummary);
