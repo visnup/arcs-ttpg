@@ -113,9 +113,6 @@ function endChapter(button: Button, player: Player) {
     for (const c of world.getObjectsByTemplateName<Card>("action"))
       if (!world.isOnTable(c)) discard.addCards(c);
     discard.shuffle();
-    // Hack: need to manually call after we shuffle to show Deal button
-    if ("showDeal" in discard && typeof discard.showDeal === "function")
-      discard.showDeal(player);
   }
   refHolder.removeUI(0);
 }

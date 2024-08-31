@@ -30,13 +30,17 @@ if (refCard.getStackSize() > 1) {
 }
 
 // Deal option after shuffle
-refCard.onPrimaryAction.add(showDeal);
-// Hack: ideally onPrimaryAction would be called on any shuffle, but it's
-// not so expose this callback and call it manually when we shuffle
-(refCard as any).showDeal = function (this: typeof refCard, player: Player) {
-  showDeal(this, player);
+const shuffle = refCard.shuffle;
+refCard.shuffle = function () {
+  shuffle.call(this);
+  showDeal(this);
 };
-function showDeal(card: Card, player: Player) {
+const deal = refCard.deal;
+refCard.deal = function () {
+  deal.call(this, ...arguments);
+  this.removeUI(0);
+};
+function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
@@ -56,13 +60,12 @@ function showDeal(card: Card, player: Player) {
           )
             holder.sort();
         getInitiative()?.stand();
-        card.removeUI(index);
       }}
     >
       {" Deal "}
     </button>,
   );
-  const index = card.addUI(ui);
+  card.addUI(ui);
 }
 
 function isSecond(card: Card) {
