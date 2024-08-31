@@ -12,12 +12,14 @@ import type { Player } from "@tabletop-playground/api";
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 const above = new Vector(0, 0, 0.1);
 
-refCard.onPrimaryAction.add(followSetup);
-refCard.onCustomAction.add(followSetup);
-refCard.addCustomAction(
-  "Follow Setup",
-  "Follow the setup instructions on this card",
-);
+if (refCard.getStackSize() === 1) {
+  refCard.onPrimaryAction.add(followSetup);
+  refCard.onCustomAction.add(followSetup);
+  refCard.addCustomAction(
+    "Follow Setup",
+    "Follow the setup instructions on this card",
+  );
+}
 
 function followSetup(card: Card, player: Player) {
   if (card.getStackSize() > 1) return;

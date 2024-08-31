@@ -17,15 +17,17 @@ function getInitiative() {
 }
 
 // Draw from bottom
-refCard.addCustomAction("Draw from Bottom");
-refCard.onCustomAction.add((card, player, identifier) => {
-  switch (identifier) {
-    case "Draw from bottom":
-      card.moveCardInStack(0, card.getStackSize() - 1);
-      card.deal(1, [player.getSlot()]);
-      break;
-  }
-});
+if (refCard.getStackSize() > 1) {
+  refCard.addCustomAction("Draw from Bottom");
+  refCard.onCustomAction.add((card, player, identifier) => {
+    switch (identifier) {
+      case "Draw from bottom":
+        card.moveCardInStack(0, card.getStackSize() - 1);
+        card.deal(1, [player.getSlot()]);
+        break;
+    }
+  });
+}
 
 // Deal option after shuffle
 refCard.onPrimaryAction.add(showDeal);
