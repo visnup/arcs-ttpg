@@ -14,13 +14,16 @@ import { Rotator } from "@tabletop-playground/api";
 import {
   above,
   getActionDecks,
+  getCourtSnaps,
   getPosition,
+  occupied,
   placeCourt,
   removeBlocks,
   removeNotes,
   removePlayers,
 } from "./setup-deck";
 import { GameObject } from "@tabletop-playground/api";
+import { CardHolder } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -100,17 +103,31 @@ function campaignSetup(players: number, card: Card) {
   const cc = world.getObjectByTemplateName<Card>("cc");
   if (bc && cc) {
     const court = bc.getPosition();
+    const p = cc.getPosition();
     bc.destroy();
     cc.setPosition(court);
     placeCourt(cc, players);
     // Lore
-    cc.addCards(takeLore(players));
+    const lore = getLore();
+    lore.setPosition(p);
+    cc.addCards(
+      players < lore.getStackSize() ? lore.takeCards(players)! : lore,
+    );
     cc.shuffle();
   }
   // Imperial Council card
+  const imperialCouncil = takeCampaignCard("imperial council");
+  imperialCouncil?.setPosition(
+    getPosition(getCourtSnaps().find((d) => !occupied(d))!).add(above),
+  );
+  imperialCouncil?.snap();
 
+  // Rules
+  addRule(world.getObjectByTemplateName("book-of-law"));
   // 2p: Guild Envoys Depart edict
+  if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
   // Shuffle edict cards
+  addRule(takeCampaignCard("govern the imperial reach"));
 
   // Setup Imperial clusters
 
@@ -138,13 +155,27 @@ function takeEventActionDeck(n: number) {
   if (!deck) return;
   return n < deck.getStackSize() ? deck.takeCards(n) : deck;
 }
-function takeLore(n: number) {
+function getLore() {
   const [deck, ...others] = world.getObjectsByTemplateName<Card>("lore");
   for (const d of others) deck.addCards(d);
   const { pitch, yaw } = deck.getRotation();
   deck.setRotation(new Rotator(pitch, yaw, 0));
   deck.shuffle();
-  return n < deck.getStackSize() ? deck.takeCards(n)! : deck;
+  return deck;
+}
+function takeCampaignCard(name: string) {
+  let card: Card | undefined;
+  for (const deck of world.getObjectsByTemplateName<Card>("dc")) {
+    for (let i = 0; i < deck.getStackSize(); i++) {
+      const details = deck.getCardDetails(i)!;
+      if (details.metadata === name) {
+        if (card) card.addCards(deck.takeCards(1, true, i)!);
+        else card = deck.takeCards(1, true, i)!;
+        i--;
+      }
+    }
+  }
+  return card;
 }
 
 function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
@@ -169,6 +200,22 @@ function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
         .add(above),
     );
     chapter.snap();
+  }
+}
+
+let rules: CardHolder;
+function addRule(card?: Card) {
+  if (!rules) {
+    const lore = world.getObjectByTemplateName("lore")!.getPosition();
+    rules = world.createObjectFromTemplate(
+      "A86010E7BE44A8377F90F990AA8F9EAA",
+      new Vector(10, lore.y, lore.z),
+    )! as CardHolder;
+    rules.freeze();
+  }
+  if (card) {
+    card.shuffle();
+    rules.insert(card, rules.getNumCards());
   }
 }
 

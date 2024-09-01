@@ -193,7 +193,7 @@ export function removeBlocks() {
       if (world.isOnTable(obj)) obj.destroy();
 }
 
-function occupied(system: SnapPoint | SnapPoint[]) {
+export function occupied(system: SnapPoint | SnapPoint[]) {
   return system instanceof SnapPoint
     ? system.getSnappedObject()
     : system.some((d) => d.getSnappedObject());
@@ -220,7 +220,7 @@ export function getActionDecks() {
 function getCourtDeck() {
   return world.getObjectByTemplateName<Card>("bc");
 }
-function getCourtSnaps() {
+export function getCourtSnaps() {
   const board = world.getObjectByTemplateName("court");
   if (!board) return [];
   return board
