@@ -1,7 +1,7 @@
 {
 	"Type": "Generic",
 	"GUID": "72DDA7161649E9CC16C6FB8C35FE5917",
-	"Name": "imperial",
+	"Name": "ship",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,

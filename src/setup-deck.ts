@@ -229,7 +229,7 @@ export function getCourtSnaps() {
     .slice(1);
 }
 
-function getSystems() {
+export function getSystems() {
   const map = world.getObjectById("map");
   if (!map) return [];
   return map
@@ -288,7 +288,7 @@ export function placeCourt(court: Card | undefined, players: number) {
   }
 }
 
-function nearby(building: Vector) {
+export function nearby(building: Vector) {
   if (building.distance(origin) < 11) return building;
   const direction = building.subtract(origin).unit();
   const ring = origin.add(direction.multiply(11));
@@ -296,7 +296,7 @@ function nearby(building: Vector) {
 }
 
 // Find _n_ ships belonging to _slot_ player closest to _target_ and place them
-function placeShips(slot: number, n: number, target: Vector) {
+export function placeShips(slot: number, n: number, target: Vector) {
   const ships = world
     .getObjectsByTemplateName("ship")
     .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))

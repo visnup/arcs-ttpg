@@ -16,14 +16,18 @@ import {
   getActionDecks,
   getCourtSnaps,
   getPosition,
+  getSystems,
+  nearby,
   occupied,
   placeCourt,
+  placeShips,
   removeBlocks,
   removeNotes,
   removePlayers,
 } from "./setup-deck";
 import { GameObject } from "@tabletop-playground/api";
 import { CardHolder } from "@tabletop-playground/api";
+import { Dice } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -130,8 +134,25 @@ function campaignSetup(players: number, card: Card) {
   addRule(takeCampaignCard("govern the imperial reach"));
 
   // Setup Imperial clusters
+  // world.getObjectByTemplateName<Dice>("number")?.roll();
+  const systems = getSystems();
+  const r = Math.floor(Math.random() * 6);
+  for (const cluster of "1234561".slice(r, r + 2))
+    for (const system of "0123")
+      placeShips(
+        4,
+        1,
+        nearby(
+          getPosition(
+            systems
+              .filter((d) => d.id === `${cluster}.${system}`)
+              .map((d) => d.snap),
+          ),
+        ),
+      );
 
   // Free cities
+  // world.getObjectByTemplateName<Dice>("icon")?.roll();
 
   // Blight
 
