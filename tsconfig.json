@@ -3,7 +3,7 @@
     "checkJs": true,
     "lib": ["ES2023", "DOM"],
     "module": "commonjs",
-    "target": "ES2023",
+    "target": "es2023",
     "strict": true,
     "outDir": "./build",
     "useUnknownInCatchVariables": false,

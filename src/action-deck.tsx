@@ -1,4 +1,3 @@
-import type { Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   Card,

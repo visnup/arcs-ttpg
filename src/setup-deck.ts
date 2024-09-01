@@ -1,3 +1,4 @@
+import type { Player } from "@tabletop-playground/api";
 import {
   Card,
   refCard,
@@ -7,7 +8,6 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { InitiativeMarker } from "./initiative-marker";
-import type { Player } from "@tabletop-playground/api";
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 const above = new Vector(0, 0, 0.1);
@@ -46,10 +46,10 @@ function followSetup(card: Card, player: Player) {
   // Shuffle action deck
   const action = getActionDecks();
   // 4p: add 1, 7s
-  if (setup.length === 4) action[0]?.addCards(action[1]);
+  if (setup.length === 4) action[0].addCards(action[1]);
   else action[1]?.destroy();
-  action[0]?.setRotation(new Rotator(0, -90, 0));
-  action[0]?.shuffle();
+  action[0].setRotation(new Rotator(0, -90, 0));
+  action[0].shuffle();
 
   // Shuffle court deck
   const court = getCourtDeck();
@@ -66,7 +66,7 @@ function followSetup(card: Card, player: Player) {
     }
   }
 
-  // Out of play
+  // Block out of play clusters
   const systems = getSystems();
   const resources = new Map<string, number>();
   for (const cluster of block.split(" ")) {
@@ -169,7 +169,7 @@ function getLeader(slot: number) {
   }
 }
 
-function removeNotes() {
+export function removeNotes() {
   for (const obj of world.getObjectsByTemplateName("note")) obj.destroy();
 }
 function removeCampaign() {
@@ -193,12 +193,12 @@ function removeCampaign() {
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
 }
-function removePlayers(slots: number[]) {
+export function removePlayers(slots: number[]) {
   for (const slot of slots)
     for (const obj of world.getAllObjects())
       if (obj.getOwningPlayerSlot() === slot) obj.destroy();
 }
-function removeBlocks() {
+export function removeBlocks() {
   for (const t of ["block large", "block small", "block round"])
     for (const obj of world.getObjectsByTemplateName(t))
       if (world.isOnTable(obj)) obj.destroy();
@@ -221,7 +221,7 @@ function getPosition(system: SnapPoint | SnapPoint[]) {
         );
 }
 
-function getActionDecks() {
+export function getActionDecks() {
   return world
     .getObjectsByTemplateName<Card>("action")
     .filter((d) => !d.isInHolder())
