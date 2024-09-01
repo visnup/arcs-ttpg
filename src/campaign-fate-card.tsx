@@ -12,11 +12,15 @@ import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { InitiativeMarker } from "./initiative-marker";
 import { Rotator } from "@tabletop-playground/api";
 import {
+  above,
   getActionDecks,
+  getPosition,
+  placeCourt,
   removeBlocks,
   removeNotes,
   removePlayers,
 } from "./setup-deck";
+import { GameObject } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -32,7 +36,11 @@ if (refCard.getStackSize() > 1) {
 
 // Campaign setup
 function showDeal(card: Card, player: Player) {
-  if (card.getAllCardDetails().some(({ index }) => index >= 8)) return;
+  if (
+    card.getUIs().length ||
+    card.getAllCardDetails().some(({ index }) => index >= 8)
+  )
+    return;
   const ui = new UIElement();
   ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
   ui.scale = 0.2;
@@ -77,14 +85,28 @@ function campaignSetup(players: number, card: Card) {
   if (players === 4) action[0].addCards(action[1]);
   else action[1]?.destroy();
   // Add event action cards
-  action[0].addCards(getEventActionDeck(players === 4 ? 3 : 2) ?? action[0]);
+  action[0].addCards(takeEventActionDeck(players === 4 ? 3 : 2) ?? action[0]);
   action[0].setRotation(new Rotator(0, -90, 0));
   action[0].shuffle();
 
   // Replace chapter track
+  placeChapterTrack(
+    world.getObjectByTemplateName("chapter-track"),
+    world.getObjectByTemplateName("chapter"),
+  );
 
   // Shuffle court deck
-  // Lore
+  const bc = world.getObjectByTemplateName("bc");
+  const cc = world.getObjectByTemplateName<Card>("cc");
+  if (bc && cc) {
+    const court = bc.getPosition();
+    bc.destroy();
+    cc.setPosition(court);
+    placeCourt(cc, players);
+    // Lore
+    cc.addCards(takeLore(players));
+    cc.shuffle();
+  }
   // Imperial Council card
 
   // 2p: Guild Envoys Depart edict
@@ -105,18 +127,56 @@ function campaignSetup(players: number, card: Card) {
   removeNotes();
   removeSetup();
   removeBlocks();
+  removeLeaders();
   removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
 }
 
-function getEventActionDeck(n: number) {
+function takeEventActionDeck(n: number) {
   const deck = world
     .getObjectsByTemplateName<Card>("dc")
     .find((d) => d.getTags().includes("action"));
   if (!deck) return;
   return n < deck.getStackSize() ? deck.takeCards(n) : deck;
 }
+function takeLore(n: number) {
+  const [deck, ...others] = world.getObjectsByTemplateName<Card>("lore");
+  for (const d of others) deck.addCards(d);
+  const { pitch, yaw } = deck.getRotation();
+  deck.setRotation(new Rotator(pitch, yaw, 0));
+  deck.shuffle();
+  return n < deck.getStackSize() ? deck.takeCards(n)! : deck;
+}
+
+function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
+  if (chapter && chapterTrack) {
+    chapterTrack.setPosition(
+      getPosition(
+        world
+          .getObjectById("map")!
+          .getAllSnapPoints()
+          .filter((d) => d.getTags().includes("chapter-overlay")),
+      ).add(above),
+    );
+    chapterTrack.snap();
+    chapterTrack.freeze();
+    chapter.setPosition(
+      chapterTrack
+        .getAllSnapPoints()
+        .map((d) => d.getGlobalPosition())
+        .sort(
+          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az ?? ay - by, // Highest and to the left
+        )[0]
+        .add(above),
+    );
+    chapter.snap();
+  }
+}
+
 function removeSetup() {
   for (const obj of world.getObjectsByTemplateName("setup")) obj.destroy();
+}
+function removeLeaders() {
+  for (const obj of world.getObjectsByTemplateName("leader")) obj.destroy();
 }
 
 // Fate sets

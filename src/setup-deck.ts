@@ -10,7 +10,7 @@ import {
 import { InitiativeMarker } from "./initiative-marker";
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
-const above = new Vector(0, 0, 0.1);
+export const above = new Vector(0, 0, 0.1);
 
 if (refCard.getStackSize() === 1) {
   refCard.onPrimaryAction.add(followSetup);
@@ -53,18 +53,7 @@ function followSetup(card: Card, player: Player) {
 
   // Shuffle court deck
   const court = getCourtDeck();
-  if (court) {
-    court.setRotation(new Rotator(0, 90, 0));
-    court.shuffle();
-    // Deal court; 2p: 3 cards, 3-4p: 4 cards
-    for (const snap of getCourtSnaps().slice(0, setup.length === 2 ? 3 : 4)) {
-      if (occupied(snap)) continue;
-      const card = court.takeCards(1);
-      if (!card) break;
-      card.setPosition(getPosition(snap).add(above));
-      card.snap();
-    }
-  }
+  placeCourt(court, setup.length);
 
   // Block out of play clusters
   const systems = getSystems();
@@ -209,7 +198,7 @@ function occupied(system: SnapPoint | SnapPoint[]) {
     ? system.getSnappedObject()
     : system.some((d) => d.getSnappedObject());
 }
-function getPosition(system: SnapPoint | SnapPoint[]) {
+export function getPosition(system: SnapPoint | SnapPoint[]) {
   return system instanceof SnapPoint
     ? system.getGlobalPosition()
     : system.length === 1
@@ -282,6 +271,21 @@ function createBlock(sector: number) {
   );
   block?.freeze();
   return block;
+}
+
+export function placeCourt(court: Card | undefined, players: number) {
+  if (court) {
+    court.setRotation(new Rotator(0, 90, 0));
+    court.shuffle();
+    // Deal court; 2p: 3 cards, 3-4p: 4 cards
+    for (const snap of getCourtSnaps().slice(0, players === 2 ? 3 : 4)) {
+      if (occupied(snap)) continue;
+      const card = court.takeCards(1);
+      if (!card) break;
+      card.setPosition(getPosition(snap).add(above));
+      card.snap();
+    }
+  }
 }
 
 function nearby(building: Vector) {
