@@ -171,7 +171,7 @@ function removeCampaign() {
     "first-regent",
     "chapter-track",
     "number",
-    "icon",
+    "event",
     "flagship-board",
     "flagship",
     "objective",

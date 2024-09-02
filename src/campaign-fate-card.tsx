@@ -129,7 +129,7 @@ function campaignSetup(players: number, card: Card) {
   // Rules
   addRule(world.getObjectByTemplateName("book-of-law"));
   // 2p: Guild Envoys Depart edict
-  if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
+  // if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
   // Shuffle edict cards
   addRule(takeCampaignCard("govern the imperial reach"));
 
