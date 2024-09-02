@@ -161,8 +161,27 @@ function campaignSetup(players: number, card: Card) {
   const outside = [..."123456"].filter((d) => !imperial.includes(d));
   const event = world.getObjectByTemplateName<Dice>("event");
   if (event) event.setCurrentFace(e);
+  for (const cluster of outside)
+    placeFreeCity(
+      getPosition(
+        systems
+          .filter((d) => d.id === `${cluster}.${e + 1}`)
+          .map((d) => d.snap),
+      ),
+    );
 
   // Blight
+  for (const cluster of outside)
+    for (const system of "0123")
+      placeBlight(
+        nearby(
+          getPosition(
+            systems
+              .filter((d) => d.id === `${cluster}.${system}`)
+              .map((d) => d.snap),
+          ),
+        ),
+      );
 
   // 2p: out of play resources
 
@@ -206,6 +225,26 @@ function takeCampaignCard(name: string) {
     }
   }
   return card;
+}
+let freeCity: Card | undefined;
+function placeFreeCity(position: Vector) {
+  freeCity ??= world
+    .getObjectsByTemplateName<Card>("city")
+    .find((d) => d.getOwningPlayerSlot() === 4);
+  const city = freeCity?.takeCards(1);
+  city?.setPosition(position.add(above));
+  city?.snap();
+}
+let blight: Card | undefined;
+function placeBlight(position: Vector) {
+  blight ??= world
+    .getObjectsByTemplateName("set-round")
+    .find(
+      (d) =>
+        d instanceof Card &&
+        d.getAllCardDetails().every(({ metadata }) => metadata === "blight"),
+    ) as Card | undefined;
+  blight?.takeCards(1)?.setPosition(position);
 }
 
 function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
