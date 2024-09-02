@@ -1,7 +1,7 @@
 {
 	"Type": "Dice",
 	"GUID": "4BA668F96D497BA9A92E198E38DDC867",
-	"Name": "icon",
+	"Name": "event",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,

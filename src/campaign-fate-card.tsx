@@ -134,10 +134,15 @@ function campaignSetup(players: number, card: Card) {
   addRule(takeCampaignCard("govern the imperial reach"));
 
   // Setup Imperial clusters
-  // world.getObjectByTemplateName<Dice>("number")?.roll();
   const systems = getSystems();
-  const r = Math.floor(Math.random() * 6);
-  for (const cluster of "1234561".slice(r, r + 2))
+  const i = Math.floor(Math.random() * 6);
+  const imperial = [..."1234561".slice(i, i + 2)];
+  const number = world.getObjectByTemplateName<Dice>("number");
+  if (number)
+    number.setCurrentFace(
+      number.getAllFaceNames().findIndex((d) => d === imperial[0]),
+    );
+  for (const cluster of imperial)
     for (const system of "0123")
       placeShips(
         4,
@@ -152,7 +157,10 @@ function campaignSetup(players: number, card: Card) {
       );
 
   // Free cities
-  // world.getObjectByTemplateName<Dice>("icon")?.roll();
+  const e = Math.floor(Math.random() * 3);
+  const outside = [..."123456"].filter((d) => !imperial.includes(d));
+  const event = world.getObjectByTemplateName<Dice>("event");
+  if (event) event.setCurrentFace(e);
 
   // Blight
 
