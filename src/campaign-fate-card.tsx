@@ -198,9 +198,10 @@ function takeCampaignCard(name: string) {
     for (let i = 0; i < deck.getStackSize(); i++) {
       const details = deck.getCardDetails(i)!;
       if (details.metadata === name) {
-        if (card) card.addCards(deck.takeCards(1, true, i)!);
-        else card = deck.takeCards(1, true, i)!;
-        i--;
+        const match =
+          deck.getStackSize() === 1 ? deck : (i--, deck.takeCards(1, true, i)!);
+        if (card) card.addCards(match);
+        else card = match;
       }
     }
   }
