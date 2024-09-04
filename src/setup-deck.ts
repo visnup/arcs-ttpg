@@ -347,13 +347,13 @@ function placeStarports(slot: number, n: number, target: Vector) {
   }
 }
 
-function systemResource(system: SnapPoint): string | undefined {
+export function systemResource(system: SnapPoint): string | undefined {
   return system
     .getTags()
     .find((t) => t.startsWith("resource:"))!
     ?.replace("resource:", "");
 }
-function placeResources(
+export function placeResources(
   resource: string | undefined,
   n: number,
   target: Vector,
@@ -377,7 +377,7 @@ function gainResource(slot: number, resource: string | undefined) {
   placeResources(resource, 1, empty.getGlobalPosition());
 }
 
-const blockedResourceSnaps = Object.fromEntries(
+export const blockedResourceSnaps = Object.fromEntries(
   world
     .getObjectById("map")!
     .getAllSnapPoints()

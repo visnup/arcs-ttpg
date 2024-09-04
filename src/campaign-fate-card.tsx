@@ -13,6 +13,7 @@ import { InitiativeMarker } from "./initiative-marker";
 import { Rotator } from "@tabletop-playground/api";
 import {
   above,
+  blockedResourceSnaps,
   getActionDecks,
   getCourtSnaps,
   getPosition,
@@ -20,14 +21,17 @@ import {
   nearby,
   occupied,
   placeCourt,
+  placeResources,
   placeShips,
   removeBlocks,
   removeNotes,
   removePlayers,
+  systemResource,
 } from "./setup-deck";
 import { GameObject } from "@tabletop-playground/api";
 import { CardHolder } from "@tabletop-playground/api";
 import { Dice } from "@tabletop-playground/api";
+import { SnapPoint } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -142,19 +146,23 @@ function campaignSetup(players: number, card: Card) {
     number.setCurrentFace(
       number.getAllFaceNames().findIndex((d) => d === imperial[0]),
     );
-  for (const cluster of imperial)
-    for (const system of "0123")
-      placeShips(
-        4,
-        1,
-        nearby(
-          getPosition(
-            systems
-              .filter((d) => d.id === `${cluster}.${system}`)
-              .map((d) => d.snap),
-          ),
-        ),
-      );
+  const resources = new Map<string, number>();
+  for (const cluster of imperial) {
+    for (const i of "0123") {
+      const system = systems
+        .filter((d) => d.id === `${cluster}.${i}`)
+        .map((d) => d.snap);
+      placeShips(4, 1, nearby(getPosition(system)));
+
+      // 2p: out of play resources
+      if (slots.length === 2) {
+        const r = systemResource(system[0]);
+        if (r) resources.set(r, (resources.get(r) || 0) + 1);
+      }
+    }
+  }
+  for (const [r, n] of resources.entries())
+    placeResources(r, n, blockedResourceSnaps[r]);
 
   // Free cities
   const e = Math.floor(Math.random() * 3);
@@ -182,8 +190,6 @@ function campaignSetup(players: number, card: Card) {
           ),
         ),
       );
-
-  // 2p: out of play resources
 
   // Deal Fate cards
   card.deal(2, slots, false, true);
