@@ -41,7 +41,7 @@ process.nextTick(() => {
   if (!zone) return;
   // Show discard button when action card is played
   zone.onBeginOverlap.add((zone, obj) => {
-    if (obj instanceof Card && obj.getTemplateName() === "action") {
+    if (obj instanceof Card && obj.getCardDetails().tags.includes("action")) {
       if (!refHolder.getUIs().length) {
         // Create button
         const button = new UIElement();
