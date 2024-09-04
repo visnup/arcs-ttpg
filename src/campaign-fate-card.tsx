@@ -125,9 +125,7 @@ function campaignSetup(players: number, card: Card) {
   }
   // Imperial Council card
   const imperialCouncil = takeCampaignCard("imperial council");
-  imperialCouncil?.setPosition(
-    getPosition(getCourtSnaps().find((d) => !occupied(d))!).add(above),
-  );
+  imperialCouncil?.setPosition(getPosition(getCourtSnaps().at(-1)!).add(above));
   imperialCouncil?.snap();
 
   // Rules
