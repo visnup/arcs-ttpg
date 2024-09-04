@@ -129,8 +129,8 @@ function campaignSetup(players: number, card: Card) {
   // Rules
   addRule(world.getObjectByTemplateName("book-of-law"));
   // 2p: Guild Envoys Depart edict
-  // if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
-  // Shuffle edict cards
+  if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
+  // Govern the Imperial Reach edict
   addRule(takeCampaignCard("govern the imperial reach"));
 
   // Setup Imperial clusters
@@ -205,10 +205,12 @@ function takeEventActionDeck(n: number) {
 }
 function getLore() {
   const [deck, ...others] = world.getObjectsByTemplateName<Card>("lore");
-  for (const d of others) deck.addCards(d);
-  const { pitch, yaw } = deck.getRotation();
-  deck.setRotation(new Rotator(pitch, yaw, 0));
-  deck.shuffle();
+  if (deck) {
+    for (const d of others) deck.addCards(d);
+    const { pitch, yaw } = deck.getRotation();
+    deck.setRotation(new Rotator(pitch, yaw, 0));
+    deck.shuffle();
+  }
   return deck;
 }
 function takeCampaignCard(name: string) {
@@ -218,7 +220,7 @@ function takeCampaignCard(name: string) {
       const details = deck.getCardDetails(i)!;
       if (details.metadata === name) {
         const match =
-          deck.getStackSize() === 1 ? deck : (i--, deck.takeCards(1, true, i)!);
+          deck.getStackSize() === 1 ? deck : deck.takeCards(1, true, i--)!;
         if (card) card.addCards(match);
         else card = match;
       }
@@ -275,7 +277,11 @@ function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
 let rules: CardHolder;
 function addRule(card?: Card) {
   if (!rules) {
-    const lore = world.getObjectByTemplateName("lore")!.getPosition();
+    const lore =
+      world
+        .getObjectsByTemplateName("lore")
+        .find((d) => world.isOnTable(d))
+        ?.getPosition() ?? world.getObjectById("map")!.getPosition();
     rules = world.createObjectFromTemplate(
       "A86010E7BE44A8377F90F990AA8F9EAA",
       new Vector(10, lore.y, lore.z),
