@@ -31,7 +31,21 @@
 	"Collision": [],
 	"Lights": [],
 	"SnapPointsGlobal": false,
-	"SnapPoints": [],
+	"SnapPoints": [
+		{
+			"X": -3.5,
+			"Y": 0,
+			"Z": 0,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"fate"
+			]
+		}
+	],
 	"ZoomViewDirection":
 	{
 		"X": 0,
@@ -70,10 +84,10 @@
 		"2": "govern the imperial reach",
 		"3": "govern the imperial reach",
 		"4": "govern the imperial reach",
-		"5": "imperial regent",
-		"6": "imperial regent",
-		"7": "imperial regent",
-		"8": "imperial regent"
+		"5": "imperial regent / outlaw",
+		"6": "imperial regent / outlaw",
+		"7": "imperial regent / outlaw",
+		"8": "imperial regent / outlaw"
 	},
 	"CardTags":
 	{

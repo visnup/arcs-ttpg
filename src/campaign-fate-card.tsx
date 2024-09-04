@@ -178,7 +178,7 @@ function campaignSetup(players: number, card: Card) {
       ),
     );
 
-  // Blight
+  // Spread blight
   for (const cluster of outside)
     for (const system of "0123")
       placeBlight(
@@ -193,6 +193,22 @@ function campaignSetup(players: number, card: Card) {
 
   // Deal Fate cards
   card.deal(2, slots, false, true);
+
+  // Place Regent / Outlaw
+  // -32.72 - 36
+  const regentOutlaw = takeCampaignCard("imperial regent / outlaw");
+  if (regentOutlaw)
+    for (const player of slots) {
+      const board = world
+        .getObjectsByTemplateName("board")
+        .find((d) => d.getOwningPlayerSlot() === player);
+      if (!board) continue;
+      const card =
+        regentOutlaw.getStackSize() === 1
+          ? regentOutlaw
+          : regentOutlaw.takeCards(1);
+      card!.setPosition(board.getPosition().add(new Vector(3.25, -17, 0.5)));
+    }
 
   // Clean up unused components
   removeNotes();

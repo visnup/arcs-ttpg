@@ -21,13 +21,8 @@ function moveToPlayer(
     player instanceof Player
       ? player.getOwnedObjects().find((d) => d.getTemplateName() === "board")
       : world
-          .getAllObjects()
-          .find(
-            (d) =>
-              d.getTemplateName() === "board" &&
-              d.getPrimaryColor().toHex() ===
-                world.getSlotColor(player).toHex(),
-          );
+          .getObjectsByTemplateName("board")
+          .find((d) => d.getOwningPlayerSlot() === player);
   if (!board) return;
   const p = board.getPosition();
   const { x, y } = board.getSize();
