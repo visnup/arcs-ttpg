@@ -73,7 +73,12 @@ process.nextTick(() => {
 });
 
 function discardOrEndChapter(button: Button, player: Player) {
-  if (getActionZone()?.getOverlappingObjects().length) discard(button, player);
+  if (
+    getActionZone()
+      ?.getOverlappingObjects()
+      .filter((d) => d.getTemplateName() === "action").length
+  )
+    discard(button, player);
   else endChapter(button, player);
 }
 
