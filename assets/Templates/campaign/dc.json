@@ -92,16 +92,20 @@
 	"CardTags":
 	{
 		"0": [
-			"court"
+			"court",
+			"card"
 		],
 		"13": [
-			"action"
+			"action",
+			"card"
 		],
 		"14": [
-			"action"
+			"action",
+			"card"
 		],
 		"15": [
-			"action"
+			"action",
+			"card"
 		]
 	}
 }

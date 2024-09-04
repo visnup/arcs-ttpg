@@ -76,7 +76,9 @@ function discardOrEndChapter(button: Button, player: Player) {
   if (
     getActionZone()
       ?.getOverlappingObjects()
-      .filter((d) => d.getTemplateName() === "action").length
+      .filter(
+        (d) => d instanceof Card && d.getCardDetails().tags.includes("action"),
+      ).length
   )
     discard(button, player);
   else endChapter(button, player);
@@ -87,10 +89,7 @@ function discard(button: Button, player: Player) {
   const zone = getActionZone();
   if (!zone) return;
   for (const obj of zone.getOverlappingObjects()) {
-    if (
-      obj instanceof Card &&
-      ["action", "dc"].includes(obj.getTemplateName())
-    ) {
+    if (obj instanceof Card && obj.getCardDetails().tags.includes("action")) {
       refHolder.insert(obj, 0);
       if (obj.isFaceUp() && discardFaceDown()) refHolder.flipCard(obj);
       sortCard(refHolder, obj, player, 0);
@@ -115,8 +114,13 @@ function endChapter(button: Button, player: Player) {
     discard.snap();
   }
   if (discard instanceof Card) {
-    for (const c of world.getObjectsByTemplateName<Card>("action"))
-      if (!world.isOnTable(c)) discard.addCards(c);
+    for (const h of [
+      refHolder,
+      ...world
+        .getObjectsByTemplateName<CardHolder>("cards")
+        .filter((d) => d.getOwningPlayerSlot() !== -1),
+    ])
+      for (const c of h.getCards()) discard.addCards(c);
     discard.shuffle();
   }
   refHolder.removeUI(0);

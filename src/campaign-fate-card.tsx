@@ -215,15 +215,18 @@ function campaignSetup(players: number, card: Card) {
   removeSetup();
   removeBlocks();
   removeLeaders();
+  removeEvents();
   removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
 }
 
-function takeEventActionDeck(n: number) {
+function takeEventActionDeck(n?: number) {
   const deck = world
     .getObjectsByTemplateName<Card>("dc")
-    .find((d) => d.getTags().includes("action"));
+    .find(
+      (d) => d.getCardDetails().tags.includes("action") && world.isOnTable(d),
+    );
   if (!deck) return;
-  return n < deck.getStackSize() ? deck.takeCards(n) : deck;
+  return n && n < deck.getStackSize() ? deck.takeCards(n) : deck;
 }
 function getLore() {
   const [deck, ...others] = world.getObjectsByTemplateName<Card>("lore");
@@ -306,7 +309,7 @@ function addRule(card?: Card) {
         ?.getPosition() ?? world.getObjectById("map")!.getPosition();
     rules = world.createObjectFromTemplate(
       "A86010E7BE44A8377F90F990AA8F9EAA",
-      new Vector(10, lore.y, lore.z),
+      new Vector(5, lore.y, lore.z),
     )! as CardHolder;
     rules.freeze();
   }
@@ -321,6 +324,9 @@ function removeSetup() {
 }
 function removeLeaders() {
   for (const obj of world.getObjectsByTemplateName("leader")) obj.destroy();
+}
+function removeEvents() {
+  takeEventActionDeck()?.destroy();
 }
 
 // Fate sets
