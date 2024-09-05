@@ -64,13 +64,13 @@
 			{
 				"X": 0,
 				"Y": -17,
-				"Z": 0
+				"Z": 0.40000000000000002
 			},
 			"Scale":
 			{
 				"X": 12,
 				"Y": 7,
-				"Z": 0.10000000000000001
+				"Z": 0.20000000000000001
 			},
 			"Rotation":
 			{
@@ -84,7 +84,7 @@
 			"ExtraMap2": "",
 			"IsTransparent": true,
 			"Alpha": 0.1,
-			"CastShadow": true,
+			"CastShadow": false,
 			"IsTwoSided": false,
 			"UseOverrides": false,
 			"Roughness": 1,
@@ -319,7 +319,7 @@
 		{
 			"X": 0,
 			"Y": -17,
-			"Z": 0,
+			"Z": 0.5,
 			"Range": 3,
 			"SnapRotation": 4,
 			"RotationOffset": 0,
@@ -333,7 +333,7 @@
 		{
 			"X": 3.5,
 			"Y": -17,
-			"Z": 0.050000000000000003,
+			"Z": 0.5,
 			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,

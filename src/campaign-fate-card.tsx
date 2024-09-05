@@ -19,7 +19,6 @@ import {
   getPosition,
   getSystems,
   nearby,
-  occupied,
   placeCourt,
   placeResources,
   placeShips,
@@ -31,7 +30,6 @@ import {
 import { GameObject } from "@tabletop-playground/api";
 import { CardHolder } from "@tabletop-playground/api";
 import { Dice } from "@tabletop-playground/api";
-import { SnapPoint } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -199,12 +197,16 @@ function campaignSetup(players: number, card: Card) {
       const board = world
         .getObjectsByTemplateName("board")
         .find((d) => d.getOwningPlayerSlot() === player);
-      if (!board) continue;
+      const snap = board
+        ?.getAllSnapPoints()
+        .find((d) => d.getTags().includes("regent-outlaw"));
+      if (!snap) continue;
       const card =
         regentOutlaw.getStackSize() === 1
           ? regentOutlaw
           : regentOutlaw.takeCards(1);
-      card!.setPosition(board.getPosition().add(new Vector(3.25, -17, 0.5)));
+      card?.setPosition(snap.getGlobalPosition().add(above));
+      card?.snap();
     }
 
   // Clean up unused components

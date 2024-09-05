@@ -26,7 +26,13 @@ function moveToPlayer(
   if (!board) return;
   const p = board.getPosition();
   const { x, y } = board.getSize();
-  const pos = p.add(new Vector((-Math.sign(p.x) * (x + 8)) / 2, -y / 2 - 2, 1));
+  const pos = p.add(
+    new Vector(
+      (-Math.sign(p.x) * (x + 8)) / 2,
+      -y / 2,
+      obj.getSize().z / 2 + 0.1,
+    ),
+  );
   obj.setRotation(rotation);
   obj.setPosition(pos);
   obj.snapToGround();

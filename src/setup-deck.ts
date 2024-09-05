@@ -193,7 +193,7 @@ export function removeBlocks() {
       if (world.isOnTable(obj)) obj.destroy();
 }
 
-export function occupied(system: SnapPoint | SnapPoint[]) {
+function occupied(system: SnapPoint | SnapPoint[]) {
   return system instanceof SnapPoint
     ? system.getSnappedObject()
     : system.some((d) => d.getSnappedObject());
