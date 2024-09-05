@@ -72,7 +72,8 @@
 		"15": "empath",
 		"16": "empath",
 		"20": "keeper",
-		"23": "empath"
+		"23": "empath",
+		"25": "20 17 14"
 	},
 	"CardTags":
 	{
@@ -152,7 +153,8 @@
 			"fate"
 		],
 		"25": [
-			"fate"
+			"fate",
+			"setup"
 		]
 	}
 }

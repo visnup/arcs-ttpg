@@ -35,6 +35,7 @@ const refPackageId = _refPackageId;
 if (refCard.getStackSize() > 1) {
   refCard.onPrimaryAction.add(showDeal);
 } else {
+  refCard.onSnapped.add(takeFateSet);
   refCard.onPrimaryAction.add(takeFateSet);
   refCard.onCustomAction.add(takeFateSet);
   refCard.addCustomAction(
@@ -374,7 +375,7 @@ function takeFateSet(card: Card) {
   const deck = world.createObjectFromTemplate(
     cards[index],
     card.getPosition().add(new Vector(0, 0, height)),
-  );
+  ) as Card | undefined;
   if (deck) height += deck.getSize().z + dh;
 
   // Spawn any matching items found in sets
@@ -406,4 +407,29 @@ function takeFateSet(card: Card) {
   }
 
   // Place objective marker
+  const p = card.getPosition();
+  const boards = world.getObjectsByTemplateName("board");
+  const slot = boards
+    .sort(
+      (a, b) => a.getPosition().distance(p) - b.getPosition().distance(p),
+    )[0]
+    ?.getOwningPlayerSlot();
+
+  const objective = world
+    .getObjectsByTemplateName("objective")
+    .find((d) => d.getOwningPlayerSlot() === slot);
+  const setup = deck
+    ?.getAllCardDetails()
+    .find((d) => d.tags.includes("setup"))?.metadata;
+  if (objective && setup) {
+    const powers = setup.split(" ");
+    const power = powers[boards.length - 2] ?? powers[0];
+    const snaps = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter((d) => d.getTags().includes("power"))
+      .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
+    objective.setPosition(snaps[+power - 1].getGlobalPosition().add(above));
+    objective.snap();
+  }
 }

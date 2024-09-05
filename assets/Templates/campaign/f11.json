@@ -68,7 +68,8 @@
 		"3": "empath",
 		"4": "keeper",
 		"6": "tycoon",
-		"7": "tycoon"
+		"7": "tycoon",
+		"11": "12"
 	},
 	"CardTags":
 	{
@@ -106,7 +107,8 @@
 			"fate"
 		],
 		"11": [
-			"fate"
+			"fate",
+			"setup"
 		],
 		"12": [
 			"fate"

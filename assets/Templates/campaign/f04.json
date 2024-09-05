@@ -74,7 +74,8 @@
 		"20": "tycoon",
 		"21": "tycoon",
 		"23": "keeper",
-		"24": "empath"
+		"24": "empath",
+		"25": "18"
 	},
 	"CardTags":
 	{
@@ -154,7 +155,8 @@
 			"fate"
 		],
 		"25": [
-			"fate"
+			"fate",
+			"setup"
 		]
 	}
 }

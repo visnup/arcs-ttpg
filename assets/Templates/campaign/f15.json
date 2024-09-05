@@ -65,6 +65,7 @@
 	},
 	"CardMetadata":
 	{
+		"10": "18 16 14"
 	},
 	"CardTags":
 	{
@@ -99,7 +100,8 @@
 			"fate"
 		],
 		"10": [
-			"fate"
+			"fate",
+			"setup"
 		],
 		"11": [
 			"fate"

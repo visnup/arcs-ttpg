@@ -69,7 +69,8 @@
 		"17": "tycoon",
 		"18": "tycoon",
 		"19": "tycoon",
-		"25": "tycoon"
+		"25": "tycoon",
+		"26": "18 16 14"
 	},
 	"CardTags":
 	{
@@ -152,7 +153,8 @@
 			"fate"
 		],
 		"26": [
-			"fate"
+			"fate",
+			"setup"
 		]
 	}
 }
