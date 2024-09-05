@@ -31,21 +31,7 @@
 	"Collision": [],
 	"Lights": [],
 	"SnapPointsGlobal": false,
-	"SnapPoints": [
-		{
-			"X": -3.5,
-			"Y": 0,
-			"Z": 0,
-			"Range": 3,
-			"SnapRotation": 0,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"fate"
-			]
-		}
-	],
+	"SnapPoints": [],
 	"ZoomViewDirection":
 	{
 		"X": 0,
@@ -106,6 +92,18 @@
 		"15": [
 			"action",
 			"card"
+		],
+		"5": [
+			"regent-outlaw"
+		],
+		"6": [
+			"regent-outlaw"
+		],
+		"7": [
+			"regent-outlaw"
+		],
+		"8": [
+			"regent-outlaw"
 		]
 	}
 }

@@ -193,7 +193,6 @@ function campaignSetup(players: number, card: Card) {
   card.deal(2, slots, false, true);
 
   // Place Regent / Outlaw
-  // -32.72 - 36
   const regentOutlaw = takeCampaignCard("imperial regent / outlaw");
   if (regentOutlaw)
     for (const player of slots) {
