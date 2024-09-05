@@ -210,6 +210,19 @@ function campaignSetup(players: number, card: Card) {
       card?.snap();
     }
 
+  // Place First Regent
+  const firstRegent = world.getObjectByTemplateName("first-regent");
+  const firstBoard = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slots[0]);
+  if (firstRegent && firstBoard) {
+    firstRegent.setPosition(
+      firstBoard
+        .getPosition()
+        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
+    );
+  }
+
   // Clean up unused components
   removeNotes();
   removeSetup();
