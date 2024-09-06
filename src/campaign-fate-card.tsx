@@ -52,10 +52,10 @@ function showDeal(card: Card, player: Player) {
   )
     return;
   const ui = new UIElement();
-  ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
+  ui.position = new Vector(0, 0, card.getExtent(false, false).z + 0.1);
   ui.scale = 0.2;
   ui.widget = render(
-    <horizontalbox gap={10}>
+    <verticalbox gap={10}>
       {[2, 3, 4].map((n) => (
         <button
           size={48}
@@ -66,10 +66,10 @@ function showDeal(card: Card, player: Player) {
             card.removeUI(0);
           }}
         >
-          {` ${n} `}
+          {` ${n} players `}
         </button>
       ))}
-    </horizontalbox>,
+    </verticalbox>,
   );
   card.addUI(ui);
 }
