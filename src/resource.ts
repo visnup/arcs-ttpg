@@ -1,3 +1,4 @@
+import { Player } from "@tabletop-playground/api";
 import {
   Card,
   refCard,
@@ -9,7 +10,6 @@ import {
 const origins: { position: Vector; rotation: Rotator }[] = ((
   world as any
 )._resourceOrigins ??= []);
-
 const { index } = refCard.getCardDetails(0)!;
 if (!origins[index]) {
   origins[index] = {
@@ -17,10 +17,12 @@ if (!origins[index]) {
     rotation: refCard.getRotation(),
   };
 }
+
+// Discard to supply
 function discard(card: typeof refCard) {
   const i = card.getCardDetails(0)!.index;
   if (card.getAllCardDetails().every(({ index }) => index === i)) {
-    // If this is a single resource, attempt to discard it
+    // If this is a homogenous resource, attempt to discard it
     const supply = world
       .getObjectsByTemplateName<Card>("resource")
       .find(
@@ -41,7 +43,28 @@ function discard(card: typeof refCard) {
   }
 }
 
+// Draw to player board
+function draw(card: Card, player: Player, number: number) {
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === player.getSlot());
+  if (!board) return;
+  for (let i = 0; i < number; i++) {
+    const snap = board
+      .getAllSnapPoints()
+      .find((d) => !d.getSnappedObject() && d.getTags().includes("resource"));
+    if (!snap) return;
+    const resource = card.getStackSize() > 1 ? card.takeCards(1)! : card;
+    resource.setPosition(
+      snap.getGlobalPosition().add(new Vector(0, 0, 0.1)),
+      1.5,
+    );
+    resource.snap();
+  }
+}
+
 refCard.onPrimaryAction.add(discard);
+refCard.onNumberAction.add(draw);
 refCard.onCustomAction.add(discard);
 refCard.addCustomAction(
   "Discard to Supply",
