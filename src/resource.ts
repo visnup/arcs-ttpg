@@ -49,14 +49,23 @@ function draw(card: Card, player: Player, number: number) {
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === player.getSlot());
   if (!board) return;
-  for (let i = 0; i < number; i++) {
-    const snap = board
-      .getAllSnapPoints()
-      .find((d) => !d.getSnappedObject() && d.getTags().includes("resource"));
-    if (!snap) return;
+  const snaps = board
+    .getAllSnapPoints()
+    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
+  const city =
+    snaps
+      .filter((d) => d.getTags().includes("building"))[2]
+      ?.getSnappedObject()
+      ?.getTemplateName() === "city";
+  const resources = snaps
+    .filter((d) => d.getTags().includes("resource"))
+    .filter((d, i) => !d.getSnappedObject() && ((i !== 4 && i !== 5) || !city));
+  const n = Math.min(number, card.getStackSize());
+  for (let i = 0; i < n; i++) {
+    if (!resources[i]) return;
     const resource = card.getStackSize() > 1 ? card.takeCards(1)! : card;
     resource.setPosition(
-      snap.getGlobalPosition().add(new Vector(0, 0, 0.1)),
+      resources[i].getGlobalPosition().add(new Vector(0, 0, 0.1)),
       1.5,
     );
     resource.snap();
