@@ -1,7 +1,7 @@
 {
 	"Type": "Multistate Object",
 	"GUID": "D2E814426F4C787559F5E28F0BC8621E",
-	"Name": "base rules",
+	"Name": "base-rules",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,

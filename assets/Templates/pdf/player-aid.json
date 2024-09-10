@@ -1,7 +1,7 @@
 {
 	"Type": "Multistate Object",
 	"GUID": "34FBB8B5F944402AACD987BCBE52E300",
-	"Name": "player aid",
+	"Name": "player-aid",
 	"Metadata": "",
 	"CollisionType": "Regular",
 	"Friction": 0.7,

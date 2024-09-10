@@ -175,6 +175,7 @@ function removeCampaign() {
     "flagship-board",
     "flagship",
     "objective",
+    "campaign-rules",
   ])
     for (const obj of world.getObjectsByTemplateName(t)) obj.destroy();
   for (const obj of world.getObjectsByTemplateName("power"))
