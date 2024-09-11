@@ -3538,13 +3538,13 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
-					"z": -0.38,
-					"w": 0.92
+					"z": 0,
+					"w": 1
 				},
 				"translation": {
-					"x": 37.5,
-					"y": -7.5,
-					"z": 86.72
+					"x": 30,
+					"y": 46.5,
+					"z": 86.79
 				},
 				"scale3D": {
 					"x": 1,
@@ -3554,9 +3554,9 @@
 			},
 			"simulatingPhysics": true,
 			"primaryColor": {
-				"b": 61,
-				"g": 83,
-				"r": 225,
+				"b": 203,
+				"g": 210,
+				"r": 215,
 				"a": 255
 			},
 			"secondaryColor": {
@@ -3574,7 +3574,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -3582,14 +3582,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "pdp",
+			"uniqueId": "5ot",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"agent"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": 2,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -4097,6 +4099,1246 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 40.5,
+					"y": 48,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "hp0",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 30,
+					"y": 45,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "lt9",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 31.5,
+					"y": 46.5,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "z30",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 36,
+					"y": 48,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "h9t",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 31.5,
+					"y": 48,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "h53",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 30,
+					"y": 43.5,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "r0a",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 31.5,
+					"y": 45,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "5qv",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 40.5,
+					"y": 45,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "l05",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 31.5,
+					"y": 43.5,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "5yt",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 30,
+					"y": 48,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "6gc",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 39,
+					"y": 45,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "oec",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 31.5,
+					"y": 42,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "iy3",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 37.5,
+					"y": 48,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "avv",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 30,
+					"y": 42,
+					"z": 86.79
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "5B24A477D74343B61EECDF8037563339",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "75h",
+			"drawingLines": [],
+			"objectTags": [
+				"agent"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 39,
+					"y": 48,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "ntw",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": -0.01,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 36,
+					"y": 26,
+					"z": 86.69
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": false,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Ground",
+			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "player-board.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "twu",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 39,
+					"y": -4.5,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "rs4",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -18.93,
+					"y": -36.82,
+					"z": 87.52
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.16,
+			"density": 1.12,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "v8t",
+			"drawingLines": [],
+			"objectTags": [
+				"power"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 40.5,
+					"y": 42,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 203,
+				"g": 210,
+				"r": 215,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "m1f",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.38,
+					"w": 0.92
+				},
+				"translation": {
+					"x": 37.5,
+					"y": -7.5,
+					"z": 86.72
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 61,
+				"g": 83,
+				"r": 225,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0.6,
+			"roughness": 0.6,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType2",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "ship.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "pdp",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
 					"z": 0,
 					"w": 1
 				},
@@ -4273,67 +5515,6 @@
 			"objectTags": [],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 36,
-					"y": 48,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "h9t",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -5697,7 +6878,7 @@
 				"translation": {
 					"x": -10,
 					"y": -54,
-					"z": 87.03
+					"z": 87.02
 				},
 				"scale3D": {
 					"x": 1,
@@ -5922,67 +7103,6 @@
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "ard",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 40.5,
-					"y": 42,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "m1f",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -6233,130 +7353,6 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -18.93,
-					"y": -36.82,
-					"z": 87.52
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.16,
-			"density": 1.12,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "4D221B16A7485674CF6653BFA0C0C91F",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "v8t",
-			"drawingLines": [],
-			"objectTags": [
-				"power"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 39,
-					"y": -4.5,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 61,
-				"g": 83,
-				"r": 225,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "rs4",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -7102,67 +8098,6 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.01,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 36,
-					"y": 26,
-					"z": 86.69
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": false,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Ground",
-			"templateId": "6B48B3A29446CC831C4965BE1B4E1F3E",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "player-board.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "twu",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
 					"x": 0,
 					"y": 0,
 					"z": -0.38,
@@ -7215,628 +8150,6 @@
 			"uniqueId": "qnh",
 			"drawingLines": [],
 			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 39,
-					"y": 48,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "ntw",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 30,
-					"y": 42,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "75h",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 37.5,
-					"y": 48,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "avv",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 31.5,
-					"y": 42,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "iy3",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 39,
-					"y": 45,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "oec",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 30,
-					"y": 48,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "6gc",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 31.5,
-					"y": 43.5,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "5yt",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 40.5,
-					"y": 45,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "l05",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 31.5,
-					"y": 45,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "5qv",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 30,
-					"y": 43.5,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "r0a",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
 			"objectGroupId": -1,
 			"ownerIndex": 3,
 			"lightsOn": true,
@@ -8035,319 +8348,6 @@
 					"w": 1
 				},
 				"translation": {
-					"x": 31.5,
-					"y": 48,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "h53",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 31.5,
-					"y": 46.5,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "z30",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 30,
-					"y": 45,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "lt9",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.38,
-					"w": 0.92
-				},
-				"translation": {
-					"x": 40.5,
-					"y": 48,
-					"z": 86.72
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "6E71A43CA74A0296800FC384CBBC6AC4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "ship.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "hp0",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 30,
-					"y": 46.5,
-					"z": 86.79
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 203,
-				"g": 210,
-				"r": 215,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0.6,
-			"roughness": 0.6,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType2",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "5B24A477D74343B61EECDF8037563339",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "5ot",
-			"drawingLines": [],
-			"objectTags": [
-				"agent"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
 					"x": -25.98,
 					"y": 9.2,
 					"z": 89.92
@@ -8439,7 +8439,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Setup:\nShuffle, press\n\"R\" on drawn\nsetup card",
+			"objectDescription": "Setup:\nShuffle, draw,\npress \"R\" on\ndrawn card",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -9324,149 +9324,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": 0,
 					"y": 0,
 					"z": 0,
-					"w": 0.01
+					"w": 1
 				},
 				"translation": {
-					"x": -33.2,
-					"y": -18.39,
-					"z": 87.21
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "67m",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": -33.2,
-					"y": -15.35,
-					"z": 87.17
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 1,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "g83",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": -33.2,
-					"y": 33.61,
-					"z": 87.21
+					"x": 28,
+					"y": 62,
+					"z": 86.91
 				},
 				"scale3D": {
 					"x": 1,
@@ -9478,6 +9344,90 @@
 			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 2,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 13,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "setup-deck.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "mft",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 27,
+					"y": 43.5,
+					"z": 86.94
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
 			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
@@ -9500,7 +9450,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -9511,13 +9461,80 @@
 			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "dw9",
+			"uniqueId": "i3r",
 			"drawingLines": [],
 			"objectTags": [
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 24,
+					"y": 48,
+					"z": 86.94
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "jgs",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -9609,7 +9626,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9744,14 +9761,14 @@
 			"transform": {
 				"rotation": {
 					"x": 1,
-					"y": 0,
+					"y": 0.01,
 					"z": 0,
-					"w": 0.01
+					"w": 0
 				},
 				"translation": {
-					"x": -33.2,
-					"y": -22.91,
-					"z": 87.27
+					"x": 27,
+					"y": 46.5,
+					"z": 86.94
 				},
 				"scale3D": {
 					"x": 1,
@@ -9760,7 +9777,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 1,
+			"atlasIndex": 3,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -9785,7 +9802,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -9796,13 +9813,13 @@
 			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "9jl",
+			"uniqueId": "ubw",
 			"drawingLines": [],
 			"objectTags": [
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -9810,7 +9827,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9877,7 +9894,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -10019,7 +10036,7 @@
 				"translation": {
 					"x": 38.8,
 					"y": -27.41,
-					"z": 87.33
+					"z": 87.34
 				},
 				"scale3D": {
 					"x": 1,
@@ -10210,7 +10227,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -10277,7 +10294,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -10345,14 +10362,14 @@
 			"transform": {
 				"rotation": {
 					"x": 1,
-					"y": 0,
+					"y": -0.01,
 					"z": 0,
-					"w": 0.01
+					"w": 0
 				},
 				"translation": {
-					"x": 38.8,
-					"y": -22.9,
-					"z": 87.27
+					"x": 24,
+					"y": 45,
+					"z": 86.94
 				},
 				"scale3D": {
 					"x": 1,
@@ -10361,7 +10378,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 2,
+			"atlasIndex": 3,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -10386,7 +10403,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -10397,13 +10414,13 @@
 			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "egf",
+			"uniqueId": "8yk",
 			"drawingLines": [],
 			"objectTags": [
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 2,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10419,7 +10436,7 @@
 				"translation": {
 					"x": -33.2,
 					"y": -27.4,
-					"z": 87.33
+					"z": 87.34
 				},
 				"scale3D": {
 					"x": 1,
@@ -10484,9 +10501,9 @@
 					"w": 0.01
 				},
 				"translation": {
-					"x": -33.2,
-					"y": 36.65,
-					"z": 87.17
+					"x": 38.8,
+					"y": 24.59,
+					"z": 87.34
 				},
 				"scale3D": {
 					"x": 1,
@@ -10495,7 +10512,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 0,
+			"atlasIndex": 3,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -10531,13 +10548,13 @@
 			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "70a",
+			"uniqueId": "y79",
 			"drawingLines": [],
 			"objectTags": [
 				"building"
 			],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10612,7 +10629,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -10746,15 +10763,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
+					"x": 1,
 					"y": 0,
 					"z": 0,
-					"w": 1
+					"w": 0
 				},
 				"translation": {
-					"x": 35.99,
-					"y": 62,
-					"z": 86.91
+					"x": 24,
+					"y": -4.5,
+					"z": 86.94
 				},
 				"scale3D": {
 					"x": 1,
@@ -10763,29 +10780,10 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 11,
+			"atlasIndex": 2,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 9,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
+			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -10807,7 +10805,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -10815,14 +10813,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "setup-deck.js",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "j0l",
+			"uniqueId": "zan",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"building"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -10830,7 +10830,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -10972,7 +10972,7 @@
 				"translation": {
 					"x": -33.2,
 					"y": 24.59,
-					"z": 87.33
+					"z": 87.34
 				},
 				"scale3D": {
 					"x": 1,
@@ -11024,567 +11024,6 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": 38.8,
-					"y": -15.35,
-					"z": 87.17
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "a4a",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": -33.19,
-					"y": 29.1,
-					"z": 87.27
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "4k3",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": 38.8,
-					"y": -18.39,
-					"z": 87.21
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 2,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "z7q",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 2,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": -1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 8,
-					"y": 86,
-					"z": 87.09
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 1,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 8,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 9,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 10,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 11,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 12,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 13,
-					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "7f5",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": -1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 8,
-					"y": 78,
-					"z": 86.98
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 1,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "545E0D05174D224FF56446B06085F093",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "545E0D05174D224FF56446B06085F093",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "drt",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": -1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 8.01,
-					"y": 62,
-					"z": 86.98
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 1,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "E98E64EE1C419179627D158CFF565C59",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
-			],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E98E64EE1C419179627D158CFF565C59",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "kpe",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11736,6 +11175,1097 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
+					"x": -1,
+					"y": 0,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 8.01,
+					"y": 62,
+					"z": 86.98
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 1,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 2,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "E98E64EE1C419179627D158CFF565C59",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E98E64EE1C419179627D158CFF565C59",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "kpe",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": -1,
+					"y": 0,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 8,
+					"y": 78,
+					"z": 86.98
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 1,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 2,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "545E0D05174D224FF56446B06085F093",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "545E0D05174D224FF56446B06085F093",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "drt",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": -1,
+					"y": 0,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 8,
+					"y": 86,
+					"z": 87.09
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 1,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 2,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 8,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 9,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 10,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 11,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 12,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 13,
+					"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "3EF9445C91484E161EDE638C6E4BE2A4",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "7f5",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -41.99,
+					"y": 78.03,
+					"z": 87.11
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 12,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 11,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 10,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 9,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "7kt",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -42,
+					"y": 69.99,
+					"z": 86.92
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "E30D55AFDB43A74FF0AD9296F0489103",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "y9f",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": -0.05,
+					"z": -0.01,
+					"w": 1
+				},
+				"translation": {
+					"x": 24.01,
+					"y": 83.99,
+					"z": 87.07
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "76e",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 22,
+					"y": 72,
+					"z": 86.92
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "CF5D85683847813F1E8E42A12E617293",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "sw6",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": -0.05,
+					"z": 0.02,
+					"w": 1
+				},
+				"translation": {
+					"x": 22.07,
+					"y": 83.99,
+					"z": 87.08
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "vs1",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": -0.71,
+					"y": 0.71,
+					"z": 0,
+					"w": 0
+				},
+				"translation": {
+					"x": 36,
+					"y": 72,
+					"z": 86.98
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 27,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 21,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 20,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 14,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 13,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 0,
+					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "action-deck.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "xbv",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 35.99,
+					"y": 62,
+					"z": 86.91
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 11,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [
+				{
+					"index": 9,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "setup-deck.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "j0l",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": -0.05,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 20,
+					"y": 72,
+					"z": 87.08
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "CF5D85683847813F1E8E42A12E617293",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "if3",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 28,
+					"y": 72,
+					"z": 86.92
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "0E24FDAF2A4F9064B4A75C9C636781E3",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "p30",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": -0.05,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": 26,
+					"y": 72,
+					"z": 87.06
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 32,
+				"g": 30,
+				"r": 20,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "0E24FDAF2A4F9064B4A75C9C636781E3",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "q84",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
 					"x": 1,
 					"y": 0.01,
 					"z": 0,
@@ -11803,15 +12333,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
-					"y": 0,
+					"x": -0.01,
+					"y": -0.05,
 					"z": 0,
-					"w": 0.01
+					"w": 1
 				},
 				"translation": {
-					"x": 38.8,
-					"y": 29.1,
-					"z": 87.27
+					"x": 22,
+					"y": 80.01,
+					"z": 87.07
 				},
 				"scale3D": {
 					"x": 1,
@@ -11820,14 +12350,14 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 3,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
 			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
+				"b": 32,
+				"g": 30,
+				"r": 20,
 				"a": 255
 			},
 			"secondaryColor": {
@@ -11845,7 +12375,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -11853,16 +12383,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "xal",
+			"uniqueId": "vx1",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 3,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11870,7 +12398,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -11937,15 +12465,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": -1,
 					"y": 0,
 					"z": 0,
-					"w": 0.01
+					"w": 0
 				},
 				"translation": {
-					"x": -33.2,
-					"y": -30.43,
-					"z": 87.37
+					"x": -28,
+					"y": 74.01,
+					"z": 86.92
 				},
 				"scale3D": {
 					"x": 1,
@@ -11954,7 +12482,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 1,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -11979,7 +12507,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "055DF160BE47AA046E01109CB04B6EF4",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -11987,16 +12515,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "1yw",
+			"uniqueId": "2y0",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 1,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -12220,15 +12746,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
-					"y": 0,
+					"x": -1,
+					"y": 0.01,
 					"z": 0,
-					"w": 0.01
+					"w": 0
 				},
 				"translation": {
-					"x": -33.2,
-					"y": 21.57,
-					"z": 87.37
+					"x": -8,
+					"y": 90,
+					"z": 88.59
 				},
 				"scale3D": {
 					"x": 1,
@@ -12237,10 +12763,149 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 0,
+			"atlasIndex": 35,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [],
+			"stackSerialization": [
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 35,
+					"templateId": "2B60ABD93449333EED932DA5E4106C86",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -12262,7 +12927,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "2B60ABD93449333EED932DA5E4106C86",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -12270,16 +12935,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "gmn",
+			"uniqueId": "bt9",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 0,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -12819,15 +13482,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": -1,
 					"y": 0,
 					"z": 0,
-					"w": 0.01
+					"w": 0
 				},
 				"translation": {
-					"x": 38.8,
-					"y": -30.43,
-					"z": 87.37
+					"x": -20,
+					"y": 78.01,
+					"z": 87
 				},
 				"scale3D": {
 					"x": 1,
@@ -12836,10 +13499,59 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 2,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [],
+			"stackSerialization": [
+				{
+					"index": 1,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 2,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 8,
+					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -12861,7 +13573,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "103B8939784C74F1130C0F9AA7F491A2",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -12869,16 +13581,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "ypb",
+			"uniqueId": "n41",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 2,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -13352,9 +14062,9 @@
 					"w": 0
 				},
 				"translation": {
-					"x": 24,
-					"y": -4.5,
-					"z": 86.94
+					"x": -20,
+					"y": 70,
+					"z": 87.11
 				},
 				"scale3D": {
 					"x": 1,
@@ -13363,10 +14073,95 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 2,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
-			"stackSerialization": [],
+			"stackSerialization": [
+				{
+					"index": 1,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 2,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 3,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 4,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 5,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 6,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 7,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 8,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 9,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 10,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 11,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 12,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 13,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				},
+				{
+					"index": 14,
+					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+					"frontTextureOverride": "",
+					"flipped": false
+				}
+			],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -13385,10 +14180,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "",
+			"objectName": "Campaign Court",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
+			"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -13396,16 +14191,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "zan",
+			"uniqueId": "ma0",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 2,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -13413,15 +14206,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": 0,
 					"y": 0,
 					"z": 0,
-					"w": 0.01
+					"w": 1
 				},
 				"translation": {
-					"x": 38.8,
-					"y": 21.57,
-					"z": 87.37
+					"x": -8,
+					"y": 54,
+					"z": 86.85
 				},
 				"scale3D": {
 					"x": 1,
@@ -13430,7 +14223,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 3,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -13455,7 +14248,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "BC75DE5F27437DD6A0319EAF6935C464",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -13463,418 +14256,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "8bk",
+			"uniqueId": "s5w",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": 38.8,
-					"y": 24.59,
-					"z": 87.33
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "y79",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0.01
-				},
-				"translation": {
-					"x": 38.8,
-					"y": 36.66,
-					"z": 87.17
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "dvm",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": -1,
-					"y": 0.01,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 24,
-					"y": 45,
-					"z": 86.94
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "8yk",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0.01,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 27,
-					"y": 46.5,
-					"z": 86.94
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "ubw",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 24,
-					"y": 48,
-					"z": 86.94
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "jgs",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 27,
-					"y": 43.5,
-					"z": 86.94
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 3,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "E6AA6CFE0D49D15ACEA6F2BBAB314509",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "i3r",
-			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
-			"objectGroupId": -1,
-			"ownerIndex": 3,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -13949,15 +14338,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
-					"y": 0,
+					"x": -0.01,
+					"y": -0.05,
 					"z": 0,
-					"w": 0.01
+					"w": 1
 				},
 				"translation": {
-					"x": 38.8,
-					"y": 33.61,
-					"z": 87.21
+					"x": 24,
+					"y": 80.01,
+					"z": 87.07
 				},
 				"scale3D": {
 					"x": 1,
@@ -13966,14 +14355,14 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 3,
+			"atlasIndex": 0,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
 			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
+				"b": 32,
+				"g": 30,
+				"r": 20,
 				"a": 255
 			},
 			"secondaryColor": {
@@ -13991,7 +14380,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -13999,16 +14388,14 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "building-tile.js",
+			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "voq",
+			"uniqueId": "erq",
 			"drawingLines": [],
-			"objectTags": [
-				"building"
-			],
+			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": 3,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -14016,7 +14403,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": -1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -14618,8 +15005,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0.71,
-					"y": -0.71,
+					"x": -0.71,
+					"y": 0.71,
 					"z": 0,
 					"w": 0
 				},
@@ -14798,80 +15185,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0.01,
-					"y": -0.05,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 24,
-					"y": 80,
-					"z": 87.07
-				},
-				"scale3D": {
 					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "erq",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
 					"y": 0,
 					"z": 0,
-					"w": 1
+					"w": 0.01
 				},
 				"translation": {
-					"x": -8,
-					"y": 54,
-					"z": 86.85
+					"x": -33.2,
+					"y": -18.39,
+					"z": 87.16
 				},
 				"scale3D": {
 					"x": 1,
@@ -14880,7 +15202,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 0,
+			"atlasIndex": 1,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -14905,7 +15227,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "BC75DE5F27437DD6A0319EAF6935C464",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -14913,127 +15235,44 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "s5w",
+			"uniqueId": "67m",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": -20,
-					"y": 70,
-					"z": 87.11
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 1,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 8,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 9,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 10,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 11,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 12,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 13,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 14,
-					"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": -33.2,
+					"y": -15.35,
+					"z": 87.1
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -15052,10 +15291,10 @@
 			"restitution": 0,
 			"density": 0.5,
 			"surfaceType": "SurfaceType4",
-			"objectName": "Campaign Court",
+			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "445BE6ACD14ED5C15297AE87C8D103E3",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -15063,91 +15302,44 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "ma0",
+			"uniqueId": "g83",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": -1,
-					"y": 0,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": -20,
-					"y": 78.01,
-					"z": 87
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 1,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 2,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 3,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 5,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 8,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": -33.2,
+					"y": 33.61,
+					"z": 87.16
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -15169,7 +15361,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -15177,218 +15369,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "n41",
+			"uniqueId": "dw9",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 1,
-					"y": -0.01,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": -8,
-					"y": 90,
-					"z": 88.59
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 35,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 35,
-					"templateId": "2B60ABD93449333EED932DA5E4106C86",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "2B60ABD93449333EED932DA5E4106C86",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "bt9",
-			"drawingLines": [],
-			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 0,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -15399,12 +15389,12 @@
 					"x": 1,
 					"y": 0,
 					"z": 0,
-					"w": 0
+					"w": 0.01
 				},
 				"translation": {
-					"x": -28,
-					"y": 74.01,
-					"z": 86.92
+					"x": -33.2,
+					"y": -22.91,
+					"z": 87.25
 				},
 				"scale3D": {
 					"x": 1,
@@ -15413,7 +15403,7 @@
 				}
 			},
 			"simulatingPhysics": true,
-			"atlasIndex": 0,
+			"atlasIndex": 1,
 			"frontTextureOverride": "",
 			"inHand": false,
 			"stackSerialization": [],
@@ -15438,7 +15428,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "055DF160BE47AA046E01109CB04B6EF4",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -15446,321 +15436,44 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "2y0",
+			"uniqueId": "9jl",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0.01,
-					"y": -0.05,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 22,
-					"y": 80,
-					"z": 87.07
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "vx1",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": -0.05,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 26,
-					"y": 72,
-					"z": 87.06
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "0E24FDAF2A4F9064B4A75C9C636781E3",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "q84",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 28,
-					"y": 72,
-					"z": 86.92
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "0E24FDAF2A4F9064B4A75C9C636781E3",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "p30",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": -0.05,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 20,
-					"y": 72,
-					"z": 87.08
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "CF5D85683847813F1E8E42A12E617293",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "if3",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": 28,
-					"y": 62,
-					"z": 86.91
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 2,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 4,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 13,
-					"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": -22.9,
+					"z": 87.25
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -15782,7 +15495,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "54EFBC33C64CC91A3C7A21B64F7E6FFA",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -15790,122 +15503,16 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "setup-deck.js",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "mft",
+			"uniqueId": "egf",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0.71,
-					"y": -0.71,
-					"z": 0,
-					"w": 0
-				},
-				"translation": {
-					"x": 36,
-					"y": 72,
-					"z": 86.98
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 27,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 21,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 20,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 14,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 13,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 7,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 6,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 0,
-					"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
-			"primaryColor": {
-				"b": 255,
-				"g": 255,
-				"r": 255,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "D20B3EAD04473B89C36E7ABDABE4705A",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "action-deck.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "xbv",
-			"drawingLines": [],
-			"objectTags": [],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -15913,210 +15520,15 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": -0.05,
-					"z": 0.02,
-					"w": 1
-				},
-				"translation": {
-					"x": 22.07,
-					"y": 83.99,
-					"z": 87.08
-				},
-				"scale3D": {
 					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "vs1",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
 					"y": 0,
 					"z": 0,
-					"w": 1
+					"w": 0.01
 				},
 				"translation": {
-					"x": 22,
-					"y": 72,
-					"z": 86.92
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "CF5D85683847813F1E8E42A12E617293",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "sw6",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": -0.05,
-					"z": -0.01,
-					"w": 1
-				},
-				"translation": {
-					"x": 24.01,
-					"y": 83.99,
-					"z": 87.07
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 0,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [],
-			"primaryColor": {
-				"b": 32,
-				"g": 30,
-				"r": 20,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0,
-			"density": 0.5,
-			"surfaceType": "SurfaceType4",
-			"objectName": "",
-			"objectDescription": "",
-			"collisionType": "CB_Regular",
-			"templateId": "9DCAD3B92D45B6569168CDA2E9DD167D",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "76e",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -42,
-					"y": 69.99,
-					"z": 86.92
+					"x": -33.2,
+					"y": 36.65,
+					"z": 87.1
 				},
 				"scale3D": {
 					"x": 1,
@@ -16150,7 +15562,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "E30D55AFDB43A74FF0AD9296F0489103",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -16158,61 +15570,44 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "y9f",
+			"uniqueId": "70a",
 			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "Card",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -41.99,
-					"y": 78.03,
-					"z": 87.11
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"atlasIndex": 12,
-			"frontTextureOverride": "",
-			"inHand": false,
-			"stackSerialization": [
-				{
-					"index": 11,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 10,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				},
-				{
-					"index": 9,
-					"templateId": "103B8939784C74F1130C0F9AA7F491A2",
-					"frontTextureOverride": "",
-					"flipped": false
-				}
+			"objectTags": [
+				"building"
 			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": -15.35,
+					"z": 87.1
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
 			"primaryColor": {
 				"b": 255,
 				"g": 255,
@@ -16234,7 +15629,7 @@
 			"objectName": "",
 			"objectDescription": "",
 			"collisionType": "CB_Regular",
-			"templateId": "103B8939784C74F1130C0F9AA7F491A2",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
 			"shouldSnap": true,
 			"previousPosition": {
 				"x": 0,
@@ -16242,14 +15637,619 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "building-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "7kt",
+			"uniqueId": "a4a",
 			"drawingLines": [],
-			"objectTags": [],
+			"objectTags": [
+				"building"
+			],
 			"objectGroupId": -1,
-			"ownerIndex": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": -33.19,
+					"y": 29.1,
+					"z": 87.25
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "4k3",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": -18.39,
+					"z": 87.16
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "z7q",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": 29.1,
+					"z": 87.25
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "xal",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": -33.2,
+					"y": -30.43,
+					"z": 87.4
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 1,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "1yw",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 1,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": -33.2,
+					"y": 21.57,
+					"z": 87.4
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 0,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "gmn",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": -30.43,
+					"z": 87.4
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 2,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "ypb",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 2,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": 21.57,
+					"z": 87.4
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "8bk",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": 36.66,
+					"z": 87.16
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "dvm",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "Card",
+			"transform": {
+				"rotation": {
+					"x": 1,
+					"y": 0,
+					"z": 0,
+					"w": 0.01
+				},
+				"translation": {
+					"x": 38.8,
+					"y": 33.61,
+					"z": 87.2
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"atlasIndex": 3,
+			"frontTextureOverride": "",
+			"inHand": false,
+			"stackSerialization": [],
+			"primaryColor": {
+				"b": 255,
+				"g": 255,
+				"r": 255,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0,
+			"density": 0.5,
+			"surfaceType": "SurfaceType4",
+			"objectName": "",
+			"objectDescription": "",
+			"collisionType": "CB_Regular",
+			"templateId": "DCBFCF00E648EA11CA450890BE686B53",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "building-tile.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "voq",
+			"drawingLines": [],
+			"objectTags": [
+				"building"
+			],
+			"objectGroupId": -1,
+			"ownerIndex": 3,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -17070,8 +17070,8 @@
 			"objectType": "Dice",
 			"transform": {
 				"rotation": {
-					"x": 0.69,
-					"y": -0.73,
+					"x": -0.69,
+					"y": 0.73,
 					"z": 0,
 					"w": 0
 				},
@@ -18364,7 +18364,7 @@
 				},
 				"translation": {
 					"x": 17.74,
-					"y": 46.68,
+					"y": 46.69,
 					"z": 87.02
 				},
 				"scale3D": {
@@ -18528,7 +18528,7 @@
 				},
 				"translation": {
 					"x": -10.66,
-					"y": 46.7,
+					"y": 46.69,
 					"z": 87.02
 				},
 				"scale3D": {
@@ -18569,7 +18569,7 @@
 				},
 				"translation": {
 					"x": -17.76,
-					"y": 46.7,
+					"y": 46.69,
 					"z": 87.02
 				},
 				"scale3D": {
