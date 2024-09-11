@@ -23,7 +23,10 @@ if (refCard.getStackSize() > 1) {
   );
 }
 
+let initial = false;
 function initialSetup(card: Card) {
+  if (initial) return;
+
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
@@ -62,6 +65,8 @@ function initialSetup(card: Card) {
 
   // Turn to setup rules
   world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
+
+  initial = true;
 }
 
 function followSetup(card: Card, player: Player) {
@@ -131,7 +136,8 @@ function followSetup(card: Card, player: Player) {
   }
 
   // Deal action cards
-  // if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
+  const [action] = getActionDecks();
+  if (action.getStackSize() >= 20) action.deal(6, slots, false, true);
   for (const holder of world.getObjectsByTemplateName("cards"))
     if ("sort" in holder && typeof holder.sort === "function") holder.sort();
 
@@ -213,7 +219,12 @@ export function removeCampaign() {
     if (obj.getDescription().startsWith("Campaign:")) obj.destroy();
 }
 function removeSetup(slots: number[]) {
-  // todo
+  for (const obj of world.getObjectsByTemplateName<Card>("setup"))
+    if (
+      obj.getCardDetails(0)!.metadata.trim().split("\n").length - 1 !==
+      slots.length
+    )
+      obj.destroy();
 }
 export function removePlayers(slots: number[]) {
   for (const slot of slots)

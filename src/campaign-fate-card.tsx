@@ -308,7 +308,7 @@ function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
         .getAllSnapPoints()
         .map((d) => d.getGlobalPosition())
         .sort(
-          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az ?? ay - by, // Highest and to the left
+          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az || ay - by, // Highest and to the left
         )[0]
         .add(above),
     );
