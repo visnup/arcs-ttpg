@@ -1,16 +1,18 @@
-import type { Player } from "@tabletop-playground/api";
+import type { MultistateObject, Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
-  Button,
   Card,
+  CardHolder,
+  Dice,
+  GameObject,
   refCard,
+  Rotator,
   UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { InitiativeMarker } from "./initiative-marker";
-import { Rotator } from "@tabletop-playground/api";
 import {
   above,
   blockedResourceSnaps,
@@ -27,9 +29,6 @@ import {
   removePlayers,
   systemResource,
 } from "./setup-deck";
-import { GameObject } from "@tabletop-playground/api";
-import { CardHolder } from "@tabletop-playground/api";
-import { Dice } from "@tabletop-playground/api";
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {
@@ -222,6 +221,11 @@ function campaignSetup(players: number, card: Card) {
         .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
     );
   }
+
+  // Turn to player setup in rules
+  world
+    .getObjectByTemplateName<MultistateObject>("campaign-rules")
+    ?.setState(5);
 
   // Clean up unused components
   removeNotes();

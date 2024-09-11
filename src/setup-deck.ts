@@ -1,4 +1,4 @@
-import type { Player } from "@tabletop-playground/api";
+import type { MultistateObject, Player } from "@tabletop-playground/api";
 import {
   Card,
   refCard,
@@ -20,7 +20,10 @@ if (refCard.getStackSize() === 1) {
     "Follow the setup instructions on this card",
   );
 } else {
-  refCard.onPrimaryAction.add(removeCampaign);
+  refCard.onPrimaryAction.add(() => {
+    world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
+    removeCampaign();
+  });
 }
 
 function followSetup(card: Card, player: Player) {
