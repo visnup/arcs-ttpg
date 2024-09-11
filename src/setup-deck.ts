@@ -19,6 +19,8 @@ if (refCard.getStackSize() === 1) {
     "Follow Setup",
     "Follow the setup instructions on this card",
   );
+} else {
+  refCard.onPrimaryAction.add(removeCampaign);
 }
 
 function followSetup(card: Card, player: Player) {
@@ -161,7 +163,7 @@ function getLeader(slot: number) {
 export function removeNotes() {
   for (const obj of world.getObjectsByTemplateName("note")) obj.destroy();
 }
-function removeCampaign() {
+export function removeCampaign() {
   for (const t of [
     "fate",
     "set-round",
@@ -182,6 +184,8 @@ function removeCampaign() {
     if (world.isOnTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
+  for (const obj of world.getObjectsByTemplateName("note"))
+    if (obj.getDescription().startsWith("Campaign:")) obj.destroy();
 }
 export function removePlayers(slots: number[]) {
   for (const slot of slots)

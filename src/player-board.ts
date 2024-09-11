@@ -1,6 +1,5 @@
 import {
   Card,
-  CardHolder,
   Rotator,
   Vector,
   refObject as _refObject,

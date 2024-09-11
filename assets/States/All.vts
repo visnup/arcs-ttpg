@@ -11175,7 +11175,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -11268,7 +11268,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "leader-deck.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "kpe",
@@ -11376,7 +11376,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "leader-deck.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "drt",
@@ -16131,7 +16131,7 @@
 				"translation": {
 					"x": 38.8,
 					"y": 36.66,
-					"z": 87.16
+					"z": 87.1
 				},
 				"scale3D": {
 					"x": 1,
@@ -16198,7 +16198,7 @@
 				"translation": {
 					"x": 38.8,
 					"y": 33.61,
-					"z": 87.2
+					"z": 87.16
 				},
 				"scale3D": {
 					"x": 1,
