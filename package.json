@@ -6,6 +6,7 @@
     "dev": "ttpg-scripts dev",
     "clean": "ttpg-scripts clean",
     "reset": "ttpg-scripts reset",
+    "quantize": "tsx assets/States/quantize.ts",
     "build": "ttpg-scripts build",
     "purge": "ttpg-scripts purge",
     "libpack": "ttpg-scripts libpack",
@@ -19,6 +20,8 @@
   },
   "devDependencies": {
     "@tabletop-playground/api": "^0.41.0",
+    "@types/node": "^22.5.4",
+    "tsx": "^4.19.0",
     "ttpg-scripts": "^1.5.0",
     "typescript": "^5.3.3"
   }
