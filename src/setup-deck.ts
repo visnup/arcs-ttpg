@@ -12,23 +12,18 @@ import { InitiativeMarker } from "./initiative-marker";
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 export const above = new Vector(0, 0, 0.1);
 
-if (refCard.getStackSize() === 1) {
+if (refCard.getStackSize() > 1) {
+  refCard.onRemoved.add(initialSetup);
+} else {
   refCard.onPrimaryAction.add(followSetup);
   refCard.onCustomAction.add(followSetup);
   refCard.addCustomAction(
     "Follow Setup",
     "Follow the setup instructions on this card",
   );
-} else {
-  refCard.onPrimaryAction.add(() => {
-    world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
-    removeCampaign();
-  });
 }
 
-function followSetup(card: Card, player: Player) {
-  if (card.getStackSize() > 1) return;
-
+function initialSetup(card: Card) {
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
@@ -59,6 +54,35 @@ function followSetup(card: Card, player: Player) {
   // Shuffle court deck
   const court = getCourtDeck();
   placeCourt(court, setup.length);
+
+  // Clean up unused components
+  removeSetup(slots);
+  removePlayers([0, 1, 2, 3].filter((s) => !slots.includes(s)));
+  removeCampaign();
+
+  // Turn to setup rules
+  world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
+}
+
+function followSetup(card: Card, player: Player) {
+  if (card.getStackSize() > 1) return;
+
+  // Setup card details
+  const { metadata } = card.getCardDetails(0)!;
+  const [block, ...setup] = metadata.trim().split("\n");
+
+  // Deduce player order
+  const boards = world.getObjectsByTemplateName("board");
+  const initiative = world.getObjectById("initiative")!.getPosition();
+  const first = boards
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(initiative) -
+        b.getPosition().distance(initiative),
+    )[0]
+    .getOwningPlayerSlot();
+  const needed = boards.map((d) => d.getOwningPlayerSlot()).sort();
+  const slots = needed.slice(first).concat(needed.slice(0, first));
 
   // Block out of play clusters
   const systems = getSystems();
@@ -107,15 +131,13 @@ function followSetup(card: Card, player: Player) {
   }
 
   // Deal action cards
-  if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
+  // if (action[0].getStackSize() >= 20) action[0].deal(6, slots, false, true);
   for (const holder of world.getObjectsByTemplateName("cards"))
     if ("sort" in holder && typeof holder.sort === "function") holder.sort();
 
   // Clean up unused components
   removeNotes();
   removeBlocks();
-  removeCampaign();
-  removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
 }
 
 const createPlacement =
@@ -189,6 +211,9 @@ export function removeCampaign() {
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
   for (const obj of world.getObjectsByTemplateName("note"))
     if (obj.getDescription().startsWith("Campaign:")) obj.destroy();
+}
+function removeSetup(slots: number[]) {
+  // todo
 }
 export function removePlayers(slots: number[]) {
   for (const slot of slots)
