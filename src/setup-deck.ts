@@ -17,10 +17,11 @@ export const above = new Vector(0, 0, 0.1);
 const flat = new Rotator(-90, 0, 0);
 
 if (refCard.getTemplateName() === "setup") {
+  refCard.onFlipUpright.add(previewSetup);
+
   if (refCard.getStackSize() > 1) {
     refCard.onRemoved.add(initialSetup);
   } else {
-    refCard.onFlipUpright.add(previewSetup);
     refCard.onPrimaryAction.add(followSetup);
     refCard.onCustomAction.add(followSetup);
     refCard.addCustomAction(
@@ -98,7 +99,7 @@ function previewSetup(card: Card) {
         .split(" ")
         .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
       for (let j = 0; j < system.length; j++)
-        createLabel("ABCC".charAt(j), nearby(getPosition(system[j])), slots[i]);
+        createLabel("ABCC".charAt(j), getPosition(system[j]), slots[i]);
     }
   }
 }
