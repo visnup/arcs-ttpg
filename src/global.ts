@@ -1,6 +1,13 @@
-import { Vector } from "@tabletop-playground/api";
-import { GameObject } from "@tabletop-playground/api";
-import { Color, GameWorld, world } from "@tabletop-playground/api";
+import {
+  Color,
+  GameObject,
+  GameWorld,
+  globalEvents,
+  Player,
+  Vector,
+  world,
+  refPackageId,
+} from "@tabletop-playground/api";
 
 // Reset all zones
 for (const zone of world.getAllZones())
@@ -15,6 +22,16 @@ for (const obj of world.getAllObjects())
     const c = obj.getPrimaryColor().toHex();
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
+
+// Hotkey to mimic hot seat functionality
+if (refPackageId === "8878F08F55344ED182D61F6E91585D56")
+  globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
+    const dir = [, -1, 1][index];
+    if (dir) {
+      const n = world.getObjectsByTemplateName("board").length;
+      player.switchSlot((n + player.getSlot() + dir) % n);
+    }
+  });
 
 // Extend GameWorld, Color with utility functions
 
