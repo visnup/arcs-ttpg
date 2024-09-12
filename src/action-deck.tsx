@@ -9,6 +9,7 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
+
 const refPackageId = _refPackageId;
 
 function getInitiative() {

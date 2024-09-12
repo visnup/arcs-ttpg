@@ -1,8 +1,8 @@
 import type {
-  MultistateObject,
   CardHolder,
   Dice,
   GameObject,
+  MultistateObject,
 } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
@@ -31,6 +31,7 @@ import {
   removePlayers,
   systemResource,
 } from "./setup-deck";
+
 const refPackageId = _refPackageId;
 
 if (refCard.getStackSize() > 1) {

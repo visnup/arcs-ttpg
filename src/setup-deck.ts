@@ -1,4 +1,4 @@
-import type { MultistateObject, Card } from "@tabletop-playground/api";
+import type { Card, MultistateObject } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   DrawingLine,
@@ -9,6 +9,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
+
 const refPackageId = _refPackageId;
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);

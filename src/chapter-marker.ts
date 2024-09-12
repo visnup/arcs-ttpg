@@ -1,5 +1,6 @@
 import type { GameObject } from "@tabletop-playground/api";
 import { refObject as _refObject, world } from "@tabletop-playground/api";
+
 const refObject = _refObject;
 
 // Track last advanced

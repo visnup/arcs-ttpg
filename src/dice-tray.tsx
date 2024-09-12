@@ -11,6 +11,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { boxChild, jsxInTTPG, render } from "jsx-in-ttpg";
+
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 

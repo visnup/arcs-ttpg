@@ -7,7 +7,8 @@ import {
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
-import { render, jsxInTTPG } from "jsx-in-ttpg";
+import { jsxInTTPG, render } from "jsx-in-ttpg";
+
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 

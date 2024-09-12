@@ -1,11 +1,12 @@
 import {
+  refObject as _refObject,
   Card,
   Rotator,
   Vector,
-  refObject as _refObject,
   world,
 } from "@tabletop-playground/api";
 import type { Ambition, MapBoard } from "./map-board";
+
 const refObject = _refObject;
 
 // Board zone
