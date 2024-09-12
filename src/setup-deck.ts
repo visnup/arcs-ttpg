@@ -7,20 +7,22 @@ import {
   Vector,
   world,
 } from "@tabletop-playground/api";
-import { InitiativeMarker } from "./initiative-marker";
+import type { InitiativeMarker } from "./initiative-marker";
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 export const above = new Vector(0, 0, 0.1);
 
-if (refCard.getStackSize() > 1) {
-  refCard.onRemoved.add(initialSetup);
-} else {
-  refCard.onPrimaryAction.add(followSetup);
-  refCard.onCustomAction.add(followSetup);
-  refCard.addCustomAction(
-    "Follow Setup",
-    "Follow the setup instructions on this card",
-  );
+if (refCard.getTemplateName() === "setup") {
+  if (refCard.getStackSize() > 1) {
+    refCard.onRemoved.add(initialSetup);
+  } else {
+    refCard.onPrimaryAction.add(followSetup);
+    refCard.onCustomAction.add(followSetup);
+    refCard.addCustomAction(
+      "Follow Setup",
+      "Follow the setup instructions on this card",
+    );
+  }
 }
 
 let initial = false;

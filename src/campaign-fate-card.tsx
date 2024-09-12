@@ -12,7 +12,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
-import { InitiativeMarker } from "./initiative-marker";
+import type { InitiativeMarker } from "./initiative-marker";
 import {
   above,
   blockedResourceSnaps,
