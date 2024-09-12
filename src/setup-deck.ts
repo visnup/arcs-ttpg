@@ -1,6 +1,8 @@
 import type { MultistateObject, Player } from "@tabletop-playground/api";
 import {
+  refPackageId as _refPackageId,
   Card,
+  DrawingLine,
   refCard,
   Rotator,
   SnapPoint,
@@ -8,14 +10,17 @@ import {
   world,
 } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
+const refPackageId = _refPackageId;
 
 const origin = new Vector(0, 0, world.getObjectById("map")!.getPosition().z);
 export const above = new Vector(0, 0, 0.1);
+const flat = new Rotator(-90, 0, 0);
 
 if (refCard.getTemplateName() === "setup") {
   if (refCard.getStackSize() > 1) {
     refCard.onRemoved.add(initialSetup);
   } else {
+    refCard.onFlipUpright.add(previewSetup);
     refCard.onPrimaryAction.add(followSetup);
     refCard.onCustomAction.add(followSetup);
     refCard.addCustomAction(
@@ -71,25 +76,51 @@ function initialSetup(card: Card) {
   initial = true;
 }
 
+function previewSetup(card: Card) {
+  // Remove preview
+  clearPreviewSetup();
+
+  if (Math.abs(card.getRotation().roll) < 10) {
+    // Setup card details
+    const { metadata } = card.getCardDetails(0)!;
+    const [block, ...setup] = metadata.trim().split("\n");
+
+    // Player order
+    const slots = getSlots();
+
+    // Out of play
+    for (const cluster of block.split(" ")) createBlock(+cluster);
+
+    // Starting pieces
+    const systems = getSystems();
+    for (const [i, line] of setup.entries()) {
+      const system = line
+        .split(" ")
+        .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
+      for (let j = 0; j < system.length; j++)
+        createLabel("ABCC".charAt(j), nearby(getPosition(system[j])), slots[i]);
+    }
+  }
+}
+function clearPreviewSetup() {
+  for (const line of world.getDrawingLines())
+    world.removeDrawingLineObject(line);
+  for (const label of world.getAllLabels()) label.destroy();
+  for (const block of world.getObjectsByTemplateName("block")) block.destroy();
+}
+
 function followSetup(card: Card, player: Player) {
   if (card.getStackSize() > 1) return;
+
+  // Remove preview
+  clearPreviewSetup();
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
   const [block, ...setup] = metadata.trim().split("\n");
 
-  // Deduce player order
-  const boards = world.getObjectsByTemplateName("board");
-  const initiative = world.getObjectById("initiative")!.getPosition();
-  const first = boards
-    .sort(
-      (a, b) =>
-        a.getPosition().distance(initiative) -
-        b.getPosition().distance(initiative),
-    )[0]
-    .getOwningPlayerSlot();
-  const needed = boards.map((d) => d.getOwningPlayerSlot()).sort();
-  const slots = needed.slice(first).concat(needed.slice(0, first));
+  // Player order
+  const slots = getSlots();
 
   // Block out of play clusters
   const systems = getSystems();
@@ -146,6 +177,37 @@ function followSetup(card: Card, player: Player) {
   // Clean up unused components
   removeNotes();
   removeBlocks();
+}
+
+function getSlots() {
+  // Deduce player order
+  const boards = world.getObjectsByTemplateName("board");
+  const initiative = world.getObjectById("initiative")!.getPosition();
+  const first = boards
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(initiative) -
+        b.getPosition().distance(initiative),
+    )[0]
+    .getOwningPlayerSlot();
+  const needed = boards.map((d) => d.getOwningPlayerSlot()).sort();
+  return needed.slice(first).concat(needed.slice(0, first));
+}
+
+function createLabel(text: string, position: Vector, slot: number) {
+  const dot = new DrawingLine();
+  dot.points = [position.add(new Vector(0, 0, 0.2))];
+  dot.thickness = 3;
+  dot.color = world.lighten(world.getSlotColor(slot), -0.2);
+  world.addDrawingLine(dot);
+
+  const label = world.createLabel(position.add(new Vector(-0.3, 0, 0.3)));
+  label.setRotation(flat);
+  label.setFont("FMBolyarPro-700.ttf", refPackageId);
+  label.setScale(0.3);
+  // label.setColor(new Color(0, 0, 0));
+  label.setText(text);
+  return label;
 }
 
 const createPlacement =

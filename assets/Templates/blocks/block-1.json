@@ -1,7 +1,7 @@
 {
 	"Type": "Generic",
 	"GUID": "BD6AA484E84B1EDA0E9FD19E43B1A61C",
-	"Name": "block-1",
+	"Name": "block",
 	"Metadata": "",
 	"CollisionType": "Ground",
 	"Friction": 0.7,

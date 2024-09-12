@@ -25,6 +25,7 @@ declare module "@tabletop-playground/api" {
     isOnMap(obj: GameObject): boolean;
     isOnTable(obj: GameObject, templateNames?: string[]): boolean;
     saturate(color: Color, amount: number): Color;
+    lighten(color: Color, amount: number): Color;
   }
 }
 GameWorld.prototype.getObjectsByTemplateName = function <T>(name: string) {
@@ -58,6 +59,11 @@ GameWorld.prototype.isOnTable = function (
 GameWorld.prototype.saturate = function (color: Color, amount: number) {
   let [h, s, l] = rgbToHsl(color);
   s! += s! * amount;
+  return hslToRgb([h!, s!, l!]);
+};
+GameWorld.prototype.lighten = function (color: Color, amount: number) {
+  let [h, s, l] = rgbToHsl(color);
+  l! += l! * amount;
   return hslToRgb([h!, s!, l!]);
 };
 
