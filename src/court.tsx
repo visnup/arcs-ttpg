@@ -1,3 +1,4 @@
+import type { VerticalBox, Zone } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
@@ -5,9 +6,7 @@ import {
   Rotator,
   UIElement,
   Vector,
-  VerticalBox,
   world,
-  Zone,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 const refObject = _refObject;
@@ -35,7 +34,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   widgets.push(
     (ui.widget = render(
       <verticalbox halign={HorizontalAlignment.Center} />,
-    ) as any),
+    )) as VerticalBox,
   );
   refObject.addUI(ui);
 }

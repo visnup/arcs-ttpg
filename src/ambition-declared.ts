@@ -8,6 +8,8 @@ function discard(obj: typeof refObject) {
 }
 
 refObject.onPrimaryAction.add(discard);
-(refObject as any).discard = function (this: typeof refObject) {
-  discard(this);
-};
+Object.assign(refObject, {
+  discard: function (this: typeof refObject) {
+    discard(this);
+  },
+});

@@ -1,14 +1,14 @@
-import { Player } from "@tabletop-playground/api";
-import {
+import type {
   Card,
-  refCard,
+  GameWorld,
+  Player,
   Rotator,
-  Vector,
-  world,
 } from "@tabletop-playground/api";
+import { refCard, Vector, world } from "@tabletop-playground/api";
 
-const origins: { position: Vector; rotation: Rotator }[] = ((
-  world as any
+type Origin = { position: Vector; rotation: Rotator };
+const origins = ((
+  world as GameWorld & { _resourceOrigins?: Origin[] }
 )._resourceOrigins ??= []);
 const { index } = refCard.getCardDetails(0)!;
 if (!origins[index]) {
@@ -80,6 +80,8 @@ refCard.addCustomAction(
   "Discard this resource to its supply",
 );
 
-(refCard as any).discard = function (this: typeof refCard) {
-  discard(this);
-};
+Object.assign(refCard, {
+  discard: function (this: typeof refCard) {
+    discard(this);
+  },
+});

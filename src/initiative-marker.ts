@@ -1,5 +1,5 @@
+import type { GameObject } from "@tabletop-playground/api";
 import {
-  GameObject,
   Player,
   refObject,
   Rotator,
@@ -56,6 +56,7 @@ refObject.onCustomAction.add((obj, player, action) => {
 refObject.onPrimaryAction.add(take);
 refObject.onSecondaryAction.add(seize);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
   seize: function (player: Player | number) {
     seize(this as typeof ext, player);

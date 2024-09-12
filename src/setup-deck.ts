@@ -1,7 +1,6 @@
-import type { MultistateObject, Player } from "@tabletop-playground/api";
+import type { MultistateObject, Card } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
-  Card,
   DrawingLine,
   refCard,
   Rotator,
@@ -37,7 +36,7 @@ function initialSetup(card: Card) {
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
-  const [block, ...setup] = metadata.trim().split("\n");
+  const [, ...setup] = metadata.trim().split("\n");
 
   // Players
   const needed = [
@@ -110,7 +109,7 @@ function clearPreviewSetup() {
   for (const block of world.getObjectsByTemplateName("block")) block.destroy();
 }
 
-function followSetup(card: Card, player: Player) {
+function followSetup(card: Card) {
   if (card.getStackSize() > 1) return;
 
   // Remove preview
@@ -127,7 +126,7 @@ function followSetup(card: Card, player: Player) {
   const systems = getSystems();
   const resources = new Map<string, number>();
   for (const cluster of block.split(" ")) {
-    for (let i of "0123") {
+    for (const i of "0123") {
       const system = systems
         .filter((d) => d.id === `${cluster}.${i}`)
         .map((d) => d.snap);
@@ -459,7 +458,7 @@ function placeStarports(slot: number, n: number, target: Vector) {
 export function systemResource(system: SnapPoint): string | undefined {
   return system
     .getTags()
-    .find((t) => t.startsWith("resource:"))!
+    .find((t) => t.startsWith("resource:"))
     ?.replace("resource:", "");
 }
 export function placeResources(

@@ -1,13 +1,11 @@
+import type { CardHolder, Player, Button } from "@tabletop-playground/api";
 import {
   Card,
-  CardHolder,
-  Player,
   refHolder as _refHolder,
   refPackageId as _refPackageId,
   UIElement,
   Vector,
   world,
-  Button,
   Rotator,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
@@ -81,7 +79,7 @@ function discardOrEndChapter(button: Button, player: Player) {
       ).length
   )
     discard(button, player);
-  else endChapter(button, player);
+  else endChapter();
 }
 
 // Put all cards in the action zone into the discard pile, self-discard anything that supports it
@@ -99,7 +97,7 @@ function discard(button: Button, player: Player) {
   button.setText("End Chapter");
 }
 
-function endChapter(button: Button, player: Player) {
+function endChapter() {
   if (!refHolder.getNumCards()) return;
   const snap = world
     .getObjectById("map")!

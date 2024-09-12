@@ -1,9 +1,5 @@
-import {
-  GameObject,
-  refObject,
-  Rotator,
-  Vector,
-} from "@tabletop-playground/api";
+import type { GameObject } from "@tabletop-playground/api";
+import { refObject, Rotator, Vector } from "@tabletop-playground/api";
 
 // r to toggle ship damage
 refObject.onPrimaryAction.add(toggle);

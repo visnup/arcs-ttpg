@@ -1,10 +1,12 @@
-import type { MultistateObject, Player } from "@tabletop-playground/api";
-import {
-  refPackageId as _refPackageId,
-  Card,
+import type {
+  MultistateObject,
   CardHolder,
   Dice,
   GameObject,
+} from "@tabletop-playground/api";
+import {
+  refPackageId as _refPackageId,
+  Card,
   refCard,
   Rotator,
   UIElement,
@@ -44,7 +46,7 @@ if (refCard.getStackSize() > 1) {
 }
 
 // Campaign setup
-function showDeal(card: Card, player: Player) {
+function showDeal(card: Card) {
   if (
     card.getUIs().length ||
     card.getAllCardDetails().some(({ index }) => index >= 8)
@@ -60,7 +62,7 @@ function showDeal(card: Card, player: Player) {
           size={48}
           font="NeueKabelW01-Book.ttf"
           fontPackage={refPackageId}
-          onClick={(_, player) => {
+          onClick={() => {
             campaignSetup(n, card);
             card.removeUI(0);
           }}

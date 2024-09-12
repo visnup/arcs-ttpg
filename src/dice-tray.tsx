@@ -1,8 +1,8 @@
+import type { GameObject } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
   Dice,
-  GameObject,
   globalEvents,
   ScreenUIElement,
   TextJustification,
@@ -15,7 +15,7 @@ const refObject = _refObject;
 const refPackageId = _refPackageId;
 
 // Dice summary UI element
-let diceSummary = new ScreenUIElement();
+const diceSummary = new ScreenUIElement();
 diceSummary.relativePositionX = diceSummary.relativePositionY = false;
 diceSummary.positionX = 50;
 diceSummary.positionY = 10;
@@ -56,7 +56,7 @@ function onRoll() {
   }
 }
 
-globalEvents.onDiceRolled.add((player, dice) => {
+globalEvents.onDiceRolled.add(() => {
   // Bring down walls
   walls?.destroy();
   walls = undefined;

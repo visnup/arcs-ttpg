@@ -1,9 +1,8 @@
+import type { GameObject, Player } from "@tabletop-playground/api";
 import {
   Color,
-  GameObject,
   GameWorld,
   globalEvents,
-  Player,
   Vector,
   world,
   refPackageId,
@@ -74,28 +73,25 @@ GameWorld.prototype.isOnTable = function (
 };
 
 GameWorld.prototype.saturate = function (color: Color, amount: number) {
-  let [h, s, l] = rgbToHsl(color);
-  s! += s! * amount;
-  return hslToRgb([h!, s!, l!]);
+  const [h, s, l] = rgbToHsl(color);
+  return hslToRgb([h!, s! + s! * amount, l!]);
 };
 GameWorld.prototype.lighten = function (color: Color, amount: number) {
-  let [h, s, l] = rgbToHsl(color);
-  l! += l! * amount;
-  return hslToRgb([h!, s!, l!]);
+  const [h, s, l] = rgbToHsl(color);
+  return hslToRgb([h!, s!, l! + l! * amount]);
 };
 
 // https://gist.github.com/mjackson/5311256
 function rgbToHsl({ r, g, b }: Color) {
   const max = Math.max(r, g, b),
     min = Math.min(r, g, b);
-  let h,
-    s,
-    l = (max + min) / 2;
+  let h, s;
+  const l = (max + min) / 2;
 
   if (max == min) {
     h = s = 0; // achromatic
   } else {
-    var d = max - min;
+    const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
 
     switch (max) {

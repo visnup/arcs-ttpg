@@ -27,6 +27,7 @@ function advance(obj: GameObject) {
   lastAdvanced = Date.now();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
   advance: function () {
     // Externally, only advance if 10 seconds have passed since last advance

@@ -1,9 +1,7 @@
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
-  Color,
   HorizontalBox,
-  Text,
   UIElement,
   Vector,
   world,
@@ -78,6 +76,7 @@ class AmbitionSection {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
   ambitions: Object.fromEntries(
     ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [

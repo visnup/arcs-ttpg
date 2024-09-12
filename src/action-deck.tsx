@@ -1,6 +1,6 @@
+import type { Card } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
-  Card,
   refCard,
   Rotator,
   UIElement,
@@ -35,8 +35,8 @@ refCard.shuffle = function () {
   showDeal(this);
 };
 const deal = refCard.deal;
-refCard.deal = function () {
-  deal.call(this, ...arguments);
+refCard.deal = function (...args) {
+  deal.call(this, ...args);
   this.removeUI(0);
 };
 function showDeal(card: Card) {
