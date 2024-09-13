@@ -17,7 +17,12 @@ export const above = new Vector(0, 0, 0.1);
 const flat = new Rotator(-90, 0, 0);
 
 if (refCard.getTemplateName() === "setup") {
-  refCard.onFlipUpright.add(previewSetup);
+  refCard.onFlipUpright.add((card) =>
+    Math.abs(card.getRotation().roll) < 10
+      ? previewSetup(card)
+      : clearPreviewSetup(),
+  );
+  refCard.onSecondaryAction.add(previewSetup);
 
   if (refCard.getStackSize() > 1) {
     refCard.onRemoved.add(initialSetup);
@@ -78,29 +83,27 @@ function initialSetup(card: Card) {
 }
 
 function previewSetup(card: Card) {
-  // Remove preview
+  // Remove previous preview
   clearPreviewSetup();
 
-  if (Math.abs(card.getRotation().roll) < 10) {
-    // Setup card details
-    const { metadata } = card.getCardDetails(0)!;
-    const [block, ...setup] = metadata.trim().split("\n");
+  // Setup card details
+  const { metadata } = card.getCardDetails(0)!;
+  const [block, ...setup] = metadata.trim().split("\n");
 
-    // Player order
-    const slots = getSlots();
+  // Player order
+  const slots = getSlots();
 
-    // Out of play
-    for (const cluster of block.split(" ")) createBlock(+cluster);
+  // Out of play
+  for (const cluster of block.split(" ")) createBlock(+cluster);
 
-    // Starting pieces
-    const systems = getSystems();
-    for (const [i, line] of setup.entries()) {
-      const system = line
-        .split(" ")
-        .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
-      for (let j = 0; j < system.length; j++)
-        createLabel("ABCC".charAt(j), getPosition(system[j]), slots[i]);
-    }
+  // Starting pieces
+  const systems = getSystems();
+  for (const [i, line] of setup.entries()) {
+    const system = line
+      .split(" ")
+      .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
+    for (let j = 0; j < system.length; j++)
+      createLabel("ABCC".charAt(j), nearby(getPosition(system[j])), slots[i]);
   }
 }
 function clearPreviewSetup() {
