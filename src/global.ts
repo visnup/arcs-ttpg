@@ -8,6 +8,8 @@ import {
   world,
 } from "@tabletop-playground/api";
 
+world.clearConsole();
+
 // Reset all zones
 for (const zone of world.getAllZones())
   if (zone.getId().startsWith("zone-")) zone.destroy();
