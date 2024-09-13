@@ -1,4 +1,4 @@
-import type { Card, MultistateObject } from "@tabletop-playground/api";
+import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   DrawingLine,
@@ -17,23 +17,34 @@ export const above = new Vector(0, 0, 0.1);
 const flat = new Rotator(-90, 0, 0);
 
 if (refCard.getTemplateName() === "setup") {
+  if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
+
   refCard.onFlipUpright.add((card) =>
     Math.abs(card.getRotation().roll) < 10
       ? previewSetup(card)
       : clearPreviewSetup(),
   );
   refCard.onSecondaryAction.add(previewSetup);
+  refCard.onPrimaryAction.add(followSetup);
 
-  if (refCard.getStackSize() > 1) {
-    refCard.onRemoved.add(initialSetup);
-  } else {
-    refCard.onPrimaryAction.add(followSetup);
-    refCard.onCustomAction.add(followSetup);
-    refCard.addCustomAction(
-      "Follow Setup",
-      "Follow the setup instructions on this card",
-    );
-  }
+  refCard.addCustomAction(
+    "Preview Setup",
+    "Preview the setup instructions of this card on the map",
+  );
+  refCard.addCustomAction(
+    "Follow Setup",
+    "Follow the setup instructions on this card",
+  );
+  refCard.onCustomAction.add(
+    (card: Card, player: Player, identifier: string) => {
+      switch (identifier) {
+        case "Preview Setup":
+          return previewSetup(card);
+        case "Follow Setup":
+          return followSetup(card);
+      }
+    },
+  );
 }
 
 let initial = false;
@@ -83,6 +94,8 @@ function initialSetup(card: Card) {
 }
 
 function previewSetup(card: Card) {
+  if (card.getStackSize() > 1) return;
+
   // Remove previous preview
   clearPreviewSetup();
 
