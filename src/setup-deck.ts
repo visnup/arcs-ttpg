@@ -52,9 +52,8 @@ if (refCard.getTemplateName() === "setup") {
   );
 }
 
-let initial = false;
 function initialSetup(card: Card) {
-  if (initial) return;
+  if ("_initialSetup" in world) return;
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
@@ -95,7 +94,7 @@ function initialSetup(card: Card) {
   // Turn to setup rules
   world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
 
-  initial = true;
+  (world as GameWorld & { _initialSetup: boolean })._initialSetup = true;
 }
 
 function previewSetup(card: Card) {
