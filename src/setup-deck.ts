@@ -1,4 +1,9 @@
-import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
+import type {
+  Card,
+  GameWorld,
+  MultistateObject,
+  Player,
+} from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   DrawingLine,
@@ -95,6 +100,7 @@ function initialSetup(card: Card) {
 
 function previewSetup(card: Card) {
   if (card.getStackSize() > 1) return;
+  if ("_followedSetup" in world) return;
 
   // Remove previous preview
   clearPreviewSetup();
@@ -120,6 +126,7 @@ function previewSetup(card: Card) {
   }
 }
 function clearPreviewSetup() {
+  if ("_followedSetup" in world) return;
   for (const line of world.getDrawingLines())
     world.removeDrawingLineObject(line);
   for (const label of world.getAllLabels()) label.destroy();
@@ -128,6 +135,7 @@ function clearPreviewSetup() {
 
 function followSetup(card: Card) {
   if (card.getStackSize() > 1) return;
+  if ("_followedSetup" in world) return;
 
   // Remove preview
   clearPreviewSetup();
@@ -194,6 +202,8 @@ function followSetup(card: Card) {
   // Clean up unused components
   removeNotes();
   removeBlocks();
+
+  (world as GameWorld & { _followedSetup: boolean })._followedSetup = true;
 }
 
 function getSlots() {
