@@ -39,6 +39,8 @@ function moveToPlayer(
 }
 
 function stand(obj: GameObject) {
+  const { z } = obj.getSize();
+  obj.setPosition(obj.getPosition().add(new Vector(0, 0, z / 2 + 0.1)));
   obj.setRotation(new Rotator(0, 0, 0));
   obj.snapToGround();
 }
