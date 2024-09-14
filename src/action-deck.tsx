@@ -51,13 +51,12 @@ function showDeal(card: Card) {
       font="NeueKabelW01-Book.ttf"
       fontPackage={refPackageId}
       onClick={() => {
-        card.deal(6);
-        for (const holder of world.getAllObjects())
-          if (
-            holder.getTemplateName() === "cards" &&
-            "sort" in holder &&
-            typeof holder.sort === "function"
-          )
+        const slots = world
+          .getObjectsByTemplateName("board")
+          .map((d) => d.getOwningPlayerSlot());
+        card.deal(6, slots, false, true);
+        for (const holder of world.getObjectsByTemplateName("cards"))
+          if ("sort" in holder && typeof holder.sort === "function")
             holder.sort();
         getInitiative()?.stand();
       }}
