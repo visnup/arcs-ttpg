@@ -121,6 +121,7 @@ refCard.onSnapped.add((card, player, snap) => {
 refCard.onReleased.add((card, player) => {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
+  const slot = player.getSlot();
   const isFaceUp = card.isFaceUp();
   if (
     (!isFaceUp && isSecond(card)) ||
@@ -137,14 +138,17 @@ refCard.onReleased.add((card, player) => {
         font="NeueKabelW01-Book.ttf"
         fontPackage={refPackageId}
         onClick={() => {
-          getInitiative()?.seize(player);
+          getInitiative()?.seize(slot);
           card.removeUI(index);
+          for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
         }}
       >
         {" Seize "}
       </button>,
     );
     const index = card.addUI(ui);
+    // bug workaround: make sure card is intersecting zone after UI added
+    card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
   } else if (isFaceUp && isSurpassing(card)) {
     // Surpass
     const ui = new UIElement();
@@ -157,7 +161,7 @@ refCard.onReleased.add((card, player) => {
         font="NeueKabelW01-Book.ttf"
         fontPackage={refPackageId}
         onClick={() => {
-          getInitiative()?.take(player);
+          getInitiative()?.take(slot);
           card.removeUI(index);
         }}
       >
@@ -165,6 +169,8 @@ refCard.onReleased.add((card, player) => {
       </button>,
     );
     const index = card.addUI(ui);
+    // bug workaround: make sure card is intersecting zone after UI added
+    card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
     for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
   }
 });
