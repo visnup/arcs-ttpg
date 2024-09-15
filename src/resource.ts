@@ -28,8 +28,8 @@ function discard(card: typeof refCard) {
       );
     if (supply) supply.addCards(card, false, 0, true);
     else {
-      card.setPosition(origins[i].position, 1);
-      card.setRotation(origins[i].rotation, 1);
+      card.setPosition(origins[i].position, 1.5);
+      card.setRotation(origins[i].rotation, 1.5);
     }
   } else {
     // Otherwise, call discard on each item in the stack

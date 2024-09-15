@@ -4,7 +4,7 @@ import { getPlayed } from "./action-deck";
 // Discard to origin
 const origin = refCard.getPosition();
 refCard.onPrimaryAction.add((card) => {
-  card.setPosition(origin, 1);
+  card.setPosition(origin, 1.5);
 });
 
 // Place ambition declared marker

@@ -85,7 +85,7 @@ class AmbitionSection {
       .add(new Vector(1.5, 0, 0));
     const occupied = world
       .getObjectsByTemplateName("ambition")
-      .filter((d) => Math.abs(d.getPosition().x - center.x) < 0.5)
+      .filter((d) => Math.abs(d.getPosition().x - center.x) < 2.2)
       .sort((a, b) => a.getPosition().y - b.getPosition().y)
       .concat(marker);
     const y = marker.getSize().x + 0.2;
