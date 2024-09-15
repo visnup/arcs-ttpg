@@ -75,6 +75,24 @@ class AmbitionSection {
         );
     }
   }
+
+  declare() {
+    const marker = getAmbitionMarker();
+    if (!marker) return;
+    const center = refObject
+      .getPosition()
+      .add(this.ui.position)
+      .add(new Vector(1.5, 0, 0));
+    const occupied = world
+      .getObjectsByTemplateName("ambition")
+      .filter((d) => Math.abs(d.getPosition().x - center.x) < 0.5)
+      .sort((a, b) => a.getPosition().y - b.getPosition().y)
+      .concat(marker);
+    const y = marker.getSize().x + 0.2;
+    const left = center.add(new Vector(0, ((1 - occupied.length) * y) / 2, 0));
+    for (const [i, m] of occupied.entries())
+      m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
+  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -87,3 +105,10 @@ const ext = Object.assign(refObject, {
   ) as Record<Ambition, AmbitionSection>,
 });
 export type MapBoard = typeof ext;
+
+function getAmbitionMarker() {
+  return world
+    .getObjectsByTemplateName("ambition")
+    .filter((d) => d.getSnappedToPoint())
+    .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
+}

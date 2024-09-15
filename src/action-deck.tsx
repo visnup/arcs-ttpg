@@ -1,7 +1,7 @@
 import type { Card } from "@tabletop-playground/api";
 import {
+  refCard as _refCard,
   refPackageId as _refPackageId,
-  refCard,
   Rotator,
   UIElement,
   Vector,
@@ -9,7 +9,9 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
+import type { Ambition, MapBoard } from "./map-board";
 
+const refCard = _refCard;
 const refPackageId = _refPackageId;
 
 function getInitiative() {
@@ -86,7 +88,7 @@ function suit(card: Card) {
 function rank(card: Card) {
   return (card.getCardDetails(0)!.index % 7) + 1;
 }
-function getPlayed() {
+export function getPlayed() {
   const zone = world
     .getAllZones()
     .find((z) => z.getId().startsWith("zone-action-"));
@@ -178,4 +180,14 @@ refCard.onReleased.add((card, player) => {
 // Remove UI when card is grabbed
 refCard.onGrab.add((card) => {
   while (card.getUIs().length) card.removeUI(0);
+});
+
+// Place ambition marker when ambition declared
+refCard.onSnappedTo.add((obj) => {
+  if (obj.getTemplateName() !== "ambition declared") return;
+  const ambition = [, "tycoon", "tyrant", "warlord", "keeper", "empath"][
+    refCard.getCardDetails(0)!.index % 7
+  ] as Ambition | undefined;
+  if (ambition)
+    (world.getObjectById("map") as MapBoard)!.ambitions[ambition]?.declare();
 });
