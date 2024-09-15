@@ -1,14 +1,9 @@
-import type {
-  Card,
-  GameWorld,
-  Player,
-  Rotator,
-} from "@tabletop-playground/api";
+import type { Card, Player, Rotator } from "@tabletop-playground/api";
 import { refCard, Vector, world } from "@tabletop-playground/api";
 
 type Origin = { position: Vector; rotation: Rotator };
 const origins = ((
-  world as GameWorld & { _resourceOrigins?: Origin[] }
+  world as typeof world & { _resourceOrigins?: Origin[] }
 )._resourceOrigins ??= []);
 const { index } = refCard.getCardDetails(0)!;
 if (!origins[index]) {

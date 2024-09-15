@@ -1,9 +1,4 @@
-import type {
-  Card,
-  GameWorld,
-  MultistateObject,
-  Player,
-} from "@tabletop-playground/api";
+import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   DrawingLine,
@@ -94,7 +89,7 @@ function initialSetup(card: Card) {
   // Turn to setup rules
   world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
 
-  (world as GameWorld & { _initialSetup: boolean })._initialSetup = true;
+  (world as typeof world & { _initialSetup: boolean })._initialSetup = true;
 }
 
 function previewSetup(card: Card) {
@@ -202,7 +197,7 @@ function followSetup(card: Card) {
   removeNotes();
   removeBlocks();
 
-  (world as GameWorld & { _followedSetup: boolean })._followedSetup = true;
+  (world as typeof world & { _followedSetup: boolean })._followedSetup = true;
 }
 
 function getSlots() {
