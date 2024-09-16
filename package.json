@@ -6,7 +6,6 @@
     "dev": "ttpg-scripts dev",
     "clean": "ttpg-scripts clean",
     "reset": "ttpg-scripts reset",
-    "quantize": "tsx assets/States/quantize.ts",
     "build": "ttpg-scripts build",
     "purge": "ttpg-scripts purge",
     "libpack": "ttpg-scripts libpack",
