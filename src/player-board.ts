@@ -12,7 +12,7 @@ const refObject = _refObject;
 // Board zone
 const p = refObject.getPosition();
 const { x, y } = refObject.getSize();
-const captivePercent = 0.735;
+const captivePercent = 0.685;
 const zoneId = `zone-${refObject.getId()}`;
 const zone =
   world.getZoneById(zoneId) ??
