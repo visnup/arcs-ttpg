@@ -70,7 +70,7 @@
 			{
 				"X": 12,
 				"Y": 7,
-				"Z": 0.20000000000000001
+				"Z": 0.10000000000000001
 			},
 			"Rotation":
 			{
@@ -181,7 +181,10 @@
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
-			"FlipValidity": 0
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
 		},
 		{
 			"X": 2.7999999999999998,
@@ -191,7 +194,10 @@
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
-			"FlipValidity": 0
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
 		},
 		{
 			"X": 2.6000000000000001,
