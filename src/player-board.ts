@@ -1,7 +1,6 @@
 import {
   refObject as _refObject,
   Card,
-  Rotator,
   Vector,
   world,
 } from "@tabletop-playground/api";
