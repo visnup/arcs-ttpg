@@ -237,6 +237,9 @@ function campaignSetup(players: number, card: Card) {
   removeLeaders();
   removeEvents();
   removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
+
+  // Add aids
+  placeAids();
 }
 
 function takeEventActionDeck(n?: number) {
@@ -347,6 +350,18 @@ function removeLeaders() {
 }
 function removeEvents() {
   takeEventActionDeck()?.destroy();
+}
+
+// Aids
+function placeAids() {
+  const rules = world.getObjectByTemplateName("campaign-rules")?.getPosition();
+  if (!rules) return;
+  const p = new Vector(-rules.x, rules.y, rules.z);
+  for (const [i, id] of [
+    "12814B4F8748BF4D8A7FFD92AE4C5873",
+    "F74E188D6E443D0C1E239297F328847F",
+  ].entries())
+    world.createObjectFromTemplate(id, p.add(new Vector(0, i * -10, 0)));
 }
 
 // Fate sets
