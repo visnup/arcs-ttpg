@@ -1,9 +1,7 @@
+import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
-  Card,
   DrawingLine,
-  MultistateObject,
-  Player,
   refCard,
   Rotator,
   SnapPoint,
