@@ -1,7 +1,9 @@
-import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
+  Card,
   DrawingLine,
+  MultistateObject,
+  Player,
   refCard,
   Rotator,
   SnapPoint,
@@ -197,6 +199,9 @@ function followSetup(card: Card) {
   removeNotes();
   removeBlocks();
 
+  // Place aid
+  placeAid();
+
   (world as typeof world & { _followedSetup: boolean })._followedSetup = true;
 }
 
@@ -320,6 +325,16 @@ export function removeBlocks() {
   for (const t of ["block large", "block small", "block round"])
     for (const obj of world.getObjectsByTemplateName(t))
       if (world.isOnTable(obj)) obj.destroy();
+}
+
+export function placeAid() {
+  const p = world.getObjectByTemplateName("base-rules")?.getPosition();
+  if (!p) return;
+  const aid = world.createObjectFromTemplate(
+    "34FBB8B5F944402AACD987BCBE52E300",
+    p.add(new Vector(0, 20, 0)),
+  ) as MultistateObject;
+  aid.setState(2);
 }
 
 function occupied(system: SnapPoint | SnapPoint[]) {

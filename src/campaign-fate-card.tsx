@@ -23,6 +23,7 @@ import {
   getPosition,
   getSystems,
   nearby,
+  placeAid,
   placeCourt,
   placeResources,
   placeShips,
@@ -238,7 +239,8 @@ function campaignSetup(players: number, card: Card) {
   removeEvents();
   removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
 
-  // Add aids
+  // Place aids
+  placeAid();
   placeAids();
 }
 
