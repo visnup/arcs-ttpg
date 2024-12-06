@@ -49,9 +49,9 @@ refObject.addCustomAction("Take Initiative");
 refObject.addCustomAction("Seize Initiative");
 refObject.onCustomAction.add((obj, player, action) => {
   switch (action) {
-    case "Take initiative":
+    case "Take Initiative":
       return take(obj, player);
-    case "Seize initiative":
+    case "Seize Initiative":
       return seize(obj, player);
   }
 });
