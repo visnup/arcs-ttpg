@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "imperial.obj",
+			"Model": "miniatures/imperial.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -49,7 +49,7 @@
 				"Z": 0
 			},
 			"Texture": "",
-			"NormalMap": "campaign/imperial-n.jpg",
+			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
@@ -65,7 +65,7 @@
 			"Offset":
 			{
 				"X": 0.14999999999999999,
-				"Y": -0.050000000000000003,
+				"Y": 0,
 				"Z": 0.5
 			},
 			"Scale":

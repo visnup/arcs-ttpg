@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "flagship.obj",
+			"Model": "miniatures/flagship.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -49,7 +49,7 @@
 				"Z": 0
 			},
 			"Texture": "",
-			"NormalMap": "campaign/flagship-n.jpg",
+			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,

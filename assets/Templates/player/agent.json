@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "agent.obj",
+			"Model": "miniatures/agent.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -49,7 +49,7 @@
 				"Z": 89.999999999999986
 			},
 			"Texture": "",
-			"NormalMap": "player/agent-n.jpg",
+			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,

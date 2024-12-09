@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "ship.obj",
+			"Model": "miniatures/ship.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -49,7 +49,7 @@
 				"Z": 0
 			},
 			"Texture": "",
-			"NormalMap": "player/ship-n.jpg",
+			"NormalMap": "",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
@@ -66,13 +66,13 @@
 			{
 				"X": 0.20000000000000001,
 				"Y": -0.050000000000000003,
-				"Z": 0.55000000000000004
+				"Z": 0.5
 			},
 			"Scale":
 			{
 				"X": 3,
-				"Y": 0.90000000000000002,
-				"Z": 0.90000000000000002
+				"Y": 1,
+				"Z": 1
 			},
 			"Rotation":
 			{
