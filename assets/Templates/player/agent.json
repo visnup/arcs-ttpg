@@ -59,7 +59,30 @@
 			"SurfaceType": "Plastic"
 		}
 	],
-	"Collision": [],
+	"Collision": [
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": 0,
+				"Z": 1
+			},
+			"Scale":
+			{
+				"X": 0.80000000000000004,
+				"Y": 1,
+				"Z": 2
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		}
+	],
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
