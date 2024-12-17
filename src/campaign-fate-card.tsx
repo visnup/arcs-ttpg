@@ -232,7 +232,10 @@ function campaignSetup(players: number, card: Card) {
     ?.setState(5);
 
   // Clean up unused components
-  removeNotes();
+  removeNotes((obj) => {
+    const desc = obj.getDescription();
+    return desc.includes("Shuffle") && !desc.includes("Campaign");
+  });
   removeSetup();
   removeBlocks();
   removeLeaders();

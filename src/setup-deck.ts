@@ -1,4 +1,9 @@
-import type { Card, MultistateObject, Player } from "@tabletop-playground/api";
+import type {
+  Card,
+  GameObject,
+  MultistateObject,
+  Player,
+} from "@tabletop-playground/api";
 import {
   refPackageId as _refPackageId,
   DrawingLine,
@@ -279,8 +284,11 @@ function getLeader(slot: number) {
   }
 }
 
-export function removeNotes() {
-  for (const obj of world.getObjectsByTemplateName("note")) obj.destroy();
+export function removeNotes(
+  condition = (obj: GameObject) => obj.getDescription().includes("Shuffle"),
+) {
+  for (const obj of world.getObjectsByTemplateName("note"))
+    if (condition(obj)) obj.destroy();
 }
 export function removeCampaign() {
   for (const t of [
@@ -303,8 +311,7 @@ export function removeCampaign() {
     if (world.isOnTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
-  for (const obj of world.getObjectsByTemplateName("note"))
-    if (obj.getDescription().startsWith("Campaign:")) obj.destroy();
+  removeNotes((obj) => obj.getDescription().startsWith("Campaign"));
 }
 function removeSetup(slots: number[]) {
   for (const obj of world.getObjectsByTemplateName<Card>("setup"))
