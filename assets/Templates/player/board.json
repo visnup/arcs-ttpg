@@ -106,7 +106,7 @@
 	],
 	"Collision": [],
 	"Lights": [],
-	"SnapPointsGlobal": false,
+	"SnapPointsGlobal": true,
 	"SnapPoints": [
 		{
 			"X": 2.6000000000000001,
@@ -320,10 +320,11 @@
 			"X": 0,
 			"Y": -17,
 			"Z": 0.5,
-			"Range": 3,
+			"Range": 6,
+			"SecondaryRange": 4,
 			"SnapRotation": 4,
 			"RotationOffset": 0,
-			"Shape": 0,
+			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
 				"leader",
