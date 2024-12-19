@@ -441,7 +441,7 @@ export function nearby(building: Vector) {
   if (building.distance(origin) < 11) return building;
   const direction = building.subtract(origin).unit();
   const ring = origin.add(direction.multiply(11));
-  return Vector.lerp(ring, building, building.distance(ring) > 5 ? 0.5 : 2);
+  return Vector.lerp(ring, building, building.distance(ring) > 5 ? 0.45 : 2);
 }
 
 // Find _n_ ships belonging to _slot_ player closest to _target_ and place them
@@ -459,7 +459,7 @@ export function placeShips(slot: number, n: number, target: Vector) {
   rotation.yaw += Math.random() > 0.5 ? 90 : -90;
   rotation.yaw += Math.random() * 30 - 15;
   const half = (ships.length - 1) / 2;
-  const width = ships[0]?.getSize().y + 0.1;
+  const width = ships[0]?.getSize().y;
   for (const [j, ship] of ships.entries()) {
     ship.setRotation(rotation);
     ship.setPosition(target.add(direction.multiply((j - half) * width)));
