@@ -1,7 +1,8 @@
-import type { Button, CardHolder, Player } from "@tabletop-playground/api";
+import type { CardHolder, Player } from "@tabletop-playground/api";
 import {
   refHolder as _refHolder,
   refPackageId as _refPackageId,
+  Button,
   Card,
   Rotator,
   UIElement,
@@ -9,6 +10,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
+import type { MapBoard } from "./map-board";
 
 const refHolder = _refHolder;
 const refPackageId = _refPackageId;
@@ -71,7 +73,7 @@ process.nextTick(() => {
   });
 });
 
-function discardOrEndChapter(button: Button, player: Player) {
+function discardOrEndChapter(button: Button, player?: Player) {
   if (
     getActionZone()
       ?.getOverlappingObjects()
@@ -84,7 +86,7 @@ function discardOrEndChapter(button: Button, player: Player) {
 }
 
 // Put all cards in the action zone into the discard pile, self-discard anything that supports it
-function discard(button: Button, player: Player) {
+function discard(button: Button, player?: Player) {
   const zone = getActionZone();
   if (!zone) return;
   for (const obj of zone.getOverlappingObjects()) {
@@ -95,6 +97,7 @@ function discard(button: Button, player: Player) {
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
+  (world.getObjectById("map") as MapBoard)!.turns.startRound();
   button.setText("End Chapter");
 }
 
@@ -132,7 +135,7 @@ function getActionZone() {
 function sortCard(
   holder: CardHolder,
   card: Card,
-  player: Player,
+  player?: Player,
   inserted: number = holder.getNumCards(),
 ) {
   if (!holder.isCardFaceUp(card)) {
@@ -152,3 +155,13 @@ function sortCard(
     holder.moveCard(card, holder.getNumCards());
   }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const ext = Object.assign(refHolder, {
+  discardOrEndChapter: (player?: Player) => {
+    const button = refHolder.getUIs()[0]?.widget;
+    if (button && button instanceof Button) discardOrEndChapter(button, player);
+  },
+});
+refHolder.setId("discard-holder");
+export type DiscardHolder = typeof ext;

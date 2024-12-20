@@ -1,13 +1,17 @@
+import type { CardHolder, SnapPoint } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
   HorizontalBox,
+  Rotator,
   UIElement,
   Vector,
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
+import type { DiscardHolder } from "./discard-holder";
+import type { InitiativeMarker } from "./initiative-marker";
 
 const refObject = _refObject;
 const refPackageId = _refPackageId;
@@ -31,6 +35,121 @@ const zone =
   zone.setRotation(refObject.getRotation());
   zone.setScale(size);
   zone.setStacking(ZonePermission.Nobody);
+}
+
+// Turn indicators
+const colors = ["Yellow", "Blue", "Red", "White"];
+class Turns {
+  turn: number = -1;
+  rounds: number = 0;
+  slots: number[] = [];
+  snaps: SnapPoint[];
+  widgets: HorizontalBox[];
+  nextButton = render(
+    <button
+      size={48}
+      font="NeueKabelW01-Book.ttf"
+      fontPackage={refPackageId}
+      onClick={() => this.nextTurn()}
+    >
+      {" Next "}
+    </button>,
+  );
+
+  constructor() {
+    this.snaps = refObject
+      .getAllSnapPoints()
+      .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
+      .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+    this.widgets = this.snaps.map((p) => {
+      const ui = new UIElement();
+      ui.position = p.getLocalPosition().add(new Vector(0, -6, 0));
+      ui.rotation = new Rotator(0, p.getSnapRotation(), 0);
+      ui.scale = 0.15;
+      ui.widget = render(<horizontalbox gap={10} />);
+      refObject.addUI(ui);
+      return ui.widget as HorizontalBox;
+    });
+    this.snaps[0].getParentObject()?.onSnappedTo.add((obj, player, p) => {
+      if (p === this.snaps[0]) this.cardLed();
+    });
+  }
+
+  startRound() {
+    // Show player turns
+    this.slots = world.getSlots(
+      "cards",
+      (holder: CardHolder, i) => i === 0 || holder.getNumCards() > 0,
+    );
+    for (const w of this.widgets) w.removeAllChildren();
+    for (const [i, slot] of this.slots.entries())
+      this.widgets[i].addChild(
+        render(
+          <text color={world.saturate(world.getSlotColor(slot), 0.5)} size={64}>
+            •
+          </text>,
+        ),
+      );
+
+    // Pass button
+    this.widgets[0].addChild(
+      render(
+        <button
+          size={48}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          onClick={() => {
+            // Pass initiative
+            (world.getObjectById("initiative") as InitiativeMarker).take(
+              this.slots[this.turn + 1],
+            );
+            this.startRound();
+          }}
+        >
+          {" Pass "}
+        </button>,
+      ),
+    );
+
+    this.turn = 0;
+    this.showMessage();
+  }
+
+  cardLed() {
+    this.widgets[0].removeChildAt(1);
+    this.widgets[0].addChild(this.nextButton);
+  }
+
+  nextTurn() {
+    // Clean up previous turn
+    if (this.turn >= 0) {
+      for (const obj of zone.getOverlappingObjects())
+        if (obj && "next" in obj && typeof obj.next === "function") obj.next();
+      this.widgets[this.turn].removeChildAt(1);
+    }
+
+    const slot = this.slots[++this.turn];
+    // If all players have played, end round
+    if (slot === undefined) return this.endRound();
+    // Next button
+    this.widgets[this.turn].addChild(this.nextButton);
+    this.showMessage();
+  }
+
+  endRound() {
+    if (this.rounds > 18) return; // Protect against degenerate loop
+    this.rounds++;
+    (
+      world.getObjectById("discard-holder") as DiscardHolder
+    ).discardOrEndChapter();
+  }
+
+  showMessage() {
+    // Show message
+    const slot = this.slots[this.turn];
+    const name = world.getPlayerBySlot(slot)?.getName() ?? colors[slot];
+    for (const p of world.getAllPlayers()) p.showMessage(`${name}’s turn`);
+  }
 }
 
 // Ambition ranks
@@ -103,6 +222,7 @@ const ext = Object.assign(refObject, {
       new AmbitionSection(i),
     ]),
   ) as Record<Ambition, AmbitionSection>,
+  turns: new Turns(),
 });
 export type MapBoard = typeof ext;
 

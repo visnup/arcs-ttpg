@@ -11,7 +11,7 @@ export default tseslint.config(
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-unused-vars": [
         "error",
-        { varsIgnorePattern: "^(jsxInTTPG)$" },
+        { varsIgnorePattern: "^(jsxInTTPG)$", argsIgnorePattern: "^_" },
       ],
       "no-sparse-arrays": "off",
     },

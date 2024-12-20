@@ -103,7 +103,8 @@
 			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
-				"card"
+				"card",
+				"turn:3"
 			]
 		},
 		{
@@ -131,7 +132,8 @@
 			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
-				"card"
+				"card",
+				"turn:2"
 			]
 		},
 		{
@@ -173,7 +175,8 @@
 			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
-				"card"
+				"card",
+				"turn:1"
 			]
 		},
 		{
@@ -188,7 +191,8 @@
 			"FlipValidity": 0,
 			"Tags": [
 				"card",
-				"card-lead"
+				"card-lead",
+				"turn:0"
 			]
 		},
 		{
@@ -985,7 +989,7 @@
 		},
 		{
 			"X": -17.538,
-			"Y": 33.77,
+			"Y": 33.770000000000003,
 			"Z": 0.5,
 			"Range": 0.5,
 			"SnapRotation": 0,
@@ -998,7 +1002,7 @@
 		},
 		{
 			"X": -17.538,
-			"Y": 35.81,
+			"Y": 35.810000000000002,
 			"Z": 0.5,
 			"Range": 0.5,
 			"SnapRotation": 0,
@@ -1011,7 +1015,7 @@
 		},
 		{
 			"X": -17.538,
-			"Y": 37.86,
+			"Y": 37.859999999999999,
 			"Z": 0.5,
 			"Range": 0.5,
 			"SnapRotation": 0,

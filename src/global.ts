@@ -8,8 +8,6 @@ import {
   world,
 } from "@tabletop-playground/api";
 
-world.clearConsole();
-
 // Reset all zones
 for (const zone of world.getAllZones())
   if (zone.getId().startsWith("zone-")) zone.destroy();
@@ -40,6 +38,10 @@ declare module "@tabletop-playground/api" {
   interface GameWorld {
     getObjectsByTemplateName<T = GameObject>(name: string): T[];
     getObjectByTemplateName<T = GameObject>(name: string): T | undefined;
+    getSlots<T extends GameObject>(
+      name?: string,
+      filter?: (d: T, index: number) => boolean,
+    ): number[];
     isOnMap(obj: GameObject): boolean;
     isOnTable(obj: GameObject, templateNames?: string[]): boolean;
     saturate(color: Color, amount: number): Color;
@@ -54,6 +56,30 @@ GameWorld.prototype.getObjectsByTemplateName = function <T>(name: string) {
 GameWorld.prototype.getObjectByTemplateName = function <T>(name: string) {
   return this.getAllObjects().find((d) => d.getTemplateName() === name) as T;
 };
+GameWorld.prototype.getSlots = function <T extends GameObject>(
+  name = "board",
+  filter = (d: T, _i: number) => !!d,
+) {
+  // Deduce player order based on ...
+  const boards = world.getObjectsByTemplateName<T>(name);
+  const initiative = world.getObjectById("initiative")!.getPosition();
+  const first = boards
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(initiative) -
+        b.getPosition().distance(initiative),
+    )[0]
+    .getOwningPlayerSlot();
+  const ordered = boards.sort(
+    (a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot(),
+  );
+  return ordered
+    .slice(first)
+    .concat(ordered.slice(0, first))
+    .filter(filter)
+    .map((d) => d.getOwningPlayerSlot());
+};
+
 GameWorld.prototype.isOnMap = function (obj: GameObject) {
   return this.lineTrace(
     obj.getPosition(),

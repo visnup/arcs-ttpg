@@ -109,7 +109,7 @@ function previewSetup(card: Card) {
   const [block, ...setup] = metadata.trim().split("\n");
 
   // Player order
-  const slots = getSlots();
+  const slots = world.getSlots();
 
   // Out of play
   for (const cluster of block.split(" ")) createBlock(+cluster);
@@ -144,7 +144,7 @@ function followSetup(card: Card) {
   const [block, ...setup] = metadata.trim().split("\n");
 
   // Player order
-  const slots = getSlots();
+  const slots = world.getSlots();
 
   // Block out of play clusters
   const systems = getSystems();
@@ -206,21 +206,6 @@ function followSetup(card: Card) {
   placeAid();
 
   (world as typeof world & { _followedSetup: boolean })._followedSetup = true;
-}
-
-function getSlots() {
-  // Deduce player order
-  const boards = world.getObjectsByTemplateName("board");
-  const initiative = world.getObjectById("initiative")!.getPosition();
-  const first = boards
-    .sort(
-      (a, b) =>
-        a.getPosition().distance(initiative) -
-        b.getPosition().distance(initiative),
-    )[0]
-    .getOwningPlayerSlot();
-  const needed = boards.map((d) => d.getOwningPlayerSlot()).sort();
-  return needed.slice(first).concat(needed.slice(0, first));
 }
 
 function createLabel(text: string, position: Vector, slot: number) {

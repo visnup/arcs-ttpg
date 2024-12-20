@@ -14,6 +14,15 @@ import type { Ambition, MapBoard } from "./map-board";
 const refCard = _refCard;
 const refPackageId = _refPackageId;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function assignOnce<T>(obj: any, property: string, fn: () => T) {
+  obj[property] = () => {
+    const result = fn();
+    delete obj[property];
+    return result;
+  };
+}
+
 function getInitiative() {
   return world.getObjectById("initiative") as InitiativeMarker;
 }
@@ -41,6 +50,7 @@ const deal = refCard.deal;
 refCard.deal = function (...args) {
   deal.call(this, ...args);
   this.removeUI(0);
+  (world.getObjectById("map") as MapBoard)!.turns.startRound();
 };
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
@@ -130,6 +140,13 @@ refCard.onReleased.add((card, player) => {
     (isFaceUp && rank(card) === 7 && isSurpassing(card))
   ) {
     // Seize
+    const seizeInitiative = () => {
+      if (card.getUIs()[index]) {
+        getInitiative()?.seize(slot);
+        card.removeUI(index);
+        for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
+      }
+    };
     const ui = new UIElement();
     ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
     if (isFaceUp) ui.rotation = new Rotator(180, 180, 0);
@@ -139,20 +156,23 @@ refCard.onReleased.add((card, player) => {
         size={48}
         font="NeueKabelW01-Book.ttf"
         fontPackage={refPackageId}
-        onClick={() => {
-          getInitiative()?.seize(slot);
-          card.removeUI(index);
-          for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
-        }}
+        onClick={seizeInitiative}
       >
         {" Seize "}
       </button>,
     );
     const index = card.addUI(ui);
-    // bug workaround: make sure card is intersecting zone after UI added
+    assignOnce(refCard, "next", seizeInitiative);
+    // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
   } else if (isFaceUp && isSurpassing(card)) {
     // Surpass
+    const takeInitiative = () => {
+      if (card.getUIs()[index]) {
+        getInitiative()?.take(slot);
+        card.removeUI(index);
+      }
+    };
     const ui = new UIElement();
     ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
     ui.rotation = new Rotator(180, 180, 0);
@@ -162,16 +182,14 @@ refCard.onReleased.add((card, player) => {
         size={48}
         font="NeueKabelW01-Book.ttf"
         fontPackage={refPackageId}
-        onClick={() => {
-          getInitiative()?.take(slot);
-          card.removeUI(index);
-        }}
+        onClick={takeInitiative}
       >
         {" Surpass "}
       </button>,
     );
     const index = card.addUI(ui);
-    // bug workaround: make sure card is intersecting zone after UI added
+    assignOnce(refCard, "discard", takeInitiative);
+    // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
     for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
   }
