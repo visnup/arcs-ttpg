@@ -38,6 +38,8 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
     )) as VerticalBox,
   );
   refObject.addUI(ui);
+
+  countAgents(zone);
 }
 
 function countAgents(zone: Zone) {
