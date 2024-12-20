@@ -79,6 +79,8 @@ class Turns {
     });
     this.snaps[0].getParentObject()?.onSnappedTo.add((obj, player, p) => {
       if (p === this.snaps[0]) this.cardLed();
+      const behind = this.snaps.findIndex((d) => d === p) - this.turn;
+      for (let i = 0; i < behind; i++) this.nextTurn();
       if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
     });
 
