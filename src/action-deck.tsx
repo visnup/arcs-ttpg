@@ -1,4 +1,4 @@
-import type { Card } from "@tabletop-playground/api";
+import type { Card, Player } from "@tabletop-playground/api";
 import {
   refCard as _refCard,
   refPackageId as _refPackageId,
@@ -130,10 +130,13 @@ refCard.onSnapped.add((card, player, snap) => {
 });
 
 // Seize or surpass option card is played
-refCard.onReleased.add((card, player) => {
+for (const card of getPlayed()) onReleased(card);
+refCard.onReleased.add(onReleased);
+function onReleased(card: Card, player?: Player) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
-  const slot = player.getSlot();
+  const slot = player ? player.getSlot() : +card.getSavedData("slot");
+  card.setSavedData(String(slot), "slot");
   const isFaceUp = card.isFaceUp();
   if (
     (!isFaceUp && isSecond(card)) ||
@@ -162,7 +165,7 @@ refCard.onReleased.add((card, player) => {
       </button>,
     );
     const index = card.addUI(ui);
-    assignOnce(refCard, "next", seizeInitiative);
+    assignOnce(card, "next", seizeInitiative);
     // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
   } else if (isFaceUp && isSurpassing(card)) {
@@ -188,12 +191,12 @@ refCard.onReleased.add((card, player) => {
       </button>,
     );
     const index = card.addUI(ui);
-    assignOnce(refCard, "discard", takeInitiative);
+    assignOnce(card, "discard", takeInitiative);
     // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
     for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
   }
-});
+}
 
 // Remove UI when card is grabbed
 refCard.onGrab.add((card) => {
