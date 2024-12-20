@@ -40,11 +40,11 @@ const zone =
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];
 class Turns {
-  turn: number = -1;
-  rounds: number = 0;
   slots: number[] = [];
+  _turn: number = -1;
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
+  rounds: number = 0;
   nextButton = render(
     <button
       size={48}
@@ -65,7 +65,7 @@ class Turns {
       const ui = new UIElement();
       ui.position = p.getLocalPosition().add(new Vector(0, -6, 0));
       ui.rotation = new Rotator(0, p.getSnapRotation(), 0);
-      ui.scale = 0.15;
+      ui.scale = 0.2;
       ui.widget = render(<horizontalbox gap={10} />);
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
@@ -73,14 +73,28 @@ class Turns {
     this.snaps[0].getParentObject()?.onSnappedTo.add((obj, player, p) => {
       if (p === this.snaps[0]) this.cardLed();
     });
+
+    const saved = JSON.parse(refObject.getSavedData("turns") || "{}");
+    if (saved.slots) this.startRound(saved.slots, saved.turn);
   }
 
-  startRound() {
+  set turn(value: number) {
+    this._turn = value;
+    this.showMessage();
+    this.save();
+  }
+  get turn() {
+    return this._turn;
+  }
+
+  startRound(slots?: number[], turn = 0) {
     // Show player turns
-    this.slots = world.getSlots(
-      "cards",
-      (holder: CardHolder, i) => i === 0 || holder.getNumCards() > 0,
-    );
+    this.slots =
+      slots ??
+      world.getSlots(
+        "cards",
+        (holder: CardHolder, i) => i === 0 || holder.getNumCards() > 0,
+      );
     for (const w of this.widgets) w.removeAllChildren();
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
@@ -91,28 +105,29 @@ class Turns {
         ),
       );
 
-    // Pass button
-    this.widgets[0].addChild(
-      render(
-        <button
-          size={48}
-          font="NeueKabelW01-Book.ttf"
-          fontPackage={refPackageId}
-          onClick={() => {
-            // Pass initiative
-            (world.getObjectById("initiative") as InitiativeMarker).take(
-              this.slots[this.turn + 1],
-            );
-            this.startRound();
-          }}
-        >
-          {" Pass "}
-        </button>,
-      ),
+    // Pass/Next button
+    this.widgets[turn].addChild(
+      turn === 0 && !this.snaps[0].getSnappedObject()
+        ? render(
+            <button
+              size={48}
+              font="NeueKabelW01-Book.ttf"
+              fontPackage={refPackageId}
+              onClick={() => {
+                // Pass initiative
+                (world.getObjectById("initiative") as InitiativeMarker).take(
+                  this.slots[this.turn + 1],
+                );
+                this.startRound();
+              }}
+            >
+              {" Pass "}
+            </button>,
+          )
+        : this.nextButton,
     );
 
-    this.turn = 0;
-    this.showMessage();
+    this.turn = turn;
   }
 
   cardLed() {
@@ -133,11 +148,10 @@ class Turns {
     if (slot === undefined) return this.endRound();
     // Next button
     this.widgets[this.turn].addChild(this.nextButton);
-    this.showMessage();
   }
 
   endRound() {
-    if (this.rounds > 18) return; // Protect against degenerate loop
+    if (this.rounds > 18) return console.warn("Infinite nextTurn loop");
     this.rounds++;
     (
       world.getObjectById("discard-holder") as DiscardHolder
@@ -147,8 +161,16 @@ class Turns {
   showMessage() {
     // Show message
     const slot = this.slots[this.turn];
+    if (slot === undefined) return;
     const name = world.getPlayerBySlot(slot)?.getName() ?? colors[slot];
     for (const p of world.getAllPlayers()) p.showMessage(`${name}’s turn`);
+  }
+
+  save() {
+    refObject.setSavedData(
+      JSON.stringify({ slots: this.slots, turn: this.turn }),
+      "turns",
+    );
   }
 }
 

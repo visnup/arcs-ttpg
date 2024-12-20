@@ -1,4 +1,9 @@
-import type { CardHolder, Player } from "@tabletop-playground/api";
+import type {
+  CardHolder,
+  GameObject,
+  Player,
+  Zone,
+} from "@tabletop-playground/api";
 import {
   refHolder as _refHolder,
   refPackageId as _refPackageId,
@@ -41,7 +46,10 @@ process.nextTick(() => {
   const zone = getActionZone();
   if (!zone) return;
   // Show discard button when action card is played
-  zone.onBeginOverlap.add((zone, obj) => {
+  for (const obj of zone.getOverlappingObjects()) onBeginOverlap(zone, obj);
+  zone.onBeginOverlap.add(onBeginOverlap);
+
+  function onBeginOverlap(zone: Zone, obj: GameObject) {
     if (obj instanceof Card && obj.getCardDetails().tags.includes("action")) {
       if (!refHolder.getUIs().length) {
         // Create button
@@ -70,7 +78,7 @@ process.nextTick(() => {
         (refHolder.getUIs()[0].widget as Button).setText("Discard");
       }
     }
-  });
+  }
 });
 
 function discardOrEndChapter(button: Button, player?: Player) {
@@ -97,8 +105,10 @@ function discard(button: Button, player?: Player) {
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
-  (world.getObjectById("map") as MapBoard)!.turns.startRound();
   button.setText("End Chapter");
+  setTimeout(() => {
+    (world.getObjectById("map") as MapBoard)!.turns.startRound();
+  }, 100);
 }
 
 function endChapter() {
