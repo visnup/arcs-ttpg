@@ -16,7 +16,6 @@ import type { InitiativeMarker } from "./initiative-marker";
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 
-// Global map id
 refObject.setId("map");
 
 export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
@@ -35,6 +34,14 @@ const zone =
   zone.setRotation(refObject.getRotation());
   zone.setScale(size);
   zone.setStacking(ZonePermission.Nobody);
+}
+
+function getInitiative() {
+  return world.getObjectById("initiative") as InitiativeMarker;
+}
+
+function getDiscardHolder() {
+  return world.getObjectById("discard-holder") as DiscardHolder;
 }
 
 // Turn indicators
@@ -115,9 +122,7 @@ class Turns {
               fontPackage={refPackageId}
               onClick={() => {
                 // Pass initiative
-                (world.getObjectById("initiative") as InitiativeMarker).take(
-                  this.slots[this.turn + 1],
-                );
+                getInitiative().take(this.slots[this.turn + 1]);
                 this.startRound();
               }}
             >
@@ -153,9 +158,8 @@ class Turns {
   endRound() {
     if (this.rounds > 18) return console.warn("Infinite nextTurn loop");
     this.rounds++;
-    (
-      world.getObjectById("discard-holder") as DiscardHolder
-    ).discardOrEndChapter();
+    getInitiative().stand();
+    getDiscardHolder().discardOrEndChapter();
   }
 
   showMessage() {

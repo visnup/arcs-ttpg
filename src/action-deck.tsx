@@ -130,7 +130,7 @@ refCard.onSnapped.add((card, player, snap) => {
 });
 
 // Seize or surpass option card is played
-for (const card of getPlayed()) onReleased(card);
+for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
 function onReleased(card: Card, player?: Player) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
