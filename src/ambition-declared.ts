@@ -1,7 +1,7 @@
-import { refObject } from "@tabletop-playground/api";
+import { refObject, world } from "@tabletop-playground/api";
 
-const position = refObject.getPosition();
-const rotation = refObject.getRotation();
+const { position, rotation } = world.getOrigin(refObject);
+
 function discard(obj: typeof refObject) {
   obj.setPosition(position, 1.5);
   obj.setRotation(rotation, 1.5);
