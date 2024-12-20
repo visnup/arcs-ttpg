@@ -143,8 +143,16 @@ class Turns {
   nextTurn() {
     // Clean up previous turn
     if (this.turn >= 0) {
-      for (const obj of zone.getOverlappingObjects())
+      for (const obj of zone.getOverlappingObjects()) {
         if (obj && "next" in obj && typeof obj.next === "function") obj.next();
+        if (
+          obj &&
+          obj.getTemplateName() === "resource" &&
+          "discard" in obj &&
+          typeof obj.discard === "function"
+        )
+          obj.discard();
+      }
       this.widgets[this.turn].removeChildAt(1);
     }
 
