@@ -79,6 +79,7 @@ class Turns {
     });
     this.snaps[0].getParentObject()?.onSnappedTo.add((obj, player, p) => {
       if (p === this.snaps[0]) this.cardLed();
+      if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
     });
 
     const saved = JSON.parse(refObject.getSavedData("turns") || "{}");
@@ -131,6 +132,7 @@ class Turns {
           )
         : this.nextButton,
     );
+    this.nextButton.setEnabled(!!this.snaps[turn].getSnappedObject());
 
     this.turn = turn;
   }
@@ -161,6 +163,7 @@ class Turns {
     if (slot === undefined) return this.endRound();
     // Next button
     this.widgets[this.turn].addChild(this.nextButton);
+    this.nextButton.setEnabled(false);
   }
 
   endRound() {
