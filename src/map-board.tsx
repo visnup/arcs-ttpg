@@ -159,7 +159,9 @@ class Turns {
     // Clean up previous turn
     if (this.turn >= 0) {
       for (const obj of zone.getOverlappingObjects()) {
+        // Seize
         if ("next" in obj && typeof obj.next === "function") obj.next();
+        // Discard resources
         if (
           obj.getTemplateName() === "resource" &&
           "discard" in obj &&
@@ -179,14 +181,14 @@ class Turns {
   }
 
   endRound() {
-    if (this.rounds > 18) return console.warn("Infinite nextTurn loop");
+    if (this.rounds > 18)
+      return console.warn("Infinite endRound loop detected");
     this.rounds++;
     getInitiative().stand();
     getDiscardHolder().discardOrEndChapter();
   }
 
   showMessage() {
-    // Show message
     const slot = this.slots[this.turn];
     if (slot === undefined) return;
     const name = world.getPlayerBySlot(slot)?.getName() ?? colors[slot];
