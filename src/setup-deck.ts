@@ -212,7 +212,7 @@ function createLabel(text: string, position: Vector, slot: number) {
   const dot = new DrawingLine();
   dot.points = [position.add(new Vector(0, 0, 0.2))];
   dot.thickness = 3;
-  dot.color = world.lighten(world.getSlotColor(slot), -0.2);
+  dot.color = world.getSlotColor(slot).lighten(-0.2);
   world.addDrawingLine(dot);
 
   const label = world.createLabel(position.add(new Vector(-0.3, 0, 0.3)));

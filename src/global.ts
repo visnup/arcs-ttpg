@@ -32,8 +32,7 @@ if (refPackageId === "8878F08F55344ED182D61F6E91585D56")
     }
   });
 
-// Extend GameWorld, Color with utility functions
-
+// Extend GameWorld
 declare module "@tabletop-playground/api" {
   interface GameWorld {
     getObjectsByTemplateName<T = GameObject>(name: string): T[];
@@ -48,8 +47,6 @@ declare module "@tabletop-playground/api" {
     };
     isOnMap(obj: GameObject): boolean;
     isOnTable(obj: GameObject, templateNames?: string[]): boolean;
-    saturate(color: Color, amount: number): Color;
-    lighten(color: Color, amount: number): Color;
   }
 }
 GameWorld.prototype.getObjectsByTemplateName = function <T>(name: string) {
@@ -120,12 +117,21 @@ GameWorld.prototype.isOnTable = function (
   );
 };
 
-GameWorld.prototype.saturate = function (color: Color, amount: number) {
-  const [h, s, l] = rgbToHsl(color);
+// Extend Color
+declare module "@tabletop-playground/api" {
+  interface Color {
+    saturate(amount: number): Color;
+    lighten(amount: number): Color;
+  }
+}
+// Need to use a returned Color instance since the imported one seems derived
+const _Color = world.getSlotColor(0).constructor;
+_Color.prototype.saturate = function (amount: number) {
+  const [h, s, l] = rgbToHsl(this);
   return hslToRgb([h!, s! + s! * amount, l!]);
 };
-GameWorld.prototype.lighten = function (color: Color, amount: number) {
-  const [h, s, l] = rgbToHsl(color);
+_Color.prototype.lighten = function (amount: number) {
+  const [h, s, l] = rgbToHsl(this);
   return hslToRgb([h!, s!, l! + l! * amount]);
 };
 
