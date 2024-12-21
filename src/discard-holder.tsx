@@ -124,7 +124,7 @@ function discard(button: Button, player?: Player) {
   }
   button.setText(" End Chapter ");
   setTimeout(() => {
-    (world.getObjectById("map") as MapBoard)!.turns.startRound();
+    (world.getObjectById("map") as MapBoard)?.turns.startRound();
   }, 100);
 }
 

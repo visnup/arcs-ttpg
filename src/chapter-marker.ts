@@ -16,10 +16,9 @@ refObject.addCustomAction("Advance Chapter", "Advance to the next chapter");
 
 function advance(obj: GameObject) {
   const map = world.getObjectById("map");
-  if (!map) return;
   const y = obj.getPosition().y + 0.5;
   const next = map
-    .getAllSnapPoints()
+    ?.getAllSnapPoints()
     .find(
       (p) => p.getTags().includes("chapter") && p.getGlobalPosition().y > y,
     );

@@ -68,7 +68,8 @@ GameWorld.prototype.getSlots = function <T extends GameObject>(
   const boards = world
     .getObjectsByTemplateName<T>(name)
     .filter((d) => d.getOwningPlayerSlot() !== -1);
-  const initiative = world.getObjectById("initiative")!.getPosition();
+  const initiative = world.getObjectById("initiative")?.getPosition();
+  if (!initiative) return [];
   const first = boards
     .sort(
       (a, b) =>
