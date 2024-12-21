@@ -56,7 +56,7 @@ function showDeal(card: Card) {
     return;
   const ui = new UIElement();
   ui.position = new Vector(0, 0, card.getExtent(false, false).z + 0.1);
-  ui.scale = 0.2;
+  ui.scale = 0.15;
   ui.widget = render(
     <verticalbox gap={10}>
       {[2, 3, 4].map((n) => (

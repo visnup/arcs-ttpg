@@ -69,12 +69,12 @@ process.nextTick(() => {
         const button = new UIElement();
         button.position = new Vector(
           (discardFaceDown() ? 1 : -1) *
-            (refHolder.getExtent(false, false).x + 1.1),
+            (refHolder.getExtent(false, false).x + 1),
           0,
           0,
         );
         if (discardFaceDown()) button.rotation = new Rotator(0, 180, 0);
-        button.scale = 0.2;
+        button.scale = 0.15;
         button.widget = render(
           <button
             size={48}
@@ -82,13 +82,13 @@ process.nextTick(() => {
             fontPackage={refPackageId}
             onClick={discardOrEndChapter}
           >
-            Discard
+            {" Discard "}
           </button>,
         );
         refHolder.addUI(button);
       } else {
         // Update button text
-        (refHolder.getUIs()[0].widget as Button).setText("Discard");
+        (refHolder.getUIs()[0].widget as Button).setText(" Discard ");
       }
     }
   }
@@ -122,7 +122,7 @@ function discard(button: Button, player?: Player) {
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
-  button.setText("End Chapter");
+  button.setText(" End Chapter ");
   setTimeout(() => {
     (world.getObjectById("map") as MapBoard)!.turns.startRound();
   }, 100);

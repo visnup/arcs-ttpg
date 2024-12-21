@@ -52,6 +52,19 @@ class Turns {
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
   rounds: number = 0;
+  passButton = render(
+    <button
+      size={48}
+      font="NeueKabelW01-Book.ttf"
+      fontPackage={refPackageId}
+      onClick={() => {
+        getInitiative().take(this.slots[this.turn + 1]);
+        this.startRound();
+      }}
+    >
+      {" Pass Initiative "}
+    </button>,
+  );
   nextButton = render(
     <button
       size={48}
@@ -59,7 +72,7 @@ class Turns {
       fontPackage={refPackageId}
       onClick={() => this.nextTurn()}
     >
-      {" Next "}
+      {" End Turn "}
     </button>,
   );
 
@@ -70,9 +83,9 @@ class Turns {
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
     this.widgets = this.snaps.map((p) => {
       const ui = new UIElement();
-      ui.position = p.getLocalPosition().add(new Vector(0, -6, 0));
+      ui.position = p.getLocalPosition().add(new Vector(0, -6.1, 0));
       ui.rotation = new Rotator(0, p.getSnapRotation(), 0);
-      ui.scale = 0.2;
+      ui.scale = 0.15;
       ui.widget = render(<horizontalbox gap={10} />);
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
@@ -109,7 +122,7 @@ class Turns {
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
         render(
-          <text color={world.saturate(world.getSlotColor(slot), 0.5)} size={64}>
+          <text color={world.saturate(world.getSlotColor(slot), 0.5)} size={48}>
             •
           </text>,
         ),
@@ -118,20 +131,7 @@ class Turns {
     // Pass/Next button
     this.widgets[turn].addChild(
       turn === 0 && !this.snaps[0].getSnappedObject()
-        ? render(
-            <button
-              size={48}
-              font="NeueKabelW01-Book.ttf"
-              fontPackage={refPackageId}
-              onClick={() => {
-                // Pass initiative
-                getInitiative().take(this.slots[this.turn + 1]);
-                this.startRound();
-              }}
-            >
-              {" Pass "}
-            </button>,
-          )
+        ? this.passButton
         : this.nextButton,
     );
     this.nextButton.setEnabled(!!this.snaps[turn].getSnappedObject());

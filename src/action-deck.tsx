@@ -55,8 +55,8 @@ refCard.deal = function (...args) {
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
-  ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
-  ui.scale = 0.2;
+  ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
+  ui.scale = 0.15;
   ui.widget = render(
     <button
       size={48}
@@ -151,9 +151,9 @@ function onReleased(card: Card, player?: Player) {
       }
     };
     const ui = new UIElement();
-    ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
+    ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
     if (isFaceUp) ui.rotation = new Rotator(180, 180, 0);
-    ui.scale = 0.2;
+    ui.scale = 0.15;
     ui.widget = render(
       <button
         size={48}
@@ -177,9 +177,9 @@ function onReleased(card: Card, player?: Player) {
       }
     };
     const ui = new UIElement();
-    ui.position = new Vector(-card.getExtent(false, false).x - 1.1, 0, 0);
+    ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
     ui.rotation = new Rotator(180, 180, 0);
-    ui.scale = 0.2;
+    ui.scale = 0.15;
     ui.widget = render(
       <button
         size={48}
