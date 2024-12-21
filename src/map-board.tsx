@@ -90,7 +90,7 @@ class Turns {
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
     });
-    this.snaps[0].getParentObject()?.onSnappedTo.add((obj, player, p) => {
+    refObject.onSnappedTo.add((obj, player, p) => {
       if (p === this.snaps[0]) this.cardLed();
       const behind = this.snaps.findIndex((d) => d === p) - this.turn;
       for (let i = 0; i < behind; i++) this.nextTurn();
@@ -111,6 +111,7 @@ class Turns {
   }
 
   startRound(slots?: number[], turn = 0) {
+    for (const w of this.widgets) w.removeAllChildren();
     // Show player turns
     this.slots =
       slots ??
@@ -118,7 +119,13 @@ class Turns {
         "cards",
         (holder: CardHolder, i) => i === 0 || holder.getNumCards() > 0,
       );
-    for (const w of this.widgets) w.removeAllChildren();
+    if (
+      this.slots.length === 1 &&
+      world
+        .getObjectsByTemplateName<CardHolder>("cards")
+        .every((d) => d.getNumCards() === 0)
+    )
+      return;
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
         render(
@@ -148,9 +155,8 @@ class Turns {
     // Clean up previous turn
     if (this.turn >= 0) {
       for (const obj of zone.getOverlappingObjects()) {
-        if (obj && "next" in obj && typeof obj.next === "function") obj.next();
+        if ("next" in obj && typeof obj.next === "function") obj.next();
         if (
-          obj &&
           obj.getTemplateName() === "resource" &&
           "discard" in obj &&
           typeof obj.discard === "function"
