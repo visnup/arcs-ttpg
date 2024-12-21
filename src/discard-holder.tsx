@@ -41,6 +41,19 @@ function discardFaceDown() {
   return refHolder.getRotation().yaw > 0;
 }
 
+function coveredByCourt(card: Card) {
+  return String(
+    world
+      .boxTrace(
+        card.getExtentCenter(true, false),
+        card.getExtentCenter(true, false).add(new Vector(0, 0, 10)),
+        card.getExtent(true, false).multiply(0.75),
+      )
+      .filter(({ object }) => object !== card)
+      .map(({ object }) => object.getTemplateName()),
+  ).match(/(bc|cc|f\d+)$/);
+}
+
 // Ensure zone has been created
 process.nextTick(() => {
   const zone = getActionZone();
@@ -98,7 +111,11 @@ function discard(button: Button, player?: Player) {
   const zone = getActionZone();
   if (!zone) return;
   for (const obj of zone.getOverlappingObjects()) {
-    if (obj instanceof Card && obj.getCardDetails().tags.includes("action")) {
+    if (
+      obj instanceof Card &&
+      obj.getCardDetails().tags.includes("action") &&
+      !coveredByCourt(obj)
+    ) {
       refHolder.insert(obj, 0);
       if (obj.isFaceUp() && discardFaceDown()) refHolder.flipCard(obj);
       sortCard(refHolder, obj, player, 0);
