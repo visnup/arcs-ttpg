@@ -130,7 +130,7 @@ class Turns {
       this.widgets[i].addChild(
         render(
           <text color={world.saturate(world.getSlotColor(slot), 0.5)} size={48}>
-            •
+            ■
           </text>,
         ),
       );
