@@ -472,7 +472,10 @@ function takeFateSet(card: Card) {
       .getAllSnapPoints()
       .filter((d) => d.getTags().includes("power"))
       .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
-    objective.setPosition(snaps[+power - 1].getGlobalPosition().add(above));
+    const p = snaps[+power - 1].getGlobalPosition().add(new Vector(0, 0, 10));
+    objective.setPosition(
+      world.lineTrace(p, p.add(new Vector(0, 0, -15)))[0]!.position.add(above),
+    );
     objective.snap();
   }
 
