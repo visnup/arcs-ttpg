@@ -110,6 +110,10 @@ class Turns {
     return this._turn;
   }
 
+  maybeStartRound() {
+    if (this.snaps.every((p) => !p.getSnappedObject())) this.startRound();
+  }
+
   startRound(slots?: number[], turn = 0) {
     for (const w of this.widgets) w.removeAllChildren();
     // Show player turns

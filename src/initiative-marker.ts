@@ -6,6 +6,11 @@ import {
   Vector,
   world,
 } from "@tabletop-playground/api";
+import type { MapBoard } from "./map-board";
+
+function maybeStartRound() {
+  (world.getObjectById("map") as MapBoard).turns.maybeStartRound();
+}
 
 const seize = (obj: GameObject, player: Player | number) =>
   moveToPlayer(obj, player, new Rotator(-90, 0, 0));
@@ -36,6 +41,8 @@ function moveToPlayer(
   obj.setRotation(rotation);
   obj.setPosition(pos);
   obj.snapToGround();
+
+  maybeStartRound();
 }
 
 function stand(obj: GameObject) {
@@ -57,6 +64,7 @@ refObject.onCustomAction.add((obj, player, action) => {
 });
 refObject.onPrimaryAction.add(take);
 refObject.onSecondaryAction.add(seize);
+refObject.onReleased.add(maybeStartRound);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
