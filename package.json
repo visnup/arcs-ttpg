@@ -10,7 +10,8 @@
     "purge": "ttpg-scripts purge",
     "libpack": "ttpg-scripts libpack",
     "watch": "ttpg-scripts watch",
-    "postpublish": "ttpg-scripts postpublish"
+    "postpublish": "ttpg-scripts postpublish",
+    "lint": "tsc --noEmit && eslint src"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +25,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.4",
     "eslint": "^9.10.0",
-    "prettier": "3.3.3",
+    "prettier": "^3.4.2",
     "tsx": "^4.19.0",
     "ttpg-scripts": "^1.5.0",
     "typescript": "^5.6.2",
