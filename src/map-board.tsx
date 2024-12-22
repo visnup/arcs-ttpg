@@ -48,7 +48,7 @@ function getDiscardHolder() {
 const colors = ["Yellow", "Blue", "Red", "White"];
 class Turns {
   slots: number[] = [];
-  _turn: number = -1;
+  #turn: number = -1;
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
   rounds: number = 0;
@@ -102,12 +102,12 @@ class Turns {
   }
 
   set turn(value: number) {
-    this._turn = value;
+    this.#turn = value;
     this.showMessage();
     this.save();
   }
   get turn() {
-    return this._turn;
+    return this.#turn;
   }
 
   maybeStartRound() {
