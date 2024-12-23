@@ -57,7 +57,7 @@ class Turns {
   #turn: number = -1;
   slots: number[] = [];
   turnStart = 0;
-  turnTime = 120e3;
+  turnTime = 90_000;
 
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
@@ -109,7 +109,7 @@ class Turns {
     refObject.onSnappedTo.add(this.cardPlayed);
     globalEvents.onChatMessage.add(this.configure);
     world.broadcastChatMessage(
-      `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
+      `Turn timer set to 1m 30s. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
     );
     setInterval(this.tickBars, 2000);
 
@@ -125,7 +125,7 @@ class Turns {
   configure = (sender: Player, message: string) => {
     const match = message.match(/^\/turn\s+(\d+)$/);
     if (match) {
-      this.turnTime = +match[1] * 1e3;
+      this.turnTime = +match[1] * 1_000;
       for (const bar of this.bars) bar.current?.setVisible(this.turnTime > 0);
       this.tickBars();
     }
