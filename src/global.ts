@@ -122,9 +122,12 @@ GameWorld.prototype.isOnTable = function (
 // Extend globalEvents
 declare module "@tabletop-playground/api" {
   interface GlobalScriptingEvents {
+    onActionDeckDealt: TriggerableMulticastDelegate<() => void>;
     onInitiativeMoved: TriggerableMulticastDelegate<() => void>;
   }
 }
+GlobalScriptingEvents.prototype.onActionDeckDealt =
+  new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onInitiativeMoved =
   new TriggerableMulticastDelegate<() => void>();
 

@@ -110,6 +110,7 @@ class Turns {
       `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
     );
     globalEvents.onChatMessage.add(this.onChatMessage);
+    globalEvents.onActionDeckDealt.add(() => this.startRound());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
     setInterval(this.tickBars, 2000);

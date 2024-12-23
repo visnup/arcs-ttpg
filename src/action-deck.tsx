@@ -2,6 +2,7 @@ import type { Card, Player } from "@tabletop-playground/api";
 import {
   refCard as _refCard,
   refPackageId as _refPackageId,
+  globalEvents,
   Rotator,
   UIElement,
   Vector,
@@ -50,7 +51,7 @@ const deal = refCard.deal;
 refCard.deal = function (...args) {
   deal.call(this, ...args);
   this.removeUI(0);
-  (world.getObjectById("map") as MapBoard)!.turns.startRound();
+  globalEvents.onActionDeckDealt.trigger();
 };
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
