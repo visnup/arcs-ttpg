@@ -117,6 +117,7 @@ class Turns {
     const saved = this.load();
     if (saved) {
       this.turnStart = saved.turnStart;
+      this.turnTime = saved.turnTime;
       this.startRound(saved.turn, saved.slots);
     }
   }
@@ -126,14 +127,17 @@ class Turns {
     const match = message.match(/^\/turn\s+(\d+)$/);
     if (match) {
       this.turnTime = +match[1] * 1_000;
-      for (const bar of this.bars) bar.current?.setVisible(this.turnTime > 0);
       this.tickBars();
+      this.save();
     }
   };
 
   tickBars = () => {
     const p = Math.min((Date.now() - this.turnStart) / this.turnTime, 1);
-    for (const bar of this.bars) bar.current?.setProgress(p);
+    for (const bar of this.bars) {
+      bar.current?.setVisible(this.turnTime > 0);
+      bar.current?.setProgress(p);
+    }
   };
 
   cardPlayed = (obj: GameObject, player: Player, p: SnapPoint) => {
@@ -249,6 +253,7 @@ class Turns {
         turn: this.turn,
         slots: this.slots,
         turnStart: this.turnStart,
+        turnTime: this.turnTime,
       }),
       "turns",
     );
@@ -258,6 +263,7 @@ class Turns {
     slots: number[];
     times: number[];
     turnStart: number;
+    turnTime: number;
   } | null {
     return JSON.parse(refObject.getSavedData("turns") || "null");
   }
