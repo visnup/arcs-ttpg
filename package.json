@@ -11,7 +11,8 @@
     "libpack": "ttpg-scripts libpack",
     "watch": "ttpg-scripts watch",
     "postpublish": "ttpg-scripts postpublish",
-    "lint": "tsc --noEmit && eslint src"
+    "lint": "tsc --noEmit && eslint src",
+    "test": "jest src"
   },
   "keywords": [],
   "author": "",
@@ -21,12 +22,17 @@
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@jest/globals": "^29.7.0",
     "@tabletop-playground/api": "^0.41.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.4",
     "eslint": "^9.10.0",
+    "jest": "^29.7.0",
     "prettier": "^3.4.2",
+    "three": "^0.171.0",
+    "ts-jest": "^29.2.5",
     "tsx": "^4.19.0",
+    "ttpg-mock": "^1.0.55",
     "ttpg-scripts": "^1.5.0",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.5.0"
