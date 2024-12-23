@@ -69,9 +69,6 @@ const ext = Object.assign(refObject, {
   take: function (player: Player | number) {
     take(this as typeof ext, player);
   },
-  stand: function () {
-    stand(this as typeof ext);
-  },
   isSeized: function () {
     return Math.abs((this as typeof ext).getRotation().pitch) > 10;
   },
@@ -79,4 +76,4 @@ const ext = Object.assign(refObject, {
 refObject.setId("initiative");
 export type InitiativeMarker = typeof ext;
 
-globalEvents.onRoundEnded.add(() => ext.stand());
+globalEvents.onRoundEnded.add(() => stand(ext));

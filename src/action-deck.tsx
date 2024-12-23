@@ -124,11 +124,6 @@ function isSurpassing(card: Card) {
   );
 }
 
-// Stand up initiative when lead card is played
-refCard.onSnapped.add((card, player, snap) => {
-  if (snap.getTags().includes("card-lead")) getInitiative()?.stand();
-});
-
 // Seize or surpass option card is played
 for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
