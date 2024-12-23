@@ -344,6 +344,10 @@ const ext = Object.assign(refObject, {
 });
 export type MapBoard = typeof ext;
 
+globalEvents.onAmbitionDeclared.add((ambition) =>
+  ext.ambitions[ambition].declare(),
+);
+
 function getAmbitionMarker() {
   return world
     .getObjectsByTemplateName("ambition")

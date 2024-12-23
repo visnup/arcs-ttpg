@@ -8,6 +8,7 @@ import {
   Vector,
   world,
 } from "@tabletop-playground/api";
+import type { Ambition } from "./map-board";
 import { TriggerableMulticastDelegate } from "./triggerable-multicast-delegate";
 
 // Reset all zones
@@ -124,12 +125,17 @@ declare module "@tabletop-playground/api" {
   interface GlobalScriptingEvents {
     onActionDeckDealt: TriggerableMulticastDelegate<() => void>;
     onInitiativeMoved: TriggerableMulticastDelegate<() => void>;
+    onAmbitionDeclared: TriggerableMulticastDelegate<
+      (ambition: Ambition) => void
+    >;
   }
 }
 GlobalScriptingEvents.prototype.onActionDeckDealt =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onInitiativeMoved =
   new TriggerableMulticastDelegate<() => void>();
+GlobalScriptingEvents.prototype.onAmbitionDeclared =
+  new TriggerableMulticastDelegate<(ambition: Ambition) => void>();
 
 // Extend Color
 declare module "@tabletop-playground/api" {

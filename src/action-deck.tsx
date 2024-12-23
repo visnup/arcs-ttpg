@@ -10,7 +10,7 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
-import type { Ambition, MapBoard } from "./map-board";
+import type { Ambition } from "./map-board";
 
 const refCard = _refCard;
 const refPackageId = _refPackageId;
@@ -210,6 +210,5 @@ refCard.onSnappedTo.add((obj) => {
   const ambition = [, "tycoon", "tyrant", "warlord", "keeper", "empath"][
     refCard.getCardDetails(0)!.index % 7
   ] as Ambition | undefined;
-  if (ambition)
-    (world.getObjectById("map") as MapBoard)!.ambitions[ambition]?.declare();
+  if (ambition) globalEvents.onAmbitionDeclared.trigger(ambition);
 });
