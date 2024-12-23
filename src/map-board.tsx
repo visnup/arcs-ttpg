@@ -1,7 +1,14 @@
-import type { CardHolder, SnapPoint } from "@tabletop-playground/api";
+import type {
+  CardHolder,
+  GameObject,
+  Player,
+  ProgressBar,
+  SnapPoint,
+} from "@tabletop-playground/api";
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
+  globalEvents,
   HorizontalBox,
   Rotator,
   UIElement,
@@ -9,7 +16,7 @@ import {
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
-import { jsxInTTPG, render } from "jsx-in-ttpg";
+import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import type { DiscardHolder } from "./discard-holder";
 import type { InitiativeMarker } from "./initiative-marker";
 
@@ -47,36 +54,43 @@ function getDiscardHolder() {
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];
 class Turns {
-  slots: number[] = [];
   #turn: number = -1;
+  slots: number[] = [];
+  turnStart = 0;
+  turnTime = 120e3;
+
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
   rounds: number = 0;
+  bars = [useRef<ProgressBar>(), useRef<ProgressBar>()];
   passButton = render(
-    <button
-      size={48}
-      font="NeueKabelW01-Book.ttf"
-      fontPackage={refPackageId}
+    <contentbutton
       onClick={() => {
         getInitiative().take(this.slots[this.turn + 1]);
         this.startRound();
       }}
     >
-      {" Pass Initiative "}
-    </button>,
+      <verticalbox>
+        <text size={48} font="NeueKabelW01-Book.ttf" fontPackage={refPackageId}>
+          {" Pass Initiative "}
+        </text>
+        <progressbar value={0} ref={this.bars[0]} />
+      </verticalbox>
+    </contentbutton>,
   );
   nextButton = render(
-    <button
-      size={48}
-      font="NeueKabelW01-Book.ttf"
-      fontPackage={refPackageId}
-      onClick={() => this.nextTurn()}
-    >
-      {" End Turn "}
-    </button>,
+    <contentbutton onClick={() => this.nextTurn()}>
+      <verticalbox>
+        <text size={48} font="NeueKabelW01-Book.ttf" fontPackage={refPackageId}>
+          {" End Turn "}
+        </text>
+        <progressbar value={0} ref={this.bars[1]} />
+      </verticalbox>
+    </contentbutton>,
   );
 
   constructor() {
+    // Create widgets
     this.snaps = refObject
       .getAllSnapPoints()
       .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
@@ -90,19 +104,56 @@ class Turns {
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
     });
-    refObject.onSnappedTo.add((obj, player, p) => {
-      if (p === this.snaps[0]) this.cardLed();
-      const behind = this.snaps.findIndex((d) => d === p) - this.turn;
-      for (let i = 0; i < behind; i++) this.nextTurn();
-      if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
-    });
 
-    const saved = JSON.parse(refObject.getSavedData("turns") || "{}");
-    if (saved.slots) this.startRound(saved.slots, saved.turn);
+    // Register listeners
+    refObject.onSnappedTo.add(this.cardPlayed);
+    globalEvents.onChatMessage.add(this.configure);
+    world.broadcastChatMessage(
+      `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
+    );
+    setInterval(this.tickBars, 2000);
+
+    // Load from save?
+    const saved = this.load();
+    if (saved) {
+      this.turnStart = saved.turnStart;
+      this.startRound(saved.turn, saved.slots);
+    }
   }
 
+  // Listeners
+  configure = (sender: Player, message: string) => {
+    const match = message.match(/^\/turn\s+(\d+)$/);
+    if (match) {
+      this.turnTime = +match[1] * 1e3;
+      for (const bar of this.bars) bar.current?.setVisible(this.turnTime > 0);
+      this.tickBars();
+    }
+  };
+
+  tickBars = () => {
+    const p = Math.min((Date.now() - this.turnStart) / this.turnTime, 1);
+    for (const bar of this.bars) bar.current?.setProgress(p);
+  };
+
+  cardPlayed = (obj: GameObject, player: Player, p: SnapPoint) => {
+    // Card led: switch buttons
+    if (p === this.snaps[0]) {
+      this.widgets[0].removeChildAt(1);
+      this.widgets[0].addChild(this.nextButton);
+    }
+    // Catch up to current turn
+    const behind = this.snaps.findIndex((d) => d === p) - this.turn;
+    for (let i = 0; i < behind; i++) this.nextTurn();
+    // Enable next button
+    if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
+  };
+
+  // On turn change
   set turn(value: number) {
     this.#turn = value;
+    this.turnStart = Date.now();
+    this.tickBars();
     this.showMessage();
     this.save();
   }
@@ -110,11 +161,12 @@ class Turns {
     return this.#turn;
   }
 
+  // TODO: should listen on initiative move
   maybeStartRound() {
     if (this.snaps.every((p) => !p.getSnappedObject())) this.startRound();
   }
 
-  startRound(slots?: number[], turn = 0) {
+  startRound(turn = 0, slots?: number[]) {
     for (const w of this.widgets) w.removeAllChildren();
     // Show player turns
     this.slots =
@@ -150,11 +202,6 @@ class Turns {
     this.turn = turn;
   }
 
-  cardLed() {
-    this.widgets[0].removeChildAt(1);
-    this.widgets[0].addChild(this.nextButton);
-  }
-
   nextTurn() {
     // Clean up previous turn
     if (this.turn >= 0) {
@@ -172,6 +219,7 @@ class Turns {
       this.widgets[this.turn].removeChildAt(1);
     }
 
+    // Advance turn
     const slot = this.slots[++this.turn];
     // If all players have played, end round
     if (slot === undefined) return this.endRound();
@@ -197,9 +245,21 @@ class Turns {
 
   save() {
     refObject.setSavedData(
-      JSON.stringify({ slots: this.slots, turn: this.turn }),
+      JSON.stringify({
+        turn: this.turn,
+        slots: this.slots,
+        turnStart: this.turnStart,
+      }),
       "turns",
     );
+  }
+  load(): {
+    turn: number;
+    slots: number[];
+    times: number[];
+    turnStart: number;
+  } | null {
+    return JSON.parse(refObject.getSavedData("turns") || "null");
   }
 }
 
