@@ -1,10 +1,11 @@
 import {
   refObject as _refObject,
   Card,
+  globalEvents,
   Vector,
   world,
 } from "@tabletop-playground/api";
-import type { Ambition, MapBoard } from "./map-board";
+import type { Ambition } from "./map-board";
 
 const refObject = _refObject;
 
@@ -133,9 +134,9 @@ function updateAmbitions() {
   }
 
   // Update the ambitions on the map
-  const map = world.getObjectById("map")! as MapBoard;
   for (const [ambition, count] of Object.entries(ambitions))
-    map.ambitions[ambition as Ambition].setScore(
+    globalEvents.onAmbitionScored.trigger(
+      ambition as Ambition,
       refObject.getOwningPlayerSlot(),
       count,
     );

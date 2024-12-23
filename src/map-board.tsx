@@ -341,6 +341,9 @@ export type MapBoard = typeof ext;
 globalEvents.onAmbitionDeclared.add((ambition) =>
   ext.ambitions[ambition].declare(),
 );
+globalEvents.onAmbitionScored.add((ambition, slot, count) =>
+  ext.ambitions[ambition].setScore(slot, count),
+);
 
 function getAmbitionMarker() {
   return world
