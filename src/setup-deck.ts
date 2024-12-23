@@ -219,7 +219,6 @@ function createLabel(text: string, position: Vector, slot: number) {
   label.setRotation(flat);
   label.setFont("FMBolyarPro-700.ttf", refPackageId);
   label.setScale(0.3);
-  // label.setColor(new Color(0, 0, 0));
   label.setText(text);
   return label;
 }
