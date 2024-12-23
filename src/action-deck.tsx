@@ -51,7 +51,7 @@ const deal = refCard.deal;
 refCard.deal = function (...args) {
   deal.call(this, ...args);
   this.removeUI(0);
-  globalEvents.onActionDeckDealt.trigger();
+  globalEvents.onActionsDealt.trigger();
 };
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;

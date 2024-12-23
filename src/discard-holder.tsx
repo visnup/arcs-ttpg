@@ -9,13 +9,13 @@ import {
   refPackageId as _refPackageId,
   Button,
   Card,
+  globalEvents,
   Rotator,
   UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
-import type { MapBoard } from "./map-board";
 
 const refHolder = _refHolder;
 const refPackageId = _refPackageId;
@@ -124,7 +124,7 @@ function discard(button: Button, player?: Player) {
   }
   button.setText(" End Chapter ");
   setTimeout(() => {
-    (world.getObjectById("map") as MapBoard)?.turns.startRound();
+    globalEvents.onActionsDiscarded.trigger();
   }, 100);
 }
 
@@ -183,12 +183,7 @@ function sortCard(
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ext = Object.assign(refHolder, {
-  discardOrEndChapter: (player?: Player) => {
-    const button = refHolder.getUIs()[0]?.widget;
-    if (button && button instanceof Button) discardOrEndChapter(button, player);
-  },
+globalEvents.onEndRound.add(() => {
+  const button = refHolder.getUIs()[0]?.widget;
+  if (button && button instanceof Button) discardOrEndChapter(button);
 });
-refHolder.setId("discard-holder");
-export type DiscardHolder = typeof ext;

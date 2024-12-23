@@ -123,19 +123,26 @@ GameWorld.prototype.isOnTable = function (
 // Extend globalEvents
 declare module "@tabletop-playground/api" {
   interface GlobalScriptingEvents {
-    onActionDeckDealt: TriggerableMulticastDelegate<() => void>;
+    onActionsDealt: TriggerableMulticastDelegate<() => void>;
+    onActionsDiscarded: TriggerableMulticastDelegate<() => void>;
     onInitiativeMoved: TriggerableMulticastDelegate<() => void>;
     onAmbitionDeclared: TriggerableMulticastDelegate<
       (ambition: Ambition) => void
     >;
+    onEndRound: TriggerableMulticastDelegate<() => void>;
   }
 }
-GlobalScriptingEvents.prototype.onActionDeckDealt =
+GlobalScriptingEvents.prototype.onActionsDealt =
+  new TriggerableMulticastDelegate<() => void>();
+GlobalScriptingEvents.prototype.onActionsDiscarded =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onInitiativeMoved =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onAmbitionDeclared =
   new TriggerableMulticastDelegate<(ambition: Ambition) => void>();
+GlobalScriptingEvents.prototype.onEndRound = new TriggerableMulticastDelegate<
+  () => void
+>();
 
 // Extend Color
 declare module "@tabletop-playground/api" {

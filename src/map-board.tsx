@@ -17,7 +17,6 @@ import {
   ZonePermission,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
-import type { DiscardHolder } from "./discard-holder";
 import type { InitiativeMarker } from "./initiative-marker";
 
 const refObject = _refObject;
@@ -45,10 +44,6 @@ const zone =
 
 function getInitiative() {
   return world.getObjectById("initiative") as InitiativeMarker;
-}
-
-function getDiscardHolder() {
-  return world.getObjectById("discard-holder") as DiscardHolder;
 }
 
 // Turn indicators
@@ -110,7 +105,8 @@ class Turns {
       `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
     );
     globalEvents.onChatMessage.add(this.onChatMessage);
-    globalEvents.onActionDeckDealt.add(() => this.startRound());
+    globalEvents.onActionsDealt.add(() => this.startRound());
+    globalEvents.onActionsDiscarded.add(() => this.startRound());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
     setInterval(this.tickBars, 2000);
@@ -237,8 +233,7 @@ class Turns {
     if (this.rounds > 18)
       return console.warn("Infinite endRound loop detected");
     this.rounds++;
-    getInitiative().stand();
-    getDiscardHolder().discardOrEndChapter();
+    globalEvents.onEndRound.trigger();
   }
 
   showMessage() {
@@ -332,7 +327,6 @@ class AmbitionSection {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
   ambitions: Object.fromEntries(
     ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [

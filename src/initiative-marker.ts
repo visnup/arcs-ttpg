@@ -62,7 +62,6 @@ refObject.onPrimaryAction.add(take);
 refObject.onSecondaryAction.add(seize);
 refObject.onReleased.add(globalEvents.onInitiativeMoved.trigger);
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
   seize: function (player: Player | number) {
     seize(this as typeof ext, player);
@@ -79,3 +78,5 @@ const ext = Object.assign(refObject, {
 });
 refObject.setId("initiative");
 export type InitiativeMarker = typeof ext;
+
+globalEvents.onEndRound.add(() => ext.stand());
