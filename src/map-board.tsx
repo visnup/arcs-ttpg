@@ -233,7 +233,7 @@ class Turns {
     if (this.rounds > 18)
       return console.warn("Infinite endRound loop detected");
     this.rounds++;
-    globalEvents.onEndRound.trigger();
+    globalEvents.onRoundEnded.trigger();
   }
 
   showMessage() {

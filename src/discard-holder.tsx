@@ -183,7 +183,7 @@ function sortCard(
   }
 }
 
-globalEvents.onEndRound.add(() => {
+globalEvents.onRoundEnded.add(() => {
   const button = refHolder.getUIs()[0]?.widget;
   if (button && button instanceof Button) discardOrEndChapter(button);
 });

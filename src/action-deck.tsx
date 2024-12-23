@@ -71,7 +71,6 @@ function showDeal(card: Card) {
         for (const holder of world.getObjectsByTemplateName("cards"))
           if ("sort" in holder && typeof holder.sort === "function")
             holder.sort();
-        getInitiative()?.stand();
       }}
     >
       {" Deal "}
