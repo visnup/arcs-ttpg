@@ -42,9 +42,84 @@ const zone =
   zone.setStacking(ZonePermission.Nobody);
 }
 
-function getInitiative() {
-  return world.getObjectById("initiative") as InitiativeMarker;
+// Ambition ranks
+const size = refObject.getSize();
+class AmbitionSection {
+  scores: Map<number, number>;
+  ui: UIElement;
+  widget: HorizontalBox;
+
+  constructor(offset: number) {
+    this.scores = new Map();
+    this.ui = new UIElement();
+    this.ui.position = new Vector(
+      size.x / 2 - (12.9 + offset * 5.3),
+      size.y / 2 - 5,
+      size.z + 0.35,
+    );
+    this.ui.scale = 0.15;
+    this.ui.widget = this.widget = new HorizontalBox();
+    refObject.addUI(this.ui);
+  }
+
+  setScore(slot: number, score: number) {
+    if (this.scores.get(slot) === score) return;
+    this.scores.set(slot, score);
+    this.widget.removeAllChildren();
+    for (const [slot, score] of [...this.scores.entries()].sort(
+      (a, b) => b[1] - a[1],
+    )) {
+      if (score)
+        this.widget.addChild(
+          render(
+            <text
+              color={world.getSlotColor(slot).saturate(0.5)}
+              size={48}
+              font="FMBolyarPro-700.ttf"
+              fontPackage={refPackageId}
+            >
+              {` ${score} `}
+            </text>,
+          ),
+        );
+    }
+  }
+
+  declare() {
+    const marker = world
+      .getObjectsByTemplateName("ambition")
+      .filter((d) => d.getSnappedToPoint())
+      .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
+    if (!marker) return;
+    const center = refObject
+      .getPosition()
+      .add(this.ui.position)
+      .add(new Vector(1.5, 0, 0));
+    const occupied = world
+      .getObjectsByTemplateName("ambition")
+      .filter((d) => Math.abs(d.getPosition().x - center.x) < 2.2)
+      .sort((a, b) => a.getPosition().y - b.getPosition().y)
+      .concat(marker);
+    const y = marker.getSize().x + 0.2;
+    const left = center.add(new Vector(0, ((1 - occupied.length) * y) / 2, 0));
+    for (const [i, m] of occupied.entries())
+      m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
+  }
 }
+
+const ambitions = Object.fromEntries(
+  ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
+    name,
+    new AmbitionSection(i),
+  ]),
+) as Record<Ambition, AmbitionSection>;
+
+globalEvents.onAmbitionDeclared.add((ambition) =>
+  ambitions[ambition].declare(),
+);
+globalEvents.onAmbitionScored.add((ambition, slot, count) =>
+  ambitions[ambition].setScore(slot, count),
+);
 
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];
@@ -61,7 +136,9 @@ class Turns {
   passButton = render(
     <contentbutton
       onClick={() => {
-        getInitiative().take(this.slots[this.turn + 1]);
+        (world.getObjectById("initiative") as InitiativeMarker).take(
+          this.slots[this.turn + 1],
+        );
         this.startRound();
       }}
     >
@@ -265,82 +342,3 @@ class Turns {
   }
 }
 new Turns();
-
-// Ambition ranks
-const size = refObject.getSize();
-class AmbitionSection {
-  scores: Map<number, number>;
-  ui: UIElement;
-  widget: HorizontalBox;
-
-  constructor(offset: number) {
-    this.scores = new Map();
-    this.ui = new UIElement();
-    this.ui.position = new Vector(
-      size.x / 2 - (12.9 + offset * 5.3),
-      size.y / 2 - 5,
-      size.z + 0.35,
-    );
-    this.ui.scale = 0.15;
-    this.ui.widget = this.widget = new HorizontalBox();
-    refObject.addUI(this.ui);
-  }
-
-  setScore(slot: number, score: number) {
-    if (this.scores.get(slot) === score) return;
-    this.scores.set(slot, score);
-    this.widget.removeAllChildren();
-    for (const [slot, score] of [...this.scores.entries()].sort(
-      (a, b) => b[1] - a[1],
-    )) {
-      if (score)
-        this.widget.addChild(
-          render(
-            <text
-              color={world.getSlotColor(slot).saturate(0.5)}
-              size={48}
-              font="FMBolyarPro-700.ttf"
-              fontPackage={refPackageId}
-            >
-              {` ${score} `}
-            </text>,
-          ),
-        );
-    }
-  }
-
-  declare() {
-    const marker = world
-      .getObjectsByTemplateName("ambition")
-      .filter((d) => d.getSnappedToPoint())
-      .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
-    if (!marker) return;
-    const center = refObject
-      .getPosition()
-      .add(this.ui.position)
-      .add(new Vector(1.5, 0, 0));
-    const occupied = world
-      .getObjectsByTemplateName("ambition")
-      .filter((d) => Math.abs(d.getPosition().x - center.x) < 2.2)
-      .sort((a, b) => a.getPosition().y - b.getPosition().y)
-      .concat(marker);
-    const y = marker.getSize().x + 0.2;
-    const left = center.add(new Vector(0, ((1 - occupied.length) * y) / 2, 0));
-    for (const [i, m] of occupied.entries())
-      m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
-  }
-}
-
-const ambitions = Object.fromEntries(
-  ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
-    name,
-    new AmbitionSection(i),
-  ]),
-) as Record<Ambition, AmbitionSection>;
-
-globalEvents.onAmbitionDeclared.add((ambition) =>
-  ambitions[ambition].declare(),
-);
-globalEvents.onAmbitionScored.add((ambition, slot, count) =>
-  ambitions[ambition].setScore(slot, count),
-);
