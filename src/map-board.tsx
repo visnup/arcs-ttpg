@@ -264,6 +264,7 @@ class Turns {
     return JSON.parse(refObject.getSavedData("turns") || "null");
   }
 }
+new Turns();
 
 // Ambition ranks
 const size = refObject.getSize();
@@ -327,22 +328,18 @@ class AmbitionSection {
   }
 }
 
-const ext = Object.assign(refObject, {
-  ambitions: Object.fromEntries(
-    ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
-      name,
-      new AmbitionSection(i),
-    ]),
-  ) as Record<Ambition, AmbitionSection>,
-  turns: new Turns(),
-});
-export type MapBoard = typeof ext;
+const ambitions = Object.fromEntries(
+  ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
+    name,
+    new AmbitionSection(i),
+  ]),
+) as Record<Ambition, AmbitionSection>;
 
 globalEvents.onAmbitionDeclared.add((ambition) =>
-  ext.ambitions[ambition].declare(),
+  ambitions[ambition].declare(),
 );
 globalEvents.onAmbitionScored.add((ambition, slot, count) =>
-  ext.ambitions[ambition].setScore(slot, count),
+  ambitions[ambition].setScore(slot, count),
 );
 
 function getAmbitionMarker() {
