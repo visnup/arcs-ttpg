@@ -106,11 +106,12 @@ class Turns {
     });
 
     // Register listeners
-    refObject.onSnappedTo.add(this.cardPlayed);
-    globalEvents.onChatMessage.add(this.configure);
     world.broadcastChatMessage(
       `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
     );
+    globalEvents.onChatMessage.add(this.onChatMessage);
+    globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
+    refObject.onSnappedTo.add(this.onSnappedTo);
     setInterval(this.tickBars, 2000);
 
     // Load from save?
@@ -123,7 +124,7 @@ class Turns {
   }
 
   // Listeners
-  configure = (sender: Player, message: string) => {
+  onChatMessage = (sender: Player, message: string) => {
     const match = message.match(/^\/turn\s+(\d+)$/);
     if (match) {
       this.turnTime = +match[1] * 1_000;
@@ -132,15 +133,11 @@ class Turns {
     }
   };
 
-  tickBars = () => {
-    const p = Math.min((Date.now() - this.turnStart) / this.turnTime, 1);
-    for (const bar of this.bars) {
-      bar.current?.setVisible(this.turnTime > 0);
-      bar.current?.setProgress(p);
-    }
+  onInitiativeMoved = () => {
+    if (this.snaps.every((p) => !p.getSnappedObject())) this.startRound();
   };
 
-  cardPlayed = (obj: GameObject, player: Player, p: SnapPoint) => {
+  onSnappedTo = (obj: GameObject, player: Player, p: SnapPoint) => {
     // Card led: switch buttons
     if (p === this.snaps[0]) {
       this.widgets[0].removeChildAt(1);
@@ -153,6 +150,14 @@ class Turns {
     if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
   };
 
+  tickBars = () => {
+    const p = Math.min((Date.now() - this.turnStart) / this.turnTime, 1);
+    for (const bar of this.bars) {
+      bar.current?.setVisible(this.turnTime > 0);
+      bar.current?.setProgress(p);
+    }
+  };
+
   // On turn change
   set turn(value: number) {
     this.#turn = value;
@@ -163,11 +168,6 @@ class Turns {
   }
   get turn() {
     return this.#turn;
-  }
-
-  // TODO: should listen on initiative move
-  maybeStartRound() {
-    if (this.snaps.every((p) => !p.getSnappedObject())) this.startRound();
   }
 
   startRound(turn = 0, slots?: number[]) {

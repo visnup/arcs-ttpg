@@ -3,10 +3,12 @@ import {
   Color,
   GameWorld,
   globalEvents,
+  GlobalScriptingEvents,
   refPackageId,
   Vector,
   world,
 } from "@tabletop-playground/api";
+import { TriggerableMulticastDelegate } from "./triggerable-multicast-delegate";
 
 // Reset all zones
 for (const zone of world.getAllZones())
@@ -116,6 +118,15 @@ GameWorld.prototype.isOnTable = function (
       templateNames.includes(object.getTemplateName()),
   );
 };
+
+// Extend globalEvents
+declare module "@tabletop-playground/api" {
+  interface GlobalScriptingEvents {
+    onInitiativeMoved: TriggerableMulticastDelegate<() => void>;
+  }
+}
+GlobalScriptingEvents.prototype.onInitiativeMoved =
+  new TriggerableMulticastDelegate<() => void>();
 
 // Extend Color
 declare module "@tabletop-playground/api" {

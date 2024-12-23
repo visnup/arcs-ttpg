@@ -1,16 +1,12 @@
 import type { GameObject } from "@tabletop-playground/api";
 import {
+  globalEvents,
   Player,
   refObject,
   Rotator,
   Vector,
   world,
 } from "@tabletop-playground/api";
-import type { MapBoard } from "./map-board";
-
-function maybeStartRound() {
-  (world.getObjectById("map") as MapBoard).turns.maybeStartRound();
-}
 
 const seize = (obj: GameObject, player: Player | number) =>
   moveToPlayer(obj, player, new Rotator(-90, 0, 0));
@@ -42,7 +38,7 @@ function moveToPlayer(
   obj.setPosition(pos);
   obj.snapToGround();
 
-  maybeStartRound();
+  globalEvents.onInitiativeMoved.trigger();
 }
 
 function stand(obj: GameObject) {
@@ -64,7 +60,7 @@ refObject.onCustomAction.add((obj, player, action) => {
 });
 refObject.onPrimaryAction.add(take);
 refObject.onSecondaryAction.add(seize);
-refObject.onReleased.add(maybeStartRound);
+refObject.onReleased.add(globalEvents.onInitiativeMoved.trigger);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ext = Object.assign(refObject, {
