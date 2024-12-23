@@ -310,7 +310,10 @@ class AmbitionSection {
   }
 
   declare() {
-    const marker = getAmbitionMarker();
+    const marker = world
+      .getObjectsByTemplateName("ambition")
+      .filter((d) => d.getSnappedToPoint())
+      .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
     if (!marker) return;
     const center = refObject
       .getPosition()
@@ -341,10 +344,3 @@ globalEvents.onAmbitionDeclared.add((ambition) =>
 globalEvents.onAmbitionScored.add((ambition, slot, count) =>
   ambitions[ambition].setScore(slot, count),
 );
-
-function getAmbitionMarker() {
-  return world
-    .getObjectsByTemplateName("ambition")
-    .filter((d) => d.getSnappedToPoint())
-    .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
-}
