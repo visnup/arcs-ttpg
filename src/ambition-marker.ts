@@ -1,7 +1,4 @@
-import { refCard, world } from "@tabletop-playground/api";
+import { refCard } from "@tabletop-playground/api";
+import { discardToOrigin } from "./lib/discard-to-origin";
 
-// Discard to origin
-const { position } = world.getOrigin(refCard);
-refCard.onPrimaryAction.add((card) => {
-  card.setPosition(position, 1.5);
-});
+discardToOrigin(refCard);

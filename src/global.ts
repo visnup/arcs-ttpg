@@ -44,10 +44,6 @@ declare module "@tabletop-playground/api" {
       name?: string,
       filter?: (d: T, index: number) => boolean,
     ): number[];
-    getOrigin(obj: GameObject): {
-      position: [number, number, number];
-      rotation: [number, number, number];
-    };
     isOnMap(obj: GameObject): boolean;
     isOnTable(obj: GameObject, templateNames?: string[]): boolean;
   }
@@ -85,19 +81,6 @@ GameWorld.prototype.getSlots = function <T extends GameObject>(
     .concat(ordered.slice(0, first))
     .filter(filter)
     .map((d) => d.getOwningPlayerSlot());
-};
-
-GameWorld.prototype.getOrigin = function (obj: GameObject) {
-  let { position, rotation } = JSON.parse(obj.getSavedData("origin") || "{}");
-  if (!position) {
-    position = [...obj.getPosition()];
-    rotation = [...obj.getRotation()];
-    obj.setSavedData(JSON.stringify({ position, rotation }), "origin");
-  }
-  return { position, rotation } as {
-    position: [number, number, number];
-    rotation: [number, number, number];
-  };
 };
 
 GameWorld.prototype.isOnMap = function (obj: GameObject) {
