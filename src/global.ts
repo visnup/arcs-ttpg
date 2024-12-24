@@ -25,7 +25,7 @@ for (const obj of world.getAllObjects())
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
 
-// Hotkey to mimic hot seat functionality
+// Hotkey to mimic hot seat functionality in dev
 if (refPackageId === "8878F08F55344ED182D61F6E91585D56")
   globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
     const dir = [, -1, 1][index];
@@ -212,3 +212,5 @@ function hslToRgb([h, s, l]: number[]) {
 function clamp(value: number) {
   return Math.min(Math.max(value, 0), 1);
 }
+
+export { world } from "@tabletop-playground/api";

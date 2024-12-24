@@ -21,4 +21,6 @@ export function discardToOrigin(obj: GameObject) {
   // @ts-expect-error any
   obj.discard = discard;
   obj.onPrimaryAction.add(discard);
+
+  return obj;
 }
