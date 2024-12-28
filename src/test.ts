@@ -1,8 +1,7 @@
-import { Vector, world } from "@tabletop-playground/api";
+import type { Card } from "@tabletop-playground/api";
+import { world } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
 
-// global
-// ======
 describe("global", () => {
   test("counts", () => {
     const counts: Record<string, Record<string, number>> = {};
@@ -132,20 +131,47 @@ describe("initiative", () => {
   });
 });
 
-describe("base setup", () => {
-  // draw 3p setup card
-  // initiative moved
-  // campaign deleted
-  // player 4 deleted
-  // notes deleted
-  //
-  // flip
-  // map annotated
-  //
-  // run
-  // ships, buildings placed
-  // resources drawn
-  // blocks placed
+describe("setup", () => {
+  test("base", () => {
+    const initiative = world.getObjectById("initiative")!;
+    const position = initiative.getPosition().add([10, -10, 0]);
+    initiative.setPosition(position);
+
+    // draw 4p setup card TODO 3p
+    const setupDeck = world
+      .getObjectsByTemplateName<Card>("setup")
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2];
+    const setup = setupDeck.takeCards()!;
+    setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
+    // @ts-expect-error trigger
+    setupDeck.onRemoved.trigger(setup);
+    // initiative moved
+    assertNotEqual(initiative.getPosition(), position, "initiative");
+    // action deck shuffled with the correct number of cards
+    const actionDecks = world.getObjectsByTemplateName<Card>("action");
+    assertEqual(actionDecks.length, 1, "one action deck");
+    const actionDeck = actionDecks[0];
+    assertEqual(actionDeck.getStackSize(), 7 * 4, "7s shuffled in");
+    assertEqual(actionDeck.getRotation().yaw, -90, "action deck turned over");
+    // court dealt
+    // campaign deleted
+    // notes deleted
+    assertEqual(1, 1);
+
+    // flip
+    setup.flipOrUpright();
+    // @ts-expect-error trigger
+    setup.onFlipUpright.trigger(setup, world.getPlayerBySlot(0)!);
+    // map annotated
+    assertEqual(1, 1);
+
+    // run
+    // @ts-expect-error trigger
+    setup.onPrimaryAction.trigger(setup);
+    // ships, buildings placed
+    // resources drawn
+    // blocks placed
+  });
 });
 
 function describe(description: string, fn: () => void) {
@@ -160,17 +186,28 @@ function describe(description: string, fn: () => void) {
 function test(description: string, fn: () => void) {
   try {
     fn();
-    console.log("  ", description, "ok");
+    console.log(" ✓", description);
   } catch (e) {
-    console.error("  ", description, "not ok", e);
+    console.error(" x", description, e);
     for (const p of world.getAllPlayers())
       p.showMessage(`${description}: ${e}`);
   }
 }
 
+function assert(condition: boolean, description: string) {
+  if (!condition) throw Error(description);
+}
 function assertEqual<T>(value: T, expected: T, description = "") {
-  if (stringify(value) !== stringify(expected))
-    throw Error(`${description}: ${value} !== ${expected}`);
+  assert(
+    stringify(value) === stringify(expected),
+    `${description}: ${value} !== ${expected}`,
+  );
+}
+function assertNotEqual<T>(value: T, expected: T, description = "") {
+  assert(
+    stringify(value) !== stringify(expected),
+    `${description}: ${value} !== ${expected}`,
+  );
 }
 
 function stringify(value: unknown) {
