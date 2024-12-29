@@ -8,8 +8,8 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { hslToRgb, rgbToHsl } from "./lib/color";
+import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
-import { TriggerableMulticastDelegate } from "./triggerable-multicast-delegate";
 
 // Reset all zones
 for (const zone of world.getAllZones())
