@@ -228,7 +228,7 @@
 		false ],
 	"lighting":
 	{
-		"intensity": 1.2,
+		"intensity": 2.1,
 		"specular": 0.5,
 		"altitude": 90,
 		"azimuth": 0,
