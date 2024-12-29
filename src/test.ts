@@ -1,6 +1,7 @@
 import type { Card } from "@tabletop-playground/api";
 import { world } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
+import { assertEqual, assertNotEqual } from "./lib/assert";
 
 describe("global", () => {
   test("counts", () => {
@@ -192,26 +193,4 @@ function test(description: string, fn: () => void) {
     for (const p of world.getAllPlayers())
       p.showMessage(`${description}: ${e}`);
   }
-}
-
-function assert(condition: boolean, description: string) {
-  if (!condition) throw Error(description);
-}
-function assertEqual<T>(value: T, expected: T, description = "") {
-  assert(
-    stringify(value) === stringify(expected),
-    `${description}: ${value} !== ${expected}`,
-  );
-}
-function assertNotEqual<T>(value: T, expected: T, description = "") {
-  assert(
-    stringify(value) !== stringify(expected),
-    `${description}: ${value} !== ${expected}`,
-  );
-}
-
-function stringify(value: unknown) {
-  return JSON.stringify(value, (name, value) =>
-    typeof value === "number" ? Math.round(value) : value,
-  );
 }
