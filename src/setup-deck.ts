@@ -39,7 +39,7 @@ const flat = new Rotator(-90, 0, 0);
 
 // Avoid running if imported from another object script
 if (refCard.getTemplateName() === "setup") {
-  // Replace for testability
+  // Add triggers for testability
   if (refPackageId === "8878F08F55344ED182D61F6E91585D56") {
     // @ts-expect-error assign
     refCard.onRemoved.trigger = initialSetup;
