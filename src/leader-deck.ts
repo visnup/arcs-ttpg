@@ -1,6 +1,6 @@
 import type { MultistateObject } from "@tabletop-playground/api";
 import { refCard, world } from "@tabletop-playground/api";
-import { removeCampaign } from "./setup-deck";
+import { removeCampaign } from "./lib/setup";
 
 if (refCard.getStackSize() > 1)
   refCard.onPrimaryAction.add(() => {

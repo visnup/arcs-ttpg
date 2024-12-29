@@ -31,7 +31,7 @@ import {
   removeNotes,
   removePlayers,
   systemResource,
-} from "./setup-deck";
+} from "./lib/setup";
 
 const refPackageId = _refPackageId;
 
