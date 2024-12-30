@@ -2,6 +2,7 @@ import type { Card } from "@tabletop-playground/api";
 import { world } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
 import { assertEqual, assertNotEqual } from "./lib/assert";
+import type { TestableCard } from "./setup-deck";
 
 describe("global", () => {
   test("counts", () => {
@@ -141,10 +142,9 @@ describe("setup", () => {
     // draw 4p setup card TODO 3p
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2];
-    const setup = setupDeck.takeCards()!;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as TestableCard;
+    const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
-    // @ts-expect-error trigger
     setupDeck.onRemoved.trigger(setup);
     // initiative moved
     assertNotEqual(initiative.getPosition(), position, "initiative");
@@ -154,24 +154,25 @@ describe("setup", () => {
     const actionDeck = actionDecks[0];
     assertEqual(actionDeck.getStackSize(), 7 * 4, "7s shuffled in");
     assertEqual(actionDeck.getRotation().yaw, -90, "action deck turned over");
-    // court dealt
-    // campaign deleted
-    // notes deleted
-    assertEqual(1, 1);
+    // TODO court dealt
+    // TODO campaign deleted
+    // TODO notes deleted
 
     // flip
     setup.flipOrUpright();
-    // @ts-expect-error trigger
-    setup.onFlipUpright.trigger(setup, world.getPlayerBySlot(0)!);
-    // map annotated
-    assertEqual(1, 1);
+    setup.onFlipUpright.trigger(setup);
+    // TODO map annotated
 
     // run
-    // @ts-expect-error trigger
     setup.onPrimaryAction.trigger(setup);
-    // ships, buildings placed
-    // resources drawn
-    // blocks placed
+    // TODO ships, buildings placed
+    // TODO resources drawn
+    // TODO blocks placed
+    // TODO ambition score indicators
+
+    // play cards
+    // TODO swap cards around for consistent testing
+    // TODO declare ambition
   });
 });
 

@@ -37,16 +37,19 @@ const refPackageId = _refPackageId;
 
 const flat = new Rotator(-90, 0, 0);
 
+export type TestableCard = Card & {
+  onRemoved: { trigger: typeof initialSetup };
+  onFlipUpright: { trigger: typeof previewSetup };
+  onPrimaryAction: { trigger: typeof followSetup };
+};
+
 // Avoid running if imported from another object script
 if (refCard.getTemplateName() === "setup") {
   // Add triggers for testability
   if (refPackageId === "8878F08F55344ED182D61F6E91585D56") {
-    // @ts-expect-error assign
-    refCard.onRemoved.trigger = initialSetup;
-    // @ts-expect-error assign
-    refCard.onFlipUpright.trigger = previewSetup;
-    // @ts-expect-error assign
-    refCard.onPrimaryAction.trigger = followSetup;
+    (refCard as TestableCard).onRemoved.trigger = initialSetup;
+    (refCard as TestableCard).onFlipUpright.trigger = previewSetup;
+    (refCard as TestableCard).onPrimaryAction.trigger = followSetup;
   }
 
   if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
