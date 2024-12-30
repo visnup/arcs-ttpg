@@ -1,8 +1,27 @@
 import type { Card } from "@tabletop-playground/api";
-import { world } from "@tabletop-playground/api";
+import { refObject, world } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "./initiative-marker";
 import { assertEqual, assertNotEqual } from "./lib/assert";
 import type { TestableCard } from "./setup-deck";
+
+const saved = world
+  .getAllObjects()
+  .filter((d) => d !== refObject)
+  .concat([refObject])
+  .map((obj) => [obj.toJSONString(), obj.getPosition()] as const);
+const keys = new Set(Object.keys(world));
+function reset() {
+  for (const zone of world.getAllZones())
+    if (zone.getId().startsWith("zone-")) zone.destroy();
+  for (const obj of world.getAllObjects()) obj.destroy();
+  // @ts-expect-error delete
+  for (const key of Object.keys(world)) if (!keys.has(key)) delete world[key];
+  for (const [json, p] of saved) world.createObjectFromJSON(json, p)!;
+}
+
+refObject.onPrimaryAction.add(reset);
+
+console.log("\nRunning tests...");
 
 describe("global", () => {
   test("counts", () => {
