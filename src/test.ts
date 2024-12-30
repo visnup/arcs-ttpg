@@ -4,9 +4,11 @@ import type { InitiativeMarker } from "./initiative-marker";
 import { assertEqual, assertNotEqual } from "./lib/assert";
 import type { TestableCard } from "./setup-deck";
 
+const suite: Parameters<typeof describe>[] = [];
+
 const saved = world
   .getAllObjects()
-  .filter((d) => d !== refObject)
+  .filter((obj) => obj !== refObject)
   .concat([refObject])
   .map((obj) => [obj.toJSONString(), obj.getPosition()] as const);
 const keys = new Set(Object.keys(world));
@@ -19,9 +21,7 @@ function reset() {
   for (const [json, p] of saved) world.createObjectFromJSON(json, p)!;
 }
 
-refObject.onPrimaryAction.add(reset);
-
-console.log("\nRunning tests...");
+refObject.onPrimaryAction.add(runSuite);
 
 describe("global", () => {
   test("counts", () => {
@@ -196,12 +196,7 @@ describe("setup", () => {
 });
 
 function describe(description: string, fn: () => void) {
-  console.log(description);
-  try {
-    fn();
-  } catch {
-    // nothing
-  }
+  suite.push([description, fn]);
 }
 
 function test(description: string, fn: () => void) {
@@ -213,4 +208,18 @@ function test(description: string, fn: () => void) {
     for (const p of world.getAllPlayers())
       p.showMessage(`${description}: ${e}`);
   }
+}
+
+function runSuite() {
+  console.log("\nRunning tests...");
+  for (const [description, fn] of suite) {
+    try {
+      reset();
+      console.log(description);
+      fn();
+    } catch {
+      // ignore
+    }
+  }
+  reset();
 }
