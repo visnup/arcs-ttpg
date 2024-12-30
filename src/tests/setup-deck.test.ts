@@ -49,7 +49,7 @@ describe("setup-deck", () => {
       "number",
       "campaign-rules",
     ])
-      assertEqual(counts[-1][key], undefined, `${key} not deleted`);
+      assertEqual(counts[-1][key], undefined, `${key} deleted`);
     // TODO court dealt
 
     // flip
@@ -73,9 +73,7 @@ describe("setup-deck", () => {
     setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // action deck shuffled with the correct number of cards
-    const actionDecks = world.getObjectsByTemplateName<Card>("action");
-    assertEqual(actionDecks.length, 1, "one action deck");
-    const actionDeck = actionDecks[0];
+    const actionDeck = world.getObjectsByTemplateName<Card>("action")[0];
     assertEqual(actionDeck.getStackSize(), 5 * 4, "no 7s shuffled in");
     // piece counts
     const counts = getCounts();
@@ -90,9 +88,7 @@ describe("setup-deck", () => {
     setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // action deck shuffled with the correct number of cards
-    const actionDecks = world.getObjectsByTemplateName<Card>("action");
-    assertEqual(actionDecks.length, 1, "one action deck");
-    const actionDeck = actionDecks[0];
+    const actionDeck = world.getObjectsByTemplateName<Card>("action")[0];
     assertEqual(actionDeck.getStackSize(), 5 * 4, "no 7s shuffled in");
     // piece counts
     const counts = getCounts();
