@@ -63,10 +63,6 @@ describe("setup-deck", () => {
     // TODO resources drawn
     // TODO blocks placed
     // TODO ambition score indicators
-
-    // play cards
-    // TODO swap cards around for consistent testing
-    // TODO declare ambition
   });
 
   test("3p", () => {
@@ -84,5 +80,26 @@ describe("setup-deck", () => {
     // piece counts
     const counts = getCounts();
     assertEqual(Object.keys(counts), "0 1 2 -1".split(" "), "player pieces");
+  });
+
+  test("2p", () => {
+    const setupDeck = world
+      .getObjectsByTemplateName<Card>("setup")
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as TestableCard;
+    const setup = setupDeck.takeCards()! as TestableCard;
+    setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
+    setupDeck.onRemoved.trigger(setup);
+    // action deck shuffled with the correct number of cards
+    const actionDecks = world.getObjectsByTemplateName<Card>("action");
+    assertEqual(actionDecks.length, 1, "one action deck");
+    const actionDeck = actionDecks[0];
+    assertEqual(actionDeck.getStackSize(), 5 * 4, "no 7s shuffled in");
+    // piece counts
+    const counts = getCounts();
+    assertEqual(Object.keys(counts), "0 1 -1".split(" "), "player pieces");
+
+    // run
+    setup.onPrimaryAction.trigger(setup);
+    // TODO resources blocking ambitions
   });
 });
