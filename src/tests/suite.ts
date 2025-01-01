@@ -1,34 +1,53 @@
 import { world } from "@tabletop-playground/api";
 
-const suite: Parameters<typeof describe>[] = [];
-let _reset: () => void | undefined;
+type Result =
+  | { description: string; ok: true }
+  | { description: string; ok: false; error: Error };
+type Suite = {
+  description: string;
+  fn: () => void;
+  results: Result[];
+};
+let currentSuite: Suite | undefined = undefined;
+export const suites: Suite[] = [];
 
 export function describe(description: string, fn: () => void) {
-  suite.push([description, fn]);
+  const suite = {
+    description,
+    fn() {
+      currentSuite = suite;
+      suite.results.length = 0;
+      fn();
+    },
+    results: [],
+  };
+  suites.push(suite);
+}
+
+const before: (() => void)[] = [];
+export function beforeEach(fn: () => void) {
+  before.push(fn);
 }
 
 export function test(description: string, fn: () => void) {
   try {
-    _reset();
+    for (const b of before) b();
     fn();
-    console.log(" ✓", description);
-  } catch (e) {
-    console.error(" x", description, e);
+    currentSuite?.results.push({ description, ok: true });
+  } catch (error) {
+    console.error(description, error);
+    currentSuite?.results.push({ description, ok: false, error });
     for (const p of world.getAllPlayers())
-      p.showMessage(`${description}: ${e}`);
+      p.showMessage(`${description}: ${error}`);
   }
 }
 
-export function runSuite(reset: () => void) {
-  _reset = reset;
-  console.log("\nRunning tests...");
-  for (const [description, fn] of suite) {
+export function run() {
+  for (const { fn } of suites) {
     try {
-      console.log(description);
       fn();
     } catch {
       // ignore
     }
   }
-  _reset();
 }
