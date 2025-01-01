@@ -35,10 +35,10 @@ export function test(description: string, fn: () => void) {
     fn();
     currentSuite?.results.push({ description, ok: true });
   } catch (error) {
-    console.error(description, error);
+    console.error(currentSuite?.description, description, "\n", error);
     currentSuite?.results.push({ description, ok: false, error });
     for (const p of world.getAllPlayers())
-      p.showMessage(`${description}: ${error}`);
+      p.showMessage(`${currentSuite?.description} > ${description}\n${error}`);
   }
 }
 

@@ -5,14 +5,14 @@ export function assert(condition: boolean, description: string) {
 export function assertEqual<T>(value: T, expected: T, description = "") {
   assert(
     stringify(value) === stringify(expected),
-    `${description}: ${value} !== ${expected}`,
+    `${description}${description ? ": " : ""}${value} !== ${expected}`,
   );
 }
 
 export function assertNotEqual<T>(value: T, expected: T, description = "") {
   assert(
     stringify(value) !== stringify(expected),
-    `${description}: ${value} !== ${expected}`,
+    `${description}${description ? ": " : ""}${value} !== ${expected}`,
   );
 }
 
