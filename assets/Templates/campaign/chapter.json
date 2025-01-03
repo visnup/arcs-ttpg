@@ -136,7 +136,7 @@
 	"BackTexture": "campaign/chapter-back.jpg",
 	"HiddenTexture": "",
 	"BackIndex": -2,
-	"HiddenIndex": -1,
+	"HiddenIndex": -3,
 	"NumHorizontal": 1,
 	"NumVertical": 1,
 	"Width": 11.289,

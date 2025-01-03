@@ -46,7 +46,7 @@
 	"BackTexture": "",
 	"HiddenTexture": "",
 	"BackIndex": -1,
-	"HiddenIndex": -1,
+	"HiddenIndex": -3,
 	"NumHorizontal": 5,
 	"NumVertical": 1,
 	"Width": 2.7,

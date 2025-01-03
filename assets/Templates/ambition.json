@@ -46,7 +46,7 @@
 	"BackTexture": "ambition-back.jpg",
 	"HiddenTexture": "",
 	"BackIndex": -3,
-	"HiddenIndex": -1,
+	"HiddenIndex": -3,
 	"NumHorizontal": 3,
 	"NumVertical": 1,
 	"Width": 3.12,

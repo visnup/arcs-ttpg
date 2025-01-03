@@ -44,7 +44,7 @@
 	"BackTexture": "campaign/set-back.jpg",
 	"HiddenTexture": "",
 	"BackIndex": -3,
-	"HiddenIndex": -1,
+	"HiddenIndex": -3,
 	"NumHorizontal": 6,
 	"NumVertical": 6,
 	"Width": 2.7,

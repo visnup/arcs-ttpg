@@ -44,7 +44,7 @@
 	"BackTexture": "cards/bc-back.jpg",
 	"HiddenTexture": "",
 	"BackIndex": -2,
-	"HiddenIndex": -1,
+	"HiddenIndex": -3,
 	"NumHorizontal": 7,
 	"NumVertical": 4,
 	"Width": 6.1,
