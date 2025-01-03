@@ -419,6 +419,7 @@ function takeFateSet(card: Card) {
     cards[index],
     card.getPosition().add(new Vector(0, 0, height)),
   ) as Card | undefined;
+  deck?.setRotation([0, 0, -180]);
   if (deck) height += deck.getSize().z + dh;
 
   // Spawn any matching items found in sets

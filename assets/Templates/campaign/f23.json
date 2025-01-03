@@ -57,11 +57,11 @@
   "EmissiveFront": false,
   "Model": "Rounded",
   "Indices": [
-    0,
-    1,
-    2,
+    4,
     3,
-    4
+    2,
+    1,
+    0
   ],
   "CardNames": {},
   "CardMetadata": {
