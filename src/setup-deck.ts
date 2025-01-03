@@ -46,11 +46,9 @@ export type TestableCard = Card & {
 // Avoid running if imported from another object script
 if (refCard.getTemplateName() === "setup") {
   // Add triggers for testability
-  if (refPackageId === "8878F08F55344ED182D61F6E91585D56") {
-    (refCard as TestableCard).onRemoved.trigger = initialSetup;
-    (refCard as TestableCard).onFlipUpright.trigger = previewSetup;
-    (refCard as TestableCard).onPrimaryAction.trigger = followSetup;
-  }
+  (refCard as TestableCard).onRemoved.trigger = initialSetup;
+  (refCard as TestableCard).onFlipUpright.trigger = previewSetup;
+  (refCard as TestableCard).onPrimaryAction.trigger = followSetup;
 
   if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
 
