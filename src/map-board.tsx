@@ -123,10 +123,12 @@ globalEvents.onAmbitionScored.add((ambition, slot, count) =>
 
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];
+const ding = world.importSound("66136__aji__ding30603-spedup.mp3");
 class Turns {
   #turn: number = -1;
   slots: number[] = [];
   turnStart = 0;
+  dinged = true;
   turnTime = 120_000;
 
   snaps: SnapPoint[];
@@ -229,6 +231,14 @@ class Turns {
     for (const bar of this.bars) {
       bar.current?.setVisible(this.turnTime > 0);
       bar.current?.setProgress(p);
+    }
+    if (this.turnTime > 0 && p >= 1) {
+      if (!this.dinged) {
+        ding.play();
+        this.dinged = true;
+      }
+    } else {
+      this.dinged = false;
     }
   };
 
