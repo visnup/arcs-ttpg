@@ -3,7 +3,6 @@ import {
   GameWorld,
   globalEvents,
   GlobalScriptingEvents,
-  refPackageId,
   Vector,
   world,
 } from "@tabletop-playground/api";
