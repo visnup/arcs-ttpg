@@ -8,9 +8,7 @@ import type {
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
-  Color,
   globalEvents,
-  HorizontalAlignment,
   HorizontalBox,
   ObjectType,
   Rotator,
@@ -21,6 +19,7 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
+import { Tally } from "./lib/tally";
 
 const refObject = _refObject;
 const refPackageId = _refPackageId;
@@ -69,7 +68,6 @@ const actionZone =
 
 // Ambition ranks
 const size = refObject.getSize();
-const color = new Color(38 / 255, 31 / 255, 21 / 255).lighten(-0.85);
 class AmbitionSection {
   scores = new Map<number, number>();
   ui = new UIElement();
@@ -83,7 +81,7 @@ class AmbitionSection {
     );
     this.ui.scale = 0.15;
     this.ui.widget = this.widget;
-    this.widget.setChildDistance(10);
+    this.widget.setChildDistance(15);
     refObject.addUI(this.ui);
   }
 
@@ -97,22 +95,10 @@ class AmbitionSection {
       if (score)
         this.widget.addChild(
           render(
-            <border color={world.getSlotColor(slot).saturate(0.5)}>
-              <layout
-                height={70}
-                padding={{ left: 10, right: 10 }}
-                halign={HorizontalAlignment.Center}
-              >
-                <text
-                  color={color}
-                  size={32}
-                  font="FMBolyarPro-700.ttf"
-                  fontPackage={refPackageId}
-                >
-                  {score}
-                </text>
-              </layout>
-            </border>,
+            <Tally
+              value={score}
+              color={world.getSlotColor(slot).saturate(0.8)}
+            />,
           ),
         );
     }
@@ -306,7 +292,7 @@ class Turns {
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
         render(
-          <text color={world.getSlotColor(slot).saturate(0.5)} size={48}>
+          <text color={world.getSlotColor(slot).saturate(0.8)} size={48}>
             ■
           </text>,
         ),

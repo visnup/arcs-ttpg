@@ -1,8 +1,6 @@
 import type { VerticalBox, Zone } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
-  refPackageId as _refPackageId,
-  Color,
   HorizontalAlignment,
   Rotator,
   UIElement,
@@ -10,9 +8,9 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
+import { Tally } from "./lib/tally";
 
 const refObject = _refObject;
-const refPackageId = _refPackageId;
 
 // Zones for each card
 const widgets = [] as VerticalBox[];
@@ -35,7 +33,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   ui.scale = 0.15;
   widgets.push(
     (ui.widget = render(
-      <verticalbox halign={HorizontalAlignment.Center} gap={10} />,
+      <verticalbox halign={HorizontalAlignment.Center} gap={15} />,
     )) as VerticalBox,
   );
   refObject.addUI(ui);
@@ -44,7 +42,6 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
 }
 
 function countAgents(zone: Zone) {
-  const color = new Color(38 / 255, 31 / 255, 21 / 255).lighten(-0.85);
   const count = new Array(4).fill(0);
   for (const obj of zone.getOverlappingObjects())
     if (obj.getTemplateName() === "agent") count[obj.getOwningPlayerSlot()]++;
@@ -55,22 +52,7 @@ function countAgents(zone: Zone) {
     if (c)
       widget.addChild(
         render(
-          <border color={world.getSlotColor(slot).saturate(0.5)}>
-            <layout
-              height={70}
-              minWidth={60}
-              halign={HorizontalAlignment.Center}
-            >
-              <text
-                size={32}
-                color={color}
-                font="FMBolyarPro-700.ttf"
-                fontPackage={refPackageId}
-              >
-                {c}
-              </text>
-            </layout>
-          </border>,
+          <Tally value={c} color={world.getSlotColor(slot).saturate(0.8)} />,
         ),
       );
 }
