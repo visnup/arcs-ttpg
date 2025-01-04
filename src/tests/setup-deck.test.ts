@@ -13,7 +13,7 @@ function getCounts() {
   return counts;
 }
 
-describe("setup-deck", () => {
+describe("setup deck", () => {
   test("4p", () => {
     const initiative = world.getObjectById("initiative")!;
     const position = initiative.getPosition().add([10, -10, 0]);

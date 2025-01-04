@@ -1,9 +1,11 @@
-import type {
+import type { GameObject, MultistateObject } from "@tabletop-playground/api";
+import {
   Card,
-  GameObject,
-  MultistateObject,
+  Rotator,
+  SnapPoint,
+  Vector,
+  world,
 } from "@tabletop-playground/api";
-import { Rotator, SnapPoint, Vector, world } from "@tabletop-playground/api";
 
 export const above = new Vector(0, 0, 0.1);
 export const origin = new Vector(
@@ -171,6 +173,53 @@ export function placeShips(slot: number, n: number, target: Vector) {
   }
   return ships;
 }
+// Find _n_ cities belonging to _slot_ player on player board from left to right and place them
+export function placeCities(slot: number, n: number, target: Vector) {
+  const cities = world
+    .getObjectsByTemplateName<Card>("city")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
+    .sort((a, b) => a.getPosition().y - b.getPosition().y)
+    .slice(0, n);
+  for (let city of cities) {
+    if (city.getStackSize() > 1) city = city.takeCards(1)!;
+    city.setPosition(target.add(above));
+    city.snap();
+  }
+  return cities;
+}
+// Find _n_ starports belonging to _slot_ player closest to _target_ and place them
+export function placeStarports(slot: number, n: number, target: Vector) {
+  const starports = world
+    .getObjectsByTemplateName<Card>("starport")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(target) - b.getPosition().distance(target),
+    )
+    .slice(0, n);
+  for (let starport of starports) {
+    if (starport.getStackSize() > 1) starport = starport.takeCards(1)!;
+    starport.setPosition(target.add(above));
+    starport.snap();
+  }
+  return starports;
+}
+// Find _n_ agents belonging to _slot_ player closest to _target_ and place them
+export function placeAgents(slot: number, n: number, target: Vector) {
+  const agents = world
+    .getObjectsByTemplateName("agent")
+    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
+    .sort(
+      (a, b) =>
+        a.getPosition().distance(target) - b.getPosition().distance(target),
+    )
+    .slice(0, n);
+  for (const agent of agents) {
+    agent.setPosition(target.add(above));
+    agent.snap();
+  }
+  return agents;
+}
 
 export function systemResource(system: SnapPoint): string | undefined {
   return system
@@ -190,4 +239,27 @@ export function placeResources(
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));
   supply?.snap();
+}
+
+let freeCity: Card | undefined;
+export function placeFreeCity(position: Vector) {
+  freeCity ??= world
+    .getObjectsByTemplateName<Card>("city")
+    .find((d) => d.getOwningPlayerSlot() === 4);
+  const city = freeCity?.takeCards(1);
+  city?.setPosition(position.add(above));
+  city?.snap();
+  return city;
+}
+let blight: Card | undefined;
+export function placeBlight(position: Vector) {
+  blight ??= world
+    .getObjectsByTemplateName("set-round")
+    .find(
+      (d) =>
+        d instanceof Card &&
+        d.getAllCardDetails().every(({ metadata }) => metadata === "blight"),
+    ) as Card | undefined;
+  blight?.takeCards(1)?.setPosition(position);
+  return blight;
 }

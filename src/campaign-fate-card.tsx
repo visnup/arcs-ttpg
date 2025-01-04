@@ -24,7 +24,9 @@ import {
   getSystems,
   nearby,
   placeAid,
+  placeBlight,
   placeCourt,
+  placeFreeCity,
   placeResources,
   placeShips,
   removeBlocks,
@@ -280,26 +282,6 @@ function takeCampaignCard(name: string) {
     }
   }
   return card;
-}
-let freeCity: Card | undefined;
-function placeFreeCity(position: Vector) {
-  freeCity ??= world
-    .getObjectsByTemplateName<Card>("city")
-    .find((d) => d.getOwningPlayerSlot() === 4);
-  const city = freeCity?.takeCards(1);
-  city?.setPosition(position.add(above));
-  city?.snap();
-}
-let blight: Card | undefined;
-function placeBlight(position: Vector) {
-  blight ??= world
-    .getObjectsByTemplateName("set-round")
-    .find(
-      (d) =>
-        d instanceof Card &&
-        d.getAllCardDetails().every(({ metadata }) => metadata === "blight"),
-    ) as Card | undefined;
-  blight?.takeCards(1)?.setPosition(position);
 }
 
 function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {

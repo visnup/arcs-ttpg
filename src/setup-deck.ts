@@ -23,9 +23,11 @@ import {
   occupied,
   origin,
   placeAid,
+  placeCities,
   placeCourt,
   placeResources,
   placeShips,
+  placeStarports,
   removeBlocks,
   removeCampaign,
   removeNotes,
@@ -336,34 +338,6 @@ function createBlock(sector: number) {
   return block;
 }
 
-// Find _n_ cities belonging to _slot_ player on player board from left to right and place them
-function placeCities(slot: number, n: number, target: Vector) {
-  const cities = world
-    .getObjectsByTemplateName("city")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
-    .sort((a, b) => a.getPosition().y - b.getPosition().y)
-    .slice(0, n);
-  for (const city of cities) {
-    city.setPosition(target.add(above));
-    city.snap();
-  }
-  return cities;
-}
-// Find _n_ starports belonging to _slot_ player closest to _target_ and place them
-function placeStarports(slot: number, n: number, target: Vector) {
-  const starports = world
-    .getObjectsByTemplateName("starport")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
-    .sort(
-      (a, b) =>
-        a.getPosition().distance(target) - b.getPosition().distance(target),
-    )
-    .slice(0, n);
-  for (const starport of starports) {
-    starport.setPosition(target.add(above));
-    starport.snap();
-  }
-}
 function gainResource(slot: number, resource: string | undefined) {
   const board = world
     .getObjectsByTemplateName("board")

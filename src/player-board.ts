@@ -69,6 +69,15 @@ function updateAmbitions() {
             break;
         }
         break;
+      case "set-round":
+        // check for blight, if so fall through and treat as building
+        if (
+          (obj as Card)
+            .getAllCardDetails()
+            .some(({ metadata }) => metadata !== "blight")
+        )
+          break;
+      // eslint-disable-next-line no-fallthrough
       case "city":
       case "starport":
         obj.onDestroyed.clear();
