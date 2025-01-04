@@ -26,14 +26,13 @@ for (const obj of world.getAllObjects())
   }
 
 // Hotkey to mimic hot seat functionality
-if (refPackageId === "8878F08F55344ED182D61F6E91585D56")
-  globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
-    const dir = [, -1, 1][index];
-    if (dir) {
-      const n = world.getObjectsByTemplateName("board").length;
-      player.switchSlot((n + player.getSlot() + dir) % n);
-    }
-  });
+globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
+  const dir = [, -1, 1][index];
+  if (dir) {
+    const n = world.getObjectsByTemplateName("board").length;
+    player.switchSlot((n + player.getSlot() + dir) % n);
+  }
+});
 
 // Extend GameWorld
 declare module "@tabletop-playground/api" {
