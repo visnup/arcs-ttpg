@@ -263,13 +263,19 @@ export function placeFreeCity(position: Vector) {
 }
 let blight: Card | undefined;
 export function placeBlight(position: Vector) {
-  blight ??= world
-    .getObjectsByTemplateName("set-round")
-    .find(
-      (d) =>
-        d instanceof Card &&
-        d.getAllCardDetails().every(({ metadata }) => metadata === "blight"),
-    ) as Card | undefined;
-  blight?.takeCards(1)?.setPosition(position);
-  return blight;
+  blight =
+    blight && blight.getStackSize() >= 1
+      ? blight
+      : (world
+          .getObjectsByTemplateName("set-round")
+          .find(
+            (d) =>
+              d instanceof Card &&
+              d
+                .getAllCardDetails()
+                .every(({ metadata }) => metadata === "blight"),
+          ) as Card | undefined);
+  const b = blight?.getStackSize() === 1 ? blight : blight?.takeCards(1);
+  b?.setPosition(position);
+  return b;
 }
