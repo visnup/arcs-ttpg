@@ -41,12 +41,13 @@ const mapZone =
 // Objects on map are penetrable
 const objectTypes = new WeakMap<GameObject, ObjectType>();
 mapZone.onBeginOverlap.add((zone, obj) => {
+  if (obj.getTemplateName() === "map") return;
   objectTypes.set(obj, obj.getObjectType());
   obj.setObjectType(ObjectType.Penetrable);
 });
 mapZone.onEndOverlap.add((zone, obj) => {
-  if (obj !== refObject)
-    obj.setObjectType(objectTypes.get(obj) ?? ObjectType.Regular);
+  if (obj.getTemplateName() === "map") return;
+  if (objectTypes.has(obj)) obj.setObjectType(objectTypes.get(obj)!);
 });
 
 // Card zone

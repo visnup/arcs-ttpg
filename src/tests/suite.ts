@@ -18,10 +18,9 @@ export function describe(description: string, fn: () => void) {
     async run() {
       currentSuite = suite;
       currentSuite.tests = [];
+      currentSuite.results = [];
       fn();
-      currentSuite.results = await Promise.all(
-        currentSuite.tests.map((test) => test()),
-      );
+      for (const t of currentSuite.tests) currentSuite.results.push(await t());
     },
     tests: [],
     results: [],

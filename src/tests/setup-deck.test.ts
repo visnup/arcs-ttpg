@@ -1,5 +1,5 @@
 import type { Card } from "@tabletop-playground/api";
-import { world } from "@tabletop-playground/api";
+import { ObjectType, world } from "@tabletop-playground/api";
 import type { TestableCard } from "../setup-deck";
 import { assertEqual, assertNotEqual } from "./assert";
 import { describe, test } from "./suite";
@@ -14,7 +14,8 @@ function getCounts() {
 }
 
 describe("setup deck", () => {
-  test("4p", () => {
+  test("4p", async () => {
+    const map = world.getObjectById("map")!;
     const initiative = world.getObjectById("initiative")!;
     const position = initiative.getPosition().add([10, -10, 0]);
     initiative.setPosition(position);
@@ -63,6 +64,9 @@ describe("setup deck", () => {
     // TODO resources drawn
     // TODO blocks placed
     // TODO ambition score indicators
+
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    assertEqual(map.getObjectType(), ObjectType.Ground, "map is grounded");
   });
 
   test("3p", () => {
