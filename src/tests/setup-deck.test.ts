@@ -100,6 +100,16 @@ describe("setup deck", () => {
 
     // run
     setup.onPrimaryAction.trigger(setup);
-    // TODO resources blocking ambitions
+    const blockedResources = world
+      .getObjectsByTemplateName<Card>("resource")
+      .filter((d) => world.isOnMap(d));
+    assertEqual(
+      blockedResources
+        .flatMap((d) => d.getAllCardDetails())
+        .map((d) => d.name)
+        .sort(),
+      ["fuel", "fuel", "material", "material", "relic", "weapon"],
+      "blocked resources",
+    );
   });
 });
