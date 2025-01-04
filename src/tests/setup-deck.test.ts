@@ -25,7 +25,7 @@ describe("setup deck", () => {
       .getObjectsByTemplateName<Card>("setup")
       .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as TestableCard;
     const setup = setupDeck.takeCards()! as TestableCard;
-    setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
+    setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // initiative moved
     assertNotEqual(initiative.getPosition(), position, "initiative");
@@ -74,7 +74,7 @@ describe("setup deck", () => {
       .getObjectsByTemplateName<Card>("setup")
       .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as TestableCard;
     const setup = setupDeck.takeCards()! as TestableCard;
-    setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
+    setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // action deck shuffled with the correct number of cards
     const actionDeck = world.getObjectsByTemplateName<Card>("action")[0];
@@ -89,7 +89,7 @@ describe("setup deck", () => {
       .getObjectsByTemplateName<Card>("setup")
       .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as TestableCard;
     const setup = setupDeck.takeCards()! as TestableCard;
-    setup.setPosition(setupDeck.getPosition().add([-10, 0, 0]));
+    setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // action deck shuffled with the correct number of cards
     const actionDeck = world.getObjectsByTemplateName<Card>("action")[0];
