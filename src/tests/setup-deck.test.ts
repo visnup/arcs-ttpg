@@ -100,6 +100,7 @@ describe("setup deck", () => {
 
     // run
     setup.onPrimaryAction.trigger(setup);
+    // blocked resources
     const blockedResources = world
       .getObjectsByTemplateName<Card>("resource")
       .filter((d) => world.isOnMap(d));

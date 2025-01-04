@@ -8,7 +8,9 @@ import type {
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
+  Color,
   globalEvents,
+  HorizontalAlignment,
   HorizontalBox,
   ObjectType,
   Rotator,
@@ -48,7 +50,7 @@ mapZone.onBeginOverlap.add((zone, obj) => {
 });
 mapZone.onEndOverlap.add((zone, obj) => {
   if (!penetrable.has(obj.getTemplateName())) return;
-  if (objectTypes.has(obj)) obj.setObjectType(objectTypes.get(obj)!);
+  obj.setObjectType(objectTypes.get(obj) ?? ObjectType.Regular);
 });
 
 // Card zone
@@ -67,21 +69,21 @@ const actionZone =
 
 // Ambition ranks
 const size = refObject.getSize();
+const color = new Color(38 / 255, 31 / 255, 21 / 255).lighten(-0.85);
 class AmbitionSection {
-  scores: Map<number, number>;
-  ui: UIElement;
-  widget: HorizontalBox;
+  scores = new Map<number, number>();
+  ui = new UIElement();
+  widget = new HorizontalBox();
 
   constructor(offset: number) {
-    this.scores = new Map();
-    this.ui = new UIElement();
     this.ui.position = new Vector(
-      size.x / 2 - (12.9 + offset * 5.3),
-      size.y / 2 - 5,
-      size.z + 0.35,
+      size.x / 2 - (13 + offset * 5.3),
+      size.y / 2 - 5.5,
+      size.z + 0.32,
     );
     this.ui.scale = 0.15;
-    this.ui.widget = this.widget = new HorizontalBox();
+    this.ui.widget = this.widget;
+    this.widget.setChildDistance(10);
     refObject.addUI(this.ui);
   }
 
@@ -95,14 +97,22 @@ class AmbitionSection {
       if (score)
         this.widget.addChild(
           render(
-            <text
-              color={world.getSlotColor(slot).saturate(0.5)}
-              size={48}
-              font="FMBolyarPro-700.ttf"
-              fontPackage={refPackageId}
-            >
-              {` ${score} `}
-            </text>,
+            <border color={world.getSlotColor(slot).saturate(0.5)}>
+              <layout
+                height={70}
+                padding={{ left: 10, right: 10 }}
+                halign={HorizontalAlignment.Center}
+              >
+                <text
+                  color={color}
+                  size={32}
+                  font="FMBolyarPro-700.ttf"
+                  fontPackage={refPackageId}
+                >
+                  {score}
+                </text>
+              </layout>
+            </border>,
           ),
         );
     }
