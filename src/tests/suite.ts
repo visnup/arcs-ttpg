@@ -5,7 +5,8 @@ type Result =
   | { description: string; ok: false; error: Error };
 type Suite = {
   description: string;
-  fn: () => void;
+  run: () => Promise<void>;
+  tests: (() => Promise<Result>)[];
   results: Result[];
 };
 let currentSuite: Suite | undefined = undefined;
@@ -14,11 +15,15 @@ export const suites: Suite[] = [];
 export function describe(description: string, fn: () => void) {
   const suite = {
     description,
-    fn() {
+    async run() {
       currentSuite = suite;
-      suite.results.length = 0;
+      currentSuite.tests = [];
       fn();
+      currentSuite.results = await Promise.all(
+        currentSuite.tests.map((test) => test()),
+      );
     },
+    tests: [],
     results: [],
   };
   suites.push(suite);
@@ -29,23 +34,27 @@ export function beforeEach(fn: () => void) {
   before.push(fn);
 }
 
-export function test(description: string, fn: () => void) {
-  try {
-    for (const b of before) b();
-    fn();
-    currentSuite?.results.push({ description, ok: true });
-  } catch (error) {
-    console.error(currentSuite?.description, description, "\n", error);
-    currentSuite?.results.push({ description, ok: false, error });
-    for (const p of world.getAllPlayers())
-      p.showMessage(`${currentSuite?.description} > ${description}\n${error}`);
-  }
+export function test(description: string, fn: () => Promise<void> | void) {
+  currentSuite?.tests.push(async () => {
+    try {
+      for (const b of before) b();
+      await fn();
+      return { description, ok: true };
+    } catch (error) {
+      console.error(currentSuite?.description, description, "\n", error);
+      for (const p of world.getAllPlayers())
+        p.showMessage(
+          `${currentSuite?.description} > ${description}\n${error}`,
+        );
+      return { description, ok: false, error };
+    }
+  });
 }
 
-export function run() {
-  for (const { fn } of suites) {
+export async function run() {
+  for (const { run } of suites) {
     try {
-      fn();
+      await run();
     } catch {
       // ignore
     }

@@ -10,6 +10,7 @@ import {
   refPackageId as _refPackageId,
   globalEvents,
   HorizontalBox,
+  ObjectType,
   Rotator,
   UIElement,
   Vector,
@@ -26,20 +27,40 @@ refObject.setId("map");
 
 export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
 
+// Map zone
+const mapZoneId = `zone-map-${refObject.getId()}`;
+const mapZone =
+  world.getZoneById(mapZoneId) ?? world.createZone(refObject.getPosition());
+{
+  const { x, y } = refObject.getSize();
+  const size = new Vector(x * 0.95, y * 0.7, 2);
+  mapZone.setId(mapZoneId);
+  mapZone.setPosition(refObject.getPosition().add([x * 0.025, 0, 0]));
+  mapZone.setScale(size);
+}
+// Objects on map are penetrable
+const objectTypes = new WeakMap<GameObject, ObjectType>();
+mapZone.onBeginOverlap.add((zone, obj) => {
+  objectTypes.set(obj, obj.getObjectType());
+  obj.setObjectType(ObjectType.Penetrable);
+});
+mapZone.onEndOverlap.add((zone, obj) => {
+  if (obj !== refObject)
+    obj.setObjectType(objectTypes.get(obj) ?? ObjectType.Regular);
+});
+
 // Card zone
-const zoneId = `zone-action-${refObject.getId()}`;
-const zone =
-  world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
+const actionZoneId = `zone-action-${refObject.getId()}`;
+const actionZone =
+  world.getZoneById(actionZoneId) ?? world.createZone(refObject.getPosition());
 {
   const { x, y } = refObject.getSize();
   const size = new Vector(x * 0.62, y * 0.15, 2);
-  zone.setId(zoneId);
-  zone.setPosition(
-    refObject.getPosition().add(new Vector(0, (size.y - y) / 2, 0)),
-  );
-  zone.setRotation(refObject.getRotation());
-  zone.setScale(size);
-  zone.setStacking(ZonePermission.Nobody);
+  actionZone.setId(actionZoneId);
+  actionZone.setPosition(refObject.getPosition().add([0, (size.y - y) / 2, 0]));
+  actionZone.setRotation(refObject.getRotation());
+  actionZone.setScale(size);
+  actionZone.setStacking(ZonePermission.Nobody);
 }
 
 // Ambition ranks
@@ -293,7 +314,7 @@ class Turns {
   nextTurn() {
     // Clean up previous turn
     if (this.turn >= 0) {
-      for (const obj of zone.getOverlappingObjects()) {
+      for (const obj of actionZone.getOverlappingObjects()) {
         // Seize
         if ("next" in obj && typeof obj.next === "function") obj.next();
         // Discard resources

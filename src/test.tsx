@@ -38,41 +38,27 @@ function reset() {
   ui.position = new Vector(0, 0, 1);
   ui.widget = render(<verticalbox />);
   (ui.widget as VerticalBox).addChild(
-    render(
-      <button
-        onClick={() => {
-          run();
-          updateButtons();
-        }}
-      >
-        Run all
-      </button>,
-    ),
+    render(<button onClick={() => run().then(updateButtons)}>Run all</button>),
   );
   (ui.widget as VerticalBox).addChild(
     render(<button onClick={reset}>Reset</button>),
   );
-  const buttons = suites.map(({ description, fn, results }) => {
+  const buttons = suites.map((suite) => {
+    const { description, run } = suite;
     const ref = useRef<Button>();
     (ui.widget as VerticalBox).addChild(
       render(
-        <button
-          ref={ref}
-          onClick={() => {
-            fn();
-            updateButtons();
-          }}
-        >
+        <button ref={ref} onClick={() => run().then(updateButtons)}>
           {description}
         </button>,
       ),
     );
-    return [ref, description, results] as const;
+    return [ref, suite] as const;
   });
   refObject.addUI(ui);
 
   function updateButtons() {
-    for (const [button, description, results] of buttons)
+    for (const [button, { description, results }] of buttons)
       button.current?.setText(
         `${description} ${results.map((d) => (d.ok ? "√" : "x")).join("")}`,
       );
