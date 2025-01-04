@@ -40,7 +40,7 @@ const mapZone =
   mapZone.setScale(size);
 }
 // Objects on map are penetrable
-const penetrable = new Set(["ship", "city", "starport"]);
+const penetrable = new Set(["ship", "flagship"]);
 const objectTypes = new WeakMap<GameObject, ObjectType>();
 mapZone.onBeginOverlap.add((zone, obj) => {
   if (!penetrable.has(obj.getTemplateName())) return;

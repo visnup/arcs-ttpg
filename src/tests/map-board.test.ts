@@ -6,8 +6,15 @@ import { describe, test } from "./suite";
 describe("map board", () => {
   test("penetrable", async () => {
     const systems = getSystems();
-    const ships = placeShips(0, 2, systems[0].snap.getGlobalPosition());
-    assertEqual(ships.length, 2, "placed 2 ships");
+    const ships = [0, 1, 2, 3, 4].flatMap((slot) =>
+      placeShips(slot, 1, systems[0].snap.getGlobalPosition()),
+    );
+    assertEqual(ships.length, 5, "placed 5 ships");
+    const flagships = world.getObjectsByTemplateName("flagship");
+    for (const s of flagships) {
+      s.setPosition(systems[0].snap.getGlobalPosition());
+      ships.push(s);
+    }
     assert(
       ships.every((s) => s.getObjectType() === ObjectType.Penetrable),
       "type = penetrable",
