@@ -1,3 +1,4 @@
+import type { MultistateObject } from "@tabletop-playground/api";
 import { world } from "@tabletop-playground/api";
 import { assertEqual } from "./assert";
 import { describe, test } from "./suite";
@@ -93,5 +94,12 @@ describe("all.vts", () => {
     }))
       for (const [name, count] of Object.entries(owned))
         assertEqual(counts[slot][name], count, `${slot} - ${name}`);
+
+    for (const rules of ["base-rules", "campaign-rules"])
+      assertEqual(
+        world.getObjectByTemplateName<MultistateObject>(rules)?.getState(),
+        0,
+        `${rules} cover page`,
+      );
   });
 });
