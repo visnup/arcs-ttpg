@@ -1,12 +1,11 @@
-import type { VerticalBox } from "@tabletop-playground/api";
+import type { Button, VerticalBox } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
-  Button,
   UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
-import { jsxInTTPG, RefHandle, render, useRef } from "jsx-in-ttpg";
+import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import { beforeEach, run, suites } from "./tests/suite";
 
 const refObject = _refObject;
