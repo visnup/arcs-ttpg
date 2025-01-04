@@ -240,6 +240,16 @@ export function placeResources(
   supply?.setPosition(target.add(above));
   supply?.snap();
 }
+export function gainResource(slot: number, resource: string | undefined) {
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot)!;
+  const empty = board
+    .getAllSnapPoints()
+    .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
+    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
+  placeResources(resource, 1, empty.getGlobalPosition());
+}
 
 let freeCity: Card | undefined;
 export function placeFreeCity(position: Vector) {

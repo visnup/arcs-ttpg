@@ -16,6 +16,7 @@ import type { InitiativeMarker } from "./initiative-marker";
 import {
   above,
   blockedResourceSnaps,
+  gainResource,
   getActionDecks,
   getPosition,
   getSystems,
@@ -336,15 +337,4 @@ function createBlock(sector: number) {
   );
   block?.freeze();
   return block;
-}
-
-function gainResource(slot: number, resource: string | undefined) {
-  const board = world
-    .getObjectsByTemplateName("board")
-    .find((d) => d.getOwningPlayerSlot() === slot)!;
-  const empty = board
-    .getAllSnapPoints()
-    .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
-    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
-  placeResources(resource, 1, empty.getGlobalPosition());
 }
