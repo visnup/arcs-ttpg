@@ -5,7 +5,7 @@ type Origin = {
   rotation: Rotator | [number, number, number];
 };
 
-export function discardToOrigin(obj: GameObject) {
+export function discardToOrigin(obj: GameObject, preserveRotation = true) {
   const origin: Origin = JSON.parse(obj.getSavedData("origin") || "{}");
   if (!origin.position || !origin.rotation) {
     origin.position = obj.getPosition();
@@ -15,7 +15,7 @@ export function discardToOrigin(obj: GameObject) {
 
   function discard() {
     obj.setPosition(origin.position, 1.5);
-    obj.setRotation(origin.rotation, 1.5);
+    if (preserveRotation) obj.setRotation(origin.rotation, 1.5);
   }
 
   // @ts-expect-error any

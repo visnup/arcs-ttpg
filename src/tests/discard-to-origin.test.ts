@@ -14,6 +14,9 @@ for (const name of ["ambition declared", "ambition"])
         throw Error("discard not present");
       marker.discard();
       assertEqual(marker.getPosition(), position, "position");
-      assertEqual(marker.getRotation(), rotation, "rotation");
+      if (name === "ambition declared")
+        assertEqual(marker.getRotation(), rotation, "rotation");
+      if (name === "ambition")
+        assertEqual(marker.getRotation().yaw, rotation.yaw + 90, "rotation");
     });
   });
