@@ -114,6 +114,7 @@ declare module "@tabletop-playground/api" {
       (ambition: Ambition, slot: number, value: number) => void
     >;
     onRoundEnded: TriggerableMulticastDelegate<() => void>;
+    onChapterEnded: TriggerableMulticastDelegate<() => void>;
   }
 }
 GlobalScriptingEvents.prototype.onActionsDealt =
@@ -131,6 +132,8 @@ GlobalScriptingEvents.prototype.onAmbitionTallied =
 GlobalScriptingEvents.prototype.onRoundEnded = new TriggerableMulticastDelegate<
   () => void
 >();
+GlobalScriptingEvents.prototype.onChapterEnded =
+  new TriggerableMulticastDelegate<() => void>();
 
 // Extend Color
 declare module "@tabletop-playground/api" {

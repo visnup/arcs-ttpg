@@ -84,6 +84,8 @@ class AmbitionSection {
     ui.widget = this.widget;
     this.widget.setChildDistance(15);
     refObject.addUI(ui);
+
+    globalEvents.onChapterEnded.add(() => {});
   }
 
   setTally(slot: number, value: number) {

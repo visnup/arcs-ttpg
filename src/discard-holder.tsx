@@ -159,6 +159,9 @@ function endChapter() {
     discard.shuffle();
   }
   refHolder.removeUI(0);
+  setTimeout(() => {
+    globalEvents.onChapterEnded.trigger();
+  }, 100);
 }
 
 function getActionZone() {
