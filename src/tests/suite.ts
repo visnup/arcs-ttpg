@@ -46,6 +46,8 @@ export function test(description: string, fn: () => Promise<void> | void) {
           `${currentSuite?.description} > ${description}\n${error}`,
         );
       return { description, ok: false, error };
+    } finally {
+      await new Promise((resolve) => setTimeout(resolve, 0));
     }
   });
 }

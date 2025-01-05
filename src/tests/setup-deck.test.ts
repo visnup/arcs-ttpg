@@ -1,7 +1,7 @@
-import type { Card, GameObject } from "@tabletop-playground/api";
+import type { Card, CardHolder, GameObject } from "@tabletop-playground/api";
 import { ObjectType, world } from "@tabletop-playground/api";
 import type { TestableCard } from "../setup-deck";
-import { assertEqual, assertNotEqual } from "./assert";
+import { assert, assertEqual, assertNotEqual } from "./assert";
 import { describe, test } from "./suite";
 
 function getCounts(filter = (obj: GameObject) => !!obj) {
@@ -117,6 +117,13 @@ describe("setup deck", () => {
         `board pieces ${slot}`,
       );
     }
+    // cards dealt
+    const cards = world.getObjectsByTemplateName<CardHolder>("cards");
+    assertEqual(cards.length, 4, "4 hands dealt");
+    assert(
+      cards.every((d) => d.getCards().length === 6),
+      "6 cards per hand",
+    );
 
     await new Promise((resolve) => setTimeout(resolve, 0));
     assertEqual(map.getObjectType(), ObjectType.Ground, "map is grounded");
