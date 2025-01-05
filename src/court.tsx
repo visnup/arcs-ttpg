@@ -28,7 +28,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   zone.onEndOverlap.add(countAgents);
 
   const ui = new UIElement();
-  ui.position = snap.getLocalPosition().add(new Vector(x / 2 + 0.5, 0, 0));
+  ui.position = snap.getLocalPosition().add(new Vector(x / 2 + 0.6, 0, 0));
   ui.rotation = new Rotator(0, 0, 90);
   ui.scale = 0.15;
   widgets.push(

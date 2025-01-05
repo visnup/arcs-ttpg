@@ -16,17 +16,13 @@ export function Tally({
   color: JSX.IntrinsicElements["image"]["color"];
 }) {
   const height = 70;
-  const width = value > 9 ? 70 : 60;
+  const width = 70;
   return (
     <layout width={width} height={height}>
       <canvas>
         {canvasChild(
           { x: 0, y: 0, width, height },
-          <image
-            src="rounded-rectangle.png"
-            srcPackage={refPackageId}
-            color={color}
-          />,
+          <image src="circle.png" srcPackage={refPackageId} color={color} />,
         )}
         {canvasChild(
           { x: 0, y: -2, width, height },
