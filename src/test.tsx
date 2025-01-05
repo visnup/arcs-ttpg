@@ -17,6 +17,7 @@ const saved = world
 const keys = new Set(Object.keys(world));
 
 function reset() {
+  clearAllIntervals();
   for (const zone of world.getAllZones())
     if (zone.getId().startsWith("zone-")) zone.destroy();
   for (const obj of world.getAllObjects()) if (obj !== refObject) obj.destroy();
