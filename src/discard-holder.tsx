@@ -16,6 +16,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
+import { removeNotes } from "./lib/setup";
 
 const refHolder = _refHolder;
 const refPackageId = _refPackageId;
@@ -110,6 +111,11 @@ function discardOrEndChapter(button: Button, player?: Player) {
 function discard(button: Button, player?: Player) {
   const zone = getActionZone();
   if (!zone) return;
+  removeNotes(
+    (obj) =>
+      obj.getDescription().includes("discard") ||
+      obj.getDescription().includes("Timer"),
+  );
   for (const obj of zone.getOverlappingObjects()) {
     if (
       obj instanceof Card &&
