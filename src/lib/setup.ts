@@ -214,8 +214,16 @@ export function placeAgents(slot: number, n: number, target: Vector) {
         a.getPosition().distance(target) - b.getPosition().distance(target),
     )
     .slice(0, n);
-  for (const agent of agents) {
-    agent.setPosition(target.add(above));
+  if (!agents.length) return agents;
+  const width = Math.ceil(Math.sqrt(agents.length));
+  const height = Math.ceil(agents.length / width);
+  const { x, y } = agents[0].getSize();
+  const d = 0.2;
+  target = target.subtract([(width / 2) * (x + d), (height / 2) * (y + d), 0]);
+  for (const [i, agent] of agents.entries()) {
+    agent.setPosition(
+      target.add([(i % width) * (x + d), Math.floor(i / width) * (y + d), 0]),
+    );
     agent.snap();
   }
   return agents;
