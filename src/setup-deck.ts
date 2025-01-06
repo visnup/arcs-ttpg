@@ -7,6 +7,7 @@ import type {
 import {
   refPackageId as _refPackageId,
   DrawingLine,
+  globalEvents,
   refCard,
   Rotator,
   Vector,
@@ -35,6 +36,7 @@ import {
   removePlayers,
   systemResource,
 } from "./lib/setup";
+import type { Ambition } from "./map-board";
 
 const refPackageId = _refPackageId;
 
@@ -202,8 +204,24 @@ function followSetup(card: Card) {
     }
     createBlock(+cluster);
   }
-  for (const [r, n] of resources.entries())
-    placeResources(r, n, blockedResourceSnaps[r]);
+  // 2p: out of play resources
+  for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
+  const ambitions = [...resources].reduce<Record<string, number>>(
+    (sum, [r, n]) => {
+      const a = {
+        fuel: "tycoon",
+        material: "tycoon",
+        weapon: "warlord",
+        relic: "keeper",
+        psionic: "empath",
+      }[r]!;
+      sum[a] = (sum[a] || 0) + n;
+      return sum;
+    },
+    {},
+  );
+  for (const [a, n] of Object.entries(ambitions))
+    globalEvents.onAmbitionTallied.trigger(a as Ambition, 4, n);
 
   // Power markers
   for (const missing of world

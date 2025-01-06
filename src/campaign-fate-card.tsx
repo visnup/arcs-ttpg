@@ -163,8 +163,7 @@ function campaignSetup(players: number, card: Card) {
       }
     }
   }
-  for (const [r, n] of resources.entries())
-    placeResources(r, n, blockedResourceSnaps[r]);
+  for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
 
   // Free cities
   const e = Math.floor(Math.random() * 3);

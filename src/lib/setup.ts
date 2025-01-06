@@ -14,7 +14,7 @@ export const origin = new Vector(
   world.getObjectById("map")!.getPosition().z,
 );
 
-export const blockedResourceSnaps = Object.fromEntries(
+export const blockedResourceSnaps: Record<string, Vector> = Object.fromEntries(
   world
     .getObjectById("map")!
     .getAllSnapPoints()

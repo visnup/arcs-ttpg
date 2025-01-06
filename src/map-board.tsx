@@ -69,11 +69,13 @@ const actionZone =
 // Ambition ranks
 const size = refObject.getSize();
 class AmbitionSection {
+  offset: number;
   tallies = new Map<number, number>();
   widget = new HorizontalBox();
   position: Vector;
 
   constructor(offset: number) {
+    this.offset = offset;
     const ui = new UIElement();
     ui.position = this.position = new Vector(
       size.x / 2 - (13 + offset * 5.3),
@@ -84,17 +86,14 @@ class AmbitionSection {
     ui.widget = this.widget;
     this.widget.setChildDistance(15);
     refObject.addUI(ui);
-
-    globalEvents.onChapterEnded.add(() => {});
+    this.load();
   }
 
   setTally(slot: number, value: number) {
     if (this.tallies.get(slot) === value) return;
     this.tallies.set(slot, value);
     this.widget.removeAllChildren();
-    for (const [slot, value] of [...this.tallies.entries()].sort(
-      (a, b) => b[1] - a[1],
-    )) {
+    for (const [slot, value] of [...this.tallies].sort((a, b) => b[1] - a[1])) {
       if (value)
         this.widget.addChild(
           render(
@@ -105,6 +104,7 @@ class AmbitionSection {
           ),
         );
     }
+    this.save();
   }
 
   declare() {
@@ -126,6 +126,20 @@ class AmbitionSection {
     const left = center.add(new Vector(0, ((1 - occupied.length) * y) / 2, 0));
     for (const [i, m] of occupied.entries())
       m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
+  }
+
+  save() {
+    refObject.setSavedData(
+      JSON.stringify([...this.tallies]),
+      `ambition-${this.offset}`,
+    );
+  }
+
+  load() {
+    for (const [slot, value] of JSON.parse(
+      refObject.getSavedData(`ambition-${this.offset}`) || "[]",
+    ) as [number, number][])
+      this.setTally(slot, value);
   }
 }
 

@@ -150,4 +150,3 @@ function updateAmbitions() {
       value,
     );
 }
-updateAmbitions();
