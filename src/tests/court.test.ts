@@ -20,7 +20,7 @@ function getTally(widget?: Widget) {
 }
 
 describe("court", () => {
-  test("counts agents", async () => {
+  test("tallies agents", async () => {
     const court = world.getObjectByTemplateName("court")!;
     const zones = world
       .getAllZones()
@@ -35,7 +35,7 @@ describe("court", () => {
     assertEqual(
       boxes.slice(0, 4).map((b) => b.getAllChildren().length),
       [1, 3, 0, 0],
-      "agent counts",
+      "agent tallies",
     );
     assertEqual(getTally(boxes[0].getChildAt(0)), 10, "zone 0");
     assertEqual(getTally(boxes[1].getChildAt(0)), 3, "zone 1");

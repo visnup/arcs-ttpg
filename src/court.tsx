@@ -24,8 +24,8 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   zone.setId(zoneId);
   zone.setRotation(refObject.getRotation());
   zone.setScale(size);
-  zone.onBeginOverlap.add(countAgents);
-  zone.onEndOverlap.add(countAgents);
+  zone.onBeginOverlap.add(tallyAgents);
+  zone.onEndOverlap.add(tallyAgents);
 
   const ui = new UIElement();
   ui.position = snap.getLocalPosition().add(new Vector(x / 2 + 0.6, 0, 0));
@@ -38,21 +38,26 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   );
   refObject.addUI(ui);
 
-  countAgents(zone);
+  tallyAgents(zone);
 }
 
-function countAgents(zone: Zone) {
-  const count = new Array(4).fill(0);
+function tallyAgents(zone: Zone) {
+  const tallies = new Array(4).fill(0);
   for (const obj of zone.getOverlappingObjects())
-    if (obj.getTemplateName() === "agent") count[obj.getOwningPlayerSlot()]++;
+    if (obj.getTemplateName() === "agent") tallies[obj.getOwningPlayerSlot()]++;
   const widget =
     widgets[+zone.getId().replace(`zone-court-${refObject.getId()}-`, "")];
   widget.removeAllChildren();
-  for (const [slot, c] of [...count.entries()].sort((a, b) => b[1] - a[1]))
-    if (c)
+  for (const [slot, value] of [...tallies.entries()].sort(
+    (a, b) => b[1] - a[1],
+  ))
+    if (value)
       widget.addChild(
         render(
-          <Tally value={c} color={world.getSlotColor(slot).saturate(0.8)} />,
+          <Tally
+            value={value}
+            color={world.getSlotColor(slot).saturate(0.8)}
+          />,
         ),
       );
 }
