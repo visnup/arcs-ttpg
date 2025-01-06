@@ -14,10 +14,10 @@ import { beforeEach, describe, test } from "./suite";
 const offset = (n: number) => 2 * n * Math.random() - n;
 
 let ambitions: Record<Ambition, Record<number, number>>;
-globalEvents.onAmbitionScored.add((ambition, slot, score) => {
+globalEvents.onAmbitionTallied.add((ambition, slot, value) => {
   if (!ambitions) return;
   ambitions[ambition] = ambitions[ambition] ?? {};
-  ambitions[ambition][slot] = score;
+  ambitions[ambition][slot] = value;
 });
 
 describe("player board", () => {

@@ -69,34 +69,35 @@ const actionZone =
 // Ambition ranks
 const size = refObject.getSize();
 class AmbitionSection {
-  scores = new Map<number, number>();
-  ui = new UIElement();
+  tallies = new Map<number, number>();
   widget = new HorizontalBox();
+  position: Vector;
 
   constructor(offset: number) {
-    this.ui.position = new Vector(
+    const ui = new UIElement();
+    ui.position = this.position = new Vector(
       size.x / 2 - (13 + offset * 5.3),
       size.y / 2 - 5.5,
       size.z + 0.32,
     );
-    this.ui.scale = 0.15;
-    this.ui.widget = this.widget;
+    ui.scale = 0.15;
+    ui.widget = this.widget;
     this.widget.setChildDistance(15);
-    refObject.addUI(this.ui);
+    refObject.addUI(ui);
   }
 
-  setScore(slot: number, score: number) {
-    if (this.scores.get(slot) === score) return;
-    this.scores.set(slot, score);
+  setTally(slot: number, value: number) {
+    if (this.tallies.get(slot) === value) return;
+    this.tallies.set(slot, value);
     this.widget.removeAllChildren();
-    for (const [slot, score] of [...this.scores.entries()].sort(
+    for (const [slot, value] of [...this.tallies.entries()].sort(
       (a, b) => b[1] - a[1],
     )) {
-      if (score)
+      if (value)
         this.widget.addChild(
           render(
             <Tally
-              value={score}
+              value={value}
               color={world.getSlotColor(slot).saturate(0.8)}
             />,
           ),
@@ -112,7 +113,7 @@ class AmbitionSection {
     if (!marker) return;
     const center = refObject
       .getPosition()
-      .add(this.ui.position)
+      .add(this.position)
       .add(new Vector(1.5, 0, 0));
     const occupied = world
       .getObjectsByTemplateName("ambition")
@@ -136,8 +137,8 @@ const ambitions = Object.fromEntries(
 globalEvents.onAmbitionDeclared.add((ambition) =>
   ambitions[ambition].declare(),
 );
-globalEvents.onAmbitionScored.add((ambition, slot, count) =>
-  ambitions[ambition].setScore(slot, count),
+globalEvents.onAmbitionTallied.add((ambition, slot, value) =>
+  ambitions[ambition].setTally(slot, value),
 );
 
 // Turn indicators

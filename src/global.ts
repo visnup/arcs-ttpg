@@ -110,8 +110,8 @@ declare module "@tabletop-playground/api" {
     onAmbitionDeclared: TriggerableMulticastDelegate<
       (ambition: Ambition) => void
     >;
-    onAmbitionScored: TriggerableMulticastDelegate<
-      (ambition: Ambition, slot: number, score: number) => void
+    onAmbitionTallied: TriggerableMulticastDelegate<
+      (ambition: Ambition, slot: number, value: number) => void
     >;
     onRoundEnded: TriggerableMulticastDelegate<() => void>;
   }
@@ -124,9 +124,9 @@ GlobalScriptingEvents.prototype.onInitiativeMoved =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onAmbitionDeclared =
   new TriggerableMulticastDelegate<(ambition: Ambition) => void>();
-GlobalScriptingEvents.prototype.onAmbitionScored =
+GlobalScriptingEvents.prototype.onAmbitionTallied =
   new TriggerableMulticastDelegate<
-    (ambition: Ambition, slot: number, score: number) => void
+    (ambition: Ambition, slot: number, value: number) => void
   >();
 GlobalScriptingEvents.prototype.onRoundEnded = new TriggerableMulticastDelegate<
   () => void

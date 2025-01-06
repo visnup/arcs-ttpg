@@ -143,11 +143,11 @@ function updateAmbitions() {
   }
 
   // Update the ambitions on the map
-  for (const [ambition, count] of Object.entries(ambitions))
-    globalEvents.onAmbitionScored.trigger(
+  for (const [ambition, value] of Object.entries(ambitions))
+    globalEvents.onAmbitionTallied.trigger(
       ambition as Ambition,
       refObject.getOwningPlayerSlot(),
-      count,
+      value,
     );
 }
 updateAmbitions();
