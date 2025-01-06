@@ -215,10 +215,13 @@ class Turns {
       return ui.widget as HorizontalBox;
     });
 
+    if (!refObject.getSavedData("timerInstructions")) {
+      world.broadcastChatMessage(
+        `Turn timer set to 2 minutes.\nMessage "/turn [seconds]" to change, "/turn 0" to disable.`,
+      );
+      refObject.setSavedData("sent", "timerInstructions");
+    }
     // Register listeners
-    world.broadcastChatMessage(
-      `Turn timer set to 2 minutes. Message "/turn [seconds]" to change, "/turn 0" to disable.`,
-    );
     globalEvents.onChatMessage.add(this.onChatMessage);
     globalEvents.onActionsDealt.add(() => this.startRound());
     globalEvents.onActionsDiscarded.add(() => this.startRound());
