@@ -99,7 +99,7 @@ class AmbitionSection {
           render(
             <Tally
               value={value}
-              color={world.getSlotColor(slot).saturate(0.8)}
+              color={world.getSlotColor(slot).saturate(slot === 4 ? 0 : 0.8)}
             />,
           ),
         );

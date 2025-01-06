@@ -34,9 +34,9 @@ import {
   removeCampaign,
   removeNotes,
   removePlayers,
+  resourceAmbitions,
   systemResource,
 } from "./lib/setup";
-import type { Ambition } from "./map-board";
 
 const refPackageId = _refPackageId;
 
@@ -206,22 +206,8 @@ function followSetup(card: Card) {
   }
   // 2p: out of play resources
   for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
-  const ambitions = [...resources].reduce<Record<string, number>>(
-    (sum, [r, n]) => {
-      const a = {
-        fuel: "tycoon",
-        material: "tycoon",
-        weapon: "warlord",
-        relic: "keeper",
-        psionic: "empath",
-      }[r]!;
-      sum[a] = (sum[a] || 0) + n;
-      return sum;
-    },
-    {},
-  );
-  for (const [a, n] of Object.entries(ambitions))
-    globalEvents.onAmbitionTallied.trigger(a as Ambition, 4, n);
+  for (const [a, n] of resourceAmbitions(resources))
+    globalEvents.onAmbitionTallied.trigger(a, 4, n);
 
   // Power markers
   for (const missing of world

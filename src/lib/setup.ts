@@ -6,6 +6,7 @@ import {
   Vector,
   world,
 } from "@tabletop-playground/api";
+import type { Ambition } from "../map-board";
 
 export const above = new Vector(0, 0, 0.1);
 export const origin = new Vector(
@@ -257,6 +258,21 @@ export function gainResource(slot: number, resource: string | undefined) {
     .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
     .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
   placeResources(resource, 1, empty.getGlobalPosition());
+}
+export function resourceAmbitions(resources: Map<string, number>) {
+  const lookup: Record<string, string> = {
+    fuel: "tycoon",
+    material: "tycoon",
+    weapon: "warlord",
+    relic: "keeper",
+    psionic: "empath",
+  };
+  const ambitions = new Map<Ambition, number>();
+  for (const [r, n] of resources) {
+    const a = lookup[r] as Ambition;
+    ambitions.set(a, (ambitions.get(a) || 0) + n);
+  }
+  return ambitions;
 }
 
 let freeCity: Card | undefined;

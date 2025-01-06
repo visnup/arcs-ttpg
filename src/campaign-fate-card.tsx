@@ -7,6 +7,7 @@ import type {
 import {
   refPackageId as _refPackageId,
   Card,
+  globalEvents,
   refCard,
   Rotator,
   UIElement,
@@ -32,6 +33,7 @@ import {
   removeBlocks,
   removeNotes,
   removePlayers,
+  resourceAmbitions,
   systemResource,
 } from "./lib/setup";
 
@@ -164,6 +166,8 @@ function campaignSetup(players: number, card: Card) {
     }
   }
   for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
+  for (const [a, n] of resourceAmbitions(resources))
+    globalEvents.onAmbitionTallied.trigger(a, 4, n);
 
   // Free cities
   const e = Math.floor(Math.random() * 3);
