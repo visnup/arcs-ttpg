@@ -144,7 +144,8 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"bonus:3"
 			]
 		},
 		{
@@ -157,7 +158,8 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"building"
+				"building",
+				"bonus:2"
 			]
 		},
 		{

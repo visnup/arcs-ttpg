@@ -223,5 +223,6 @@ describe("setup deck", () => {
       ["fuel", "fuel", "material", "material", "relic", "weapon"],
       "blocked resources",
     );
+    // todo ambition tallies for blocked resources
   });
 });

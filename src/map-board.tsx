@@ -8,6 +8,7 @@ import type {
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
+  DrawingLine,
   globalEvents,
   HorizontalBox,
   ObjectType,
@@ -128,6 +129,16 @@ class AmbitionSection {
       m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
   }
 
+  getStandings = () => {
+    const sorted = [...this.tallies].sort(([, a], [, b]) => b - a);
+    const tie = sorted[0][1] === sorted[1]?.[1];
+    const second = (tie ? sorted[0][1] : sorted[1][1]) || null;
+    return [
+      tie ? [] : [sorted[0][0]],
+      sorted.filter(([, count]) => count === second).map(([slot]) => slot),
+    ] as const;
+  };
+
   save() {
     refObject.setSavedData(
       JSON.stringify([...this.tallies]),
@@ -142,20 +153,73 @@ class AmbitionSection {
       this.setTally(slot, value);
   }
 }
-
-const ambitions = Object.fromEntries(
-  ["tycoon", "tyrant", "warlord", "keeper", "empath"].map((name, i) => [
-    name,
-    new AmbitionSection(i),
-  ]),
+const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
+const sections = Object.fromEntries(
+  ambitions.map((name, i) => [name, new AmbitionSection(i)]),
 ) as Record<Ambition, AmbitionSection>;
 
-globalEvents.onAmbitionDeclared.add((ambition) =>
-  ambitions[ambition].declare(),
-);
+globalEvents.onAmbitionDeclared.add((ambition) => sections[ambition].declare());
 globalEvents.onAmbitionTallied.add((ambition, slot, value) =>
-  ambitions[ambition].setTally(slot, value),
+  sections[ambition].setTally(slot, value),
 );
+globalEvents.onChapterEnded.add(() => previewScores(true));
+globalEvents.onActionsDealt.add(() => previewScores(false));
+process.nextTick(() => previewScores());
+
+const track = refObject
+  .getAllSnapPoints()
+  .filter((p) => p.getTags().includes("power"))
+  .map((p) => p.getGlobalPosition())
+  .sort((a, b) => a.y - b.y);
+function previewScores(visible = !!refObject.getSavedData("previewScores")) {
+  for (const l of world.getDrawingLines()) world.removeDrawingLineObject(l);
+  refObject.setSavedData(visible ? "visible" : "", "previewScores");
+  if (!visible) return;
+
+  // Check for city bonuses
+  const hasBonus = (n: number) => (p: SnapPoint) =>
+    !p.getSnappedObject() && p.getTags().includes(`bonus:${n}`);
+  const bonuses = world
+    .getObjectsByTemplateName("board")
+    .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
+    .map((d) => {
+      const snaps = d.getAllSnapPoints();
+      return snaps.find(hasBonus(3)) ? 5 : snaps.find(hasBonus(2)) ? 2 : 0;
+    });
+
+  // Calculate gains
+  const gain: number[] = [];
+  for (const marker of world.getObjectsByTemplateName("ambition")) {
+    const index =
+      Math.floor((size.x / 2 - marker.getPosition().x - 13) / 5.3) + 1;
+    const ambition = ambitions[index];
+    if (!ambition) continue;
+    const [first, second] = sections[ambition].getStandings();
+    const power = marker.getSavedData("power");
+    for (const slot of first)
+      gain[slot] = (gain[slot] || 0) + +power[0] + (bonuses[slot] || 0);
+    for (const slot of second) gain[slot] = (gain[slot] || 0) + +power[1];
+  }
+  // Place indicators
+  const current = world
+    .getObjectsByTemplateName("power")
+    .filter((d) => world.isOnMap(d))
+    .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
+    .map((d) => track.findIndex((p) => p.y > d.getPosition().y));
+  const seen: Record<string, number> = {};
+  for (const [slot, g] of gain.entries()) {
+    if (!g || slot === 4) continue;
+    const score = current[slot] + g;
+    const dot = new DrawingLine();
+    const p = track[score - 1].add([0.9 + (seen[score] || 0), 0, 0]);
+    dot.points = [p.add([0, -0.1, 0]), p.add([0, +0.1, 0])];
+    dot.thickness = 0.2;
+    dot.rounded = false;
+    dot.color = world.getSlotColor(slot).lighten(-0.2);
+    world.addDrawingLine(dot);
+    seen[score] = (seen[score] || 0) + 0.15;
+  }
+}
 
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];

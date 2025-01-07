@@ -159,8 +159,7 @@ function previewSetup(card: Card) {
 }
 function clearPreviewSetup() {
   if ("_followedSetup" in world) return;
-  for (const line of world.getDrawingLines())
-    world.removeDrawingLineObject(line);
+  for (const l of world.getDrawingLines()) world.removeDrawingLineObject(l);
   for (const label of world.getAllLabels()) label.destroy();
   for (const block of world.getObjectsByTemplateName("block")) block.destroy();
 }
@@ -206,7 +205,7 @@ function followSetup(card: Card) {
   }
   // 2p: out of play resources
   for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
-  for (const [a, n] of resourceAmbitions(resources))
+  for (const [a, n] of resourceAmbitions(resources)) // todo: support manual setup?
     globalEvents.onAmbitionTallied.trigger(a, 4, n);
 
   // Power markers
