@@ -1,8 +1,9 @@
 import type { Card, CardHolder, GameObject } from "@tabletop-playground/api";
-import { ObjectType, world } from "@tabletop-playground/api";
+import { HorizontalBox, ObjectType, world } from "@tabletop-playground/api";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual, assertNotEqual } from "./assert";
 import { describe, test } from "./suite";
+import { getTally } from "./tally";
 
 function getCounts(filter = (obj: GameObject) => !!obj) {
   const counts: Record<string, Record<string, number>> = {};
@@ -223,6 +224,23 @@ describe("setup deck", () => {
       ["fuel", "fuel", "material", "material", "relic", "weapon"],
       "blocked resources",
     );
-    // todo ambition tallies for blocked resources
+    // ambition tallies for blocked resources
+    const map = world.getObjectById("map")!;
+    const tallies = map.getUIs().slice(0, 5);
+    assertEqual(
+      getTally((tallies[0].widget as HorizontalBox).getChildAt(0)),
+      4,
+      "tycoon",
+    );
+    assertEqual(
+      getTally((tallies[2].widget as HorizontalBox).getChildAt(0)),
+      1,
+      "warlord",
+    );
+    assertEqual(
+      getTally((tallies[3].widget as HorizontalBox).getChildAt(0)),
+      1,
+      "keeper",
+    );
   });
 });

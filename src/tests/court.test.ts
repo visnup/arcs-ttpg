@@ -1,23 +1,9 @@
-import type {
-  Canvas,
-  LayoutBox,
-  Text,
-  VerticalBox,
-  Widget,
-} from "@tabletop-playground/api";
+import type { VerticalBox } from "@tabletop-playground/api";
 import { SnapPointRotationType, world } from "@tabletop-playground/api";
 import { placeAgents } from "../lib/setup";
 import { assertEqual } from "./assert";
 import { describe, test } from "./suite";
-
-function getTally(widget?: Widget) {
-  if (!widget) return undefined;
-  return +(
-    (
-      ((widget as LayoutBox).getChild() as Canvas).getChildren()[1] as LayoutBox
-    ).getChild() as Text
-  ).getText();
-}
+import { getTally } from "./tally";
 
 describe("court", () => {
   test("tallies agents", async () => {
