@@ -1,5 +1,8 @@
 import type { GameObject } from "@tabletop-playground/api";
 import { refObject, Rotator, Vector } from "@tabletop-playground/api";
+import { discardToOrigin } from "./lib/discard-to-origin";
+
+discardToOrigin(refObject, true, false);
 
 // r to toggle ship damage
 refObject.onPrimaryAction.add(toggle);
