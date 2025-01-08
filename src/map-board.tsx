@@ -1,4 +1,5 @@
 import type {
+  Card,
   CardHolder,
   GameObject,
   Player,
@@ -131,10 +132,13 @@ class AmbitionSection {
       m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
   }
 
+  // Ties: On a tie for first place, all tied players get second place. On a tie
+  // for second place, the tied players do not place and gain no Power.
   getStandings = () => {
     const sorted = [...this.tallies].sort(([, a], [, b]) => b - a);
-    const tie = sorted[0][1] === sorted[1]?.[1];
-    const second = (tie ? sorted[0][1] : sorted[1][1]) || null;
+    const tie = sorted[0][1] === sorted[1][1];
+    const tie2 = sorted[1][1] === sorted[2][1];
+    const second = (tie ? sorted[0][1] : tie2 ? null : sorted[1][1]) || null;
     return [
       tie ? [] : [sorted[0][0]],
       sorted.filter(([, count]) => count === second).map(([slot]) => slot),
@@ -190,13 +194,14 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
 
   // Calculate gains
   const gain: number[] = [];
-  for (const marker of world.getObjectsByTemplateName("ambition")) {
+  for (const marker of world.getObjectsByTemplateName<Card>("ambition")) {
     const section = Object.values(sections).find(
       ({ x }) => !marker.getSnappedToPoint() && x < marker.getPosition().x,
     );
     if (!section) continue;
     const [first, second] = section.getStandings();
-    const power = marker.getSavedData("power");
+    const flipped = Math.abs(marker.getRotation().roll) > 1;
+    const power = marker.getCardDetails(0)!.metadata.slice(flipped ? 2 : 0);
     for (const slot of first)
       gain[slot] = (gain[slot] || 0) + +power[0] + (bonuses[slot] || 0);
     for (const slot of second) gain[slot] = (gain[slot] || 0) + +power[1];
@@ -206,7 +211,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
     .getObjectsByTemplateName("power")
     .filter((d) => world.isOnMap(d))
     .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
-    .map((d) => track.findIndex((p) => p.y > d.getPosition().y));
+    .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
   const seen: Record<string, number> = {};
   for (const [slot, g] of gain.entries()) {
     if (!g || slot === 4) continue;

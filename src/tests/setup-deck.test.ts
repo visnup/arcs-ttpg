@@ -1,5 +1,10 @@
-import type { Card, CardHolder, GameObject } from "@tabletop-playground/api";
-import { HorizontalBox, ObjectType, world } from "@tabletop-playground/api";
+import type {
+  Card,
+  CardHolder,
+  GameObject,
+  HorizontalBox,
+} from "@tabletop-playground/api";
+import { ObjectType, world } from "@tabletop-playground/api";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual, assertNotEqual } from "./assert";
 import { describe, test } from "./suite";
