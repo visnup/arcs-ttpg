@@ -46,13 +46,16 @@ const shuffle = refCard.shuffle;
 refCard.shuffle = function () {
   shuffle.call(this);
   showDeal(this);
+  this.setSavedData("visible", "showDeal");
 };
 const deal = refCard.deal;
 refCard.deal = function (...args) {
   deal.call(this, ...args);
   this.removeUI(0);
+  this.setSavedData("", "showDeal");
   globalEvents.onActionsDealt.trigger();
 };
+if (refCard.getSavedData("showDeal")) showDeal(refCard);
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
   const ui = new UIElement();
