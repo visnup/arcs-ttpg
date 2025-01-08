@@ -27,7 +27,8 @@ const refPackageId = _refPackageId;
 
 refObject.setId("map");
 
-export type Ambition = "tycoon" | "tyrant" | "warlord" | "keeper" | "empath";
+const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
+export type Ambition = (typeof ambitions)[number];
 
 // Map zone
 const mapZoneId = `zone-map-${refObject.getId()}`;
@@ -71,6 +72,7 @@ const actionZone =
 const size = refObject.getSize();
 class AmbitionSection {
   offset: number;
+  x: number;
   tallies = new Map<number, number>();
   widget = new HorizontalBox();
   position: Vector;
@@ -79,7 +81,7 @@ class AmbitionSection {
     this.offset = offset;
     const ui = new UIElement();
     ui.position = this.position = new Vector(
-      size.x / 2 - (13 + offset * 5.3),
+      (this.x = size.x / 2 - (13 + offset * 5.3)),
       size.y / 2 - 5.5,
       size.z + 0.32,
     );
@@ -153,7 +155,6 @@ class AmbitionSection {
       this.setTally(slot, value);
   }
 }
-const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
 const sections = Object.fromEntries(
   ambitions.map((name, i) => [name, new AmbitionSection(i)]),
 ) as Record<Ambition, AmbitionSection>;
@@ -176,7 +177,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
   refObject.setSavedData(visible ? "visible" : "", "previewScores");
   if (!visible) return;
 
-  // Check for city bonuses
+  // City bonuses
   const hasBonus = (n: number) => (p: SnapPoint) =>
     !p.getSnappedObject() && p.getTags().includes(`bonus:${n}`);
   const bonuses = world
@@ -190,11 +191,11 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
   // Calculate gains
   const gain: number[] = [];
   for (const marker of world.getObjectsByTemplateName("ambition")) {
-    const index =
-      Math.floor((size.x / 2 - marker.getPosition().x - 13) / 5.3) + 1;
-    const ambition = ambitions[index];
-    if (!ambition) continue;
-    const [first, second] = sections[ambition].getStandings();
+    const section = Object.values(sections).find(
+      ({ x }) => !marker.getSnappedToPoint() && x < marker.getPosition().x,
+    );
+    if (!section) continue;
+    const [first, second] = section.getStandings();
     const power = marker.getSavedData("power");
     for (const slot of first)
       gain[slot] = (gain[slot] || 0) + +power[0] + (bonuses[slot] || 0);
