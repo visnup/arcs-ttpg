@@ -30,52 +30,52 @@ describe("map board", () => {
   });
 
   test("scoring", async () => {
+    // first place
     gainResource(0, "fuel");
     globalEvents.onAmbitionDeclared.trigger("tycoon");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [5], "first place");
 
+    // tie for first -> second place points
     gainResource(1, "material");
     gainResource(2, "material");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [3, 3, 3], "tie for first -> second place points");
 
+    // tie for second -> no points
     gainResource(0, "fuel");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [5], "tie for second -> no points");
 
+    // multiple markers
     gainResource(3, "relic");
     globalEvents.onAmbitionDeclared.trigger("keeper");
     globalEvents.onAmbitionDeclared.trigger("keeper");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [5, , , 5], "multiple markers");
 
+    // flipped markers
     for (const m of world.getObjectsByTemplateName("ambition"))
       m.setRotation([0, -90, -180]);
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [9, , , 10], "flipped markers");
 
-    const board = world
-      .getObjectsByTemplateName("board")
-      .find((d) => d.getOwningPlayerSlot() === 0)!;
-    board
-      .getAllSnapPoints()
-      .find((p) => p.getTags().includes("bonus:2"))
-      ?.getSnappedObject()
-      ?.setPosition([0, 0, 0]);
+    // bonuses
+    revealCity(0, "bonus:2");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [9 + 2, , , 10], "bonus +2");
-    board
-      .getAllSnapPoints()
-      .find((p) => p.getTags().includes("bonus:3"))
-      ?.getSnappedObject()
-      ?.setPosition([0, 0, 0]);
+    revealCity(0, "bonus:3");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [9 + 2 + 3, , , 10], "bonus +3");
     gainResource(1, "fuel");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [4, 4, , 10], "bonuses only for first");
+    // bonus once per ambition, not marker
+    revealCity(3, "bonus:2");
+    globalEvents.onChapterEnded.trigger();
+    assertEqual(getScores(), [4, 4, , 12], "bonuses once per ambition");
 
+    // current position
     const map = world.getObjectById("map")!;
     const track = map
       .getAllSnapPoints()
@@ -90,7 +90,7 @@ describe("map board", () => {
     globalEvents.onChapterEnded.trigger();
     assertEqual(
       getScores(),
-      [4 + 1, 4 + 2, , 10 + 4],
+      [4 + 1, 4 + 2, , 12 + 4],
       "delta from current position",
     );
   });
@@ -117,4 +117,16 @@ function getScores() {
   for (const { color, points } of world.getDrawingLines())
     scores[slot(color)] = track.findIndex((y) => y > points[0].y) + 1;
   return scores;
+}
+
+function revealCity(slot: number, tag: string) {
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot)!;
+  const city = board
+    .getAllSnapPoints()
+    .find((p) => p.getTags().includes(tag))
+    ?.getSnappedObject();
+  city?.setPosition([0, 0, 0]);
+  return city;
 }
