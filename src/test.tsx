@@ -1,6 +1,7 @@
 import type { Button, VerticalBox } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
+  globalEvents,
   UIElement,
   Vector,
   world,
@@ -18,6 +19,10 @@ const keys = new Set(Object.keys(world));
 
 function reset() {
   clearAllIntervals();
+  for (const delegate of Object.values<{ clear?: () => void }>(
+    globalEvents.constructor.prototype,
+  ))
+    if (delegate && typeof delegate.clear === "function") delegate.clear();
   for (const zone of world.getAllZones())
     if (zone.getId().startsWith("zone-")) zone.destroy();
   for (const obj of world.getAllObjects()) if (obj !== refObject) obj.destroy();

@@ -13,24 +13,22 @@ import { beforeEach, describe, test } from "./suite";
 
 const offset = (n: number) => 2 * n * Math.random() - n;
 
-let ambitions: Record<Ambition, Record<number, number>>;
-globalEvents.onAmbitionTallied.add((ambition, slot, value) => {
-  if (!ambitions) return;
-  ambitions[ambition] = ambitions[ambition] ?? {};
-  ambitions[ambition][slot] = value;
-});
-
 describe("player board", () => {
-  beforeEach(
-    () =>
-      (ambitions = {
-        tycoon: {},
-        tyrant: {},
-        warlord: {},
-        keeper: {},
-        empath: {},
-      }),
-  );
+  let ambitions: Record<Ambition, Record<number, number>>;
+  beforeEach(() => {
+    ambitions = {
+      tycoon: {},
+      tyrant: {},
+      warlord: {},
+      keeper: {},
+      empath: {},
+    };
+    globalEvents.onAmbitionTallied.add((ambition, slot, value) => {
+      if (!ambitions) return;
+      ambitions[ambition] = ambitions[ambition] ?? {};
+      ambitions[ambition][slot] = value;
+    });
+  });
 
   test("trophies", () => {
     const board = world
