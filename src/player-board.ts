@@ -54,18 +54,18 @@ function updateAmbitions() {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
     switch (obj.getTemplateName()) {
       case "resource":
+        obj.onDestroyed.clear();
+        obj.onDestroyed.add(updateAmbitions);
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
-            obj.onDestroyed.clear();
-            obj.onDestroyed.add(updateAmbitions);
             ambitions.tycoon += (obj as Card).getStackSize();
             break;
           case "relic":
-            ambitions.keeper++;
+            ambitions.keeper += (obj as Card).getStackSize();
             break;
           case "psionic":
-            ambitions.empath++;
+            ambitions.empath += (obj as Card).getStackSize();
             break;
         }
         break;
@@ -124,18 +124,18 @@ function updateAmbitions() {
         break;
       }
       case "resource": {
+        obj.onDestroyed.clear();
+        obj.onDestroyed.add(updateAmbitions);
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
-            obj.onDestroyed.clear();
-            obj.onDestroyed.add(updateAmbitions);
             ambitions.tycoon += (obj as Card).getStackSize();
             break;
           case "relic":
-            ambitions.keeper++;
+            ambitions.keeper += (obj as Card).getStackSize();
             break;
           case "psionic":
-            ambitions.empath++;
+            ambitions.empath += (obj as Card).getStackSize();
             break;
         }
         break;

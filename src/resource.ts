@@ -16,15 +16,17 @@ if (!origins[index]) {
 // Discard to supply
 function discard(card: typeof refCard) {
   const i = card.getCardDetails(0)!.index;
-  if (card.getAllCardDetails().every(({ index }) => index === i)) {
-    // If this is a homogenous resource, attempt to discard it
+  const isHomogenous = (card: Card) =>
+    card.getAllCardDetails().every(({ index }) => index === i);
+  if (isHomogenous(card)) {
+    // If this is a homogenous stack, attempt to discard it
     const supply = world
       .getObjectsByTemplateName<Card>("resource")
       .find(
         (d) =>
           d !== card &&
-          world.isOnTable(d, ["bc"]) &&
-          d.getAllCardDetails().every(({ index }) => index === i),
+          (world.isOnTable(d, ["bc"]) || world.isOnTable(d, ["f03"])) &&
+          isHomogenous(d),
       );
     if (supply) supply.addCards(card, false, 0, true);
     else {
