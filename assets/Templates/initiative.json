@@ -8,7 +8,7 @@
 	"Restitution": 0.3,
 	"Density": 1,
 	"SurfaceType": "Wood",
-	"Roughness": 0.3,
+	"Roughness": 0.4,
 	"Metallic": 1,
 	"PrimaryColor":
 	{
@@ -29,8 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "initiative.png",
-			"ShapeAccuracy": 10,
+			"Model": "initiative.obj",
 			"Offset":
 			{
 				"X": 0,
@@ -39,18 +38,18 @@
 			},
 			"Scale":
 			{
-				"X": 7.0160200000000001,
-				"Y": 6.6652199999999997,
-				"Z": 1.2
+				"X": 1,
+				"Y": 1,
+				"Z": 1
 			},
 			"Rotation":
 			{
 				"X": 0,
-				"Y": 90,
+				"Y": 0,
 				"Z": 0
 			},
-			"Texture": "",
-			"NormalMap": "",
+			"Texture": "wood-texture.jpg",
+			"NormalMap": "wood-texture-n.jpg",
 			"ExtraMap": "",
 			"ExtraMap2": "",
 			"IsTransparent": false,
