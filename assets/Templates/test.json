@@ -29,7 +29,7 @@
 	"Blueprint": "",
 	"Models": [
 		{
-			"Model": "uv-cube.obj",
+			"Model": "StaticMesh'/Game/Meshes/Basic/Cube.Cube'",
 			"Offset":
 			{
 				"X": 0,
