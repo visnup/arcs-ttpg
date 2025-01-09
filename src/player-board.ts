@@ -131,6 +131,12 @@ function updateAmbitions() {
             obj.onDestroyed.add(updateAmbitions);
             ambitions.tycoon += (obj as Card).getStackSize();
             break;
+          case "relic":
+            ambitions.keeper++;
+            break;
+          case "psionic":
+            ambitions.empath++;
+            break;
         }
         break;
       }
