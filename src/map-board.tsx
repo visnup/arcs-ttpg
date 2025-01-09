@@ -430,8 +430,10 @@ class Turns {
   }
 
   endRound() {
-    if (this.rounds > 18)
+    if (this.rounds > 5 * 8 * 2) {
+      this.rounds = 0;
       return console.warn("Infinite endRound loop detected");
+    }
     this.rounds++;
     globalEvents.onRoundEnded.trigger();
   }
