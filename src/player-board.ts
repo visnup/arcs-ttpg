@@ -16,10 +16,12 @@ const captivePercent = 0.685;
 const zoneId = `zone-${refObject.getId()}`;
 const zone =
   world.getZoneById(zoneId) ??
-  world.createZone(p.add(new Vector(0, (-y * (1 - captivePercent)) / 2, 0)));
+  world.createZone(
+    p.add(new Vector(0, (-(y + 28) * (1 - captivePercent)) / 2, 0)),
+  );
 zone.setId(zoneId);
 zone.setRotation(refObject.getRotation());
-zone.setScale(new Vector(x, y * captivePercent, 8));
+zone.setScale(new Vector(x, (y + 28 / 2) * captivePercent, 8));
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 // Captives zone
@@ -42,7 +44,7 @@ const courtZone =
   );
 courtZone.setId(courtZoneId);
 courtZone.setRotation(refObject.getRotation());
-courtZone.setScale(new Vector(courtZoneHeight, y * 1.5, 8));
+courtZone.setScale(new Vector(courtZoneHeight, y * 1.55, 8));
 courtZone.onBeginOverlap.add(updateAmbitions);
 courtZone.onEndOverlap.add(updateAmbitions);
 
