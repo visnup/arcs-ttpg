@@ -21,11 +21,11 @@ function unoccupied() {
 }
 export function shuffledSlots(n: number) {
   // Randomize seating into lowest slots
-  for (const [i, p] of shuffle(
-    world.getAllPlayers().filter((d) => d.getSlot() >= 0),
-  ).entries()) {
+  const players = world.getAllPlayers().filter((d) => d.getSlot() >= 0);
+  players.length = n;
+  for (const [i, p] of shuffle(players).entries()) {
     world.getPlayerBySlot(i)?.switchSlot(unoccupied());
-    p.switchSlot(i);
+    p?.switchSlot(i);
   }
 
   // Randomly pick first player
