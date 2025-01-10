@@ -44,6 +44,7 @@ zone.onEndOverlap.add((zone, obj) => {
   }
   sumDice();
 });
+refObject.onDestroyed.add(() => zone.destroy());
 
 // Put up guard walls when dice are rolled
 let walls: GameObject | undefined;

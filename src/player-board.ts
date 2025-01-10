@@ -24,6 +24,7 @@ zone.setRotation(refObject.getRotation());
 zone.setScale(new Vector(x, (y + 28 / 2) * captivePercent, 8));
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
+refObject.onDestroyed.add(() => zone.destroy());
 // Captives zone
 const captiveZoneId = `zone-captive-${refObject.getId()}`;
 const captiveZone =
@@ -34,6 +35,7 @@ captiveZone.setRotation(refObject.getRotation());
 captiveZone.setScale(new Vector(x, y * (1 - captivePercent), 8));
 captiveZone.onBeginOverlap.add(updateAmbitions);
 captiveZone.onEndOverlap.add(updateAmbitions);
+refObject.onDestroyed.add(() => captiveZone.destroy());
 // Court zone
 const courtZoneHeight = 20;
 const courtZoneId = `zone-court-${refObject.getId()}`;
@@ -47,6 +49,7 @@ courtZone.setRotation(refObject.getRotation());
 courtZone.setScale(new Vector(courtZoneHeight, y * 1.55, 8));
 courtZone.onBeginOverlap.add(updateAmbitions);
 courtZone.onEndOverlap.add(updateAmbitions);
+refObject.onDestroyed.add(() => courtZone.destroy());
 
 function updateAmbitions() {
   const ambitions = { tycoon: 0, tyrant: 0, warlord: 0, keeper: 0, empath: 0 };

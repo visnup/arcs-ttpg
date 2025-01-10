@@ -23,8 +23,6 @@ function reset() {
     globalEvents.constructor.prototype,
   ))
     if (delegate && typeof delegate.clear === "function") delegate.clear();
-  for (const zone of world.getAllZones())
-    if (zone.getId().startsWith("zone-")) zone.destroy();
   for (const obj of world.getAllObjects()) if (obj !== refObject) obj.destroy();
   // @ts-expect-error delete
   for (const key of Object.keys(world)) if (!keys.has(key)) delete world[key];

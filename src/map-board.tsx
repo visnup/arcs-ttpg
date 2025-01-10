@@ -41,6 +41,7 @@ const mapZone =
   mapZone.setId(mapZoneId);
   mapZone.setPosition(refObject.getPosition().add([x * 0.025, 0, 0]));
   mapZone.setScale(size);
+  refObject.onDestroyed.add(() => mapZone.destroy());
 }
 // Objects on map are penetrable
 const penetrable = new Set(["ship", "flagship"]);
@@ -67,6 +68,7 @@ const actionZone =
   actionZone.setRotation(refObject.getRotation());
   actionZone.setScale(size);
   actionZone.setStacking(ZonePermission.Nobody);
+  refObject.onDestroyed.add(() => actionZone.destroy());
 }
 
 // Ambition ranks

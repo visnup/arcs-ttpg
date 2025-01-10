@@ -10,10 +10,6 @@ import { hslToRgb, rgbToHsl } from "./lib/color";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
 
-// Reset all zones
-for (const zone of world.getAllZones())
-  if (zone.getId().startsWith("zone-")) zone.destroy();
-
 // Set owning player slots by matching color
 const colors = Object.fromEntries(
   [0, 1, 2, 3, 4].map((i) => [world.getSlotColor(i).toHex(), i]),

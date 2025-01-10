@@ -2,9 +2,8 @@ import type { Card, Player, Rotator } from "@tabletop-playground/api";
 import { refCard, Vector, world } from "@tabletop-playground/api";
 
 type Origin = { position: Vector; rotation: Rotator };
-const origins = ((
-  world as typeof world & { _resourceOrigins?: Origin[] }
-)._resourceOrigins ??= []);
+// @ts-expect-error assign
+const origins: Origin[] = (world._resourceOrigins ??= []);
 const { index } = refCard.getCardDetails(0)!;
 if (!origins[index]) {
   origins[index] = {

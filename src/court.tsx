@@ -26,6 +26,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   zone.setScale(size);
   zone.onBeginOverlap.add(tallyAgents);
   zone.onEndOverlap.add(tallyAgents);
+  refObject.onDestroyed.add(() => zone.destroy());
 
   const ui = new UIElement();
   ui.position = snap.getLocalPosition().add(new Vector(x / 2 + 0.6, 0, 0));
