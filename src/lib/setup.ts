@@ -8,6 +8,32 @@ import {
 } from "@tabletop-playground/api";
 import type { Ambition } from "../map-board";
 
+function shuffle<T>(a: T[]) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function unoccupied() {
+  for (let i = 19; i >= 0; i--) if (!world.getPlayerBySlot(i)) return i;
+  return -1;
+}
+export function shuffledSlots(n: number) {
+  // Randomize seating into lowest slots
+  for (const [i, p] of shuffle(
+    world.getAllPlayers().filter((d) => d.getSlot() >= 0),
+  ).entries()) {
+    world.getPlayerBySlot(i)?.switchSlot(unoccupied());
+    p.switchSlot(i);
+  }
+
+  // Randomly pick first player
+  const needed = [0, 1, 2, 3].slice(0, n);
+  const first = Math.floor(Math.random() * needed.length);
+  return needed.slice(first).concat(needed.slice(0, first));
+}
+
 export const above = new Vector(0, 0, 0.1);
 export const origin = new Vector(
   0,

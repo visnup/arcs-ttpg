@@ -35,6 +35,7 @@ import {
   removeNotes,
   removePlayers,
   resourceAmbitions,
+  shuffledSlots,
   systemResource,
 } from "./lib/setup";
 
@@ -92,17 +93,8 @@ function initialSetup(card: Card) {
   const { metadata } = card.getCardDetails(0)!;
   const [, ...setup] = metadata.trim().split("\n");
 
-  // Players
-  const needed = [
-    ...new Set([...world.getAllPlayers().map((p) => p.getSlot()), 0, 1, 2, 3]),
-  ]
-    .filter((s) => 0 <= s && s <= 3)
-    .slice(0, setup.length)
-    .sort();
-
   // Randomly pick first player
-  const first = Math.floor(Math.random() * needed.length);
-  const slots = needed.slice(first).concat(needed.slice(0, first));
+  const slots = shuffledSlots(setup.length);
 
   // Initiative marker to first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);

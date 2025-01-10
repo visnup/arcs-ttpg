@@ -34,6 +34,7 @@ import {
   removeNotes,
   removePlayers,
   resourceAmbitions,
+  shuffledSlots,
   systemResource,
 } from "./lib/setup";
 
@@ -81,17 +82,8 @@ function showDeal(card: Card) {
   card.addUI(ui);
 }
 function campaignSetup(players: number, card: Card) {
-  // Players
-  const needed = [
-    ...new Set([...world.getAllPlayers().map((p) => p.getSlot()), 0, 1, 2, 3]),
-  ]
-    .filter((s) => 0 <= s && s <= 3)
-    .slice(0, players)
-    .sort();
-
   // Randomly pick first player
-  const first = Math.floor(Math.random() * needed.length);
-  const slots = needed.slice(first).concat(needed.slice(0, first));
+  const slots = shuffledSlots(players);
 
   // Initiative marker to first player
   (world.getObjectById("initiative") as InitiativeMarker)?.take(slots[0]);
@@ -245,7 +237,7 @@ function campaignSetup(players: number, card: Card) {
   removeBlocks();
   removeLeaders();
   removeEvents();
-  removePlayers([0, 1, 2, 3].filter((s) => !needed.includes(s)));
+  removePlayers([0, 1, 2, 3].filter((s) => !slots.includes(s)));
 
   // Place aids
   placeAid();
