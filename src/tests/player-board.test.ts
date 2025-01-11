@@ -11,7 +11,7 @@ import type { Ambition } from "../map-board";
 import { assertEqual } from "./assert";
 import { beforeEach, describe, test } from "./suite";
 
-const offset = (n: number) => 2 * n * Math.random() - n;
+const offset = (n: number) => 1.8 * n * Math.random() - n;
 
 describe("player board", () => {
   let ambitions: Record<Ambition, Record<number, number>>;
@@ -41,20 +41,32 @@ describe("player board", () => {
         for (const o of place(slot, 1, box.add([offset(2), offset(2), 0])))
           o.setObjectType(ObjectType.Penetrable);
     placeBlight(box)!.setObjectType(ObjectType.Penetrable);
-    assertEqual(ambitions.warlord[0], 16);
+    assertEqual(ambitions, {
+      tycoon: { "0": 0 },
+      tyrant: { "0": 0 },
+      warlord: { "0": 16 },
+      keeper: { "0": 0 },
+      empath: { "0": 0 },
+    });
   });
 
   test("captives", () => {
     const board = world
       .getObjectsByTemplateName("board")
       .find((d) => d.getOwningPlayerSlot() === 0)!;
-    const box = board.getPosition().add([-2, 9, 1]);
+    const box = board.getPosition().add([-2, 9.5, 1]);
     const places = [placeShips, placeAgents, placeCities, placeStarports];
     for (const slot of [0, 1, 2, 3, 4])
       for (const place of places)
         for (const o of place(slot, 1, box.add([offset(2), offset(2), 0])))
           o.setObjectType(ObjectType.Penetrable);
-    assertEqual(ambitions.tyrant[0], 3);
+    assertEqual(ambitions, {
+      tycoon: { "0": 0 },
+      tyrant: { "0": 3 },
+      warlord: { "0": 0 },
+      keeper: { "0": 0 },
+      empath: { "0": 0 },
+    });
   });
 
   test("resources", () => {
@@ -64,9 +76,12 @@ describe("player board", () => {
       gainResource(2, "relic");
       gainResource(3, "psionic");
     }
-    assertEqual(ambitions.tycoon[0], 2);
-    assertEqual(ambitions.tycoon[1], 2);
-    assertEqual(ambitions.keeper[2], 2);
-    assertEqual(ambitions.empath[3], 2);
+    assertEqual(ambitions, {
+      tycoon: { "0": 2, "1": 2, "2": 0, "3": 0 },
+      tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      keeper: { "0": 0, "1": 0, "2": 2, "3": 0 },
+      empath: { "0": 0, "1": 0, "2": 0, "3": 2 },
+    });
   });
 });

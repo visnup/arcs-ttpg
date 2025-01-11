@@ -33,8 +33,7 @@ export type Ambition = (typeof ambitions)[number];
 
 // Map zone
 const mapZoneId = `zone-map-${refObject.getId()}`;
-const mapZone =
-  world.getZoneById(mapZoneId) ?? world.createZone(refObject.getPosition());
+const mapZone = world.getZoneById(mapZoneId) ?? world.createZone([0, 0, 0]);
 {
   const { x, y } = refObject.getSize();
   const size = new Vector(x * 0.95, y * 0.7, 2);
@@ -59,7 +58,7 @@ mapZone.onEndOverlap.add((zone, obj) => {
 // Card zone
 const actionZoneId = `zone-action-${refObject.getId()}`;
 const actionZone =
-  world.getZoneById(actionZoneId) ?? world.createZone(refObject.getPosition());
+  world.getZoneById(actionZoneId) ?? world.createZone([0, 0, 0]);
 {
   const { x, y } = refObject.getSize();
   const size = new Vector(x * 0.62, y * 0.15, 2);

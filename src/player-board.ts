@@ -14,23 +14,19 @@ const p = refObject.getPosition();
 const { x, y } = refObject.getSize();
 const captivePercent = 0.685;
 const zoneId = `zone-${refObject.getId()}`;
-const zone =
-  world.getZoneById(zoneId) ??
-  world.createZone(
-    p.add(new Vector(0, (-(y + 28) * (1 - captivePercent)) / 2, 0)),
-  );
+const zone = world.getZoneById(zoneId) ?? world.createZone(p);
 zone.setId(zoneId);
+zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
 zone.setRotation(refObject.getRotation());
-zone.setScale(new Vector(x, (y + 28 / 2) * captivePercent, 8));
+zone.setScale([x, y - 1.2, 8]);
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => zone.destroy());
 // Captives zone
 const captiveZoneId = `zone-captive-${refObject.getId()}`;
-const captiveZone =
-  world.getZoneById(captiveZoneId) ??
-  world.createZone(p.add(new Vector(0, (y * captivePercent) / 2, 0)));
+const captiveZone = world.getZoneById(captiveZoneId) ?? world.createZone(p);
 captiveZone.setId(captiveZoneId);
+captiveZone.setPosition(p.add([0, (y * captivePercent) / 2, 0]));
 captiveZone.setRotation(refObject.getRotation());
 captiveZone.setScale(new Vector(x, y * (1 - captivePercent), 8));
 captiveZone.onBeginOverlap.add(updateAmbitions);
@@ -39,12 +35,11 @@ refObject.onDestroyed.add(() => captiveZone.destroy());
 // Court zone
 const courtZoneHeight = 20;
 const courtZoneId = `zone-court-${refObject.getId()}`;
-const courtZone =
-  world.getZoneById(courtZoneId) ??
-  world.createZone(
-    p.add(new Vector(Math.sign(p.x) * ((x + courtZoneHeight) / 2), 0, 0)),
-  );
+const courtZone = world.getZoneById(courtZoneId) ?? world.createZone(p);
 courtZone.setId(courtZoneId);
+courtZone.setPosition(
+  p.add(new Vector(Math.sign(p.x) * ((x + courtZoneHeight) / 2), 0, 0)),
+);
 courtZone.setRotation(refObject.getRotation());
 courtZone.setScale(new Vector(courtZoneHeight, y * 1.55, 8));
 courtZone.onBeginOverlap.add(updateAmbitions);

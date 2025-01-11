@@ -17,11 +17,10 @@ const widgets = [] as VerticalBox[];
 const { x, y } = refObject.getSize();
 for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   const zoneId = `zone-court-${refObject.getId()}-${i}`;
-  const zone =
-    world.getZoneById(zoneId) ??
-    world.createZone(snap.getGlobalPosition().add(new Vector(0, x * 0.3, 0)));
+  const zone = world.getZoneById(zoneId) ?? world.createZone([0, 0, 0]);
   const size = new Vector(x * 1.6, y / refObject.getAllSnapPoints().length, 5);
   zone.setId(zoneId);
+  zone.setPosition(snap.getGlobalPosition().add(new Vector(0, x * 0.3, 0)));
   zone.setRotation(refObject.getRotation());
   zone.setScale(size);
   zone.onBeginOverlap.add(tallyAgents);

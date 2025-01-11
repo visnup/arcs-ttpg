@@ -25,9 +25,9 @@ diceSummary.height = 300;
 
 // Zone
 const zoneId = `zone-${refObject.getId()}`;
-const zone =
-  world.getZoneById(zoneId) ?? world.createZone(refObject.getPosition());
+const zone = world.getZoneById(zoneId) ?? world.createZone([0, 0, 0]);
 zone.setId(zoneId);
+zone.setPosition(refObject.getPosition());
 zone.setRotation(refObject.getRotation());
 zone.setScale(refObject.getSize().add(new Vector(0, 0, 3)));
 zone.onBeginOverlap.add((zone, obj) => {
