@@ -76,6 +76,23 @@
 	"CardTags":
 	{
 		"0": [
+			"resource",
+			"resource:fuel"
+		],
+		"1": [
+			"resource",
+			"resource:material"
+		],
+		"2": [
+			"resource",
+			"resource:weapon"
+		],
+		"3": [
+			"resource",
+			"resource:relic"
+		],
+		"4": [
+			"resource:psionic",
 			"resource"
 		]
 	}
