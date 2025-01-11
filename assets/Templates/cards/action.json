@@ -36,10 +36,11 @@
 			"X": 3.5200000000000005,
 			"Y": 0,
 			"Z": -0.55490336781037108,
-			"Range": 3.01432,
+			"Range": 8,
+			"SecondaryRange": 3,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
-			"Shape": 0,
+			"Shape": 2,
 			"FlipValidity": 0,
 			"Tags": [
 				"declared"
