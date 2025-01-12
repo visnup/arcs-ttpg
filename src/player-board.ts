@@ -54,7 +54,6 @@ function updateAmbitions() {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
     switch (obj.getTemplateName()) {
       case "resource":
-        obj.onDestroyed.remove(updateAmbitions);
         obj.onDestroyed.add(updateAmbitions);
         // process.nextTick(() => !obj.getId() && updateAmbitions());
         switch ((obj as Card).getCardDetails().name) {
@@ -125,7 +124,6 @@ function updateAmbitions() {
         break;
       }
       case "resource": {
-        obj.onDestroyed.remove(updateAmbitions);
         obj.onDestroyed.add(updateAmbitions);
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
