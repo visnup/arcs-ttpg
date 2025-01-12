@@ -3,7 +3,7 @@
 	"GUID": "3C9C2EF77541A7021074A0B25320DE93",
 	"Name": "discard",
 	"Metadata": "",
-	"CollisionType": "Regular",
+	"CollisionType": "Ground",
 	"Friction": 0.7,
 	"Restitution": 0.3,
 	"Density": 1,
