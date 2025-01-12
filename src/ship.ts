@@ -40,3 +40,7 @@ refObject.onSecondaryAction.add((obj, player) => {
     ship.snap();
   }
 });
+
+refObject.switchLights(false);
+refObject.onGrab.add((obj) => obj.switchLights(true));
+refObject.onReleased.add((obj) => obj.switchLights(false));
