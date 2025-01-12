@@ -100,7 +100,7 @@ export function placeAid() {
   if (!p) return;
   const aid = world.createObjectFromTemplate(
     "34FBB8B5F944402AACD987BCBE52E300",
-    p.add(new Vector(0, 20, 0)),
+    p.add(new Vector(0, 18, 0)),
   ) as MultistateObject;
   aid.setState(2);
 }
