@@ -24,7 +24,7 @@ diceSummary.width = 210;
 diceSummary.height = 300;
 
 // Zone
-const zoneId = `zone-${refObject.getId()}`;
+const zoneId = `zone-dice-${refObject.getId()}`;
 const zone = world.getZoneById(zoneId) ?? world.createZone([0, 0, 0]);
 zone.setId(zoneId);
 zone.setPosition(refObject.getPosition());

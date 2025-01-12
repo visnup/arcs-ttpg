@@ -92,7 +92,8 @@
 		],
 		"2": [
 			"card",
-			"court"
+			"court",
+			"supply:material"
 		],
 		"3": [
 			"card",
@@ -104,7 +105,8 @@
 		],
 		"5": [
 			"card",
-			"court"
+			"court",
+			"supply:fuel"
 		],
 		"6": [
 			"card",

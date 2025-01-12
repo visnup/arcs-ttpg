@@ -64,7 +64,7 @@ function reset() {
   function updateButtons() {
     for (const [button, { description, results }] of buttons)
       button.current?.setText(
-        `${description} ${results.map((d) => (d.ok ? "√" : "x")).join("")}`,
+        `${description} ${results.map((d) => (d.ok ? "." : "x")).join("")}`,
       );
   }
 })();

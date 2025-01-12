@@ -13,7 +13,7 @@ const refObject = _refObject;
 const p = refObject.getPosition();
 const { x, y } = refObject.getSize();
 const captivePercent = 0.685;
-const zoneId = `zone-${refObject.getId()}`;
+const zoneId = `zone-player-${refObject.getId()}`;
 const zone = world.getZoneById(zoneId) ?? world.createZone(p);
 zone.setId(zoneId);
 zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
@@ -23,7 +23,7 @@ zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => zone.destroy());
 // Captives zone
-const captiveZoneId = `zone-captive-${refObject.getId()}`;
+const captiveZoneId = `zone-player-captive-${refObject.getId()}`;
 const captiveZone = world.getZoneById(captiveZoneId) ?? world.createZone(p);
 captiveZone.setId(captiveZoneId);
 captiveZone.setPosition(p.add([0, (y * captivePercent) / 2, 0]));
@@ -34,7 +34,7 @@ captiveZone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => captiveZone.destroy());
 // Court zone
 const courtZoneHeight = 20;
-const courtZoneId = `zone-court-${refObject.getId()}`;
+const courtZoneId = `zone-player-court-${refObject.getId()}`;
 const courtZone = world.getZoneById(courtZoneId) ?? world.createZone(p);
 courtZone.setId(courtZoneId);
 courtZone.setPosition(

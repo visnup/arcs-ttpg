@@ -1,36 +1,62 @@
-import type { Card, Player, Rotator } from "@tabletop-playground/api";
-import { refCard, Vector, world } from "@tabletop-playground/api";
+import type { Player, TraceHit } from "@tabletop-playground/api";
+import { Card, refCard, Vector, world } from "@tabletop-playground/api";
 
-type Origin = { position: Vector; rotation: Rotator };
-// @ts-expect-error assign
-const origins: Origin[] = (world._resourceOrigins ??= []);
-const { index } = refCard.getCardDetails(0)!;
-if (!origins[index]) {
-  origins[index] = {
-    position: refCard.getPosition(),
-    rotation: refCard.getRotation(),
-  };
+type N = [number, number, number];
+const { z } = world.getObjectById("map")!.getPosition();
+const origins = [-8, -4, 0, 4, 8].map((x) => [x, -44, z + 1] as N);
+const rotation = [0, -90, 0] as N;
+
+const resources = ["fuel", "material", "weapon", "relic", "psionic"];
+const isResource =
+  (i: number) =>
+  ({ object }: TraceHit) =>
+    object instanceof Card && object.getCardDetails(0)!.index === i;
+function findSupply(i: number) {
+  // Look for a player court card tagged as a resource supply
+  for (const zone of world.getAllZones()) {
+    if (!zone.getId().startsWith("zone-player-court-")) continue;
+    for (const c of zone.getOverlappingObjects())
+      if (
+        c instanceof Card &&
+        c.getStackSize() === 1 &&
+        c.getCardDetails(0)!.tags.includes(`supply:${resources[i]}`)
+      ) {
+        // Look for a resource stack on top of it
+        const stack = world
+          .boxTrace(
+            c.getExtentCenter(true, false),
+            c.getExtentCenter(true, false).add(new Vector(0, 0, 2)),
+            c.getExtent(true, false),
+          )
+          .find(isResource(i))?.object as Card | undefined;
+        if (stack) return stack;
+        // Otherwise return the snap point
+        const p = c.getSnapPoint(0)?.getGlobalPosition() ?? c.getPosition();
+        const { yaw } = c.getRotation();
+        return [p.add([0, 0, 1]), [0, yaw, 0] satisfies N] as const;
+      }
+  }
+  // Look for a resource stack on top of origin
+  const [x, y, z] = origins[i];
+  return (
+    (world.lineTrace([x, y, z - 2], [x, y, z + 2]).find(isResource(i))
+      ?.object as Card | undefined) ??
+    ([[x, y, z] satisfies N, rotation] as const)
+  );
 }
 
 // Discard to supply
 function discard(card: typeof refCard) {
-  const i = card.getCardDetails(0)!.index;
+  const { index: i } = card.getCardDetails(0)!;
   const isHomogenous = (card: Card) =>
     card.getAllCardDetails().every(({ index }) => index === i);
   if (isHomogenous(card)) {
     // If this is a homogenous stack, attempt to discard it
-    const supply = world
-      .getObjectsByTemplateName<Card>("resource")
-      .find(
-        (d) =>
-          d !== card &&
-          (world.isOnTable(d, ["bc"]) || world.isOnTable(d, ["f03"])) &&
-          isHomogenous(d),
-      );
-    if (supply) supply.addCards(card, false, 0, true);
+    const supply = findSupply(i);
+    if (supply instanceof Card) supply.addCards(card, false, 0, true);
     else {
-      card.setPosition(origins[i].position, 1.5);
-      card.setRotation(origins[i].rotation, 1.5);
+      card.setPosition(supply[0], 1.5);
+      card.setRotation(supply[1], 1.5);
     }
   } else {
     // Otherwise, call discard on each item in the stack
