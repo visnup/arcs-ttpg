@@ -80,7 +80,6 @@ function updateAmbitions() {
       // eslint-disable-next-line no-fallthrough
       case "city":
       case "starport":
-        obj.onDestroyed.clear();
         obj.onDestroyed.add(updateAmbitions);
         ambitions.warlord += (obj as Card).getStackSize();
         break;
