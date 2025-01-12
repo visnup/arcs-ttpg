@@ -126,6 +126,7 @@ function updateAmbitions() {
       case "resource": {
         obj.onDestroyed.clear();
         obj.onDestroyed.add(updateAmbitions);
+        process.nextTick(() => !obj.getId() && updateAmbitions());
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
