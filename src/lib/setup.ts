@@ -194,7 +194,7 @@ export function placeShips(slot: number, n: number, target: Vector) {
   const half = (ships.length - 1) / 2;
   const width = ships[0]?.getSize().y;
   for (const [j, ship] of ships.entries()) {
-    ship.setRotation(rotation);
+    ship.setRotation(rotation.compose([0, Math.random() * 10 - 5, 0]));
     ship.setPosition(target.add(direction.multiply((j - half) * width)));
     ship.snap();
   }
