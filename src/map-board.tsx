@@ -42,7 +42,7 @@ const mapZone = world.getZoneById(mapZoneId) ?? world.createZone([0, 0, 0]);
   mapZone.setScale(size);
   refObject.onDestroyed.add(() => mapZone.destroy());
 }
-// Objects on map are penetrable
+// Ships on map are penetrable
 const penetrable = new Set(["ship", "flagship"]);
 const objectTypes = new WeakMap<GameObject, ObjectType>();
 mapZone.onBeginOverlap.add((zone, obj) => {
