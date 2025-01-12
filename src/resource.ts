@@ -1,36 +1,23 @@
-import type { Card, Player, Rotator } from "@tabletop-playground/api";
+import type { Card, Player } from "@tabletop-playground/api";
 import { refCard, Vector, world } from "@tabletop-playground/api";
-
-type Origin = { position: Vector; rotation: Rotator };
-// @ts-expect-error assign
-const origins: Origin[] = (world._resourceOrigins ??= []);
-const { index } = refCard.getCardDetails(0)!;
-if (!origins[index]) {
-  origins[index] = {
-    position: refCard.getPosition(),
-    rotation: refCard.getRotation(),
-  };
-}
 
 // Discard to supply
 function discard(card: typeof refCard) {
-  const i = card.getCardDetails(0)!.index;
+  const { index: i, name } = card.getCardDetails(0)!;
   const isHomogenous = (card: Card) =>
     card.getAllCardDetails().every(({ index }) => index === i);
   if (isHomogenous(card)) {
     // If this is a homogenous stack, attempt to discard it
     const supply = world
-      .getObjectsByTemplateName<Card>("resource")
-      .find(
-        (d) =>
-          d !== card &&
-          (world.isOnTable(d, ["bc"]) || world.isOnTable(d, ["f03"])) &&
-          isHomogenous(d),
-      );
-    if (supply) supply.addCards(card, false, 0, true);
-    else {
-      card.setPosition(origins[i].position, 1.5);
-      card.setRotation(origins[i].rotation, 1.5);
+      .getObjectsByTemplateName<Card>("supply")
+      .find((d) => d.getTags().includes(`supply:${name}`));
+    const deck = supply?.getSnapPoint(0)?.getSnappedObject() as
+      | Card
+      | undefined;
+    if (deck) deck.addCards(card, false, 0, true);
+    else if (supply) {
+      card.setPosition(supply.getPosition().add([0, 0, 0.5]), 1.5);
+      card.snap();
     }
   } else {
     // Otherwise, call discard on each item in the stack
