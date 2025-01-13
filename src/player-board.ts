@@ -4,6 +4,7 @@ import {
   globalEvents,
   Vector,
   world,
+  ZonePermission,
 } from "@tabletop-playground/api";
 import type { Ambition } from "./map-board";
 
@@ -19,6 +20,7 @@ zone.setId(zoneId);
 zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
 zone.setRotation(refObject.getRotation());
 zone.setScale([x, y - 1.2, 8]);
+zone.setStacking(ZonePermission.Nobody);
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => zone.destroy());
@@ -80,6 +82,7 @@ function updateAmbitions() {
       // eslint-disable-next-line no-fallthrough
       case "city":
       case "starport":
+        obj.onDestroyed.add(updateAmbitions);
         ambitions.warlord += (obj as Card).getStackSize();
         break;
       case "agent":
