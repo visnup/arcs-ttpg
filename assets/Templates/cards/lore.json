@@ -39,7 +39,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"court"
+	],
 	"FrontTexture": "cards/lore.jpg",
 	"BackTexture": "cards/lore-back.jpg",
 	"HiddenTexture": "",

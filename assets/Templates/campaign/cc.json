@@ -39,7 +39,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"court"
+	],
 	"FrontTexture": "campaign/cc.jpg",
 	"BackTexture": "cards/bc-back.jpg",
 	"HiddenTexture": "",
