@@ -20,8 +20,8 @@ function toggle(obj: GameObject) {
 }
 
 // cmd-r to orient ships
-const origin = world.getObjectById("map")!.getPosition();
 refObject.onSecondaryAction.add((obj, player) => {
+  const origin = world.getObjectById("map")!.getPosition();
   const ships = player.getSelectedObjects();
   if (ships[0] !== obj) return; // only one cook in the kitchen
   const p = ships
