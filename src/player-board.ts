@@ -20,7 +20,6 @@ zone.setId(zoneId);
 zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
 zone.setRotation(refObject.getRotation());
 zone.setScale([x, y - 1.2, 8]);
-zone.setStacking(ZonePermission.Nobody);
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => zone.destroy());
@@ -54,10 +53,9 @@ function updateAmbitions() {
   // Resources, ships, agents, buildings
   for (const obj of zone.getOverlappingObjects()) {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
+    process.nextTick(() => !obj.getId() && updateAmbitions());
     switch (obj.getTemplateName()) {
       case "resource":
-        obj.onDestroyed.add(updateAmbitions);
-        // process.nextTick(() => !obj.getId() && updateAmbitions());
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":
@@ -82,7 +80,6 @@ function updateAmbitions() {
       // eslint-disable-next-line no-fallthrough
       case "city":
       case "starport":
-        obj.onDestroyed.add(updateAmbitions);
         ambitions.warlord += (obj as Card).getStackSize();
         break;
       case "agent":
@@ -125,7 +122,7 @@ function updateAmbitions() {
         break;
       }
       case "resource": {
-        obj.onDestroyed.add(updateAmbitions);
+        process.nextTick(() => !obj.getId() && updateAmbitions());
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
           case "material":

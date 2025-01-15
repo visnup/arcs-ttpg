@@ -51,6 +51,28 @@ describe("player board", () => {
     });
   });
 
+  test("stacked trophies", async () => {
+    const board = world
+      .getObjectsByTemplateName("board")
+      .find((d) => d.getOwningPlayerSlot() === 0)!;
+    const box = board.getPosition().add([-2, 2, 1]);
+    const blight = [1, 2].map(() => placeBlight(box)!);
+    blight[0].addCards(blight[1]);
+    assertEqual(blight[0].getStackSize(), 2);
+    await new Promise((r) => process.nextTick(r));
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { "0": 0 },
+        tyrant: { "0": 0 },
+        warlord: { "0": 2 },
+        keeper: { "0": 0 },
+        empath: { "0": 0 },
+      },
+      "stacked by addCards",
+    );
+  });
+
   test("captives", () => {
     const board = world
       .getObjectsByTemplateName("board")
@@ -104,8 +126,9 @@ describe("player board", () => {
       .getObjectsByTemplateName<Card>("resource")
       .filter((d) => !world.isOnTable(d));
     assertEqual(fuel.length, 2);
-    fuel[0].setPosition(fuel[1].getPosition().add([0, 0, 5]));
-    await new Promise((r) => setTimeout(r, 200));
+    fuel[0].addCards(fuel[1]);
+    assertEqual(fuel[0].getStackSize(), 2);
+    await new Promise((r) => process.nextTick(r));
     assertEqual(
       ambitions,
       {
@@ -115,7 +138,7 @@ describe("player board", () => {
         keeper: { "0": 0 },
         empath: { "0": 0 },
       },
-      "stacked by dropping",
+      "stacked by addCards",
     );
   });
 });
