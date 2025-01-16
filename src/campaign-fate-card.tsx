@@ -196,7 +196,7 @@ function campaignSetup(players: number, card: Card) {
   if (regentOutlaw)
     for (const player of slots) {
       const board = world
-        .getObjectsByTemplateName("board")
+        .getObjectsByTemplateName("leader fate")
         .find((d) => d.getOwningPlayerSlot() === player);
       const snap = board
         ?.getAllSnapPoints()
@@ -219,7 +219,7 @@ function campaignSetup(players: number, card: Card) {
     firstRegent.setPosition(
       firstBoard
         .getPosition()
-        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
+        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5 - 3.5, 1)),
     );
   }
 

@@ -18,11 +18,24 @@ for (const zone of world.getAllZones())
 const colors = Object.fromEntries(
   [0, 1, 2, 3, 4].map((i) => [world.getSlotColor(i).toHex(), i]),
 );
-for (const obj of world.getAllObjects())
+const positions: [Vector, number][] = [];
+for (const obj of world.getAllObjects()) {
   if (obj.getOwningPlayerSlot() === -1) {
     const c = obj.getPrimaryColor().toHex();
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
+  if (obj.getTemplateName() === "board")
+    positions.push([obj.getPosition(), obj.getOwningPlayerSlot()]);
+}
+// Set owning player slots by position
+for (const obj of world.getAllObjects())
+  if (obj.getTemplateName() === "leader fate")
+    obj.setOwningPlayerSlot(
+      positions.sort(
+        (a, b) =>
+          a[0].distance(obj.getPosition()) - b[0].distance(obj.getPosition()),
+      )[0][1],
+    );
 
 // Hotkey to mimic hot seat functionality
 globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {

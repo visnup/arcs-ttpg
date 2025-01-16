@@ -4,6 +4,7 @@ import {
   globalEvents,
   Vector,
   world,
+  ZonePermission,
 } from "@tabletop-playground/api";
 import type { GameObject, Zone } from "@tabletop-playground/api";
 import type { Ambition } from "./map-board";
@@ -12,13 +13,14 @@ const refObject = _refObject;
 
 // Board zone
 const p = refObject.getPosition();
-const { x, y } = refObject.getSize();
+const { x, y } = refObject.getSize().add([0, 7, 0]);
 const captivePercent = 0.685;
 const zoneId = `zone-player-${refObject.getId()}`;
 const zone = world.getZoneById(zoneId) ?? world.createZone(p);
 zone.setId(zoneId);
 zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
 zone.setRotation(refObject.getRotation());
+zone.setStacking(ZonePermission.Nobody);
 zone.setScale([x, y - 1.2, 8]);
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
