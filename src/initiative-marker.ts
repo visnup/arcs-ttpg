@@ -29,8 +29,8 @@ function moveToPlayer(
   const { x, y } = board.getSize();
   const pos = p.add(
     new Vector(
-      (-Math.sign(p.x) * (x + 6)) / 2,
-      -(y + 7) / 2,
+      (-Math.sign(p.x) * (x + 7.5)) / 2,
+      -(y + 7.5) / 2,
       obj.getSize().z / 2 + 0.1,
     ),
   );

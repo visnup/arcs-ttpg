@@ -219,7 +219,7 @@ function campaignSetup(players: number, card: Card) {
     firstRegent.setPosition(
       firstBoard
         .getPosition()
-        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5 - 3.5, 1)),
+        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5 - 3.75, 1)),
     );
   }
 
