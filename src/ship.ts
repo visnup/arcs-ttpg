@@ -32,7 +32,7 @@ refObject.onSecondaryAction.add((obj, player) => {
   let { yaw } = direction.toRotator();
   yaw += Math.random() > 0.5 ? 90 : -90;
   const half = (ships.length - 1) / 2;
-  const width = ships[0]?.getSize().y + 0.2;
+  const width = ships[0]?.getSize().y + 0.1;
   for (const [j, ship] of ships.entries()) {
     const { pitch, roll } = ship.getRotation();
     ship.setRotation([pitch, yaw + Math.random() * 10 - 5, roll]);

@@ -192,7 +192,7 @@ export function placeShips(slot: number, n: number, target: Vector) {
   rotation.yaw += Math.random() > 0.5 ? 90 : -90;
   rotation.yaw += Math.random() * 30 - 15;
   const half = (ships.length - 1) / 2;
-  const width = ships[0]?.getSize().y + 0.2;
+  const width = ships[0]?.getSize().y + 0.1;
   for (const [j, ship] of ships.entries()) {
     ship.setRotation(rotation.compose([0, Math.random() * 10 - 5, 0]));
     ship.setPosition(target.add(direction.multiply((j - half) * width)));
