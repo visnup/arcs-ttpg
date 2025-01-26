@@ -64,6 +64,8 @@ function maybeRotateCard(zone: Zone, obj: GameObject) {
     });
     registered.add(obj);
   }
+  // Bug workaround: make sure card is intersecting zone after checking getSize
+  obj.setPosition(obj.getPosition().add(new Vector(0, 0, 0.1)));
 }
 
 function updateAmbitions() {
