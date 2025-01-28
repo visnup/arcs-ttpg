@@ -4,11 +4,15 @@ import {
   globalEvents,
   Vector,
   world,
+  ZonePermission,
 } from "@tabletop-playground/api";
 import type { GameObject, Zone } from "@tabletop-playground/api";
+import { localSnaps } from "./lib/local-snaps";
 import type { Ambition } from "./map-board";
 
 const refObject = _refObject;
+
+localSnaps(refObject);
 
 // Board zone
 const p = refObject.getPosition();
@@ -20,6 +24,7 @@ zone.setId(zoneId);
 zone.setPosition(p.add([0, 0.6 - y * (1 - captivePercent), 0]));
 zone.setRotation(refObject.getRotation());
 zone.setScale([x, y - 1.2, 8]);
+zone.setStacking(ZonePermission.Nobody);
 zone.onBeginOverlap.add(updateAmbitions);
 zone.onEndOverlap.add(updateAmbitions);
 refObject.onDestroyed.add(() => zone.destroy());

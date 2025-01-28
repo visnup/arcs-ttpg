@@ -112,26 +112,28 @@
 			"X": 2.6000000000000001,
 			"Y": -10.5,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{
 			"X": 2.6000000000000001,
 			"Y": -7.4800000000000004,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{
@@ -205,52 +207,56 @@
 			"X": 2.6000000000000001,
 			"Y": -4.4500000000000002,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{
 			"X": 2.6000000000000001,
 			"Y": -1.4380000000000002,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{
 			"X": 2.6000000000000001,
 			"Y": 1.5619999999999998,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{
 			"X": 2.6000000000000001,
 			"Y": 4.5999999999999996,
 			"Z": 0.5,
-			"Range": 1,
+			"Range": 2,
 			"SnapRotation": 2,
 			"RotationOffset": 0,
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"resource"
+				"resource",
+				"local"
 			]
 		},
 		{

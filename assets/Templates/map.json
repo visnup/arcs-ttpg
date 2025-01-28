@@ -104,7 +104,8 @@
 			"FlipValidity": 0,
 			"Tags": [
 				"card",
-				"turn:3"
+				"turn:3",
+				"local"
 			]
 		},
 		{
@@ -133,7 +134,8 @@
 			"FlipValidity": 0,
 			"Tags": [
 				"card",
-				"turn:2"
+				"turn:2",
+				"local"
 			]
 		},
 		{
@@ -176,7 +178,8 @@
 			"FlipValidity": 0,
 			"Tags": [
 				"card",
-				"turn:1"
+				"turn:1",
+				"local"
 			]
 		},
 		{
@@ -192,7 +195,8 @@
 			"Tags": [
 				"card",
 				"card-lead",
-				"turn:0"
+				"turn:0",
+				"local"
 			]
 		},
 		{

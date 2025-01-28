@@ -21,12 +21,15 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
+import { localSnaps } from "./lib/local-snaps";
 import { Tally } from "./lib/tally";
 
 const refObject = _refObject;
 const refPackageId = _refPackageId;
 
 refObject.setId("map");
+
+localSnaps(refObject);
 
 const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
 export type Ambition = (typeof ambitions)[number];
