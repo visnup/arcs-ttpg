@@ -331,6 +331,8 @@ class Turns {
   };
 
   onSnappedTo = (obj: GameObject, player: Player, p: SnapPoint) => {
+    // Don't react if we haven't started
+    if (this.turn < 0) return;
     // Card led: switch buttons
     if (p === this.snaps[0]) {
       this.widgets[0].removeChildAt(1);
