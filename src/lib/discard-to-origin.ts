@@ -5,7 +5,11 @@ type Origin = {
   rotation: Rotator | [number, number, number];
 };
 
-export function discardToOrigin(obj: GameObject, preserveRotation = true) {
+export function discardToOrigin(
+  obj: GameObject,
+  preserveRotation = true,
+  registerPrimaryAction = true,
+) {
   const origin: Origin = JSON.parse(obj.getSavedData("origin") || "{}");
   if (!origin.position || !origin.rotation) {
     origin.position = obj.getPosition();
@@ -20,5 +24,5 @@ export function discardToOrigin(obj: GameObject, preserveRotation = true) {
 
   // @ts-expect-error any
   obj.discard = discard;
-  obj.onPrimaryAction.add(discard);
+  if (registerPrimaryAction) obj.onPrimaryAction.add(discard);
 }

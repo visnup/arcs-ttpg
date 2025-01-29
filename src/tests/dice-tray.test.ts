@@ -1,11 +1,10 @@
-import { world } from "@tabletop-playground/api";
 import type {
   Dice,
-  HorizontalBox,
   RichText,
   Text,
   VerticalBox,
 } from "@tabletop-playground/api";
+import { HorizontalBox, world } from "@tabletop-playground/api";
 import { assertEqual } from "./assert";
 import { describe, test } from "./suite";
 
@@ -19,13 +18,16 @@ async function getSummary(dice: Dice[], faces: number[]) {
     });
   });
   const summary = world.getScreenUIs()[0].widget as VerticalBox;
-  return summary.getAllChildren().map((b) => {
-    const [, description, count] = (b as HorizontalBox).getAllChildren();
-    return [
-      (description as RichText).getText().replace(/\n.*/s, ""),
-      +(count as Text).getText(),
-    ];
-  });
+  return summary
+    .getAllChildren()
+    .filter((b) => b instanceof HorizontalBox)
+    .map((b) => {
+      const [, description, count] = b.getAllChildren();
+      return [
+        (description as RichText).getText().replace(/\n.*/s, ""),
+        +(count as Text).getText(),
+      ];
+    });
 }
 
 describe("dice tray", () => {
