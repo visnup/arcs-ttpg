@@ -65,10 +65,10 @@
 	},
 	"CardMetadata":
 	{
-		"0": "3 city\n3 city\n2\nrelic relic",
+		"0": "3 city\n3 city\n2\nrelic relic\nacademic",
 		"1": "3 city\n3 starport\n2\nfuel material",
 		"2": "4 starport\n3\n2\nfuel weapon",
-		"3": "3 city\n3 starport\n2\npsionic psionic",
+		"3": "3 city\n3 starport\n2\npsionic psionic\nproud",
 		"4": "4\n3\n2\nrelic weapon",
 		"5": "3 city\n3\n3\nrelic material",
 		"6": "3 city\n4 starport\n2\nfuel material",
