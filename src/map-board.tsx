@@ -5,6 +5,7 @@ import type {
   Player,
   ProgressBar,
   SnapPoint,
+  Zone,
 } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
@@ -81,6 +82,7 @@ class AmbitionSection {
   tallies = new Map<number, number>();
   widget = new HorizontalBox();
   position: Vector;
+  zone: Zone;
 
   constructor(offset: number) {
     this.offset = offset;
@@ -94,12 +96,24 @@ class AmbitionSection {
     ui.widget = this.widget;
     this.widget.setChildDistance(15);
     refObject.addUI(ui);
+    this.zone = world.createZone(
+      refObject
+        .getPosition()
+        .add(this.position)
+        .add([4 / 2, 0, 0]),
+    );
+    this.zone.setId(`zone-ambition-${offset}`);
+    this.zone.setScale([4.3, 10, 2]);
+    this.zone.onBeginOverlap.add(this.render);
+    this.zone.onEndOverlap.add(this.render);
+    refObject.onDestroyed.add(() => this.zone.destroy());
     this.load();
   }
 
-  setTally(slot: number, value: number) {
-    if (this.tallies.get(slot) === value) return;
-    this.tallies.set(slot, value);
+  render = () => {
+    const declared = this.zone
+      .getOverlappingObjects()
+      .some((d) => d.getTemplateName() === "ambition");
     this.widget.removeAllChildren();
     for (const [slot, value] of [...this.tallies].sort((a, b) => b[1] - a[1])) {
       if (value)
@@ -107,11 +121,20 @@ class AmbitionSection {
           render(
             <Tally
               value={value}
-              color={world.getSlotColor(slot).saturate(slot === 4 ? 0 : 0.8)}
+              color={world
+                .getSlotColor(slot)
+                .saturate(slot === 4 || !declared ? 0 : 0.8)
+                .lighten(declared ? 0 : -0.7)}
             />,
           ),
         );
     }
+  };
+
+  setTally(slot: number, value: number) {
+    if (this.tallies.get(slot) === value) return;
+    this.tallies.set(slot, value);
+    this.render();
     this.save();
   }
 
@@ -124,7 +147,7 @@ class AmbitionSection {
     const center = refObject
       .getPosition()
       .add(this.position)
-      .add(new Vector(1.5, 0, 0));
+      .add(new Vector(1.7, 0, 0));
     const occupied = world
       .getObjectsByTemplateName("ambition")
       .filter((d) => Math.abs(d.getPosition().x - center.x) < 2.2)
