@@ -9,7 +9,7 @@ export function localSnaps(obj: GameObject) {
     if (!snap.getTags().includes("local")) return;
     if (snaps.has(snap)) return console.warn("Local snap point used twice?");
     const zone = world.createZone(snap.getGlobalPosition());
-    zone.setScale([1, 1, 1]);
+    zone.setScale([0.1, 0.1, 0.1]);
     zone.setSnapping(ZonePermission.Nobody);
     zone.onEndOverlap.add((zone) => {
       if (zone.getOverlappingObjects().length === 1) {
