@@ -1,24 +1,18 @@
-import type { GameObject, SnapPoint, Zone } from "@tabletop-playground/api";
+import type { GameObject } from "@tabletop-playground/api";
 import { world, ZonePermission } from "@tabletop-playground/api";
 
 // When an object to snapped to a "local" snap point, disable it within a zone
 // matching the snap area until all objects have exited the zone.
-let count = 0;
-const snaps = new WeakMap<SnapPoint, Zone>();
 export function localSnaps(obj: GameObject) {
-  obj.onSnappedTo.add((obj, player, snap) => {
-    if (!snap.getTags().includes("local")) return;
-    if (snaps.has(snap)) return console.warn("Local snap point used twice?");
+  for (const [i, snap] of obj.getAllSnapPoints().entries()) {
+    if (!snap.getTags().includes("local")) continue;
     const zone = world.createZone(snap.getGlobalPosition());
-    zone.setId(`zone-snap-${count++}`);
+    zone.setId(`zone-snap-${obj.getId()}-${i}`);
     zone.setScale([0.1, 0.1, 0.1]);
-    zone.setSnapping(ZonePermission.Nobody);
-    zone.onEndOverlap.add((zone) => {
-      if (zone.getOverlappingObjects().length === 1) {
-        snaps.delete(snap);
-        zone.destroy();
-      }
+    zone.onBeginOverlap.add(() => zone.setSnapping(ZonePermission.Nobody));
+    zone.onEndOverlap.add(() => {
+      if (zone.getOverlappingObjects().length <= 1)
+        zone.setSnapping(ZonePermission.Everybody);
     });
-    snaps.set(snap, zone);
-  });
+  }
 }
