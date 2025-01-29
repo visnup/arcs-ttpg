@@ -274,6 +274,7 @@ export function placeResources(
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));
   supply?.snap();
+  return supply;
 }
 export function gainResource(slot: number, resource: string | undefined) {
   const board = world
@@ -283,7 +284,7 @@ export function gainResource(slot: number, resource: string | undefined) {
     .getAllSnapPoints()
     .filter((d) => d.getTags().includes("resource") && !d.getSnappedObject())
     .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)[0];
-  placeResources(resource, 1, empty.getGlobalPosition());
+  return placeResources(resource, 1, empty.getGlobalPosition());
 }
 export function resourceAmbitions(resources: Map<string, number>) {
   const lookup: Record<string, string> = {

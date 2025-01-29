@@ -1,5 +1,10 @@
 import type { Card } from "@tabletop-playground/api";
-import { globalEvents, ObjectType, world } from "@tabletop-playground/api";
+import {
+  globalEvents,
+  ObjectType,
+  world,
+  ZonePermission,
+} from "@tabletop-playground/api";
 import {
   gainResource,
   placeAgents,
@@ -16,6 +21,7 @@ const offset = (n: number) => 2 * n * Math.random() - n;
 
 describe("player board", () => {
   let ambitions: Record<Ambition, Record<number, number>>;
+  let slot = -1;
   beforeEach(() => {
     ambitions = {
       tycoon: {},
@@ -29,32 +35,33 @@ describe("player board", () => {
       ambitions[ambition] = ambitions[ambition] ?? {};
       ambitions[ambition][slot] = value;
     });
+    slot = Math.floor(Math.random() * 4);
   });
 
   test("trophies", () => {
     const board = world
       .getObjectsByTemplateName("board")
-      .find((d) => d.getOwningPlayerSlot() === 0)!;
+      .find((d) => d.getOwningPlayerSlot() === slot)!;
     const box = board.getPosition().add([-2, 2, 1]);
     const places = [placeShips, placeAgents, placeCities, placeStarports];
-    for (const slot of [0, 1, 2, 3, 4])
+    for (const s of [0, 1, 2, 3, 4])
       for (const place of places)
-        for (const o of place(slot, 1, box.add([offset(2), offset(2), 0])))
+        for (const o of place(s, 1, box.add([offset(2), offset(2), 0])))
           o.setObjectType(ObjectType.Penetrable);
     placeBlight(box)!.setObjectType(ObjectType.Penetrable);
     assertEqual(ambitions, {
-      tycoon: { "0": 0 },
-      tyrant: { "0": 0 },
-      warlord: { "0": 16 },
-      keeper: { "0": 0 },
-      empath: { "0": 0 },
+      tycoon: { [slot]: 0 },
+      tyrant: { [slot]: 0 },
+      warlord: { [slot]: 16 },
+      keeper: { [slot]: 0 },
+      empath: { [slot]: 0 },
     });
   });
 
   test("stacked trophies", async () => {
     const board = world
       .getObjectsByTemplateName("board")
-      .find((d) => d.getOwningPlayerSlot() === 0)!;
+      .find((d) => d.getOwningPlayerSlot() === slot)!;
     const box = board.getPosition().add([-2, 2, 1]);
     const blight = [1, 2].map(() => placeBlight(box)!);
     blight[0].addCards(blight[1]);
@@ -63,11 +70,11 @@ describe("player board", () => {
     assertEqual(
       ambitions,
       {
-        tycoon: { "0": 0 },
-        tyrant: { "0": 0 },
-        warlord: { "0": 2 },
-        keeper: { "0": 0 },
-        empath: { "0": 0 },
+        tycoon: { [slot]: 0 },
+        tyrant: { [slot]: 0 },
+        warlord: { [slot]: 2 },
+        keeper: { [slot]: 0 },
+        empath: { [slot]: 0 },
       },
       "stacked by addCards",
     );
@@ -76,19 +83,19 @@ describe("player board", () => {
   test("captives", () => {
     const board = world
       .getObjectsByTemplateName("board")
-      .find((d) => d.getOwningPlayerSlot() === 0)!;
+      .find((d) => d.getOwningPlayerSlot() === slot)!;
     const box = board.getPosition().add([-2, 9.5, 1]);
     const places = [placeShips, placeAgents, placeCities, placeStarports];
-    for (const slot of [0, 1, 2, 3, 4])
+    for (const s of [0, 1, 2, 3, 4])
       for (const place of places)
-        for (const o of place(slot, 1, box.add([offset(1.5), offset(1.5), 0])))
+        for (const o of place(s, 1, box.add([offset(1.5), offset(1.5), 0])))
           o.setObjectType(ObjectType.Penetrable);
     assertEqual(ambitions, {
-      tycoon: { "0": 0 },
-      tyrant: { "0": 3 },
-      warlord: { "0": 0 },
-      keeper: { "0": 0 },
-      empath: { "0": 0 },
+      tycoon: { [slot]: 0 },
+      tyrant: { [slot]: 3 },
+      warlord: { [slot]: 0 },
+      keeper: { [slot]: 0 },
+      empath: { [slot]: 0 },
     });
   });
 
@@ -139,6 +146,41 @@ describe("player board", () => {
         empath: { "0": 0 },
       },
       "stacked by addCards",
+    );
+  });
+
+  test("snap points act local", async () => {
+    const board = world
+      .getObjectsByTemplateName("board")
+      .find((d) => d.getOwningPlayerSlot() === slot)!;
+    const zones = world
+      .getAllZones()
+      .filter((z) => z.getId().startsWith(`zone-snap-${board.getId()}-`))
+      .sort((a, b) => a.getPosition().y - b.getPosition().y);
+    assertEqual(zones.length, 6, "resource local snap zones exist");
+    assertEqual(
+      zones.map((z) => z.getSnapping()),
+      [0, 0, ZonePermission.Nobody, ZonePermission.Nobody, 0, 0],
+      "permissions set",
+    );
+    for (const city of world.getObjectsByTemplateName("city"))
+      city.setPosition([0, 0, 0]);
+    await new Promise((resolve) => process.nextTick(resolve));
+    assertEqual(
+      zones.map((z) => z.getSnapping()),
+      [0, 0, 0, 0, 0, 0],
+      "permissions changed",
+    );
+    gainResource(slot, "fuel");
+    gainResource(slot, "fuel");
+    gainResource(slot, "material");
+    gainResource(slot, "material");
+    gainResource(slot, "weapon");
+    gainResource(slot, "weapon");
+    assertEqual(
+      zones.map((z) => z.getSnapping()),
+      [2, 2, 2, 2, 2, 2],
+      "permissions changed",
     );
   });
 });
