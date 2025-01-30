@@ -45,6 +45,7 @@ zone.onEndOverlap.add((zone, obj) => {
   sumDice();
 });
 refObject.onDestroyed.add(() => zone.destroy());
+sumDice();
 
 // Put up guard walls when dice are rolled
 let walls: GameObject | undefined;
@@ -82,7 +83,8 @@ function sumDice() {
     ["key", "Raid Cards\n& Resources"],
   ];
   diceSummary.widget = render(
-    !Object.keys(total).length && zone.getOverlappingObjects().length ? (
+    !Object.keys(total).length &&
+      zone.getOverlappingObjects().filter((o) => o !== refObject).length ? (
       <text>All Faces Blank</text>
     ) : (
       <verticalbox gap={10}>
