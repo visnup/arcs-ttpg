@@ -389,6 +389,7 @@ class Turns {
         .every((d) => d.getNumCards() === 0)
     )
       return;
+    globalEvents.onRoundStarted.trigger(this.slots);
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
         render(

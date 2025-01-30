@@ -1,4 +1,4 @@
-import type { Card, Player } from "@tabletop-playground/api";
+import type { Card } from "@tabletop-playground/api";
 import {
   refCard as _refCard,
   refPackageId as _refPackageId,
@@ -126,21 +126,38 @@ function isSurpassing(card: Card) {
     surpassing.slice(1).every((c) => rank(c) <= rank(card)) // ignore lead; the zero marker may be on it
   );
 }
+const snaps = world
+  .getObjectById("map")!
+  .getAllSnapPoints()
+  .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
+  .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+let slots = JSON.parse(world.getSavedData("slots") || "[]") as number[];
+globalEvents.onRoundStarted.add((s) =>
+  world.setSavedData(JSON.stringify((slots = s)), "slots"),
+);
+function getSlot(card: Card) {
+  const p = card.getPosition();
+  const closest = snaps.reduce((closer, s) =>
+    s.getGlobalPosition().distance(p) < closer.getGlobalPosition().distance(p)
+      ? s
+      : closer,
+  );
+  return slots[snaps.indexOf(closest)];
+}
 
 // Seize or surpass option card is played
 for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
-function onReleased(card: Card, player?: Player) {
+function onReleased(card: Card) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
-  const slot = player ? player.getSlot() : +card.getSavedData("slot");
-  card.setSavedData(String(slot), "slot");
   const isFaceUp = card.isFaceUp();
   if (
     (!isFaceUp && isSecond(card)) ||
     (isFaceUp && rank(card) === 7 && isSurpassing(card))
   ) {
     // Seize
+    const slot = getSlot(card);
     const seizeInitiative = () => {
       if (card.getUIs()[index]) {
         getInitiative()?.seize(slot);
@@ -168,6 +185,7 @@ function onReleased(card: Card, player?: Player) {
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
   } else if (isFaceUp && isSurpassing(card)) {
     // Surpass
+    const slot = getSlot(card);
     const takeInitiative = () => {
       if (card.getUIs()[index]) {
         getInitiative()?.take(slot);
