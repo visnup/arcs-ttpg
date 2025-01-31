@@ -1,5 +1,6 @@
 import type { Card, CardHolder, SnapPoint } from "@tabletop-playground/api";
 import { Button, world } from "@tabletop-playground/api";
+import type { InitiativeMarker } from "../initiative-marker";
 import { assert, assertEqual } from "./assert";
 import { beforeEach, describe, test } from "./suite";
 
@@ -120,12 +121,12 @@ describe("action deck", () => {
     if ("next" in seize && typeof seize.next === "function") seize.next();
     assertEqual(world.getSlots()[0], 2, "seize goes to red");
     assert(
-      world.getObjectById("initiative")!.getRotation().pitch < -85,
+      (world.getObjectById("initiative") as InitiativeMarker).isSeized(),
       "initiative seized",
     );
     assertEqual(getButton(surpass), undefined, "surpass gone");
 
-    // Surpass more ineffective
+    // Can't surpass after seize
     const badSurpass = holders[1].removeAt(0)!;
     assertEqual(badSurpass.getCardDetails(0)?.index, 26, "6 mobilization");
     await playCard(badSurpass, snaps[3]);
