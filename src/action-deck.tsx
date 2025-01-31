@@ -101,7 +101,7 @@ function suit(card: Card) {
 function rank(card: Card) {
   return (card.getCardDetails(0)!.index % 7) + 1;
 }
-export function getPlayed() {
+function getPlayed() {
   const zone = world
     .getAllZones()
     .find((z) => z.getId().startsWith("zone-action-"));
@@ -148,6 +148,7 @@ function getSlot(card: Card) {
 // Seize or surpass option card is played
 for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
+Object.assign(refCard.onReleased, { _trigger: () => onReleased(refCard) }); // for testing
 function onReleased(card: Card) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
