@@ -21,6 +21,7 @@ export function describe(description: string, fn: () => void) {
       currentSuite.results = [];
       fn();
       for (const t of currentSuite.tests) currentSuite.results.push(await t());
+      before = before.filter((fn) => "keep" in fn && fn.keep);
     },
     tests: [],
     results: [],
@@ -28,8 +29,9 @@ export function describe(description: string, fn: () => void) {
   suites.push(suite);
 }
 
-const before: (() => void)[] = [];
-export function beforeEach(fn: () => void) {
+let before: (() => void)[] = [];
+export function beforeEach(fn: () => void, keep = false) {
+  Object.assign(fn, { keep });
   before.push(fn);
 }
 

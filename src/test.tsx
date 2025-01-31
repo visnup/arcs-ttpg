@@ -30,7 +30,7 @@ function reset() {
 }
 
 (async () => {
-  beforeEach(reset);
+  beforeEach(reset, true);
 
   // Import tests
   for (const p of world.getAllowedPackages())
