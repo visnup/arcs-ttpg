@@ -72,6 +72,27 @@ describe("action deck", () => {
     assertEqual(world.getSlots()[0], 1, "surpass goes to blue");
   });
 
+  test("surpass after reload", async () => {
+    const lead = holders[0].removeAt(3)!;
+    await playCard(lead, snaps[0]);
+
+    // Surpass
+    let surpass = holders[1].removeAt(4)!;
+    await playCard(surpass, snaps[1]);
+    // Reload
+    const json = surpass.toJSONString();
+    const p = surpass.getPosition();
+    surpass.destroy();
+    surpass = world.createObjectFromJSON(json, p) as Card;
+
+    // Acts the same
+    assertEqual(getButton(surpass)?.getText().trim(), "Surpass", "surpass");
+    assertEqual(world.getSlots()[0], 0, "initiative at yellow");
+    if ("discard" in surpass && typeof surpass.discard === "function")
+      surpass.discard();
+    assertEqual(world.getSlots()[0], 1, "surpass goes to blue");
+  });
+
   test("surpass more", async () => {
     const lead = holders[0].removeAt(3)!;
     await playCard(lead, snaps[0]);
@@ -131,5 +152,39 @@ describe("action deck", () => {
     assertEqual(badSurpass.getCardDetails(0)?.index, 26, "6 mobilization");
     await playCard(badSurpass, snaps[3]);
     assertEqual(getButton(badSurpass), undefined, "no surpass after seize");
+  });
+
+  test("seize after reload", async () => {
+    const lead = holders[0].removeAt(3)!;
+    await playCard(lead, snaps[0]);
+
+    // Surpass
+    const surpass = holders[1].removeAt(4)!;
+    await playCard(surpass, snaps[1]);
+    assertEqual(getButton(surpass)?.getText().trim(), "Surpass", "surpass");
+
+    // Seize
+    const pivot = holders[2].removeAt(0)!;
+    await playCard(pivot, snaps[2]);
+    assertEqual(getButton(pivot), undefined, "pivot no button");
+    let seize = holders[2].removeAt(0)!;
+    seize.setRotation([0, 0, 0]);
+    await playCard(seize, snaps[2], [0, 2, 1]);
+
+    // Reload
+    const json = seize.toJSONString();
+    const p = seize.getPosition();
+    seize.destroy();
+    seize = world.createObjectFromJSON(json, p) as Card;
+
+    // Acts the same
+    assertEqual(getButton(seize)?.getText().trim(), "Seize", "seize button");
+    if ("next" in seize && typeof seize.next === "function") seize.next();
+    assertEqual(world.getSlots()[0], 2, "seize goes to red");
+    assert(
+      (world.getObjectById("initiative") as InitiativeMarker).isSeized(),
+      "initiative seized",
+    );
+    assertEqual(getButton(surpass), undefined, "surpass gone");
   });
 });
