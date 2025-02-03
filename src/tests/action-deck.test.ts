@@ -1,5 +1,6 @@
 import type { Card, CardHolder, SnapPoint } from "@tabletop-playground/api";
 import { Button, world } from "@tabletop-playground/api";
+import type { TestableCard } from "../action-deck";
 import type { InitiativeMarker } from "../initiative-marker";
 import { assert, assertEqual } from "./assert";
 import { beforeEach, describe, test } from "./suite";
@@ -45,8 +46,7 @@ describe("action deck", () => {
     card.setPosition(snap.getGlobalPosition().add(offset));
     card.snap();
     await new Promise((resolve) => setTimeout(resolve, 100));
-    // @ts-expect-error _trigger
-    card.onReleased._trigger();
+    (card as TestableCard).onReleased.trigger();
   }
 
   function getButton(card: Card) {

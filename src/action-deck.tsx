@@ -145,10 +145,14 @@ function getSlot(card: Card) {
   return slots[snaps.indexOf(closest)];
 }
 
+export type TestableCard = Card & {
+  onReleased: { trigger: () => void };
+};
+
 // Seize or surpass option card is played
 for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
-Object.assign(refCard.onReleased, { _trigger: () => onReleased(refCard) }); // for testing
+(refCard as TestableCard).onReleased.trigger = () => onReleased(refCard);
 function onReleased(card: Card) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;
