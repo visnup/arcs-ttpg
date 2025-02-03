@@ -146,13 +146,13 @@ function getSlot(card: Card) {
 }
 
 export type TestableCard = Card & {
-  onReleased: { trigger: () => void };
+  onReleased: { trigger: typeof onReleased };
 };
+(refCard as TestableCard).onReleased.trigger = onReleased;
 
 // Seize or surpass option card is played
 for (const card of getPlayed()) if (card === refCard) onReleased(card);
 refCard.onReleased.add(onReleased);
-(refCard as TestableCard).onReleased.trigger = () => onReleased(refCard);
 function onReleased(card: Card) {
   if (card.getUIs().length || card.getStackSize() > 1) return;
   if (getInitiative()?.isSeized()) return;

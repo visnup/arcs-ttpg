@@ -46,7 +46,7 @@ describe("action deck", () => {
     card.setPosition(snap.getGlobalPosition().add(offset));
     card.snap();
     await new Promise((resolve) => setTimeout(resolve, 100));
-    (card as TestableCard).onReleased.trigger();
+    (card as TestableCard).onReleased.trigger(card);
   }
 
   function getButton(card: Card) {

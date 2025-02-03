@@ -49,42 +49,37 @@ export type TestableCard = Card & {
   onPrimaryAction: { trigger: typeof followSetup };
 };
 
-// Avoid running if imported from another object script
-if (refCard.getTemplateName() === "setup") {
-  // Add triggers for testability
-  (refCard as TestableCard).onRemoved.trigger = initialSetup;
-  (refCard as TestableCard).onFlipUpright.trigger = previewSetup;
-  (refCard as TestableCard).onPrimaryAction.trigger = followSetup;
+// Add triggers for testability
+(refCard as TestableCard).onRemoved.trigger = initialSetup;
+(refCard as TestableCard).onFlipUpright.trigger = previewSetup;
+(refCard as TestableCard).onPrimaryAction.trigger = followSetup;
 
-  if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
+if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
 
-  refCard.onFlipUpright.add((card) =>
-    Math.abs(card.getRotation().roll) < 10
-      ? previewSetup(card)
-      : clearPreviewSetup(),
-  );
-  refCard.onSecondaryAction.add(previewSetup);
-  refCard.onPrimaryAction.add(followSetup);
+refCard.onFlipUpright.add((card) =>
+  Math.abs(card.getRotation().roll) < 10
+    ? previewSetup(card)
+    : clearPreviewSetup(),
+);
+refCard.onSecondaryAction.add(previewSetup);
+refCard.onPrimaryAction.add(followSetup);
 
-  refCard.addCustomAction(
-    "Preview Setup",
-    "Preview the setup instructions of this card on the map",
-  );
-  refCard.addCustomAction(
-    "Follow Setup",
-    "Follow the setup instructions on this card",
-  );
-  refCard.onCustomAction.add(
-    (card: Card, player: Player, identifier: string) => {
-      switch (identifier) {
-        case "Preview Setup":
-          return previewSetup(card);
-        case "Follow Setup":
-          return followSetup(card);
-      }
-    },
-  );
-}
+refCard.addCustomAction(
+  "Preview Setup",
+  "Preview the setup instructions of this card on the map",
+);
+refCard.addCustomAction(
+  "Follow Setup",
+  "Follow the setup instructions on this card",
+);
+refCard.onCustomAction.add((card: Card, player: Player, identifier: string) => {
+  switch (identifier) {
+    case "Preview Setup":
+      return previewSetup(card);
+    case "Follow Setup":
+      return followSetup(card);
+  }
+});
 
 function initialSetup(card: Card) {
   if ("_initialSetup" in world) return;
