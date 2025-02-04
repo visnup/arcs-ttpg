@@ -40,14 +40,14 @@ const mapZoneId = `zone-map-${refObject.getId()}`;
 const mapZone = world.getZoneById(mapZoneId) ?? world.createZone([0, 0, 0]);
 {
   const { x, y } = refObject.getSize();
-  const size = new Vector(x * 0.95, y * 0.7, 2);
+  const size = new Vector(x * 0.95, y * 0.71, 2);
   mapZone.setId(mapZoneId);
   mapZone.setPosition(refObject.getPosition().add([x * 0.025, 0, 0]));
   mapZone.setScale(size);
   refObject.onDestroyed.add(() => mapZone.destroy());
 }
-// Ships on map are penetrable
-const penetrable = new Set(["ship", "flagship"]);
+// Ships on map are penetrable, 2p out of play resources too
+const penetrable = new Set(["ship", "flagship", "resource"]);
 const objectTypes = new WeakMap<GameObject, ObjectType>();
 mapZone.onBeginOverlap.add((zone, obj) => {
   if (!penetrable.has(obj.getTemplateName())) return;
