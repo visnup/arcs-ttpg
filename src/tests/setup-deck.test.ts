@@ -1,23 +1,15 @@
-import type {
-  Card,
-  CardHolder,
-  GameObject,
-  HorizontalBox,
+import {
+  ObjectType,
+  world,
+  type Card,
+  type CardHolder,
+  type HorizontalBox,
 } from "@tabletop-playground/api";
-import { ObjectType, world } from "@tabletop-playground/api";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual, assertNotEqual } from "./assert";
+import { getCounts } from "./setup";
 import { describe, test } from "./suite";
 import { getTally } from "./tally";
-
-function getCounts(filter = (obj: GameObject) => !!obj) {
-  const counts: Record<string, Record<string, number>> = {};
-  for (const obj of world.getAllObjects().filter(filter)) {
-    const slot = (counts[obj.getOwningPlayerSlot()] ||= {});
-    slot[obj.getTemplateName()] = (slot[obj.getTemplateName()] || 0) + 1;
-  }
-  return counts;
-}
 
 describe("setup deck", () => {
   test("4p", async () => {
@@ -39,7 +31,7 @@ describe("setup deck", () => {
     const actionDecks = world.getObjectsByTemplateName<Card>("action");
     assertEqual(actionDecks.length, 1, "one action deck");
     const actionDeck = actionDecks[0];
-    assertEqual(actionDeck.getStackSize(), 7 * 4, "7s shuffled in");
+    assertEqual(actionDeck.getStackSize(), 7 * 4, "1s, 7s shuffled in");
     assertEqual(actionDeck.getRotation().yaw, -90, "action deck turned over");
     // piece counts
     const counts = getCounts();

@@ -302,9 +302,8 @@ export function resourceAmbitions(resources: Map<string, number>) {
   return ambitions;
 }
 
-let freeCity: Card | undefined;
 export function placeFreeCity(position: Vector) {
-  freeCity ??= world
+  const freeCity = world
     .getObjectsByTemplateName<Card>("city")
     .find((d) => d.getOwningPlayerSlot() === 4);
   const city = freeCity?.takeCards(1);
@@ -327,6 +326,6 @@ export function placeBlight(position: Vector) {
                 .every(({ metadata }) => metadata === "blight"),
           ) as Card | undefined);
   const b = blight?.getStackSize() === 1 ? blight : blight?.takeCards(1);
-  b?.setPosition(position);
+  b?.setPosition(position.add(above));
   return b;
 }
