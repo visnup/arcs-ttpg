@@ -40,10 +40,19 @@ import {
 
 const refPackageId = _refPackageId;
 
+export type TestableCard = Card & {
+  onPrimaryAction: { trigger: typeof showDeal };
+  onSnapped: { trigger: typeof takeFateSet };
+  onClick: typeof campaignSetup;
+};
+
 if (refCard.getStackSize() > 1) {
   refCard.onPrimaryAction.add(showDeal);
+  (refCard as TestableCard).onPrimaryAction.trigger = showDeal;
+  (refCard as TestableCard).onClick = campaignSetup;
 } else {
   refCard.onSnapped.add(takeFateSet);
+  (refCard as TestableCard).onSnapped.trigger = takeFateSet;
   refCard.onPrimaryAction.add(takeFateSet);
   refCard.onCustomAction.add(takeFateSet);
   refCard.addCustomAction(

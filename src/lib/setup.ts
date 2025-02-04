@@ -327,6 +327,6 @@ export function placeBlight(position: Vector) {
                 .every(({ metadata }) => metadata === "blight"),
           ) as Card | undefined);
   const b = blight?.getStackSize() === 1 ? blight : blight?.takeCards(1);
-  b?.setPosition(position);
+  b?.setPosition(position.add(above));
   return b;
 }
