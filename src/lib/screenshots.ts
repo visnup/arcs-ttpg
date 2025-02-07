@@ -2,16 +2,19 @@ import {
   globalEvents,
   world,
   type Card,
+  type CardHolder,
   type Dice,
   type Player,
 } from "@tabletop-playground/api";
+import { type TestableCard as ActionCard } from "../action-deck";
 import { type TestableCard as FateCard } from "../campaign-fate-card";
+import { type TestableBoard } from "../map-board";
 import { type TestableCard as SetupCard } from "../setup-deck";
 import { createReset } from "./reset";
 import { placeAgents, removeNotes } from "./setup";
 
 const reset = createReset();
-const pause = () => new Promise((r) => setTimeout(r, 5_000));
+const pause = (t = 5e3) => new Promise((r) => setTimeout(r, t));
 
 // `/screenshots` will cycle through all screenshot setups, pausing on each.
 // `/screenshots n` will setup a single screenshot.
@@ -25,6 +28,7 @@ export async function onChatMessage(player: Player, message: string) {
 
   // 0: Overview
   // -----------
+  const map = world.getObjectById("map")!;
 
   // 4p setup
   const setupDeck = world
@@ -77,8 +81,62 @@ export async function onChatMessage(player: Player, message: string) {
   // 1: Card play
   // ------------
 
-  // TODO discard
-  // TODO play cards
+  // recombine dealt cards
+  const cards = world
+    .getObjectsByTemplateName<Card>("action")
+    .find((c) => c.getStackSize() > 1)!;
+  const hands = world
+    .getObjectsByTemplateName<CardHolder>("cards")
+    .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
+  for (const hand of hands)
+    while (hand.getNumCards() > 0) cards.addCards(hand.removeAt(0)!);
+  function takeCard(i: number, roll = 180) {
+    for (let j = 0; j < cards.getStackSize(); j++)
+      if (cards.getCardDetails(j)!.index === i) {
+        const c = cards.takeCards(1, true, j)!;
+        c.setRotation([0, 0, roll]);
+        return c;
+      }
+  }
+
+  // discard
+  const discard = world.getObjectByTemplateName<CardHolder>("discard")!;
+  for (const [i, c] of [1, 4, 5, 6, 12, 13, 16].entries())
+    discard.insert(takeCard(c)!, i);
+  discard.insert(takeCard(17, 0)!, 7); // copy
+
+  // current round
+  const plays = map.getAllSnapPoints();
+  function playCard(i: number, tag: string) {
+    const c = takeCard(i)!;
+    const s = plays.find((s) => s.getTags().includes(tag))!;
+    c.setPosition(s.getGlobalPosition().add([0, 0, 1]));
+    c.snap();
+    (map as TestableBoard).onSnappedTo.trigger(c, player, s);
+    return c;
+  }
+  playCard(22, "card-lead");
+  playCard(23, "turn:1");
+  const pivot = playCard(10, "turn:2");
+  pivot.setPosition(pivot.getPosition().add([0, 0, 0.5]));
+  const seize = takeCard(15, 0)!;
+  seize.setPosition(
+    plays
+      .find((s) => s.getTags().includes("turn:2"))!
+      .getGlobalPosition()
+      .add([0, 5, 2]),
+  );
+  seize.snap();
+  (seize as ActionCard).onReleased.trigger(seize);
+
+  // redeal, avoiding restarting the round
+  const held = [3, 3, 2, 4];
+  for (const [i, s] of world.getSlots().entries())
+    hands[s].insert(cards.takeCards(held[i])!, 0);
+
+  // become red player
+  player.switchSlot(2);
+  for (const c of hands[2].getCards()) c.flipOrUpright();
 
   // camera
   // X=-7.030 Y=-6.196 Z=133.914

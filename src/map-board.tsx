@@ -493,4 +493,9 @@ class Turns {
     return JSON.parse(refObject.getSavedData("turns") || "null");
   }
 }
-new Turns();
+const turns = new Turns();
+
+export type TestableBoard = GameObject & {
+  onSnappedTo: { trigger: typeof turns.onSnappedTo };
+};
+(refObject as TestableBoard).onSnappedTo.trigger = turns.onSnappedTo;
