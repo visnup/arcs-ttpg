@@ -1,33 +1,17 @@
 import type { Button, VerticalBox } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
-  globalEvents,
   UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
+import { createReset } from "./lib/reset";
 import { beforeEach, run, suites } from "./tests/suite";
 
 const refObject = _refObject;
 
-const saved = world
-  .getAllObjects()
-  .filter((obj) => obj !== refObject)
-  .map((obj) => [obj.toJSONString(), obj.getPosition()] as const);
-const keys = new Set(Object.keys(world));
-
-function reset() {
-  clearAllIntervals();
-  for (const delegate of Object.values<{ clear?: () => void }>(
-    globalEvents.constructor.prototype,
-  ))
-    if (delegate && typeof delegate.clear === "function") delegate.clear();
-  for (const obj of world.getAllObjects()) if (obj !== refObject) obj.destroy();
-  // @ts-expect-error delete
-  for (const key of Object.keys(world)) if (!keys.has(key)) delete world[key];
-  for (const [json, p] of saved) world.createObjectFromJSON(json, p)!;
-}
+const reset = createReset(refObject);
 
 (async () => {
   beforeEach(reset, true);

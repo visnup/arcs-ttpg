@@ -7,6 +7,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { hslToRgb, rgbToHsl } from "./lib/color";
+import { onChatMessage as handleScreenshots } from "./lib/screenshots";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
 
@@ -32,6 +33,9 @@ globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
     player.switchSlot((n + player.getSlot() + dir) % n);
   }
 });
+
+// Screenshot commands
+globalEvents.onChatMessage.add(handleScreenshots);
 
 // Extend GameWorld
 declare module "@tabletop-playground/api" {

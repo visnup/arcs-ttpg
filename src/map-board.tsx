@@ -88,7 +88,7 @@ class AmbitionSection {
     this.offset = offset;
     const ui = new UIElement();
     ui.position = this.position = new Vector(
-      (this.x = size.x / 2 - (13 + offset * 5.3)),
+      (this.x = size.x / 2 - (13.2 + offset * 5.3)),
       size.y / 2 - 5.5,
       size.z + 0.32,
     );
@@ -144,19 +144,16 @@ class AmbitionSection {
       .filter((d) => d.getSnappedToPoint())
       .sort((a, b) => a.getPosition().y - b.getPosition().y)[0];
     if (!marker) return;
-    const center = refObject
-      .getPosition()
-      .add(this.position)
-      .add(new Vector(1.7, 0, 0));
+    const center = refObject.getPosition().add(this.position).add([1.9, 0, 0]);
     const occupied = world
       .getObjectsByTemplateName("ambition")
       .filter((d) => Math.abs(d.getPosition().x - center.x) < 2.2)
       .sort((a, b) => a.getPosition().y - b.getPosition().y)
       .concat(marker);
     const y = marker.getSize().x + 0.2;
-    const left = center.add(new Vector(0, ((1 - occupied.length) * y) / 2, 0));
+    const left = center.add([0, ((1 - occupied.length) * y) / 2, 0]);
     for (const [i, m] of occupied.entries())
-      m.setPosition(left.add(new Vector(0, i * y, 0.01)), 1.5);
+      m.setPosition(left.add([0, i * y, 0.01]), 1.5);
   }
 
   // Ties: On a tie for first place, all tied players get second place. On a tie
@@ -308,7 +305,7 @@ class Turns {
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
     this.widgets = this.snaps.map((p) => {
       const ui = new UIElement();
-      ui.position = p.getLocalPosition().add(new Vector(0, -6.1, 0));
+      ui.position = p.getLocalPosition().add([0, -6.1, 0]);
       ui.rotation = new Rotator(0, p.getSnapRotation(), 0);
       ui.scale = 0.15;
       ui.widget = render(<horizontalbox gap={10} />);

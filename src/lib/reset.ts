@@ -1,0 +1,22 @@
+import { globalEvents, world, type GameObject } from "@tabletop-playground/api";
+
+export function createReset(refObject?: GameObject) {
+  const saved = world
+    .getAllObjects()
+    .filter((obj) => obj !== refObject)
+    .map((obj) => [obj.toJSONString(), obj.getPosition()] as const);
+  const keys = new Set(Object.keys(world));
+
+  return function reset() {
+    clearAllIntervals();
+    for (const delegate of Object.values<{ clear?: () => void }>(
+      globalEvents.constructor.prototype,
+    ))
+      if (delegate && typeof delegate.clear === "function") delegate.clear();
+    for (const obj of world.getAllObjects())
+      if (obj !== refObject) obj.destroy();
+    // @ts-expect-error world[key]
+    for (const key of Object.keys(world)) if (!keys.has(key)) delete world[key];
+    for (const [json, p] of saved) world.createObjectFromJSON(json, p)!;
+  };
+}

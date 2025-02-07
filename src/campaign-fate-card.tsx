@@ -52,7 +52,6 @@ if (refCard.getStackSize() > 1) {
   (refCard as TestableCard).onClick = campaignSetup;
 } else {
   refCard.onSnapped.add(takeFateSet);
-  (refCard as TestableCard).onSnapped.trigger = takeFateSet;
   refCard.onPrimaryAction.add(takeFateSet);
   refCard.onCustomAction.add(takeFateSet);
   refCard.addCustomAction(
@@ -60,6 +59,7 @@ if (refCard.getStackSize() > 1) {
     "Spawns matching fate cards and items",
   );
 }
+(refCard as TestableCard).onSnapped.trigger = takeFateSet;
 
 // Campaign setup
 function showDeal(card: Card) {
