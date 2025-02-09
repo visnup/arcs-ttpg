@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -32,8 +30,7 @@
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -59,12 +56,27 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7 ],
-	"CardNames":
-	{
+	"Indices": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7
+	],
+	"CardNames": {
+		"0": "Archivist",
+		"1": "Overseer\n\nQ: Can I tax a city once per turn and build a ship in the same turn to use *Ruthless* twice?\nA: Each turn, you can only tax or build a ship with *Ruthless*, not both.\n\nQ: If a city is destroyed with *Ruthless*, when do I provoke Outrage?\nA: When you destroy a city to tax, you first provoke outrage, then gain the resource from taxing.\n\nQ: Does *Ruthless* give me an extra actions, or do the bonus activations of a city or startport counting against my total action pips?\nA: Hitting the building is an extra action. You don't have to spend an action pip.\n\nQ: Can I use *Ruthless* to hit a building even if I do not gain a resource or cannot build a ship?\nA: Yes, you may hit a building to tax or build even if the action yields nothing.",
+		"2": "Corsair\n\nQ: Can I reroll this multiple times?\nA: No, only once.",
+		"3": "Noble\n\nQ: If the top card of the Court deck is Populist Demands, do you trigger *Connected* again?\nA: Yes, if you declare an undeclared ambition with a drawn Populist Demands, this ability triggers again.\n\nQ: If I secure Farseers, does *Connected* trigger?\nA: No. Farseers being drawn as a result of Connected does not see the timing window to then trigger its ability to look at a Rival's hand and swap a card with them.",
+		"4": "Anarchist",
+		"5": "Shaper\n\nQ: Do resources \"you have\" apply to resources on a Cartel card?\nA: Yes, you can use resources from a Cartel card for Mythic.\n\nQ: Can I Catapult move from a gate that has a starport from Gate Ports?\nA: Yes. The ability just indicates that you cannot Catapult move by *using* the starport.",
+		"6": "Agitator",
+		"7": "Quartermaster\n\nQ: When does Resilient count the number of starports I control?\nA: Resilient checks the number of starports after battle. If the battle destroys a starport previously controlled by Quartermaster, or if the battle causes the Quartermaster to lose control over a starport, it does not add to the number of repairs."
 	},
-	"CardMetadata":
-	{
+	"CardMetadata": {
 		"0": "3 city\n3 city\n2\nrelic relic",
 		"1": "3 city\n3 starport\n2\nfuel material",
 		"2": "4 starport\n3\n2\nfuel weapon",
@@ -74,8 +86,7 @@
 		"6": "3 city\n4 starport\n2\nfuel material",
 		"7": "4 starport\n3\n2\nfuel weapon"
 	},
-	"CardTags":
-	{
+	"CardTags": {
 		"0": [
 			"leader",
 			"card"

@@ -2,6 +2,7 @@
 /assets/Thumbnails/
 /node_modules/
 /wip/assets
+/wip/cards/*.yml
 *.blend1
 *.mtl
 

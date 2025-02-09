@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -32,8 +30,7 @@
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -59,12 +56,27 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7 ],
-	"CardNames":
-	{
+	"Indices": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7
+	],
+	"CardNames": {
+		"0": "Elder",
+		"1": "Mystic\n\nQ: If a resource stack is empty, can I still tax it to then gain a Psionic from *Attuned*?\nA: You can tax a city even if its resource stack is empty. You do not gain the first resource into your area.",
+		"2": "Fuel-Drinker\n\nQ: If a resource stack is empty, can I still tax it to then gain a Fuel from *Insatiable*?\nA: You can tax a city even if its resource stack is empty. You do not gain the first resource into your area.",
+		"3": "Upstart\n\nQ: If you are the Upstart, have Empath's Bond, and Empath is declared, can you tax a loyal city that you do not control?\nA: The \"any\" in Empath's Bond should be interpreted as \"non-Loyal,\" and Callow should be rephrased to “You cannot tax cities that you do not control.” As a result, Empath's Bond when active only gives the Upstart the ability to use Rival starports to build and Catapult move.",
+		"4": "Rebel\n\nQ: Can I choose not to use the two extra dice from *Committed*?\nA: No, collecting these two dice is mandatory.\n\nQ: How does *Disorganized* interact with Predictive Sensors?\nA: Predictive Sensors is subject to this restriction. When the Rebel uses Predictive Sensors, they can move in up to 2 ships from each adjacent system. This is because a move is defined as “number of Loyal ships from one system to an adjacent system.”\n\nQ: How does Disorganized interact with Force Beams?\nA: Force Beams ignores this restriction.",
+		"5": "Warrior\n\nQ: Do I have to move and battle with the same ships with *Tactical*?\nA: You can move and battle with different ships.\n\nQ: Can the *Tactical* move be a Catapult move?\nA: Yes.\n\nQ: Can I do the *Tactical* move if I end up moving to a space with no ships to battle?\nA: You must perform a legal Battle action after moving (must have a legal target to attack). Otherwise the move must be undone.",
+		"6": "Feastbringer\n\nQ: Do my Influence and Secure actions need to be on the same card?\nA: You can influence and secure different cards.\n\nQ: Do I have to secure after I influence?\nA: You must perform a legal secure after you influence. (You must have a legal target to secure.) Otherwise the influence must be undone.",
+		"7": "Demagogue\n\nQ: How many cards can I influence with **Bold**?\nA: You may put up to one agent on each card in the Court."
 	},
-	"CardMetadata":
-	{
+	"CardMetadata": {
 		"0": "3 city\n3 starport\n2\nrelic material",
 		"1": "3 city\n3 starport\n2\npsionic relic",
 		"2": "3 city\n3 starport\n2\nfuel fuel",
@@ -74,8 +86,7 @@
 		"6": "3 city\n3 city\n3\nrelic material",
 		"7": "3 city\n3 starport\n2\npsionic weapon"
 	},
-	"CardTags":
-	{
+	"CardTags": {
 		"0": [
 			"leader",
 			"card"

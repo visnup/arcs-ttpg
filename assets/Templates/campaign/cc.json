@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -32,8 +30,7 @@
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -61,15 +58,42 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ],
-	"CardNames":
-	{
+	"Indices": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14
+	],
+	"CardNames": {
+		"0": "Mining Interest",
+		"1": "Construction Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"2": "Gatekeepers",
+		"3": "Shipping Interest",
+		"4": "Skirmishers\n\nQ: Can I reroll this multiple times?\nA: No, only once.",
+		"5": "Arms Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"6": "Lattice Spies\n\nQ: Can I discard this even if I cannot seize?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"7": "Silver Tongues",
+		"8": "Sworn Guardians",
+		"9": "Elder Broker\n\nQ: Is Trade blocked by Sworn Guardians?\nA: The Trade action is not stealing and is not blocked by Sworn Guardians.",
+		"10": "Populist Demands",
+		"11": "Council Intrigue\n\nQ: Can I flip the Council while it is not in the Court?\nA: Yes! In this case, return it to the Court. It won't resolve this round.",
+		"12": "Diplomatic Fiasco\n\nQ: Do you count agents before or after returning the agents that were on this card?\nA: In this instance, the agents should be returned first, then the supply counted.",
+		"13": "Song of Freedom",
+		"14": "Blight Looms"
 	},
-	"CardMetadata":
-	{
-	},
-	"CardTags":
-	{
+	"CardMetadata": {},
+	"CardTags": {
 		"0": [
 			"court",
 			"card"

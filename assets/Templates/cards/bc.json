@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -46,8 +44,7 @@
 			]
 		}
 	],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -75,15 +72,74 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 ],
-	"CardNames":
-	{
+	"Indices": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21,
+		22,
+		23,
+		24,
+		25,
+		26,
+		27,
+		28,
+		29,
+		30
+	],
+	"CardNames": {
+		"0": "Loyal Engineers",
+		"1": "Mining Interest",
+		"2": "Material Cartel\n\nQ: How does the supply on this card interact with other cards and abilities?\nA: The resources count towards ambitions and Keeper's Solidarity, but they cannot be discarded for Relic Fence or be stolen.\n\nQ: Do rivals discard even if Tycoon wasn't scored?\nA: Yes.\n\nQ: Can I discard this even if there is nothing to steal?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"3": "Admin Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"4": "Construction Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"5": "Fuel Cartel\n\nQ: How does the supply on this card interact with other cards and abilities?\nA: The resources count towards ambitions and Keeper's Solidarity, but they cannot be discarded for Relic Fence or be stolen.\n\nQ: Do rivals discard even if Tycoon wasn't scored?\nA: Yes.\n\nQ: Can I discard this even if there is nothing to steal?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"6": "Loyal Pilots",
+		"7": "Gatekeepers",
+		"8": "Shipping Interest",
+		"9": "Spacing Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"10": "Arms Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
+		"11": "Prison Wardens",
+		"12": "Skirmishers\n\nQ: Can I reroll this multiple times?\nA: No, only once.",
+		"13": "Court Enforcers",
+		"14": "Loyal Marines",
+		"15": "Lattice Spies\n\nQ: Can I discard this even if I cannot seize?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"16": "Farseers\n\nQ: Can you give me an example of this Prelude action if I discarded 2 cards plus Farseers?\nA: You would draw 3 cards from the bottom of the action card discard pile.\n\nQ: Can I discard zero cards beyond this one?\nA: Yes! In this case, just draw 1 card.\n\nQ: What happens if the discard pile is very small when I use this?\nA: Shuffle all of the cards you are discarding before placing them on the discard pile. This is one of the few situations where discard order matters in the game.",
+		"17": "Secret Order",
+		"18": "Loyal Empaths",
+		"19": "Silver-Tongues\n\nQ: Can I discard this even if I cannot steal anything?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"20": "Loyal Keepers",
+		"21": "Sworn Guardians",
+		"22": "Elder Broker\n\nQ: Is Trade blocked by Sworn Guardians?\nA: The Trade action is not stealing and is not blocked by Sworn Guardians.",
+		"23": "Relic Fence",
+		"24": "Galactic Bards\n\nQ: In what order do you choose to seize the initiative and declare an ambition?\nA: Either order.\n\nQ: How does this interact with '7' action cards and Faithful Cards?\nA: For '7' action cards, you may declare any ambition. For Faithful cards, you may declare an ambition based on the current Faith, such as Pluralistic Faith.",
+		"25": "Mass Uprising\n\nQ: If I Ransack the Court to secure this during a battle, do ships I place in the battle system count as attacking ships?\nA: No.",
+		"26": "Populist Demands",
+		"27": "Outrage Spreads",
+		"28": "Song of Freedom",
+		"29": "Guild Struggle",
+		"30": "Call to Action"
 	},
-	"CardMetadata":
-	{
-	},
-	"CardTags":
-	{
+	"CardMetadata": {},
+	"CardTags": {
 		"0": [
 			"card",
 			"court"

@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -32,8 +30,7 @@
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -59,12 +56,37 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
-	"CardNames":
-	{
+	"Indices": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15
+	],
+	"CardNames": {
+		"0": "Imperial Council in Session",
+		"1": "Guild Envoys Depart",
+		"2": "Govern the Imperial Reach",
+		"3": "Govern the Imperial Reach",
+		"4": "Govern the Imperial Reach",
+		"5": "Imperial Regent",
+		"6": "Flagship Upgrades",
+		"7": "Flagship Upgrades",
+		"8": "Flagship Upgrades",
+		"9": "Flagship Upgrades"
 	},
-	"CardMetadata":
-	{
+	"CardMetadata": {
 		"0": "imperial council",
 		"1": "guild envoys depart",
 		"2": "govern the imperial reach",
@@ -75,22 +97,9 @@
 		"7": "imperial regent / outlaw",
 		"8": "imperial regent / outlaw"
 	},
-	"CardTags":
-	{
+	"CardTags": {
 		"0": [
 			"court",
-			"card"
-		],
-		"13": [
-			"action",
-			"card"
-		],
-		"14": [
-			"action",
-			"card"
-		],
-		"15": [
-			"action",
 			"card"
 		],
 		"5": [
@@ -104,6 +113,18 @@
 		],
 		"8": [
 			"regent-outlaw"
+		],
+		"13": [
+			"action",
+			"card"
+		],
+		"14": [
+			"action",
+			"card"
+		],
+		"15": [
+			"action",
+			"card"
 		]
 	}
 }
