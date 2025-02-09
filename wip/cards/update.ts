@@ -96,4 +96,10 @@ modify("../../assets/Templates/campaign/dc.json", (json) => {
   return json;
 });
 
+// fate.json
+modify("../../assets/Templates/campaign/fate.json", (json) => {
+  json["CardNames"] = names(campaign, (d) => d.id.startsWith("ARCS-FATE"));
+  return json;
+});
+
 // f01.json..f24.json
