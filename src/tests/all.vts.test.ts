@@ -59,7 +59,7 @@ describe("all.vts", () => {
       "-1": {
         map: 1,
         tray: 1,
-        note: 8,
+        note: 9,
         court: 1,
         chapter: 1,
         initiative: 1,
