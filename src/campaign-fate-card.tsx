@@ -46,20 +46,20 @@ export type TestableCard = Card & {
   onClick: typeof campaignSetup;
 };
 
-if (refCard.getStackSize() > 1) {
-  refCard.onPrimaryAction.add(showDeal);
-  (refCard as TestableCard).onPrimaryAction.trigger = showDeal;
-  (refCard as TestableCard).onClick = campaignSetup;
-} else {
-  refCard.onSnapped.add(takeFateSet);
-  refCard.onPrimaryAction.add(takeFateSet);
-  refCard.onCustomAction.add(takeFateSet);
-  refCard.addCustomAction(
-    "Take Matching Fate Set",
-    "Spawns matching fate cards and items",
-  );
-}
+refCard.onPrimaryAction.add(showDealOrTakeFateSet);
+(refCard as TestableCard).onPrimaryAction.trigger = showDealOrTakeFateSet;
+refCard.onSnapped.add(takeFateSet);
 (refCard as TestableCard).onSnapped.trigger = takeFateSet;
+refCard.onCustomAction.add(takeFateSet);
+refCard.addCustomAction(
+  "Take Matching Fate Set",
+  "Spawns matching fate cards and items",
+);
+(refCard as TestableCard).onClick = campaignSetup;
+
+function showDealOrTakeFateSet(card: Card) {
+  return card.getStackSize() > 1 ? showDeal(card) : takeFateSet(card);
+}
 
 // Campaign setup
 function showDeal(card: Card) {
