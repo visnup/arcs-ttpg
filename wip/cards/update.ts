@@ -106,11 +106,11 @@ modify("../../assets/Templates/campaign/fate.json", (json) => {
 for (let i = 1; i <= 24; i++) {
   const n = i.toString().padStart(2, "0");
   modify(`../../assets/Templates/campaign/f${n}.json`, (json) => {
-    const m = new RegExp(`^ARCS-F${i}\\d\\dA?$`);
-    const n = names(campaign, (d) => d.id.match(m));
-    const l = Object.keys(n).length;
+    const n = names(campaign, (d) =>
+      d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
+    );
     json["CardNames"] = Object.fromEntries(
-      Object.entries(n).map(([i, v]) => [l - 1 - +i, v]),
+      Object.entries(n).map(([i, v], _, r) => [r.length - 1 - +i, v]),
     );
     return json;
   });
