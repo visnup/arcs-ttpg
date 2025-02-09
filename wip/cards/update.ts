@@ -46,7 +46,7 @@ function names(cards: any[], filter: (d: any) => boolean) {
 
 // setup.json
 modify("assets/Templates/cards/setup.json", (json) => {
-  json["CardNames"] = names(base, (d) => d.id.match(/^ARCS-\dSETUP/));
+  json["CardNames"] = {}; // TODO
   return json;
 });
 
