@@ -10,14 +10,12 @@
 	"SurfaceType": "Cardboard",
 	"Roughness": 1,
 	"Metallic": 0,
-	"PrimaryColor":
-	{
+	"PrimaryColor": {
 		"R": 255,
 		"G": 255,
 		"B": 255
 	},
-	"SecondaryColor":
-	{
+	"SecondaryColor": {
 		"R": 0,
 		"G": 0,
 		"B": 0
@@ -32,8 +30,7 @@
 	"Lights": [],
 	"SnapPointsGlobal": false,
 	"SnapPoints": [],
-	"ZoomViewDirection":
-	{
+	"ZoomViewDirection": {
 		"X": 0,
 		"Y": 0,
 		"Z": 0
@@ -59,12 +56,37 @@
 	"MirrorBack": true,
 	"EmissiveFront": false,
 	"Model": "Rounded",
-	"Indices": [ 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ],
-	"CardNames":
-	{
-	},
-	"CardMetadata":
-	{
+	"Indices": [
+		26,
+		25,
+		24,
+		23,
+		22,
+		21,
+		20,
+		19,
+		18,
+		17,
+		16,
+		15,
+		14,
+		13,
+		12,
+		11,
+		10,
+		9,
+		8,
+		7,
+		6,
+		5,
+		4,
+		3,
+		2,
+		1,
+		0
+	],
+	"CardNames": {},
+	"CardMetadata": {
 		"5": "tycoon",
 		"16": "keeper",
 		"17": "empath",
@@ -75,12 +97,7 @@
 		"25": "tycoon",
 		"26": "10"
 	},
-	"CardTags":
-	{
-		"27": [
-			"fate",
-			"card"
-		],
+	"CardTags": {
 		"1": [
 			"fate",
 			"card"
@@ -194,6 +211,10 @@
 		"26": [
 			"fate",
 			"setup",
+			"card"
+		],
+		"27": [
+			"fate",
 			"card"
 		]
 	}
