@@ -4,5 +4,6 @@ import { refCard } from "@tabletop-playground/api";
 refCard.setOwningPlayerSlot(refCard.getCardDetails().index);
 
 // Primary action flips too
-if (refCard.getStackSize() === 1)
-  refCard.onPrimaryAction.add((card) => card.flipOrUpright());
+refCard.onPrimaryAction.add(
+  (card) => card.getStackSize() === 1 && card.flipOrUpright(),
+);
