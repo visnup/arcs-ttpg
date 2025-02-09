@@ -12,7 +12,8 @@
     "libpack": "ttpg-scripts libpack",
     "watch": "ttpg-scripts watch",
     "postpublish": "ttpg-scripts postpublish",
-    "lint": "tsc --noEmit && eslint src && npx tsx wip/check-all.vts.ts"
+    "lint": "tsc --noEmit && eslint src && npx tsx wip/check-all.vts.ts",
+    "cards": "tsx wip/cards/update.ts"
   },
   "keywords": [],
   "author": "",
