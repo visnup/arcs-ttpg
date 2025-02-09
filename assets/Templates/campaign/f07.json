@@ -79,7 +79,29 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Martial Law\n\nQ: Does this ever override the power of Imperial Authority?\nA: No.\n\nQ: Does this mean that Regents can battle each other in Imperial systems now?\nA: No. Even though it prevents some Regents from Commanding the Imperial Fleet, you still have to follow the Truce Law.",
+		"1": "Martial Law\n\nQ: Does this ever override the power of Imperial Authority?\nA: No.\n\nQ: Does this mean that Regents can battle each other in Imperial systems now?\nA: No. Even though it prevents some Regents from Commanding the Imperial Fleet, you still have to follow the Truce Law.",
+		"2": "Admiral Act III Setup",
+		"3": "Mass Uprising\n\nQ: If I Ransack the Court to secure this during a battle, do ships I place in the battle system count as attacking ships?\nA: No.",
+		"4": "Mass Uprising\n\nQ: If I Ransack the Court to secure this during a battle, do ships I place in the battle system count as attacking ships?\nA: No.",
+		"5": "Imperial Defectors",
+		"6": "Imperial Defectors",
+		"7": "Admiral Act II Resolution",
+		"8": "Command Chaos\n\nQ: How does the Crisis work if the Imperial Officers is discarded or in the Court deck?\nA: The Crisis does *not* work while the card is discarded or in the Court deck.",
+		"9": "Admiral Act II Setup",
+		"10": "Imperial Defectors",
+		"11": "Imperial Defectors",
+		"12": "Court Enforcers",
+		"13": "Court Enforcers",
+		"14": "Rogue Admirals\n\nQ: Can a Regent with Rogue Admiral attack the Empire alone?\nA: Yes. In this case, the Empire defends with all Imperial ships in the battle system.\n\nQ: What happens when a Regent with Rogue Admirals attacks another Regent?\nA: The attacker can add any number of Imperial ships in the system to their attacking ships. Remaining Imperial ships are defending ships. (This is modeling the Empire breaking up into rival admiralties who each have a claim on the Empire's military, who's loyal, and who's a traitor.)",
+		"15": "Rogue Admirals\n\nQ: Can a Regent with Rogue Admiral attack the Empire alone?\nA: Yes. In this case, the Empire defends with all Imperial ships in the battle system.\n\nQ: What happens when a Regent with Rogue Admirals attacks another Regent?\nA: The attacker can add any number of Imperial ships in the system to their attacking ships. Remaining Imperial ships are defending ships. (This is modeling the Empire breaking up into rival admiralties who each have a claim on the Empire's military, who's loyal, and who's a traitor.)",
+		"16": "Honor Guard",
+		"17": "Admiral Act I Resolution",
+		"18": "Use Imperial Foundries",
+		"19": "Imperial Officers",
+		"20": "Admiral Act 1 Setup"
+	},
 	"CardMetadata": {
 		"20": "13"
 	},

@@ -63,7 +63,13 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Captive Release",
+		"1": "Bunkers\n\nQ: Can I repair my bunkers once they are damaged?\nA: Yes!\n\nQ: Do bunkers protect my other buildings on the planet from being raided?\nA: Nope. Bunkers by themselves do not enable raiding.",
+		"2": "Building Bunkers",
+		"3": "Vow of Survival\n\nQ: If I win the Commonwealth Ambition, how much Power do I gain?\nA: You gain Power for second place alone.",
+		"4": "Survivalist Act III Setup"
+	},
 	"CardMetadata": {
 		"4": "22 18 14"
 	},

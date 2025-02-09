@@ -64,7 +64,14 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Passage Storms\n\nQ: When I secure this card, what happens to the agents on it?\nA: They are returned and taken as Captives, as normal. Only the card remains in the Court.",
+		"1": "Passages & The Twisted Passage\n\nQ: How do Passage tokens affect Gatekeepers?\nA: You place 7 ships, with all ships that would be placed on passages going to the passage (which is itself a gate)",
+		"2": "The Dead Live\n\nQ: If Blight Hunger is in play, where do destroyed pieces go?\nA: The Dead Live specifies that pieces that would return to supply are instead placed on the card. Blight Hunger places the pieces on its card before they would return to supply, so Blight Hunger takes precedence.",
+		"3": "Breaking Gates & Placing Passages\n\nQ: If there are multiple ways to Catapult move to break a gate, what happens?\nA: Choose any one legal starport or Slipstream Drive. Only that one is destroyed.",
+		"4": "Catapult Overdrive",
+		"5": "Gate Wraith Act III Setup"
+	},
 	"CardMetadata": {
 		"5": "24 21 18"
 	},

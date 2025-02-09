@@ -70,7 +70,20 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Happy Hosts",
+		"1": "Hegemon Act III Setup",
+		"2": "Against Hegemony",
+		"3": "Against Hegemony",
+		"4": "Prison Wardens",
+		"5": "Prison Wardens",
+		"6": "Mind Managers",
+		"7": "Hegemon Act II Resolution",
+		"8": "Song of the Banner",
+		"9": "Banners of Hegemony",
+		"10": "Planting Banners",
+		"11": "Hegemon Act II Setup"
+	},
 	"CardMetadata": {
 		"6": "empath",
 		"11": "14"

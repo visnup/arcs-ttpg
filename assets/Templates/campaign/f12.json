@@ -70,7 +70,20 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Sharing Rumors",
+		"1": "Rumors of the Haven\n\nQ: Do my agents on Rumor tokens count as Loyal pieces for things like building in the system?\nA: Yes!",
+		"2": "Rumors Spread",
+		"3": "Rumors Spread",
+		"4": "Pirate Act III Setup",
+		"5": "Silver-Tongues\n\nQ: Can I discard this even if I cannot steal anything?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",
+		"6": "Call to Action",
+		"7": "Pirate Smugglers",
+		"8": "Pirate Act II Resolution",
+		"9": "Pirate Fleet",
+		"10": "Pirate Hoard",
+		"11": "Pirate Act II Setup"
+	},
 	"CardMetadata": {
 		"5": "empath",
 		"11": "24 21 18"

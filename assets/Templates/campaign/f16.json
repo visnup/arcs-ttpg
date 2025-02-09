@@ -77,7 +77,27 @@
 		1,
 		0
 	],
-	"CardNames": {},
+	"CardNames": {
+		"0": "Lords Gain Power",
+		"1": "Feudal Courts\n\nQ: Where does the Court token go when I secure a card with it?\nA: If you're a Lord, return it to the general supply. If you're a Vassal, keep it on the refilled card.",
+		"2": "Warden Act III Setup",
+		"3": "Sworn Guardians",
+		"4": "Skirmishers\n\nQ: Can I reroll this multiple times?\nA: No, only once.",
+		"5": "Feast Day",
+		"6": "Feast Day",
+		"7": "Warden's Levy\n\nQ: Which hits to the ships on the card take?\nA: The ships are on the card take hits for self-hit damage (flame icons and intercept)",
+		"8": "Warden Act II Resolution",
+		"9": "Feudal Law",
+		"10": "Seats & Fiefs",
+		"11": "Lord of the 6th Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"12": "Lord of the 5th Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"13": "Lord of the 4th Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"14": "Lord of the 3rd Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"15": "Lord of the 2nd Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"16": "Lord of the 1st Cluster\n\nQ: In a Closed Economy, can a Regent Lord tax a Vassal City under Imperial control?\nA: No. A Regent Lord is bound by the Truce law when taxing a Regent Vassal city under Imperial control, and bound by Closed Economy when taxing an Outlaw Vassal city under Imperial control. An Outlaw Lord can always tax Vassal cities regardless of Empire control.",
+		"17": "Claims of Nobility",
+		"18": "Warden Act II Setup"
+	},
 	"CardMetadata": {
 		"3": "keeper",
 		"18": "22"
