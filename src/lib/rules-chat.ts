@@ -1,4 +1,4 @@
-import { base, campaign } from "./pdfs";
+import { base, campaign, cards, faq } from "./pdfs";
 
 type Message = {
   role: "user" | "assistant";
@@ -26,10 +26,18 @@ export async function answerRulesQuestion(text: string) {
       model: "claude-3-5-haiku-latest",
       max_tokens: 512,
       system: [
-        { type: "text", text: `Base rulebook\n~~~json\n${base}\n~~~` },
+        { type: "text", text: `Base rulebook:\n~~~json\n${base}\n~~~` },
         {
           type: "text",
-          text: `Campaign rulebook\n~~~json\n${campaign}\n~~~`,
+          text: `Campaign rulebook:\n~~~json\n${campaign}\n~~~`,
+        },
+        {
+          type: "text",
+          text: `Cards:\n~~~csv\n${cards}\n~~~`,
+        },
+        {
+          type: "text",
+          text: `Card FAQs:\n~~~csv\n${faq}\n~~~`,
           cache_control: { type: "ephemeral" },
         },
       ],
@@ -44,5 +52,9 @@ export async function answerRulesQuestion(text: string) {
 }
 
 // (async function () {
-//   console.log(await answerRulesQuestion("/rules how many systems are there?"));
+//   console.log(
+//     await answerRulesQuestion(
+//       "/rules can Admin Union be stolen after I play it?",
+//     ),
+//   );
 // })();

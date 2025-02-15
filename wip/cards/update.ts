@@ -1,5 +1,6 @@
 import { cp, readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { csvFormat } from "d3-dsv";
 import { parse } from "yaml";
 
 const src = (...s: string[]) => join("../cards/content", ...s);
@@ -115,3 +116,23 @@ for (let i = 1; i <= 24; i++) {
     return json;
   });
 }
+
+await writeFile(
+  "wip/cards/cards.json",
+  JSON.stringify(
+    csvFormat(
+      [...base, ...campaign].map((d) => ({ ...d, keys: d.meta?.keys })),
+      ["id", "name", "text", "tags", "keys"],
+    ),
+  ),
+);
+
+await writeFile(
+  "wip/cards/faq.json",
+  JSON.stringify(
+    csvFormat(
+      [...faq.entries()].map(([name, text]) => ({ name, text })),
+      ["name", "text"],
+    ),
+  ),
+);
