@@ -26,10 +26,10 @@ export async function answerRulesQuestion(text: string) {
       model: "claude-3-5-haiku-latest",
       max_tokens: 512,
       system: [
-        { type: "text", text: `Base rulebook\n~~~json\n${base}\n~~~` },
+        { type: "text", text: `Base rulebook\n~~~\n${base}\n~~~` },
         {
           type: "text",
-          text: `Campaign rulebook\n~~~json\n${campaign}\n~~~`,
+          text: `Campaign rulebook\n~~~\n${campaign}\n~~~`,
           cache_control: { type: "ephemeral" },
         },
       ],
