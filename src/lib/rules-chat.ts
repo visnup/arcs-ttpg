@@ -1,8 +1,21 @@
-import { base, campaign, cards, faq } from "./pdfs";
+import { base, campaign } from "./pdfs";
 
 type Message = {
   role: "user" | "assistant";
-  content: string;
+  content:
+    | string
+    | {
+        type: "document" | "text";
+        title?: string;
+        citations?: { enabled: boolean };
+        cache_control?: { type: "ephemeral" };
+        source?: {
+          type: "text";
+          media_type: "text/plain";
+          data: string;
+        };
+        text?: string;
+      }[];
 };
 
 const key = [
@@ -10,7 +23,47 @@ const key = [
 ]
   .reverse()
   .join("");
-const messages: Message[] = [];
+const messages: Message[] = [
+  {
+    role: "user",
+    content: [
+      {
+        type: "document",
+        title: "Base Rulebook",
+        source: {
+          type: "text",
+          media_type: "text/plain",
+          data: base,
+        },
+        cache_control: { type: "ephemeral" },
+      },
+      {
+        type: "document",
+        title: "The Blighted Reach Campaign Rulebook",
+        source: {
+          type: "text",
+          media_type: "text/plain",
+          data: campaign,
+        },
+        cache_control: { type: "ephemeral" },
+      },
+      // {
+      //   type: "document",
+      //   source: {
+      //     type: "text",
+      //     media_type: "text/plain",
+      //     data: cards,
+      //   },
+      //   cache_control: { type: "ephemeral" },
+      // },
+      // {
+      //   type: "text",
+      //   text: `Card FAQs:\n~~~csv\n${faq}\n~~~`,
+      //   cache_control: { type: "ephemeral" },
+      // },
+    ],
+  },
+];
 
 export async function answerRulesQuestion(text: string) {
   messages.push({ role: "user", content: text });
@@ -25,22 +78,7 @@ export async function answerRulesQuestion(text: string) {
     body: JSON.stringify({
       model: "claude-3-5-haiku-latest",
       max_tokens: 512,
-      system: [
-        { type: "text", text: `Base rulebook:\n~~~json\n${base}\n~~~` },
-        {
-          type: "text",
-          text: `Campaign rulebook:\n~~~json\n${campaign}\n~~~`,
-        },
-        {
-          type: "text",
-          text: `Cards:\n~~~csv\n${cards}\n~~~`,
-        },
-        {
-          type: "text",
-          text: `Card FAQs:\n~~~csv\n${faq}\n~~~`,
-          cache_control: { type: "ephemeral" },
-        },
-      ],
+      system: "Always cite sources in your answer.",
       messages,
     }),
   });
@@ -54,7 +92,8 @@ export async function answerRulesQuestion(text: string) {
 // (async function () {
 //   console.log(
 //     await answerRulesQuestion(
-//       "/rules can Admin Union be stolen after I play it?",
+//       "/rules are there any cards that affect end of round scoring?",
+//       // "/rules how many systems are there?",
 //     ),
 //   );
 // })();
