@@ -313,12 +313,6 @@ class Turns {
       return ui.widget as HorizontalBox;
     });
 
-    if (!refObject.getSavedData("timerInstructions")) {
-      world.broadcastChatMessage(
-        `Turn timer set to 2 minutes.\nMessage "/turn [seconds]" to change, "/turn 0" to disable.`,
-      );
-      refObject.setSavedData("sent", "timerInstructions");
-    }
     // Register listeners
     globalEvents.onChatMessage.add(this.onChatMessage);
     globalEvents.onActionsDealt.add(() => this.startRound());
