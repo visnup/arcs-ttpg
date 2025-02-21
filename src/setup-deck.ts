@@ -24,6 +24,7 @@ import {
   nearby,
   occupied,
   origin,
+  placeAgents,
   placeAid,
   placeCities,
   placeCourt,
@@ -206,8 +207,9 @@ function followSetup(card: Card) {
     const system = line
       .split(" ")
       .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
-    const { placements, resources } =
+    const { placements, resources, abilities } =
       getLeader(slots[i]) ?? getDefaultPlacement(slots[i]);
+    setupAbilities(abilities, slots[i]);
     for (let j = 0; j < system.length; j++)
       if (!occupied(system[j])) (placements[j] ?? placements[2])(system[j]);
     resources(system);
@@ -264,6 +266,7 @@ function getDefaultPlacement(slot: number) {
       gainResource(slot, systemResource(systems[0][0]));
       gainResource(slot, systemResource(systems[1][0]));
     },
+    abilities: [],
   };
 }
 function getLeader(slot: number) {
@@ -279,13 +282,60 @@ function getLeader(slot: number) {
     );
   if (card) {
     const { metadata } = card.getCardDetails(0)!;
-    const [a, b, c, resources] = metadata.trim().split("\n");
+    const [a, b, c, resources, ...abilities] = metadata.trim().split("\n");
     return {
       placements: [a, b, c].map(createPlacement(slot)),
       resources: () => {
         for (const r of resources.split(" ")) gainResource(slot, r);
       },
+      abilities,
     };
+  }
+}
+function setupAbilities(abilities: string[], slot: number) {
+  const zero = new Vector(0, 0, 0);
+  const board = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot)!;
+  const outrage = board
+    .getAllSnapPoints()
+    .filter((d) => d.getTags().includes("agent"))
+    .sort((a, b) => b.getLocalPosition().x - a.getLocalPosition().x)
+    .map((d) => d.getGlobalPosition());
+  for (const ability of abilities) {
+    switch (ability) {
+      case "cryptic":
+        // *Cryptic*. In **setup**, place agents on your Material and Fuel Outrage slots on your player board.
+        placeAgents(slot, 1, outrage[0]);
+        placeAgents(slot, 1, outrage[1]);
+        break;
+      case "learned":
+        // *Learned*. After **setup**, gain 2 extra lore cards—draw 5 lore, keep 2, and scrap the other 3
+        console.log(slot, "draw 5 lore, keep 2");
+        break;
+      case "hated":
+        // *Hated*. In **setup**, scrap 2 Loyal ships and 3 Loyal agents.
+        for (const o of [
+          ...placeShips(slot, 2, zero),
+          ...placeAgents(slot, 3, zero),
+        ])
+          o.destroy();
+        break;
+      case "decentralized":
+        // *Decentralized*. In **setup**, scrap your 2 leftmost cities from your player board.
+        for (const c of board
+          .getAllSnapPoints()
+          .filter((d) => d.getTags().includes("building"))
+          .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)
+          .slice(0, 2)
+          .map((d) => d.getSnappedObject()))
+          c?.destroy();
+        break;
+      case "greedy":
+        // *Greedy*. In **setup**, place an agent on your Material Outrage slot.
+        placeAgents(slot, 1, outrage[0]);
+        break;
+    }
   }
 }
 

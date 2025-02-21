@@ -235,7 +235,7 @@ export function placeStarports(slot: number, n: number, target: Vector) {
 export function placeAgents(slot: number, n: number, target: Vector) {
   const agents = world
     .getObjectsByTemplateName("agent")
-    .filter((d) => d.getOwningPlayerSlot() === slot && !world.isOnMap(d))
+    .filter((d) => d.getOwningPlayerSlot() === slot && world.isOnTable(d))
     .sort(
       (a, b) =>
         a.getPosition().distance(target) - b.getPosition().distance(target),
@@ -246,7 +246,11 @@ export function placeAgents(slot: number, n: number, target: Vector) {
   const height = Math.ceil(agents.length / width);
   const { x, y } = agents[0].getSize();
   const d = 0.2;
-  target = target.subtract([(width / 2) * (x + d), (height / 2) * (y + d), 0]);
+  target = target.subtract([
+    ((width - 1) * (x + d)) / 2,
+    ((height - 1) * (y + d)) / 2,
+    0,
+  ]);
   for (const [i, agent] of agents.entries()) {
     agent.setPosition(
       target.add([(i % width) * (x + d), Math.floor(i / width) * (y + d), 0]),

@@ -156,10 +156,10 @@ export async function onChatMessage(player: Player, message: string) {
     .getAllSnapPoints()
     .map((s) => s.getGlobalPosition())
     .sort((a, b) => a.x - b.x);
-  for (const a of placeAgents(0, 2, court[1].add([0.5, 7.5, 1])))
+  for (const a of placeAgents(0, 2, court[1].add([0, 7, 1])))
     a.setRotation([0, -45, 0]);
-  placeAgents(1, 2, court[1].add([1, 2.5, 1]));
-  placeAgents(2, 1, court[2].add([2, 8, 0]));
+  placeAgents(1, 2, court[1].add([1.2, 2.8, 1]));
+  placeAgents(2, 1, court[2].add([-1, 6.2, 0]));
 
   // camera
   // X=-9.664 Y=31.365 Z=123.886
