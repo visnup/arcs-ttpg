@@ -43,6 +43,34 @@ function names(cards: any[], filter: (d: any) => boolean) {
       {},
     );
 }
+function abilities(
+  cards: any[],
+  filter: (d: any) => boolean,
+  previous: Record<string, string>,
+) {
+  return cards
+    .filter(filter)
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .reduce((acc, d, i) => {
+      const append =
+        "\n" +
+        d.text
+          .trim()
+          .split("\n")
+          .map((l) =>
+            l
+              .trim()
+              .match(/^\*([^*]+)\*\./)?.[1]
+              ?.toLowerCase(),
+          )
+          .filter(Boolean)
+          .join("\n");
+      return {
+        ...acc,
+        [i]: previous[i].endsWith(append) ? previous[i] : previous[i] + append,
+      };
+    }, {});
+}
 
 // setup.json
 modify("assets/Templates/cards/setup.json", (json) => {
@@ -59,6 +87,11 @@ modify("assets/Templates/cards/bc.json", (json) => {
 // leader.json
 modify("assets/Templates/cards/leader.json", (json) => {
   json["CardNames"] = names(base, (d) => d.id.startsWith("ARCS-LEAD"));
+  json["CardMetadata"] = abilities(
+    base,
+    (d) => d.id.startsWith("ARCS-LEAD"),
+    json["CardMetadata"],
+  );
   return json;
 });
 
@@ -71,6 +104,11 @@ modify("assets/Templates/cards/lore.json", (json) => {
 // leader-2.json
 modify("assets/Templates/cards/leader-2.json", (json) => {
   json["CardNames"] = names(leaders, (d) => d.id.startsWith("ARCS-LEAD"));
+  json["CardMetadata"] = abilities(
+    leaders,
+    (d) => d.id.startsWith("ARCS-LEAD"),
+    json["CardMetadata"],
+  );
   return json;
 });
 

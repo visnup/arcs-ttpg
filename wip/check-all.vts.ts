@@ -1,3 +1,4 @@
+// Check template json definitions against All.vts objects for consistency
 import { readdir, readFile } from "node:fs/promises";
 
 // Parse templates

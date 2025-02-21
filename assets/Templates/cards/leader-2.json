@@ -77,14 +77,14 @@
 		"7": "Quartermaster\n\nQ: When does Resilient count the number of starports I control?\nA: Resilient checks the number of starports after battle. If the battle destroys a starport previously controlled by Quartermaster, or if the battle causes the Quartermaster to lose control over a starport, it does not add to the number of repairs."
 	},
 	"CardMetadata": {
-		"0": "3 city\n3 city\n2\nrelic relic",
-		"1": "3 city\n3 starport\n2\nfuel material",
-		"2": "4 starport\n3\n2\nfuel weapon",
-		"3": "3 city\n3 starport\n2\npsionic psionic",
-		"4": "4\n3\n2\nrelic weapon",
-		"5": "3 city\n3\n3\nrelic material",
-		"6": "3 city\n4 starport\n2\nfuel material",
-		"7": "4 starport\n3\n2\nfuel weapon"
+		"0": "3 city\n3 city\n2\nrelic relic\nlearned\nacademic",
+		"1": "3 city\n3 starport\n2\nfuel material\nruthless\nhated",
+		"2": "4 starport\n3\n2\nfuel weapon\ntricky\nwary",
+		"3": "3 city\n3 starport\n2\npsionic psionic\nconnected\ninfluential\nproud",
+		"4": "4\n3\n2\nrelic weapon\ndecentralized\ninspiring\nprincipled",
+		"5": "3 city\n3\n3\nrelic material\nmythic\nancient",
+		"6": "3 city\n4 starport\n2\nfuel material\nfirebrand\nirregular",
+		"7": "4 starport\n3\n2\nfuel weapon\nresilient\ngreedy"
 	},
 	"CardTags": {
 		"0": [
