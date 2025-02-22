@@ -280,7 +280,18 @@ describe("setup deck", () => {
     // run
     setup.onPrimaryAction.trigger(setup);
 
-    // piece counts
+    // in world counts
+    const counts = getCounts();
+    for (const [slot, objects] of Object.entries({
+      "0": { ship: 15, starport: 5, city: 5 }, // quartermaster
+      "1": { ship: 15, starport: 5, city: 5 }, // agitator
+      "2": { ship: 15, starport: 5, city: 5 }, // shaper
+      "3": { ship: 15, starport: 5, city: 3 }, // anarchist
+    })) {
+      for (const [name, count] of Object.entries(objects))
+        assertEqual(counts[slot][name] ?? 0, count, `world ${slot} - ${name}`);
+    }
+    // on map counts
     const onMap = getCounts((obj) => world.isOnMap(obj));
     for (const [slot, objects] of Object.entries({
       "0": { ship: 9, power: 1, starport: 1, city: 0 }, // quartermaster
@@ -297,24 +308,41 @@ describe("setup deck", () => {
       },
     }))
       for (const [name, count] of Object.entries(objects))
-        assertEqual(onMap[slot][name] ?? 0, count, `${slot} - ${name} on map`);
-    // resources drawn
-    for (const [slot, resources] of [
-      ["fuel", "weapon"],
-      ["fuel", "material"],
-      ["relic", "material"],
-      ["relic", "weapon"],
-    ].entries()) {
+        assertEqual(
+          onMap[slot][name] ?? 0,
+          count,
+          `map ${slot} - ${name} on map`,
+        );
+    // on board counts
+    for (const [slot, [resources, cities, outrages]] of (
+      [
+        [["fuel", "weapon"], 5, [0]], // quartermaster
+        [["fuel", "material"], 4, []], // agitator
+        [["relic", "material"], 4, []], // shaper
+        [["relic", "weapon"], 3, []], // anarchist
+      ] as [string[], number, number[]][]
+    ).entries()) {
       const board = world
         .getObjectsByTemplateName("board")
         .find((d) => d.getOwningPlayerSlot() === slot)!;
-      const found = board
+      const snaps = board
         .getAllSnapPoints()
+        .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
+      const r = snaps
         .filter((s) => s.getTags().includes("resource"))
-        .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)
         .slice(0, 2)
         .map((s) => (s.getSnappedObject() as Card).getCardDetails(0)?.name);
-      assertEqual(found, resources, `${slot} resources`);
+      assertEqual(r, resources, `${slot} resources`);
+      const c = snaps.filter(
+        (s) => s.getTags().includes("building") && s.getSnappedObject(),
+      );
+      assertEqual(c.length, cities, `${slot} cities`);
+      const o = snaps
+        .filter((s) => s.getTags().includes("agent"))
+        .sort((a, b) => b.getLocalPosition().x - a.getLocalPosition().x)
+        .map((s, i) => (s.getSnappedObject() ? i : null))
+        .filter((d) => d !== null);
+      assertEqual(o, outrages, `${slot} outrage`);
     }
     // cards dealt
     const cards = world.getObjectsByTemplateName<CardHolder>("cards");
