@@ -140,7 +140,7 @@ function sumDice() {
     ),
   );
   world.removeScreenUI(0);
-  world.addScreenUI(diceSummary);
+  if (Object.keys(total).length) world.addScreenUI(diceSummary);
 }
 
 function discard() {
