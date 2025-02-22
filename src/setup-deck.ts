@@ -295,7 +295,6 @@ function getLeader(slot: number) {
   }
 }
 function setupAbilities(abilities: string[], slot: number) {
-  const zero = new Vector(0, 0, 0);
   const board = world
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === slot)!;
@@ -312,12 +311,17 @@ function setupAbilities(abilities: string[], slot: number) {
           if (!s.getSnappedObject())
             placeAgents(slot, 1, s.getGlobalPosition());
         break;
-      case "learned":
+      case "learned": {
         // *Learned*. After **setup**, gain 2 extra lore cards—draw 5 lore, keep 2, and scrap the other 3
-        // todo
-        console.log(slot, "draw 5 lore, keep 2");
+        const lore = world
+          .getObjectsByTemplateName<Card>("lore")
+          .filter((c) => c.getStackSize() > 1)
+          .reduce((combined, deck) => (combined.addCards(deck), combined));
+        lore.shuffle();
+        lore.deal(5, [slot], false, true);
         canDeal = false;
         break;
+      }
       case "hated": {
         // *Hated*. In **setup**, scrap 2 Loyal ships and 3 Loyal agents.
         const counts = world
@@ -328,9 +332,10 @@ function setupAbilities(abilities: string[], slot: number) {
             counts[n] = (counts[n] || 0) + 1;
             return counts;
           }, {});
+        const zero = new Vector(0, 0, 0);
         for (const o of [
-          ...placeShips(slot, Math.max(counts.ship - 13, 0), zero),
-          ...placeAgents(slot, Math.max(counts.agent - 7, 0), zero),
+          ...placeShips(slot, Math.max(counts.ship - 15 + 2, 0), zero),
+          ...placeAgents(slot, Math.max(counts.agent - 10 + 3, 0), zero),
         ])
           o.destroy();
         break;

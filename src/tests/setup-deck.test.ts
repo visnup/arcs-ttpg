@@ -292,10 +292,10 @@ describe("setup deck", () => {
       .map((o) =>
         o.getAllSnapPoints().find((s) => s.getTags().includes("leader")),
       );
-    for (const slot of [0, 1, 2, 3])
+    for (const snap of snaps)
       leaders[1]
         .takeCards(1)!
-        .setPosition(snaps[slot]!.getGlobalPosition().add([0, 0, 1]));
+        .setPosition(snap!.getGlobalPosition().add([0, 0, 1]));
 
     // run
     setup.onPrimaryAction.trigger(setup);
@@ -408,6 +408,16 @@ describe("setup deck", () => {
     leaders[0]
       .takeCards(1, true, 1)!
       .setPosition(snaps[2]!.getGlobalPosition().add([0, 0, 1]));
+    // setup lore
+    const lore = world.getObjectByTemplateName<Card>("lore")!;
+    for (const snap of snaps)
+      lore
+        .takeCards(1)
+        ?.setPosition(
+          snap!
+            .getGlobalPosition()
+            .add([Math.sign(snap!.getGlobalPosition().x) * 11, 0, 0]),
+        );
 
     // run
     setup.onPrimaryAction.trigger(setup);
@@ -416,8 +426,9 @@ describe("setup deck", () => {
     const counts = getCounts();
     for (const [slot, objects] of Object.entries({
       "0": { ship: 15, starport: 5, city: 5, agent: 10 }, // archivist
-      "1": { ship: 13, starport: 5, city: 5, agent: 7 }, // overseer
+      "1": { ship: 15 - 2, starport: 5, city: 5, agent: 10 - 3 }, // overseer
       "2": { ship: 15, starport: 5, city: 5, agent: 10 }, // mystic
+      "-1": { lore: 4 + 5 }, // lore left on table
     })) {
       for (const [name, count] of Object.entries(objects))
         assertEqual(counts[slot][name] ?? 0, count, `world ${slot} - ${name}`);
@@ -467,10 +478,13 @@ describe("setup deck", () => {
     }
 
     // cards *not* dealt due to archivist's pending choices
-    const cards = world.getObjectsByTemplateName<CardHolder>("cards");
+    const cards = world
+      .getObjectsByTemplateName<CardHolder>("cards")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
     assertEqual(cards.length, 3, "3 hands");
+    assertEqual(cards[0].getCards().length, 5, "5 lore in hand");
     assert(
-      cards.every((d) => d.getCards().length === 0),
+      cards.slice(1).every((d) => d.getCards().length === 0),
       "0 cards per hand",
     );
   });
