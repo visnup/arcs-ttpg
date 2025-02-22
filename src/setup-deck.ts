@@ -210,7 +210,7 @@ function followSetup(card: Card) {
       .map((s) => systems.filter((d) => d.id === s).map((d) => d.snap));
     const { placements, resources, abilities } =
       getLeader(slots[i]) ?? getDefaultPlacement(slots[i]);
-    canDeal &&= setupAbilities(abilities, slots[i]);
+    canDeal = setupAbilities(abilities, slots[i]) && canDeal;
     for (let j = 0; j < system.length; j++)
       if (!occupied(system[j])) (placements[j] ?? placements[2])(system[j]);
     resources(system);

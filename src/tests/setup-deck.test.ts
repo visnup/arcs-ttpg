@@ -5,6 +5,7 @@ import {
   type CardHolder,
   type HorizontalBox,
 } from "@tabletop-playground/api";
+import type { InitiativeMarker } from "../initiative-marker";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual, assertNotEqual } from "./assert";
 import { getCounts } from "./setup";
@@ -167,6 +168,14 @@ describe("setup deck", () => {
     }))
       for (const [name, count] of Object.entries(objects))
         assertEqual(onMap[slot][name], count, `${slot} - ${name} on map`);
+
+    // cards dealt
+    const cards = world.getObjectsByTemplateName<CardHolder>("cards");
+    assertEqual(cards.length, 3, "3 hands dealt");
+    assert(
+      cards.every((d) => d.getCards().length === 6),
+      "6 cards per hand",
+    );
   });
 
   test("2p", () => {
@@ -239,6 +248,14 @@ describe("setup deck", () => {
       1,
       "keeper",
     );
+
+    // cards dealt
+    const cards = world.getObjectsByTemplateName<CardHolder>("cards");
+    assertEqual(cards.length, 2, "2 hands dealt");
+    assert(
+      cards.every((d) => d.getCards().length === 6),
+      "6 cards per hand",
+    );
   });
 
   test("with leaders", async () => {
@@ -248,8 +265,11 @@ describe("setup deck", () => {
       .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as TestableCard;
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
-    // skip running initiative shuffle for consistent coloring;
-    // means 1s and 7s are left out of action deck
+    setupDeck.onRemoved.trigger(setup);
+
+    // reset initiative
+    const initiative = world.getObjectById("initiative") as InitiativeMarker;
+    initiative.take(0);
 
     // flip
     setup.flipOrUpright();
@@ -344,8 +364,114 @@ describe("setup deck", () => {
         .filter((d) => d !== null);
       assertEqual(o, outrages, `${slot} outrage`);
     }
+
     // cards dealt
     const cards = world.getObjectsByTemplateName<CardHolder>("cards");
     assertEqual(cards.length, 4, "4 hands dealt");
+    assert(
+      cards.every((d) => d.getCards().length === 6),
+      "6 cards per hand",
+    );
+  });
+
+  test("with leaders 2", async () => {
+    // draw setup
+    const setupDeck = world
+      .getObjectsByTemplateName<Card>("setup")
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as TestableCard;
+    const setup = setupDeck.takeCards()! as TestableCard;
+    setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
+    setupDeck.onRemoved.trigger(setup);
+
+    // reset initiative
+    const initiative = world.getObjectById("initiative") as InitiativeMarker;
+    initiative.take(0);
+
+    // flip
+    setup.flipOrUpright();
+    setup.onFlipUpright.trigger(setup);
+
+    // setup leaders
+    const leaders = world
+      .getObjectsByTemplateName<Card>("leader")
+      .sort((a, b) => a.getPosition().y - b.getPosition().y);
+    const snaps = world
+      .getObjectsByTemplateName("board")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
+      .map((o) =>
+        o.getAllSnapPoints().find((s) => s.getTags().includes("leader")),
+      );
+    for (const slot of [0, 1])
+      leaders[1]
+        .takeCards(1, true)!
+        .setPosition(snaps[slot]!.getGlobalPosition().add([0, 0, 1]));
+    leaders[0]
+      .takeCards(1, true, 1)!
+      .setPosition(snaps[2]!.getGlobalPosition().add([0, 0, 1]));
+
+    // run
+    setup.onPrimaryAction.trigger(setup);
+
+    // in world counts
+    const counts = getCounts();
+    for (const [slot, objects] of Object.entries({
+      "0": { ship: 15, starport: 5, city: 5, agent: 10 }, // archivist
+      "1": { ship: 13, starport: 5, city: 5, agent: 7 }, // overseer
+      "2": { ship: 15, starport: 5, city: 5, agent: 10 }, // mystic
+    })) {
+      for (const [name, count] of Object.entries(objects))
+        assertEqual(counts[slot][name] ?? 0, count, `world ${slot} - ${name}`);
+    }
+    // on map counts
+    const onMap = getCounts((obj) => world.isOnMap(obj));
+    for (const [slot, objects] of Object.entries({
+      "0": { ship: 8, power: 1, starport: 0, city: 2 }, // archivist
+      "1": { ship: 8, power: 1, starport: 1, city: 1 }, // overseer
+      "2": { ship: 8, power: 1, starport: 1, city: 1 }, // mystic
+    }))
+      for (const [name, count] of Object.entries(objects))
+        assertEqual(
+          onMap[slot][name] ?? 0,
+          count,
+          `map ${slot} - ${name} on map`,
+        );
+    // on board counts
+    for (const [slot, [resources, cities, outrages]] of (
+      [
+        [["relic", "relic"], 3, []], // archivist
+        [["fuel", "material"], 4, []], // overseer
+        [["psionic", "relic"], 4, [0, 1]], // mystic
+      ] as [string[], number, number[]][]
+    ).entries()) {
+      const board = world
+        .getObjectsByTemplateName("board")
+        .find((d) => d.getOwningPlayerSlot() === slot)!;
+      const snaps = board
+        .getAllSnapPoints()
+        .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
+      const r = snaps
+        .filter((s) => s.getTags().includes("resource"))
+        .slice(0, 2)
+        .map((s) => (s.getSnappedObject() as Card).getCardDetails(0)?.name);
+      assertEqual(r, resources, `${slot} resources`);
+      const c = snaps.filter(
+        (s) => s.getTags().includes("building") && s.getSnappedObject(),
+      );
+      assertEqual(c.length, cities, `${slot} cities`);
+      const o = snaps
+        .filter((s) => s.getTags().includes("agent"))
+        .sort((a, b) => b.getLocalPosition().x - a.getLocalPosition().x)
+        .map((s, i) => (s.getSnappedObject() ? i : null))
+        .filter((d) => d !== null);
+      assertEqual(o, outrages, `${slot} outrage`);
+    }
+
+    // cards *not* dealt due to archivist's pending choices
+    const cards = world.getObjectsByTemplateName<CardHolder>("cards");
+    assertEqual(cards.length, 3, "3 hands");
+    assert(
+      cards.every((d) => d.getCards().length === 0),
+      "0 cards per hand",
+    );
   });
 });
