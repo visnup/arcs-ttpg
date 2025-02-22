@@ -302,29 +302,39 @@ function setupAbilities(abilities: string[], slot: number) {
   const outrage = board
     .getAllSnapPoints()
     .filter((d) => d.getTags().includes("agent"))
-    .sort((a, b) => b.getLocalPosition().x - a.getLocalPosition().x)
-    .map((d) => d.getGlobalPosition());
+    .sort((a, b) => b.getLocalPosition().x - a.getLocalPosition().x);
   let canDeal = true;
   for (const ability of abilities)
     switch (ability) {
       case "cryptic":
         // *Cryptic*. In **setup**, place agents on your Material and Fuel Outrage slots on your player board.
-        placeAgents(slot, 1, outrage[0]);
-        placeAgents(slot, 1, outrage[1]);
+        for (const s of outrage.slice(0, 2))
+          if (!s.getSnappedObject())
+            placeAgents(slot, 1, s.getGlobalPosition());
         break;
       case "learned":
         // *Learned*. After **setup**, gain 2 extra lore cards—draw 5 lore, keep 2, and scrap the other 3
+        // todo
         console.log(slot, "draw 5 lore, keep 2");
         canDeal = false;
         break;
-      case "hated":
+      case "hated": {
         // *Hated*. In **setup**, scrap 2 Loyal ships and 3 Loyal agents.
+        const counts = world
+          .getAllObjects()
+          .filter((o) => o.getOwningPlayerSlot() === slot)
+          .reduce<Record<string, number>>((counts, o) => {
+            const n = o.getTemplateName();
+            counts[n] = (counts[n] || 0) + 1;
+            return counts;
+          }, {});
         for (const o of [
-          ...placeShips(slot, 2, zero),
-          ...placeAgents(slot, 3, zero),
+          ...placeShips(slot, Math.max(counts.ship - 13, 0), zero),
+          ...placeAgents(slot, Math.max(counts.agent - 7, 0), zero),
         ])
           o.destroy();
         break;
+      }
       case "decentralized":
         // *Decentralized*. In **setup**, scrap your 2 leftmost cities from your player board.
         for (const c of board
@@ -337,7 +347,8 @@ function setupAbilities(abilities: string[], slot: number) {
         break;
       case "greedy":
         // *Greedy*. In **setup**, place an agent on your Material Outrage slot.
-        placeAgents(slot, 1, outrage[0]);
+        if (!outrage[0].getSnappedObject())
+          placeAgents(slot, 1, outrage[0].getGlobalPosition());
         break;
     }
   return canDeal;
