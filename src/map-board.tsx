@@ -346,6 +346,7 @@ class Turns {
     globalEvents.onChatMessage.add(this.onChatMessage);
     globalEvents.onActionsDealt.add(() => this.startRound());
     globalEvents.onActionsDiscarded.add(() => this.startRound());
+    globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
     setInterval(this.tickBars, 2000);
@@ -488,6 +489,12 @@ class Turns {
     globalEvents.onRoundEnded.trigger();
   }
 
+  endChapter() {
+    if (this.widgets[this.turn]?.getNumChildren() >= 2)
+      this.widgets[this.turn].removeChildAt(1);
+    this.turn = -1;
+  }
+
   showMessage() {
     const slot = this.slots[this.turn];
     if (slot === undefined) return;
@@ -497,12 +504,14 @@ class Turns {
 
   save() {
     refObject.setSavedData(
-      JSON.stringify({
-        turn: this.turn,
-        slots: this.slots,
-        turnStart: this.turnStart,
-        turnTime: this.turnTime,
-      }),
+      this.turn === -1
+        ? ""
+        : JSON.stringify({
+            turn: this.turn,
+            slots: this.slots,
+            turnStart: this.turnStart,
+            turnTime: this.turnTime,
+          }),
       "turns",
     );
   }
