@@ -309,7 +309,7 @@ export function resourceAmbitions(resources: Map<string, number>) {
 export function placeFreeCity(position: Vector) {
   const freeCity = world
     .getObjectsByTemplateName<Card>("city")
-    .find((d) => d.getOwningPlayerSlot() === 4);
+    .find((d) => d.getOwningPlayerSlot() === 4 && world.isOnTable(d));
   const city = freeCity?.takeCards(1);
   city?.setPosition(position.add(above));
   city?.snap();
