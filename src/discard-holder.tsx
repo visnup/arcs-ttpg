@@ -129,9 +129,7 @@ function discard(button: Button, player?: Player) {
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
   button.setText(" End Chapter ");
-  setTimeout(() => {
-    globalEvents.onActionsDiscarded.trigger();
-  }, 100);
+  setTimeout(() => globalEvents.onActionsDiscarded.trigger(), 100);
 }
 
 function endChapter() {
@@ -159,9 +157,7 @@ function endChapter() {
     discard.shuffle();
   }
   refHolder.removeUI(0);
-  setTimeout(() => {
-    globalEvents.onChapterEnded.trigger();
-  }, 100);
+  setTimeout(() => globalEvents.onChapterEnded.trigger(), 100);
 }
 
 function getActionZone() {
