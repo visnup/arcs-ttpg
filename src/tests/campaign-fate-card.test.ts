@@ -32,9 +32,11 @@ describe("campaign fate card", () => {
     // initiative moved
     assertNotEqual(initiative.getPosition(), position, "initiative");
     // action deck shuffled with the correct number of cards
-    const actionDecks = world.getObjectsByTemplateName<Card>("action");
-    assertEqual(actionDecks.length, 1, "one action deck");
-    const actionDeck = actionDecks[0];
+    const actionDeck = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .find((s) => s.getTags().includes("card-discard"))!
+      .getSnappedObject() as Card;
     assertEqual(
       actionDeck.getStackSize(),
       7 * 4 + 3,
@@ -144,9 +146,11 @@ describe("campaign fate card", () => {
     (fates[0] as TestableCard).onClick(2, fates[0]);
 
     // action deck shuffled with the correct number of cards
-    const actionDecks = world.getObjectsByTemplateName<Card>("action");
-    assertEqual(actionDecks.length, 1, "one action deck");
-    const actionDeck = actionDecks[0];
+    const actionDeck = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .find((s) => s.getTags().includes("card-discard"))!
+      .getSnappedObject() as Card;
     assertEqual(actionDeck.getStackSize(), 5 * 4 + 2, "events shuffled in");
     assertEqual(actionDeck.getRotation().yaw, -90, "action deck turned over");
 

@@ -108,7 +108,7 @@ function getPlayed() {
   return (
     (zone
       ?.getOverlappingObjects()
-      .filter((o) => o.getTemplateName() === "action")
+      .filter((o) => o.getTemplateName() === "action") // todo: do event cards (dc) matter?
       .sort((a, b) => a.getPosition().x - b.getPosition().x) as Card[]) ?? []
   );
 }
