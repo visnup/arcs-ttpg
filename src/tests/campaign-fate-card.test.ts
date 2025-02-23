@@ -1,4 +1,9 @@
-import { world, type Card, type CardHolder } from "@tabletop-playground/api";
+import {
+  world,
+  type Card,
+  type CardHolder,
+  type Dice,
+} from "@tabletop-playground/api";
 import type { TestableCard } from "../campaign-fate-card";
 import { assert, assertEqual, assertNotEqual } from "./assert";
 import { getCounts } from "./setup";
@@ -13,7 +18,7 @@ describe("campaign fate card", () => {
     assertEqual(fates[0].getUIs().length, 1, "ui added"); // weirdly can't see the UI, but scripting can
   });
 
-  test("4p", async () => {
+  test("4p", () => {
     const initiative = world.getObjectById("initiative")!;
     const position = initiative.getPosition().add([10, -10, 0]);
     initiative.setPosition(position);
@@ -23,7 +28,6 @@ describe("campaign fate card", () => {
       .sort((a, b) => a.getPosition().y - b.getPosition().y);
     // run setup
     (fates[0] as TestableCard).onClick(4, fates[0]);
-    await new Promise((resolve) => setTimeout(resolve, 100));
 
     // initiative moved
     assertNotEqual(initiative.getPosition(), position, "initiative");
@@ -179,6 +183,7 @@ describe("campaign fate card", () => {
     );
 
     // piece counts
+    const number = world.getObjectByTemplateName<Dice>("number")!;
     const onMap = getCounts((obj) => world.isOnMap(obj));
     for (const [slot, objects] of Object.entries({
       "0": { power: 1 },
@@ -191,7 +196,7 @@ describe("campaign fate card", () => {
         ambition: 3,
         "chapter-track": 1,
         action: 1,
-        resource: 5, // out of play resources
+        resource: [1, 2, 4, 5].includes(+number.getCurrentFaceName()) ? 5 : 4, // out of play resources
       },
     }))
       for (const [name, count] of Object.entries(objects))
