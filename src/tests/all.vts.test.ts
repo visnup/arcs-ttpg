@@ -55,7 +55,7 @@ describe("all.vts", () => {
         city: 5,
         cards: 1,
       },
-      "4": { ship: 15, city: 2, starport: 1 },
+      "4": { ship: 15, city: 2, starport: 1, "set-round": 1 },
       "-1": {
         map: 1,
         tray: 1,
@@ -73,7 +73,6 @@ describe("all.vts", () => {
         setup: 3,
         action: 2,
         "first-regent": 1,
-        "set-round": 1,
         "block round": 6,
         dc: 3,
         "block small": 2,

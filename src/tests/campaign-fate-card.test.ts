@@ -107,10 +107,9 @@ describe("campaign fate card", () => {
       "1": { power: 1 },
       "2": { power: 1 },
       "3": { power: 1 },
-      "4": { ship: 8, city: 4 }, // imperial ships, free cities
+      "4": { ship: 8, city: 4, "set-round": 16 }, // imperial ships, free cities, blight
       "-1": {
         chapter: 1,
-        "set-round": 16, // blight
         "ambition declared": 1,
         ambition: 3,
         "chapter-track": 1,
@@ -192,10 +191,9 @@ describe("campaign fate card", () => {
     for (const [slot, objects] of Object.entries({
       "0": { power: 1 },
       "1": { power: 1 },
-      "4": { ship: 8, city: 4 }, // imperial ships, free cities
+      "4": { ship: 8, city: 4, "set-round": 16 }, // imperial ships, free cities, blight
       "-1": {
         chapter: 1,
-        "set-round": 16, // blight
         "ambition declared": 1,
         ambition: 3,
         "chapter-track": 1,
