@@ -102,4 +102,10 @@ describe("all.vts", () => {
         `${rules} cover page`,
       );
   });
+
+  test("zone clean up", () => {
+    for (const o of world.getAllObjects())
+      if (o.getTemplateName() !== "test") o.destroy();
+    assertEqual(world.getAllZones().length, 0, "all zones destroyed");
+  });
 });
