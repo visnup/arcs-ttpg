@@ -106,6 +106,8 @@ class AmbitionSection {
     this.zone.setScale([4.3, 10, 2]);
     this.zone.onBeginOverlap.add(this.render);
     this.zone.onEndOverlap.add(this.render);
+    if (this.offset === 1 || this.offset === 2)
+      this.zone.onEndOverlap.add(this.returnAmbitions);
     refObject.onDestroyed.add(() => this.zone.destroy());
     this.load();
   }
@@ -167,6 +169,33 @@ class AmbitionSection {
       tie ? [] : [sorted[0][0]],
       sorted.filter(([, count]) => count === second).map(([slot]) => slot),
     ] as const;
+  };
+
+  returnAmbitions = (zone: Zone, obj: GameObject) => {
+    if (
+      obj.getTemplateName() !== "ambition" ||
+      world
+        .getObjectsByTemplateName<CardHolder>("cards")
+        .some((h) => h.getNumCards() > 0)
+    )
+      return;
+    const boards = world.getObjectsByTemplateName("board");
+    function returnZone(prefix: string) {
+      for (const board of boards)
+        for (const obj of world
+          .getZoneById(`${prefix}-${board.getId()}`)
+          ?.getOverlappingObjects() ?? []) {
+          if (
+            obj.getOwningPlayerSlot() !== -1 &&
+            obj.getOwningPlayerSlot() !== board.getOwningPlayerSlot() &&
+            "discard" in obj &&
+            typeof obj.discard === "function"
+          )
+            obj.discard();
+        }
+    }
+    if (this.offset === 1) returnZone("zone-player-captive");
+    else if (this.offset === 2) returnZone("zone-player");
   };
 
   save() {

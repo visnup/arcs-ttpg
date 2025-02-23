@@ -489,7 +489,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -617,7 +617,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -806,8 +806,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": -0.01,
+					"x": 1,
+					"y": 0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -1602,7 +1602,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "apd",
@@ -1726,7 +1726,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "nqv",
@@ -1850,7 +1850,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "if4",
@@ -1913,7 +1913,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "7a4",
@@ -2037,7 +2037,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "0jo",
@@ -2100,7 +2100,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "kgi",
@@ -2163,7 +2163,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "rhw",
@@ -2226,7 +2226,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "znl",
@@ -2289,7 +2289,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "fz3",
@@ -2352,7 +2352,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "7mg",
@@ -2415,7 +2415,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "w8z",
@@ -2478,7 +2478,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "bv2",
@@ -2541,7 +2541,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "bpt",
@@ -2671,7 +2671,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "80e",
@@ -2797,7 +2797,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "cev",
@@ -2860,7 +2860,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "eg1",
@@ -2984,7 +2984,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "1wk",
@@ -3047,7 +3047,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "l18",
@@ -3171,7 +3171,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "jyb",
@@ -3234,7 +3234,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "k2j",
@@ -7662,7 +7662,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -8174,8 +8174,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": 0.01,
+					"x": 1,
+					"y": -0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -8421,7 +8421,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "dnt",
@@ -8667,7 +8667,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "8aa",
@@ -8730,7 +8730,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "ke8",
@@ -8921,7 +8921,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "af0",
@@ -8999,7 +8999,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9112,7 +9112,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "35u",
@@ -9307,7 +9307,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "2nb",
@@ -9614,7 +9614,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "pr1",
@@ -9803,7 +9803,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "5l9",
@@ -9927,7 +9927,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "lmn",
@@ -10173,7 +10173,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "bde",
@@ -10236,7 +10236,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "okb",
@@ -10360,7 +10360,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "r5c",
@@ -10484,7 +10484,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "x0l",
@@ -10608,7 +10608,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "0oi",
@@ -10793,7 +10793,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "f7s",
@@ -10856,7 +10856,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "mya",
@@ -10980,7 +10980,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "7mu",
@@ -11236,7 +11236,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "e31",
@@ -11299,7 +11299,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "rc3",
@@ -11612,7 +11612,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "agent.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "msp",
@@ -17856,7 +17856,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.999,
+					"x": -33.998,
 					"y": -82,
 					"z": 86.972
 				},
@@ -18684,47 +18684,6 @@
 					"x": 4.3,
 					"y": 10,
 					"z": 2
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-dice-rqj",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 0,
-					"y": -75,
-					"z": 88.57
-				},
-				"scale3D": {
-					"x": 19,
-					"y": 19,
-					"z": 6.5
 				}
 			},
 			"bCanBeDamaged": true
@@ -20447,6 +20406,47 @@
 					"x": 20,
 					"y": 51.924,
 					"z": 8
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-dice-rqj",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 0,
+					"y": -75,
+					"z": 88.57
+				},
+				"scale3D": {
+					"x": 19,
+					"y": 19,
+					"z": 6.5
 				}
 			},
 			"bCanBeDamaged": true
