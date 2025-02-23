@@ -38,7 +38,7 @@ describe("player board", () => {
     slot = Math.floor(Math.random() * 4);
   });
 
-  test("trophies", () => {
+  test("trophies", async () => {
     const board = world
       .getObjectsByTemplateName("board")
       .find((d) => d.getOwningPlayerSlot() === slot)!;
@@ -56,6 +56,24 @@ describe("player board", () => {
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
     });
+
+    // discard
+    const ambition = world.getObjectByTemplateName("ambition")!;
+    ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
+    if ("discard" in ambition && typeof ambition.discard === "function")
+      ambition.discard();
+    await new Promise((r) => setTimeout(r, 100));
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { ...ambitions.tycoon, [slot]: 0 },
+        tyrant: { ...ambitions.tyrant, [slot]: 0 },
+        warlord: { ...ambitions.warlord, [slot]: 0 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+      },
+      "after discard",
+    );
   });
 
   test("stacked trophies", async () => {
@@ -78,9 +96,27 @@ describe("player board", () => {
       },
       "stacked by addCards",
     );
+
+    // discard
+    const ambition = world.getObjectByTemplateName("ambition")!;
+    ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
+    if ("discard" in ambition && typeof ambition.discard === "function")
+      ambition.discard();
+    await new Promise((r) => setTimeout(r, 100));
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { ...ambitions.tycoon, [slot]: 0 },
+        tyrant: { ...ambitions.tyrant, [slot]: 0 },
+        warlord: { ...ambitions.warlord, [slot]: 0 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+      },
+      "after discard",
+    );
   });
 
-  test("captives", () => {
+  test("captives", async () => {
     const board = world
       .getObjectsByTemplateName("board")
       .find((d) => d.getOwningPlayerSlot() === slot)!;
@@ -97,6 +133,24 @@ describe("player board", () => {
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
     });
+
+    // discard
+    const ambition = world.getObjectByTemplateName("ambition")!;
+    ambition.setPosition(ambition.getPosition().add([-10, 0, 1]));
+    if ("discard" in ambition && typeof ambition.discard === "function")
+      ambition.discard();
+    await new Promise((r) => setTimeout(r, 200));
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { ...ambitions.tycoon, [slot]: 0 },
+        tyrant: { ...ambitions.tyrant, [slot]: 0 },
+        warlord: { ...ambitions.warlord, [slot]: 0 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+      },
+      "after discard",
+    );
   });
 
   test("resources", () => {
