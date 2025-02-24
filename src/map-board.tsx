@@ -163,7 +163,7 @@ class AmbitionSection {
   getStandings = () => {
     const sorted = [...this.tallies].sort(([, a], [, b]) => b - a);
     const tie = sorted[0][1] === sorted[1][1];
-    const tie2 = sorted[1][1] === sorted[2][1];
+    const tie2 = sorted[1][1] === sorted[2]?.[1];
     const second = (tie ? sorted[0][1] : tie2 ? null : sorted[1][1]) || null;
     return [
       tie ? [] : [sorted[0][0]],

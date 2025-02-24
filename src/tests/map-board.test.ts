@@ -1,6 +1,8 @@
-import type { Color } from "@tabletop-playground/api";
+import type { Card, Color } from "@tabletop-playground/api";
 import { globalEvents, ObjectType, world } from "@tabletop-playground/api";
+import type { InitiativeMarker } from "../initiative-marker";
 import { gainResource, getSystems, placeShips } from "../lib/setup";
+import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual } from "./assert";
 import { describe, test } from "./suite";
 
@@ -93,6 +95,35 @@ describe("map board", () => {
       [4 + 1, 4 + 2, , 12 + 4],
       "delta from current position",
     );
+  });
+
+  test("2p scoring", async () => {
+    // run 2p setup
+    const setupDeck = world
+      .getObjectsByTemplateName<Card>("setup")
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as TestableCard;
+    const setup = setupDeck.takeCards()! as TestableCard;
+    setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
+    setupDeck.onRemoved.trigger(setup);
+    // reset initiative
+    const initiative = world.getObjectById("initiative") as InitiativeMarker;
+    initiative.take(0);
+    setup.onPrimaryAction.trigger(setup);
+
+    // second place vs. blocked
+    globalEvents.onAmbitionDeclared.trigger("tycoon");
+    globalEvents.onChapterEnded.trigger();
+    assertEqual(getScores(), [null, 3], "second place");
+
+    // tie for first -> second place points
+    globalEvents.onAmbitionDeclared.trigger("keeper");
+    globalEvents.onChapterEnded.trigger();
+    assertEqual(getScores(), [2, 3], "tie for first -> second place points");
+
+    // blocked winning tyrant
+    globalEvents.onAmbitionDeclared.trigger("warlord");
+    globalEvents.onChapterEnded.trigger();
+    assertEqual(getScores(), [2, 3], "blocked winning tyrant");
   });
 });
 
