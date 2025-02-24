@@ -36,7 +36,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:base"
+	],
 	"FrontTexture": "cards/setup.jpg",
 	"BackTexture": "cards/setup-back.jpg",
 	"HiddenTexture": "",

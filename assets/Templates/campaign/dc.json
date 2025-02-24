@@ -36,7 +36,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:campaign"
+	],
 	"FrontTexture": "campaign/dc.jpg",
 	"BackTexture": "campaign/dc-back.jpg",
 	"HiddenTexture": "",

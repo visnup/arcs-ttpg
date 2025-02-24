@@ -37,7 +37,8 @@
 	},
 	"GroundAccessibility": "Nothing",
 	"Tags": [
-		"court"
+		"court",
+		"state:campaign"
 	],
 	"FrontTexture": "campaign/cc.jpg",
 	"BackTexture": "cards/bc-back.jpg",
