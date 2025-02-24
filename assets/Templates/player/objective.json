@@ -71,6 +71,7 @@
 	},
 	"GroundAccessibility": "Nothing",
 	"Tags": [
-		"power"
+		"power",
+		"state:campaign"
 	]
 }

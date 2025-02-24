@@ -39,7 +39,9 @@
 		"Z": 1
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:campaign"
+	],
 	"MultistateModels": [
 		{
 			"Model": "Square",

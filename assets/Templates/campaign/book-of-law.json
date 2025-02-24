@@ -39,7 +39,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:campaign"
+	],
 	"FrontTexture": "campaign/book-of-law.jpg",
 	"BackTexture": "",
 	"HiddenTexture": "",

@@ -1,4 +1,4 @@
-// Check template json definitions against All.vts objects for consistency
+// Check template json definitions against Pieces.vts objects for consistency
 import { readdir, readFile } from "node:fs/promises";
 
 // Parse templates
@@ -35,10 +35,10 @@ const strings = new Map([
   ["SurfaceType7", "Silent"],
 ]);
 
-// Read through All.vts
+// Read through Pieces.vts
 // todo: player colors
 // todo: peristent key data
-const save = await readFile("assets/States/All.vts");
+const save = await readFile("assets/States/Pieces.vts");
 const { objects } = JSON.parse(save.toString());
 for (const obj of objects.sort((a, b) =>
   a.templateId.localeCompare(b.templateId),
@@ -70,6 +70,8 @@ function comparable(value: unknown) {
   if (typeof value === "object")
     if (value && "r" in value && "g" in value && "b" in value)
       return JSON.stringify({ R: value.r, G: value.g, B: value.b });
+    // else if (Array.isArray(value))
+    //   return JSON.stringify(value.filter((d) => !d.startsWith("state:")));
     else return JSON.stringify(value);
   if (typeof value === "string") return strings.get(value) ?? value;
   return value;

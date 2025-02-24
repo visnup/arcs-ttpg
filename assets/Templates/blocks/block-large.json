@@ -39,7 +39,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:base"
+	],
 	"FrontTexture": "block-large.png",
 	"BackTexture": "",
 	"HiddenTexture": "",

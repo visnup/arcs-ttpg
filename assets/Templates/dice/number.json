@@ -70,7 +70,9 @@
 		"Z": 0
 	},
 	"GroundAccessibility": "Nothing",
-	"Tags": [],
+	"Tags": [
+		"state:campaign"
+	],
 	"Faces": [
 		{
 			"X": 0,

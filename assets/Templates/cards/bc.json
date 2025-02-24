@@ -51,7 +51,8 @@
 	},
 	"GroundAccessibility": "Nothing",
 	"Tags": [
-		"court"
+		"court",
+		"state:base"
 	],
 	"FrontTexture": "cards/bc.jpg",
 	"BackTexture": "cards/bc-back.jpg",
