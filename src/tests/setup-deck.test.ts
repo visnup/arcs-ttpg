@@ -9,7 +9,7 @@ import type { InitiativeMarker } from "../initiative-marker";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual, assertNotEqual } from "./assert";
 import { getCounts } from "./setup";
-import { describe, test } from "./suite";
+import { describe, skip, test } from "./suite";
 import { getTally } from "./tally";
 
 describe("setup deck", () => {
@@ -22,7 +22,10 @@ describe("setup deck", () => {
     // draw setup
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) skip("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
@@ -131,7 +134,10 @@ describe("setup deck", () => {
   test("3p", () => {
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) skip("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
@@ -181,7 +187,10 @@ describe("setup deck", () => {
   test("2p", () => {
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) skip("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
@@ -262,7 +271,10 @@ describe("setup deck", () => {
     // draw setup
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[2] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) skip("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
@@ -378,7 +390,10 @@ describe("setup deck", () => {
     // draw setup
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[1] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) skip("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);

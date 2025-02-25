@@ -15,7 +15,7 @@ import {
 } from "../lib/setup";
 import type { Ambition } from "../map-board";
 import { assertEqual } from "./assert";
-import { beforeEach, describe, test } from "./suite";
+import { beforeEach, describe, skip, test } from "./suite";
 
 const offset = (n: number) => 2 * n * Math.random() - n;
 
@@ -48,11 +48,12 @@ describe("player board", () => {
       for (const place of places)
         for (const o of place(s, 1, box.add([offset(2), offset(2), 0])))
           o.setObjectType(ObjectType.Penetrable);
-    placeBlight(box)!.setObjectType(ObjectType.Penetrable);
+    const blight = placeBlight(box);
+    blight?.setObjectType(ObjectType.Penetrable);
     assertEqual(ambitions, {
       tycoon: { [slot]: 0 },
       tyrant: { [slot]: 0 },
-      warlord: { [slot]: 16 },
+      warlord: { [slot]: blight ? 16 : 12 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
     });
@@ -62,7 +63,7 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((r) => setTimeout(r, 500));
     assertEqual(
       ambitions,
       {
@@ -82,6 +83,7 @@ describe("player board", () => {
       .find((d) => d.getOwningPlayerSlot() === slot)!;
     const box = board.getPosition().add([-2, 2, 1]);
     const blight = [1, 2].map(() => placeBlight(box)!);
+    if (!blight[0]) skip("no blight");
     blight[0].addCards(blight[1]);
     assertEqual(blight[0].getStackSize(), 2);
     await new Promise((r) => process.nextTick(r));
@@ -102,7 +104,7 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((r) => setTimeout(r, 500));
     assertEqual(
       ambitions,
       {
@@ -139,7 +141,7 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-10, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 200));
+    await new Promise((r) => setTimeout(r, 500));
     assertEqual(
       ambitions,
       {

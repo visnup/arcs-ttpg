@@ -52,12 +52,12 @@ describe("resource", () => {
       const r = supply(i);
       let c;
       // Check base court
-      const bc = world.getObjectByTemplateName<Card>("bc")!;
+      const bc = world.getObjectByTemplateName<Card>("bc");
       const offset = bc
-        .getAllCardDetails()
+        ?.getAllCardDetails()
         .findIndex((d) => d.tags.includes(`supply:${resource}`));
-      if (offset >= 0) {
-        c = bc.takeCards(1, true, offset)!;
+      if (offset && offset >= 0) {
+        c = bc!.takeCards(1, true, offset)!;
       } else {
         // Fall back to Magnate fate
         const f03 = world.createObjectFromTemplate(

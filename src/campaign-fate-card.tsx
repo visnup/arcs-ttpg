@@ -114,13 +114,11 @@ function campaignSetup(players: number, card: Card) {
   );
 
   // Shuffle court deck
-  const bc = world.getObjectByTemplateName("bc");
   const cc = world.getObjectByTemplateName<Card>("cc");
-  if (bc && cc) {
-    const court = bc.getPosition();
+  if (cc) {
+    const court = getCourtSnaps(0)[0];
     const p = cc.getPosition();
-    bc.destroy();
-    cc.setPosition(court);
+    cc.setPosition(court.getGlobalPosition());
     placeCourt(cc, players);
     // Lore
     const lore = getLore();
