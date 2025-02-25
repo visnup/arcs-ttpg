@@ -2,6 +2,7 @@ import { world } from "@tabletop-playground/api";
 
 type Result =
   | { description: string; ok: true }
+  | { description: string; ok: false; skipped: true }
   | { description: string; ok: false; error: Error };
 type Suite = {
   description: string;
@@ -43,6 +44,8 @@ export function test(description: string, fn: () => Promise<void> | void) {
       return { description, ok: true };
     } catch (error) {
       console.error(currentSuite?.description, description, "\n", error);
+      if (error instanceof SkipError)
+        return { description, ok: false, skipped: true };
       for (const p of world.getAllPlayers())
         p.showMessage(
           `${currentSuite?.description} > ${description}\n${error}`,
@@ -63,3 +66,5 @@ export async function run() {
     }
   }
 }
+
+export class SkipError extends Error {}

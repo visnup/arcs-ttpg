@@ -4,7 +4,7 @@ import type { InitiativeMarker } from "../initiative-marker";
 import { gainResource, getSystems, placeShips } from "../lib/setup";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual } from "./assert";
-import { describe, test } from "./suite";
+import { describe, SkipError, test } from "./suite";
 
 describe("map board", () => {
   test("penetrable", async () => {
@@ -101,7 +101,10 @@ describe("map board", () => {
     // run 2p setup
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
-      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as TestableCard;
+      .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as
+      | TestableCard
+      | undefined;
+    if (!setupDeck) throw new SkipError("no setup deck");
     const setup = setupDeck.takeCards()! as TestableCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);

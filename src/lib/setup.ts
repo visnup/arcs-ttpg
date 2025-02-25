@@ -124,13 +124,13 @@ export function getActionDecks() {
     .sort((a, b) => b.getStackSize() - a.getStackSize());
 }
 
-export function getCourtSnaps() {
+export function getCourtSnaps(offset = 1) {
   const board = world.getObjectByTemplateName("court");
   if (!board) return [];
   return board
     .getAllSnapPoints()
     .sort((a, b) => b.getLocalPosition().y - a.getLocalPosition().y)
-    .slice(1);
+    .slice(offset);
 }
 
 export function getSystems() {
