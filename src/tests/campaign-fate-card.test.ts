@@ -9,7 +9,7 @@ import { assert, assertEqual, assertNotEqual } from "./assert";
 import { getCounts } from "./setup";
 import { describe, SkipError, test } from "./suite";
 
-describe("campaign fate card", () => {
+describe("campaign fate card", "campaign", () => {
   test("showDeal", () => {
     const fates = world
       .getObjectsByTemplateName<Card>("fate")

@@ -6,22 +6,30 @@ type Result =
   | { description: string; ok: false; error: Error };
 type Suite = {
   description: string;
-  run: () => Promise<void>;
-  tests: (() => Promise<Result>)[];
+  run: (run?: string) => Promise<void>;
+  tests: (() => Promise<Result> & { tag?: string })[];
   results: Result[];
 };
 let currentSuite: Suite | undefined = undefined;
 export const suites: Suite[] = [];
 
-export function describe(description: string, fn: () => void) {
+export function describe(
+  description: string,
+  tag: string | (() => void),
+  fn?: () => void,
+) {
+  if (typeof tag === "function") fn = tag;
+  if (!fn) throw new Error("No test function provided");
   const suite = {
     description,
-    async run() {
+    async run(tag?: string) {
       currentSuite = suite;
       currentSuite.tests = [];
       currentSuite.results = [];
       fn();
-      for (const t of currentSuite.tests) currentSuite.results.push(await t());
+      for (const t of currentSuite.tests)
+        if (!tag || ("tag" in t && t.tag === tag))
+          currentSuite.results.push(await t());
       before = before.filter((fn) => "keep" in fn && fn.keep);
     },
     tests: [],
@@ -36,7 +44,13 @@ export function beforeEach(fn: () => void, keep = false) {
   before.push(fn);
 }
 
-export function test(description: string, fn: () => Promise<void> | void) {
+export function test(
+  description: string,
+  tag: string | (() => void),
+  fn?: () => Promise<void> | void,
+) {
+  if (typeof tag === "function") fn = tag;
+  if (!fn) throw new Error("No test function provided");
   currentSuite?.tests.push(async () => {
     try {
       for (const b of before) b();
@@ -57,10 +71,10 @@ export function test(description: string, fn: () => Promise<void> | void) {
   });
 }
 
-export async function run() {
+export async function run(tag?: string) {
   for (const { run } of suites) {
     try {
-      await run();
+      await run(tag);
     } catch {
       // ignore
     }
