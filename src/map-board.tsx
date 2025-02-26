@@ -174,6 +174,7 @@ class AmbitionSection {
   returnAmbitions = (zone: Zone, obj: GameObject) => {
     if (
       obj.getTemplateName() !== "ambition" ||
+      turns.turn >= 0 ||
       world
         .getObjectsByTemplateName<CardHolder>("cards")
         .some((h) => h.getNumCards() > 0)
