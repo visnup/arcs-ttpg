@@ -7,6 +7,7 @@
     "dev": "ttpg-scripts dev",
     "clean": "ttpg-scripts clean",
     "reset": "ttpg-scripts reset",
+    "prebuild": "yarn build:cards && yarn build:states",
     "build": "ttpg-scripts build",
     "purge": "ttpg-scripts purge",
     "libpack": "ttpg-scripts libpack",
