@@ -3,6 +3,7 @@
 /node_modules/
 /wip/assets
 /wip/cards/*.yml
+/wip/ship/
 *.blend1
 *.mtl
 
