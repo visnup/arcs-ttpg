@@ -10,7 +10,7 @@ import {
   VerticalAlignment,
   world,
 } from "@tabletop-playground/api";
-import { boxChild, jsxFrag, jsxInTTPG, render } from "jsx-in-ttpg";
+import { boxChild, jsxInTTPG, render } from "jsx-in-ttpg";
 
 const refObject = _refObject;
 const refPackageId = _refPackageId;
