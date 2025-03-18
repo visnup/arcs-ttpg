@@ -1251,10 +1251,10 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
 
-jsx-in-ttpg@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/jsx-in-ttpg/-/jsx-in-ttpg-2.2.4.tgz#95ef532ba4d2c0c70be3aeda46f84304dd3d3ecf"
-  integrity sha512-7D60zgfHcTwaUovc/VoWZKqQYWxe6BOS+aQuNi7/T9HC08NSEkd6ppUR4pQTjUK5ElrNGbJK0Sj/828Z0urw9w==
+jsx-in-ttpg@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/jsx-in-ttpg/-/jsx-in-ttpg-2.3.0.tgz#985fcc19b1eb73d813d0eaadd813fbecf1cf90c3"
+  integrity sha512-QAcdXmfGRBpkUf39wx3YTXHBY/x6Eg9BeDMNsyC3J/o5HEJvPFzM4hGL7BFNdUV+GelPlSvDeESVqxfBplR6fA==
 
 keyv@^4.5.4:
   version "4.5.4"

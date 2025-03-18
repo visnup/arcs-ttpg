@@ -88,54 +88,51 @@ function sumDice() {
       <text>All Faces Blank</text>
     ) : (
       <verticalbox gap={10}>
-        {rows
-          .map(
-            ([key, label]) =>
-              total[key] && (
-                <horizontalbox gap={20} valign={VerticalAlignment.Center}>
-                  {boxChild(
-                    0,
-                    <image
-                      src={`dice/${key}.png`}
-                      srcPackage={refPackageId}
-                      width={20}
-                    />,
-                  )}
-                  {boxChild(
-                    3,
-                    <richtext
-                      size={14}
-                      font="NeueKabelW01-Book.ttf"
-                      fontPackage={refPackageId}
-                    >
-                      {label}
-                    </richtext>,
-                  )}
-                  {boxChild(
-                    1,
-                    <text
-                      size={16}
-                      font="NeueKabelW01-Book.ttf"
-                      fontPackage={refPackageId}
-                      justify={TextJustification.Center}
-                    >
-                      {total[key]}
-                    </text>,
-                  )}
-                </horizontalbox>
-              ),
-          )
-          .concat([
-            <button
-              onClick={discard}
-              size={10}
-              font="NeueKabelW01-Book.ttf"
-              fontPackage={refPackageId}
-              hidden={!Object.keys(total).length}
-            >
-              Clear
-            </button>,
-          ])}
+        {rows.map(
+          ([key, label]) =>
+            total[key] && (
+              <horizontalbox gap={20} valign={VerticalAlignment.Center}>
+                {boxChild(
+                  0,
+                  <image
+                    src={`dice/${key}.png`}
+                    srcPackage={refPackageId}
+                    width={20}
+                  />,
+                )}
+                {boxChild(
+                  3,
+                  <richtext
+                    size={14}
+                    font="NeueKabelW01-Book.ttf"
+                    fontPackage={refPackageId}
+                  >
+                    {label}
+                  </richtext>,
+                )}
+                {boxChild(
+                  1,
+                  <text
+                    size={16}
+                    font="NeueKabelW01-Book.ttf"
+                    fontPackage={refPackageId}
+                    justify={TextJustification.Center}
+                  >
+                    {total[key]}
+                  </text>,
+                )}
+              </horizontalbox>
+            ),
+        )}
+        <button
+          onClick={discard}
+          size={10}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          hidden={!Object.keys(total).length}
+        >
+          Clear
+        </button>
       </verticalbox>
     ),
   );

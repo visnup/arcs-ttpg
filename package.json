@@ -20,7 +20,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "jsx-in-ttpg": "^2.2.4"
+    "jsx-in-ttpg": "^2.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
