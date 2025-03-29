@@ -350,7 +350,7 @@ function placeAids() {
     "12814B4F8748BF4D8A7FFD92AE4C5873",
     "F74E188D6E443D0C1E239297F328847F",
   ].entries())
-    world.createObjectFromTemplate(id, p.add(new Vector(0, i * -10, 0)));
+    world.createObjectFromTemplate(id, p.add(new Vector(0, i * -18, 0)));
 }
 
 // Fate sets
