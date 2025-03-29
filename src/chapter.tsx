@@ -6,6 +6,7 @@ import {
   Vector,
   world,
   type Card,
+  type SnapPoint,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 
@@ -55,9 +56,12 @@ async function cleanUp() {
       marker.setPosition(ambitions[i].getGlobalPosition().add([0, 0, 1]), 1.5);
 
   // Advance chapter
-  const chapters = snaps
+  const track = world.getObjectByTemplateName<Card>("chapter-track");
+  const act = (s: SnapPoint) =>
+    track?.isFaceUp() ? s.getLocalPosition().z < 0 : s.getLocalPosition().z > 0;
+  const chapters = (track ? track.getAllSnapPoints().filter(act) : snaps)
     .filter((s) => s.getTags().includes("chapter"))
-    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
+    .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
   const next =
     chapters[chapters.findIndex((s) => s.getSnappedObject() === refObject) + 1];
   if (next) refObject.setPosition(next.getGlobalPosition().add([0, 0, 1]), 1.5);
