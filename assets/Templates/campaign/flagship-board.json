@@ -31,14 +31,171 @@
 	"Collision": [],
 	"Lights": [],
 	"SnapPointsGlobal": false,
-	"SnapPoints": [],
+	"SnapPoints": [
+		{
+			"X": 0.59999999999999998,
+			"Y": 4.0599999999999996,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": 4.0599999999999996,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 0.59999999999999998,
+			"Y": 7.5599999999999996,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": 7.5599999999999996,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 0.59999999999999998,
+			"Y": 11.06,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": 11.06,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 0.59999999999999998,
+			"Y": -11.119999999999999,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": -11.119999999999999,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 0.59999999999999998,
+			"Y": -7.6200000000000001,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": -7.6200000000000001,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 0.59999999999999998,
+			"Y": -4.1200000000000001,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": -4.1200000000000001,
+			"Z": -0.10000000000000001,
+			"Range": 3,
+			"SnapRotation": 0,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		}
+	],
 	"ZoomViewDirection":
 	{
 		"X": 0,
 		"Y": 0,
 		"Z": 0
 	},
-	"GroundAccessibility": "Nothing",
+	"GroundAccessibility": "Zoom",
 	"Tags": [
 		"state:campaign"
 	],

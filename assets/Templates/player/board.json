@@ -359,6 +359,6 @@
 		"Y": 0,
 		"Z": 0
 	},
-	"GroundAccessibility": "Nothing",
+	"GroundAccessibility": "Zoom",
 	"Tags": []
 }
