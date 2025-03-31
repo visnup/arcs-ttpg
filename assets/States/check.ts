@@ -70,8 +70,8 @@ function comparable(value: unknown) {
   if (typeof value === "object")
     if (value && "r" in value && "g" in value && "b" in value)
       return JSON.stringify({ R: value.r, G: value.g, B: value.b });
-    // else if (Array.isArray(value))
-    //   return JSON.stringify(value.filter((d) => !d.startsWith("state:")));
+    else if (Array.isArray(value))
+      return JSON.stringify(value.filter((d) => !d.startsWith("state:")));
     else return JSON.stringify(value);
   if (typeof value === "string") return strings.get(value) ?? value;
   return value;
