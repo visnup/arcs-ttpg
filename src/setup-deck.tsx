@@ -10,9 +10,11 @@ import {
   globalEvents,
   refCard,
   Rotator,
+  UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
+import { jsxInTTPG, render } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
 import {
   above,
@@ -60,7 +62,7 @@ if (refCard.getStackSize() > 1) refCard.onRemoved.add(initialSetup);
 refCard.onFlipUpright.add((card) =>
   Math.abs(card.getRotation().roll) < 10
     ? previewSetup(card)
-    : clearPreviewSetup(),
+    : clearPreviewSetup(card),
 );
 refCard.onSecondaryAction.add(previewSetup);
 refCard.onPrimaryAction.add(followSetup);
@@ -123,7 +125,25 @@ function previewSetup(card: Card) {
   if ("_followedSetup" in world) return;
 
   // Remove previous preview
-  clearPreviewSetup();
+  clearPreviewSetup(card);
+
+  card.addUI(
+    Object.assign(new UIElement(), {
+      position: new Vector(-card.getExtent(false, false).x - 1, 0, 0),
+      rotation: new Rotator(180, 180, 0),
+      scale: 0.15,
+      widget: render(
+        <button
+          size={48}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          onClick={() => followSetup(card)}
+        >
+          {" Setup "}
+        </button>,
+      ),
+    }),
+  );
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
@@ -145,8 +165,9 @@ function previewSetup(card: Card) {
       createLabel("ABCC".charAt(j), nearby(getPosition(system[j])), slots[i]);
   }
 }
-function clearPreviewSetup() {
+function clearPreviewSetup(card: Card) {
   if ("_followedSetup" in world) return;
+  card.removeUI(0);
   for (const l of world.getDrawingLines()) world.removeDrawingLineObject(l);
   for (const label of world.getAllLabels()) label.destroy();
   for (const block of world.getObjectsByTemplateName("block")) block.destroy();
@@ -157,7 +178,7 @@ function followSetup(card: Card) {
   if ("_followedSetup" in world) return;
 
   // Remove preview
-  clearPreviewSetup();
+  clearPreviewSetup(card);
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
