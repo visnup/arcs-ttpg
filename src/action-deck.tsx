@@ -58,28 +58,30 @@ refCard.deal = function (...args) {
 if (refCard.getSavedData("showDeal")) showDeal(refCard);
 function showDeal(card: Card) {
   if (card.getUIs().length || card.getStackSize() === 1) return;
-  const ui = new UIElement();
-  ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
-  ui.scale = 0.15;
-  ui.widget = render(
-    <button
-      size={48}
-      font="NeueKabelW01-Book.ttf"
-      fontPackage={refPackageId}
-      onClick={() => {
-        const slots = world
-          .getObjectsByTemplateName("board")
-          .map((d) => d.getOwningPlayerSlot());
-        card.deal(6, slots, false, true);
-        for (const holder of world.getObjectsByTemplateName("cards"))
-          if ("sort" in holder && typeof holder.sort === "function")
-            holder.sort();
-      }}
-    >
-      {" Deal "}
-    </button>,
+  card.addUI(
+    Object.assign(new UIElement(), {
+      position: new Vector(-card.getExtent(false, false).x - 1, 0, 0),
+      scale: 0.15,
+      widget: render(
+        <button
+          size={48}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          onClick={() => {
+            const slots = world
+              .getObjectsByTemplateName("board")
+              .map((d) => d.getOwningPlayerSlot());
+            card.deal(6, slots, false, true);
+            for (const holder of world.getObjectsByTemplateName("cards"))
+              if ("sort" in holder && typeof holder.sort === "function")
+                holder.sort();
+          }}
+        >
+          {" Deal "}
+        </button>,
+      ),
+    }),
   );
-  card.addUI(ui);
 }
 
 function isSecond(card: Card) {
@@ -170,21 +172,23 @@ function onReleased(card: Card) {
         for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
       }
     };
-    const ui = new UIElement();
-    ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
-    if (isFaceUp) ui.rotation = new Rotator(180, 180, 0);
-    ui.scale = 0.15;
-    ui.widget = render(
-      <button
-        size={48}
-        font="NeueKabelW01-Book.ttf"
-        fontPackage={refPackageId}
-        onClick={seizeInitiative}
-      >
-        {" Seize "}
-      </button>,
+    const index = card.addUI(
+      Object.assign(new UIElement(), {
+        position: new Vector(-card.getExtent(false, false).x - 1, 0, 0),
+        ...(isFaceUp ? { rotation: new Rotator(180, 180, 0) } : {}),
+        scale: 0.15,
+        widget: render(
+          <button
+            size={48}
+            font="NeueKabelW01-Book.ttf"
+            fontPackage={refPackageId}
+            onClick={seizeInitiative}
+          >
+            {" Seize "}
+          </button>,
+        ),
+      }),
     );
-    const index = card.addUI(ui);
     assignOnce(card, "next", seizeInitiative);
     // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
@@ -197,21 +201,23 @@ function onReleased(card: Card) {
         card.removeUI(index);
       }
     };
-    const ui = new UIElement();
-    ui.position = new Vector(-card.getExtent(false, false).x - 1, 0, 0);
-    ui.rotation = new Rotator(180, 180, 0);
-    ui.scale = 0.15;
-    ui.widget = render(
-      <button
-        size={48}
-        font="NeueKabelW01-Book.ttf"
-        fontPackage={refPackageId}
-        onClick={takeInitiative}
-      >
-        {" Surpass "}
-      </button>,
+    const index = card.addUI(
+      Object.assign(new UIElement(), {
+        position: new Vector(-card.getExtent(false, false).x - 1, 0, 0),
+        rotation: new Rotator(180, 180, 0),
+        scale: 0.15,
+        widget: render(
+          <button
+            size={48}
+            font="NeueKabelW01-Book.ttf"
+            fontPackage={refPackageId}
+            onClick={takeInitiative}
+          >
+            {" Surpass "}
+          </button>,
+        ),
+      }),
     );
-    const index = card.addUI(ui);
     assignOnce(card, "discard", takeInitiative);
     // Bug workaround: make sure card is intersecting zone after UI added
     card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));

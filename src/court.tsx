@@ -27,15 +27,15 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   zone.onEndOverlap.add(tallyAgents);
   refObject.onDestroyed.add(() => zone.destroy());
 
-  const ui = new UIElement();
-  ui.position = snap.getLocalPosition().add(new Vector(x / 2 + 0.6, 0, 0));
-  ui.rotation = new Rotator(0, 0, 90);
-  ui.scale = 0.15;
-  widgets.push(
-    (ui.widget = render(
+  const ui = Object.assign(new UIElement(), {
+    position: snap.getLocalPosition().add(new Vector(x / 2 + 0.6, 0, 0)),
+    rotation: new Rotator(0, 0, 90),
+    scale: 0.15,
+    widget: render(
       <verticalbox halign={HorizontalAlignment.Center} gap={15} />,
-    )) as VerticalBox,
-  );
+    ),
+  });
+  widgets.push(ui.widget as VerticalBox);
   refObject.addUI(ui);
 
   tallyAgents(zone);

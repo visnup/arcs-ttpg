@@ -68,27 +68,29 @@ function showDeal(card: Card) {
     card.getAllCardDetails().some(({ index }) => index >= 8)
   )
     return;
-  const ui = new UIElement();
-  ui.position = new Vector(0, 0, card.getExtent(false, false).z + 0.1);
-  ui.scale = 0.15;
-  ui.widget = render(
-    <verticalbox gap={10}>
-      {[2, 3, 4].map((n) => (
-        <button
-          size={48}
-          font="NeueKabelW01-Book.ttf"
-          fontPackage={refPackageId}
-          onClick={() => {
-            campaignSetup(n, card);
-            card.removeUI(0);
-          }}
-        >
-          {` ${n} players `}
-        </button>
-      ))}
-    </verticalbox>,
+  card.addUI(
+    Object.assign(new UIElement(), {
+      position: new Vector(0, 0, card.getExtent(false, false).z + 0.1),
+      scale: 0.15,
+      widget: render(
+        <verticalbox gap={10}>
+          {[2, 3, 4].map((n) => (
+            <button
+              size={48}
+              font="NeueKabelW01-Book.ttf"
+              fontPackage={refPackageId}
+              onClick={() => {
+                campaignSetup(n, card);
+                card.removeUI(0);
+              }}
+            >
+              {` ${n} players `}
+            </button>
+          ))}
+        </verticalbox>,
+      ),
+    }),
   );
-  card.addUI(ui);
 }
 function campaignSetup(players: number, card: Card) {
   // Randomly pick first player

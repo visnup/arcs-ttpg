@@ -11,8 +11,10 @@ text.setFont("MarkerFelt-Thin.ttf");
 text.setFontSize(28);
 text.setText(refObject.getDescription());
 text.setTextColor(new Color(0.05, 0.05, 0.05, 1));
-const ui = new UIElement();
-ui.scale = 0.2;
-ui.position = new Vector(0, 0, 0.1);
-ui.widget = text;
-refObject.addUI(ui);
+refObject.addUI(
+  Object.assign(new UIElement(), {
+    scale: 0.2,
+    position: new Vector(0, 0, 0.1),
+    widget: text,
+  }),
+);

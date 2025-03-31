@@ -86,16 +86,18 @@ class AmbitionSection {
 
   constructor(offset: number) {
     this.offset = offset;
-    const ui = new UIElement();
-    ui.position = this.position = new Vector(
-      (this.x = size.x / 2 - (13.2 + offset * 5.3)),
-      size.y / 2 - 5.5,
-      size.z + 0.32,
-    );
-    ui.scale = 0.15;
-    ui.widget = this.widget;
     this.widget.setChildDistance(15);
-    refObject.addUI(ui);
+    refObject.addUI(
+      Object.assign(new UIElement(), {
+        position: (this.position = new Vector(
+          (this.x = size.x / 2 - (13.2 + offset * 5.3)),
+          size.y / 2 - 5.5,
+          size.z + 0.32,
+        )),
+        scale: 0.15,
+        widget: this.widget,
+      }),
+    );
     this.zone = world.createZone(
       refObject
         .getPosition()
@@ -334,11 +336,12 @@ class Turns {
       .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
     this.widgets = this.snaps.map((p) => {
-      const ui = new UIElement();
-      ui.position = p.getLocalPosition().add([0, -6.1, 0]);
-      ui.rotation = new Rotator(0, p.getSnapRotation(), 0);
-      ui.scale = 0.15;
-      ui.widget = render(<horizontalbox gap={10} />);
+      const ui = Object.assign(new UIElement(), {
+        position: p.getLocalPosition().add([0, -6.1, 0]),
+        rotation: new Rotator(0, p.getSnapRotation(), 0),
+        scale: 0.15,
+        widget: render(<horizontalbox gap={10} />),
+      });
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
     });

@@ -22,15 +22,15 @@ const reset = createReset(refObject);
       if (script.match(/^tests\/.*\.test\.js$/)) await import(`./${script}`);
 
   // UI
-  const ui = new UIElement();
-  ui.position = new Vector(0, 0, 1);
-  ui.widget = render(<verticalbox />);
-  (ui.widget as VerticalBox).addChild(
-    render(<button onClick={() => run().then(updateButtons)}>Run all</button>),
-  );
-  (ui.widget as VerticalBox).addChild(
-    render(<button onClick={reset}>Reset</button>),
-  );
+  const ui = Object.assign(new UIElement(), {
+    position: new Vector(0, 0, 1),
+    widget: render(
+      <verticalbox>
+        <button onClick={() => run().then(updateButtons)}>Run all</button>
+        <button onClick={reset}>Reset</button>
+      </verticalbox>,
+    ),
+  });
   const buttons = suites.map((suite) => {
     const { description, run } = suite;
     const ref = useRef<Button>();

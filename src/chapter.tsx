@@ -16,20 +16,22 @@ const refPackageId = _refPackageId;
 globalEvents.onChapterEnded.add(showCleanUp);
 
 function showCleanUp() {
-  const ui = new UIElement();
-  ui.position = new Vector(0, 0, refObject.getSize().z / 2 + 0.1);
-  ui.scale = 0.15;
-  ui.widget = render(
-    <button
-      size={48}
-      font="NeueKabelW01-Book.ttf"
-      fontPackage={refPackageId}
-      onClick={cleanUp}
-    >
-      {" Clean Up "}
-    </button>,
+  refObject.addUI(
+    Object.assign(new UIElement(), {
+      position: new Vector(0, 0, refObject.getSize().z / 2 + 0.1),
+      scale: 0.15,
+      widget: render(
+        <button
+          size={48}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          onClick={cleanUp}
+        >
+          {" Clean Up "}
+        </button>,
+      ),
+    }),
   );
-  refObject.addUI(ui);
 }
 
 async function cleanUp() {
