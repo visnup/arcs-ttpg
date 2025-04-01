@@ -333,3 +333,32 @@ export function placeBlight(position: Vector) {
   b?.setPosition(position.add(above));
   return b;
 }
+
+export function placeChapterTrack(
+  chapterTrack?: GameObject,
+  chapter?: GameObject,
+) {
+  if (chapter && chapterTrack) {
+    chapterTrack.setPosition(
+      getPosition(
+        world
+          .getObjectById("map")!
+          .getAllSnapPoints()
+          .filter((d) => d.getTags().includes("chapter-overlay")),
+      ).add(above),
+    );
+    chapterTrack.snap();
+    chapterTrack.freeze();
+    chapter.setTags(["chapter:overlay"]);
+    chapter.setPosition(
+      chapterTrack
+        .getAllSnapPoints()
+        .map((d) => d.getGlobalPosition())
+        .sort(
+          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az || ay - by, // Highest and to the left
+        )[0]
+        .add(above),
+    );
+    chapter.snap();
+  }
+}

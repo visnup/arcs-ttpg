@@ -6,24 +6,24 @@ import {
   type UIElement,
 } from "@tabletop-playground/api";
 import { type TestableObject } from "../chapter";
-import { placeAgents, placeShips } from "../lib/setup";
+import { placeAgents, placeChapterTrack, placeShips } from "../lib/setup";
 import { assert, assertEqual, assertStrictEqual } from "./assert";
 import { describe, skip, test } from "./suite";
 import { getTally } from "./tally";
 
 describe("chapter", () => {
   test("base", async () => {
-    if (world.getObjectByTemplateName("chapter-track"))
-      skip("Track object found");
+    if (world.getObjectByTemplateName("chapter-track")) skip("track found");
 
     const map = world.getObjectById("map")!;
     const track = map
       .getAllSnapPoints()
-      .filter((s) => s.getTags().includes("chapter"));
+      .filter((s) => s.getTags().includes("chapter"))
+      .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y);
     assertEqual(track.length, 5, "chapter track");
 
     const chapter = world.getObjectByTemplateName("chapter");
-    assert(chapter !== undefined, "Chapter object not found");
+    assert(chapter !== undefined, "chapter not found");
     assertEqual(chapter.getUIs().length, 0);
     globalEvents.onChapterEnded.trigger();
     assertEqual(chapter.getUIs().length, 1);
@@ -71,7 +71,40 @@ describe("chapter", () => {
     assertEqual(getAmbitionMarkers(), [9, 6, 4], "still no more flipping");
   });
 
-  // test("chapter track", () => {});
+  test("chapter track", async () => {
+    const chapterTrack = world.getObjectByTemplateName("chapter-track");
+    if (chapterTrack === undefined) skip("track not found");
+
+    const chapter = world.getObjectByTemplateName("chapter");
+    assert(chapter !== undefined, "chapter not found");
+    placeChapterTrack(chapterTrack, chapter);
+
+    const track = chapterTrack
+      .getAllSnapPoints()
+      .filter((s) => s.getLocalPosition().z < 0)
+      .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
+    assertEqual(track.length, 3, "act i & ii side up");
+
+    assertEqual(
+      chapter.getSnappedToPoint()?.getParentObject()?.getId(),
+      chapterTrack.getId(),
+      "snapped to chapter track",
+    );
+    assertStrictEqual(chapter.getSnappedToPoint(), track[0], "chapter 1");
+    assertEqual(getAmbitionMarkers(), [5, 3, 2], "unflipped");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[1], "chapter 2");
+    assertEqual(getAmbitionMarkers(), [5, 4, 3], "flipped one");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[2], "chapter 3");
+    assertEqual(getAmbitionMarkers(), [6, 5, 4], "flipped three");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[2], "still chapter 3");
+    assertEqual(getAmbitionMarkers(), [6, 5, 4], "still flipped three");
+  });
 });
 
 function getTallies(ui: UIElement) {

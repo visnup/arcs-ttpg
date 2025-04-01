@@ -1,7 +1,6 @@
 import type {
   CardHolder,
   Dice,
-  GameObject,
   MultistateObject,
 } from "@tabletop-playground/api";
 import {
@@ -26,6 +25,7 @@ import {
   nearby,
   placeAid,
   placeBlight,
+  placeChapterTrack,
   placeCourt,
   placeFreeCity,
   placeResources,
@@ -286,31 +286,6 @@ function takeCampaignCard(name: string) {
     }
   }
   return card;
-}
-
-function placeChapterTrack(chapterTrack?: GameObject, chapter?: GameObject) {
-  if (chapter && chapterTrack) {
-    chapterTrack.setPosition(
-      getPosition(
-        world
-          .getObjectById("map")!
-          .getAllSnapPoints()
-          .filter((d) => d.getTags().includes("chapter-overlay")),
-      ).add(above),
-    );
-    chapterTrack.snap();
-    chapterTrack.freeze();
-    chapter.setPosition(
-      chapterTrack
-        .getAllSnapPoints()
-        .map((d) => d.getGlobalPosition())
-        .sort(
-          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az || ay - by, // Highest and to the left
-        )[0]
-        .add(above),
-    );
-    chapter.snap();
-  }
 }
 
 let rules: CardHolder;

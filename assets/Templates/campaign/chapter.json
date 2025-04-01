@@ -42,7 +42,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -55,7 +55,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -68,7 +68,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -81,7 +81,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -94,7 +94,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -107,7 +107,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		},
 		{
@@ -120,7 +120,7 @@
 			"Shape": 0,
 			"FlipValidity": 0,
 			"Tags": [
-				"chapter"
+				"chapter:overlay"
 			]
 		}
 	],

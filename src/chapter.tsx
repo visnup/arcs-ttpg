@@ -44,6 +44,20 @@ async function cleanUp() {
   refObject.removeUI(0);
   const snaps = world.getObjectById("map")!.getAllSnapPoints();
 
+  const track = world.getObjectByTemplateName<Card>("chapter-track");
+  const act = (s: SnapPoint) =>
+    track?.isFaceUp() ? s.getLocalPosition().z < 0 : s.getLocalPosition().z > 0;
+  const chapters = (track ? track.getAllSnapPoints().filter(act) : snaps)
+    .filter(
+      (s) =>
+        s.getTags().includes("chapter") ||
+        s.getTags().includes("chapter:overlay"),
+    )
+    .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
+  const next =
+    chapters[chapters.findIndex((s) => s.getSnappedObject() === refObject) + 1];
+  if (!next) return;
+
   // Flip lowest unflipped marker
   const markers = world.getObjectsByTemplateName<Card>("ambition");
   const unflipped = markers.filter((m) => !m.isFaceUp());
@@ -64,15 +78,7 @@ async function cleanUp() {
       marker.setPosition(ambitions[i].getGlobalPosition().add([0, 0, 1]), 1.5);
 
   // Advance chapter
-  const track = world.getObjectByTemplateName<Card>("chapter-track");
-  const act = (s: SnapPoint) =>
-    track?.isFaceUp() ? s.getLocalPosition().z < 0 : s.getLocalPosition().z > 0;
-  const chapters = (track ? track.getAllSnapPoints().filter(act) : snaps)
-    .filter((s) => s.getTags().includes("chapter"))
-    .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
-  const next =
-    chapters[chapters.findIndex((s) => s.getSnappedObject() === refObject) + 1];
-  if (next) refObject.setPosition(next.getGlobalPosition().add([0, 0, 1]), 1.5);
+  refObject.setPosition(next.getGlobalPosition().add([0, 0, 1]), 1.5);
 }
 
 function power(marker: Card) {
