@@ -1,0 +1,94 @@
+import {
+  globalEvents,
+  world,
+  type Card,
+  type HorizontalBox,
+  type UIElement,
+} from "@tabletop-playground/api";
+import { type TestableObject } from "../chapter";
+import { placeAgents, placeShips } from "../lib/setup";
+import { assert, assertEqual, assertStrictEqual } from "./assert";
+import { describe, skip, test } from "./suite";
+import { getTally } from "./tally";
+
+describe("chapter", () => {
+  test("base", async () => {
+    if (world.getObjectByTemplateName("chapter-track"))
+      skip("Track object found");
+
+    const map = world.getObjectById("map")!;
+    const track = map
+      .getAllSnapPoints()
+      .filter((s) => s.getTags().includes("chapter"));
+    assertEqual(track.length, 5, "chapter track");
+
+    const chapter = world.getObjectByTemplateName("chapter");
+    assert(chapter !== undefined, "Chapter object not found");
+    assertEqual(chapter.getUIs().length, 0);
+    globalEvents.onChapterEnded.trigger();
+    assertEqual(chapter.getUIs().length, 1);
+
+    // place captives and trophies
+    const boards = world
+      .getObjectsByTemplateName("board")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
+    for (const i of [0, 1, 2, 3]) {
+      placeAgents(i, 1, boards[(i + 1) % 4].getPosition().add([-2, 10, 1]));
+      placeShips(i, 1, boards[(i + 1) % 4].getPosition().add([-2, 2, 1]));
+    }
+    const [tyrant, warlord] = map.getUIs().slice(1, 3);
+    assertEqual(getTallies(tyrant), [1, 1, 1, 1]);
+    assertEqual(getTallies(warlord), [1, 1, 1, 1]);
+
+    assertStrictEqual(chapter.getSnappedToPoint(), track[0], "chapter 1");
+    assertEqual(getAmbitionMarkers(), [5, 3, 2], "initial markers");
+    globalEvents.onAmbitionDeclared.trigger("tyrant");
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[1], "chapter 2");
+    assertEqual(getAmbitionMarkers(), [5, 4, 3], "flipped one");
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assertEqual(getTallies(tyrant), [], "captives returned");
+    assertEqual(getTallies(warlord), [1, 1, 1, 1], "trophies remain");
+
+    // trophies returned
+    globalEvents.onAmbitionDeclared.trigger("warlord");
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[2], "chapter 3");
+    assertEqual(getAmbitionMarkers(), [6, 5, 4], "flipped another");
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assertEqual(getTallies(warlord), [], "trophies returned");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[3], "chapter 4");
+    assertEqual(getAmbitionMarkers(), [9, 6, 4], "flipped another");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[4], "chapter 5");
+    assertEqual(getAmbitionMarkers(), [9, 6, 4], "no more flipping");
+
+    await (chapter as TestableObject).onClick();
+    assertStrictEqual(chapter.getSnappedToPoint(), track[4], "chapter 5 still");
+    assertEqual(getAmbitionMarkers(), [9, 6, 4], "still no more flipping");
+  });
+
+  // test("chapter track", () => {});
+});
+
+function getTallies(ui: UIElement) {
+  const box = ui.widget as HorizontalBox;
+  return box.getAllChildren().map(getTally);
+}
+
+function getAmbitionMarkers() {
+  const map = world.getObjectById("map")!;
+  return map
+    .getAllSnapPoints()
+    .filter((s) => s.getTags().includes("ambition"))
+    .sort((a, b) => a.getLocalPosition().y - b.getLocalPosition().y)
+    .map((s) => {
+      const marker = (s.getSnappedObject() as Card)!;
+      return +marker
+        .getCardDetails(0)!
+        .metadata.slice(marker.isFaceUp() ? 2 : 0)[0];
+    });
+}

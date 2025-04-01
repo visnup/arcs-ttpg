@@ -34,13 +34,19 @@ function showCleanUp() {
   );
 }
 
+export type TestableObject = typeof refObject & {
+  onClick: typeof cleanUp;
+};
+
+(refObject as TestableObject).onClick = cleanUp;
+
 async function cleanUp() {
   refObject.removeUI(0);
   const snaps = world.getObjectById("map")!.getAllSnapPoints();
 
   // Flip lowest unflipped marker
   const markers = world.getObjectsByTemplateName<Card>("ambition");
-  const unflipped = markers.filter((m) => Math.abs(m.getRotation().roll) < 1);
+  const unflipped = markers.filter((m) => !m.isFaceUp());
   if (unflipped.length) {
     unflipped
       .reduce((lowest, m) => (power(m) < power(lowest) ? m : lowest))
@@ -70,6 +76,7 @@ async function cleanUp() {
 }
 
 function power(marker: Card) {
-  const flipped = Math.abs(marker.getRotation().roll) > 1;
-  return +marker.getCardDetails(0)!.metadata.slice(flipped ? 2 : 0)[0];
+  return +marker
+    .getCardDetails(0)!
+    .metadata.slice(marker.isFaceUp() ? 2 : 0)[0];
 }
