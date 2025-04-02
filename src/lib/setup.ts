@@ -335,8 +335,9 @@ export function placeBlight(position: Vector) {
 }
 
 export function placeChapterTrack(
-  chapterTrack?: GameObject,
+  chapterTrack?: Card,
   chapter?: GameObject,
+  flip = false,
 ) {
   if (chapter && chapterTrack) {
     chapterTrack.setPosition(
@@ -347,6 +348,7 @@ export function placeChapterTrack(
           .filter((d) => d.getTags().includes("chapter-overlay")),
       ).add(above),
     );
+    if (flip) chapterTrack.flip();
     chapterTrack.snap();
     chapterTrack.freeze();
     chapter.setTags(["chapter:overlay"]);
@@ -355,7 +357,8 @@ export function placeChapterTrack(
         .getAllSnapPoints()
         .map((d) => d.getGlobalPosition())
         .sort(
-          ({ y: ay, z: az }, { y: by, z: bz }) => bz - az || ay - by, // Highest and to the left
+          ({ y: ay, z: az }, { y: by, z: bz }) =>
+            Math.round((bz - az) * 10) || ay - by, // Highest and to the left
         )[0]
         .add(above),
     );

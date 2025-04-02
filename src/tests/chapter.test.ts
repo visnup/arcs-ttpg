@@ -24,9 +24,17 @@ describe("chapter", () => {
 
     const chapter = world.getObjectByTemplateName("chapter");
     assert(chapter !== undefined, "chapter not found");
+
+    assertStrictEqual(
+      chapter.getSnappedToPoint()?.getParentObject(),
+      map,
+      "snapped to map",
+    );
+
+    // button shown on chapter end
     assertEqual(chapter.getUIs().length, 0);
     globalEvents.onChapterEnded.trigger();
-    assertEqual(chapter.getUIs().length, 1);
+    assertEqual(chapter.getUIs().length, 1, "button shown on chapter end");
 
     // place captives and trophies
     const boards = world
@@ -71,39 +79,75 @@ describe("chapter", () => {
     assertEqual(getAmbitionMarkers(), [9, 6, 4], "still no more flipping");
   });
 
-  test("chapter track", async () => {
-    const chapterTrack = world.getObjectByTemplateName("chapter-track");
+  test("campaign act i & ii", async () => {
+    const chapterTrack = world.getObjectByTemplateName<Card>("chapter-track");
     if (chapterTrack === undefined) skip("track not found");
 
     const chapter = world.getObjectByTemplateName("chapter");
     assert(chapter !== undefined, "chapter not found");
     placeChapterTrack(chapterTrack, chapter);
 
-    const track = chapterTrack
-      .getAllSnapPoints()
-      .filter((s) => s.getLocalPosition().z < 0)
-      .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
-    assertEqual(track.length, 3, "act i & ii side up");
-
-    assertEqual(
-      chapter.getSnappedToPoint()?.getParentObject()?.getId(),
-      chapterTrack.getId(),
+    assertStrictEqual(
+      chapter.getSnappedToPoint()?.getParentObject(),
+      chapterTrack,
       "snapped to chapter track",
     );
-    assertStrictEqual(chapter.getSnappedToPoint(), track[0], "chapter 1");
-    assertEqual(getAmbitionMarkers(), [5, 3, 2], "unflipped");
+    const track = chapterTrack
+      .getAllSnapPoints()
+      .filter((s) => s.getGlobalPosition().z > chapterTrack.getPosition().z)
+      .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
+    assertEqual(track.length, 3, "act i & ii side");
 
-    await (chapter as TestableObject).onClick();
-    assertStrictEqual(chapter.getSnappedToPoint(), track[1], "chapter 2");
-    assertEqual(getAmbitionMarkers(), [5, 4, 3], "flipped one");
+    for (const [i, power] of [
+      [0, [5, 3, 2]],
+      [1, [5, 4, 3]],
+      [2, [6, 5, 4]],
+      [2, [6, 5, 4]],
+    ] as [number, number[]][]) {
+      assertStrictEqual(
+        chapter.getSnappedToPoint(),
+        track[i],
+        `chapter ${i + 1}`,
+      );
+      assertEqual(getAmbitionMarkers(), power);
+      await (chapter as TestableObject).onClick();
+    }
+  });
 
-    await (chapter as TestableObject).onClick();
-    assertStrictEqual(chapter.getSnappedToPoint(), track[2], "chapter 3");
-    assertEqual(getAmbitionMarkers(), [6, 5, 4], "flipped three");
+  test("campaign act iii", async () => {
+    const chapterTrack = world.getObjectByTemplateName<Card>("chapter-track");
+    if (chapterTrack === undefined) skip("track not found");
 
-    await (chapter as TestableObject).onClick();
-    assertStrictEqual(chapter.getSnappedToPoint(), track[2], "still chapter 3");
-    assertEqual(getAmbitionMarkers(), [6, 5, 4], "still flipped three");
+    const chapter = world.getObjectByTemplateName("chapter");
+    assert(chapter !== undefined, "chapter not found");
+    placeChapterTrack(chapterTrack, chapter, true);
+
+    assertStrictEqual(
+      chapter.getSnappedToPoint()?.getParentObject(),
+      chapterTrack,
+      "snapped to chapter track",
+    );
+    const track = chapterTrack
+      .getAllSnapPoints()
+      .filter((s) => s.getGlobalPosition().z > chapterTrack.getPosition().z)
+      .sort((a, b) => a.getGlobalPosition().y - b.getGlobalPosition().y);
+    assertEqual(track.length, 4, "act iii side");
+
+    for (const [i, power] of [
+      [0, [5, 3, 2]],
+      [1, [5, 4, 3]],
+      [2, [6, 5, 4]],
+      [3, [9, 6, 4]],
+      [3, [9, 6, 4]],
+    ] as [number, number[]][]) {
+      assertStrictEqual(
+        chapter.getSnappedToPoint(),
+        track[i],
+        `chapter ${i + 1}`,
+      );
+      assertEqual(getAmbitionMarkers(), power);
+      await (chapter as TestableObject).onClick();
+    }
   });
 });
 

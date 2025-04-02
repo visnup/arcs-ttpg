@@ -1,8 +1,10 @@
 import type { GameObject, Player } from "@tabletop-playground/api";
 import {
+  Card,
   GameWorld,
   globalEvents,
   GlobalScriptingEvents,
+  Rotator,
   Vector,
   world,
 } from "@tabletop-playground/api";
@@ -182,6 +184,20 @@ GlobalScriptingEvents.prototype.onRoundEnded = new TriggerableMulticastDelegate<
 >();
 GlobalScriptingEvents.prototype.onChapterEnded =
   new TriggerableMulticastDelegate<() => void>();
+
+// Extend Card
+declare module "@tabletop-playground/api" {
+  interface Card {
+    flip(): void;
+  }
+}
+Card.prototype.flip = function () {
+  this.setRotation(
+    this.getRotation().compose(
+      Rotator.fromAxisAngle(this.getRotation().toVector(), 180),
+    ),
+  );
+};
 
 // Extend Color
 declare module "@tabletop-playground/api" {

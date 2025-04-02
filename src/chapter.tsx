@@ -42,8 +42,8 @@ export type TestableObject = typeof refObject & {
 
 async function cleanUp() {
   refObject.removeUI(0);
-  const snaps = world.getObjectById("map")!.getAllSnapPoints();
 
+  const snaps = world.getObjectById("map")!.getAllSnapPoints();
   const track = world.getObjectByTemplateName<Card>("chapter-track");
   const act = (s: SnapPoint) =>
     track?.isFaceUp() ? s.getLocalPosition().z < 0 : s.getLocalPosition().z > 0;
