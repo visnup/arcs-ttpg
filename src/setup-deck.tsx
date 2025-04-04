@@ -85,7 +85,7 @@ refCard.onCustomAction.add((card: Card, player: Player, identifier: string) => {
 });
 
 function initialSetup(card: Card) {
-  if ("_initialSetup" in world) return;
+  if (world.getSavedData("_initialSetup")) return;
 
   // Setup card details
   const { metadata } = card.getCardDetails(0)!;
@@ -117,12 +117,12 @@ function initialSetup(card: Card) {
   // Turn to setup rules
   world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(4);
 
-  (world as typeof world & { _initialSetup: boolean })._initialSetup = true;
+  world.setSavedData(new Date().toISOString(), "_initialSetup");
 }
 
 function previewSetup(card: Card) {
   if (card.getStackSize() > 1) return;
-  if ("_followedSetup" in world) return;
+  if (world.getSavedData("_followedSetup")) return;
 
   // Remove previous preview
   clearPreviewSetup(card);
@@ -166,7 +166,7 @@ function previewSetup(card: Card) {
   }
 }
 function clearPreviewSetup(card: Card) {
-  if ("_followedSetup" in world) return;
+  if (world.getSavedData("_followedSetup")) return;
   card.removeUI(0);
   for (const l of world.getDrawingLines()) world.removeDrawingLineObject(l);
   for (const label of world.getAllLabels()) label.destroy();
@@ -175,7 +175,7 @@ function clearPreviewSetup(card: Card) {
 
 function followSetup(card: Card) {
   if (card.getStackSize() > 1) return;
-  if ("_followedSetup" in world) return;
+  if (world.getSavedData("_followedSetup")) return;
 
   // Remove preview
   clearPreviewSetup(card);
@@ -251,7 +251,7 @@ function followSetup(card: Card) {
   // Place aid
   placeAid();
 
-  (world as typeof world & { _followedSetup: boolean })._followedSetup = true;
+  world.setSavedData(new Date().toISOString(), "_followedSetup");
 }
 
 function createLabel(text: string, position: Vector, slot: number) {

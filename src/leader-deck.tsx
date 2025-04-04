@@ -15,7 +15,10 @@ if (refCard.getStackSize() > 1)
     world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(20);
     removeCampaign();
   });
-else if (!("_followedSetup" in world)) {
+else if (
+  !world.getSavedData("_followedSetup") &&
+  !refCard.getSnappedToPoint()
+) {
   refCard.addUI(
     Object.assign(new UIElement(), {
       position: [-refCard.getExtent(false, false).x - 1, 0, 0],
@@ -38,6 +41,7 @@ else if (!("_followedSetup" in world)) {
 function takeLeader(button: Button, player: Player) {
   const card = button.getOwningObject();
   if (!card) return;
+  card.removeUI(0);
   const board = world
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === player.getSlot());
@@ -47,5 +51,4 @@ function takeLeader(button: Button, player: Player) {
   if (!board || !snap || snap.getSnappedObject()) return;
   card.setPosition(snap.getGlobalPosition().add([0, 0, 1]), 1.5);
   card.snap();
-  card.removeUI(0);
 }

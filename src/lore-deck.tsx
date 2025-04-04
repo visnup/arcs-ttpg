@@ -7,7 +7,7 @@ import {
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { takeCard } from "./lib/take-card";
 
-if (refCard.getStackSize() === 1 && !("_followedSetup" in world)) {
+if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
   refCard.onPrimaryAction.add((card, player) => {
     card.removeUI(0);
     takeCard(card, player.getSlot());
