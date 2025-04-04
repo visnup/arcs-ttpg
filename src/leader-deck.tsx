@@ -5,7 +5,6 @@ import {
   UIElement,
   world,
   type Card,
-  type Player,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { removeCampaign } from "./lib/setup";
@@ -14,7 +13,7 @@ let button: number | undefined;
 
 refCard.onPrimaryAction.add((card, player) => {
   if (card.getStackSize() > 1) prepareLeaders();
-  else takeLeader(card, player);
+  else takeLeader(player.getSlot(), card);
 });
 refCard.onRemoved.add(showTake);
 refCard.onInserted.add(hideTake);
@@ -40,7 +39,7 @@ function showTake(card: Card) {
           fontPackage={refPackageId}
           onClick={(button, player) => {
             const card = button.getOwningObject();
-            if (card) takeLeader(card as Card, player);
+            if (card) takeLeader(player.getSlot(), card as Card);
           }}
         >
           {" Take "}
@@ -58,10 +57,10 @@ function prepareLeaders() {
   removeCampaign();
 }
 
-function takeLeader(card: Card, player: Player) {
+function takeLeader(slot: number, card: Card) {
   const board = world
     .getObjectsByTemplateName("board")
-    .find((d) => d.getOwningPlayerSlot() === player.getSlot());
+    .find((d) => d.getOwningPlayerSlot() === slot);
   const snap = board
     ?.getAllSnapPoints()
     .find((s) => s.getTags().includes("leader"));
