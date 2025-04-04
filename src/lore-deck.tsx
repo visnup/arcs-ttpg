@@ -5,7 +5,7 @@ import {
   world,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
-import { takeCard } from "./lib/take-card";
+import { takeCard } from "./lib/setup";
 
 if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
   refCard.onPrimaryAction.add((card, player) => {
