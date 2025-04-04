@@ -4,24 +4,33 @@ import {
   refPackageId,
   UIElement,
   world,
-  type Button,
+  type Card,
   type Player,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { removeCampaign } from "./lib/setup";
 
-if (refCard.getStackSize() > 1)
-  refCard.onPrimaryAction.add(() => {
-    world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(20);
-    removeCampaign();
-  });
-else if (
-  !world.getSavedData("_followedSetup") &&
-  !refCard.getSnappedToPoint()
-) {
-  refCard.addUI(
+let button: number | undefined;
+
+refCard.onPrimaryAction.add((card, player) => {
+  if (card.getStackSize() > 1) prepareLeaders();
+  else takeLeader(card, player);
+});
+refCard.onRemoved.add(showTake);
+refCard.onInserted.add(hideTake);
+showTake(refCard);
+
+function showTake(card: Card) {
+  if (
+    card.getStackSize() > 1 ||
+    card.getSnappedToPoint() ||
+    world.getSavedData("_followedSetup")
+  )
+    return;
+
+  button = card.addUI(
     Object.assign(new UIElement(), {
-      position: [-refCard.getExtent(false, false).x - 1, 0, 0],
+      position: [-card.getExtent(false, false).x - 1, 0, 0],
       rotation: [180, 180, 0],
       scale: 0.15,
       widget: render(
@@ -29,7 +38,10 @@ else if (
           size={48}
           font="NeueKabelW01-Book.ttf"
           fontPackage={refPackageId}
-          onClick={takeLeader}
+          onClick={(button, player) => {
+            const card = button.getOwningObject();
+            if (card) takeLeader(card as Card, player);
+          }}
         >
           {" Take "}
         </button>,
@@ -37,11 +49,16 @@ else if (
     }),
   );
 }
+function hideTake(card: Card) {
+  if (button !== undefined) card.removeUI(button);
+}
 
-function takeLeader(button: Button, player: Player) {
-  const card = button.getOwningObject();
-  if (!card) return;
-  card.removeUI(0);
+function prepareLeaders() {
+  world.getObjectByTemplateName<MultistateObject>("base-rules")?.setState(20);
+  removeCampaign();
+}
+
+function takeLeader(card: Card, player: Player) {
   const board = world
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === player.getSlot());
@@ -49,6 +66,7 @@ function takeLeader(button: Button, player: Player) {
     ?.getAllSnapPoints()
     .find((s) => s.getTags().includes("leader"));
   if (!board || !snap || snap.getSnappedObject()) return;
+  hideTake(card);
   card.setPosition(snap.getGlobalPosition().add([0, 0, 1]), 1.5);
   card.snap();
 }
