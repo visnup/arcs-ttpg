@@ -1,7 +1,7 @@
 import type { MultistateObject } from "@tabletop-playground/api";
 import {
+  refPackageId as _refPackageId,
   refCard,
-  refPackageId,
   UIElement,
   world,
   type Card,
@@ -9,6 +9,7 @@ import {
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { removeCampaign } from "./lib/setup";
 
+const refPackageId = _refPackageId;
 let button: number | undefined;
 
 refCard.onPrimaryAction.add((card, player) => {

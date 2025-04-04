@@ -1,20 +1,32 @@
 import {
+  refPackageId as _refPackageId,
   refCard,
-  refPackageId,
   UIElement,
   world,
+  type Card,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { takeCard } from "./lib/setup";
 
-if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
-  refCard.onPrimaryAction.add((card, player) => {
-    card.removeUI(0);
+const refPackageId = _refPackageId;
+let button: number | undefined;
+
+refCard.onPrimaryAction.add((card, player) => {
+  if (card.getStackSize() === 1) {
+    hideTake(card);
     takeCard(player.getSlot(), card);
-  });
-  refCard.addUI(
+  }
+});
+refCard.onRemoved.add(showTake);
+refCard.onInserted.add(hideTake);
+showTake(refCard);
+
+function showTake(card: Card) {
+  if (card.getStackSize() > 1 || world.getSavedData("_followedSetup")) return;
+
+  button = card.addUI(
     Object.assign(new UIElement(), {
-      position: [-refCard.getExtent(false, false).x - 1, 0, 0],
+      position: [-card.getExtent(false, false).x - 1, 0, 0],
       rotation: [180, 180, 0],
       scale: 0.15,
       widget: render(
@@ -23,9 +35,11 @@ if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
           font="NeueKabelW01-Book.ttf"
           fontPackage={refPackageId}
           onClick={(button, player) => {
-            const card = button.getOwningObject() as typeof refCard;
-            card.removeUI(0);
-            takeCard(player.getSlot(), card);
+            const card = button.getOwningObject() as Card | undefined;
+            if (card) {
+              hideTake(card);
+              takeCard(player.getSlot(), card);
+            }
           }}
         >
           {" Take "}
@@ -33,4 +47,7 @@ if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
       ),
     }),
   );
+}
+function hideTake(card: Card) {
+  if (button !== undefined) card.removeUI(button);
 }
