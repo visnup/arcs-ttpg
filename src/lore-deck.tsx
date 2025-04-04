@@ -10,7 +10,7 @@ import { takeCard } from "./lib/take-card";
 if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
   refCard.onPrimaryAction.add((card, player) => {
     card.removeUI(0);
-    takeCard(card, player.getSlot());
+    takeCard(player.getSlot(), card);
   });
   refCard.addUI(
     Object.assign(new UIElement(), {
@@ -25,7 +25,7 @@ if (refCard.getStackSize() === 1 && !world.getSavedData("_followedSetup")) {
           onClick={(button, player) => {
             const card = button.getOwningObject() as typeof refCard;
             card.removeUI(0);
-            takeCard(card, player.getSlot());
+            takeCard(player.getSlot(), card);
           }}
         >
           {" Take "}

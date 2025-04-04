@@ -5,7 +5,7 @@ import {
   type Zone,
 } from "@tabletop-playground/api";
 
-export function takeCard(card: Card, slot: number) {
+export function takeCard(slot: number, card: Card) {
   const board = world
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === slot);
