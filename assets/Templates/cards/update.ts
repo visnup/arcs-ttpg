@@ -25,8 +25,12 @@ const faq = new Map(
 );
 
 async function modify(path: string, cb: (c: any) => any) {
-  const json = JSON.parse(await readFile(path, "utf8"));
-  await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
+  try {
+    const json = JSON.parse(await readFile(path, "utf8"));
+    await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
+  } catch (error) {
+    console.error(path, error);
+  }
 }
 
 function names(cards: any[], filter: (d: any) => boolean) {

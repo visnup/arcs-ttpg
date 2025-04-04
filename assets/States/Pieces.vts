@@ -13610,7 +13610,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "lore-deck.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "1kh",
@@ -17238,7 +17238,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "lore-deck.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "7f5",
