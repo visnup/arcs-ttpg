@@ -374,6 +374,8 @@ export function takeCard(slot: number, card: Card) {
   const zone = world.getZoneById(`zone-player-court-${board?.getId()}`);
   if (!board || !zone) return;
   for (const p of courtSpots(zone, card.getExtent(false, false))) {
+    const { pitch, roll } = card.getRotation();
+    card.setRotation([pitch, 0, roll], 1.5);
     card.setPosition(p.add([0, 0, 1]), 1.5);
     card.snap();
     return card;
