@@ -15,8 +15,8 @@ export function createReset(refObject?: GameObject) {
       if (delegate && typeof delegate.clear === "function") delegate.clear();
     for (const obj of world.getAllObjects())
       if (obj !== refObject) obj.destroy();
-    // @ts-expect-error world[key]
-    for (const key of Object.keys(world)) if (!keys.has(key)) delete world[key];
+    world.setSavedData("", "_followedSetup");
+    world.setSavedData("", "_initialSetup");
     for (const [json, p] of saved) world.createObjectFromJSON(json, p)!;
   };
 }
