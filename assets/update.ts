@@ -7,7 +7,7 @@ const src = (...s: string[]) => join("../cards/content", ...s);
 await Promise.all([
   cp(src("card-data/arcs/en-US"), "wip/cards", { recursive: true }),
   cp(src("faq/arcs/en-US.yml"), "wip/cards/faq.yml"),
-  cp(src("errata/arcs/en-US.yml"), "wip/cards/errata.yml"),
+  // cp(src("errata/arcs/en-US.yml"), "wip/cards/errata.yml"),
 ]);
 
 const base = parse(await readFile("wip/cards/arcsbasegame.yml", "utf8"));
