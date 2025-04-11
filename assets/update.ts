@@ -1,5 +1,6 @@
 import { cp, readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import sharp from "sharp";
 import { parse } from "yaml";
 
 const src = (...s: string[]) => join("../cards/content", ...s);
@@ -24,7 +25,13 @@ const faq = new Map(
   ]),
 );
 
-async function modify(path: string, cb: (c: any) => any) {
+interface JsonObject {
+  [key: string]: unknown;
+  CardNames?: Record<string, string>;
+  CardMetadata?: Record<string, string>;
+}
+
+async function modify(path: string, cb: (c: JsonObject) => JsonObject) {
   try {
     const json = JSON.parse(await readFile(path, "utf8"));
     await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
@@ -32,8 +39,46 @@ async function modify(path: string, cb: (c: any) => any) {
     console.error(path, error);
   }
 }
+async function image(path: string, cards: Card[], columns: number) {
+  try {
+    // Define tile dimensions
+    const w = 585; // width of each card image
+    const h = 700; // height of each card image
 
-function names(cards: any[], filter: (d: any) => boolean) {
+    const cardImages = cards.map((card, index) => ({
+      input: src("card-images/arcs/en-US", `${card.image}.png`),
+      top: Math.floor(index / columns) * w,
+      left: (index % columns) * h,
+    }));
+
+    // Calculate rows based on total images and columns
+    const rows = Math.ceil(cardImages.length / columns);
+
+    await sharp({
+      create: {
+        width: w * columns,
+        height: h * rows,
+        channels: 4,
+        background: { r: 255, g: 255, b: 255, alpha: 1 },
+      },
+    })
+      .composite(cardImages)
+      .toFile(path);
+
+    console.log(`Created tiled image at ${path}`);
+  } catch (error) {
+    console.error(path, error);
+  }
+}
+
+interface Card {
+  id: string;
+  name: string;
+  text: string;
+  image: string;
+}
+
+function names(cards: Card[], filter: (d: Card) => boolean) {
   return cards
     .filter(filter)
     .sort((a, b) => a.id.localeCompare(b.id))
@@ -48,10 +93,11 @@ function names(cards: any[], filter: (d: any) => boolean) {
     );
 }
 function abilities(
-  cards: any[],
-  filter: (d: any) => boolean,
-  previous: Record<string, string>,
+  cards: Card[],
+  filter: (d: Card) => boolean,
+  previous: Record<string, string> | undefined,
 ) {
+  if (!previous) return {};
   return cards
     .filter(filter)
     .sort((a, b) => a.id.localeCompare(b.id))
@@ -87,6 +133,11 @@ modify("assets/Templates/cards/bc.json", (json) => {
   json["CardNames"] = names(base, (d) => d.id.startsWith("ARCS-BC"));
   return json;
 });
+image(
+  "assets/Textures/cards/bc.jpg",
+  base.filter((d) => d.id.startsWith("ARCS-BC")),
+  7,
+);
 
 // leader.json
 modify("assets/Templates/cards/leader.json", (json) => {
@@ -101,7 +152,7 @@ modify("assets/Templates/cards/leader.json", (json) => {
 
 // lore.json
 modify("assets/Templates/cards/lore.json", (json) => {
-  json["CardNames"] = names(base, (d) => d.id.match(/^ARCS-L\d+$/));
+  json["CardNames"] = names(base, (d) => !!d.id.match(/^ARCS-L\d+$/));
   return json;
 });
 
@@ -118,7 +169,7 @@ modify("assets/Templates/cards/leader-2.json", (json) => {
 
 // lore-2.json
 modify("assets/Templates/cards/lore-2.json", (json) => {
-  json["CardNames"] = names(leaders, (d) => d.id.match(/^ARCS-L\d+$/));
+  json["CardNames"] = names(leaders, (d) => !!d.id.match(/^ARCS-L\d+$/));
   return json;
 });
 
@@ -130,7 +181,7 @@ modify("assets/Templates/campaign/cc.json", (json) => {
 
 // dc.json
 modify("assets/Templates/campaign/dc.json", (json) => {
-  json["CardNames"] = names(campaign, (d) => d.id.match(/^ARCS-AID\d+A?$/));
+  json["CardNames"] = names(campaign, (d) => !!d.id.match(/^ARCS-AID\d+A?$/));
   // 10, 11, 12, 13 = flagship upgrades
   for (const i of [10, 11, 12, 13]) json["CardNames"][i] = json["CardNames"][7];
   // 6, 7, 8, 9 = regent
@@ -148,12 +199,13 @@ modify("assets/Templates/campaign/fate.json", (json) => {
 for (let i = 1; i <= 24; i++) {
   const n = i.toString().padStart(2, "0");
   modify(`assets/Templates/campaign/f${n}.json`, (json) => {
-    const n = names(campaign, (d) =>
-      d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
+    const n = names(
+      campaign,
+      (d) => !!d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
     );
     json["CardNames"] = Object.fromEntries(
       Object.entries(n).map(([i, v], _, r) => [r.length - 1 - +i, v]),
-    );
+    ) as Record<string, string>;
     return json;
   });
 }
