@@ -1,8 +1,6 @@
 [
   {
-    "label": "Yarn watch",
-    "command": "yarn watch",
-    "reveal": "no_focus",
-    "hide": "on_success"
+    "label": "yarn watch",
+    "command": "yarn watch"
   }
 ]
