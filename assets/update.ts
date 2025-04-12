@@ -32,43 +32,50 @@ interface JsonObject {
 }
 
 async function modify(path: string, cb: (c: JsonObject) => JsonObject) {
-  try {
-    const json = JSON.parse(await readFile(path, "utf8"));
-    await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
-  } catch (error) {
-    console.error(path, error);
-  }
+  const json = JSON.parse(await readFile(path, "utf8"));
+  await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
 }
 async function image(path: string, cards: Card[], columns: number) {
-  try {
-    // Define tile dimensions
-    const w = 585; // width of each card image
-    const h = 700; // height of each card image
+  if (cards.length === 0) return;
 
-    const cardImages = cards.map((card, index) => ({
-      input: src("card-images/arcs/en-US", `${card.image}.png`),
-      top: Math.floor(index / columns) * w,
-      left: (index % columns) * h,
-    }));
+  // Get dimensions of the first card and determine card sizing
+  const metadata = await sharp(
+    src("card-images/arcs/en-US", `${cards[0].image}.png`),
+  ).metadata();
+  if (!metadata.width || !metadata.height)
+    throw new Error(`Could not determine dimensions of first card image`);
 
-    // Calculate rows based on total images and columns
-    const rows = Math.ceil(cardImages.length / columns);
+  // Determine card dimensions (scale if needed to fit within 4096px width)
+  const cardWidth =
+    metadata.width! * columns > 4096
+      ? Math.floor(4096 / columns)
+      : metadata.width!;
+  const cardHeight =
+    metadata.width! * columns > 4096
+      ? Math.floor((cardWidth * metadata.height!) / metadata.width!)
+      : metadata.height!;
 
-    await sharp({
-      create: {
-        width: w * columns,
-        height: h * rows,
-        channels: 4,
-        background: { r: 255, g: 255, b: 255, alpha: 1 },
-      },
-    })
-      .composite(cardImages)
-      .toFile(path);
-
-    console.log(`Created tiled image at ${path}`);
-  } catch (error) {
-    console.error(path, error);
-  }
+  // Process all card images and create composite
+  await sharp({
+    create: {
+      width: cardWidth * columns,
+      height: cardHeight * Math.ceil(cards.length / columns),
+      channels: 4,
+      background: { r: 255, g: 255, b: 255, alpha: 1 },
+    },
+  })
+    .composite(
+      await Promise.all(
+        cards.map(async (card, index) => ({
+          input: await sharp(src("card-images/arcs/en-US", `${card.image}.png`))
+            .resize(cardWidth, cardHeight, { fit: "fill" })
+            .toBuffer(),
+          top: Math.floor(index / columns) * cardHeight,
+          left: (index % columns) * cardWidth,
+        })),
+      ),
+    )
+    .toFile(path);
 }
 
 interface Card {
@@ -76,6 +83,7 @@ interface Card {
   name: string;
   text: string;
   image: string;
+  flipSide?: string;
 }
 
 function names(cards: Card[], filter: (d: Card) => boolean) {
@@ -178,6 +186,11 @@ modify("assets/Templates/campaign/cc.json", (json) => {
   json["CardNames"] = names(campaign, (d) => d.id.startsWith("ARCS-CC"));
   return json;
 });
+image(
+  "assets/Textures/campaign/cc.jpg",
+  campaign.filter((d) => d.id.startsWith("ARCS-CC")),
+  7,
+);
 
 // dc.json
 modify("assets/Templates/campaign/dc.json", (json) => {
