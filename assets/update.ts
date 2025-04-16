@@ -214,9 +214,9 @@ modify("assets/Templates/campaign/cc.json", (json) => {
 modify("assets/Templates/campaign/dc.json", (json) => {
   json["CardNames"] = names(campaign, (d) => !!d.id.match(/^ARCS-AID\d+A?$/));
   // 10, 11, 12, 13 = flagship upgrades
-  for (const i of [10, 11, 12, 13]) json["CardNames"][i] = json["CardNames"][7];
+  for (const i of [9, 10, 11, 12]) json["CardNames"][i] = json["CardNames"][6];
   // 6, 7, 8, 9 = regent
-  for (const i of [7, 8, 9]) json["CardNames"][i] = json["CardNames"][6];
+  for (const i of [6, 7, 8]) json["CardNames"][i] = json["CardNames"][5];
   return json;
 });
 
