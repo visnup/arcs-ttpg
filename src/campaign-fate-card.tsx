@@ -220,17 +220,7 @@ function campaignSetup(players: number, card: Card) {
     }
 
   // Place First Regent
-  const firstRegent = world.getObjectByTemplateName("first-regent");
-  const firstBoard = world
-    .getObjectsByTemplateName("board")
-    .find((d) => d.getOwningPlayerSlot() === slots[0]);
-  if (firstRegent && firstBoard) {
-    firstRegent.setPosition(
-      firstBoard
-        .getPosition()
-        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
-    );
-  }
+  takeFirstRegent(slots[0]);
 
   // Turn to player setup in rules
   world
@@ -305,6 +295,19 @@ function addRule(card?: Card) {
   if (card) {
     card.shuffle();
     rules.insert(card, rules.getNumCards());
+  }
+}
+function takeFirstRegent(slot: number) {
+  const firstRegent = world.getObjectByTemplateName("first-regent");
+  const firstBoard = world
+    .getObjectsByTemplateName("board")
+    .find((d) => d.getOwningPlayerSlot() === slot);
+  if (firstRegent && firstBoard) {
+    firstRegent.setPosition(
+      firstBoard
+        .getPosition()
+        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
+    );
   }
 }
 
@@ -440,6 +443,21 @@ function takeFateSet(card: Card) {
     );
     objective.snap();
   }
+
+  // Take first regent
+  if (
+    index === 0 || // Steward
+    (index === 6 && // Admiral
+      !world
+        .getObjectsByTemplateName<Card>("fate")
+        .some(
+          (d) =>
+            d.getSnappedToPoint() &&
+            d.getStackSize() === 1 &&
+            d.getCardDetails(0)!.index === 0,
+        )) // and no Steward
+  )
+    takeFirstRegent(slot);
 
   taken = true;
 }

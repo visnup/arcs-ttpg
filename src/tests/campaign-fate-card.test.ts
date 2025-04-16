@@ -136,7 +136,7 @@ describe("campaign fate card", () => {
       "fate cards in hands",
     );
     // regent / outlaw cards
-    // first regent with first player
+    // first regent with first player, steward, or admiral
   });
 
   test("2p", () => {
