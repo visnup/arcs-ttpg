@@ -40,8 +40,8 @@ async function modify(path: string, cb: (c: JsonObject) => JsonObject) {
 async function image(
   path: string,
   cards: Card[],
-  columns: number,
   f = (c: Card) => c.image,
+  columns = 7,
 ) {
   if (cards.length === 0) return;
 
@@ -169,6 +169,10 @@ modify("assets/Templates/cards/bc.json", (json) => {
   json["CardNames"] = names(base, (d) => d.id.startsWith("ARCS-BC"));
   return json;
 });
+image(
+  "assets/Textures/cards/bc.jpg",
+  base.filter((d) => d.id.startsWith("ARCS-BC")),
+);
 
 // leader.json
 modify("assets/Templates/cards/leader.json", (json) => {
@@ -209,6 +213,10 @@ modify("assets/Templates/campaign/cc.json", (json) => {
   json["CardNames"] = names(campaign, (d) => d.id.startsWith("ARCS-CC"));
   return json;
 });
+image(
+  "assets/Textures/campaign/cc.jpg",
+  campaign.filter((d) => d.id.startsWith("ARCS-CC")),
+);
 
 // dc.json
 modify("assets/Templates/campaign/dc.json", (json) => {
@@ -237,11 +245,10 @@ for (let i = 1; i <= 24; i++) {
     ) as Record<string, string>;
     return json;
   });
-  image(`assets/Textures/campaign/f${n}.jpg`, campaign.filter(fate), 7);
+  image(`assets/Textures/campaign/f${n}.jpg`, campaign.filter(fate));
   image(
     `assets/Textures/campaign/f${n}b.jpg`,
     campaign.filter(fate),
-    7,
     (c) => c.flipSide?.replace("ARCS-", "") ?? `F${i}`,
   );
 }
