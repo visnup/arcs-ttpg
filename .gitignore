@@ -5,6 +5,7 @@
 /wip/cards/*.yml
 /wip/screenshots/
 /wip/ship/
+/wip/tts/
 *.blend1
 *.mtl
 
