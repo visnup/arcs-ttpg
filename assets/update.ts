@@ -1,4 +1,6 @@
-import { cp, readFile, writeFile } from "fs/promises";
+import { spawn } from "child_process";
+import { cp, readFile, rename, unlink, writeFile } from "fs/promises";
+import { tmpdir } from "os";
 import { join } from "path";
 import sharp from "sharp";
 import { parse } from "yaml";
@@ -35,12 +37,17 @@ async function modify(path: string, cb: (c: JsonObject) => JsonObject) {
   const json = JSON.parse(await readFile(path, "utf8"));
   await writeFile(path, JSON.stringify(cb(json), undefined, "\t"));
 }
-async function image(path: string, cards: Card[], columns: number) {
+async function image(
+  path: string,
+  cards: Card[],
+  columns: number,
+  f = (c: Card) => c.image,
+) {
   if (cards.length === 0) return;
 
   // Get dimensions of the first card and determine card sizing
   const metadata = await sharp(
-    src("card-images/arcs/en-US", `${cards[0].image}.png`),
+    src("card-images/arcs/en-US", `${f(cards[0])}.png`),
   ).metadata();
   if (!metadata.width || !metadata.height)
     throw new Error(`Could not determine dimensions of first card image`);
@@ -67,7 +74,7 @@ async function image(path: string, cards: Card[], columns: number) {
     .composite(
       await Promise.all(
         cards.map(async (card, index) => ({
-          input: await sharp(src("card-images/arcs/en-US", `${card.image}.png`))
+          input: await sharp(src("card-images/arcs/en-US", `${f(card)}.png`))
             .resize(cardWidth, cardHeight, { fit: "fill" })
             .toBuffer(),
           top: Math.floor(index / columns) * cardHeight,
@@ -76,6 +83,27 @@ async function image(path: string, cards: Card[], columns: number) {
       ),
     )
     .toFile(path);
+
+  const tempPath = join(
+    tmpdir(),
+    `${Math.random().toString(36).substring(2)}.jpg`,
+  );
+  await new Promise((resolve, reject) => {
+    spawn("/opt/homebrew/opt/mozjpeg/bin/cjpeg", ["-outfile", tempPath, path])
+      .on("close", async (code) => {
+        if (code === 0) {
+          await unlink(path);
+          await rename(tempPath, path);
+          resolve(true);
+        } else {
+          reject(new Error(`cjpeg failed with code ${code}`));
+        }
+      })
+      .on("error", async () => {
+        // If the executable is not found, just ignore and continue
+        resolve(true);
+      });
+  });
 }
 
 interface Card {
@@ -141,11 +169,6 @@ modify("assets/Templates/cards/bc.json", (json) => {
   json["CardNames"] = names(base, (d) => d.id.startsWith("ARCS-BC"));
   return json;
 });
-image(
-  "assets/Textures/cards/bc.jpg",
-  base.filter((d) => d.id.startsWith("ARCS-BC")),
-  7,
-);
 
 // leader.json
 modify("assets/Templates/cards/leader.json", (json) => {
@@ -186,11 +209,6 @@ modify("assets/Templates/campaign/cc.json", (json) => {
   json["CardNames"] = names(campaign, (d) => d.id.startsWith("ARCS-CC"));
   return json;
 });
-image(
-  "assets/Textures/campaign/cc.jpg",
-  campaign.filter((d) => d.id.startsWith("ARCS-CC")),
-  7,
-);
 
 // dc.json
 modify("assets/Templates/campaign/dc.json", (json) => {
@@ -211,14 +229,19 @@ modify("assets/Templates/campaign/fate.json", (json) => {
 // f01.json..f24.json
 for (let i = 1; i <= 24; i++) {
   const n = i.toString().padStart(2, "0");
+  const fate = (d) => !!d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`));
   modify(`assets/Templates/campaign/f${n}.json`, (json) => {
-    const n = names(
-      campaign,
-      (d) => !!d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
-    );
+    const n = names(campaign, fate);
     json["CardNames"] = Object.fromEntries(
       Object.entries(n).map(([i, v], _, r) => [r.length - 1 - +i, v]),
     ) as Record<string, string>;
     return json;
   });
+  image(`assets/Textures/campaign/f${n}.jpg`, campaign.filter(fate), 7);
+  image(
+    `assets/Textures/campaign/f${n}b.jpg`,
+    campaign.filter(fate),
+    7,
+    (c) => c.flipSide?.replace("ARCS-", "") ?? `F${i}`,
+  );
 }

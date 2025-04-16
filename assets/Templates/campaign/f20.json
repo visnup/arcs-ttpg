@@ -42,8 +42,8 @@
 	"HiddenTexture": "",
 	"BackIndex": -3,
 	"HiddenIndex": -3,
-	"NumHorizontal": 4,
-	"NumVertical": 2,
+	"NumHorizontal": 7,
+	"NumVertical": 1,
 	"Width": 6.1,
 	"Height": 8.6,
 	"Thickness": 0.05,
@@ -57,10 +57,10 @@
 	"EmissiveFront": false,
 	"Model": "Rounded",
 	"Indices": [
-		3,
-		2,
+		0,
 		1,
-		0
+		2,
+		3
 	],
 	"CardNames": {
 		"0": "Edenguard Ambition\n\nQ: Can the Guardian, with Ire of the Tycoons still declare the Edenguard ambition?\nA: Edenguard is an alternative to Tycoon and Guardian would be able to declare it",
