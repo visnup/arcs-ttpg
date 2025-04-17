@@ -1,5 +1,11 @@
 import type { GameObject } from "@tabletop-playground/api";
-import { refObject, Rotator, Vector, world } from "@tabletop-playground/api";
+import {
+  globalEvents,
+  refObject,
+  Rotator,
+  Vector,
+  world,
+} from "@tabletop-playground/api";
 import { discardToOrigin } from "./lib/discard-to-origin";
 
 // discardable
@@ -45,6 +51,15 @@ refObject.onSecondaryAction.add((obj, player) => {
   }
 });
 
+// lights
 refObject.switchLights(false);
 refObject.onGrab.add((obj) => obj.switchLights(true));
 refObject.onReleased.add((obj) => obj.switchLights(false));
+
+// edenguard and blightkin
+refObject.onGrab.add(onAmbitionShouldTally);
+refObject.onReleased.add(onAmbitionShouldTally);
+function onAmbitionShouldTally() {
+  globalEvents.onAmbitionShouldTally.trigger("edenguard");
+  globalEvents.onAmbitionShouldTally.trigger("blightkin");
+}
