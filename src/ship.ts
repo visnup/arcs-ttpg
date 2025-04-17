@@ -55,9 +55,20 @@ refObject.onReleased.add((obj) => obj.switchLights(false));
 refObject.onGrab.add(tallyControl);
 refObject.onReleased.add(tallyControl);
 
+const edenguard = new Set([
+  "1.2",
+  "1.3",
+  "3.1",
+  "3.2",
+  "4.2",
+  "4.3",
+  "6.1",
+  "6.2",
+]);
 function tallyControl() {
   const tallies = new Map<string, number[]>();
   for (const ship of world.getObjectsByTemplateName("ship")) {
+    if (Math.abs(ship.getRotation().roll) < 1) continue;
     const system = getSystem(ship);
     if (!system) continue;
     const t = tallies.get(system) ?? [0, 0, 0, 0];
