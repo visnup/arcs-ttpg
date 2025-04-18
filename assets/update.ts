@@ -190,6 +190,10 @@ modify("assets/Templates/cards/lore.json", (json) => {
   json["CardNames"] = names(base, (d) => !!d.id.match(/^ARCS-L\d+$/));
   return json;
 });
+image(
+  "assets/Textures/cards/lore.jpg",
+  base.filter((d) => !!d.id.match(/^ARCS-L\d+$/)),
+);
 
 // leader-2.json
 modify("assets/Templates/cards/leader-2.json", (json) => {
@@ -207,6 +211,10 @@ modify("assets/Templates/cards/lore-2.json", (json) => {
   json["CardNames"] = names(leaders, (d) => !!d.id.match(/^ARCS-L\d+$/));
   return json;
 });
+image(
+  "assets/Textures/cards/lore-2.jpg",
+  leaders.filter((d) => !!d.id.match(/^ARCS-L\d+$/)),
+);
 
 // cc.json: campaign court
 modify("assets/Templates/campaign/cc.json", (json) => {
