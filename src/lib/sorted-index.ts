@@ -11,7 +11,7 @@ export function sortedIndex<T>(
 ): number {
   let low = 0;
   let high = array.length;
-  
+
   while (low < high) {
     const mid = Math.floor((low + high) / 2);
     if (!callback(array[mid])) {
@@ -20,6 +20,6 @@ export function sortedIndex<T>(
       high = mid;
     }
   }
-  
+
   return low;
 }
