@@ -105,7 +105,8 @@ async function image(
         }
       })
       .on("error", async () => {
-        // If the executable is not found, just ignore and continue
+        // If the executable is not found, continue
+        console.warn("/opt/homebrew/opt/mozjpeg/bin/cjpeg not available");
         resolve(true);
       });
   });
