@@ -55,6 +55,8 @@ refObject.onReleased.add((obj) => obj.switchLights(false));
 refObject.onGrab.add(tallyControl);
 refObject.onReleased.add(tallyControl);
 
+// Edenguard: Control the most Fuel and Material planets. (The
+// First Regent controls Empire-controlled systems.)
 const edenguard = new Set([
   "1.2",
   "1.3",
@@ -65,6 +67,8 @@ const edenguard = new Set([
   "6.1",
   "6.2",
 ]);
+// Blightkin: Control the most systems with fresh Blight. (The First Regent
+// controls Empire-controlled systems.)
 function tallyControl() {
   const tallies = new Map<string, number[]>();
   for (const ship of world.getObjectsByTemplateName("ship")) {
