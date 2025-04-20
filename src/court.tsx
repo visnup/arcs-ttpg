@@ -32,7 +32,8 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   zone.setScale(size);
   zone.onBeginOverlap.add(tallyAgents);
   zone.onEndOverlap.add(tallyAgents);
-  zone.onBeginOverlap.add(canTakeCard);
+  zone.onBeginOverlap.add(canSecureCard);
+  zone.onEndOverlap.add(canStealCard);
   refObject.onDestroyed.add(() => zone.destroy());
 
   const ui = Object.assign(new UIElement(), {
@@ -47,7 +48,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   refObject.addUI(ui);
 
   tallyAgents(zone);
-  for (const o of zone.getOverlappingObjects()) canTakeCard(zone, o);
+  for (const o of zone.getOverlappingObjects()) canSecureCard(zone, o);
 }
 
 function tallyAgents(zone: Zone) {
@@ -71,11 +72,30 @@ function tallyAgents(zone: Zone) {
       );
 }
 
-function canTakeCard(zone: Zone, object: GameObject) {
-  if (!(object instanceof Card) || registered.has(object)) return;
+function canSecureCard(zone: Zone, object: GameObject) {
+  if (!(object instanceof Card) || object.getStackSize() > 1) return;
+  object.removeCustomAction("Steal");
+  object.addCustomAction("Secure");
+  object.addCustomAction("Ransack");
+  if (registered.has(object)) return;
   object.onPrimaryAction.add((card, player) => secureCard(player, card));
   object.onSecondaryAction.add((card, player) => ransackCard(player, card));
+  object.onCustomAction.add((card, player, action) =>
+    (action === "Secure" ? secureCard : ransackCard)(player, card),
+  );
+  object.onDestroyed.add(() => registered.delete(object));
   registered.add(object);
+}
+function canStealCard(zone: Zone, object: GameObject) {
+  if (
+    !(object instanceof Card) ||
+    object.getStackSize() > 1 ||
+    [...zones].some((z) => z.getOverlappingObjects().includes(object))
+  )
+    return;
+  object.removeCustomAction("Secure");
+  object.removeCustomAction("Ransack");
+  object.addCustomAction("Steal");
 }
 function secureCard(player: Player, card: Card) {
   takeAgents(player.getSlot(), card, [-2, 9.2], [2.4, 2.3]); // captives
