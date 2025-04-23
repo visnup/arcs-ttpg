@@ -27,6 +27,7 @@ refObject.onGrab.add((obj) => {
       .some((d) => d.object !== obj && d.object.isHeld())
   ) {
     obj.release();
+    obj.snap();
   } else {
     const type = obj.getObjectType();
     obj.setObjectType(ObjectType.Penetrable);
