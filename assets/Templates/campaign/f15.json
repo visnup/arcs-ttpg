@@ -70,17 +70,17 @@
 		10
 	],
 	"CardNames": {
-		"0": "Peace Accords",
-		"1": "Peace Dividends",
-		"2": "Empire Balks at Peace",
-		"3": "Ceasefires\n\nQ: If a player plays a non-Aggression card to battle in a cluster at Peace, do they need to spend 1 or 2 Weapons? Is it one weapon per flip if a player wants to flip more than 1 Ceasefire token?\nA: It would cost 2 weapons: One to apply Battle to the Action Card via the standard Prelude ability of a Weapon, and one to flip the Ceasefire token. It is also one Weapon per flip.",
-		"4": "Peacekeeper Act III Setup",
+		"0": "Peacekeeper Act II Setup",
+		"1": "Oath of Peace\n\nQ: What happens if I am a Member of the Commonwealth and the Commonwealth scores Warlord with the Commonwealth Ambition on it?\nA: You do not score any Power for it. Your unscored Power is *not* scored by other Members.",
+		"2": "Arsenal Keepers",
+		"3": "Peacekeeper Act II Resolution",
+		"4": "Arms Interest",
 		"5": "Arms Interest",
-		"6": "Arms Interest",
-		"7": "Peacekeeper Act II Resolution",
-		"8": "Arsenal Keepers",
-		"9": "Oath of Peace\n\nQ: What happens if I am a Member of the Commonwealth and the Commonwealth scores Warlord with the Commonwealth Ambition on it?\nA: You do not score any Power for it. Your unscored Power is *not* scored by other Members.",
-		"10": "Peacekeeper Act II Setup"
+		"6": "Peacekeeper Act III Setup",
+		"7": "Ceasefires\n\nQ: If a player plays a non-Aggression card to battle in a cluster at Peace, do they need to spend 1 or 2 Weapons? Is it one weapon per flip if a player wants to flip more than 1 Ceasefire token?\nA: It would cost 2 weapons: One to apply Battle to the Action Card via the standard Prelude ability of a Weapon, and one to flip the Ceasefire token. It is also one Weapon per flip.",
+		"8": "Empire Balks at Peace",
+		"9": "Peace Dividends",
+		"10": "Peace Accords"
 	},
 	"CardMetadata": {
 		"10": "18 16 14"

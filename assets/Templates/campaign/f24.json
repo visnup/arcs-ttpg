@@ -64,11 +64,11 @@
 		4
 	],
 	"CardNames": {
-		"0": "Judge Sets Agenda",
-		"1": "Judge's Chosen\n\nQ: Does this trigger Gate Ports?\nA: Yes!",
+		"0": "Judge Act III Setup",
+		"1": "Vow of Fairness",
 		"2": "The Arbiter\n\nQ: Do resource slots limit the number of Captives or Trophies I can give?\nA: No, the limit of resource slots refers only to giving resources. \n\nQ: How does this interact with cards like Well of Empathy that give unlimited resource slots?\nA: Feel free! Cards that hold resources are considered to have unlimited resource slots for that resource.",
-		"3": "Vow of Fairness",
-		"4": "Judge Act III Setup"
+		"3": "Judge's Chosen\n\nQ: Does this trigger Gate Ports?\nA: Yes!",
+		"4": "Judge Sets Agenda"
 	},
 	"CardMetadata": {
 		"2": "keeper",

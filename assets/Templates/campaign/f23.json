@@ -64,11 +64,11 @@
 		4
 	],
 	"CardNames": {
-		"0": "Foiling Conspiracies\n\nQ: If I guess a Conspiracy token incorrectly, is it revealed?\nA: No, it stays face down.",
-		"1": "Scoring Conspiracies",
+		"0": "Conspirator Act III Setup",
+		"1": "Farseers\n\nQ: Can you give me an example of this Prelude action if I discarded 2 cards plus Farseers?\nA: You would draw 3 cards from the bottom of the action card discard pile.\n\nQ: Can I discard zero cards beyond this one?\nA: Yes! In this case, just draw 1 card.\n\nQ: What happens if the discard pile is very small when I use this?\nA: Shuffle all of the cards you are discarding before placing them on the discard pile. This is one of the few situations where discard order matters in the game.",
 		"2": "Conspiracies\n\nQ: Can conspirator refill the court with the same guild they just secured to place a conspiracy?\nA: Yes! Refill is the last step of secure, after you've taken the card.\n\nQ: When I declare an ambition to place a conspiracy, does this still count as declaring an ambition for cards like Farseers, Parade Fleets, Doctrinal Faith, and so on?\nA: Yes! You are still declaring an ambition.",
-		"3": "Farseers\n\nQ: Can you give me an example of this Prelude action if I discarded 2 cards plus Farseers?\nA: You would draw 3 cards from the bottom of the action card discard pile.\n\nQ: Can I discard zero cards beyond this one?\nA: Yes! In this case, just draw 1 card.\n\nQ: What happens if the discard pile is very small when I use this?\nA: Shuffle all of the cards you are discarding before placing them on the discard pile. This is one of the few situations where discard order matters in the game.",
-		"4": "Conspirator Act III Setup"
+		"3": "Scoring Conspiracies",
+		"4": "Foiling Conspiracies\n\nQ: If I guess a Conspiracy token incorrectly, is it revealed?\nA: No, it stays face down."
 	},
 	"CardMetadata": {
 		"3": "empath",

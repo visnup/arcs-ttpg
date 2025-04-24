@@ -70,17 +70,17 @@
 		10
 	],
 	"CardNames": {
-		"0": "Seek the Portal",
-		"1": "Seek the Portal",
-		"2": "Seek the Portal",
-		"3": "Pilgrims",
-		"4": "Pathfinder Act III Setup",
+		"0": "Pathfinder Act II Setup",
+		"1": "Uncovering Clues\n\nQ: Do cities and starports on Flagships count toward this effect?\nA: No, they must be on the planet in question.",
+		"2": "Clues to the Portal",
+		"3": "Pathfinder Act II Resolution",
+		"4": "Call to Pilgrimage",
 		"5": "Portal Seekers\n\nQ: Can I score from fulfilling this grand ambition even if I have a C Fate?\nA: Yes. You can still score this one even if your Fate does not give you more that you can fulfill.",
-		"6": "Call to Pilgrimage",
-		"7": "Pathfinder Act II Resolution",
-		"8": "Clues to the Portal",
-		"9": "Uncovering Clues\n\nQ: Do cities and starports on Flagships count toward this effect?\nA: No, they must be on the planet in question.",
-		"10": "Pathfinder Act II Setup"
+		"6": "Pathfinder Act III Setup",
+		"7": "Pilgrims",
+		"8": "Seek the Portal",
+		"9": "Seek the Portal",
+		"10": "Seek the Portal"
 	},
 	"CardMetadata": {
 		"5": "keeper",

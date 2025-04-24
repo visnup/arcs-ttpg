@@ -72,19 +72,19 @@
 		12
 	],
 	"CardNames": {
-		"0": "Blight Hunger",
-		"1": "Blight Speaker Act III Setup",
-		"2": "Blight Looms",
-		"3": "Blight Panic",
-		"4": "Blight Purge",
-		"5": "Blight Purge",
+		"0": "Blight Speaker Act II Setup",
+		"1": "Spore Ships",
+		"2": "Blight Speaker Act II Resolution",
+		"3": "Blight Fury\n\nQ: Is it legal to take a Catapult move with ships and Blight, as long as I drop the Blight off in the first system?\nA: No. Blight cannot Catapult move, period. This includes with the Seeker Golem.",
+		"4": "Blight Hunters",
+		"5": "Blight Reapers",
 		"6": "Blight Purge",
-		"7": "Blight Reapers",
-		"8": "Blight Hunters",
-		"9": "Blight Fury\n\nQ: Is it legal to take a Catapult move with ships and Blight, as long as I drop the Blight off in the first system?\nA: No. Blight cannot Catapult move, period. This includes with the Seeker Golem.",
-		"10": "Blight Speaker Act II Resolution",
-		"11": "Spore Ships",
-		"12": "Blight Speaker Act II Setup"
+		"7": "Blight Purge",
+		"8": "Blight Purge",
+		"9": "Blight Panic",
+		"10": "Blight Looms",
+		"11": "Blight Speaker Act III Setup",
+		"12": "Blight Hunger"
 	},
 	"CardMetadata": {
 		"7": "tycoon",

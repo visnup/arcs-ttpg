@@ -62,9 +62,9 @@
 		2
 	],
 	"CardNames": {
-		"0": "Reach Rejects Overlord",
+		"0": "Overlord Act II Setup",
 		"1": "Sycophants\n\nQ: If a player provokes Psionic Outrage once and then Weapon Outrage twice on the same turn, how many ships would Sycophant place?\nA: 2 ships total. The 2 ships is once per turn, not once per turn per Outrage.\n\nQ: If this triggers during battle, do the ships I place in the battle system count as attacking ships?\nA: No.",
-		"2": "Overlord Act II Setup"
+		"2": "Reach Rejects Overlord"
 	},
 	"CardMetadata": {
 		"2": "20"

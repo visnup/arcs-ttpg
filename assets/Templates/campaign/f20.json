@@ -63,10 +63,10 @@
 		3
 	],
 	"CardNames": {
-		"0": "Edenguard Ambition\n\nQ: Can the Guardian, with Ire of the Tycoons still declare the Edenguard ambition?\nA: Edenguard is an alternative to Tycoon and Guardian would be able to declare it",
-		"1": "Ire of the Tycoons",
-		"2": "Green Vault\n\nQ: What happens to the Material and Fuel on Green Vault when Tyrant is scored?\nA: They are returned to the general supply.\n\nQ: What happens if this is transferred with Knowledge Set Free or scrapped from the Caretaker Act III Objective?\nA: Your resources in your Captives box are still Captives, but they are no longer frozen.",
-		"3": "Guardian Act III Setup"
+		"0": "Guardian Act III Setup",
+		"1": "Green Vault\n\nQ: What happens to the Material and Fuel on Green Vault when Tyrant is scored?\nA: They are returned to the general supply.\n\nQ: What happens if this is transferred with Knowledge Set Free or scrapped from the Caretaker Act III Objective?\nA: Your resources in your Captives box are still Captives, but they are no longer frozen.",
+		"2": "Ire of the Tycoons",
+		"3": "Edenguard Ambition\n\nQ: Can the Guardian, with Ire of the Tycoons still declare the Edenguard ambition?\nA: Edenguard is an alternative to Tycoon and Guardian would be able to declare it"
 	},
 	"CardMetadata": {
 		"3": "15"

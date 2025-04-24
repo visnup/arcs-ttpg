@@ -71,18 +71,18 @@
 		11
 	],
 	"CardNames": {
-		"0": "Planet Breaker Act III Setup",
-		"1": "Planet-Eater Loose",
-		"2": "Planet Breaker Act III Resolution",
-		"3": "Heartworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
-		"4": "Lostworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
-		"5": "Deadworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
-		"6": "Blazeworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
-		"7": "Forgeworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
-		"8": "Planet Hammer",
-		"9": "Hammer Fragments",
-		"10": "Sycophants\n\nQ: If a player provokes Psionic Outrage once and then Weapon Outrage twice on the same turn, how many ships would Sycophant place?\nA: 2 ships total. The 2 ships is once per turn, not once per turn per Outrage.\n\nQ: If this triggers during battle, do the ships I place in the battle system count as attacking ships?\nA: No.",
-		"11": "Planet Breaker Act II Setup"
+		"0": "Planet Breaker Act II Setup",
+		"1": "Sycophants\n\nQ: If a player provokes Psionic Outrage once and then Weapon Outrage twice on the same turn, how many ships would Sycophant place?\nA: 2 ships total. The 2 ships is once per turn, not once per turn per Outrage.\n\nQ: If this triggers during battle, do the ships I place in the battle system count as attacking ships?\nA: No.",
+		"2": "Hammer Fragments",
+		"3": "Planet Hammer",
+		"4": "Forgeworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
+		"5": "Blazeworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
+		"6": "Deadworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
+		"7": "Lostworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
+		"8": "Heartworld Refugees\n\nQ: Do I have to build the Free city in order to gain the other benefits of the **Resettle** action?\nA: Yes!",
+		"9": "Planet Breaker Act III Resolution",
+		"10": "Planet-Eater Loose",
+		"11": "Planet Breaker Act III Setup"
 	},
 	"CardMetadata": {
 		"3": "empath",

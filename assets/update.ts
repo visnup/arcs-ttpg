@@ -279,10 +279,7 @@ for (let i = 1; i <= 24; i++) {
     (d) => !!d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
   );
   modify(`assets/Templates/campaign/f${n}.json`, (json) => {
-    const n = names(fate);
-    json["CardNames"] = Object.fromEntries(
-      Object.entries(n).map(([i, v], _, r) => [r.length - 1 - +i, v]),
-    ) as Record<string, string>;
+    json["CardNames"] = names(fate);
     return json;
   });
   image(`assets/Textures/campaign/f${n}.jpg`, fate);

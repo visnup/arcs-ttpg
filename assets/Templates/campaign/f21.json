@@ -63,10 +63,10 @@
 		3
 	],
 	"CardNames": {
-		"0": "Blightkin Ambition",
-		"1": "Spore Guides",
-		"2": "Blight Society",
-		"3": "Naturalist Act III Setup"
+		"0": "Naturalist Act III Setup",
+		"1": "Blight Society",
+		"2": "Spore Guides",
+		"3": "Blightkin Ambition"
 	},
 	"CardMetadata": {
 		"1": "empath",

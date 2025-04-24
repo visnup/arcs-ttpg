@@ -63,10 +63,10 @@
 		3
 	],
 	"CardNames": {
-		"0": "Relic Fence",
-		"1": "Rebuke of the Keepers",
-		"2": "Ire of the Keepers",
-		"3": "Redeemer Act III Setup"
+		"0": "Redeemer Act III Setup",
+		"1": "Ire of the Keepers",
+		"2": "Rebuke of the Keepers",
+		"3": "Relic Fence"
 	},
 	"CardMetadata": {
 		"0": "keeper",

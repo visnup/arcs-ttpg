@@ -71,18 +71,18 @@
 		11
 	],
 	"CardNames": {
-		"0": "Rebuke of the Empaths",
-		"1": "Reconcile with the Outraged\n\nQ: How does this interact with Psionic Monopoly?\nA: The consent of the Monopoly holder is still required to give Psionic. As noted on Monopoly Consent, consent can be forced by returning their Favor in the Call to Order.",
-		"2": "Empathy for All",
-		"3": "Empathy for All",
-		"4": "Pacifist Act III Setup",
+		"0": "Pacifist Act II Setup",
+		"1": "Witnesses\n\nQ: Do you have to control Witnesses to Catapult move them?\nA: Yes. The control requisite still applies to Catapult Moves.\n\nQ: Do you have to flip a Witness token in Prelude to declare Empath?\nA: Yes. You must do the first part to declare Empath.",
+		"2": "Well of Empathy",
+		"3": "Pacifist Act II Resolution",
+		"4": "Psionic Liaisons",
 		"5": "Itinerant Empaths",
 		"6": "Itinerant Empaths",
-		"7": "Psionic Liaisons",
-		"8": "Pacifist Act II Resolution",
-		"9": "Well of Empathy",
-		"10": "Witnesses\n\nQ: Do you have to control Witnesses to Catapult move them?\nA: Yes. The control requisite still applies to Catapult Moves.\n\nQ: Do you have to flip a Witness token in Prelude to declare Empath?\nA: Yes. You must do the first part to declare Empath.",
-		"11": "Pacifist Act II Setup"
+		"7": "Pacifist Act III Setup",
+		"8": "Empathy for All",
+		"9": "Empathy for All",
+		"10": "Reconcile with the Outraged\n\nQ: How does this interact with Psionic Monopoly?\nA: The consent of the Monopoly holder is still required to give Psionic. As noted on Monopoly Consent, consent can be forced by returning their Favor in the Call to Order.",
+		"11": "Rebuke of the Empaths"
 	},
 	"CardMetadata": {
 		"7": "empath",
