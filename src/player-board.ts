@@ -122,6 +122,15 @@ function updateAmbitions() {
   }
 
   // Court cards, resources
+  const p = world
+    .getObjectsByTemplateName<Card>("f04")
+    .some(
+      (d) =>
+        d.getStackSize() === 1 &&
+        d.getCardDetails(0)!.name.startsWith("Guild Supremacy"),
+    )
+    ? 2
+    : 1;
   const courtSuits: (Ambition | undefined)[] = [
     "tycoon",
     "tycoon",
@@ -136,7 +145,7 @@ function updateAmbitions() {
         // 0-9 (0-1): tycoon, 15-19 (3): empath, 20-24 (4): keeper
         const suit =
           courtSuits[Math.floor((obj as Card).getCardDetails().index / 5)];
-        if (suit && suit in ambitions) ambitions[suit]++;
+        if (suit && suit in ambitions) ambitions[suit] += p;
         break;
       }
       case "cc": {
@@ -144,7 +153,7 @@ function updateAmbitions() {
         // 0-3: tycoon, 6-7: empath, 8-9: keeper
         const suit =
           courtSuits[Math.floor((obj as Card).getCardDetails().index / 2)];
-        if (suit && suit in ambitions) ambitions[suit]++;
+        if (suit && suit in ambitions) ambitions[suit] += p;
         break;
       }
       case "resource": {
@@ -166,7 +175,7 @@ function updateAmbitions() {
       default: {
         if (!(obj instanceof Card)) break;
         const suit = obj.getCardDetails().metadata;
-        if (suit && suit in ambitions) ambitions[suit as Ambition]++;
+        if (suit && suit in ambitions) ambitions[suit as Ambition] += p;
       }
     }
   }
