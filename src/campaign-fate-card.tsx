@@ -394,12 +394,12 @@ function takeFateSet(card: Card) {
       card.getPosition().add(new Vector(0, 0, height)),
     )!;
     if (item instanceof Card) {
-      const names = item.getAllCardDetails().map((d) => d.name);
-      const n = names.filter((n) => n === fate).length;
+      const metadata = item.getAllCardDetails().map((d) => d.metadata);
+      const n = metadata.filter((n) => n === fate).length;
       if (item.getStackSize() > 1 && n < item.getStackSize()) {
         // find matching cards in deck by card name
         if (n) {
-          const start = names.findIndex((n) => n === fate);
+          const start = metadata.findIndex((n) => n === fate);
           const matched = item.takeCards(n, true, start)!;
           height += matched.getSize().z + dh;
         }

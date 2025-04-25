@@ -62,11 +62,11 @@
 	"Indices": [ 0, 1 ],
 	"CardNames":
 	{
-		"0": "f20",
-		"1": "f21"
 	},
 	"CardMetadata":
 	{
+		"0": "f20",
+		"1": "f21"
 	},
 	"CardTags":
 	{
