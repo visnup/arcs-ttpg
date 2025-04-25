@@ -64,7 +64,20 @@
 	"Indices": [ 0, 1, 2, 7, 7, 7, 7, 7, 24, 25, 26, 27, 28, 29, 31, 31, 32, 32, 33, 33, 34, 34 ],
 	"CardNames":
 	{
-		"2": "War Profiteer"
+		"0": "Sponsored",
+		"1": "Commonwealth Ambition",
+		"2": "War Profiteer",
+		"7": "Ideal",
+		"24": "1st Court",
+		"25": "2nd Court",
+		"26": "3rd Court",
+		"27": "4th Court",
+		"28": "5th Court",
+		"29": "6th Court",
+		"31": "Conspiracy",
+		"32": "Conspiracy",
+		"33": "Conspiracy",
+		"34": "Conspiracy"
 	},
 	"CardMetadata":
 	{
@@ -72,17 +85,16 @@
 		"1": "f2",
 		"2": "f3",
 		"7": "f8",
+		"24": "f16",
 		"25": "f16",
 		"26": "f16",
 		"27": "f16",
 		"28": "f16",
 		"29": "f16",
-		"30": "f16",
 		"32": "f23",
 		"33": "f23",
 		"34": "f23",
 		"35": "f23",
-		"24": "f16",
 		"31": "f23"
 	},
 	"CardTags":
