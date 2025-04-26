@@ -43,9 +43,15 @@ export function test(description: string, fn: () => Promise<void> | void) {
       await fn();
       return { description, ok: true };
     } catch (error) {
-      console.error(currentSuite?.description, description, "\n", error);
       if (error instanceof SkipError)
         return { description, ok: false, skipped: true };
+      console.error(
+        currentSuite?.description,
+        description,
+        "\n",
+        error,
+        error.stack,
+      );
       for (const p of world.getAllPlayers())
         p.showMessage(
           `${currentSuite?.description} > ${description}\n${error}`,
