@@ -120,6 +120,29 @@ describe("campaign fate card", () => {
     }))
       for (const [name, count] of Object.entries(objects))
         assertEqual(onMap[slot][name], count, `${slot} - ${name} on map`);
+    const onTable = getCounts((obj) => world.isOnTable(obj));
+    for (const [slot, objects] of Object.entries({
+      "0": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "1": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "2": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "3": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "4": { ship: 7, city: 2, starport: 1, "set-round": 1 },
+      "-1": {
+        "book-of-law": 1,
+        "first-regent": 1,
+        fate: 10,
+        dc: 4,
+        "flagship-board": 1,
+        event: 1,
+        number: 1,
+        "campaign-rules": 1,
+        "campaign-aid-intermission": 1,
+        "campaign-aid-rules": 1,
+        "player-aid": 1,
+      },
+    }))
+      for (const [name, count] of Object.entries(objects))
+        assertEqual(onTable[slot][name], count, `${slot} - ${name} on table`);
 
     // fate cards in hands
     assertEqual(
@@ -135,8 +158,10 @@ describe("campaign fate card", () => {
       ],
       "fate cards in hands",
     );
+
     // regent / outlaw cards
-    // first regent with first player, steward, or admiral
+    // first regent with first player
+    // first regent to admiral, then steward
   });
 
   test("2p", () => {
@@ -206,5 +231,25 @@ describe("campaign fate card", () => {
     }))
       for (const [name, count] of Object.entries(objects))
         assertEqual(onMap[slot][name], count, `${slot} - ${name} on map`);
+    const onTable = getCounts((obj) => world.isOnTable(obj));
+    for (const [slot, objects] of Object.entries({
+      "0": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "1": { ship: 15, agent: 10, objective: 1, power: 1, starport: 5 },
+      "4": { ship: 7, city: 2, starport: 1, "set-round": 1 },
+      "-1": {
+        "book-of-law": 1,
+        "first-regent": 1,
+        // dc: 4,
+        "flagship-board": 1,
+        event: 1,
+        number: 1,
+        "campaign-rules": 1,
+        "campaign-aid-intermission": 1,
+        "campaign-aid-rules": 1,
+        "player-aid": 1,
+      },
+    }))
+      for (const [name, count] of Object.entries(objects))
+        assertEqual(onTable[slot][name], count, `${slot} - ${name} on table`);
   });
 });
