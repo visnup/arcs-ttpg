@@ -1,4 +1,4 @@
-import { refHolder } from "@tabletop-playground/api";
+import { globalEvents, refHolder } from "@tabletop-playground/api";
 
 // Sort action cards
 Object.assign(refHolder, {
@@ -12,4 +12,9 @@ Object.assign(refHolder, {
       .entries())
       this.moveCard(card, i);
   },
+});
+
+refHolder.onInserted.add((holder, card) => {
+  if (card.getCardDetails(0)!.name.startsWith("Guild Supremacy"))
+    globalEvents.onAmbitionShouldTally.trigger();
 });

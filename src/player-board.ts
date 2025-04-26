@@ -14,6 +14,12 @@ const refObject = _refObject;
 
 localSnaps(refObject);
 
+// globalEvents
+globalEvents.onAmbitionShouldTally.add(updateAmbitions);
+refObject.onDestroyed.add(() =>
+  globalEvents.onAmbitionShouldTally.remove(updateAmbitions),
+);
+
 // Board zone
 const p = refObject.getPosition();
 const { x, y } = refObject.getSize();
@@ -75,6 +81,15 @@ function maybeRotateCard(zone: Zone, obj: GameObject) {
 
 function updateAmbitions() {
   const ambitions = { tycoon: 0, tyrant: 0, warlord: 0, keeper: 0, empath: 0 };
+  const warProfiteer = world
+    .getZoneById("zone-ambition-2")
+    ?.getOverlappingObjects()
+    .some(
+      (d) =>
+        d instanceof Card &&
+        d.getStackSize() === 1 &&
+        d.getCardDetails(0)!.name === "War Profiteer",
+    );
 
   // Resources, ships, agents, buildings
   for (const obj of zone.getOverlappingObjects()) {
@@ -86,6 +101,9 @@ function updateAmbitions() {
           case "fuel":
           case "material":
             ambitions.tycoon += (obj as Card).getStackSize();
+            break;
+          case "weapon":
+            if (warProfiteer) ambitions.warlord += (obj as Card).getStackSize();
             break;
           case "relic":
             ambitions.keeper += (obj as Card).getStackSize();
@@ -134,7 +152,7 @@ function updateAmbitions() {
   const courtSuits: (Ambition | undefined)[] = [
     "tycoon",
     "tycoon",
-    ,
+    warProfiteer ? "warlord" : undefined,
     "empath",
     "keeper",
   ];
@@ -162,6 +180,9 @@ function updateAmbitions() {
           case "fuel":
           case "material":
             ambitions.tycoon += (obj as Card).getStackSize();
+            break;
+          case "weapon":
+            if (warProfiteer) ambitions.warlord += (obj as Card).getStackSize();
             break;
           case "relic":
             ambitions.keeper += (obj as Card).getStackSize();

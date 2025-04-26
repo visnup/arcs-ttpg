@@ -110,6 +110,10 @@ class AmbitionSection {
     this.zone.onEndOverlap.add(this.render);
     if (this.offset === 1 || this.offset === 2)
       this.zone.onEndOverlap.add(this.returnAmbitions);
+    if (this.offset === 2) {
+      this.zone.onBeginOverlap.add(this.shouldTally);
+      this.zone.onEndOverlap.add(this.shouldTally);
+    }
     refObject.onDestroyed.add(() => this.zone.destroy());
     this.load();
   }
@@ -199,6 +203,10 @@ class AmbitionSection {
     }
     if (this.offset === 1) returnZone("zone-player-captive");
     else if (this.offset === 2) returnZone("zone-player");
+  };
+
+  shouldTally = () => {
+    globalEvents.onAmbitionShouldTally.trigger();
   };
 
   save() {
