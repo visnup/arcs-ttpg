@@ -1,6 +1,6 @@
 import {
+  Card,
   world,
-  type Card,
   type CardHolder,
   type Dice,
 } from "@tabletop-playground/api";
@@ -307,5 +307,121 @@ describe("campaign fate card", () => {
     }))
       for (const [name, count] of Object.entries(objects))
         assertEqual(onTable[slot][name], count, `${slot} - ${name} on table`);
+  });
+
+  test("take fate set", async () => {
+    const fates = world
+      .getObjectsByTemplateName<Card>("fate")
+      .sort((a, b) => a.getPosition().y - b.getPosition().y);
+    if (fates.length === 0) skip("no fates");
+
+    const map = world.getObjectById("map")!;
+
+    // spot checks
+    for (const expected of [
+      {
+        name: "Steward", // f01
+        cards: [, "Imperial Authority", "Dealmakers"],
+        metadata: ["20 17 14", , "empath", , , "keeper", "warlord"],
+        tags: ["setup"],
+      },
+      {
+        name: "Magnate", // f03
+        cards: [
+          ,
+          "Merchant League",
+          ,
+          ,
+          ,
+          ,
+          "Material Cartel",
+          "Fuel Cartel",
+          "Weapon Cartel",
+          "Psionic Cartel",
+          "Relic Cartel",
+          ,
+          "Material Monopoly",
+          "Fuel Monopoly",
+          "Relic Monopoly",
+          "Psionic Monopoly",
+          "Weapon Monopoly",
+        ],
+        metadata: [
+          "10",
+          "tycoon",
+          ,
+          ,
+          ,
+          ,
+          "tycoon",
+          "tycoon",
+          "warlord",
+          "empath",
+          "keeper",
+        ],
+        tags: [
+          "setup",
+          ,
+          ,
+          ,
+          ,
+          ,
+          "supply:material",
+          "supply:fuel",
+          "supply:weapon",
+          "supply:psionic",
+          "supply:relic",
+          ,
+          "supply:material",
+          "supply:fuel",
+          "supply:relic",
+          "supply:psionic",
+          "supply:weapon",
+        ],
+      },
+      { name: "Advocate" }, // f04
+      { name: "Caretaker" }, // f05
+      { name: "Pathfinder" }, // f09
+      { name: "Guardian" }, // f20
+    ]) {
+      const fate = fates
+        .map((f) => {
+          const i = f
+            .getAllCardDetails()
+            .findIndex(({ name }) => name === expected.name);
+          if (i >= 0) return f.takeCards(1, true, i);
+        })
+        .find((d) => d);
+      assert(!!fate, expected.name);
+      fate.setPosition(map.getPosition().add([0, 0, 1]));
+      fate.snap();
+      (fate as TestableCard).onSnapped.trigger(fate);
+
+      const set = world
+        .lineTrace(fate.getPosition(), fate.getPosition().add([0, 0, 10]))
+        .map((h) => h.object)
+        .filter((o) => o.getId() !== "map");
+      const cards = set.find((d) => d.getTemplateName().match(/^f\d\d$/));
+      assert(cards instanceof Card, `${expected.name} cards`);
+
+      for (const [i, name] of expected.cards?.entries() ?? [])
+        if (name) {
+          const n = cards.getCardDetails(i)?.name;
+          assert(!!n?.startsWith(name), `${i} ${n} ≠ ${name}`);
+        }
+      for (const [i, value] of expected.metadata?.entries() ?? [])
+        if (value) {
+          const v = cards.getCardDetails(i)?.metadata;
+          assert(!!v?.startsWith(value), `${i} ${v} ≠ ${value}`);
+        }
+      for (const [i, tag] of expected.tags?.entries() ?? [])
+        if (tag) {
+          const t = cards.getCardDetails(i)?.tags;
+          assert(!!t?.includes(tag), `${i} ${t} ≠ ${tag}`);
+        }
+
+      // delete
+      for (const o of set) o.destroy();
+    }
   });
 });
