@@ -82,7 +82,5 @@ async function cleanUp() {
 }
 
 function power(marker: Card) {
-  return +marker
-    .getCardDetails(0)!
-    .metadata.slice(marker.isFaceUp() ? 2 : 0)[0];
+  return +marker.getCardDetails().metadata.slice(marker.isFaceUp() ? 2 : 0)[0];
 }

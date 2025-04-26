@@ -7,7 +7,7 @@ Object.assign(refHolder, {
       .sort(
         (a, b) =>
           a.getTemplateName().localeCompare(b.getTemplateName()) ||
-          a.getCardDetails(0)!.index - b.getCardDetails(0)!.index,
+          a.getCardDetails().index - b.getCardDetails().index,
       )
       .entries())
       this.moveCard(card, i);
@@ -15,6 +15,6 @@ Object.assign(refHolder, {
 });
 
 refHolder.onInserted.add((holder, card) => {
-  if (card.getCardDetails(0)!.name.startsWith("Guild Supremacy"))
+  if (card.getCardDetails().name.startsWith("Guild Supremacy"))
     globalEvents.onAmbitionShouldTally.trigger();
 });

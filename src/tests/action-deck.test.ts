@@ -57,13 +57,13 @@ describe("action deck", () => {
   test("surpass", async () => {
     // 0: 3, 2 construction, 7, 1 mobilization, 7, 1 aggression
     const lead = holders[0].removeAt(3)!;
-    assertEqual(lead.getCardDetails(0)?.index, 21, "1 mobilization");
+    assertEqual(lead.getCardDetails().index, 21, "1 mobilization");
     await playCard(lead, snaps[0]);
 
     // Surpass
     // 1: 6, 5, 4, 3, 2 mobilization, 6 aggression
     const surpass = holders[1].removeAt(4)!;
-    assertEqual(surpass.getCardDetails(0)?.index, 22, "2 mobilization");
+    assertEqual(surpass.getCardDetails().index, 22, "2 mobilization");
     await playCard(surpass, snaps[1]);
     assertEqual(getButton(surpass)?.getText().trim(), "Surpass", "surpass");
     assertEqual(world.getSlots()[0], 0, "initiative at yellow");
@@ -104,7 +104,7 @@ describe("action deck", () => {
 
     // Surpass again
     const surpassMore = holders[1].removeAt(0)!;
-    assertEqual(surpassMore.getCardDetails(0)?.index, 26, "6 mobilization");
+    assertEqual(surpassMore.getCardDetails().index, 26, "6 mobilization");
     await playCard(surpassMore, snaps[2]);
     assertEqual(getButton(surpass), undefined, "initial surpass gone");
     assertEqual(
@@ -149,7 +149,7 @@ describe("action deck", () => {
 
     // Can't surpass after seize
     const badSurpass = holders[1].removeAt(0)!;
-    assertEqual(badSurpass.getCardDetails(0)?.index, 26, "6 mobilization");
+    assertEqual(badSurpass.getCardDetails().index, 26, "6 mobilization");
     await playCard(badSurpass, snaps[3]);
     assertEqual(getButton(badSurpass), undefined, "no surpass after seize");
   });

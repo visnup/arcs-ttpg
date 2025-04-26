@@ -88,7 +88,7 @@ function updateAmbitions() {
       (d) =>
         d instanceof Card &&
         d.getStackSize() === 1 &&
-        d.getCardDetails(0)!.name === "War Profiteer",
+        d.getCardDetails().name === "War Profiteer",
     );
 
   // Resources, ships, agents, buildings
@@ -145,7 +145,7 @@ function updateAmbitions() {
     .some(
       (d) =>
         d.getStackSize() === 1 &&
-        d.getCardDetails(0)!.name.startsWith("Guild Supremacy"),
+        d.getCardDetails().name.startsWith("Guild Supremacy"),
     )
     ? 2
     : 1;

@@ -98,10 +98,10 @@ function isSecond(card: Card) {
 }
 
 function suit(card: Card) {
-  return Math.floor(card.getCardDetails(0)!.index / 7);
+  return Math.floor(card.getCardDetails().index / 7);
 }
 function rank(card: Card) {
-  return (card.getCardDetails(0)!.index % 7) + 1;
+  return (card.getCardDetails().index % 7) + 1;
 }
 function getPlayed() {
   const zone = world
@@ -234,7 +234,7 @@ refCard.onGrab.add((card) => {
 refCard.onSnappedTo.add((obj) => {
   if (obj.getTemplateName() !== "ambition declared") return;
   const ambition = [, "tycoon", "tyrant", "warlord", "keeper", "empath"][
-    refCard.getCardDetails(0)!.index % 7
+    refCard.getCardDetails().index % 7
   ] as Ambition | undefined;
   if (ambition) globalEvents.onAmbitionDeclared.trigger(ambition);
 });

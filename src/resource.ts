@@ -10,7 +10,7 @@ const resources = ["fuel", "material", "weapon", "relic", "psionic"];
 const isResource =
   (i: number) =>
   ({ object }: TraceHit) =>
-    object instanceof Card && object.getCardDetails(0)!.index === i;
+    object instanceof Card && object.getCardDetails().index === i;
 function findSupply(i: number) {
   // Look for a player court card tagged as a resource supply
   for (const zone of world.getAllZones()) {
@@ -19,7 +19,7 @@ function findSupply(i: number) {
       if (
         c instanceof Card &&
         c.getStackSize() === 1 &&
-        c.getCardDetails(0)!.tags.includes(`supply:${resources[i]}`)
+        c.getCardDetails().tags.includes(`supply:${resources[i]}`)
       ) {
         // Look for a resource stack on top of it
         const stack = world
@@ -47,7 +47,7 @@ function findSupply(i: number) {
 
 // Discard to supply
 function discard(card: typeof refCard) {
-  const { index: i } = card.getCardDetails(0)!;
+  const { index: i } = card.getCardDetails();
   const isHomogenous = (card: Card) =>
     card.getAllCardDetails().every(({ index }) => index === i);
   if (isHomogenous(card)) {

@@ -363,7 +363,7 @@ describe("setup deck", () => {
       const r = snaps
         .filter((s) => s.getTags().includes("resource"))
         .slice(0, 2)
-        .map((s) => (s.getSnappedObject() as Card).getCardDetails(0)?.name);
+        .map((s) => (s.getSnappedObject() as Card).getCardDetails().name);
       assertEqual(r, resources, `${slot} resources`);
       const c = snaps.filter(
         (s) => s.getTags().includes("building") && s.getSnappedObject(),
@@ -478,7 +478,7 @@ describe("setup deck", () => {
       const r = snaps
         .filter((s) => s.getTags().includes("resource"))
         .slice(0, 2)
-        .map((s) => (s.getSnappedObject() as Card).getCardDetails(0)?.name);
+        .map((s) => (s.getSnappedObject() as Card).getCardDetails().name);
       assertEqual(r, resources, `${slot} resources`);
       const c = snaps.filter(
         (s) => s.getTags().includes("building") && s.getSnappedObject(),

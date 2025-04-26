@@ -274,7 +274,7 @@ export function placeResources(
 ) {
   let supply = world
     .getObjectsByTemplateName<Card>("resource")
-    .find((d) => d.getCardDetails(0)!.name === resource && world.isOnTable(d));
+    .find((d) => d.getCardDetails().name === resource && world.isOnTable(d));
   if (!supply) return;
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));

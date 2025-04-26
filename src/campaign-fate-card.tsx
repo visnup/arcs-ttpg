@@ -374,7 +374,7 @@ function takeFateSet(card: Card) {
   if (card.getStackSize() > 1) return;
   if (taken) return;
 
-  const { index } = card.getCardDetails(0)!;
+  const { index } = card.getCardDetails();
 
   // Spawn fate cards above card
   const dh = 0.2;
@@ -454,7 +454,7 @@ function takeFateSet(card: Card) {
           (d) =>
             d.getSnappedToPoint() &&
             d.getStackSize() === 1 &&
-            d.getCardDetails(0)!.index === 0,
+            d.getCardDetails().index === 0,
         )) // and no Steward
   )
     takeFirstRegent(slot);

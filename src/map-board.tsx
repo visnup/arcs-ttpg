@@ -266,7 +266,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
     if (!section) continue;
     const [first, second] = section.getStandings();
     const flipped = Math.abs(marker.getRotation().roll) > 1;
-    const power = marker.getCardDetails(0)!.metadata.slice(flipped ? 2 : 0);
+    const power = marker.getCardDetails().metadata.slice(flipped ? 2 : 0);
     for (const slot of first) {
       const bonus = used.get(section)?.has(slot) ? 0 : bonuses[slot] || 0;
       gain[slot] = (gain[slot] || 0) + +power[0] + bonus;
