@@ -90,14 +90,6 @@ function updateAmbitions() {
         d.getStackSize() === 1 &&
         d.getCardDetails().name.startsWith("War Profiteer"),
     );
-  const greenVault = courtZone
-    .getOverlappingObjects()
-    .some(
-      (d) =>
-        d instanceof Card &&
-        d.getStackSize() === 1 &&
-        d.getCardDetails().name.startsWith("Green Vault"),
-    );
 
   // Resources, ships, agents, buildings
   for (const obj of zone.getOverlappingObjects()) {
@@ -142,12 +134,22 @@ function updateAmbitions() {
   }
 
   // Captive agents
+  const greenVault = courtZone
+    .getOverlappingObjects()
+    .some(
+      (d) =>
+        d instanceof Card &&
+        d.getStackSize() === 1 &&
+        d.getCardDetails().name.startsWith("Green Vault"),
+    );
   for (const obj of captiveZone.getOverlappingObjects()) {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
-    if (obj.getTemplateName() === "agent") ambitions.tyrant++;
-    if (
+    const name = obj.getTemplateName();
+    if (name === "agent" || name === "ship" /* Happy Hosts */)
+      ambitions.tyrant++;
+    else if (
       greenVault &&
-      obj.getTemplateName() === "resource" &&
+      name === "resource" &&
       ["fuel", "material"].includes((obj as Card).getCardDetails().name)
     ) {
       ambitions.tycoon += (obj as Card).getStackSize();

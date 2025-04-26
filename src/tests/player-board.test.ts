@@ -130,7 +130,7 @@ describe("player board", () => {
           o.setObjectType(ObjectType.Penetrable);
     assertEqual(ambitions, {
       tycoon: { [slot]: 0 },
-      tyrant: { [slot]: 3 },
+      tyrant: { [slot]: 6 },
       warlord: { [slot]: 0 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
