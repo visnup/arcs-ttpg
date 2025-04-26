@@ -187,13 +187,13 @@ class AmbitionSection {
     )
       return;
     const boards = world.getObjectsByTemplateName("board");
-    function returnZone(prefix: string) {
+    function returnZone(prefix: string, resources = false) {
       for (const board of boards)
         for (const obj of world
           .getZoneById(`${prefix}-${board.getId()}`)
           ?.getOverlappingObjects() ?? []) {
           if (
-            obj.getOwningPlayerSlot() !== -1 &&
+            (resources || obj.getOwningPlayerSlot() !== -1) &&
             obj.getOwningPlayerSlot() !== board.getOwningPlayerSlot() &&
             "discard" in obj &&
             typeof obj.discard === "function"
@@ -201,7 +201,7 @@ class AmbitionSection {
             obj.discard();
         }
     }
-    if (this.offset === 1) returnZone("zone-player-captive");
+    if (this.offset === 1) returnZone("zone-player-captive", true);
     else if (this.offset === 2) returnZone("zone-player");
   };
 
