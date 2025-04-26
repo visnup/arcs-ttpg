@@ -115,16 +115,18 @@
 		"26": "Freedom Fighters"
 	},
 	"CardMetadata": {
-		"16": "tycoon",
-		"17": "tycoon",
-		"18": "tycoon",
-		"19": "tycoon",
-		"25": "tycoon",
-		"26": "18 16 14"
+		"0": "18 16 14",
+		"1": "tycoon",
+		"7": "tycoon",
+		"8": "tycoon",
+		"9": "tycoon",
+		"10": "tycoon",
+		"26": "warlord"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -229,7 +231,6 @@
 		],
 		"26": [
 			"fate",
-			"setup",
 			"card"
 		]
 	}

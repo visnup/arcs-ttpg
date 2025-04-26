@@ -35,8 +35,9 @@ const faq = new Map(
 
 interface JsonObject {
   [key: string]: unknown;
-  CardNames?: Record<string, string>;
-  CardMetadata?: Record<string, string>;
+  CardNames: Record<string, string>;
+  CardMetadata: Record<string, string>;
+  CardTags: Record<string, string[]>;
 }
 
 async function modify(path: string, cb: (c: JsonObject) => JsonObject) {
@@ -118,6 +119,7 @@ interface Card {
   text: string;
   image: string;
   flipSide?: string;
+  tags?: string[];
 }
 
 function names(cards: Card[]) {
@@ -157,6 +159,77 @@ function abilities(
       return {
         ...acc,
         [i]: previous[i].endsWith(append) ? previous[i] : previous[i] + append,
+      };
+    }, {});
+}
+
+const objectives = [
+  "20 17 14",
+  "18 16 14",
+  "10",
+  "18",
+  "18",
+  "12 11 10",
+  "13",
+  "10 9 8",
+  "8",
+  "14",
+  "12",
+  "24 21 18",
+  "18 16 14",
+  "16 14 12",
+  "18 16 14",
+  "22",
+  "20",
+  "22 18 14",
+  "16 14 12",
+  "15",
+  "18 16 14",
+  "24 21 18",
+  "12 9 6",
+  "6",
+];
+const ambitions = {
+  Fuel: "tycoon",
+  Material: "tycoon",
+  Weapon: "warlord",
+  Relic: "keeper",
+  Psionic: "empath",
+};
+function metadata(cards: Card[]) {
+  const [, n] = cards[0].id.match(/^ARCS-F([12]?\d)\d\d/) || [];
+  return cards
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .reduce(
+      (acc, d, i) => ({
+        ...acc,
+        [i]:
+          i === 0
+            ? objectives[+n - 1]
+            : d.tags?.map((t) => ambitions[t]).filter((d) => d)[0],
+      }),
+      {},
+    );
+}
+function tags(cards: Card[]) {
+  return cards
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .reduce((acc, d, i) => {
+      const [, supply] =
+        d.text?.match(/You keep the (\w+) supply on here/) || [];
+      const action =
+        d.tags?.includes("Event") || d.tags?.includes("Action Card");
+      return {
+        ...acc,
+        [i]:
+          i === 0
+            ? ["fate", "setup", "card"]
+            : [
+                "fate",
+                "card",
+                ...(supply ? [`supply:${supply.toLowerCase()}`] : []),
+                ...(action ? ["action"] : []),
+              ],
       };
     }, {});
 }
@@ -280,6 +353,8 @@ for (let i = 1; i <= 24; i++) {
   );
   modify(`assets/Templates/campaign/f${n}.json`, (json) => {
     json["CardNames"] = names(fate);
+    json["CardMetadata"] = metadata(fate);
+    json["CardTags"] = tags(fate);
     return json;
   });
   image(`assets/Textures/campaign/f${n}.jpg`, fate);

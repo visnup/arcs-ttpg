@@ -103,11 +103,18 @@
 		"20": "Martial Law\n\nQ: Does this ever override the power of Imperial Authority?\nA: No.\n\nQ: Does this mean that Regents can battle each other in Imperial systems now?\nA: No. Even though it prevents some Regents from Commanding the Imperial Fleet, you still have to follow the Truce Law."
 	},
 	"CardMetadata": {
-		"20": "13"
+		"0": "13",
+		"1": "warlord",
+		"4": "warlord",
+		"5": "warlord",
+		"6": "warlord",
+		"7": "warlord",
+		"8": "warlord"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -187,27 +194,6 @@
 			"card"
 		],
 		"20": [
-			"fate",
-			"setup",
-			"card"
-		],
-		"21": [
-			"fate",
-			"card"
-		],
-		"22": [
-			"fate",
-			"card"
-		],
-		"23": [
-			"fate",
-			"card"
-		],
-		"24": [
-			"fate",
-			"card"
-		],
-		"25": [
 			"fate",
 			"card"
 		]

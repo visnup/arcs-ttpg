@@ -113,19 +113,21 @@
 		"25": "Govern with Authority\n\nQ: For the Imperial Action on the War Policy, am I exempt from giving a resource if the Trust has no Weapons?\nA: No. You have to try to give the maximum amount prompted. So if it has a Weapon but no other resource, give a Weapon. If it has no Weapon but it does have another resource, give the resource."
 	},
 	"CardMetadata": {
-		"5": "empath",
-		"6": "empath",
-		"9": "keeper",
+		"0": "20 17 14",
+		"2": "empath",
+		"5": "keeper",
+		"6": "warlord",
+		"9": "empath",
 		"10": "empath",
 		"15": "empath",
-		"16": "empath",
-		"20": "keeper",
-		"23": "empath",
-		"25": "20 17 14"
+		"16": "keeper",
+		"19": "empath",
+		"20": "empath"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -226,7 +228,6 @@
 		],
 		"25": [
 			"fate",
-			"setup",
 			"card"
 		]
 	}

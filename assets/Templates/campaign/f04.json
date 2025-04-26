@@ -113,21 +113,24 @@
 		"25": "Guild Supremacy"
 	},
 	"CardMetadata": {
-		"5": "empath",
-		"6": "keeper",
-		"8": "tycoon",
-		"9": "tycoon",
-		"17": "empath",
-		"18": "keeper",
-		"20": "tycoon",
-		"21": "tycoon",
-		"23": "keeper",
-		"24": "empath",
-		"25": "18"
+		"0": "18",
+		"1": "empath",
+		"2": "keeper",
+		"4": "tycoon",
+		"5": "tycoon",
+		"6": "warlord",
+		"7": "keeper",
+		"8": "empath",
+		"16": "tycoon",
+		"17": "tycoon",
+		"18": "warlord",
+		"19": "keeper",
+		"20": "empath"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -228,7 +231,6 @@
 		],
 		"25": [
 			"fate",
-			"setup",
 			"card"
 		]
 	}

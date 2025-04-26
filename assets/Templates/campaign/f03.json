@@ -115,17 +115,24 @@
 		"26": "Closed & Open Economy"
 	},
 	"CardMetadata": {
-		"5": "tycoon",
-		"16": "keeper",
-		"17": "empath",
-		"19": "tycoon",
-		"20": "tycoon",
-		"22": "keeper",
-		"23": "keeper",
-		"25": "tycoon",
-		"26": "10"
+		"0": "10",
+		"1": "tycoon",
+		"3": "keeper",
+		"4": "keeper",
+		"5": "warlord",
+		"6": "tycoon",
+		"7": "tycoon",
+		"8": "warlord",
+		"9": "empath",
+		"10": "keeper",
+		"21": "tycoon"
 	},
 	"CardTags": {
+		"0": [
+			"fate",
+			"setup",
+			"card"
+		],
 		"1": [
 			"fate",
 			"card"
@@ -148,44 +155,44 @@
 		],
 		"6": [
 			"fate",
-			"card"
+			"card",
+			"supply:material"
 		],
 		"7": [
-			"fate",
-			"card"
-		],
-		"8": [
-			"fate",
-			"card"
-		],
-		"9": [
-			"fate",
-			"card"
-		],
-		"10": [
-			"fate",
-			"card",
-			"supply:weapon"
-		],
-		"11": [
-			"fate",
-			"card",
-			"supply:psionic"
-		],
-		"12": [
-			"fate",
-			"card",
-			"supply:relic"
-		],
-		"13": [
 			"fate",
 			"card",
 			"supply:fuel"
 		],
-		"14": [
+		"8": [
 			"fate",
 			"card",
-			"supply:material"
+			"supply:weapon"
+		],
+		"9": [
+			"fate",
+			"card",
+			"supply:psionic"
+		],
+		"10": [
+			"fate",
+			"card",
+			"supply:relic"
+		],
+		"11": [
+			"fate",
+			"card"
+		],
+		"12": [
+			"fate",
+			"card"
+		],
+		"13": [
+			"fate",
+			"card"
+		],
+		"14": [
+			"fate",
+			"card"
 		],
 		"15": [
 			"fate",
@@ -193,28 +200,23 @@
 		],
 		"16": [
 			"fate",
-			"card",
-			"supply:relic"
+			"card"
 		],
 		"17": [
 			"fate",
-			"card",
-			"supply:psionic"
+			"card"
 		],
 		"18": [
 			"fate",
-			"card",
-			"supply:weapon"
+			"card"
 		],
 		"19": [
 			"fate",
-			"card",
-			"supply:fuel"
+			"card"
 		],
 		"20": [
 			"fate",
-			"card",
-			"supply:material"
+			"card"
 		],
 		"21": [
 			"fate",
@@ -237,11 +239,6 @@
 			"card"
 		],
 		"26": [
-			"fate",
-			"setup",
-			"card"
-		],
-		"27": [
 			"fate",
 			"card"
 		]

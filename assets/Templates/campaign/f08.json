@@ -123,17 +123,18 @@
 		"30": "Breaking the Faith"
 	},
 	"CardMetadata": {
-		"5": "empath",
-		"6": "empath",
-		"12": "empath",
-		"13": "empath",
+		"0": "10 9 8",
+		"1": "keeper",
 		"15": "empath",
-		"29": "keeper",
-		"30": "10 9 8"
+		"17": "empath",
+		"18": "empath",
+		"24": "empath",
+		"25": "empath"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -146,39 +147,48 @@
 		],
 		"3": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"4": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"5": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"6": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"7": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"8": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"9": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"10": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"11": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"12": [
 			"fate",
@@ -210,56 +220,38 @@
 		],
 		"19": [
 			"fate",
-			"action",
-			"card",
 			"card"
 		],
 		"20": [
 			"fate",
-			"action",
-			"card",
 			"card"
 		],
 		"21": [
 			"fate",
-			"action",
-			"card",
 			"card"
 		],
 		"22": [
 			"fate",
-			"card",
-			"action",
 			"card"
 		],
 		"23": [
 			"fate",
-			"action",
-			"card",
 			"card"
 		],
 		"24": [
 			"fate",
-			"action",
-			"card",
 			"card"
 		],
 		"25": [
 			"fate",
-			"card",
-			"action",
 			"card"
 		],
 		"26": [
 			"fate",
-			"card",
-			"action",
 			"card"
 		],
 		"27": [
 			"fate",
-			"card",
-			"action",
 			"card"
 		],
 		"28": [
@@ -272,7 +264,6 @@
 		],
 		"30": [
 			"fate",
-			"setup",
 			"card"
 		]
 	}

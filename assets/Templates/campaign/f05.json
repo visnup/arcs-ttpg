@@ -103,13 +103,14 @@
 		"20": "Golems Sate Their Appetite"
 	},
 	"CardMetadata": {
-		"8": "keeper",
-		"17": "tycoon",
-		"20": "18"
+		"0": "18",
+		"3": "tycoon",
+		"12": "keeper"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -134,8 +135,7 @@
 		],
 		"6": [
 			"fate",
-			"card",
-			"action"
+			"card"
 		],
 		"7": [
 			"fate",
@@ -167,7 +167,8 @@
 		],
 		"14": [
 			"fate",
-			"card"
+			"card",
+			"action"
 		],
 		"15": [
 			"fate",
@@ -190,27 +191,6 @@
 			"card"
 		],
 		"20": [
-			"fate",
-			"setup",
-			"card"
-		],
-		"21": [
-			"fate",
-			"card"
-		],
-		"22": [
-			"fate",
-			"card"
-		],
-		"23": [
-			"fate",
-			"card"
-		],
-		"24": [
-			"fate",
-			"card"
-		],
-		"25": [
 			"fate",
 			"card"
 		]

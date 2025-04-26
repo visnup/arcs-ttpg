@@ -111,19 +111,23 @@
 		"24": "Sower of Division"
 	},
 	"CardMetadata": {
-		"3": "tycoon",
-		"14": "tycoon",
-		"15": "keeper",
-		"16": "keeper",
-		"17": "empath",
-		"19": "tycoon",
-		"20": "tycoon",
-		"23": "empath",
-		"24": "12 11 10"
+		"0": "12 11 10",
+		"1": "empath",
+		"4": "tycoon",
+		"5": "tycoon",
+		"6": "warlord",
+		"7": "empath",
+		"8": "keeper",
+		"9": "keeper",
+		"10": "tycoon",
+		"11": "warlord",
+		"21": "tycoon",
+		"22": "warlord"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -219,11 +223,6 @@
 			"card"
 		],
 		"24": [
-			"fate",
-			"setup",
-			"card"
-		],
-		"25": [
 			"fate",
 			"card"
 		]

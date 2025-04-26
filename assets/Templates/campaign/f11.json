@@ -85,15 +85,18 @@
 		"11": "Planet Breaker Act III Setup"
 	},
 	"CardMetadata": {
-		"3": "empath",
-		"4": "keeper",
-		"6": "tycoon",
-		"7": "tycoon",
-		"11": "12"
+		"0": "12",
+		"1": "warlord",
+		"4": "tycoon",
+		"5": "tycoon",
+		"6": "warlord",
+		"7": "keeper",
+		"8": "empath"
 	},
 	"CardTags": {
 		"0": [
 			"fate",
+			"setup",
 			"card"
 		],
 		"1": [
@@ -137,63 +140,6 @@
 			"card"
 		],
 		"11": [
-			"fate",
-			"setup",
-			"card"
-		],
-		"12": [
-			"fate",
-			"card"
-		],
-		"13": [
-			"fate",
-			"card"
-		],
-		"14": [
-			"fate",
-			"card"
-		],
-		"15": [
-			"fate",
-			"card"
-		],
-		"16": [
-			"fate",
-			"card"
-		],
-		"17": [
-			"fate",
-			"card"
-		],
-		"18": [
-			"fate",
-			"card"
-		],
-		"19": [
-			"fate",
-			"card"
-		],
-		"20": [
-			"fate",
-			"card"
-		],
-		"21": [
-			"fate",
-			"card"
-		],
-		"22": [
-			"fate",
-			"card"
-		],
-		"23": [
-			"fate",
-			"card"
-		],
-		"24": [
-			"fate",
-			"card"
-		],
-		"25": [
 			"fate",
 			"card"
 		]
