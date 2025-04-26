@@ -216,7 +216,7 @@ function tags(cards: Card[]) {
     .sort((a, b) => a.id.localeCompare(b.id))
     .reduce((acc, d, i) => {
       const [, supply] =
-        d.text?.match(/You keep the (\w+) supply on here/) || [];
+        d.text?.match(/You (?:keep|hold) the (\w+) supply/) || [];
       const action =
         d.tags?.includes("Event") || d.tags?.includes("Action Card");
       return {

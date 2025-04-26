@@ -184,11 +184,13 @@
 		],
 		"12": [
 			"fate",
-			"card"
+			"card",
+			"supply:material"
 		],
 		"13": [
 			"fate",
-			"card"
+			"card",
+			"supply:fuel"
 		],
 		"14": [
 			"fate",
@@ -196,11 +198,13 @@
 		],
 		"15": [
 			"fate",
-			"card"
+			"card",
+			"supply:psionic"
 		],
 		"16": [
 			"fate",
-			"card"
+			"card",
+			"supply:weapon"
 		],
 		"17": [
 			"fate",
