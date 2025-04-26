@@ -196,6 +196,7 @@ function updateAmbitions() {
       default: {
         if (!(obj instanceof Card)) break;
         const suit = obj.getCardDetails().metadata;
+        if (suit === "warlord" && !warProfiteer) continue;
         if (suit && suit in ambitions) ambitions[suit as Ambition] += p;
       }
     }
