@@ -115,7 +115,6 @@ describe("campaign fate card", () => {
         "ambition declared": 1,
         ambition: 3,
         "chapter-track": 1,
-        action: 1,
       },
     }))
       for (const [name, count] of Object.entries(objects))
@@ -160,8 +159,66 @@ describe("campaign fate card", () => {
     );
 
     // regent / outlaw cards
+    assertEqual(
+      world
+        .getObjectsByTemplateName<Card>("dc")
+        .filter(
+          (d) =>
+            d.getStackSize() === 1 &&
+            d.getCardDetails().name === "Imperial Regent",
+        ).length,
+      4,
+    );
+
     // first regent with first player
+    const firstRegent = world.getObjectByTemplateName("first-regent")!;
+    assert(
+      firstRegent.getPosition().distance(initiative.getPosition()) < 12,
+      "first regent with first player",
+    );
+
     // first regent to admiral, then steward
+    // assign admiral to 2p
+    const slots = world.getSlots();
+    const admiral = world
+      .getObjectsByTemplateName<Card>("fate")
+      .find((d) => d.getCardDetails().name.startsWith("Admiral"))!;
+    admiral.removeFromHolder();
+    admiral.setPosition(
+      world
+        .getObjectsByTemplateName("board")
+        .find((d) => d.getOwningPlayerSlot() === slots[1])!
+        .getAllSnapPoints()
+        .find((s) => s.getTags().includes("fate"))!
+        .getGlobalPosition()
+        .add([0, 0, 1]),
+    );
+    admiral.snap();
+    (admiral as TestableCard).onSnapped.trigger(admiral);
+    assert(
+      firstRegent.getPosition().distance(admiral.getPosition()) < 7,
+      "first regent with admiral",
+    );
+    // assign steward to 3p
+    const steward = world
+      .getObjectsByTemplateName<Card>("fate")
+      .find((d) => d.getCardDetails().name.startsWith("Steward"))!;
+    steward.removeFromHolder();
+    steward.setPosition(
+      world
+        .getObjectsByTemplateName("board")
+        .find((d) => d.getOwningPlayerSlot() === slots[2])!
+        .getAllSnapPoints()
+        .find((s) => s.getTags().includes("fate"))!
+        .getGlobalPosition()
+        .add([0, 0, 1]),
+    );
+    steward.snap();
+    (steward as TestableCard).onSnapped.trigger(steward);
+    assert(
+      firstRegent.getPosition().distance(steward.getPosition()) < 7,
+      "first regent with steward",
+    );
   });
 
   test("2p", () => {
@@ -225,7 +282,6 @@ describe("campaign fate card", () => {
         "ambition declared": 1,
         ambition: 3,
         "chapter-track": 1,
-        action: 1,
         resource: [1, 2, 4, 5].includes(+number.getCurrentFaceName()) ? 5 : 4, // out of play resources
       },
     }))
