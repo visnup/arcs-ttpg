@@ -90,7 +90,7 @@ function canStealCard(zone: Zone, object: GameObject) {
   if (
     !(object instanceof Card) ||
     object.getStackSize() > 1 ||
-    [...zones].some((z) => z.getOverlappingObjects().includes(object))
+    [...zones].some((z) => z.isOverlapping(object))
   )
     return;
   object.removeCustomAction("Secure");
@@ -112,7 +112,7 @@ function takeAgents(
   [cx, cy]: [number, number],
   [ex, ey]: [number, number],
 ) {
-  const zone = [...zones].find((z) => z.getOverlappingObjects().includes(card));
+  const zone = [...zones].find((z) => z.isOverlapping(card));
   if (!zone) return;
   const board = world
     .getObjectsByTemplateName("board")
