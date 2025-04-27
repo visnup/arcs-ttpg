@@ -379,10 +379,61 @@ describe("campaign fate card", () => {
           "supply:weapon",
         ],
       },
-      { name: "Advocate" }, // f04
-      { name: "Caretaker" }, // f05
-      { name: "Pathfinder" }, // f09
-      { name: "Guardian" }, // f20
+      {
+        name: "Advocate", // f04
+        cards: [
+          ,
+          "Guild Investigators",
+          "Guild Overseers",
+          ,
+          "Material Liaisons",
+          "Fuel Liaisons",
+          "Weapons Liaisons",
+          "Relic Liaisons",
+          "Psionic Liaisons",
+        ],
+        metadata: [
+          "18",
+          "empath",
+          "keeper",
+          ,
+          "tycoon",
+          "tycoon",
+          "warlord",
+          "keeper",
+          "empath",
+        ],
+      },
+      {
+        name: "Caretaker", // f05
+        cards: [, "Golem Beacon", "Golem Hearth", "Stone-Speakers"],
+        metadata: ["18", , , "tycoon", , , , , , , , , "keeper"],
+        tags: ["setup", , , , , , , , , , , , , , "action"],
+      },
+      {
+        name: "Pathfinder", // f09
+        cards: [
+          ,
+          "Uncovering Clues",
+          "Clues to the Portal",
+          ,
+          "Call to Pilgrimage",
+          "Portal Seekers",
+          ,
+          "Pilgrims",
+          "Seek the Portal",
+          "Seek the Portal",
+          "Seek the Portal",
+        ],
+        metadata: ["8", , , , , "keeper"],
+        tags: ["setup"],
+      },
+      {
+        name: "Guardian", // f20
+        cards: [, "Green Vault", "Ire of the Tycoons", "Edenguard Ambition"],
+        metadata: ["20 18 16"],
+        tags: ["setup"],
+      },
     ]) {
       const fate = fates
         .map((f) => {
