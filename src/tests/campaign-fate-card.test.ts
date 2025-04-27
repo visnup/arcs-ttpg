@@ -324,6 +324,7 @@ describe("campaign fate card", () => {
         name: [, "Imperial Authority", "Dealmakers"],
         metadata: ["20 17 14", , "empath", , , "keeper", "warlord"],
         tags: ["setup"],
+        tokens: { fate: 1, "set-seal": 1 },
       },
       {
         id: "Magnate", // f03
@@ -378,6 +379,7 @@ describe("campaign fate card", () => {
           "supply:psionic",
           "supply:weapon",
         ],
+        tokens: { fate: 1, "set-seal": 1 },
       },
       {
         id: "Advocate", // f04
@@ -403,12 +405,14 @@ describe("campaign fate card", () => {
           "keeper",
           "empath",
         ],
+        tokens: { fate: 1 },
       },
       {
         id: "Caretaker", // f05
         name: [, "Golem Beacon", "Golem Hearth", "Stone-Speakers"],
         metadata: ["18", , , "tycoon", , , , , , , , , "keeper"],
         tags: ["setup", , , , , , , , , , , , , , "action"],
+        tokens: { fate: 1, "set-round": 4 },
       },
       {
         id: "Pathfinder", // f09
@@ -427,14 +431,16 @@ describe("campaign fate card", () => {
         ],
         metadata: ["8", , , , , "keeper"],
         tags: ["setup"],
+        tokens: { fate: 1, "set-round": 13 },
       },
       {
         id: "Guardian", // f20
         name: [, "Green Vault", "Ire of the Tycoons", "Edenguard Ambition"],
         metadata: ["20 18 16"],
         tags: ["setup"],
+        tokens: { fate: 1, "set-tile": 1 },
       },
-    ] as const) {
+    ]) {
       const fate = fates
         .map((f) => {
           const i = f
@@ -452,9 +458,9 @@ describe("campaign fate card", () => {
         .lineTrace(fate.getPosition(), fate.getPosition().add([0, 0, 10]))
         .map((h) => h.object)
         .filter((o) => o.getId() !== "map");
+
       const cards = set.find((d) => d.getTemplateName().match(/^f\d\d$/));
       assert(cards instanceof Card, `${expected.name} cards`);
-
       for (const f of ["name", "metadata", "tags"] as const)
         for (const [i, value] of expected[f]?.entries() ?? [])
           if (value) {
@@ -464,8 +470,17 @@ describe("campaign fate card", () => {
             else if (Array.isArray(v))
               assert(v.includes(value), `${i} ${v} ≠ ${value}`);
           }
+      const tokens = Object.fromEntries(
+        set
+          .filter((d) => d !== cards)
+          .map((d) => [d.getTemplateName(), (d as Card).getStackSize()]),
+      ) as { fate?: number };
+      assertEqual(
+        tokens,
+        expected.tokens,
+        `${expected.id} ${JSON.stringify(tokens)} ≠ ${JSON.stringify(expected.tokens ?? {})}`,
+      );
 
-      // delete
       for (const o of set) o.destroy();
     }
   });
