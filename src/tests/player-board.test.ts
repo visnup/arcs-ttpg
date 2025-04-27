@@ -11,10 +11,11 @@ import {
   placeCities,
   placeShips,
   placeStarports,
+  takeCard,
   takeResource,
 } from "../lib/setup";
 import type { Ambition } from "../map-board";
-import { assertEqual } from "./assert";
+import { assert, assertEqual } from "./assert";
 import { beforeEach, describe, skip, test } from "./suite";
 
 const offset = (n: number) => 2 * n * Math.random() - n;
@@ -124,13 +125,14 @@ describe("player board", () => {
       .find((d) => d.getOwningPlayerSlot() === slot)!;
     const box = board.getPosition().add([-2, 9.5, 1]);
     const places = [placeShips, placeAgents, placeCities, placeStarports];
+    const captives = world.getObjectsByTemplateName("ship").length > 60 ? 7 : 6;
     for (const s of [0, 1, 2, 3, 4])
       for (const place of places)
         for (const o of place(s, 1, box.add([offset(1.5), offset(1.5), 0])))
           o.setObjectType(ObjectType.Penetrable);
     assertEqual(ambitions, {
       tycoon: { [slot]: 0 },
-      tyrant: { [slot]: 6 },
+      tyrant: { [slot]: captives },
       warlord: { [slot]: 0 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
@@ -202,6 +204,43 @@ describe("player board", () => {
         empath: { "0": 0 },
       },
       "stacked by addCards",
+    );
+  });
+
+  test("guild", async () => {
+    const court =
+      world.getObjectByTemplateName<Card>("bc") ||
+      world.getObjectByTemplateName<Card>("cc");
+    assert(!!court, "court deck");
+    for (const [i, name] of [
+      "Mining Interest",
+      "Construction Union",
+      "Gatekeepers",
+      "Shipping Interest",
+      "Skirmishers",
+      "Arms Union",
+      "Lattice Spies",
+      "Silver-Tongues",
+      "Sworn Guardians",
+      "Elder Broker",
+    ].entries()) {
+      const c = court
+        .getAllCardDetails()
+        .findIndex((c) => c.name.startsWith(name));
+      const card = court.takeCards(1, true, c)!;
+      takeCard(i % 4, card);
+      await new Promise((resolve) => process.nextTick(resolve));
+    }
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { "0": 1, "1": 1, "2": 1, "3": 1 },
+        tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
+        empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
+      },
+      "guild",
     );
   });
 
