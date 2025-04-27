@@ -320,14 +320,14 @@ describe("campaign fate card", () => {
     // spot checks
     for (const expected of [
       {
-        name: "Steward", // f01
-        cards: [, "Imperial Authority", "Dealmakers"],
+        id: "Steward", // f01
+        name: [, "Imperial Authority", "Dealmakers"],
         metadata: ["20 17 14", , "empath", , , "keeper", "warlord"],
         tags: ["setup"],
       },
       {
-        name: "Magnate", // f03
-        cards: [
+        id: "Magnate", // f03
+        name: [
           ,
           "Merchant League",
           ,
@@ -380,8 +380,8 @@ describe("campaign fate card", () => {
         ],
       },
       {
-        name: "Advocate", // f04
-        cards: [
+        id: "Advocate", // f04
+        name: [
           ,
           "Guild Investigators",
           "Guild Overseers",
@@ -405,14 +405,14 @@ describe("campaign fate card", () => {
         ],
       },
       {
-        name: "Caretaker", // f05
-        cards: [, "Golem Beacon", "Golem Hearth", "Stone-Speakers"],
+        id: "Caretaker", // f05
+        name: [, "Golem Beacon", "Golem Hearth", "Stone-Speakers"],
         metadata: ["18", , , "tycoon", , , , , , , , , "keeper"],
         tags: ["setup", , , , , , , , , , , , , , "action"],
       },
       {
-        name: "Pathfinder", // f09
-        cards: [
+        id: "Pathfinder", // f09
+        name: [
           ,
           "Uncovering Clues",
           "Clues to the Portal",
@@ -429,21 +429,21 @@ describe("campaign fate card", () => {
         tags: ["setup"],
       },
       {
-        name: "Guardian", // f20
-        cards: [, "Green Vault", "Ire of the Tycoons", "Edenguard Ambition"],
+        id: "Guardian", // f20
+        name: [, "Green Vault", "Ire of the Tycoons", "Edenguard Ambition"],
         metadata: ["20 18 16"],
         tags: ["setup"],
       },
-    ]) {
+    ] as const) {
       const fate = fates
         .map((f) => {
           const i = f
             .getAllCardDetails()
-            .findIndex(({ name }) => name === expected.name);
+            .findIndex(({ name }) => name === expected.id);
           if (i >= 0) return f.takeCards(1, true, i);
         })
         .find((d) => d);
-      assert(!!fate, expected.name);
+      assert(!!fate, expected.id);
       fate.setPosition(map.getPosition().add([0, 0, 1]));
       fate.snap();
       (fate as TestableCard).onSnapped.trigger(fate);
@@ -455,21 +455,15 @@ describe("campaign fate card", () => {
       const cards = set.find((d) => d.getTemplateName().match(/^f\d\d$/));
       assert(cards instanceof Card, `${expected.name} cards`);
 
-      for (const [i, name] of expected.cards?.entries() ?? [])
-        if (name) {
-          const n = cards.getCardDetails(i)?.name;
-          assert(!!n?.startsWith(name), `${i} ${n} ≠ ${name}`);
-        }
-      for (const [i, value] of expected.metadata?.entries() ?? [])
-        if (value) {
-          const v = cards.getCardDetails(i)?.metadata;
-          assert(!!v?.startsWith(value), `${i} ${v} ≠ ${value}`);
-        }
-      for (const [i, tag] of expected.tags?.entries() ?? [])
-        if (tag) {
-          const t = cards.getCardDetails(i)?.tags;
-          assert(!!t?.includes(tag), `${i} ${t} ≠ ${tag}`);
-        }
+      for (const f of ["name", "metadata", "tags"] as const)
+        for (const [i, value] of expected[f]?.entries() ?? [])
+          if (value) {
+            const v = cards.getCardDetails(i)![f];
+            if (typeof v === "string")
+              assert(v.startsWith(value), `${i} ${v} ≠ ${value}`);
+            else if (Array.isArray(v))
+              assert(v.includes(value), `${i} ${v} ≠ ${value}`);
+          }
 
       // delete
       for (const o of set) o.destroy();
