@@ -1,7 +1,7 @@
 import type { Card, Color } from "@tabletop-playground/api";
 import { globalEvents, ObjectType, world } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "../initiative-marker";
-import { gainResource, getSystems, placeShips } from "../lib/setup";
+import { getSystems, placeShips, takeResource } from "../lib/setup";
 import type { TestableCard } from "../setup-deck";
 import { assert, assertEqual } from "./assert";
 import { describe, skip, test } from "./suite";
@@ -33,24 +33,24 @@ describe("map board", () => {
 
   test("scoring", async () => {
     // first place
-    gainResource(0, "fuel");
+    takeResource(0, "fuel");
     globalEvents.onAmbitionDeclared.trigger("tycoon");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [5], "first place");
 
     // tie for first -> second place points
-    gainResource(1, "material");
-    gainResource(2, "material");
+    takeResource(1, "material");
+    takeResource(2, "material");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [3, 3, 3], "tie for first -> second place points");
 
     // tie for second -> no points
-    gainResource(0, "fuel");
+    takeResource(0, "fuel");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [5], "tie for second -> no points");
 
     // multiple markers
-    gainResource(3, "relic");
+    takeResource(3, "relic");
     globalEvents.onAmbitionDeclared.trigger("keeper");
     globalEvents.onAmbitionDeclared.trigger("keeper");
     globalEvents.onChapterEnded.trigger();
@@ -69,7 +69,7 @@ describe("map board", () => {
     revealCity(0, "bonus:3");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [9 + 2 + 3, , , 10], "bonus +3");
-    gainResource(1, "fuel");
+    takeResource(1, "fuel");
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [4, 4, , 10], "bonuses only for first");
     // bonus once per ambition, not marker

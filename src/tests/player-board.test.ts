@@ -6,12 +6,12 @@ import {
   ZonePermission,
 } from "@tabletop-playground/api";
 import {
-  gainResource,
   placeAgents,
   placeBlight,
   placeCities,
   placeShips,
   placeStarports,
+  takeResource,
 } from "../lib/setup";
 import type { Ambition } from "../map-board";
 import { assertEqual } from "./assert";
@@ -157,10 +157,10 @@ describe("player board", () => {
 
   test("resources", () => {
     for (let n = 0; n < 2; n++) {
-      gainResource(0, "fuel");
-      gainResource(1, "material");
-      gainResource(2, "relic");
-      gainResource(3, "psionic");
+      takeResource(0, "fuel");
+      takeResource(1, "material");
+      takeResource(2, "relic");
+      takeResource(3, "psionic");
     }
     assertEqual(ambitions, {
       tycoon: { "0": 2, "1": 2, "2": 0, "3": 0 },
@@ -172,8 +172,8 @@ describe("player board", () => {
   });
 
   test("stacked resources", async () => {
-    gainResource(0, "fuel");
-    gainResource(0, "fuel");
+    takeResource(0, "fuel");
+    takeResource(0, "fuel");
     assertEqual(
       ambitions,
       {
@@ -227,12 +227,12 @@ describe("player board", () => {
       [0, 0, 0, 0, 0, 0],
       "permissions changed",
     );
-    gainResource(slot, "fuel");
-    gainResource(slot, "fuel");
-    gainResource(slot, "material");
-    gainResource(slot, "material");
-    gainResource(slot, "weapon");
-    gainResource(slot, "weapon");
+    takeResource(slot, "fuel");
+    takeResource(slot, "fuel");
+    takeResource(slot, "material");
+    takeResource(slot, "material");
+    takeResource(slot, "weapon");
+    takeResource(slot, "weapon");
     assertEqual(
       zones.map((z) => z.getSnapping()),
       [2, 2, 2, 2, 2, 2],

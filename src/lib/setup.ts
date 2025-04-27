@@ -281,7 +281,7 @@ export function placeResources(
   supply?.snap();
   return supply;
 }
-export function gainResource(slot: number, resource: string | undefined) {
+export function takeResource(slot: number, resource: string | undefined) {
   const board = world
     .getObjectsByTemplateName("board")
     .find((d) => d.getOwningPlayerSlot() === slot)!;

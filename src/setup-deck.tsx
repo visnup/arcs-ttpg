@@ -19,7 +19,6 @@ import type { InitiativeMarker } from "./initiative-marker";
 import {
   above,
   blockedResourceSnaps,
-  gainResource,
   getActionDecks,
   getPosition,
   getSystems,
@@ -40,6 +39,7 @@ import {
   resourceAmbitions,
   shuffledSlots,
   systemResource,
+  takeResource,
 } from "./lib/setup";
 
 const refPackageId = _refPackageId;
@@ -286,8 +286,8 @@ function getDefaultPlacement(slot: number) {
     ].map(createPlacement(slot)),
     resources: (systems: SnapPoint[][]) => {
       // gain from first two systems
-      gainResource(slot, systemResource(systems[0][0]));
-      gainResource(slot, systemResource(systems[1][0]));
+      takeResource(slot, systemResource(systems[0][0]));
+      takeResource(slot, systemResource(systems[1][0]));
     },
     abilities: [],
   };
@@ -309,7 +309,7 @@ function getLeader(slot: number) {
     return {
       placements: [a, b, c].map(createPlacement(slot)),
       resources: () => {
-        for (const r of resources.split(" ")) gainResource(slot, r);
+        for (const r of resources.split(" ")) takeResource(slot, r);
       },
       abilities,
     };
