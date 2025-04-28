@@ -4,10 +4,14 @@ type Result =
   | { description: string; ok: true }
   | { description: string; ok: false; skipped: true }
   | { description: string; ok: false; error: Error };
+type TestFunction = {
+  (): Promise<Result>;
+  only?: boolean;
+};
 type Suite = {
   description: string;
   run: () => Promise<void>;
-  tests: (() => Promise<Result>)[];
+  tests: TestFunction[];
   results: Result[];
 };
 let currentSuite: Suite | undefined = undefined;
@@ -21,10 +25,12 @@ export function describe(description: string, fn: () => void) {
       currentSuite.tests = [];
       currentSuite.results = [];
       fn();
-      for (const t of currentSuite.tests) currentSuite.results.push(await t());
+      const only = suite.tests.filter((t) => t.only);
+      for (const t of only.length ? only : currentSuite.tests)
+        currentSuite.results.push(await t());
       before = before.filter((fn) => "keep" in fn && fn.keep);
     },
-    tests: [],
+    tests: [] as TestFunction[],
     results: [],
   };
   suites.push(suite);
@@ -62,6 +68,12 @@ export function test(description: string, fn: () => Promise<void> | void) {
     }
   });
 }
+
+test.only = (description: string, fn: () => Promise<void> | void) => {
+  test(description, fn);
+  if (currentSuite)
+    currentSuite.tests[currentSuite.tests.length - 1].only = true;
+};
 
 export async function run() {
   for (const { run } of suites) {
