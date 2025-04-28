@@ -231,17 +231,60 @@ describe("player board", () => {
       takeCard(i % 4, card);
       await new Promise((resolve) => process.nextTick(resolve));
     }
-    assertEqual(
-      ambitions,
-      {
-        tycoon: { "0": 1, "1": 1, "2": 1, "3": 1 },
-        tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
-        warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
-        keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
-        empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
-      },
-      "guild",
+    assertEqual(ambitions, {
+      tycoon: { "0": 1, "1": 1, "2": 1, "3": 1 },
+      tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
+      empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
+    });
+
+    const fates = world.getObjectByTemplateName("fate");
+    if (!fates) skip("campaign");
+
+    // war profiteering
+    const map = world.getObjectById("map")!;
+    const seals = world.createObjectFromTemplate(
+      "05B97DFF5148801BAA34E382F56F2F1B",
+      map.getPosition().add([0, 0, 1]),
+    ) as Card;
+    const warProfiteer = seals.takeCards(
+      1,
+      true,
+      seals.getAllCardDetails().findIndex((c) => c.name === "War Profiteer"),
+    )!;
+    const warlord = world.getZoneById("zone-ambition-2")!;
+    warProfiteer.setPosition(warlord.getPosition().add([0, 3, 1]));
+    assertEqual(ambitions, {
+      tycoon: { "0": 1, "1": 1, "2": 1, "3": 1 },
+      tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      warlord: { "0": 1, "1": 1, "2": 0, "3": 0 },
+      keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
+      empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
+    });
+    seals.destroy();
+
+    // guild supremacy
+    const f04 = world.createObjectFromTemplate(
+      "FC7BE8EF9150452FA7D03AB1DF994ADA",
+      map.getPosition().add([0, 0, 1]),
+    ) as Card;
+    const guildSupremacy = f04.takeCards(
+      1,
+      true,
+      f04.getAllCardDetails().findIndex((c) => c.name === "Guild Supremacy"),
     );
+    assert(!!guildSupremacy, "Guild Supremacy card");
+    guildSupremacy.flipOrUpright();
+    f04.destroy();
+    globalEvents.onAmbitionShouldTally.trigger();
+    assertEqual(ambitions, {
+      tycoon: { "0": 2, "1": 2, "2": 2, "3": 2 },
+      tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      warlord: { "0": 2, "1": 2, "2": 0, "3": 0 },
+      keeper: { "0": 2, "1": 2, "2": 0, "3": 0 },
+      empath: { "0": 0, "1": 0, "2": 2, "3": 2 },
+    });
   });
 
   test("snap points act local", async () => {
