@@ -1,6 +1,7 @@
 import type { Button, VerticalBox } from "@tabletop-playground/api";
 import {
   refObject as _refObject,
+  Rotator,
   UIElement,
   Vector,
   world,
@@ -23,7 +24,8 @@ const reset = createReset(refObject);
 
   // UI
   const ui = Object.assign(new UIElement(), {
-    position: new Vector(0, 0, 1),
+    position: new Vector(0, 0, 24),
+    rotation: new Rotator(70, 0, 0),
     widget: render(
       <verticalbox>
         <button onClick={() => run().then(updateButtons)}>Run all</button>
