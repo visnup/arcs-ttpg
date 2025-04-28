@@ -9,6 +9,7 @@ import {
   placeAgents,
   placeBlight,
   placeCities,
+  placeResources,
   placeShips,
   placeStarports,
   takeCard,
@@ -154,6 +155,52 @@ describe("player board", () => {
         empath: { ...ambitions.empath, [slot]: 0 },
       },
       "after discard",
+    );
+
+    const fates = world.getObjectByTemplateName("fate");
+    if (!fates) skip("campaign");
+
+    // green vault
+    for (const r of ["fuel", "material", "weapon", "relic", "psionic"])
+      placeResources(
+        r,
+        1,
+        box.add([offset(0.5), offset(0.5), 0]),
+      )!.setObjectType(ObjectType.Penetrable);
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { ...ambitions.tycoon, [slot]: 0 },
+        tyrant: { ...ambitions.tyrant, [slot]: 0 },
+        warlord: { ...ambitions.warlord, [slot]: 0 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+      },
+      "still 0",
+    );
+    const f20 = world.createObjectFromTemplate(
+      "AF0F0DF6A1A34341BC6CF2087592C8B2",
+      world.getObjectById("map")!.getPosition().add([0, 0, 1]),
+    ) as Card;
+    const greenVault = f20.takeCards(
+      1,
+      true,
+      f20
+        .getAllCardDetails()
+        .findIndex((c) => c.name.startsWith("Green Vault")),
+    );
+    assert(!!greenVault, "green vault found");
+    takeCard(slot, greenVault);
+    assertEqual(
+      ambitions,
+      {
+        tycoon: { ...ambitions.tycoon, [slot]: 2 },
+        tyrant: { ...ambitions.tyrant, [slot]: 2 },
+        warlord: { ...ambitions.warlord, [slot]: 0 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+      },
+      "green vault effect",
     );
   });
 
