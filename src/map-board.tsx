@@ -33,7 +33,7 @@ refObject.setId("map");
 localSnaps(refObject);
 
 const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
-export type Ambition = (typeof ambitions)[number];
+export type Ambition = (typeof ambitions)[number] | "edenguard" | "blightkin";
 
 // Map zone
 const mapZoneId = `zone-map-${refObject.getId()}`;

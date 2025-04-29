@@ -15,10 +15,14 @@ const refObject = _refObject;
 localSnaps(refObject);
 
 // globalEvents
-globalEvents.onAmbitionShouldTally.add(updateAmbitions);
+globalEvents.onAmbitionShouldTally.add(onAmbitionShouldTally);
 refObject.onDestroyed.add(() =>
-  globalEvents.onAmbitionShouldTally.remove(updateAmbitions),
+  globalEvents.onAmbitionShouldTally.remove(onAmbitionShouldTally),
 );
+function onAmbitionShouldTally(ambition?: Ambition) {
+  if (ambition === "blightkin" || ambition === "edenguard") return;
+  updateAmbitions();
+}
 
 // Board zone
 const p = refObject.getPosition();
@@ -167,13 +171,13 @@ function updateAmbitions() {
     )
     ? 2
     : 1;
-  const courtSuits: (Ambition | undefined)[] = [
+  const courtSuits = [
     "tycoon",
     "tycoon",
     warProfiteer ? "warlord" : undefined,
     "empath",
     "keeper",
-  ];
+  ] as const;
   for (const obj of courtZone.getOverlappingObjects()) {
     switch (obj.getTemplateName()) {
       case "bc": {
@@ -215,7 +219,8 @@ function updateAmbitions() {
         if (!(obj instanceof Card)) break;
         const suit = obj.getCardDetails().metadata;
         if (suit === "warlord" && !warProfiteer) continue;
-        if (suit && suit in ambitions) ambitions[suit as Ambition] += p;
+        if (suit && suit in ambitions)
+          ambitions[suit as keyof typeof ambitions] += p;
       }
     }
   }
