@@ -60,8 +60,8 @@ describe("player board", () => {
       warlord: { [slot]: blight ? 16 : 12 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
-      edenguard: { [slot]: 0 },
-      blightkin: { [slot]: 0 },
+      edenguard: {},
+      blightkin: {},
     });
 
     // discard
@@ -78,8 +78,8 @@ describe("player board", () => {
         warlord: { ...ambitions.warlord, [slot]: 0 },
         keeper: { ...ambitions.keeper, [slot]: 0 },
         empath: { ...ambitions.empath, [slot]: 0 },
-        edenguard: { ...ambitions.edenguard, [slot]: 0 },
-        blightkin: { ...ambitions.blightkin, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "after discard",
     );
@@ -98,13 +98,13 @@ describe("player board", () => {
     assertEqual(
       ambitions,
       {
-        tycoon: { [slot]: 0 },
-        tyrant: { [slot]: 0 },
-        warlord: { [slot]: 2 },
-        keeper: { [slot]: 0 },
-        empath: { [slot]: 0 },
-        edenguard: { [slot]: 0 },
-        blightkin: { [slot]: 0 },
+        tycoon: { ...ambitions.tycoon, [slot]: 0 },
+        tyrant: { ...ambitions.tyrant, [slot]: 0 },
+        warlord: { ...ambitions.warlord, [slot]: 2 },
+        keeper: { ...ambitions.keeper, [slot]: 0 },
+        empath: { ...ambitions.empath, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "stacked by addCards",
     );
@@ -123,8 +123,8 @@ describe("player board", () => {
         warlord: { ...ambitions.warlord, [slot]: 0 },
         keeper: { ...ambitions.keeper, [slot]: 0 },
         empath: { ...ambitions.empath, [slot]: 0 },
-        edenguard: { ...ambitions.edenguard, [slot]: 0 },
-        blightkin: { ...ambitions.blightkin, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "after discard",
     );
@@ -147,8 +147,8 @@ describe("player board", () => {
       warlord: { [slot]: 0 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
-      edenguard: { [slot]: 0 },
-      blightkin: { [slot]: 0 },
+      edenguard: {},
+      blightkin: {},
     });
 
     // discard
@@ -165,8 +165,8 @@ describe("player board", () => {
         warlord: { ...ambitions.warlord, [slot]: 0 },
         keeper: { ...ambitions.keeper, [slot]: 0 },
         empath: { ...ambitions.empath, [slot]: 0 },
-        edenguard: { ...ambitions.edenguard, [slot]: 0 },
-        blightkin: { ...ambitions.blightkin, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "after discard",
     );
@@ -189,8 +189,8 @@ describe("player board", () => {
         warlord: { ...ambitions.warlord, [slot]: 0 },
         keeper: { ...ambitions.keeper, [slot]: 0 },
         empath: { ...ambitions.empath, [slot]: 0 },
-        edenguard: { ...ambitions.edenguard, [slot]: 0 },
-        blightkin: { ...ambitions.blightkin, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "still 0",
     );
@@ -215,8 +215,8 @@ describe("player board", () => {
         warlord: { ...ambitions.warlord, [slot]: 0 },
         keeper: { ...ambitions.keeper, [slot]: 0 },
         empath: { ...ambitions.empath, [slot]: 0 },
-        edenguard: { ...ambitions.edenguard, [slot]: 0 },
-        blightkin: { ...ambitions.blightkin, [slot]: 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "green vault effect",
     );
@@ -235,8 +235,8 @@ describe("player board", () => {
       warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
       keeper: { "0": 0, "1": 0, "2": 2, "3": 0 },
       empath: { "0": 0, "1": 0, "2": 0, "3": 2 },
-      edenguard: { "0": 0, "1": 0, "2": 0, "3": 0 },
-      blightkin: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      edenguard: {},
+      blightkin: {},
     });
   });
 
@@ -251,8 +251,8 @@ describe("player board", () => {
         warlord: { "0": 0 },
         keeper: { "0": 0 },
         empath: { "0": 0 },
-        edenguard: { "0": 0 },
-        blightkin: { "0": 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "unstacked",
     );
@@ -266,13 +266,13 @@ describe("player board", () => {
     assertEqual(
       ambitions,
       {
-        tycoon: { "0": 2 },
-        tyrant: { "0": 0 },
-        warlord: { "0": 0 },
-        keeper: { "0": 0 },
-        empath: { "0": 0 },
-        edenguard: { "0": 0 },
-        blightkin: { "0": 0 },
+        tycoon: { "0": 2, "1": 0, "2": 0, "3": 0 },
+        tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        keeper: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        empath: { "0": 0, "1": 0, "2": 0, "3": 0 },
+        edenguard: {},
+        blightkin: {},
       },
       "stacked by addCards",
     );
@@ -308,8 +308,8 @@ describe("player board", () => {
       warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
       keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
       empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
-      edenguard: { "0": 0, "1": 0, "2": 0, "3": 0 },
-      blightkin: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      edenguard: {},
+      blightkin: {},
     });
 
     const fates = world.getObjectByTemplateName("fate");
@@ -334,8 +334,8 @@ describe("player board", () => {
       warlord: { "0": 1, "1": 1, "2": 0, "3": 0 },
       keeper: { "0": 1, "1": 1, "2": 0, "3": 0 },
       empath: { "0": 0, "1": 0, "2": 1, "3": 1 },
-      edenguard: { "0": 0, "1": 0, "2": 0, "3": 0 },
-      blightkin: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      edenguard: {},
+      blightkin: {},
     });
     seals.destroy();
 
@@ -359,8 +359,8 @@ describe("player board", () => {
       warlord: { "0": 2, "1": 2, "2": 0, "3": 0 },
       keeper: { "0": 2, "1": 2, "2": 0, "3": 0 },
       empath: { "0": 0, "1": 0, "2": 2, "3": 2 },
-      edenguard: { "0": 0, "1": 0, "2": 0, "3": 0 },
-      blightkin: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      edenguard: {},
+      blightkin: {},
     });
   });
 
