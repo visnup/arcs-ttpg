@@ -61,8 +61,8 @@ export class AmbitionSection {
     if (this.offset === 1 || this.offset === 2)
       this.zone.onEndOverlap.add(this.returnAmbitions);
     if (this.offset === 2) {
-      this.zone.onBeginOverlap.add(this.shouldTally);
-      this.zone.onEndOverlap.add(this.shouldTally);
+      this.zone.onBeginOverlap.add(shouldTally);
+      this.zone.onEndOverlap.add(shouldTally);
     }
     this.refObject.onDestroyed.add(() => this.zone.destroy());
     this.load();
@@ -158,10 +158,6 @@ export class AmbitionSection {
     else if (this.offset === 2) returnZone("zone-player");
   };
 
-  shouldTally = () => {
-    globalEvents.onAmbitionShouldTally.trigger();
-  };
-
   save() {
     this.refObject.setSavedData(
       JSON.stringify([...this.tallies]),
@@ -175,4 +171,8 @@ export class AmbitionSection {
     ) as [number, number][])
       this.setTally(slot, value);
   }
+}
+
+function shouldTally() {
+  globalEvents.onAmbitionShouldTally.trigger();
 }
