@@ -1,6 +1,18 @@
-import { globalEvents, world, type GameObject } from "@tabletop-playground/api";
+import {
+  globalEvents,
+  refCard,
+  world,
+  type GameObject,
+} from "@tabletop-playground/api";
+import { AmbitionSection } from "./lib/ambition-section";
 import { sortedIndex } from "./lib/sorted-index";
 import { type Ambition } from "./map-board";
+
+if (refCard.getStackSize() === 1) {
+  const section = new AmbitionSection(refCard, "edenguard");
+  section.setTally(0, 2);
+  section.setTally(1, 1);
+}
 
 globalEvents.onAmbitionShouldTally.add((ambition?: Ambition) => {
   if (ambition === "edenguard" || ambition === "blightkin") tallyControl();
@@ -11,16 +23,16 @@ globalEvents.onAmbitionShouldTally.add((ambition?: Ambition) => {
 
 // Edenguard: Control the most Fuel and Material planets. (The
 // First Regent controls Empire-controlled systems.)
-const edenguard = new Set([
-  "1.2",
-  "1.3",
-  "3.1",
-  "3.2",
-  "4.2",
-  "4.3",
-  "6.1",
-  "6.2",
-]);
+// const edenguard = new Set([
+//   "1.2",
+//   "1.3",
+//   "3.1",
+//   "3.2",
+//   "4.2",
+//   "4.3",
+//   "6.1",
+//   "6.2",
+// ]);
 // Blightkin: Control the most systems with fresh Blight. (The First Regent
 // controls Empire-controlled systems.)
 function tallyControl() {
