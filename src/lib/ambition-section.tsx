@@ -17,37 +17,45 @@ globalEvents.onRoundStarted.add(() => (chapterEnded = false));
 
 export class AmbitionSection {
   refObject: GameObject;
-  offset: number;
+  offset: number | string;
   x: number;
   tallies = new Map<number, number>();
   widget = new HorizontalBox();
   position: Vector;
   zone: Zone;
 
-  constructor(refObject: GameObject, offset: number) {
+  constructor(refObject: GameObject, offset: number | string) {
     this.refObject = refObject;
     this.offset = offset;
     this.widget.setChildDistance(15);
     const size = this.refObject.getSize();
+    this.position =
+      typeof this.offset === "string"
+        ? new Vector((this.x = -size.x / 2 + 0.2), 0, size.z + 0.32)
+        : new Vector(
+            (this.x = size.x / 2 - (13.2 + this.offset * 5.3)),
+            size.y / 2 - 5.5,
+            size.z + 0.32,
+          );
     this.refObject.addUI(
       Object.assign(new UIElement(), {
-        position: (this.position = new Vector(
-          (this.x = size.x / 2 - (13.2 + offset * 5.3)),
-          size.y / 2 - 5.5,
-          size.z + 0.32,
-        )),
+        position: this.position,
         scale: 0.15,
         widget: this.widget,
       }),
     );
-    this.zone = world.createZone(
-      this.refObject
-        .getPosition()
-        .add(this.position)
-        .add([4 / 2, 0, 0]),
-    );
+    this.zone =
+      world.getZoneById(`zone-ambition-${offset}`) ??
+      world.createZone(
+        this.refObject
+          .getPosition()
+          .add(this.position)
+          .add([4 / 2, 0, 0]),
+      );
     this.zone.setId(`zone-ambition-${offset}`);
-    this.zone.setScale([4.3, 10, 2]);
+    this.zone.setScale(
+      typeof this.offset === "string" ? [4.3, 7, 2] : [4.3, 10, 2],
+    );
     this.zone.onBeginOverlap.add(this.render);
     this.zone.onEndOverlap.add(this.render);
     if (this.offset === 1 || this.offset === 2)
