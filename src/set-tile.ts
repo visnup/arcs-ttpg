@@ -8,45 +8,79 @@ import { AmbitionSection } from "./lib/ambition-section";
 import { sortedIndex } from "./lib/sorted-index";
 import { type Ambition } from "./map-board";
 
-if (refCard.getStackSize() === 1) {
-  const section = new AmbitionSection(refCard, "edenguard");
-  section.setTally(0, 2);
-  section.setTally(1, 1);
+let section: AmbitionSection | undefined;
+let ambition: Ambition | undefined;
+
+refCard.onRemoved.add((card) => setup(card));
+setup(refCard);
+
+function setup(card: typeof refCard) {
+  if (card.getStackSize() > 1) return;
+  const { metadata } = card.getCardDetails();
+  ambition = metadata === "f20" ? "edenguard" : "blightkin";
+  section = new AmbitionSection(card, ambition);
 }
 
-globalEvents.onAmbitionShouldTally.add((ambition?: Ambition) => {
-  if (ambition === "edenguard" || ambition === "blightkin") tallyControl();
+const edenguard = new Set([
+  "1.2",
+  "1.3",
+  "3.1",
+  "3.2",
+  "4.2",
+  "4.3",
+  "6.1",
+  "6.2",
+]);
+globalEvents.onAmbitionShouldTally.add((a?: Ambition) => {
+  if (section && a === ambition) {
+    const control = tallyControl();
+    if (ambition === "edenguard") {
+      // Edenguard: Control the most Fuel and Material planets. (The
+      // First Regent controls Empire-controlled systems.)
+      const counts = control
+        .filter(([system]) => edenguard.has(system))
+        .map(([, slot]) => slot)
+        .reduce(
+          (acc, slot) => ((acc[slot] = (acc[slot] ?? 0) + 1), acc),
+          {} as Record<number, number>,
+        );
+      for (const slot of [0, 1, 2, 3, 4])
+        globalEvents.onAmbitionTallied.trigger(
+          "edenguard",
+          +slot,
+          counts[slot],
+        );
+    } else if (ambition === "blightkin") {
+      // Blightkin: Control the most systems with fresh Blight. (The First Regent
+      // controls Empire-controlled systems.)
+    }
+    // globalEvents.onAmbitionTallied.trigger();
+  }
 });
-// globalEvents.onAmbitionTallied.add((ambition, slot, value) =>
-//   sections[ambition].setTally(slot, value),
-// );
+globalEvents.onAmbitionTallied.add((a, slot, value) => {
+  if (section && a === ambition) section.setTally(slot, value);
+});
 
-// Edenguard: Control the most Fuel and Material planets. (The
-// First Regent controls Empire-controlled systems.)
-// const edenguard = new Set([
-//   "1.2",
-//   "1.3",
-//   "3.1",
-//   "3.2",
-//   "4.2",
-//   "4.3",
-//   "6.1",
-//   "6.2",
-// ]);
-// Blightkin: Control the most systems with fresh Blight. (The First Regent
-// controls Empire-controlled systems.)
 function tallyControl() {
   const tallies = new Map<string, number[]>();
   for (const ship of world.getObjectsByTemplateName("ship")) {
-    if (Math.abs(ship.getRotation().roll) < 1) continue;
+    if (Math.abs(ship.getRotation().roll) > 1) continue;
     const system = getSystem(ship);
     if (!system) continue;
     const t = tallies.get(system) ?? [0, 0, 0, 0];
     t[ship.getOwningPlayerSlot()] = (t[ship.getOwningPlayerSlot()] ?? 0) + 1;
     tallies.set(system, t);
   }
-  console.log(JSON.stringify([...tallies]));
-  // globalEvents.onAmbitionTallied.trigger();
+  // TODO The First Regent controls Empire-controlled systems.
+  return [...tallies]
+    .map(([system, tally]) => {
+      const max = Math.max(...tally);
+      const control = tally
+        .map((v, i) => (v === max ? i : -1))
+        .filter((i) => i !== -1);
+      return [system, control.length === 1 ? control[0] : null] as const;
+    })
+    .filter(([, slot]) => slot !== null) as [string, number][];
 }
 
 const corners = [

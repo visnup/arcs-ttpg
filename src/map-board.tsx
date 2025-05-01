@@ -80,7 +80,7 @@ const sections = Object.fromEntries(
 
 globalEvents.onAmbitionDeclared.add((ambition) => sections[ambition].declare());
 globalEvents.onAmbitionTallied.add((ambition, slot, value) =>
-  sections[ambition].setTally(slot, value),
+  sections[ambition]?.setTally(slot, value),
 );
 globalEvents.onChapterEnded.add(() => previewScores(true));
 globalEvents.onActionsDealt.add(() => previewScores(false));

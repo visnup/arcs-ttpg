@@ -27,6 +27,7 @@ function toggle(obj: GameObject) {
   const delta = center.subtract(obj.getExtentCenter(true, false));
   obj.setPosition(obj.getPosition().add(delta));
   obj.snapToGround();
+  onAmbitionShouldTally();
 }
 
 // cmd-r to orient ships
