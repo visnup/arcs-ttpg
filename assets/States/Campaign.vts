@@ -773,6 +773,47 @@
 				"cursorHidden": "None",
 				"interaction": "All"
 			},
+			"uniqueId": "zone-dice-rqj",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 0,
+					"y": -75,
+					"z": 88.57
+				},
+				"scale3D": {
+					"x": 19,
+					"y": 19,
+					"z": 6.5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
 			"uniqueId": "zone-court-2le-0",
 			"transform": {
 				"rotation": {
@@ -2474,47 +2515,6 @@
 				}
 			},
 			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-dice-rqj",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 0,
-					"y": -75,
-					"z": 88.57
-				},
-				"scale3D": {
-					"x": 19,
-					"y": 19,
-					"z": 6.5
-				}
-			},
-			"bCanBeDamaged": true
 		}
 	],
 	"labels": [],
@@ -3023,8 +3023,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": -0.01,
+					"x": 1,
+					"y": 0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -9443,67 +9443,6 @@
 			"bCanBeDamaged": false
 		},
 		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -16.7,
-					"y": -44.19,
-					"z": 86.827
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 172,
-				"g": 255,
-				"r": 159,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType5",
-			"objectName": "",
-			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
-			"collisionType": "CB_Regular",
-			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "note.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "qph",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
@@ -9635,7 +9574,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9957,6 +9896,67 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": -0.018,
+					"y": 0.001,
+					"z": 0.048,
+					"w": 0.999
+				},
+				"translation": {
+					"x": -14.658,
+					"y": -47.272,
+					"z": 86.972
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 172,
+				"g": 255,
+				"r": 159,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType5",
+			"objectName": "",
+			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
+			"collisionType": "CB_Regular",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "note.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "qph",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -11738,12 +11738,12 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
-					"z": -0.05,
-					"w": 0.999
+					"z": 0,
+					"w": 1
 				},
 				"translation": {
-					"x": -10,
-					"y": -54,
+					"x": 9.682,
+					"y": -53.921,
 					"z": 87.025
 				},
 				"scale3D": {
@@ -12101,67 +12101,6 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -24.98,
-					"y": -49.568,
-					"z": 86.827
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 172,
-				"g": 255,
-				"r": 159,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType5",
-			"objectName": "",
-			"objectDescription": "Timer\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  and not enforced",
-			"collisionType": "CB_Regular",
-			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "note.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "mlo",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -12721,6 +12660,67 @@
 			],
 			"objectGroupId": -1,
 			"ownerIndex": 0,
+			"lightsOn": true,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -14.633,
+					"y": -55.238,
+					"z": 87.025
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 172,
+				"g": 255,
+				"r": 159,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType5",
+			"objectName": "",
+			"objectDescription": "Timer\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  and not enforced",
+			"collisionType": "CB_Regular",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "note.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "mlo",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
@@ -18599,7 +18599,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.992,
+					"x": -33.991,
 					"y": -82,
 					"z": 86.972
 				},

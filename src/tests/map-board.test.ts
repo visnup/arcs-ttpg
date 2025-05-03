@@ -128,6 +128,31 @@ describe("map board", () => {
     globalEvents.onChapterEnded.trigger();
     assertEqual(getScores(), [2, 3], "blocked winning tyrant");
   });
+
+  test("turns", () => {
+    // no turn markers
+    // deal
+    // turn markers and start button
+    // start -> pass initiative
+    // play card -> end turn
+    // end turn -> next
+    // play card
+    // play card -> catch up turn
+    // play card, end turn -> discard, pass initiative
+  });
+
+  test("p1 play starts round", () => {
+    // deal
+    // turn markers and start button
+    // play card -> start removed
+  });
+
+  test("start auto advances", () => {
+    // set timer low
+    // deal
+    // turn markers and start
+    // wait timer -> pass initiative
+  });
 });
 
 const slot = (color: Color) =>

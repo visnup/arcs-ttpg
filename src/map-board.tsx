@@ -299,7 +299,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
 const colors = ["Yellow", "Blue", "Red", "White"];
 const ding = world.importSound("66136__aji__ding30603-spedup.mp3");
 class Turns {
-  #turn: number = -1;
+  #turn = -2;
   slots: number[] = [];
   turnStart = 0;
   dinged = true;
@@ -308,7 +308,17 @@ class Turns {
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
   rounds: number = 0;
-  bars = [useRef<ProgressBar>(), useRef<ProgressBar>()];
+  bars = [useRef<ProgressBar>(), useRef<ProgressBar>(), useRef<ProgressBar>()];
+  startRoundButton = render(
+    <contentbutton onClick={() => this.startRound()}>
+      <verticalbox>
+        <text size={48} font="NeueKabelW01-Book.ttf" fontPackage={refPackageId}>
+          {" Start "}
+        </text>
+        <progressbar value={0} ref={this.bars[0]} />
+      </verticalbox>
+    </contentbutton>,
+  );
   passButton = render(
     <contentbutton
       onClick={() => {
@@ -322,7 +332,7 @@ class Turns {
         <text size={48} font="NeueKabelW01-Book.ttf" fontPackage={refPackageId}>
           {" Pass Initiative "}
         </text>
-        <progressbar value={0} ref={this.bars[0]} />
+        <progressbar value={0} ref={this.bars[1]} />
       </verticalbox>
     </contentbutton>,
   );
@@ -332,7 +342,7 @@ class Turns {
         <text size={48} font="NeueKabelW01-Book.ttf" fontPackage={refPackageId}>
           {" End Turn "}
         </text>
-        <progressbar value={0} ref={this.bars[1]} />
+        <progressbar value={0} ref={this.bars[2]} />
       </verticalbox>
     </contentbutton>,
   );
@@ -353,10 +363,21 @@ class Turns {
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
     });
+    const declared = refObject
+      .getAllSnapPoints()
+      .find((p) => p.getTags().includes("declared"))!;
+    refObject.addUI(
+      Object.assign(new UIElement(), {
+        position: declared.getLocalPosition().add([0, -6, 0]),
+        rotation: new Rotator(0, -90, 0),
+        scale: 0.15,
+        widget: (this.widgets[-1] = render(<horizontalbox />) as HorizontalBox),
+      }),
+    );
 
     // Register listeners
     globalEvents.onChatMessage.add(this.onChatMessage);
-    globalEvents.onActionsDealt.add(() => this.startRound());
+    globalEvents.onActionsDealt.add(() => this.startRound(-1));
     globalEvents.onActionsDiscarded.add(() => this.startRound());
     globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
@@ -388,7 +409,11 @@ class Turns {
 
   onSnappedTo = (obj: GameObject, player: Player, p: SnapPoint) => {
     // Don't react if we haven't started
-    if (this.turn < 0) return;
+    if (this.turn < -1) return;
+    if (this.turn === -1) {
+      this.widgets[-1].removeAllChildren();
+      this.turn = 0;
+    }
     // Card led: switch buttons
     if (p === this.snaps[0]) {
       this.widgets[0].removeChildAt(1);
@@ -430,8 +455,7 @@ class Turns {
   }
 
   startRound(turn = 0, slots?: number[]) {
-    for (const w of this.widgets) w.removeAllChildren();
-    // Show player turns
+    for (const w of [...this.widgets, this.widgets[-1]]) w.removeAllChildren();
     this.slots =
       slots ??
       world.getSlots(
@@ -446,6 +470,8 @@ class Turns {
     )
       return;
     globalEvents.onRoundStarted.trigger(this.slots);
+
+    // Show player turns
     for (const [i, slot] of this.slots.entries())
       this.widgets[i].addChild(
         render(
@@ -456,12 +482,16 @@ class Turns {
       );
 
     // Pass/Next button
-    this.widgets[turn].addChild(
-      turn === 0 && !this.snaps[0].getSnappedObject()
-        ? this.passButton
-        : this.nextButton,
-    );
-    this.nextButton.setEnabled(!!this.snaps[turn].getSnappedObject());
+    if (turn === -1) {
+      this.widgets[-1].addChild(this.startRoundButton);
+    } else if (turn >= 0) {
+      this.widgets[turn].addChild(
+        turn === 0 && !this.snaps[0].getSnappedObject()
+          ? this.passButton
+          : this.nextButton,
+      );
+      this.nextButton.setEnabled(!!this.snaps[turn].getSnappedObject());
+    }
 
     this.turn = turn;
   }
@@ -493,6 +523,7 @@ class Turns {
   }
 
   endRound() {
+    // 5 chapters * 8 cards (6 + 2 extra) * 2 (double it for good measure)
     if (this.rounds > 5 * 8 * 2) {
       this.rounds = 0;
       return console.warn("Infinite endRound loop detected");
@@ -504,7 +535,7 @@ class Turns {
   endChapter() {
     if (this.widgets[this.turn]?.getNumChildren() >= 2)
       this.widgets[this.turn].removeChildAt(1);
-    this.turn = -1;
+    this.turn = -2;
   }
 
   showMessage() {
@@ -516,7 +547,7 @@ class Turns {
 
   save() {
     refObject.setSavedData(
-      this.turn === -1
+      this.turn === -2
         ? ""
         : JSON.stringify({
             turn: this.turn,
