@@ -437,6 +437,7 @@ class Turns {
         ding.play();
         this.dinged = true;
       }
+      if (this.turn === -1) this.startRound();
     } else {
       this.dinged = false;
     }
