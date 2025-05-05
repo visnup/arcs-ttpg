@@ -573,5 +573,7 @@ const turns = new Turns();
 
 export type TestableBoard = GameObject & {
   onSnappedTo: { trigger: typeof turns.onSnappedTo };
+  turns: typeof turns;
 };
 (refObject as TestableBoard).onSnappedTo.trigger = turns.onSnappedTo;
+(refObject as TestableBoard).turns = turns;

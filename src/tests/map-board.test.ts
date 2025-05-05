@@ -1,8 +1,24 @@
-import type { Card, Color } from "@tabletop-playground/api";
-import { globalEvents, ObjectType, world } from "@tabletop-playground/api";
+import type {
+  Card,
+  CardHolder,
+  Color,
+  SnapPoint,
+} from "@tabletop-playground/api";
+import {
+  ContentButton,
+  globalEvents,
+  HorizontalBox,
+  ObjectType,
+  ProgressBar,
+  Text,
+  VerticalBox,
+  world,
+} from "@tabletop-playground/api";
+import type { TestableCard as TestableActionCard } from "../action-deck";
 import type { InitiativeMarker } from "../initiative-marker";
 import { getSystems, placeShips, takeResource } from "../lib/setup";
-import type { TestableCard } from "../setup-deck";
+import type { TestableBoard } from "../map-board";
+import type { TestableCard as TestableSetupCard } from "../setup-deck";
 import { assert, assertEqual } from "./assert";
 import { describe, skip, test } from "./suite";
 
@@ -102,10 +118,10 @@ describe("map board", () => {
     const setupDeck = world
       .getObjectsByTemplateName<Card>("setup")
       .sort((a, b) => a.getPosition().x - b.getPosition().x)[0] as
-      | TestableCard
+      | TestableSetupCard
       | undefined;
     if (!setupDeck) skip("no setup deck");
-    const setup = setupDeck.takeCards()! as TestableCard;
+    const setup = setupDeck.takeCards()! as TestableSetupCard;
     setup.setPosition(setupDeck.getPosition().add([10, 0, 0]));
     setupDeck.onRemoved.trigger(setup);
     // reset initiative
@@ -129,29 +145,235 @@ describe("map board", () => {
     assertEqual(getScores(), [2, 3], "blocked winning tyrant");
   });
 
-  test("turns", () => {
+  function getTurnUI() {
+    const map = world.getObjectById("map")!;
+    const widgets = map
+      .getUIs()
+      .filter((d) => d.position.y < 0)
+      .sort((a, b) => a.position.x - b.position.x)
+      .map((d) => d.widget);
+    const colors = new Map(
+      [0, 1, 2, 3].map((c) => [
+        world.getSlotColor(c).saturate(0.8).toString(),
+        c,
+      ]),
+    );
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return widgets.map(function getWidgetState(w): any {
+      if (w instanceof HorizontalBox || w instanceof VerticalBox)
+        return w
+          .getAllChildren()
+          .map(getWidgetState)
+          .filter((d) => d);
+      if (w instanceof ContentButton) return getWidgetState(w.getChild()!);
+      if (w instanceof ProgressBar) return ["progress", w.getProgress()];
+      if (w instanceof Text)
+        return ["text", w.getText(), colors.get(w.getTextColor().toString())];
+    });
+  }
+
+  async function playCard(
+    card: Card,
+    snap: SnapPoint,
+    offset: [number, number, number] = [0, 0, 1],
+  ) {
+    card.setPosition(snap.getGlobalPosition().add(offset));
+    card.snap();
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    (card as TestableActionCard).onReleased.trigger(card);
+    (world.getObjectById("map") as TestableBoard).onSnappedTo.trigger(
+      card,
+      world.getPlayerBySlot(0)!,
+      snap,
+    );
+  }
+
+  test("turns", async () => {
+    const map = world.getObjectById("map") as TestableBoard;
     // no turn markers
+    assertEqual(getTurnUI(), [[], [], [], [], []]);
+
     // deal
+    const decks = world
+      .getObjectsByTemplateName<Card>("action")
+      .sort((a, b) => b.getStackSize() - a.getStackSize());
+
+    // Deal known-ordered cards
+    for (const slot of [1, 2, 3, 0]) decks[0].deal(6, [slot], false, true);
+    decks[1].deal(4, [0], false, true);
+
     // turn markers and start button
+    assertEqual(getTurnUI(), [
+      [
+        [
+          ["text", " Start ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 0]],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
     // start -> pass initiative
+    map.turns.startRound();
+    assertEqual(getTurnUI(), [
+      [],
+      [
+        ["text", "■", 0],
+        [
+          ["text", " Pass Initiative ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
     // play card -> end turn
-    // end turn -> next
+    const holders = world
+      .getObjectsByTemplateName<CardHolder>("cards")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
+    const snaps = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
+      .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+    const lead = holders[0].removeAt(0)!;
+    await playCard(lead, snaps[0]);
+    assertEqual(getTurnUI(), [
+      [],
+      [
+        ["text", "■", 0],
+        [
+          ["text", " End Turn ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
+    // end turn -> next player
+    map.turns.nextTurn();
+    assertEqual(getTurnUI(), [
+      [],
+      [["text", "■", 0]],
+      [
+        ["text", "■", 1],
+        [
+          ["text", " End Turn ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
     // play card
+    await playCard(holders[1].removeAt(0)!, snaps[1]);
+    assertEqual(getTurnUI(), [
+      [],
+      [["text", "■", 0]],
+      [
+        ["text", "■", 1],
+        [
+          ["text", " End Turn ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
     // play card -> catch up turn
+    await playCard(holders[2].removeAt(0)!, snaps[2]);
+    assertEqual(getTurnUI(), [
+      [],
+      [["text", "■", 0]],
+      [["text", "■", 1]],
+      [
+        ["text", "■", 2],
+        [
+          ["text", " End Turn ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 3]],
+    ]);
+
     // play card, end turn -> discard, pass initiative
+    await playCard(holders[3].removeAt(0)!, snaps[3]);
+    map.turns.nextTurn();
+    assertEqual(getTurnUI(), [
+      [],
+      [["text", "■", 0]],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assertEqual(getTurnUI(), [
+      [],
+      [
+        ["text", "■", 0],
+        [
+          ["text", " Pass Initiative ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
   });
 
-  test("p1 play starts round", () => {
-    // deal
-    // turn markers and start button
-    // play card -> start removed
-  });
+  test("start auto advances", async () => {
+    const map = world.getObjectById("map") as TestableBoard;
 
-  test("start auto advances", () => {
     // set timer low
-    // deal
-    // turn markers and start
+    map.turns.turnTime = 500;
+
+    const decks = world
+      .getObjectsByTemplateName<Card>("action")
+      .sort((a, b) => b.getStackSize() - a.getStackSize());
+
+    // Deal known-ordered cards
+    for (const slot of [1, 2, 3, 0]) decks[0].deal(6, [slot], false, true);
+    decks[1].deal(4, [0], false, true);
+
+    // turn markers and start button
+    assertEqual(getTurnUI(), [
+      [
+        [
+          ["text", " Start ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 0]],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
+
     // wait timer -> pass initiative
+    await new Promise((resolve) => setTimeout(resolve, 2100));
+    assertEqual(getTurnUI(), [
+      [],
+      [
+        ["text", "■", 0],
+        [
+          ["text", " Pass Initiative ", null],
+          ["progress", 0],
+        ],
+      ],
+      [["text", "■", 1]],
+      [["text", "■", 2]],
+      [["text", "■", 3]],
+    ]);
   });
 });
 
