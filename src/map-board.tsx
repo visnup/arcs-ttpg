@@ -446,19 +446,21 @@ class Turns {
   };
 
   tickBars = () => {
-    const paused =
-      this.pauseTime + (this.pauseStart ? Date.now() - this.pauseStart : 0);
-    const elapsed = Date.now() - this.turnStart - paused;
+    if (this.pauseStart || this.turn === -2) return;
+    const elapsed = Date.now() - this.turnStart - this.pauseTime;
     const p = Math.min(elapsed / this.turnTime, 1);
+    const color: [number, number, number, number] =
+      p >= 1 ? [0.412, 0.188, 0.153, 1] : [1, 1, 1, 1];
     for (const bar of this.bars)
       bar.current
         ?.setProgress(p)
-        .setBarColor(p >= 1 ? [1, 0.1, 0.1, 1] : [1, 1, 1, 1])
+        .setBarColor(color)
         .setVisible(this.turnTime > 0);
-    if (this.pauseStart) return;
-    this.timerText.current?.setText(
-      ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
-    );
+    this.timerText.current
+      ?.setText(
+        ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
+      )
+      .setTextColor(color);
     if (this.turnTime > 0 && p >= 1) {
       if (!this.dinged) {
         ding.play();
