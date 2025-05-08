@@ -5,6 +5,7 @@ import type {
   Player,
   ProgressBar,
   SnapPoint,
+  Text,
   Zone,
 } from "@tabletop-playground/api";
 import {
@@ -302,6 +303,8 @@ class Turns {
   #turn = -2;
   slots: number[] = [];
   turnStart = 0;
+  pauseStart = 0;
+  pauseTime = 0;
   dinged = true;
   turnTime = 120_000;
 
@@ -309,6 +312,19 @@ class Turns {
   widgets: HorizontalBox[];
   rounds: number = 0;
   bars = [useRef<ProgressBar>(), useRef<ProgressBar>(), useRef<ProgressBar>()];
+  timerText = useRef<Text>();
+  pauseButton = render(
+    <contentbutton onClick={() => this.pause()}>
+      <verticalbox>
+        <text
+          size={48}
+          font="Inconsolata-VariableFont_wdth,wght.ttf"
+          fontPackage={refPackageId}
+          ref={this.timerText}
+        ></text>
+      </verticalbox>
+    </contentbutton>,
+  );
   startRoundButton = render(
     <contentbutton onClick={() => this.startRound()}>
       <verticalbox>
@@ -371,7 +387,9 @@ class Turns {
         position: declared.getLocalPosition().add([0, -6, 0]),
         rotation: new Rotator(0, -90, 0),
         scale: 0.15,
-        widget: (this.widgets[-1] = render(<horizontalbox />) as HorizontalBox),
+        widget: (this.widgets[-1] = render(
+          <horizontalbox gap={10} />,
+        ) as HorizontalBox),
       }),
     );
 
@@ -382,12 +400,13 @@ class Turns {
     globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
-    setInterval(this.tickBars, 2000);
+    setInterval(this.tickBars, 1000);
 
     // Load from save?
     const saved = this.load();
     if (saved) {
       this.turnStart = saved.turnStart;
+      this.pauseStart = saved.pauseStart;
       this.turnTime = saved.turnTime;
       this.startRound(saved.turn, saved.slots);
     }
@@ -411,7 +430,7 @@ class Turns {
     // Don't react if we haven't started
     if (this.turn < -1) return;
     if (this.turn === -1) {
-      this.widgets[-1].removeAllChildren();
+      this.widgets[-1].removeChildAt(1);
       this.turn = 0;
     }
     // Card led: switch buttons
@@ -427,11 +446,16 @@ class Turns {
   };
 
   tickBars = () => {
-    const p = Math.min((Date.now() - this.turnStart) / this.turnTime, 1);
+    const paused =
+      this.pauseTime + (this.pauseStart ? Date.now() - this.pauseStart : 0);
+    const elapsed = Date.now() - this.turnStart - paused;
+    const p = Math.min(elapsed / this.turnTime, 1);
     for (const bar of this.bars) {
       bar.current?.setVisible(this.turnTime > 0);
       bar.current?.setProgress(p);
     }
+    const char = "/—\\|".charAt(Math.floor(elapsed / 1000) % 4);
+    this.timerText.current?.setText(` ${char} `);
     if (this.turnTime > 0 && p >= 1) {
       if (!this.dinged) {
         ding.play();
@@ -447,6 +471,8 @@ class Turns {
   set turn(value: number) {
     this.#turn = value;
     this.turnStart = Date.now();
+    this.pauseStart = 0;
+    this.pauseTime = 0;
     this.tickBars();
     this.showMessage();
     this.save();
@@ -454,6 +480,15 @@ class Turns {
   get turn() {
     return this.#turn;
   }
+
+  pause = () => {
+    if (this.pauseStart) {
+      this.pauseTime += Date.now() - this.pauseStart;
+      this.pauseStart = 0;
+    } else {
+      this.pauseStart = Date.now();
+    }
+  };
 
   startRound(turn = 0, slots?: number[]) {
     for (const w of [...this.widgets, this.widgets[-1]]) w.removeAllChildren();
@@ -483,6 +518,7 @@ class Turns {
       );
 
     // Pass/Next button
+    this.widgets[-1].addChild(this.pauseButton);
     if (turn === -1) {
       this.widgets[-1].addChild(this.startRoundButton);
     } else if (turn >= 0) {
@@ -554,6 +590,7 @@ class Turns {
             turn: this.turn,
             slots: this.slots,
             turnStart: this.turnStart,
+            pauseStart: this.pauseStart,
             turnTime: this.turnTime,
           }),
       "turns",
@@ -564,6 +601,7 @@ class Turns {
     slots: number[];
     times: number[];
     turnStart: number;
+    pauseStart: number;
     turnTime: number;
   } | null {
     return JSON.parse(refObject.getSavedData("turns") || "null");
