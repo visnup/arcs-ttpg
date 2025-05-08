@@ -1,11 +1,11 @@
 import type {
+  Button,
   Card,
   CardHolder,
   GameObject,
   Player,
   ProgressBar,
   SnapPoint,
-  Text,
   Zone,
 } from "@tabletop-playground/api";
 import {
@@ -313,18 +313,17 @@ class Turns {
   widgets: HorizontalBox[];
   rounds: number = 0;
   bars = [useRef<ProgressBar>(), useRef<ProgressBar>(), useRef<ProgressBar>()];
-  timerText = useRef<Text>();
+  timerText = useRef<Button>();
   pauseButton = render(
-    <contentbutton onClick={() => this.pause()}>
-      <verticalbox>
-        <text
-          size={32}
-          font="Inconsolata-VariableFont_wdth,wght.ttf"
-          fontPackage={refPackageId}
-          ref={this.timerText}
-        ></text>
-      </verticalbox>
-    </contentbutton>,
+    <layout minHeight={115}>
+      <button
+        onClick={() => this.pause()}
+        size={42}
+        font="Inconsolata-VariableFont_wdth,wght.ttf"
+        fontPackage={refPackageId}
+        ref={this.timerText}
+      ></button>
+    </layout>,
   );
   startRoundButton = render(
     <contentbutton onClick={() => this.startRound()}>
@@ -385,7 +384,7 @@ class Turns {
       .find((p) => p.getTags().includes("declared"))!;
     refObject.addUI(
       Object.assign(new UIElement(), {
-        position: declared.getLocalPosition().add([0, -6, 0]),
+        position: declared.getLocalPosition().add([0, -5.9, 0]),
         rotation: new Rotator(0, -90, 0),
         scale: 0.15,
         widget: (this.widgets[-1] = render(
@@ -455,6 +454,7 @@ class Turns {
       bar.current?.setVisible(this.turnTime > 0);
       bar.current?.setProgress(p);
     }
+    if (this.pauseStart) return;
     this.timerText.current?.setText(
       ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
     );
@@ -574,6 +574,7 @@ class Turns {
   endChapter() {
     if (this.widgets[this.turn]?.getNumChildren() >= 2)
       this.widgets[this.turn].removeChildAt(1);
+    this.widgets[-1].removeAllChildren();
     this.turn = -2;
   }
 
