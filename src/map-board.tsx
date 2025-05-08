@@ -299,6 +299,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
 // Turn indicators
 const colors = ["Yellow", "Blue", "Red", "White"];
 const ding = world.importSound("66136__aji__ding30603-spedup.mp3");
+const animation = "▙▛▜▟";
 class Turns {
   #turn = -2;
   slots: number[] = [];
@@ -317,7 +318,7 @@ class Turns {
     <contentbutton onClick={() => this.pause()}>
       <verticalbox>
         <text
-          size={48}
+          size={32}
           font="Inconsolata-VariableFont_wdth,wght.ttf"
           fontPackage={refPackageId}
           ref={this.timerText}
@@ -454,8 +455,9 @@ class Turns {
       bar.current?.setVisible(this.turnTime > 0);
       bar.current?.setProgress(p);
     }
-    const char = "/—\\|".charAt(Math.floor(elapsed / 1000) % 4);
-    this.timerText.current?.setText(` ${char} `);
+    this.timerText.current?.setText(
+      ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
+    );
     if (this.turnTime > 0 && p >= 1) {
       if (!this.dinged) {
         ding.play();
