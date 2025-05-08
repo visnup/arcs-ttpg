@@ -5,9 +5,11 @@ import type {
   SnapPoint,
 } from "@tabletop-playground/api";
 import {
+  Button,
   ContentButton,
   globalEvents,
   HorizontalBox,
+  LayoutBox,
   ObjectType,
   ProgressBar,
   Text,
@@ -167,6 +169,8 @@ describe("map board", () => {
           .filter((d) => d);
       if (w instanceof ContentButton) return getWidgetState(w.getChild()!);
       if (w instanceof ProgressBar) return ["progress", w.getProgress()];
+      if (w instanceof LayoutBox) return getWidgetState(w.getChild()!);
+      if (w instanceof Button) return ["button", w.getText()];
       if (w instanceof Text)
         return ["text", w.getText(), colors.get(w.getTextColor().toString())];
     });
@@ -203,34 +207,43 @@ describe("map board", () => {
     decks[1].deal(4, [0], false, true);
 
     // turn markers and start button
-    assertEqual(getTurnUI(), [
+    assertEqual(
+      getTurnUI(),
       [
         [
-          ["text", " Start ", null],
-          ["progress", 0],
+          ["button", " ▙ "],
+          [
+            ["text", " Start ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 0]],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 0]],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "turn markers and start button",
+    );
 
     // start -> pass initiative
     map.turns.startRound();
-    assertEqual(getTurnUI(), [
-      [],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 0],
+        [["button", " ▙ "]],
         [
-          ["text", " Pass Initiative ", null],
-          ["progress", 0],
+          ["text", "■", 0],
+          [
+            ["text", " Pass Initiative ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "start -> pass initiative",
+    );
 
     // play card -> end turn
     const holders = world
@@ -243,92 +256,116 @@ describe("map board", () => {
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
     const lead = holders[0].removeAt(0)!;
     await playCard(lead, snaps[0]);
-    assertEqual(getTurnUI(), [
-      [],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 0],
+        [["button", " ▙ "]],
         [
-          ["text", " End Turn ", null],
-          ["progress", 0],
+          ["text", "■", 0],
+          [
+            ["text", " End Turn ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "play card -> end turn",
+    );
 
     // end turn -> next player
     map.turns.nextTurn();
-    assertEqual(getTurnUI(), [
-      [],
-      [["text", "■", 0]],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 1],
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
         [
-          ["text", " End Turn ", null],
-          ["progress", 0],
+          ["text", "■", 1],
+          [
+            ["text", " End Turn ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "end turn -> next player",
+    );
 
     // play card
     await playCard(holders[1].removeAt(0)!, snaps[1]);
-    assertEqual(getTurnUI(), [
-      [],
-      [["text", "■", 0]],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 1],
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
         [
-          ["text", " End Turn ", null],
-          ["progress", 0],
+          ["text", "■", 1],
+          [
+            ["text", " End Turn ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "play card",
+    );
 
     // play card -> catch up turn
     await playCard(holders[2].removeAt(0)!, snaps[2]);
-    assertEqual(getTurnUI(), [
-      [],
-      [["text", "■", 0]],
-      [["text", "■", 1]],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 2],
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
+        [["text", "■", 1]],
         [
-          ["text", " End Turn ", null],
-          ["progress", 0],
+          ["text", "■", 2],
+          [
+            ["text", " End Turn ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 3]],
-    ]);
+      "play card -> catch up turn",
+    );
 
     // play card, end turn -> discard, pass initiative
     await playCard(holders[3].removeAt(0)!, snaps[3]);
     map.turns.nextTurn();
-    assertEqual(getTurnUI(), [
-      [],
-      [["text", "■", 0]],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assertEqual(getTurnUI(), [
-      [],
+    assertEqual(
+      getTurnUI(),
       [
-        ["text", "■", 0],
-        [
-          ["text", " Pass Initiative ", null],
-          ["progress", 0],
-        ],
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+      "play card, end turn -> discard",
+    );
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assertEqual(
+      getTurnUI(),
+      [
+        [["button", " ▙ "]],
+        [
+          ["text", "■", 0],
+          [
+            ["text", " Pass Initiative ", null],
+            ["progress", 0],
+          ],
+        ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
+      ],
+      "… -> pass initiative",
+    );
   });
 
   test("start auto advances", async () => {
@@ -348,6 +385,7 @@ describe("map board", () => {
     // turn markers and start button
     assertEqual(getTurnUI(), [
       [
+        ["button", " ▙ "],
         [
           ["text", " Start ", null],
           ["progress", 0],
@@ -360,9 +398,9 @@ describe("map board", () => {
     ]);
 
     // wait timer -> pass initiative
-    await new Promise((resolve) => setTimeout(resolve, 2100));
+    await new Promise((resolve) => setTimeout(resolve, 1100));
     assertEqual(getTurnUI(), [
-      [],
+      [["button", " ▙ "]],
       [
         ["text", "■", 0],
         [
