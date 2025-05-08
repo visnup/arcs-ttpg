@@ -318,7 +318,7 @@ class Turns {
     <layout minHeight={115}>
       <button
         onClick={() => this.pause()}
-        size={42}
+        size={32}
         font="Inconsolata-VariableFont_wdth,wght.ttf"
         fontPackage={refPackageId}
         ref={this.timerText}
@@ -450,10 +450,11 @@ class Turns {
       this.pauseTime + (this.pauseStart ? Date.now() - this.pauseStart : 0);
     const elapsed = Date.now() - this.turnStart - paused;
     const p = Math.min(elapsed / this.turnTime, 1);
-    for (const bar of this.bars) {
-      bar.current?.setVisible(this.turnTime > 0);
-      bar.current?.setProgress(p);
-    }
+    for (const bar of this.bars)
+      bar.current
+        ?.setProgress(p)
+        .setBarColor(p >= 1 ? [1, 0.1, 0.1, 1] : [1, 1, 1, 1])
+        .setVisible(this.turnTime > 0);
     if (this.pauseStart) return;
     this.timerText.current?.setText(
       ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
