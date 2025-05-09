@@ -20,6 +20,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
+    "@sentry/core": "^9.17.0",
     "jsx-in-ttpg": "^2.3.0"
   },
   "devDependencies": {

@@ -11,8 +11,19 @@ import {
 import { hslToRgb, rgbToHsl } from "./lib/color";
 import { answerRulesQuestion } from "./lib/rules-chat";
 import { onChatMessage as handleScreenshots } from "./lib/screenshots";
+import { captureException } from "./lib/sentry";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
+
+// Set up global error handler for uncaught exceptions
+globalThis.$uncaughtException = (err) => {
+  const [error, stack] = err.split("\n", 2);
+  const [name, message] = error.split(/:\s*/, 2);
+  return captureException(
+    { name, message, stack: "\n" + stack },
+    { tags: { handler: "$uncaughtException" } },
+  );
+};
 
 // Reset all zones
 for (const zone of world.getAllZones())
@@ -72,7 +83,8 @@ globalEvents.onChatMessage.add(async (player, text) => {
       world.broadcastChatMessage("\n" + reply.content[0].text);
       lastQuestion = Date.now();
     } catch (e) {
-      world.broadcastChatMessage(`Error: ${e}`);
+      world.broadcastChatMessage(`${e}`);
+      captureException(new Error(e), { tags: { component: "rules-chat" } });
     } finally {
       clearTimeout(timeout);
       clearInterval(interval);
