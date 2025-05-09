@@ -400,15 +400,17 @@ class Turns {
     globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
-    setInterval(this.tickBars, 1000);
+    const interval = setInterval(this.tickBars, 1000);
+    refObject.onDestroyed.add(() => clearInterval(interval));
 
     // Load from save?
     const saved = this.load();
     if (saved) {
+      this.startRound(saved.turn, saved.slots);
       this.turnStart = saved.turnStart;
       this.pauseStart = saved.pauseStart;
+      this.pauseTime = saved.pauseTime;
       this.turnTime = saved.turnTime;
-      this.startRound(saved.turn, saved.slots);
     }
   }
 
@@ -491,6 +493,7 @@ class Turns {
     } else {
       this.pauseStart = Date.now();
     }
+    this.save();
   };
 
   startRound(turn = 0, slots?: number[]) {
@@ -595,6 +598,7 @@ class Turns {
             slots: this.slots,
             turnStart: this.turnStart,
             pauseStart: this.pauseStart,
+            pauseTime: this.pauseTime,
             turnTime: this.turnTime,
           }),
       "turns",
@@ -603,9 +607,9 @@ class Turns {
   load(): {
     turn: number;
     slots: number[];
-    times: number[];
     turnStart: number;
     pauseStart: number;
+    pauseTime: number;
     turnTime: number;
   } | null {
     return JSON.parse(refObject.getSavedData("turns") || "null");
