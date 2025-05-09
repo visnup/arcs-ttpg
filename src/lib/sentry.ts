@@ -69,8 +69,8 @@ export async function captureException(
       },
       body: JSON.stringify(event),
     });
-  } catch (fetchErr) {
-    console.error("Failed to send to Sentry:", fetchErr);
+  } catch (e) {
+    console.error("Failed to send to Sentry:", e);
     return;
   }
 }
