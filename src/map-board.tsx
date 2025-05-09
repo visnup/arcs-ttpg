@@ -434,7 +434,7 @@ class Turns {
       this.turn = 0;
     }
     // Card led: switch buttons
-    if (p === this.snaps[0]) {
+    if (p === this.snaps[0] && this.turn < 1) {
       this.widgets[0].removeChildAt(1);
       this.widgets[0].addChild(this.nextButton);
     }
@@ -476,8 +476,7 @@ class Turns {
   set turn(value: number) {
     this.#turn = value;
     this.turnStart = Date.now();
-    this.pauseStart = 0;
-    this.pauseTime = 0;
+    this.pauseTime = this.pauseStart = 0; // Unpause
     this.tickBars();
     this.showMessage();
     this.save();
@@ -486,6 +485,7 @@ class Turns {
     return this.#turn;
   }
 
+  // Toggle pause
   pause = () => {
     if (this.pauseStart) {
       this.pauseTime += Date.now() - this.pauseStart;
