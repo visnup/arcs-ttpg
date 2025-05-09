@@ -379,17 +379,17 @@ class Turns {
       refObject.addUI(ui);
       return ui.widget as HorizontalBox;
     });
-    const declared = refObject
-      .getAllSnapPoints()
-      .find((p) => p.getTags().includes("declared"))!;
+    this.widgets[-1] = render(<horizontalbox gap={10} />) as HorizontalBox;
     refObject.addUI(
       Object.assign(new UIElement(), {
-        position: declared.getLocalPosition().add([0, -5.9, 0]),
+        position: refObject
+          .getAllSnapPoints()
+          .find((p) => p.getTags().includes("declared"))!
+          .getLocalPosition()
+          .add([0, -5.9, 0]),
         rotation: new Rotator(0, -90, 0),
         scale: 0.15,
-        widget: (this.widgets[-1] = render(
-          <horizontalbox gap={10} />,
-        ) as HorizontalBox),
+        widget: this.widgets[-1],
       }),
     );
 
@@ -428,11 +428,9 @@ class Turns {
 
   onSnappedTo = (obj: GameObject, player: Player, p: SnapPoint) => {
     // Don't react if we haven't started
-    if (this.turn < -1) return;
-    if (this.turn === -1) {
-      this.widgets[-1].removeChildAt(1);
-      this.turn = 0;
-    }
+    if (this.turn === -2) return;
+    // Remove start chapter timer
+    if (this.turn === -1) this.widgets[-1].removeChildAt(1);
     // Card led: switch buttons
     if (p === this.snaps[0] && this.turn < 1) {
       this.widgets[0].removeChildAt(1);
