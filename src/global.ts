@@ -17,10 +17,10 @@ import type { Ambition } from "./map-board";
 
 // Set up global error handler for uncaught exceptions
 globalThis.$uncaughtException = (err) => {
-  const [error, stack] = err.split("\n", 2);
+  const [error, ...stack] = err.split("\n");
   const [name, message] = error.split(/:\s*/, 2);
   return captureException(
-    { name, message, stack: "\n" + stack },
+    { name, message, stack: [, ...stack].join("\n") },
     { tags: { handler: "$uncaughtException" } },
   );
 };

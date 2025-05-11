@@ -84,8 +84,9 @@ function parseStackTrace(stack?: string) {
     .map((line) => {
       // Handle various stack trace formats
       const match =
-        line.match(/^\s*at\s+.*?\/Packages\/(.+?)\s+\((.+?):(\d+):(\d+)\)$/) ||
-        line.match(/^\s*at\s+.*?\/Packages\/(.+?):(\d+):(\d+)$/);
+        line.match(
+          /^\s*at\s+.*?(.+?)\s+\(.*?\/Packages\/(.+?):(\d+):(\d+)\)$/,
+        ) || line.match(/^\s*at\s+.*?\/Packages\/(.+?):(\d+):(\d+)$/);
 
       if (!match) return null;
 
