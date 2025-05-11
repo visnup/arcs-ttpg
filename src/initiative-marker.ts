@@ -76,4 +76,4 @@ const ext = Object.assign(refObject, {
 refObject.setId("initiative");
 export type InitiativeMarker = typeof ext;
 
-globalEvents.onRoundEnded.add(() => stand(ext));
+globalEvents.onActionsDiscarded.add(() => stand(ext));
