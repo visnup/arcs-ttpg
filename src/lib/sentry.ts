@@ -30,49 +30,38 @@ export async function captureException(
     level = "error",
   } = options;
 
-  // Parse DSN to extract project ID and key
   const match = DSN.match(/^https:\/\/(.+)@(.+)\/(.+)$/);
   if (!match) return;
 
   const [, publicKey, host, projectId] = match;
-  const endpoint = `https://${host}/api/${projectId}/store/`;
-
-  // Create the Sentry event payload using helpers from @sentry/core where possible
-  const event = {
-    event_id: uuid4(),
-    timestamp: new Date().toISOString(),
-    platform: "javascript",
-    level,
-    environment,
-    ...(release && { release }),
-    ...(tags && { tags }),
-    ...(user && { user }),
-    exception: {
-      values: [
-        {
-          type: error.name,
-          value: error.message,
-          stacktrace: {
-            frames: parseStackTrace(error.stack),
-          },
-        },
-      ],
+  return fetch(`https://${host}/api/${projectId}/store/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Sentry-Auth": `Sentry sentry_version=7, sentry_key=${publicKey}, sentry_client=ttpg-fetch/1.0`,
     },
-  };
-
-  try {
-    return fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Sentry-Auth": `Sentry sentry_version=7, sentry_key=${publicKey}, sentry_client=ttpg-fetch/1.0`,
+    body: JSON.stringify({
+      event_id: uuid4(),
+      timestamp: new Date().toISOString(),
+      platform: "javascript",
+      level,
+      environment,
+      ...(release && { release }),
+      ...(tags && { tags }),
+      ...(user && { user }),
+      exception: {
+        values: [
+          {
+            type: error.name,
+            value: error.message,
+            stacktrace: {
+              frames: parseStackTrace(error.stack),
+            },
+          },
+        ],
       },
-      body: JSON.stringify(event),
-    });
-  } catch (e) {
-    console.error("Failed to send to Sentry:", e);
-    return;
-  }
+    }),
+  });
 }
 
 function parseStackTrace(stack?: string) {
