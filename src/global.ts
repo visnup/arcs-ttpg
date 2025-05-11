@@ -168,7 +168,7 @@ GameWorld.prototype.isOnTable = function (
 declare module "@tabletop-playground/api" {
   interface GlobalScriptingEvents {
     onActionsDealt: TriggerableMulticastDelegate<() => void>;
-    onActionsDiscarded: TriggerableMulticastDelegate<() => void>;
+    onActionsDiscarded: TriggerableMulticastDelegate<(cards: Card[]) => void>;
     onInitiativeMoved: TriggerableMulticastDelegate<() => void>;
     onAmbitionDeclared: TriggerableMulticastDelegate<
       (ambition: Ambition) => void
@@ -185,7 +185,7 @@ declare module "@tabletop-playground/api" {
 GlobalScriptingEvents.prototype.onActionsDealt =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onActionsDiscarded =
-  new TriggerableMulticastDelegate<() => void>();
+  new TriggerableMulticastDelegate<(cards: Card[]) => void>();
 GlobalScriptingEvents.prototype.onInitiativeMoved =
   new TriggerableMulticastDelegate<() => void>();
 GlobalScriptingEvents.prototype.onAmbitionDeclared =

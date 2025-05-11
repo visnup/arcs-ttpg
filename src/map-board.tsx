@@ -1,6 +1,5 @@
 import type {
   Button,
-  Card,
   CardHolder,
   GameObject,
   Player,
@@ -11,6 +10,7 @@ import type {
 import {
   refObject as _refObject,
   refPackageId as _refPackageId,
+  Card,
   DrawingLine,
   globalEvents,
   HorizontalBox,
@@ -396,7 +396,10 @@ class Turns {
     // Register listeners
     globalEvents.onChatMessage.add(this.onChatMessage);
     globalEvents.onActionsDealt.add(() => this.startRound(-1));
-    globalEvents.onActionsDiscarded.add(() => this.startRound());
+    globalEvents.onActionsDiscarded.add((cards) => {
+      this.startRound();
+      if (this.shouldPause(cards)) this.pause();
+    });
     globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
     refObject.onSnappedTo.add(this.onSnappedTo);
@@ -495,6 +498,19 @@ class Turns {
     }
     this.save();
   };
+
+  shouldPause(discarded: Card[]) {
+    return (
+      discarded.some((c) => c.getCardDetails().name === "Event") ||
+      actionZone
+        .getOverlappingObjects()
+        .some(
+          (o) =>
+            o instanceof Card &&
+            o.getCardDetails().metadata === "imperial council",
+        )
+    );
+  }
 
   startRound(turn = 0, slots?: number[]) {
     for (const w of [...this.widgets, this.widgets[-1]]) w.removeAllChildren();

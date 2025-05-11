@@ -116,6 +116,7 @@ function discard(button: Button, player?: Player) {
       obj.getDescription().includes("discard") ||
       obj.getDescription().includes("Timer"),
   );
+  const discarded: Card[] = [];
   for (const obj of zone.getOverlappingObjects()) {
     if (
       obj instanceof Card &&
@@ -125,11 +126,12 @@ function discard(button: Button, player?: Player) {
       refHolder.insert(obj, 0);
       if (obj.isFaceUp() && discardFaceDown()) refHolder.flipCard(obj);
       sortCard(refHolder, obj, player, 0);
+      discarded.push(obj);
     }
     if ("discard" in obj && typeof obj.discard === "function") obj.discard();
   }
   button.setText(" End Chapter ");
-  setTimeout(() => globalEvents.onActionsDiscarded.trigger(), 100);
+  setTimeout(() => globalEvents.onActionsDiscarded.trigger(discarded), 100);
 }
 
 function endChapter() {
