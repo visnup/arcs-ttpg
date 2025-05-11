@@ -317,7 +317,7 @@ class Turns {
   pauseButton = render(
     <layout minHeight={115}>
       <button
-        onClick={() => this.pause()}
+        onClick={(_, player) => this.pause(player)}
         size={32}
         font="Inconsolata-VariableFont_wdth,wght.ttf"
         fontPackage={refPackageId}
@@ -489,12 +489,16 @@ class Turns {
   }
 
   // Toggle pause
-  pause = () => {
+  pause = (player?: Player) => {
     if (this.pauseStart) {
       this.pauseTime += Date.now() - this.pauseStart;
       this.pauseStart = 0;
     } else {
       this.pauseStart = Date.now();
+      const message = player
+        ? `${player.getName()} paused the timer`
+        : `Timer paused`;
+      for (const p of world.getAllPlayers()) p.showMessage(message);
     }
     this.save();
   };
