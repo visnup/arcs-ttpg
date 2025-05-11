@@ -433,14 +433,14 @@ class Turns {
     if (this.turn === -2) return;
     // Remove start chapter timer
     if (this.turn === -1) this.widgets[-1].removeChildAt(1);
+    // Catch up to current turn
+    const behind = this.snaps.findIndex((d) => d === p) - this.turn;
+    for (let i = 0; i < behind; i++) this.nextTurn();
     // Card led: switch buttons
     if (p === this.snaps[0] && this.turn < 1) {
       this.widgets[0].removeChildAt(1);
       this.widgets[0].addChild(this.nextButton);
     }
-    // Catch up to current turn
-    const behind = this.snaps.findIndex((d) => d === p) - this.turn;
-    for (let i = 0; i < behind; i++) this.nextTurn();
     // Enable next button
     if (p === this.snaps[this.turn]) this.nextButton.setEnabled(true);
   };
