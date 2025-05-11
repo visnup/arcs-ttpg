@@ -174,14 +174,15 @@ function sortCard(
     // Move to end
     holder.moveCard(card, holder.getNumCards());
   } else {
+    const getIndex = (c: Card) => {
+      const details = c.getCardDetails();
+      return details.name === "Event" ? -1 : details.index;
+    };
     // Put it in order
-    const index = card.getCardDetails().index;
+    const index = getIndex(card);
     const cards = holder.getCards();
     for (let i = 0; i < cards.length; i++)
-      if (
-        cards[i].getCardDetails().index > index ||
-        !holder.isCardFaceUp(cards[i])
-      )
+      if (getIndex(cards[i]) > index || !holder.isCardFaceUp(cards[i]))
         return holder.moveCard(card, i - (i > inserted ? 1 : 0));
     // Belongs at the end
     holder.moveCard(card, holder.getNumCards());
