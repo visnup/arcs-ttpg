@@ -19,10 +19,14 @@ import type { Ambition } from "./map-board";
 globalThis.$uncaughtException = (err) => {
   const [error, ...stack] = err.split("\n");
   const [name, message] = error.split(/:\s*/, 2);
-  return captureException(
+  captureException(
     { name, message, stack: [, ...stack].join("\n") },
     { tags: { handler: "$uncaughtException" } },
-  );
+  ).catch((e) => {
+    console.error(e);
+    console.log("Unregistering Sentry error reporting");
+    globalThis.$uncaughtException = undefined;
+  });
 };
 
 // Reset all zones
