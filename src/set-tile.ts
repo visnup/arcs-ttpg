@@ -2,15 +2,16 @@ import {
   globalEvents,
   refCard,
   world,
+  type Card,
   type GameObject,
 } from "@tabletop-playground/api";
 import { AmbitionSection } from "./lib/ambition-section";
 import { sortedIndex } from "./lib/sorted-index";
 import { type Ambition } from "./map-board";
 
+// setup
 let section: AmbitionSection | undefined;
 let ambition: Ambition | undefined;
-
 refCard.onRemoved.add((card) => setup(card));
 setup(refCard);
 
@@ -19,6 +20,14 @@ function setup(card: typeof refCard) {
   const { metadata } = card.getCardDetails();
   ambition = metadata === "f20" ? "edenguard" : "blightkin";
   section = new AmbitionSection(card, ambition);
+
+  // register
+  globalEvents.onAmbitionShouldTally.add(onAmbitionShouldTally);
+  globalEvents.onAmbitionTallied.add(onAmbitionTallied);
+  card.onDestroyed.add(() => {
+    globalEvents.onAmbitionShouldTally.remove(onAmbitionShouldTally);
+    globalEvents.onAmbitionTallied.remove(onAmbitionTallied);
+  });
 }
 
 const edenguard = new Set([
@@ -31,7 +40,7 @@ const edenguard = new Set([
   "6.1",
   "6.2",
 ]);
-globalEvents.onAmbitionShouldTally.add((a?: Ambition) => {
+function onAmbitionShouldTally(a?: Ambition) {
   if (section && a === ambition) {
     const control = tallyControl();
     if (ambition === "edenguard") {
@@ -53,14 +62,39 @@ globalEvents.onAmbitionShouldTally.add((a?: Ambition) => {
     } else if (ambition === "blightkin") {
       // Blightkin: Control the most systems with fresh Blight. (The First Regent
       // controls Empire-controlled systems.)
+      const blighted = new Set(
+        world
+          .getObjectsByTemplateName<Card>("set-round")
+          .filter(
+            (c) =>
+              c.getStackSize() === 1 &&
+              c.getCardDetails().metadata === "blight" &&
+              Math.abs(c.getRotation().roll) < 1,
+          )
+          .map(getSystem),
+      );
+      const counts = control
+        .filter(([system]) => blighted.has(system))
+        .map(([, slot]) => slot)
+        .reduce(
+          (acc, slot) => ((acc[slot] = (acc[slot] ?? 0) + 1), acc),
+          {} as Record<number, number>,
+        );
+      for (const slot of [0, 1, 2, 3, 4])
+        globalEvents.onAmbitionTallied.trigger(
+          "blightkin",
+          +slot,
+          counts[slot],
+        );
     }
-    // globalEvents.onAmbitionTallied.trigger();
   }
-});
-globalEvents.onAmbitionTallied.add((a, slot, value) => {
+}
+function onAmbitionTallied(a: Ambition, slot: number, value: number) {
   if (section && a === ambition) section.setTally(slot, value);
-});
+}
 
+// returns a tuple array of systems and the controlling player slot.
+// uncontrolled systems are left out.
 function tallyControl() {
   const tallies = new Map<string, number[]>();
   for (const ship of world.getObjectsByTemplateName("ship")) {
@@ -83,6 +117,7 @@ function tallyControl() {
     .filter(([, slot]) => slot !== null) as [string, number][];
 }
 
+// [angle, far, near, system]
 const corners = [
   [-3.1402, 18.7619, 9.7995, "4.2"],
   [-2.6224, 21.4986, 10.1957, "4.3"],
@@ -103,8 +138,9 @@ const corners = [
   [2.2286, 29.5866, 10.7726, "3.3"],
   [2.5878, 22.1143, 9.9173, "4.1"],
 ] as const;
-function getSystem(ship: GameObject) {
-  const p = ship.getPosition();
+// find system an object is in
+function getSystem(obj: GameObject) {
+  const p = obj.getPosition();
   const a = Math.atan2(p.y, p.x);
   const i = sortedIndex(corners, ([t]) => t > a);
   const [, far, near, id] = corners[i - 1] ?? corners[corners.length - 1];
