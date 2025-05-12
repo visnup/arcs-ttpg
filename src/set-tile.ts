@@ -9,7 +9,14 @@ import { AmbitionSection } from "./lib/ambition-section";
 import { sortedIndex } from "./lib/sorted-index";
 import { type Ambition } from "./map-board";
 
-// setup
+const slots = [0, 1, 2, 3, 4] as const;
+type slot = (typeof slots)[number];
+const systems = (["1", "2", "3", "4", "5", "6"] as const).flatMap((x) =>
+  (["0", "1", "2", "3"] as const).map((y) => `${x}.${y}` as const),
+);
+type System = (typeof systems)[number];
+
+// Setup
 let section: AmbitionSection | undefined;
 let ambition: Ambition | undefined;
 function setup(card: typeof refCard) {
@@ -18,7 +25,7 @@ function setup(card: typeof refCard) {
   ambition = metadata === "f20" ? "edenguard" : "blightkin";
   section = new AmbitionSection(card, ambition);
 
-  // register
+  // Register
   globalEvents.onAmbitionShouldTally.add(onAmbitionShouldTally);
   globalEvents.onAmbitionTallied.add(onAmbitionTallied);
   card.onDestroyed.add(() => {
@@ -28,7 +35,7 @@ function setup(card: typeof refCard) {
 }
 setup(refCard);
 
-const edenguard = new Set([
+const edenguard = new Set<System>([
   "1.2",
   "1.3",
   "3.1",
@@ -39,80 +46,80 @@ const edenguard = new Set([
   "6.2",
 ]);
 function onAmbitionShouldTally(a?: Ambition) {
-  if (section && a === ambition) {
-    const control = tallyControl();
-    if (ambition === "edenguard") {
-      // Edenguard: Control the most Fuel and Material planets. (The
-      // First Regent controls Empire-controlled systems.)
-      const counts = control
-        .filter(([system]) => edenguard.has(system))
-        .map(([, slot]) => slot)
-        .reduce(
-          (acc, slot) => ((acc[slot] = (acc[slot] ?? 0) + 1), acc),
-          {} as Record<number, number>,
-        );
-      for (const slot of [0, 1, 2, 3, 4])
-        globalEvents.onAmbitionTallied.trigger(
-          "edenguard",
-          +slot,
-          counts[slot],
-        );
-    } else if (ambition === "blightkin") {
-      // Blightkin: Control the most systems with fresh Blight. (The First Regent
-      // controls Empire-controlled systems.)
-      const blighted = new Set(
-        world
-          .getObjectsByTemplateName<Card>("set-round")
-          .filter(
-            (c) =>
-              c.getStackSize() === 1 &&
-              c.getCardDetails().metadata === "blight" &&
-              Math.abs(c.getRotation().roll) < 1,
-          )
-          .map(getSystem),
-      );
-      const counts = control
-        .filter(([system]) => blighted.has(system))
-        .map(([, slot]) => slot)
-        .reduce(
-          (acc, slot) => ((acc[slot] = (acc[slot] ?? 0) + 1), acc),
-          {} as Record<number, number>,
-        );
-      for (const slot of [0, 1, 2, 3, 4])
-        globalEvents.onAmbitionTallied.trigger(
-          "blightkin",
-          +slot,
-          counts[slot],
-        );
-    }
+  if (!section || a !== ambition) return;
+  if (ambition === "edenguard") {
+    // Edenguard: Control the most Fuel and Material planets.
+    for (const [slot, count] of tallyControlOf(edenguard))
+      globalEvents.onAmbitionTallied.trigger("edenguard", slot, count);
+  } else if (ambition === "blightkin") {
+    // Blightkin: Control the most systems with fresh Blight.
+    const blighted = new Set(
+      world
+        .getObjectsByTemplateName<Card>("set-round")
+        .filter(
+          (c) =>
+            c.getStackSize() === 1 &&
+            c.getCardDetails().metadata === "blight" &&
+            Math.abs(c.getRotation().roll) < 1,
+        )
+        .map(getSystem)
+        .filter((s) => s !== null),
+    );
+    for (const [slot, count] of tallyControlOf(blighted))
+      globalEvents.onAmbitionTallied.trigger("blightkin", slot, count);
   }
 }
 function onAmbitionTallied(a: Ambition, slot: number, value: number) {
   if (section && a === ambition) section.setTally(slot, value);
 }
 
-// returns a tuple array of systems and the controlling player slot.
+// Returns slots and how many of the specified systems they control
+function* tallyControlOf(systems: Set<System>) {
+  const counts = tallyControl()
+    .filter(([system]) => systems.has(system))
+    .map(([, slot]) => slot)
+    .reduce(
+      (acc, slot) => ((acc[slot] = (acc[slot] ?? 0) + 1), acc),
+      {} as Record<slot, number>,
+    );
+  for (const slot of slots) yield [slot, counts[slot]] as const;
+}
+
+// Returns a tuple array of systems and the controlling player slot.
 // uncontrolled systems are left out.
 function tallyControl() {
-  const tallies = new Map<string, number[]>();
+  const tallies = new Map<System, number[]>();
   for (const ship of world.getObjectsByTemplateName("ship")) {
     if (Math.abs(ship.getRotation().roll) > 1) continue;
     const system = getSystem(ship);
     if (!system) continue;
-    const t = tallies.get(system) ?? [0, 0, 0, 0];
+    const t = tallies.get(system) ?? [0, 0, 0, 0, 0];
     t[ship.getOwningPlayerSlot()] = (t[ship.getOwningPlayerSlot()] ?? 0) + 1;
     tallies.set(system, t);
   }
-  // TODO The First Regent controls Empire-controlled systems.
-  return [...tallies]
+  const control = [...tallies]
     .map(([system, tally]) => {
+      if (tally[4] > 0) return [system, 4]; // The Empire controls all systems that have any number of fresh Imperial ships, ignoring all players’ Loyal ships.
       const max = Math.max(...tally);
       const control = tally
         .map((v, i) => (v === max ? i : -1))
         .filter((i) => i !== -1);
-      return [system, control.length === 1 ? control[0] : null] as const;
+      return [system, control.length === 1 ? control[0] : null];
     })
-    .filter(([, slot]) => slot !== null) as [string, number][];
+    .filter(([, slot]) => slot !== null) as [System, slot][];
+  // The First Regent controls Empire-controlled systems.
+  if (control.some(([, slot]) => slot === 4)) {
+    const marker = world.getObjectByTemplateName("first-regent")!.getPosition();
+    const firstRegent = world
+      .getObjectsByTemplateName("board")
+      .sort(
+        (a, b) =>
+          a.getPosition().distance(marker) - b.getPosition().distance(marker),
+      )[0]
+      .getOwningPlayerSlot() as slot;
+    for (const c of control) if (c[1] === 4) c[1] = firstRegent;
+  }
+  return control;
 }
 
 // [angle, far, near, system]
@@ -136,13 +143,15 @@ const corners = [
   [2.2286, 29.5866, 10.7726, "3.3"],
   [2.5878, 22.1143, 9.9173, "4.1"],
 ] as const;
-// find system an object is in
-function getSystem(obj: GameObject) {
+// Find system an object is in
+function getSystem(obj: GameObject): System | null {
   const p = obj.getPosition();
   const a = Math.atan2(p.y, p.x);
   const i = sortedIndex(corners, ([t]) => t > a);
   const [, far, near, id] = corners[i - 1] ?? corners[corners.length - 1];
   const r = p.distance([0, 0, p.z]);
   if (r > far) return null;
-  return r > near ? id : id[0] + ".0";
+  return r > near
+    ? id
+    : ((id[0] + ".0") as "1.0" | "2.0" | "3.0" | "4.0" | "5.0" | "6.0");
 }
