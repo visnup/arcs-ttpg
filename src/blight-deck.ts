@@ -8,9 +8,6 @@ discardToOrigin(refCard, true, false);
 refCard.setOwningPlayerSlot(4);
 
 // blightkin
-refCard.onGrab.add(onAmbitionShouldTally);
-refCard.onReleased.add(onAmbitionShouldTally);
-refCard.onFlipUpright.add(onAmbitionShouldTally);
-function onAmbitionShouldTally() {
-  globalEvents.onAmbitionShouldTally.trigger("blightkin");
-}
+refCard.onMovementStopped.add(() =>
+  globalEvents.onAmbitionShouldTally.trigger("blightkin"),
+);
