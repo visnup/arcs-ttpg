@@ -12,9 +12,6 @@ import { type Ambition } from "./map-board";
 // setup
 let section: AmbitionSection | undefined;
 let ambition: Ambition | undefined;
-refCard.onRemoved.add((card) => setup(card));
-setup(refCard);
-
 function setup(card: typeof refCard) {
   if (card.getStackSize() > 1) return;
   const { metadata } = card.getCardDetails();
@@ -29,6 +26,7 @@ function setup(card: typeof refCard) {
     globalEvents.onAmbitionTallied.remove(onAmbitionTallied);
   });
 }
+setup(refCard);
 
 const edenguard = new Set([
   "1.2",
