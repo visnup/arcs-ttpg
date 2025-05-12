@@ -72,8 +72,16 @@ function tallyAgents(zone: Zone) {
       );
 }
 
+function isCourtCard(object: GameObject): object is Card {
+  return !!(
+    object instanceof Card &&
+    object.getStackSize() === 1 &&
+    object.getTemplateName().match(/^(bc|cc|lore|f\d+)$/)
+  );
+}
+
 function canSecureCard(zone: Zone, object: GameObject) {
-  if (!(object instanceof Card) || object.getStackSize() > 1) return;
+  if (!isCourtCard(object)) return;
   object.removeCustomAction("Steal");
   object.addCustomAction("Secure");
   object.addCustomAction("Ransack");
@@ -87,11 +95,7 @@ function canSecureCard(zone: Zone, object: GameObject) {
   registered.add(object);
 }
 function canStealCard(zone: Zone, object: GameObject) {
-  if (
-    !(object instanceof Card) ||
-    object.getStackSize() > 1 ||
-    [...zones].some((z) => z.isOverlapping(object))
-  )
+  if (!isCourtCard(object) || [...zones].some((z) => z.isOverlapping(object)))
     return;
   object.removeCustomAction("Secure");
   object.removeCustomAction("Ransack");

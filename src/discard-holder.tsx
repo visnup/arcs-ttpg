@@ -52,7 +52,7 @@ function coveredByCourt(card: Card) {
       )
       .filter(({ object }) => object !== card)
       .map(({ object }) => object.getTemplateName()),
-  ).match(/(bc|cc|f\d+)$/);
+  ).match(/^(bc|cc|lore|f\d+)$/);
 }
 
 // Ensure zone has been created
