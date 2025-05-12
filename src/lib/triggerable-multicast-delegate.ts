@@ -1,15 +1,15 @@
 export class TriggerableMulticastDelegate<
   T extends (...args: never[]) => unknown,
 > {
-  delegates: T[] = [];
+  delegates = new Set<T>();
   add(fn: T) {
-    this.delegates.push(fn);
+    this.delegates.add(fn);
   }
   remove(fn: T) {
-    this.delegates = this.delegates.filter((d) => d !== fn);
+    this.delegates.delete(fn);
   }
   clear() {
-    this.delegates = [];
+    this.delegates.clear();
   }
   trigger = (...args: Parameters<T>) => {
     for (const fn of this.delegates) fn(...args);
