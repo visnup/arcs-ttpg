@@ -64,9 +64,10 @@ export class AmbitionSection {
       this.zone.onBeginOverlap.add(shouldTally);
       this.zone.onEndOverlap.add(shouldTally);
     }
-    this.refObject.onMovementStopped.add((obj) =>
-      this.zone.setPosition(obj.getPosition()),
-    );
+    if (typeof this.offset === "string")
+      this.refObject.onMovementStopped.add((obj) =>
+        this.zone.setPosition(obj.getPosition()),
+      );
     this.refObject.onDestroyed.add(() => this.zone.destroy());
     this.load();
   }
