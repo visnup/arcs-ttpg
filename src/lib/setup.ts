@@ -395,3 +395,28 @@ function* courtSpots(zone: Zone, extent: Vector) {
       // world.drawDebugBox(s, extent.add([0, 0, 5]), [0, 0, 0], [1, 0, 0, 0], 5);
     }
 }
+
+export function takeEventActionDeck(n?: number) {
+  const deck = world
+    .getObjectsByTemplateName<Card>("dc")
+    .find(
+      (d) => d.getCardDetails().tags.includes("action") && world.isOnTable(d),
+    );
+  if (!deck) return;
+  return n && n < deck.getStackSize() ? deck.takeCards(n) : deck;
+}
+export function takeCampaignCard(name: string) {
+  let card: Card | undefined;
+  for (const deck of world.getObjectsByTemplateName<Card>("dc")) {
+    for (let i = 0; i < deck.getStackSize(); i++) {
+      const details = deck.getCardDetails(i)!;
+      if (details.metadata === name) {
+        const match =
+          deck.getStackSize() === 1 ? deck : deck.takeCards(1, true, i--)!;
+        if (card) card.addCards(match);
+        else card = match;
+      }
+    }
+  }
+  return card;
+}

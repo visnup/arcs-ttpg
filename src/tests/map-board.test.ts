@@ -18,7 +18,13 @@ import {
 } from "@tabletop-playground/api";
 import type { TestableCard as TestableActionCard } from "../action-deck";
 import type { InitiativeMarker } from "../initiative-marker";
-import { getSystems, placeShips, takeResource } from "../lib/setup";
+import {
+  getSystems,
+  placeShips,
+  takeCampaignCard,
+  takeEventActionDeck,
+  takeResource,
+} from "../lib/setup";
 import type { TestableBoard } from "../map-board";
 import type { TestableCard as TestableSetupCard } from "../setup-deck";
 import { assert, assertEqual } from "./assert";
@@ -184,7 +190,7 @@ describe("map board", () => {
     card.setPosition(snap.getGlobalPosition().add(offset));
     card.snap();
     await new Promise((resolve) => setTimeout(resolve, 100));
-    (card as TestableActionCard).onReleased.trigger(card);
+    (card as TestableActionCard).onReleased.trigger?.(card);
     (world.getObjectById("map") as TestableBoard).onSnappedTo.trigger(
       card,
       world.getPlayerBySlot(0)!,
@@ -412,6 +418,115 @@ describe("map board", () => {
       [["text", "■", 2]],
       [["text", "■", 3]],
     ]);
+  });
+
+  test("pause after event or council", async () => {
+    const events = takeEventActionDeck();
+    if (!events) skip("no event cards");
+
+    const map = world.getObjectById("map") as TestableBoard;
+
+    // deal
+    const decks = world
+      .getObjectsByTemplateName<Card>("action")
+      .sort((a, b) => b.getStackSize() - a.getStackSize());
+    for (const slot of [1, 2, 3, 0]) decks[0].deal(6, [slot], false, true);
+    events.deal(4, [0], false, true);
+
+    // play cards
+    const holders = world
+      .getObjectsByTemplateName<CardHolder>("cards")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
+    const snaps = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
+      .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+    await playCard(holders[0].removeAt(0)!, snaps[0]);
+    await playCard(holders[1].removeAt(0)!, snaps[1]);
+    await playCard(holders[2].removeAt(0)!, snaps[2]);
+    // event
+    await playCard(holders[0].removeAt(1)!, snaps[3]);
+
+    // end of round
+    assertEqual(
+      getTurnUI(),
+      [
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [
+          ["text", "■", 3],
+          [
+            ["text", " End Turn ", null],
+            ["progress", 0],
+          ],
+        ],
+      ],
+      "end of round",
+    );
+
+    // end round
+    map.turns.nextTurn();
+    assertEqual(
+      getTurnUI(),
+      [
+        [["button", " ▙ "]],
+        [["text", "■", 0]],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
+      ],
+      "play card, end turn -> discard",
+    );
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assertEqual(
+      getTurnUI(),
+      [
+        [["button", " ▙ "]],
+        [
+          ["text", "■", 0],
+          [
+            ["text", " Pass Initiative ", null],
+            ["progress", 0],
+          ],
+        ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
+      ],
+      "… -> pass initiative",
+    );
+    // paused
+    assert(map.turns.pauseStart > 0, "paused");
+
+    // imperial council
+    const imperialCouncil = takeCampaignCard("imperial council");
+    if (!imperialCouncil) skip("no imperial council card");
+    const more = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter(
+        (p) =>
+          p.getTags().includes("card") &&
+          !p.getTags().find((t) => t.startsWith("turn:")),
+      )
+      .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+
+    // play cards
+    await playCard(holders[0].removeAt(0)!, snaps[0]);
+    await playCard(holders[1].removeAt(0)!, snaps[1]);
+    await playCard(holders[2].removeAt(0)!, snaps[2]);
+    await playCard(holders[3].removeAt(0)!, snaps[3]);
+
+    // place imperial council
+    await playCard(imperialCouncil, more[0]);
+
+    // paused again
+    map.turns.nextTurn();
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assert(map.turns.pauseStart > 0, "paused again");
   });
 });
 

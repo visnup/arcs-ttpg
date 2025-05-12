@@ -36,6 +36,8 @@ import {
   resourceAmbitions,
   shuffledSlots,
   systemResource,
+  takeCampaignCard,
+  takeEventActionDeck,
 } from "./lib/setup";
 
 const refPackageId = _refPackageId;
@@ -243,15 +245,6 @@ function campaignSetup(players: number, card: Card) {
   placeAids();
 }
 
-function takeEventActionDeck(n?: number) {
-  const deck = world
-    .getObjectsByTemplateName<Card>("dc")
-    .find(
-      (d) => d.getCardDetails().tags.includes("action") && world.isOnTable(d),
-    );
-  if (!deck) return;
-  return n && n < deck.getStackSize() ? deck.takeCards(n) : deck;
-}
 function getLore() {
   const [deck, ...others] = world.getObjectsByTemplateName<Card>("lore");
   if (deck) {
@@ -261,21 +254,6 @@ function getLore() {
     deck.shuffle();
   }
   return deck;
-}
-function takeCampaignCard(name: string) {
-  let card: Card | undefined;
-  for (const deck of world.getObjectsByTemplateName<Card>("dc")) {
-    for (let i = 0; i < deck.getStackSize(); i++) {
-      const details = deck.getCardDetails(i)!;
-      if (details.metadata === name) {
-        const match =
-          deck.getStackSize() === 1 ? deck : deck.takeCards(1, true, i--)!;
-        if (card) card.addCards(match);
-        else card = match;
-      }
-    }
-  }
-  return card;
 }
 
 let rules: CardHolder;
