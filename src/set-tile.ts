@@ -11,10 +11,9 @@ import { type Ambition } from "./map-board";
 
 const slots = [0, 1, 2, 3, 4] as const;
 type slot = (typeof slots)[number];
-const systems = (["1", "2", "3", "4", "5", "6"] as const).flatMap((x) =>
-  (["0", "1", "2", "3"] as const).map((y) => `${x}.${y}` as const),
-);
-type System = (typeof systems)[number];
+type Gate = `${"1" | "2" | "3" | "4" | "5" | "6"}.0`;
+type Planet = `${"1" | "2" | "3" | "4" | "5" | "6"}.${"1" | "2" | "3"}`;
+type System = Gate | Planet;
 
 // Setup
 let section: AmbitionSection | undefined;
@@ -151,7 +150,5 @@ function getSystem(obj: GameObject): System | null {
   const [, far, near, id] = corners[i - 1] ?? corners[corners.length - 1];
   const r = p.distance([0, 0, p.z]);
   if (r > far) return null;
-  return r > near
-    ? id
-    : ((id[0] + ".0") as "1.0" | "2.0" | "3.0" | "4.0" | "5.0" | "6.0");
+  return r > near ? id : ((id[0] + ".0") as Gate);
 }
