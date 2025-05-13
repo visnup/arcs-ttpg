@@ -169,7 +169,7 @@ class Turns {
       <button
         onClick={(_, player) => this.pause(player)}
         size={32}
-        font="Inconsolata-VariableFont_wdth,wght.ttf"
+        font="Inconsolata-Regular.ttf"
         fontPackage={refPackageId}
         ref={this.timerText}
       ></button>

@@ -7996,15 +7996,15 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.007,
-					"y": 0,
+					"x": -0.009,
+					"y": 0.001,
 					"z": 0.064,
 					"w": 0.998
 				},
 				"translation": {
 					"x": -14.819,
-					"y": -48.52,
-					"z": 87.022
+					"y": -48.521,
+					"z": 87.02
 				},
 				"scale3D": {
 					"x": 1,
@@ -8032,7 +8032,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "TURNS\n\n- \"Pass Initiative\" if out\n  of cards\n- \"End Turn\" advances\n  & automates Seize,\n  Surpass, & discard",
+			"objectDescription": "TURNS\n\n- \"Pass Initiative\" if\n  out of cards\n- \"End Turn\" advances\n  & automates Seize,\n  Surpass, & discard",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -9426,7 +9426,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "- Shuffle & manually\n  draft leaders & lore\n- Place chosen leader\n  to left of player board\n- Finally, run chosen\n  setup card",
+			"objectDescription": "- Shuffle & manually\n  draft leaders & lore\n- Place chosen leader\n  to left of player\n  board\n- Finally, run chosen\n  setup card",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -17968,7 +17968,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.987,
+					"x": -33.988,
 					"y": -82,
 					"z": 86.972
 				},
