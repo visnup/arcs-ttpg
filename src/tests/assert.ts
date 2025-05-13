@@ -39,3 +39,34 @@ function stringify(value: unknown) {
     typeof value === "number" ? Math.round(value) : value,
   );
 }
+
+export async function assertEventually(
+  condition: () => boolean | Promise<boolean>,
+  description: string,
+  timeout = 2000,
+): Promise<void> {
+  const startTime = Date.now();
+  while (Date.now() - startTime < timeout) {
+    if (await Promise.resolve(condition())) return;
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  throw new Error(`Timed out after ${timeout}ms: ${description}`);
+}
+
+export async function assertEqualEventually<T>(
+  getValue: () => T | Promise<T>,
+  expected: T,
+  description = "",
+  timeout = 2000,
+): Promise<void> {
+  const startTime = Date.now();
+  let value: T;
+  while (Date.now() - startTime < timeout) {
+    value = await Promise.resolve(getValue());
+    if (stringify(value) === stringify(expected)) return;
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  throw new Error(
+    `Timed out after ${timeout}ms. ${description}${description ? ": " : ""}${JSON.stringify(value!)} ≠ ${JSON.stringify(expected)}`,
+  );
+}

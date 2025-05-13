@@ -7,7 +7,7 @@ import {
 import type { TestableCard } from "../campaign-fate-card";
 import { getSystems, placeShips } from "../lib/setup";
 import type { Ambition } from "../map-board";
-import { assert, assertEqual } from "./assert";
+import { assert, assertEqual, assertEqualEventually } from "./assert";
 import { beforeEach, describe, skip, test } from "./suite";
 
 describe("set tile", () => {
@@ -67,9 +67,10 @@ describe("set tile", () => {
 
     // empire control
     const number = world.getObjectByTemplateName<Dice>("number")!;
+    const imperial = [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]!;
     assertEqual(
       ambitions.edenguard,
-      { [slot]: [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]! },
+      { [slot]: imperial },
       "initial empire control",
     );
     // empire control follows first regent
@@ -78,20 +79,28 @@ describe("set tile", () => {
       boards
         .find((d) => d.getOwningPlayerSlot() === slots[1])!
         .getPosition()
-        .add([0, -23, 2]),
+        .add([0, -23, 1]),
     );
-    firstRegent.snapToGround();
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    assertEqual(
-      ambitions.edenguard,
-      { [slots[1]]: [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]! },
+    await assertEqualEventually(
+      () => ambitions.edenguard,
+      { [slots[1]]: imperial },
       "first regent moved",
     );
 
     // player control
     // place 2p ships
-    // console.log("systems", JSON.stringify(getSystems()));
-    // placeShips(slots[1], 1, getSystems()[0].snap.getGlobalPosition());
+    for (const s of getSystems())
+      if (s.snap.getTags().includes("resource:fuel"))
+        placeShips(slot, 1, s.snap.getGlobalPosition());
+    globalEvents.onAmbitionShouldTally.trigger("edenguard");
+    assertEqual(
+      ambitions.edenguard,
+      {
+        [slots[1]]: imperial,
+        [slot]: [, 3, 3, 2, 3, 3, 2][+number.getCurrentFaceName()]!,
+      },
+      "player control",
+    );
   });
 
   test("blightkin", async () => {});
