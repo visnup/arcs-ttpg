@@ -43,13 +43,20 @@ for (const obj of world.getAllObjects())
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
 
-// Hotkey to mimic hot seat functionality
 globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
+  // Hotkey to mimic hot seat functionality
   const dir = [, -1, 1][index];
   if (dir) {
     const n = world.getObjectsByTemplateName("board").length;
     player.switchSlot((n + player.getSlot() + dir) % n);
   }
+
+  // Spawn test cube
+  if (index >= 9)
+    world.createObjectFromTemplate(
+      "19718F53164F2A4ABB2A79AF91413AFE",
+      world.getObjectByTemplateName("tray")!.getPosition().add([25, 0, 0]),
+    );
 });
 
 // Screenshot commands
