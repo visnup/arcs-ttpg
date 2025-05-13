@@ -29,6 +29,7 @@ export function describe(description: string, fn: () => void) {
       for (const t of only.length ? only : currentSuite.tests)
         currentSuite.results.push(await t());
       before = before.filter((fn) => "keep" in fn && fn.keep);
+      after = after.filter((fn) => "keep" in fn && fn.keep);
     },
     tests: [] as TestFunction[],
     results: [],
@@ -40,6 +41,11 @@ let before: (() => void)[] = [];
 export function beforeEach(fn: () => void, keep = false) {
   Object.assign(fn, { keep });
   before.push(fn);
+}
+let after: (() => void)[] = [];
+export function afterEach(fn: () => void, keep = false) {
+  Object.assign(fn, { keep });
+  after.push(fn);
 }
 
 export function test(description: string, fn: () => Promise<void> | void) {
@@ -65,6 +71,7 @@ export function test(description: string, fn: () => Promise<void> | void) {
       return { description, ok: false, error };
     } finally {
       await new Promise((r) => setTimeout(r, 0));
+      for (const a of after) a();
     }
   });
 }

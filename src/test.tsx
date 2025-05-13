@@ -8,7 +8,7 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import { createReset } from "./lib/reset";
-import { beforeEach, run, suites } from "./tests/suite";
+import { afterEach, beforeEach, run, suites } from "./tests/suite";
 
 const refObject = _refObject;
 
@@ -16,6 +16,7 @@ const reset = createReset(refObject);
 
 (async () => {
   beforeEach(reset, true);
+  afterEach(updateButtons, true);
 
   // Import tests
   for (const p of world.getAllowedPackages())
@@ -28,7 +29,7 @@ const reset = createReset(refObject);
     rotation: new Rotator(70, 0, 0),
     widget: render(
       <verticalbox>
-        <button onClick={() => run().then(updateButtons)}>Run all</button>
+        <button onClick={() => run()}>Run all</button>
         <button onClick={reset}>Reset</button>
       </verticalbox>,
     ),
@@ -38,7 +39,7 @@ const reset = createReset(refObject);
     const ref = useRef<Button>();
     (ui.widget as VerticalBox).addChild(
       render(
-        <button ref={ref} onClick={() => run().then(updateButtons)}>
+        <button ref={ref} onClick={() => run()}>
           {description}
         </button>,
       ),
