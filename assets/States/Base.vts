@@ -9957,15 +9957,15 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.018,
-					"y": 0.002,
-					"z": 0.133,
-					"w": 0.991
+					"x": -0.007,
+					"y": 0,
+					"z": 0.064,
+					"w": 0.998
 				},
 				"translation": {
-					"x": -14.463,
-					"y": -47.853,
-					"z": 86.992
+					"x": -14.819,
+					"y": -48.52,
+					"z": 87.022
 				},
 				"scale3D": {
 					"x": 1,
@@ -9993,7 +9993,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
+			"objectDescription": "TURNS\n\n- \"Pass Initiative\" if out\n  of cards\n- \"End Turn\" advances\n  & automates Seize,\n  Surpass, & discard",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -10910,7 +10910,7 @@
 					"w": 0.924
 				},
 				"translation": {
-					"x": -23.943,
+					"x": -23.918,
 					"y": 48,
 					"z": 86.822
 				},
@@ -11357,7 +11357,7 @@
 					"w": 0.999
 				},
 				"translation": {
-					"x": 4.92,
+					"x": 4.919,
 					"y": 53.96,
 					"z": 86.827
 				},
@@ -11387,7 +11387,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "- Shuffle and manually\n  draft leaders and lore\n- Place chosen leader\n  to left of player board\n- Finally, press \"R\" on\n  chosen setup card",
+			"objectDescription": "- Shuffle & manually\n  draft leaders & lore\n- Place chosen leader\n  to left of player board\n- Finally, run chosen\n  setup card",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -11698,7 +11698,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Face down discard\n\n- Unlock discard board\n- Right click for menu\n- Choose Toggle to\n  Face Down",
+			"objectDescription": "FACE DOWN DISCARD\n\n- Unlock discard board\n- Right click for menu\n- Choose \"Toggle to\n  Face Down\"",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -11854,7 +11854,7 @@
 				},
 				"translation": {
 					"x": 12.94,
-					"y": 53.728,
+					"y": 53.726,
 					"z": 86.827
 				},
 				"scale3D": {
@@ -11883,7 +11883,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Leaders and Lore setup\n\n- Shuffle setup deck\n  matching # players\n- Draw and flip to\n  preview setup\n- Choose and shuffle\n  leader and lore decks",
+			"objectDescription": "LEADERS & LORE\n\n- Shuffle setup deck\n  for # players\n- Draw & flip to\n  preview setup\n- Choose & shuffle\n  leader & lore decks",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -12658,67 +12658,6 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -14.633,
-					"y": -55.238,
-					"z": 87.025
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 172,
-				"g": 255,
-				"r": 159,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType5",
-			"objectName": "",
-			"objectDescription": "Timer\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  and not enforced",
-			"collisionType": "CB_Regular",
-			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "note.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "mlo",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
 					"z": -0.382,
 					"w": 0.924
 				},
@@ -12963,6 +12902,67 @@
 			"objectGroupId": -1,
 			"ownerIndex": 3,
 			"lightsOn": false,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.001,
+					"w": 1
+				},
+				"translation": {
+					"x": -14.667,
+					"y": -55.951,
+					"z": 87.025
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 172,
+				"g": 255,
+				"r": 159,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType5",
+			"objectName": "",
+			"objectDescription": "TIMER\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  & not enforced",
+			"collisionType": "CB_Regular",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "note.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "mlo",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
 		{
@@ -13883,7 +13883,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Ship & building damage\n\n- Press \"R\" on ships or\n  buildings to toggle\n  damage\n- Press \"V\" to pick up\n  more ships",
+			"objectDescription": "DAMAGE\n\n- Press \"R\" on ships or\n  buildings to toggle\n  damage\n- Press \"V\" to pick up\n  more ships",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -14775,7 +14775,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": 35.979,
+					"x": 35.976,
 					"y": 62,
 					"z": 86.908
 				},
@@ -15239,7 +15239,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": 43.979,
+					"x": 43.976,
 					"y": 62,
 					"z": 86.827
 				},
@@ -15269,7 +15269,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Base setup\n\n- Shuffle setup deck\n  matching # players\n- Draw and flip to\n  preview setup\n- Press \"R\" on chosen\n  card to run setup",
+			"objectDescription": "BASE SETUP\n\n- Shuffle setup deck\n  for # players\n- Draw & flip to\n  preview setup",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -16812,7 +16812,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.99,
+					"x": -33.987,
 					"y": -82,
 					"z": 86.972
 				},
@@ -16874,7 +16874,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -51.914,
+					"x": -51.918,
 					"y": -77.161,
 					"z": 86.827
 				},
@@ -16904,7 +16904,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Rules AI bot\n\n- A rules AI bot is\n  available in chat\n- /rules [question] in\n  chat to ask",
+			"objectDescription": "RULES AI BOT\n\n- A rules AI bot is\n  available in chat\n- /rules [question] in\n  chat to ask",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,

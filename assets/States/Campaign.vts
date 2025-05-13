@@ -9964,15 +9964,15 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.018,
-					"y": 0.002,
-					"z": 0.133,
-					"w": 0.991
+					"x": -0.007,
+					"y": 0,
+					"z": 0.064,
+					"w": 0.998
 				},
 				"translation": {
-					"x": -14.463,
-					"y": -47.853,
-					"z": 86.992
+					"x": -14.819,
+					"y": -48.52,
+					"z": 87.022
 				},
 				"scale3D": {
 					"x": 1,
@@ -10000,7 +10000,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
+			"objectDescription": "TURNS\n\n- \"Pass Initiative\" if out\n  of cards\n- \"End Turn\" advances\n  & automates Seize,\n  Surpass, & discard",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -10917,7 +10917,7 @@
 					"w": 0.924
 				},
 				"translation": {
-					"x": -23.943,
+					"x": -23.918,
 					"y": 48,
 					"z": 86.822
 				},
@@ -11549,8 +11549,8 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -7,
-					"y": 53.99,
+					"x": -7.003,
+					"y": 53.991,
 					"z": 86.877
 				},
 				"scale3D": {
@@ -11579,7 +11579,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Campaign setup\n\n- Shuffle \"A\" Fates\n- Choose # of players\n- Choose Fate from two\n  dealt to your hand\n- Reveal and place to\n  left of player boards",
+			"objectDescription": "CAMPAIGN SETUP\n\n- Shuffle \"A\" Fates\n- Choose # of players\n- Choose Fate from\n  two dealt to hands\n- Reveal & place to\n  left of player boards",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -11612,7 +11612,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -7.97,
+					"x": -7.973,
 					"y": 54,
 					"z": 86.847
 				},
@@ -11772,7 +11772,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Face down discard\n\n- Unlock discard board\n- Right click for menu\n- Choose Toggle to\n  Face Down",
+			"objectDescription": "FACE DOWN DISCARD\n\n- Unlock discard board\n- Right click for menu\n- Choose \"Toggle to\n  Face Down\"",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -12669,67 +12669,6 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -14.633,
-					"y": -55.238,
-					"z": 87.025
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 172,
-				"g": 255,
-				"r": 159,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType5",
-			"objectName": "",
-			"objectDescription": "Timer\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  and not enforced",
-			"collisionType": "CB_Regular",
-			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "note.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "mlo",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
 					"z": -0.382,
 					"w": 0.924
 				},
@@ -13041,6 +12980,67 @@
 			"objectGroupId": -1,
 			"ownerIndex": 3,
 			"lightsOn": false,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": -0.001,
+					"w": 1
+				},
+				"translation": {
+					"x": -14.667,
+					"y": -55.951,
+					"z": 87.025
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 172,
+				"g": 255,
+				"r": 159,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType5",
+			"objectName": "",
+			"objectDescription": "TIMER\n\n- Turn timer set to 2\n  minutes\n- /turn [seconds] in\n  chat to configure\n- Timer is visual only\n  & not enforced",
+			"collisionType": "CB_Regular",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "note.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "mlo",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
 		{
@@ -13961,7 +13961,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Ship & building damage\n\n- Press \"R\" on ships or\n  buildings to toggle\n  damage\n- Press \"V\" to pick up\n  more ships",
+			"objectDescription": "DAMAGE\n\n- Press \"R\" on ships or\n  buildings to toggle\n  damage\n- Press \"V\" to pick up\n  more ships",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -18599,7 +18599,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.99,
+					"x": -33.987,
 					"y": -82,
 					"z": 86.972
 				},
@@ -18867,7 +18867,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -51.914,
+					"x": -51.918,
 					"y": -77.161,
 					"z": 86.827
 				},
@@ -18897,7 +18897,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "Rules AI bot\n\n- A rules AI bot is\n  available in chat\n- /rules [question] in\n  chat to ask",
+			"objectDescription": "RULES AI BOT\n\n- A rules AI bot is\n  available in chat\n- /rules [question] in\n  chat to ask",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,

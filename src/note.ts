@@ -6,15 +6,16 @@ import {
   Vector,
 } from "@tabletop-playground/api";
 
+const scale = 0.2;
 const text = new RichText();
-text.setFont("MarkerFelt-Thin.ttf");
-text.setFontSize(28);
+text.setFont("PermanentMarker-Regular.ttf");
+text.setFontSize(4.2 / scale);
 text.setText(refObject.getDescription());
-text.setTextColor(new Color(0.05, 0.05, 0.05, 1));
+text.setTextColor(new Color(0, 0, 0, 1));
 refObject.addUI(
   Object.assign(new UIElement(), {
-    scale: 0.2,
-    position: new Vector(0, 0, 0.1),
+    scale,
+    position: new Vector(0, 0, 0.05),
     widget: text,
   }),
 );
