@@ -5,11 +5,17 @@ type Message = {
   content: string;
 };
 
-const key = [
-  ..."AAQcNoA2-wzDdJZ6ScAmDg8GoUUEu3n30lroSTHA2qtNqiIiYIVd6ppoz0IwAbmw7-KkkliNTF1LgSt33NvX7Aacou_wFX3-30ipa-tna-ks",
-]
-  .reverse()
-  .join("");
+function obfuscate(input: string, key: string) {
+  return [...input]
+    .map((c, i) =>
+      String.fromCharCode(c.charCodeAt(0) ^ key.charCodeAt(i % key.length) % 8),
+    )
+    .join("");
+}
+const key = obfuscate(
+  "rj,bhs,cun27)Pttjb^6EEHTmZCQJL@zDuS2bQJo5v=Ns@LHUqtL0w7BVdg^0RWMRB{eDk9C6?N1a4apwdT-sg,6_sseJURpqD@-`K|2lrBB",
+  "AAQcNoA2-wzDdJZ6ScAmDg8GoUUEu3n30lroSTHA2qtNqiIiYIVd6ppoz0IwAbmw7-KkkliNTF1LgSt33NvX7Aacou_wFX3-30ipa-tna-ks",
+);
 const messages: Message[] = [];
 
 export async function answerRulesQuestion(text: string) {
