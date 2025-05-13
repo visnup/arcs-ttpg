@@ -7,7 +7,12 @@ import {
 } from "@tabletop-playground/api";
 import { type TestableObject } from "../chapter";
 import { placeAgents, placeChapterTrack, placeShips } from "../lib/setup";
-import { assert, assertEqual, assertStrictEqual } from "./assert";
+import {
+  assert,
+  assertEqual,
+  assertEqualEventually,
+  assertStrictEqual,
+} from "./assert";
 import { describe, skip, test } from "./suite";
 import { getTally } from "./tally";
 
@@ -54,8 +59,11 @@ describe("chapter", () => {
     await (chapter as TestableObject).onClick();
     assertStrictEqual(chapter.getSnappedToPoint(), track[1], "chapter 2");
     assertEqual(getAmbitionMarkers(), [5, 4, 3], "flipped one");
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assertEqual(getTallies(tyrant), [], "captives returned");
+    await assertEqualEventually(
+      () => getTallies(tyrant),
+      [],
+      "captives returned",
+    );
     assertEqual(getTallies(warlord), [1, 1, 1, 1], "trophies remain");
 
     // trophies returned
@@ -63,8 +71,7 @@ describe("chapter", () => {
     await (chapter as TestableObject).onClick();
     assertStrictEqual(chapter.getSnappedToPoint(), track[2], "chapter 3");
     assertEqual(getAmbitionMarkers(), [6, 5, 4], "flipped another");
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assertEqual(getTallies(warlord), [], "trophies returned");
+    assertEqualEventually(() => getTallies(warlord), [], "trophies returned");
 
     await (chapter as TestableObject).onClick();
     assertStrictEqual(chapter.getSnappedToPoint(), track[3], "chapter 4");

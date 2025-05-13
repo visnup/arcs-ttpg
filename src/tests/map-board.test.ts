@@ -27,7 +27,12 @@ import {
 } from "../lib/setup";
 import type { TestableBoard } from "../map-board";
 import type { TestableCard as TestableSetupCard } from "../setup-deck";
-import { assert, assertEqual } from "./assert";
+import {
+  assert,
+  assertEqual,
+  assertEqualEventually,
+  assertEventually,
+} from "./assert";
 import { describe, skip, test } from "./suite";
 
 describe("map board", () => {
@@ -48,9 +53,8 @@ describe("map board", () => {
     );
     const board = world.getObjectByTemplateName("board")!;
     for (const s of ships) s.setPosition(board.getPosition().add([0, 0, 2]));
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    assert(
-      ships.every((s) => s.getObjectType() === ObjectType.Regular),
+    await assertEventually(
+      () => ships.every((s) => s.getObjectType() === ObjectType.Regular),
       "type = regular",
     );
   });
@@ -189,7 +193,7 @@ describe("map board", () => {
   ) {
     card.setPosition(snap.getGlobalPosition().add(offset));
     card.snap();
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await new Promise((r) => setTimeout(r, 100));
     (card as TestableActionCard).onReleased.trigger?.(card);
     (world.getObjectById("map") as TestableBoard).onSnappedTo.trigger(
       card,
@@ -354,9 +358,8 @@ describe("map board", () => {
       ],
       "play card, end turn -> discard",
     );
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assertEqual(
-      getTurnUI(),
+    await assertEqualEventually(
+      () => getTurnUI(),
       [
         [["button", " ▙ "]],
         [
@@ -404,20 +407,22 @@ describe("map board", () => {
     ]);
 
     // wait timer -> pass initiative
-    await new Promise((resolve) => setTimeout(resolve, 1100));
-    assertEqual(getTurnUI(), [
-      [["button", " ▙ "]],
+    await assertEqualEventually(
+      () => getTurnUI(),
       [
-        ["text", "■", 0],
+        [["button", " ▙ "]],
         [
-          ["text", " Pass Initiative ", null],
-          ["progress", 0],
+          ["text", "■", 0],
+          [
+            ["text", " Pass Initiative ", null],
+            ["progress", 0],
+          ],
         ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
       ],
-      [["text", "■", 1]],
-      [["text", "■", 2]],
-      [["text", "■", 3]],
-    ]);
+    );
   });
 
   test("pause after event or council", async () => {
@@ -480,9 +485,8 @@ describe("map board", () => {
       ],
       "play card, end turn -> discard",
     );
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assertEqual(
-      getTurnUI(),
+    await assertEqualEventually(
+      () => getTurnUI(),
       [
         [["button", " ▙ "]],
         [
@@ -525,8 +529,7 @@ describe("map board", () => {
 
     // paused again
     map.turns.nextTurn();
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    assert(map.turns.pauseStart > 0, "paused again");
+    await assertEventually(() => map.turns.pauseStart > 0, "paused again");
   });
 });
 

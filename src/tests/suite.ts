@@ -64,7 +64,7 @@ export function test(description: string, fn: () => Promise<void> | void) {
         );
       return { description, ok: false, error };
     } finally {
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((r) => setTimeout(r, 0));
     }
   });
 }

@@ -16,7 +16,7 @@ import {
   takeResource,
 } from "../lib/setup";
 import type { Ambition } from "../map-board";
-import { assert, assertEqual } from "./assert";
+import { assert, assertEqual, assertEqualEventually } from "./assert";
 import { beforeEach, describe, skip, test } from "./suite";
 
 const offset = (n: number) => 2 * n * Math.random() - n;
@@ -69,9 +69,8 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 500));
-    assertEqual(
-      ambitions,
+    await assertEqualEventually(
+      () => ambitions,
       {
         tycoon: { ...ambitions.tycoon, [slot]: 0 },
         tyrant: { ...ambitions.tyrant, [slot]: 0 },
@@ -94,15 +93,14 @@ describe("player board", () => {
     if (!blight[0]) skip("no blight");
     blight[0].addCards(blight[1]);
     assertEqual(blight[0].getStackSize(), 2);
-    await new Promise((r) => process.nextTick(r));
-    assertEqual(
-      ambitions,
+    await assertEqualEventually(
+      () => ambitions,
       {
-        tycoon: { ...ambitions.tycoon, [slot]: 0 },
-        tyrant: { ...ambitions.tyrant, [slot]: 0 },
-        warlord: { ...ambitions.warlord, [slot]: 2 },
-        keeper: { ...ambitions.keeper, [slot]: 0 },
-        empath: { ...ambitions.empath, [slot]: 0 },
+        tycoon: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        tyrant: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        warlord: { 0: 0, 1: 0, 2: 0, 3: 0, [slot]: 2 },
+        keeper: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        empath: { 0: 0, 1: 0, 2: 0, 3: 0 },
         edenguard: {},
         blightkin: {},
       },
@@ -114,15 +112,14 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-15, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 500));
-    assertEqual(
-      ambitions,
+    await assertEqualEventually(
+      () => ambitions,
       {
-        tycoon: { ...ambitions.tycoon, [slot]: 0 },
-        tyrant: { ...ambitions.tyrant, [slot]: 0 },
-        warlord: { ...ambitions.warlord, [slot]: 0 },
-        keeper: { ...ambitions.keeper, [slot]: 0 },
-        empath: { ...ambitions.empath, [slot]: 0 },
+        tycoon: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        tyrant: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        warlord: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        keeper: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        empath: { 0: 0, 1: 0, 2: 0, 3: 0 },
         edenguard: {},
         blightkin: {},
       },
@@ -156,15 +153,14 @@ describe("player board", () => {
     ambition.setPosition(ambition.getPosition().add([-10, 0, 1]));
     if ("discard" in ambition && typeof ambition.discard === "function")
       ambition.discard();
-    await new Promise((r) => setTimeout(r, 500));
-    assertEqual(
-      ambitions,
+    await assertEqualEventually(
+      () => ambitions,
       {
-        tycoon: { ...ambitions.tycoon, [slot]: 0 },
-        tyrant: { ...ambitions.tyrant, [slot]: 0 },
-        warlord: { ...ambitions.warlord, [slot]: 0 },
-        keeper: { ...ambitions.keeper, [slot]: 0 },
-        empath: { ...ambitions.empath, [slot]: 0 },
+        tycoon: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        tyrant: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        warlord: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        keeper: { 0: 0, 1: 0, 2: 0, 3: 0 },
+        empath: { 0: 0, 1: 0, 2: 0, 3: 0 },
         edenguard: {},
         blightkin: {},
       },
@@ -262,9 +258,8 @@ describe("player board", () => {
     assertEqual(fuel.length, 2);
     fuel[0].addCards(fuel[1]);
     assertEqual(fuel[0].getStackSize(), 2);
-    await new Promise((r) => process.nextTick(r));
-    assertEqual(
-      ambitions,
+    await assertEqualEventually(
+      () => ambitions,
       {
         tycoon: { "0": 2, "1": 0, "2": 0, "3": 0 },
         tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
@@ -300,7 +295,7 @@ describe("player board", () => {
         .findIndex((c) => c.name.startsWith(name));
       const card = court.takeCards(1, true, c)!;
       takeCard(i % 4, card);
-      await new Promise((resolve) => process.nextTick(resolve));
+      await new Promise((r) => process.nextTick(r));
     }
     assertEqual(ambitions, {
       tycoon: { "0": 1, "1": 1, "2": 1, "3": 1 },
@@ -380,9 +375,8 @@ describe("player board", () => {
     );
     for (const city of world.getObjectsByTemplateName("city"))
       city.setPosition([0, 0, 0]);
-    await new Promise((resolve) => process.nextTick(resolve));
-    assertEqual(
-      zones.map((z) => z.getSnapping()),
+    await assertEqualEventually(
+      () => zones.map((z) => z.getSnapping()),
       [0, 0, 0, 0, 0, 0],
       "permissions changed",
     );

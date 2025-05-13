@@ -7,7 +7,12 @@ import {
 } from "@tabletop-playground/api";
 import type { InitiativeMarker } from "../initiative-marker";
 import type { TestableCard } from "../setup-deck";
-import { assert, assertEqual, assertNotEqual } from "./assert";
+import {
+  assert,
+  assertEqual,
+  assertEqualEventually,
+  assertNotEqual,
+} from "./assert";
 import { getCounts } from "./setup";
 import { describe, skip, test } from "./suite";
 import { getTally } from "./tally";
@@ -127,8 +132,11 @@ describe("setup deck", () => {
       "6 cards per hand",
     );
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    assertEqual(map.getObjectType(), ObjectType.Ground, "map is grounded");
+    await assertEqualEventually(
+      () => map.getObjectType(),
+      ObjectType.Ground,
+      "map is grounded",
+    );
   });
 
   test("3p", () => {

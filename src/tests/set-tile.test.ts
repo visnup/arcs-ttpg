@@ -51,7 +51,7 @@ describe("set tile", () => {
         .add([0, 0, 1]),
     );
     guardian.snap();
-    await new Promise((resolve) => setTimeout(resolve, 500)); // wait to avoid hang?
+    await new Promise((r) => setTimeout(r, 500)); // wait to avoid hang?
     (guardian as TestableCard).onSnapped.trigger(guardian);
     const firstRegent = world.getObjectByTemplateName("first-regent")!;
     assert(
@@ -125,7 +125,7 @@ describe("set tile", () => {
         .add([0, 0, 1]),
     );
     guardian.snap();
-    await new Promise((resolve) => setTimeout(resolve, 500)); // wait to avoid hang?
+    await new Promise((r) => setTimeout(r, 500)); // wait to avoid hang?
     (guardian as TestableCard).onSnapped.trigger(guardian);
     const firstRegent = world.getObjectByTemplateName("first-regent")!;
     assert(

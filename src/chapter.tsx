@@ -65,7 +65,7 @@ async function cleanUp() {
     unflipped
       .reduce((lowest, m) => (power(m) < power(lowest) ? m : lowest))
       .flipOrUpright();
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await new Promise((r) => setTimeout(r, 800));
   }
   // Re-sort
   markers.sort((a, b) => power(b) - power(a));
