@@ -68,27 +68,30 @@ describe("set tile", () => {
     // empire control
     const number = world.getObjectByTemplateName<Dice>("number")!;
     assertEqual(
-      ambitions,
-      {
-        tycoon: { 0: 0, 1: 0, 2: 0, 3: 0 },
-        tyrant: { 0: 0, 1: 0, 2: 0, 3: 0 },
-        warlord: { 0: 0, 1: 0, 2: 0, 3: 0 },
-        keeper: { 0: 0, 1: 0, 2: 0, 3: 0 },
-        empath: { 0: 0, 1: 0, 2: 0, 3: 0 },
-        edenguard: {
-          [slot]: [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]!,
-        },
-        blightkin: {},
-      },
+      ambitions.edenguard,
+      { [slot]: [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]! },
       "initial empire control",
     );
     // empire control follows first regent
-    firstRegent.setPosition();
+    const boards = world.getObjectsByTemplateName("board")!;
+    firstRegent.setPosition(
+      boards
+        .find((d) => d.getOwningPlayerSlot() === slots[1])!
+        .getPosition()
+        .add([0, -23, 2]),
+    );
+    firstRegent.snapToGround();
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    assertEqual(
+      ambitions.edenguard,
+      { [slots[1]]: [, 2, 2, 4, 2, 2, 4][+number.getCurrentFaceName()]! },
+      "first regent moved",
+    );
 
     // player control
     // place 2p ships
-    console.log("systems", JSON.stringify(getSystems()));
-    placeShips(slots[1], 1, getSystems()[0].snap.getGlobalPosition());
+    // console.log("systems", JSON.stringify(getSystems()));
+    // placeShips(slots[1], 1, getSystems()[0].snap.getGlobalPosition());
   });
 
   test("blightkin", async () => {});

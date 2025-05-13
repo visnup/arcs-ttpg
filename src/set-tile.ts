@@ -11,8 +11,9 @@ import { type Ambition } from "./map-board";
 
 const slots = [0, 1, 2, 3, 4] as const;
 type slot = (typeof slots)[number];
-type Gate = `${"1" | "2" | "3" | "4" | "5" | "6"}.0`;
-type Planet = `${"1" | "2" | "3" | "4" | "5" | "6"}.${"1" | "2" | "3"}`;
+type Cluster = "1" | "2" | "3" | "4" | "5" | "6";
+type Gate = `${Cluster}.0`;
+type Planet = `${Cluster}.${"1" | "2" | "3"}`;
 type System = Gate | Planet;
 
 // Setup

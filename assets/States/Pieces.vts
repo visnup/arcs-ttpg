@@ -806,8 +806,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
-					"y": 0.01,
+					"x": -1,
+					"y": -0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -7606,7 +7606,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 1,
+					"x": -1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -7935,67 +7935,6 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.018,
-					"y": 0.001,
-					"z": 0.048,
-					"w": 0.999
-				},
-				"translation": {
-					"x": -14.658,
-					"y": -47.272,
-					"z": 86.972
-				},
-				"scale3D": {
-					"x": 1,
-					"y": 1,
-					"z": 1
-				}
-			},
-			"simulatingPhysics": true,
-			"primaryColor": {
-				"b": 172,
-				"g": 255,
-				"r": 159,
-				"a": 255
-			},
-			"secondaryColor": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 255
-			},
-			"metallic": 0,
-			"roughness": 1,
-			"friction": 0.7,
-			"restitution": 0.3,
-			"density": 1,
-			"surfaceType": "SurfaceType5",
-			"objectName": "",
-			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
-			"collisionType": "CB_Regular",
-			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
-			"shouldSnap": true,
-			"previousPosition": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "note.js",
-			"persistentData": "",
-			"persistentKeyData": {},
-			"uniqueId": "qph",
-			"drawingLines": [],
-			"objectTags": [],
-			"objectGroupId": -1,
-			"ownerIndex": -1,
-			"lightsOn": true,
-			"bCanBeDamaged": false
-		},
-		{
-			"objectType": "DynamicObject",
-			"transform": {
-				"rotation": {
 					"x": 0,
 					"y": 0,
 					"z": -0.382,
@@ -8051,6 +7990,67 @@
 			"objectGroupId": -1,
 			"ownerIndex": 0,
 			"lightsOn": false,
+			"bCanBeDamaged": false
+		},
+		{
+			"objectType": "DynamicObject",
+			"transform": {
+				"rotation": {
+					"x": -0.018,
+					"y": 0.002,
+					"z": 0.133,
+					"w": 0.991
+				},
+				"translation": {
+					"x": -14.463,
+					"y": -47.853,
+					"z": 86.992
+				},
+				"scale3D": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			},
+			"simulatingPhysics": true,
+			"primaryColor": {
+				"b": 172,
+				"g": 255,
+				"r": 159,
+				"a": 255
+			},
+			"secondaryColor": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 255
+			},
+			"metallic": 0,
+			"roughness": 1,
+			"friction": 0.7,
+			"restitution": 0.3,
+			"density": 1,
+			"surfaceType": "SurfaceType5",
+			"objectName": "",
+			"objectDescription": "Turns\n\n- Pass Initiative if out\n  of cards\n- End Turn advances\n  and automates Seize,\n  Surpass, and discard",
+			"collisionType": "CB_Regular",
+			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
+			"shouldSnap": true,
+			"previousPosition": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+			"objectScriptName": "note.js",
+			"persistentData": "",
+			"persistentKeyData": {},
+			"uniqueId": "qph",
+			"drawingLines": [],
+			"objectTags": [],
+			"objectGroupId": -1,
+			"ownerIndex": -1,
+			"lightsOn": true,
 			"bCanBeDamaged": false
 		},
 		{
@@ -11127,7 +11127,7 @@
 				"z": 0
 			},
 			"objectScriptPackage": "8878F08F55344ED182D61F6E91585D56",
-			"objectScriptName": "",
+			"objectScriptName": "first-regent-tile.js",
 			"persistentData": "",
 			"persistentKeyData": {},
 			"uniqueId": "qn8",
@@ -17754,7 +17754,7 @@
 				"translation": {
 					"x": 26.01,
 					"y": 84.003,
-					"z": 86.923
+					"z": 86.922
 				},
 				"scale3D": {
 					"x": 1,
@@ -17968,7 +17968,7 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -33.991,
+					"x": -33.99,
 					"y": -82,
 					"z": 86.972
 				},
@@ -18671,7 +18671,7 @@
 				"translation": {
 					"x": 4.499,
 					"y": 33.805,
-					"z": 87.04
+					"z": 87.083
 				},
 				"scale3D": {
 					"x": 4.3,
@@ -18712,7 +18712,7 @@
 				"translation": {
 					"x": -0.801,
 					"y": 33.805,
-					"z": 87.04
+					"z": 87.125
 				},
 				"scale3D": {
 					"x": 4.3,
@@ -18753,7 +18753,7 @@
 				"translation": {
 					"x": -6.101,
 					"y": 33.805,
-					"z": 87.04
+					"z": 87.168
 				},
 				"scale3D": {
 					"x": 4.3,
@@ -18794,53 +18794,12 @@
 				"translation": {
 					"x": -11.401,
 					"y": 33.805,
-					"z": 87.04
+					"z": 87.21
 				},
 				"scale3D": {
 					"x": 4.3,
 					"y": 10,
 					"z": 2
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-dice-rqj",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 0,
-					"y": -75,
-					"z": 88.57
-				},
-				"scale3D": {
-					"x": 19,
-					"y": 19,
-					"z": 6.5
 				}
 			},
 			"bCanBeDamaged": true
@@ -20563,6 +20522,47 @@
 					"x": 20,
 					"y": 51.924,
 					"z": 8
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-dice-rqj",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 0,
+					"y": -75,
+					"z": 88.57
+				},
+				"scale3D": {
+					"x": 19,
+					"y": 19,
+					"z": 6.5
 				}
 			},
 			"bCanBeDamaged": true
