@@ -31,8 +31,9 @@ function setup(card: typeof refCard) {
     globalEvents.onAmbitionShouldTally.remove(onAmbitionShouldTally);
     globalEvents.onAmbitionTallied.remove(onAmbitionTallied);
   });
+
+  globalEvents.onAmbitionShouldTally.trigger(ambition);
 }
-setup(refCard);
 
 const edenguard = new Set<System>([
   "1.2",
@@ -152,3 +153,5 @@ function getSystem(obj: GameObject): System | null {
   if (r > far) return null;
   return r > near ? id : ((id[0] + ".0") as Gate);
 }
+
+setup(refCard);
