@@ -9,7 +9,7 @@ import {
 const scale = 0.2;
 const text = new RichText();
 text.setFont("PermanentMarker-Regular.ttf");
-text.setFontSize(4.2 / scale);
+text.setFontSize(4.6 / scale);
 text.setText(refObject.getDescription());
 text.setTextColor(new Color(0, 0, 0, 1));
 refObject.addUI(

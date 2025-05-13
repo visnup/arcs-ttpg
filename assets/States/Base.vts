@@ -2706,7 +2706,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -2834,7 +2834,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -3023,8 +3023,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": -0.01,
+					"x": 1,
+					"y": 0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -9567,7 +9567,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9957,15 +9957,15 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.009,
+					"x": -0.011,
 					"y": 0.001,
 					"z": 0.064,
 					"w": 0.998
 				},
 				"translation": {
 					"x": -14.819,
-					"y": -48.521,
-					"z": 87.02
+					"y": -48.522,
+					"z": 87.019
 				},
 				"scale3D": {
 					"x": 1,
@@ -10140,8 +10140,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": 0.01,
+					"x": 1,
+					"y": -0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -10965,7 +10965,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -15269,7 +15269,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "BASE SETUP\n\n- Shuffle setup deck\n  for # players\n- Draw & flip to\n  preview setup",
+			"objectDescription": "BASE SETUP\n\n- Shuffle setup deck\n  for # players\n- Draw & flip to\n  preview setup\n- Run setup to place\n  all pieces",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
