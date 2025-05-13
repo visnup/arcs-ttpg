@@ -118,6 +118,7 @@ function campaignSetup(players: number, card: Card) {
   );
 
   // Shuffle court deck
+  world.getObjectByTemplateName("bc")?.destroy();
   const cc = world.getObjectByTemplateName<Card>("cc");
   if (cc) {
     const court = getCourtSnaps(0)[0];
