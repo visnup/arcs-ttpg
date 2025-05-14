@@ -17,7 +17,7 @@ const reset = createReset(refObject);
 
 (async () => {
   beforeEach(reset, true);
-  afterEach(updateButtons, true);
+  afterEach(() => process.nextTick(updateButtons), true);
 
   // Import tests
   for (const p of world.getAllowedPackages())
