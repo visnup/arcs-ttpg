@@ -18,6 +18,7 @@ refCard.onPrimaryAction.add((card, player) => {
 });
 refCard.onRemoved.add(showTake);
 refCard.onInserted.add(hideTake);
+refCard.onSnapped.add(hideTake);
 showTake(refCard);
 
 function showTake(card: Card) {
