@@ -5,6 +5,7 @@ import {
   UIElement,
   Vector,
   world,
+  type GameObject,
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render, useRef } from "jsx-in-ttpg";
 import { createReset } from "./lib/reset";
@@ -55,3 +56,8 @@ const reset = createReset(refObject);
       );
   }
 })();
+
+export type TestableObject = GameObject & {
+  reset: typeof reset;
+};
+(refObject as TestableObject).reset = reset;

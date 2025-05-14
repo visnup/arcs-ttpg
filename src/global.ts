@@ -14,6 +14,8 @@ import { onChatMessage as handleScreenshots } from "./lib/screenshots";
 import { captureException } from "./lib/sentry";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
+import type { TestableObject } from "./test";
+import { run as runTests } from "./tests/suite";
 
 // Set up global error handler for uncaught exceptions
 globalThis.$uncaughtException = (err) => {
@@ -43,6 +45,7 @@ for (const obj of world.getAllObjects())
     if (c in colors) obj.setOwningPlayerSlot(colors[c]);
   }
 
+let testPresses: number[] = [];
 globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
   // Hotkey to mimic hot seat functionality
   const dir = [, -1, 1][index];
@@ -51,12 +54,21 @@ globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
     player.switchSlot((n + player.getSlot() + dir) % n);
   }
 
-  // Spawn test cube
-  if (index >= 9)
-    world.createObjectFromTemplate(
-      "19718F53164F2A4ABB2A79AF91413AFE",
-      world.getObjectByTemplateName("tray")!.getPosition().add([25, 0, 0]),
-    );
+  // Spawn and run tests
+  if (index >= 9) {
+    const now = Date.now();
+    testPresses = testPresses.filter((t) => now - t < 500);
+    testPresses.push(now);
+    if (testPresses.length >= 3) {
+      const tests = (world.getObjectByTemplateName("test") ??
+        world.createObjectFromTemplate(
+          "19718F53164F2A4ABB2A79AF91413AFE", // test cube
+          world.getObjectByTemplateName("tray")!.getPosition().add([25, 0, 0]),
+        )) as TestableObject;
+      tests.reset();
+      if (index === 10) process.nextTick(() => runTests());
+    }
+  }
 });
 
 // Screenshot commands
