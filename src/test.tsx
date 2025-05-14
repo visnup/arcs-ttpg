@@ -29,7 +29,7 @@ const reset = createReset(refObject);
     position: new Vector(0, 0, 24),
     rotation: new Rotator(70, 0, 0),
     widget: render(
-      <verticalbox>
+      <verticalbox gap={0}>
         <button onClick={() => run()}>Run all</button>
         <button onClick={reset}>Reset</button>
       </verticalbox>,
