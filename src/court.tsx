@@ -19,7 +19,7 @@ const registered = new WeakSet<GameObject>();
 
 // Zones for each card
 const zones = new Set<Zone>();
-const widgets = [] as VerticalBox[];
+const widgets = new Map<Zone, VerticalBox>();
 const { x, y } = refObject.getSize();
 for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   const zoneId = `zone-court-${refObject.getId()}-${i}`;
@@ -44,7 +44,7 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
       <verticalbox halign={HorizontalAlignment.Center} gap={15} />,
     ),
   });
-  widgets.push(ui.widget as VerticalBox);
+  widgets.set(zone, ui.widget as VerticalBox);
   refObject.addUI(ui);
 
   tallyAgents(zone);
@@ -52,11 +52,10 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
 }
 
 function tallyAgents(zone: Zone) {
-  const tallies = new Array(4).fill(0);
+  const tallies = [0, 0, 0, 0];
   for (const obj of zone.getOverlappingObjects())
     if (obj.getTemplateName() === "agent") tallies[obj.getOwningPlayerSlot()]++;
-  const widget =
-    widgets[+zone.getId().replace(`zone-court-${refObject.getId()}-`, "")];
+  const widget = widgets.get(zone)!;
   widget.removeAllChildren();
   for (const [slot, value] of [...tallies.entries()].sort(
     (a, b) => b[1] - a[1],
@@ -73,10 +72,10 @@ function tallyAgents(zone: Zone) {
 }
 
 function isCourtCard(object: GameObject): object is Card {
-  return !!(
+  return (
     object instanceof Card &&
     object.getStackSize() === 1 &&
-    object.getTemplateName().match(/^(bc|cc|lore|f\d+)$/)
+    /^(bc|cc|lore|f\d+)$/.test(object.getTemplateName())
   );
 }
 
