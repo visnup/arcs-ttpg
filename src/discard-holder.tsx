@@ -43,16 +43,18 @@ function discardFaceDown() {
 }
 
 function coveredByCourt(card: Card) {
-  return String(
-    world
-      .boxTrace(
-        card.getExtentCenter(true, false),
-        card.getExtentCenter(true, false).add(new Vector(0, 0, 10)),
-        card.getExtent(true, false).multiply(0.75),
-      )
-      .filter(({ object }) => object !== card)
-      .map(({ object }) => object.getTemplateName()),
-  ).match(/^(bc|cc|lore|f\d+)$/);
+  return /^(bc|cc|lore|f\d+)$/.test(
+    String(
+      world
+        .boxTrace(
+          card.getExtentCenter(true, false),
+          card.getExtentCenter(true, false).add(new Vector(0, 0, 10)),
+          card.getExtent(true, false).multiply(0.75),
+        )
+        .filter(({ object }) => object !== card)
+        .map(({ object }) => object.getTemplateName()),
+    ),
+  );
 }
 
 // Ensure zone has been created

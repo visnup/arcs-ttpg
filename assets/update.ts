@@ -219,7 +219,7 @@ function tags(cards: Card[]) {
         d.text?.match(/You (?:keep|hold) the (\w+) supply/) || [];
       const action =
         d.tags?.includes("Event") || d.tags?.includes("Action Card");
-      const captives = d.text?.match(/keep\s\d+\sCaptive/);
+      const captives = /keep\s\d+\sCaptive/.test(d.text);
       return {
         ...acc,
         [i]:
@@ -269,12 +269,12 @@ image(
 
 // lore.json
 modify("assets/Templates/cards/lore.json", (json) => {
-  json["CardNames"] = names(base.filter((d) => !!d.id.match(/^ARCS-L\d+$/)));
+  json["CardNames"] = names(base.filter((d) => /^ARCS-L\d+$/.test(d.id)));
   return json;
 });
 image(
   "assets/Textures/cards/lore.jpg",
-  base.filter((d) => !!d.id.match(/^ARCS-L\d+$/)),
+  base.filter((d) => /^ARCS-L\d+$/.test(d.id)),
 );
 
 // leader-2.json
@@ -296,12 +296,12 @@ image(
 
 // lore-2.json
 modify("assets/Templates/cards/lore-2.json", (json) => {
-  json["CardNames"] = names(leaders.filter((d) => !!d.id.match(/^ARCS-L\d+$/)));
+  json["CardNames"] = names(leaders.filter((d) => /^ARCS-L\d+$/.test(d.id)));
   return json;
 });
 image(
   "assets/Textures/cards/lore-2.jpg",
-  leaders.filter((d) => !!d.id.match(/^ARCS-L\d+$/)),
+  leaders.filter((d) => /^ARCS-L\d+$/.test(d.id)),
 );
 
 // cc.json: campaign court
@@ -317,7 +317,7 @@ image(
 // dc.json
 modify("assets/Templates/campaign/dc.json", (json) => {
   json["CardNames"] = names(
-    campaign.filter((d) => !!d.id.match(/^ARCS-AID\d+A?$/)),
+    campaign.filter((d) => /^ARCS-AID\d+A?$/.test(d.id)),
   );
   // 14, 15, 16 = event
   for (const i of [13, 14, 15]) json["CardNames"][i] = "Event";
@@ -352,8 +352,8 @@ image(
 // f01.json..f24.json
 for (let i = 1; i <= 24; i++) {
   const n = i.toString().padStart(2, "0");
-  const fate = campaign.filter(
-    (d) => !!d.id.match(new RegExp(`^ARCS-F${i}\\d\\dA?$`)),
+  const fate = campaign.filter((d) =>
+    new RegExp(`^ARCS-F${i}\\d\\dA?$`).test(d.id),
   );
   modify(`assets/Templates/campaign/f${n}.json`, (json) => {
     json["CardNames"] = names(fate);

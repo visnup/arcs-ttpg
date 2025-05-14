@@ -459,7 +459,7 @@ describe("campaign fate card", () => {
         .map((h) => h.object)
         .filter((o) => o.getId() !== "map");
 
-      const cards = set.find((d) => d.getTemplateName().match(/^f\d\d$/));
+      const cards = set.find((d) => /^f\d\d$/.test(d.getTemplateName()));
       assert(cards instanceof Card, `${expected.name} cards`);
       for (const f of ["name", "metadata", "tags"] as const)
         for (const [i, value] of expected[f]?.entries() ?? [])

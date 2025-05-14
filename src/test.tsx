@@ -22,7 +22,7 @@ const reset = createReset(refObject);
   // Import tests
   for (const p of world.getAllowedPackages())
     for (const script of p.getScriptFiles().sort())
-      if (script.match(/^tests\/.*\.test\.js$/)) await import(`./${script}`);
+      if (/^tests\/.*\.test\.js$/.test(script)) await import(`./${script}`);
 
   // UI
   const ui = Object.assign(new UIElement(), {
