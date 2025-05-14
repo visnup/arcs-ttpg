@@ -51,10 +51,12 @@ export async function onChatMessage(player: Player, message: string) {
     .map((o) =>
       o.getAllSnapPoints().find((s) => s.getTags().includes("leader")),
     );
-  for (const slot of [0, 1, 2, 3])
-    leaders[1]
-      .takeCards(1)!
-      .setPosition(snaps[slot]!.getGlobalPosition().add([0, 0, 1]));
+  for (const slot of [0, 1, 2, 3]) {
+    const leader = leaders[1].takeCards(1)!;
+    leader.setPosition(snaps[slot]!.getGlobalPosition().add([0, 0, 1]));
+    leader.snap();
+    leader.removeUI(0);
+  }
 
   // lore
   const lore = world.getObjectsByTemplateName<Card>("lore");
