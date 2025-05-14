@@ -219,6 +219,7 @@ function tags(cards: Card[]) {
         d.text?.match(/You (?:keep|hold) the (\w+) supply/) || [];
       const action =
         d.tags?.includes("Event") || d.tags?.includes("Action Card");
+      const captives = d.text?.match(/keep\s\d+\sCaptive/);
       return {
         ...acc,
         [i]:
@@ -229,6 +230,7 @@ function tags(cards: Card[]) {
                 "card",
                 ...(supply ? [`supply:${supply.toLowerCase()}`] : []),
                 ...(action ? ["action"] : []),
+                ...(captives ? ["captives"] : []),
               ],
       };
     }, {});

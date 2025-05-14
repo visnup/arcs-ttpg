@@ -1,4 +1,5 @@
 import {
+  Card,
   globalEvents,
   HorizontalBox,
   UIElement,
@@ -143,11 +144,37 @@ export class AmbitionSection {
         .some((h) => h.getNumCards() > 0)
     )
       return;
-    const boards = world.getObjectsByTemplateName("board");
-    function returnZone(prefix: string, resources = false) {
-      for (const board of boards)
+
+    if (this.offset === 1 && !captiveHolding()) returnZone("-captive", true);
+    else if (this.offset === 2) returnZone();
+
+    function captiveHolding() {
+      const cards = world
+        .getAllZones()
+        .filter((z) => z.getId().startsWith("zone-player-court-"))
+        .flatMap((z) =>
+          z
+            .getOverlappingObjects()
+            .filter(
+              (d) =>
+                d instanceof Card &&
+                d.getCardDetails().tags.includes("captives"),
+            ),
+        ) as Card[];
+      if (cards.length > 0) {
+        const names = cards
+          .map((d) => d.getCardDetails().name.replace(/\n.*/s, ""))
+          .join(", ");
+        for (const p of world.getAllPlayers())
+          p.showMessage(`Return captives manually due to ${names}`);
+        return true;
+      }
+    }
+
+    function returnZone(suffix = "", resources = false) {
+      for (const board of world.getObjectsByTemplateName("board"))
         for (const obj of world
-          .getZoneById(`${prefix}-${board.getId()}`)
+          .getZoneById(`zone-player${suffix}-${board.getId()}`)
           ?.getOverlappingObjects() ?? []) {
           if (
             (resources || obj.getOwningPlayerSlot() !== -1) &&
@@ -158,8 +185,6 @@ export class AmbitionSection {
             obj.discard();
         }
     }
-    if (this.offset === 1) returnZone("zone-player-captive", true);
-    else if (this.offset === 2) returnZone("zone-player");
   };
 
   save() {
