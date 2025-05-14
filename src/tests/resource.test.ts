@@ -1,11 +1,10 @@
 import type { Card } from "@tabletop-playground/api";
 import { world } from "@tabletop-playground/api";
-import { assert, assertEqual } from "./assert";
+import { assert, assertEqual, assertEqualEventually } from "./assert";
 import { describe, test } from "./suite";
 
 const discard = (card: Card) => {
   if ("discard" in card && typeof card.discard === "function") card.discard();
-  return new Promise((r) => setTimeout(r, 400));
 };
 
 const supply = (i: number) =>
@@ -22,14 +21,14 @@ describe("resource", () => {
       const one = r.takeCards(1)!;
       one.setPosition(one.getPosition().add([0, 3, 0]));
       assertEqual(r.getStackSize(), 4, "took one card");
-      await discard(one);
-      assertEqual(r.getStackSize(), 5, "single to deck");
+      discard(one);
+      await assertEqualEventually(() => r.getStackSize(), 5, "single to deck");
 
       const two = r.takeCards(2)!;
       two.setPosition(two.getPosition().add([0, 3, 0]));
       assertEqual(r.getStackSize(), 3, "took two cards");
-      await discard(two);
-      assertEqual(r.getStackSize(), 5, "two to deck");
+      discard(two);
+      await assertEqualEventually(() => r.getStackSize(), 5, "two to deck");
 
       r.setPosition(r.getPosition().add([0, 3, 0]));
       discard(r);
@@ -42,9 +41,17 @@ describe("resource", () => {
       assertEqual(r.getStackSize(), 4, "took one card");
       assertEqual(o.getStackSize(), 4, "took one card");
       assertEqual(mixed.getStackSize(), 2, "combined two resources");
-      await discard(mixed);
-      assertEqual(r.getStackSize(), 5, "heterogenous to deck");
-      assertEqual(o.getStackSize(), 5, "heterogenous to deck");
+      discard(mixed);
+      await assertEqualEventually(
+        () => r.getStackSize(),
+        5,
+        "heterogenous to deck",
+      );
+      await assertEqualEventually(
+        () => o.getStackSize(),
+        5,
+        "heterogenous to deck",
+      );
     });
 
     test(`${resource}: discard to cartel`, async () => {
@@ -81,8 +88,8 @@ describe("resource", () => {
       const one = r.takeCards(1)!;
       one.setPosition(one.getPosition().add([0, 3, 0]));
       assertEqual(r.getStackSize(), 4, "took one card");
-      await discard(one);
-      assertEqual(r.getStackSize(), 5, "single to deck");
+      discard(one);
+      await assertEqualEventually(() => r.getStackSize(), 5, "single to deck");
     });
   }
 });
