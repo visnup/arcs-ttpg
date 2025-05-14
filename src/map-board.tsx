@@ -248,7 +248,7 @@ class Turns {
     globalEvents.onActionsDealt.add(() => this.startRound(-1));
     globalEvents.onActionsDiscarded.add((cards) => {
       this.startRound();
-      if (this.shouldPause(cards)) this.pause();
+      if (this.shouldPause(cards)) this.pause(undefined, "for possible Summit");
     });
     globalEvents.onChapterEnded.add(() => this.endChapter());
     globalEvents.onInitiativeMoved.add(this.onInitiativeMoved);
@@ -339,7 +339,7 @@ class Turns {
   }
 
   // Toggle pause
-  pause = (player?: Player) => {
+  pause = (player?: Player, reason?: string) => {
     if (this.pauseStart) {
       this.pauseTime += Date.now() - this.pauseStart;
       this.pauseStart = 0;
@@ -347,7 +347,7 @@ class Turns {
       this.pauseStart = Date.now();
       const message = player
         ? `${player.getName()} paused the timer`
-        : `Timer paused`;
+        : ["Timer paused", reason].filter((d) => d).join(" ");
       for (const p of world.getAllPlayers()) p.showMessage(message);
     }
     this.save();
