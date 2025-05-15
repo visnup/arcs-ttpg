@@ -22,7 +22,9 @@ function unoccupied() {
 }
 export function shuffledSlots(n: number) {
   // Randomize seating into lowest slots
-  const players = world.getAllPlayers().filter((d) => d.getSlot() >= 0);
+  const players = world
+    .getAllPlayers()
+    .filter((d) => [0, 1, 2, 3].includes(d.getSlot()));
   players.length = n;
   for (const [i, p] of shuffle(players).entries()) {
     world.getPlayerBySlot(i)?.switchSlot(unoccupied());
