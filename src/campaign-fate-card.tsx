@@ -43,13 +43,11 @@ import {
 const refPackageId = _refPackageId;
 
 export type TestableCard = Card & {
-  onPrimaryAction: { trigger: typeof showDeal };
   onSnapped: { trigger: typeof takeFateSet };
   onClick: typeof campaignSetup;
 };
 
-refCard.onPrimaryAction.add(showDealOrTakeFateSet);
-(refCard as TestableCard).onPrimaryAction.trigger = showDealOrTakeFateSet;
+refCard.onPrimaryAction.add(takeFateSet);
 refCard.onSnapped.add(takeFateSet);
 (refCard as TestableCard).onSnapped.trigger = takeFateSet;
 refCard.onCustomAction.add(takeFateSet);
@@ -58,10 +56,7 @@ refCard.addCustomAction(
   "Spawns matching fate cards and items",
 );
 (refCard as TestableCard).onClick = campaignSetup;
-
-function showDealOrTakeFateSet(card: Card) {
-  return card.getStackSize() > 1 ? showDeal(card) : takeFateSet(card);
-}
+if (refCard.getStackSize() > 1) showDeal(refCard);
 
 // Campaign setup
 function showDeal(card: Card) {
@@ -72,7 +67,7 @@ function showDeal(card: Card) {
     return;
   card.addUI(
     Object.assign(new UIElement(), {
-      position: new Vector(0, 0, card.getExtent(false, false).z + 0.1),
+      position: new Vector(0, 0, card.getExtent(false, false).z + 0.05),
       scale: 0.15,
       widget: render(
         <verticalbox gap={10}>
@@ -201,6 +196,7 @@ function campaignSetup(players: number, card: Card) {
       );
 
   // Deal Fate cards
+  card.shuffle();
   card.deal(2, slots, false, true);
 
   // Place Regent / Outlaw

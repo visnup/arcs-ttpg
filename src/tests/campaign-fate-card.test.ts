@@ -15,7 +15,6 @@ describe("campaign fate card", () => {
       .getObjectsByTemplateName<Card>("fate")
       .sort((a, b) => a.getPosition().y - b.getPosition().y);
     if (fates.length === 0) skip("no fates");
-    (fates[0] as TestableCard).onPrimaryAction.trigger(fates[0]);
     assertEqual(fates[0].getUIs().length, 1, "ui added"); // weirdly can't see the UI, but scripting can
   });
 
