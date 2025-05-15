@@ -56,13 +56,14 @@ refCard.addCustomAction(
   "Spawns matching fate cards and items",
 );
 (refCard as TestableCard).onClick = campaignSetup;
-if (refCard.getStackSize() > 1) showDeal(refCard);
+showDeal(refCard);
 
 // Campaign setup
 function showDeal(card: Card) {
   if (
     card.getUIs().length ||
-    card.getAllCardDetails().some(({ index }) => index >= 8)
+    card.getStackSize() !== 8 ||
+    card.getAllCardDetails().some(({ index }) => index >= 8) // not A fates
   )
     return;
   card.addUI(
