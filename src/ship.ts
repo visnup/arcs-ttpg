@@ -34,6 +34,7 @@ function toggle(obj: GameObject) {
 refObject.onSecondaryAction.add((obj, player) => {
   const origin = world.getObjectById("map")!.getPosition();
   const ships = player.getSelectedObjects();
+  if (ships.length === 0) ships.push(obj);
   if (ships[0] !== obj) return; // only one cook in the kitchen
   const p = ships
     .map((s) => s.getPosition())
