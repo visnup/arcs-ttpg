@@ -25,3 +25,16 @@ await writeFile(
     "\t",
   ),
 );
+
+await writeFile(
+  "assets/States/Empty.vts",
+  JSON.stringify(
+    {
+      ...json,
+      zones: [],
+      objects: objects.filter((o) => o.objectType === "Table"),
+    },
+    null,
+    "\t",
+  ),
+);

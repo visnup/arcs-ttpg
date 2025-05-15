@@ -1,7 +1,7 @@
 {
 	"saveStateVersion": "1.1",
 	"gameState": {
-		"measureUnit": 2.54,
+		"measureUnit": 1,
 		"rotationStep": 45,
 		"notes": "You can enter notes for the game here. They will be visible to all players and are stored when the game is saved.\n\nYou can use [color=#ff0000]colors[/color], [b]bold[/b] or [i]italic[/i] text, [size=9]different[/size] [size=16]sizes[/size], and [color=#00ff00][size=8][b][i]combine text styles.[/color][/size][/b][/i]",
 		"turnInfo": {},
@@ -27,8 +27,8 @@
 			0,
 			0
 		],
-		"globalScriptPackage": "00000000000000000000000000000000",
-		"globalScriptName": "",
+		"globalScriptPackage": "8878F08F55344ED182D61F6E91585D56",
+		"globalScriptName": "global.js",
 		"backgroundTexture": {
 			"resourceName": "",
 			"packageGuid": "00000000000000000000000000000000"
@@ -87,12 +87,35 @@
 	},
 	"requiredPackages": [
 		{
+			"name": "Arcs (Dev)",
+			"guid": "8878F08F55344ED182D61F6E91585D56"
+		},
+		{
 			"name": "General",
 			"guid": "D74C7D5D6745CD565913DAA5FB3E9C93"
 		}
 	],
 	"storedCameraSetups": [
-		false,
+		{
+			"location": {
+				"x": -21.4,
+				"y": 0,
+				"z": 165.55
+			},
+			"pawnRotation": {
+				"x": 0,
+				"y": 0,
+				"z": 0,
+				"w": 1
+			},
+			"controlRotation": {
+				"pitch": 284.47,
+				"yaw": 0,
+				"roll": 0
+			},
+			"playerScale": 1,
+			"flying": true
+		},
 		false,
 		false,
 		false,
@@ -148,30 +171,106 @@
 		"20"
 	],
 	"customPlayerColors": [
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
+		{
+			"r": 255,
+			"g": 183,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 149,
+			"b": 169
+		},
+		{
+			"r": 225,
+			"g": 83,
+			"b": 61
+		},
+		{
+			"r": 215,
+			"g": 210,
+			"b": 203
+		},
+		{
+			"r": 145,
+			"g": 42,
+			"b": 173
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
+		{
+			"r": 0,
+			"g": 0,
+			"b": 0
+		},
 		false
 	],
 	"lighting": {
-		"intensity": 1,
-		"specular": 1,
+		"intensity": 2.1,
+		"specular": 0.5,
 		"altitude": 90,
 		"azimuth": 0,
 		"color": {
@@ -186,8 +285,8 @@
 		"snapType": 0,
 		"visibility": 0,
 		"size": {
-			"x": 5.08,
-			"y": 5.08
+			"x": 1.5,
+			"y": 1.5
 		},
 		"offset": {
 			"x": 0,
@@ -195,13 +294,15 @@
 		},
 		"rotation": 0,
 		"color": {
-			"r": 0,
-			"g": 0,
-			"b": 0,
+			"r": 102,
+			"g": 102,
+			"b": 102,
 			"a": 179
 		},
 		"thickLines": false
 	},
+	"zones": [],
+	"labels": [],
 	"objects": [
 		{
 			"objectType": "Table",
@@ -256,7 +357,7 @@
 			"objectScriptName": "",
 			"persistentData": "",
 			"persistentKeyData": {},
-			"uniqueId": "lv7",
+			"uniqueId": "8kv",
 			"drawingLines": [],
 			"objectTags": [],
 			"objectGroupId": -1,
@@ -264,7 +365,5 @@
 			"lightsOn": true,
 			"bCanBeDamaged": false
 		}
-	],
-	"zones": [],
-	"labels": []
+	]
 }

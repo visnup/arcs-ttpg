@@ -1,10 +1,12 @@
 import type { GameObject, Player } from "@tabletop-playground/api";
 import {
+  Button,
   Card,
   GameWorld,
   globalEvents,
   GlobalScriptingEvents,
   Rotator,
+  UIElement,
   Vector,
   world,
 } from "@tabletop-playground/api";
@@ -14,6 +16,7 @@ import { onChatMessage as handleScreenshots } from "./lib/screenshots";
 import { captureException } from "./lib/sentry";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
+import { createCampaign } from "./states/campaign";
 import type { TestableObject } from "./test";
 import { run as runTests } from "./tests/suite";
 
@@ -256,3 +259,19 @@ _Color.prototype.lighten = function (amount: number) {
   const [h, s, l] = rgbToHsl(this);
   return hslToRgb([h!, s!, l! + l! * amount]);
 };
+
+if (world.getAllObjects().length === 0)
+  if (!world.getUIs()[0]) {
+    const widget = new Button();
+    widget.onClicked.add(() => {
+      world.removeUI(0);
+      createCampaign();
+    });
+    widget.setText(" Campaign ");
+    world.addUI(
+      Object.assign(new UIElement(), {
+        position: [0, 0, world.getTableHeight() + 1],
+        widget,
+      }),
+    );
+  }
