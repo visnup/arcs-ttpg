@@ -18,8 +18,8 @@ import { jsxInTTPG, render } from "jsx-in-ttpg";
 import type { InitiativeMarker } from "./initiative-marker";
 import {
   above,
-  blockedResourceSnaps,
   getActionDecks,
+  getBlockedResourceSnaps,
   getPosition,
   getSystems,
   nearby,
@@ -213,6 +213,7 @@ function followSetup(card: Card) {
     createBlock(+cluster);
   }
   // 2p: out of play resources
+  const blockedResourceSnaps = getBlockedResourceSnaps();
   for (const [r, n] of resources) placeResources(r, n, blockedResourceSnaps[r]);
   for (const [a, n] of resourceAmbitions(resources)) // todo: support manual setup?
     globalEvents.onAmbitionTallied.trigger(a, 4, n);

@@ -38,25 +38,22 @@ export function shuffledSlots(n: number) {
 }
 
 export const above = new Vector(0, 0, 0.1);
-export const origin = new Vector(
-  0,
-  0,
-  world.getObjectById("map")!.getPosition().z,
-);
+export const origin = new Vector(0, 0, world.getTableHeight());
 
-export const blockedResourceSnaps: Record<string, Vector> = Object.fromEntries(
-  world
-    .getObjectById("map")!
-    .getAllSnapPoints()
-    .filter((d) => d.getTags().includes("resource"))
-    .map((d) => [
-      d
-        .getTags()
-        .find((d) => d.startsWith("resource:"))
-        ?.replace("resource:", ""),
-      d.getGlobalPosition(),
-    ]),
-);
+export const getBlockedResourceSnaps = () =>
+  Object.fromEntries(
+    world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter((d) => d.getTags().includes("resource"))
+      .map((d) => [
+        d
+          .getTags()
+          .find((d) => d.startsWith("resource:"))
+          ?.replace("resource:", ""),
+        d.getGlobalPosition(),
+      ]),
+  ) as Record<string, Vector>;
 
 export function removeNotes(
   condition = (obj: GameObject) => obj.getDescription().includes("Shuffle"),
