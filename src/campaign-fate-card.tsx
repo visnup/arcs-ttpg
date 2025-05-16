@@ -139,7 +139,14 @@ function campaignSetup(players: number, card: Card) {
   // 2p: Guild Envoys Depart edict
   if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
   // Govern the Imperial Reach edict
-  addRule(takeCampaignCard("govern the imperial reach"));
+  const policy = addRule(takeCampaignCard("govern the imperial reach"))!;
+  const rules = policy.getHolder()!;
+  // …remove non-policies
+  for (const [i, c] of rules.getCards().slice(-2).entries()) {
+    c.removeFromHolder();
+    c.setPosition(rules.getPosition().add([10, i, 1]));
+    c.snapToGround();
+  }
 
   // Setup Imperial clusters
   const systems = getSystems();
@@ -272,6 +279,7 @@ function addRule(card?: Card) {
   if (card) {
     card.shuffle();
     rules.insert(card, rules.getNumCards());
+    return card;
   }
 }
 function takeFirstRegent(slot: number) {
