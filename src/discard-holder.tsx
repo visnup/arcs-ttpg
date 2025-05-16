@@ -110,6 +110,7 @@ function discardOrEndChapter(button: Button, player?: Player) {
 }
 
 // Put all cards in the action zone into the discard pile, self-discard anything that supports it
+const pieces = new Set(["ship", "city", "starport"]);
 function discard(button: Button, player?: Player) {
   const zone = getActionZone();
   if (!zone) return;
@@ -130,7 +131,12 @@ function discard(button: Button, player?: Player) {
       sortCard(refHolder, obj, player, 0);
       discarded.push(obj);
     }
-    if ("discard" in obj && typeof obj.discard === "function") obj.discard();
+    if (
+      "discard" in obj &&
+      typeof obj.discard === "function" &&
+      !pieces.has(obj.getTemplateName())
+    )
+      obj.discard();
   }
   button.setText(" End Chapter ");
   setTimeout(() => globalEvents.onActionsDiscarded.trigger(discarded), 100);
