@@ -59,7 +59,7 @@
 	"FrontTextureOverrideExposed": false,
 	"AllowFlippedInStack": false,
 	"MirrorBack": false,
-	"EmissiveFront": true,
+	"EmissiveFront": false,
 	"Model": "player/building-mask.png",
 	"ShapeAccuracy": 10,
 	"ConvexCollision": true,
