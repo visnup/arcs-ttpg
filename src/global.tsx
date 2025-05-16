@@ -1,6 +1,6 @@
 import type { GameObject, Player } from "@tabletop-playground/api";
 import {
-  Button,
+  refPackageId as _refPackageId,
   Card,
   GameWorld,
   globalEvents,
@@ -10,6 +10,7 @@ import {
   Vector,
   world,
 } from "@tabletop-playground/api";
+import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { hslToRgb, rgbToHsl } from "./lib/color";
 import { answerRulesQuestion } from "./lib/rules-chat";
 import { onChatMessage as handleScreenshots } from "./lib/screenshots";
@@ -19,6 +20,8 @@ import type { Ambition } from "./map-board";
 import { createCampaign } from "./states/campaign";
 import type { TestableObject } from "./test";
 import { run as runTests } from "./tests/suite";
+
+const refPackageId = _refPackageId;
 
 // Set up global error handler for uncaught exceptions
 globalThis.$uncaughtException = (err) => {
@@ -260,18 +263,23 @@ _Color.prototype.lighten = function (amount: number) {
   return hslToRgb([h!, s!, l! + l! * amount]);
 };
 
-if (world.getAllObjects().length === 0)
-  if (!world.getUIs()[0]) {
-    const widget = new Button();
-    widget.onClicked.add(() => {
-      world.removeUI(0);
-      createCampaign();
-    });
-    widget.setText(" Campaign ");
-    world.addUI(
-      Object.assign(new UIElement(), {
-        position: [0, 0, world.getTableHeight() + 1],
-        widget,
-      }),
-    );
-  }
+if (world.getAllObjects().length === 0 && !world.getUIs()[0]) {
+  world.addUI(
+    Object.assign(new UIElement(), {
+      position: [0, 0, world.getTableHeight() + 1],
+      widget: render(
+        <button
+          size={24}
+          font="NeueKabelW01-Book.ttf"
+          fontPackage={refPackageId}
+          onClick={() => {
+            world.removeUI(0);
+            createCampaign();
+          }}
+        >
+          {" Campaign "}
+        </button>,
+      ),
+    }),
+  );
+}
