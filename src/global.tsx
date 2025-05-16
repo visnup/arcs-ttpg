@@ -24,18 +24,18 @@ import { run as runTests } from "./tests/suite";
 const refPackageId = _refPackageId;
 
 // Set up global error handler for uncaught exceptions
-globalThis.$uncaughtException = (err) => {
-  const [error, ...stack] = err.split("\n");
-  const [name, message] = error.split(/:\s*/, 2);
-  captureException(
-    { name, message, stack: [, ...stack].join("\n") },
-    { tags: { handler: "$uncaughtException" } },
-  ).catch((e) => {
-    console.error(e);
-    console.log("Unregistering Sentry error reporting");
-    globalThis.$uncaughtException = undefined;
-  });
-};
+// globalThis.$uncaughtException = (err) => {
+//   const [error, ...stack] = err.split("\n");
+//   const [name, message] = error.split(/:\s*/, 2);
+//   captureException(
+//     { name, message, stack: [, ...stack].join("\n") },
+//     { tags: { handler: "$uncaughtException" } },
+//   ).catch((e) => {
+//     console.error(e);
+//     console.log("Unregistering Sentry error reporting");
+//     globalThis.$uncaughtException = undefined;
+//   });
+// };
 
 // Reset all zones
 for (const zone of world.getAllZones())
