@@ -92,12 +92,7 @@ describe("campaign fate card", () => {
       rules
         .getCards()
         .map((c) => `${c.getTemplateName()}:${c.getCardDetails(0)!.metadata}`),
-      [
-        "book-of-law:",
-        "dc:govern the imperial reach",
-        "dc:govern the imperial reach",
-        "dc:govern the imperial reach",
-      ],
+      ["book-of-law:", "dc:govern the imperial reach"],
       "edicts",
     );
 
@@ -262,8 +257,6 @@ describe("campaign fate card", () => {
       [
         "book-of-law:",
         "dc:guild envoys depart",
-        "dc:govern the imperial reach",
-        "dc:govern the imperial reach",
         "dc:govern the imperial reach",
       ],
       "edicts",
