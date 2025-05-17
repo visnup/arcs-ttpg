@@ -5,7 +5,6 @@ export function createReset(refObject?: GameObject) {
     .getAllObjects()
     .filter((obj) => obj !== refObject)
     .map((obj) => [obj.toJSONString(), obj.getPosition()] as const);
-  // console.log("saved", JSON.stringify(saved));
 
   return function reset() {
     clearAllIntervals();
