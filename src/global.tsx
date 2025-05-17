@@ -12,6 +12,7 @@ import {
 } from "@tabletop-playground/api";
 import { jsxInTTPG, render } from "jsx-in-ttpg";
 import { hslToRgb, rgbToHsl } from "./lib/color";
+import { onChatMessage as handleMeeples } from "./lib/meeples";
 import { answerRulesQuestion } from "./lib/rules-chat";
 import { onChatMessage as handleScreenshots } from "./lib/screenshots";
 import { captureException } from "./lib/sentry";
@@ -77,8 +78,9 @@ globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
   }
 });
 
-// Screenshot commands
+// Screenshot, meeple commands
 globalEvents.onChatMessage.add(handleScreenshots);
+globalEvents.onChatMessage.add(handleMeeples);
 
 // Answer rules questions with AI
 const stalls = [
