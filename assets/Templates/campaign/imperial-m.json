@@ -1,0 +1,99 @@
+{
+	"Type": "Generic",
+	"GUID": "74A1961EEB4DC5F7507377BA7B8C633A",
+	"Name": "ship",
+	"Metadata": "",
+	"CollisionType": "Regular",
+	"Friction": 0.7,
+	"Restitution": 0.3,
+	"Density": 1,
+	"SurfaceType": "Plastic",
+	"Roughness": 0.2,
+	"Metallic": 0,
+	"PrimaryColor":
+	{
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
+	"SecondaryColor":
+	{
+		"R": 0,
+		"G": 0,
+		"B": 0
+	},
+	"Flippable": false,
+	"AutoStraighten": false,
+	"ShouldSnap": true,
+	"ScriptName": "ship.js",
+	"Blueprint": "",
+	"Models": [
+		{
+			"Model": "meeples/imperial.obj",
+			"Offset":
+			{
+				"X": 0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Scale":
+			{
+				"X": 1,
+				"Y": 1,
+				"Z": 1
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Texture": "wood-texture.jpg",
+			"NormalMap": "wood-texture-n.jpg",
+			"ExtraMap": "",
+			"ExtraMap2": "",
+			"IsTransparent": false,
+			"CastShadow": true,
+			"IsTwoSided": false,
+			"UseOverrides": true,
+			"SurfaceType": "Plastic"
+		}
+	],
+	"Collision": [
+		{
+			"Model": "uv-cube.obj",
+			"Offset":
+			{
+				"X": 0.14999999999999999,
+				"Y": 0,
+				"Z": 0.5
+			},
+			"Scale":
+			{
+				"X": 3.5,
+				"Y": 1,
+				"Z": 1
+			},
+			"Rotation":
+			{
+				"X": -0,
+				"Y": 0,
+				"Z": 0
+			},
+			"Type": "Convex"
+		}
+	],
+	"Lights": [],
+	"SnapPointsGlobal": false,
+	"SnapPoints": [],
+	"ZoomViewDirection":
+	{
+		"X": 0,
+		"Y": 0,
+		"Z": 0
+	},
+	"GroundAccessibility": "Nothing",
+	"Tags": [
+		"state:campaign"
+	]
+}
