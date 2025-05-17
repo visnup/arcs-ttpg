@@ -18,7 +18,7 @@ const base = objects.filter((o) => !o.objectTags.includes("state:campaign"));
 const campaign = objects.filter((o) => !o.objectTags.includes("state:base"));
 
 await writeFile(
-  "assets/States/Base.vts",
+  "assets/States/Base (miniatures).vts",
   JSON.stringify({ ...json, objects: base }, null, "\t"),
 );
 await writeFile(
@@ -26,7 +26,7 @@ await writeFile(
   JSON.stringify({ ...json, objects: base.map(toMeeple) }, null, "\t"),
 );
 await writeFile(
-  "assets/States/Campaign.vts",
+  "assets/States/Campaign (miniatures).vts",
   JSON.stringify({ ...json, objects: campaign }, null, "\t"),
 );
 await writeFile(
