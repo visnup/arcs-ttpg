@@ -354,10 +354,9 @@ const cards = [
   "823CC01194BE4095A7A247B99DC7D6B6",
   "86660B6732FF438BB8EE54B4C05A59CA",
 ];
-let taken = false;
 function takeFateSet(card: Card) {
   if (card.getStackSize() > 1) return;
-  if (taken) return;
+  if (card.getSavedData("taken")) return;
 
   const { index } = card.getCardDetails();
 
@@ -444,5 +443,5 @@ function takeFateSet(card: Card) {
   )
     takeFirstRegent(slot);
 
-  taken = true;
+  card.setSavedData(new Date().toISOString(), "taken");
 }
