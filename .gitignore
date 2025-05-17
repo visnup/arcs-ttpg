@@ -1,5 +1,6 @@
 .DS_Store
 /assets/Thumbnails/
+/logs
 /node_modules/
 /wip/assets
 /wip/cards/*.yml
