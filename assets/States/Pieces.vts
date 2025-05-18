@@ -81,7 +81,7 @@
 			"",
 			""
 		],
-		"mapName": "VictorianRoom",
+		"mapName": "HDRI_Milkyway",
 		"currentTurn": 0,
 		"bCanBeDamaged": false
 	},
@@ -489,7 +489,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -617,7 +617,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -806,8 +806,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": -0.01,
+					"x": 1,
+					"y": 0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -7606,7 +7606,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -7996,15 +7996,15 @@
 			"objectType": "DynamicObject",
 			"transform": {
 				"rotation": {
-					"x": -0.013,
+					"x": -0.017,
 					"y": 0.001,
 					"z": 0.064,
 					"w": 0.998
 				},
 				"translation": {
 					"x": -14.819,
-					"y": -48.523,
-					"z": 87.018
+					"y": -48.526,
+					"z": 87.016
 				},
 				"scale3D": {
 					"x": 1,
@@ -8179,8 +8179,8 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
-					"y": 0.01,
+					"x": 1,
+					"y": -0.01,
 					"z": 0,
 					"w": 0
 				},
@@ -9004,7 +9004,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -1,
+					"x": 1,
 					"y": 0,
 					"z": 0,
 					"w": 0
@@ -9867,7 +9867,7 @@
 			"density": 1,
 			"surfaceType": "SurfaceType5",
 			"objectName": "",
-			"objectDescription": "FACE DOWN DISCARD\n\n- Unlock discard board\n- Right click for menu\n- Choose \"Toggle to\n  Face Down\"",
+			"objectDescription": "FACE DOWN DISCARD\n\n- Right click for menu\n- Choose \"Toggle to\n  Face Down\"",
 			"collisionType": "CB_Regular",
 			"templateId": "DE375B5C034C2F2D837E378017E9FA10",
 			"shouldSnap": true,
@@ -15893,8 +15893,8 @@
 					"w": 0.382
 				},
 				"translation": {
-					"x": -40.5,
-					"y": 70.5,
+					"x": -40.412,
+					"y": 70.469,
 					"z": 87.022
 				},
 				"scale3D": {
@@ -16017,8 +16017,8 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -41.99,
-					"y": 69.99,
+					"x": -41.991,
+					"y": 69.991,
 					"z": 86.922
 				},
 				"scale3D": {
@@ -16269,8 +16269,8 @@
 					"w": 0.382
 				},
 				"translation": {
-					"x": -43.5,
-					"y": 70.5,
+					"x": -43.565,
+					"y": 70.523,
 					"z": 87.022
 				},
 				"scale3D": {
@@ -16590,8 +16590,8 @@
 					"w": 0.382
 				},
 				"translation": {
-					"x": -40.5,
-					"y": 73.5,
+					"x": -40.518,
+					"y": 73.507,
 					"z": 87.022
 				},
 				"scale3D": {
@@ -16901,12 +16901,12 @@
 				"rotation": {
 					"x": 0,
 					"y": 0,
-					"z": 0.924,
-					"w": 0.382
+					"z": 0.925,
+					"w": 0.381
 				},
 				"translation": {
-					"x": -43.5,
-					"y": 73.5,
+					"x": -43.574,
+					"y": 73.529,
 					"z": 87.022
 				},
 				"scale3D": {
@@ -17612,7 +17612,7 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": -0.004,
+					"x": -0.003,
 					"y": -0.051,
 					"z": 0.02,
 					"w": 0.998
@@ -17882,8 +17882,8 @@
 					"w": 1
 				},
 				"translation": {
-					"x": -41.98,
-					"y": 78.04,
+					"x": -41.982,
+					"y": 78.042,
 					"z": 87.106
 				},
 				"scale3D": {
@@ -17970,7 +17970,7 @@
 				"translation": {
 					"x": -33.988,
 					"y": -82,
-					"z": 86.972
+					"z": 83.039
 				},
 				"scale3D": {
 					"x": 1,
@@ -18238,7 +18238,7 @@
 				"translation": {
 					"x": -51.918,
 					"y": -77.161,
-					"z": 86.827
+					"z": 83.21
 				},
 				"scale3D": {
 					"x": 1,
@@ -18824,252 +18824,6 @@
 				"cursorHidden": "None",
 				"interaction": "All"
 			},
-			"uniqueId": "zone-court-2le-0",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 17.74,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-court-2le-1",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 10.64,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-court-2le-2",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 3.54,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-court-2le-3",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": -3.56,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-court-2le-4",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": -10.66,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-court-2le-5",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": -17.76,
-					"y": 46.69,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 14.4,
-					"y": 7,
-					"z": 5
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
 			"uniqueId": "zone-snap-20y-0",
 			"transform": {
 				"rotation": {
@@ -19409,6 +19163,662 @@
 				"translation": {
 					"x": -52,
 					"y": -26,
+					"z": 86.52
+				},
+				"scale3D": {
+					"x": 20,
+					"y": 51.924,
+					"z": 8
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-dice-rqj",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 0,
+					"y": -75,
+					"z": 88.57
+				},
+				"scale3D": {
+					"x": 19,
+					"y": 19,
+					"z": 6.5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-0",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 17.74,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-1",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 10.64,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-2",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": 3.54,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-3",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": -3.56,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-4",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": -10.66,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-court-2le-5",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0.707,
+					"w": 0.707
+				},
+				"translation": {
+					"x": -17.76,
+					"y": 46.69,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 14.4,
+					"y": 7,
+					"z": 5
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-0",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 15.5,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-1",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 18.52,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-2",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 21.55,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-3",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 24.562,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-4",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 27.562,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-snap-b76-5",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -33.4,
+					"y": 30.6,
+					"z": 87.02
+				},
+				"scale3D": {
+					"x": 0.1,
+					"y": 0.1,
+					"z": 0.1
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "None",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-player-b76",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -36,
+					"y": 16.048,
+					"z": 86.52
+				},
+				"scale3D": {
+					"x": 12,
+					"y": 32.3,
+					"z": 8
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-player-captive-b76",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -36,
+					"y": 37.474,
+					"z": 86.52
+				},
+				"scale3D": {
+					"x": 12,
+					"y": 10.552,
+					"z": 8
+				}
+			},
+			"bCanBeDamaged": true
+		},
+		{
+			"persistentData": "",
+			"shape": "Cube",
+			"color": {
+				"b": 0,
+				"g": 0,
+				"r": 0,
+				"a": 0
+			},
+			"alpha": 0.6,
+			"alwaysVisible": false,
+			"ownerMask": 0,
+			"permissions": {
+				"snapping": "All",
+				"stacking": "All",
+				"inserting": "All",
+				"objectsVisible": "All",
+				"cursorHidden": "None",
+				"interaction": "All"
+			},
+			"uniqueId": "zone-player-court-b76",
+			"transform": {
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"w": 1
+				},
+				"translation": {
+					"x": -52,
+					"y": 26,
 					"z": 86.52
 				},
 				"scale3D": {
@@ -20153,416 +20563,6 @@
 					"x": 20,
 					"y": 51.924,
 					"z": 8
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-0",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 15.5,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-1",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 18.52,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-2",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 21.55,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-3",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 24.562,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-4",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 27.562,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-snap-b76-5",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -33.4,
-					"y": 30.6,
-					"z": 87.02
-				},
-				"scale3D": {
-					"x": 0.1,
-					"y": 0.1,
-					"z": 0.1
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "None",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-player-b76",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -36,
-					"y": 16.048,
-					"z": 86.52
-				},
-				"scale3D": {
-					"x": 12,
-					"y": 32.3,
-					"z": 8
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-player-captive-b76",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -36,
-					"y": 37.474,
-					"z": 86.52
-				},
-				"scale3D": {
-					"x": 12,
-					"y": 10.552,
-					"z": 8
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-player-court-b76",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0,
-					"w": 1
-				},
-				"translation": {
-					"x": -52,
-					"y": 26,
-					"z": 86.52
-				},
-				"scale3D": {
-					"x": 20,
-					"y": 51.924,
-					"z": 8
-				}
-			},
-			"bCanBeDamaged": true
-		},
-		{
-			"persistentData": "",
-			"shape": "Cube",
-			"color": {
-				"b": 0,
-				"g": 0,
-				"r": 0,
-				"a": 0
-			},
-			"alpha": 0.6,
-			"alwaysVisible": false,
-			"ownerMask": 0,
-			"permissions": {
-				"snapping": "All",
-				"stacking": "All",
-				"inserting": "All",
-				"objectsVisible": "All",
-				"cursorHidden": "None",
-				"interaction": "All"
-			},
-			"uniqueId": "zone-dice-rqj",
-			"transform": {
-				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": 0.707,
-					"w": 0.707
-				},
-				"translation": {
-					"x": 0,
-					"y": -75,
-					"z": 88.57
-				},
-				"scale3D": {
-					"x": 19,
-					"y": 19,
-					"z": 6.5
 				}
 			},
 			"bCanBeDamaged": true
