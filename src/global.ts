@@ -126,6 +126,7 @@ declare module "@tabletop-playground/api" {
       name?: string,
       filter?: (d: T, index: number) => boolean,
     ): number[];
+    isOn(obj: GameObject, templateName: string): boolean;
     isOnMap(obj: GameObject): boolean;
     isOnTable(obj: GameObject, templateNames?: string[]): boolean;
   }
@@ -165,11 +166,14 @@ GameWorld.prototype.getSlots = function <T extends GameObject>(
     .map((d) => d.getOwningPlayerSlot());
 };
 
-GameWorld.prototype.isOnMap = function (obj: GameObject) {
+GameWorld.prototype.isOn = function (obj: GameObject, templateName: string) {
   return this.lineTrace(
     obj.getPosition(),
     obj.getPosition().add(new Vector(0, 0, -10)),
-  ).some(({ object }) => object.getTemplateName() === "map");
+  ).some(({ object }) => object.getTemplateName() === templateName);
+};
+GameWorld.prototype.isOnMap = function (obj: GameObject) {
+  return this.isOn(obj, "map");
 };
 GameWorld.prototype.isOnTable = function (
   obj: GameObject,

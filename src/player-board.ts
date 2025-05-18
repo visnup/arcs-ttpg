@@ -131,6 +131,8 @@ function updateAmbitions() {
         ambitions.warlord += (obj as Card).getStackSize();
         break;
       case "agent":
+        if (!world.isOn(obj, "fate")) ambitions.warlord++;
+        break;
       case "ship":
         ambitions.warlord++;
         break;

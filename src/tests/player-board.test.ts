@@ -84,6 +84,36 @@ describe("player board", () => {
     );
   });
 
+  test("favors don't count as trophies", async () => {
+    const fates = world.getObjectByTemplateName<Card>("fate");
+    if (!fates) skip("campaign");
+    const fate = fates.takeCards()!;
+
+    const board = world
+      .getObjectsByTemplateName("board")
+      .find((d) => d.getOwningPlayerSlot() === slot)!;
+    const snap = board
+      .getAllSnapPoints()
+      .find((s) => s.getTags().includes("fate"));
+    assert(snap !== undefined, "found snap");
+    fate.setPosition(snap.getGlobalPosition());
+    fate.snap();
+
+    for (const s of [0, 1, 2, 3, 4]) {
+      for (const f of placeAgents(s, 1, snap.getGlobalPosition()))
+        f.setObjectType(ObjectType.Penetrable);
+    }
+    assertEqual(ambitions, {
+      tycoon: { [slot]: 0 },
+      tyrant: { [slot]: 0 },
+      warlord: { [slot]: 0 },
+      keeper: { [slot]: 0 },
+      empath: { [slot]: 0 },
+      edenguard: {},
+      blightkin: {},
+    });
+  });
+
   test("stacked trophies", async () => {
     const board = world
       .getObjectsByTemplateName("board")
