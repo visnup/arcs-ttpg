@@ -17,3 +17,4 @@
 # local build for development
 /dev
 ttpgcfg.local.json
+ttpgcfg.windows.json
