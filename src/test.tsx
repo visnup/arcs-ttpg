@@ -26,7 +26,7 @@ const reset = createReset(refObject);
 
   // UI
   const ui = Object.assign(new UIElement(), {
-    position: new Vector(0, 0, 24),
+    position: new Vector(0, 0, 1.5 * (suites.length + 2)),
     rotation: new Rotator(70, 0, 0),
     widget: render(
       <verticalbox gap={0}>
