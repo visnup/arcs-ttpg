@@ -360,6 +360,9 @@ function takeFateSet(card: Card) {
 
   const { index } = card.getCardDetails();
 
+  // Lock
+  if (card.getSnappedToPoint()) card.freeze();
+
   // Spawn fate cards above card
   const dh = 0.2;
   let height = 1;
