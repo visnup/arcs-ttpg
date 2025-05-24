@@ -217,7 +217,7 @@ function campaignSetup(players: number, card: Card) {
         .find((d) => d.getOwningPlayerSlot() === player);
       const snap = board
         ?.getAllSnapPoints()
-        .find((d) => d.getTags().includes("regent-outlaw"));
+        .find((d) => d.getTags().includes("title"));
       if (!snap) continue;
       const card =
         regentOutlaw.getStackSize() === 1
