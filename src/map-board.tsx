@@ -286,6 +286,8 @@ class Turns {
     if (this.turn === -2) return;
     // Remove start chapter timer
     if (this.turn === -1) this.widgets[-1].removeChildAt(1);
+    // Unpause
+    this.pauseStart = 0;
     // Catch up to current turn
     const behind = this.snaps.findIndex((d) => d === p) - this.turn;
     for (let i = 0; i < behind; i++) this.nextTurn();

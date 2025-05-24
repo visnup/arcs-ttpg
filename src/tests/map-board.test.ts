@@ -531,6 +531,50 @@ describe("map board", () => {
     map.turns.nextTurn();
     await assertEventually(() => map.turns.pauseStart > 0, "paused again");
   });
+
+  test("unpause on lead card", async () => {
+    const map = world.getObjectById("map") as TestableBoard;
+
+    // deal
+    const decks = world
+      .getObjectsByTemplateName<Card>("action")
+      .sort((a, b) => b.getStackSize() - a.getStackSize());
+    for (const slot of [1, 2, 3, 0]) decks[0].deal(6, [slot], false, true);
+
+    // 1p turn, pause
+    map.turns.startRound();
+    map.turns.pause();
+    assert(map.turns.pauseStart !== 0, "paused");
+    assertEqual(
+      getTurnUI(),
+      [
+        [["button", " ▙ "]],
+        [
+          ["text", "■", 0],
+          [
+            ["text", " Pass Initiative ", null],
+            ["progress", 0],
+          ],
+        ],
+        [["text", "■", 1]],
+        [["text", "■", 2]],
+        [["text", "■", 3]],
+      ],
+      "1p turn, paused",
+    );
+
+    // lead card
+    const holders = world
+      .getObjectsByTemplateName<CardHolder>("cards")
+      .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
+    const snaps = world
+      .getObjectById("map")!
+      .getAllSnapPoints()
+      .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
+      .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+    await playCard(holders[0].removeAt(0)!, snaps[0]);
+    await assertEqualEventually(() => map.turns.pauseStart, 0, "unpaused");
+  });
 });
 
 const slot = (color: Color) =>
