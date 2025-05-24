@@ -28,6 +28,7 @@ const refPackageId = _refPackageId;
 
 refObject.setId("map");
 
+// Snap points act local
 localSnaps(refObject);
 
 const ambitions = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;

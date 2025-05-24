@@ -12,6 +12,7 @@ import type { Ambition } from "./map-board";
 
 const refObject = _refObject;
 
+// Snap points act local
 localSnaps(refObject);
 
 // globalEvents
