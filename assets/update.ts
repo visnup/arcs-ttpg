@@ -224,9 +224,8 @@ function tags(cards: Card[]) {
         ...acc,
         [i]:
           i === 0
-            ? ["fate", "setup", "card"]
+            ? ["setup", "card"]
             : [
-                "fate",
                 "card",
                 ...(supply ? [`supply:${supply.toLowerCase()}`] : []),
                 ...(action ? ["action"] : []),

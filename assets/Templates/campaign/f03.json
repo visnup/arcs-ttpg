@@ -129,122 +129,95 @@
 	},
 	"CardTags": {
 		"0": [
-			"fate",
 			"setup",
 			"card"
 		],
 		"1": [
-			"fate",
 			"card"
 		],
 		"2": [
-			"fate",
 			"card"
 		],
 		"3": [
-			"fate",
 			"card"
 		],
 		"4": [
-			"fate",
 			"card"
 		],
 		"5": [
-			"fate",
 			"card"
 		],
 		"6": [
-			"fate",
 			"card",
 			"supply:material"
 		],
 		"7": [
-			"fate",
 			"card",
 			"supply:fuel"
 		],
 		"8": [
-			"fate",
 			"card",
 			"supply:weapon"
 		],
 		"9": [
-			"fate",
 			"card",
 			"supply:psionic"
 		],
 		"10": [
-			"fate",
 			"card",
 			"supply:relic"
 		],
 		"11": [
-			"fate",
 			"card"
 		],
 		"12": [
-			"fate",
 			"card",
 			"supply:material"
 		],
 		"13": [
-			"fate",
 			"card",
 			"supply:fuel"
 		],
 		"14": [
-			"fate",
 			"card",
 			"supply:relic"
 		],
 		"15": [
-			"fate",
 			"card",
 			"supply:psionic"
 		],
 		"16": [
-			"fate",
 			"card",
 			"supply:weapon"
 		],
 		"17": [
-			"fate",
 			"card"
 		],
 		"18": [
-			"fate",
 			"card"
 		],
 		"19": [
-			"fate",
 			"card"
 		],
 		"20": [
-			"fate",
 			"card"
 		],
 		"21": [
-			"fate",
 			"card"
 		],
 		"22": [
-			"fate",
 			"card"
 		],
 		"23": [
-			"fate",
 			"card"
 		],
 		"24": [
-			"fate",
 			"card"
 		],
 		"25": [
-			"fate",
 			"card"
 		],
 		"26": [
-			"fate",
 			"card"
 		]
 	}
