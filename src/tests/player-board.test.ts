@@ -106,9 +106,20 @@ describe("player board", () => {
     assertEqual(ambitions, {
       tycoon: { [slot]: 0 },
       tyrant: { [slot]: 0 },
-      warlord: { [slot]: 0 },
+      warlord: { [slot]: 3 },
       keeper: { [slot]: 0 },
       empath: { [slot]: 0 },
+      edenguard: {},
+      blightkin: {},
+    });
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    globalEvents.onAmbitionShouldTally.trigger("warlord");
+    assertEqual(ambitions, {
+      tycoon: ambitions.tycoon,
+      tyrant: ambitions.tyrant,
+      warlord: { ...ambitions.warlord, [slot]: 0 },
+      keeper: ambitions.keeper,
+      empath: ambitions.empath,
       edenguard: {},
       blightkin: {},
     });
