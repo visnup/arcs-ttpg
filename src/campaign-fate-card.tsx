@@ -1,6 +1,7 @@
 import type {
   CardHolder,
   Dice,
+  GameObject,
   MultistateObject,
 } from "@tabletop-playground/api";
 import {
@@ -363,22 +364,23 @@ function takeFateSet(card: Card) {
   // Lock
   if (card.getSnappedToPoint()) card.freeze();
 
-  // Spawn fate cards above card
-  const dh = 0.2;
-  let height = 1;
+  // Spawn fate cards downward of card
+  const p = card.getPosition();
+  const sign = Math.sign(p.x);
+  let height = 6 + 1.8; // Height of fate card + tucked title card
   const deck = world.createObjectFromTemplate(
     cards[index],
-    card.getPosition().add(new Vector(0, 0, height)),
+    p.add([sign * height, 0, 1]),
   ) as Card | undefined;
   deck?.setRotation([0, 0, -180]);
-  if (deck) height += deck.getSize().z + dh;
+  if (deck) height += adjust(deck);
 
   // Spawn any matching items found in sets
   const fate = `f${index + 1}`;
   for (const guid of sets) {
     const item = world.createObjectFromTemplate(
       guid,
-      card.getPosition().add(new Vector(0, 0, height)),
+      p.add([sign * height, 0, 1]),
     )!;
     if (item instanceof Card) {
       const metadata = item.getAllCardDetails().map((d) => d.metadata);
@@ -388,21 +390,27 @@ function takeFateSet(card: Card) {
         if (n) {
           const start = metadata.findIndex((n) => n === fate);
           const matched = item.takeCards(n, true, start)!;
-          height += matched.getSize().z + dh;
+          height += adjust(matched);
         }
         item.destroy();
       } else if (n > 0) {
         // single or all card match
-        height += item.getSize().z + dh;
+        height += adjust(item);
       } else {
         // no match
         item.destroy();
       }
     }
   }
+  function adjust(obj: GameObject) {
+    const gap = 0.5;
+    const { x } = obj.getSize();
+    obj.setPosition(obj.getPosition().add([sign * (x / 2 + gap), 0, 0]));
+    obj.snapToGround();
+    return x + gap;
+  }
 
   // Place objective marker
-  const p = card.getPosition();
   const boards = world.getObjectsByTemplateName("board");
   const slot = boards
     .sort(
