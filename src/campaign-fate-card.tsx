@@ -136,7 +136,6 @@ function campaignSetup(players: number, card: Card) {
   imperialCouncil?.snap();
 
   // Rules
-  addRule(world.getObjectByTemplateName("book-of-law"));
   // 2p: Guild Envoys Depart edict
   if (players === 2) addRule(takeCampaignCard("guild envoys depart"));
   // Govern the Imperial Reach edict
@@ -148,6 +147,7 @@ function campaignSetup(players: number, card: Card) {
     c.setPosition(rules.getPosition().add([10, i, 1]));
     c.snapToGround();
   }
+  addRule(world.getObjectByTemplateName("book-of-law"));
 
   // Setup Imperial clusters
   const systems = getSystems();
@@ -266,15 +266,18 @@ function getLore() {
 let rules: CardHolder;
 function addRule(card?: Card) {
   if (!rules) {
-    const lore =
+    const { y, z } =
       world
-        .getObjectsByTemplateName("lore")
-        .find((d) => world.isOnTable(d))
+        .getObjectsByTemplateName<Card>("city")
+        .find((d) => d.getOwningPlayerSlot() === 4 && world.isOnTable(d))
         ?.getPosition() ?? world.getObjectById("map")!.getPosition();
-    rules = world.createObjectFromTemplate(
-      "A86010E7BE44A8377F90F990AA8F9EAA",
-      new Vector(5, lore.y, lore.z),
-    )! as CardHolder;
+    rules = world.createObjectFromTemplate("A86010E7BE44A8377F90F990AA8F9EAA", [
+      5,
+      y,
+      z,
+    ])! as CardHolder;
+    rules.setScale([1, 1.5, 1]);
+    rules.snapToGround();
     rules.freeze();
   }
   if (card) {
