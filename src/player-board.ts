@@ -100,7 +100,16 @@ function updateAmbitions() {
   for (const obj of zone.getOverlappingObjects()) {
     if (obj.getOwningPlayerSlot() === refObject.getOwningPlayerSlot()) continue;
     process.nextTick(() => !obj.getId() && updateAmbitions());
-    switch (obj.getTemplateName()) {
+    let name = obj.getTemplateName();
+    if (name === "set-round") {
+      const details = (obj as Card).getAllCardDetails();
+      name = details.every(({ metadata }) => metadata === "blight")
+        ? "blight"
+        : details.every(({ tags }) => tags.includes("resource:psionic"))
+          ? "resource"
+          : "set-round";
+    }
+    switch (name) {
       case "resource":
         switch ((obj as Card).getCardDetails().name) {
           case "fuel":
@@ -113,20 +122,13 @@ function updateAmbitions() {
           case "relic":
             ambitions.keeper += (obj as Card).getStackSize();
             break;
+          case "Witness":
           case "psionic":
             ambitions.empath += (obj as Card).getStackSize();
             break;
         }
         break;
-      case "set-round":
-        // check for blight, if so fall through and treat as building
-        if (
-          (obj as Card)
-            .getAllCardDetails()
-            .some(({ metadata }) => metadata !== "blight")
-        )
-          break;
-      // eslint-disable-next-line no-fallthrough
+      case "blight":
       case "city":
       case "starport":
         ambitions.warlord += (obj as Card).getStackSize();
@@ -199,6 +201,7 @@ function updateAmbitions() {
         if (suit && suit in ambitions) ambitions[suit] += p;
         break;
       }
+      case "set-round":
       case "resource": {
         process.nextTick(() => !obj.getId() && updateAmbitions());
         switch ((obj as Card).getCardDetails().name) {
@@ -212,6 +215,7 @@ function updateAmbitions() {
           case "relic":
             ambitions.keeper += (obj as Card).getStackSize();
             break;
+          case "Witness":
           case "psionic":
             ambitions.empath += (obj as Card).getStackSize();
             break;
