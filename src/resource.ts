@@ -1,10 +1,16 @@
 import type { Player, TraceHit } from "@tabletop-playground/api";
-import { Card, refCard, Vector, world } from "@tabletop-playground/api";
+import {
+  Card,
+  refCard,
+  Vector,
+  world,
+  type CardDetails,
+} from "@tabletop-playground/api";
 
 type N = [number, number, number];
 const { z } = world.getObjectById("map")!.getPosition();
 const origins = [-8, -4, 0, 4, 8].map((x) => [x, -44, z + 1] as N);
-const rotation = [0, -90, 0] as N;
+const rotation = [0, -90, 180] as N;
 
 const resources = ["fuel", "material", "weapon", "relic", "psionic"];
 const isResource =
@@ -46,10 +52,15 @@ function findSupply(i: number) {
 }
 
 // Discard to supply
-function discard(card: typeof refCard) {
-  const { index: i } = card.getCardDetails();
+function getIndex(details: CardDetails) {
+  const tag = details.tags.find((t) => t.startsWith("resource:"));
+  if (!tag) throw new Error("Card is not a resource");
+  return resources.indexOf(tag.replace("resource:", ""));
+}
+function discard(card: Card) {
+  const i = getIndex(card.getCardDetails());
   const isHomogenous = (card: Card) =>
-    card.getAllCardDetails().every(({ index }) => index === i);
+    card.getAllCardDetails().every((details) => getIndex(details) === i);
   if (isHomogenous(card)) {
     // If this is a homogenous stack, attempt to discard it
     const supply = findSupply(i);

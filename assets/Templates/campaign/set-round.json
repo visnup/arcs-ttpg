@@ -119,6 +119,10 @@
 		],
 		"6": [
 			"resource"
+		],
+		"16": [
+			"resource",
+			"resource:psionic"
 		]
 	}
 }
