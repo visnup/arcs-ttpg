@@ -209,9 +209,10 @@ function campaignSetup(players: number, card: Card) {
   card.shuffle();
   card.deal(2, slots, false, true);
 
-  // Place Regent / Outlaw
-  const regentOutlaw = takeCampaignCard("imperial regent / outlaw");
-  if (regentOutlaw)
+  // Place Regent / Outlaw titles
+  const titles = takeCampaignCard("imperial regent / outlaw");
+  const flip = (card: Card) => card.flip();
+  if (titles)
     for (const player of slots) {
       const board = world
         .getObjectsByTemplateName("board")
@@ -220,12 +221,13 @@ function campaignSetup(players: number, card: Card) {
         ?.getAllSnapPoints()
         .find((d) => d.getTags().includes("title"));
       if (!snap) continue;
-      const card =
-        regentOutlaw.getStackSize() === 1
-          ? regentOutlaw
-          : regentOutlaw.takeCards(1);
-      card?.setPosition(snap.getGlobalPosition().add(above));
-      card?.snap();
+      const card = titles.getStackSize() === 1 ? titles : titles.takeCards(1);
+      if (!card) break;
+      card.addCustomAction("Flip");
+      card.onCustomAction.add(flip);
+      card.onPrimaryAction.add(flip);
+      card.setPosition(snap.getGlobalPosition().add(above));
+      card.snap();
     }
 
   // Place First Regent
