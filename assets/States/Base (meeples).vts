@@ -8023,10 +8023,10 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.707,
-					"w": 0.707
+					"x": 0.707,
+					"y": -0.707,
+					"z": 0,
+					"w": 0
 				},
 				"translation": {
 					"x": 0,
@@ -8243,10 +8243,10 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.707,
-					"w": 0.707
+					"x": 0.707,
+					"y": -0.707,
+					"z": 0,
+					"w": 0
 				},
 				"translation": {
 					"x": 4,
@@ -8335,10 +8335,10 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.707,
-					"w": 0.707
+					"x": 0.707,
+					"y": -0.707,
+					"z": 0,
+					"w": 0
 				},
 				"translation": {
 					"x": -4,
@@ -8738,10 +8738,10 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.707,
-					"w": 0.707
+					"x": 0.707,
+					"y": -0.707,
+					"z": 0,
+					"w": 0
 				},
 				"translation": {
 					"x": -8,
@@ -8830,10 +8830,10 @@
 			"objectType": "Card",
 			"transform": {
 				"rotation": {
-					"x": 0,
-					"y": 0,
-					"z": -0.707,
-					"w": 0.707
+					"x": 0.707,
+					"y": -0.707,
+					"z": 0,
+					"w": 0
 				},
 				"translation": {
 					"x": 8,
