@@ -82,7 +82,7 @@ export function removeCampaign() {
     if (world.isOnTable(obj)) obj.destroy();
   for (const obj of world.getAllObjects())
     if (obj.getOwningPlayerSlot() === 4) obj.destroy();
-  removeNotes((obj) => obj.getDescription().startsWith("Campaign"));
+  removeNotes((obj) => obj.getDescription().startsWith("CAMPAIGN"));
 }
 export function removePlayers(slots: number[]) {
   for (const slot of slots)

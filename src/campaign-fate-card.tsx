@@ -459,5 +459,8 @@ function takeFateSet(card: Card) {
   )
     takeFirstRegent(slot);
 
+  // Clean up unused components
+  removeNotes((obj) => obj.getDescription().startsWith("CAMPAIGN"));
+
   card.setSavedData(new Date().toISOString(), "taken");
 }

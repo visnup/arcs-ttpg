@@ -116,8 +116,8 @@ function discard(button: Button, player?: Player) {
   if (!zone) return;
   removeNotes(
     (obj) =>
-      obj.getDescription().includes("discard") ||
-      obj.getDescription().includes("Timer"),
+      obj.getDescription().toLowerCase().includes("discard") ||
+      obj.getDescription().toLowerCase().includes("timer"),
   );
   const discarded: Card[] = [];
   for (const obj of zone.getOverlappingObjects()) {
