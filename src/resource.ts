@@ -64,7 +64,7 @@ function discard(card: Card) {
   if (isHomogenous(card)) {
     // If this is a homogenous stack, attempt to discard it
     const supply = findSupply(i);
-    if (supply instanceof Card) supply.addCards(card, false, 0, true);
+    if (supply instanceof Card) supply.addCards(card, true, 0, true);
     else {
       card.setPosition(supply[0], 1.5);
       card.setRotation(supply[1], 1.5);
