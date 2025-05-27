@@ -92,7 +92,7 @@ describe("campaign fate card", () => {
       rules
         .getCards()
         .map((c) => `${c.getTemplateName()}:${c.getCardDetails(0)!.metadata}`),
-      ["book-of-law:", "dc:govern the imperial reach"],
+      ["dc:govern the imperial reach", "book-of-law:"],
       "edicts",
     );
 
@@ -255,9 +255,9 @@ describe("campaign fate card", () => {
         .getCards()
         .map((c) => `${c.getTemplateName()}:${c.getCardDetails(0)!.metadata}`),
       [
-        "book-of-law:",
         "dc:guild envoys depart",
         "dc:govern the imperial reach",
+        "book-of-law:",
       ],
       "edicts",
     );
@@ -447,12 +447,12 @@ describe("campaign fate card", () => {
       (fate as TestableCard).onSnapped.trigger(fate);
 
       const set = world
-        .lineTrace(fate.getPosition(), fate.getPosition().add([0, 0, 10]))
+        .sphereTrace(fate.getPosition(), fate.getPosition().add([-20, 0, 0]), 5)
         .map((h) => h.object)
         .filter((o) => o.getId() !== "map");
 
       const cards = set.find((d) => /^f\d\d$/.test(d.getTemplateName()));
-      assert(cards instanceof Card, `${expected.name} cards`);
+      assert(cards instanceof Card, `${expected.name} cards is ${cards}`);
       for (const f of ["name", "metadata", "tags"] as const)
         for (const [i, value] of expected[f]?.entries() ?? [])
           if (value) {
