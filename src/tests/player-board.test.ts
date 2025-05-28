@@ -5,6 +5,7 @@ import {
   world,
   ZonePermission,
 } from "@tabletop-playground/api";
+import type { TestableCard } from "../campaign-fate-card";
 import {
   placeAgents,
   placeBlight,
@@ -312,6 +313,48 @@ describe("player board", () => {
       },
       "stacked by addCards",
     );
+  });
+
+  test("witness as psionic resources", async () => {
+    const map = world.getObjectByTemplateName("map")!;
+
+    // spawn Pacifist
+    const fates = world.getObjectsByTemplateName<Card>("fate");
+    if (fates.length === 0) skip("campaign");
+    const b = fates.sort((a, b) => a.getPosition().y - b.getPosition().y)[1];
+    const pacifist = b.takeCards(1, false, 2);
+    assert(pacifist !== undefined, "pacifist");
+    pacifist.setPosition(map.getPosition().add([0, 0, 1]));
+    (pacifist as TestableCard).onSnapped.trigger(pacifist);
+
+    // shuffle witness tokens in with psionic
+    const witness = world
+      .getObjectsByTemplateName<Card>("set-round")
+      .find((d) => d.getCardDetails().name === "Witness");
+    assert(witness !== undefined, "witness tokens");
+    const supply = world
+      .getObjectsByTemplateName<Card>("resource")
+      .find((d) => d.getCardDetails().name === "psionic");
+    assert(supply !== undefined, "psionic supply");
+    supply.addCards(witness);
+    supply.shuffle();
+
+    // deal most out
+    for (let n = 0; n < 2; n++) {
+      takeResource(0, "psionic");
+      takeResource(1, "psionic");
+      takeResource(2, "psionic");
+      takeResource(3, "psionic");
+    }
+    assertEqual(ambitions, {
+      tycoon: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      tyrant: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      warlord: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      keeper: { "0": 0, "1": 0, "2": 0, "3": 0 },
+      empath: { "0": 2, "1": 2, "2": 2, "3": 2 },
+      edenguard: {},
+      blightkin: {},
+    });
   });
 
   test("guild", async () => {

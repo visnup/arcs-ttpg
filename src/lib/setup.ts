@@ -271,9 +271,14 @@ export function placeResources(
   n: number,
   target: Vector,
 ) {
-  let supply = world
-    .getObjectsByTemplateName<Card>("resource")
-    .find((d) => d.getCardDetails().name === resource && world.isOnTable(d));
+  let supply = [
+    ...world.getObjectsByTemplateName<Card>("resource"),
+    ...world.getObjectsByTemplateName<Card>("set-round"),
+  ].find(
+    (d) =>
+      d.getCardDetails().tags.includes(`resource:${resource}`) &&
+      world.isOnTable(d),
+  );
   if (!supply) return;
   if (n < supply.getStackSize()) supply = supply.takeCards(n);
   supply?.setPosition(target.add(above));
