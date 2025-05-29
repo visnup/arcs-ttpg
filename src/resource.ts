@@ -13,6 +13,7 @@ const origins = [-8, -4, 0, 4, 8].map((x) => [x, -44, z + 1] as N);
 const rotation = [0, -90, 180] as N;
 
 const resources = ["fuel", "material", "weapon", "relic", "psionic"];
+// todo: witness tokens on top of resource stack make it templateName = "set-round"
 const isResource =
   (i: number) =>
   ({ object }: TraceHit) =>
@@ -39,7 +40,7 @@ function findSupply(i: number) {
         // Otherwise return the snap point
         const p = c.getSnapPoint(0)?.getGlobalPosition() ?? c.getPosition();
         const { yaw } = c.getRotation();
-        return [p.add([0, 0, 1]), [0, yaw, 0] satisfies N] as const;
+        return [p.add([0, 0, 1]), [0, yaw, -180] satisfies N] as const;
       }
   }
   // Look for a resource stack on top of origin
