@@ -295,10 +295,9 @@ function takeFirstRegent(slot: number) {
     .find((d) => d.getOwningPlayerSlot() === slot);
   if (firstRegent && firstBoard) {
     firstRegent.setPosition(
-      firstBoard
-        .getPosition()
-        .add(new Vector(0, -firstBoard.getSize().y / 2 - 6.5, 1)),
+      firstBoard.getPosition().add([0, -firstBoard.getSize().y / 2 - 6.5, 1]),
     );
+    firstRegent.snapToGround();
   }
 }
 
