@@ -236,10 +236,36 @@ function tags(cards: Card[]) {
 }
 
 // setup.json
+const setupMetadata = [
+  "1 6\n5.3 4.3 3.0 3.3\n3.1 5.1 5.0 4.1", // 2p frontiers
+  "2 5\n4.2 3.2 1.0 6.1\n6.3 3.3 4.0 1.2", // 2p mix up 1
+  "1 4\n5.1 6.1 5.0 5.3\n3.3 3.1 3.0 2.1", // 2p homelands
+  "1 4\n5.2 2.1 3.0 6.2\n2.2 6.1 5.0 3.3", // 2p mix up 2
+
+  "1 4\n3.3 5.2 2.0\n5.3 2.1 3.0\n2.3 3.1 5.0 ", // 3p mix up
+  "2 3\n1.3 4.3 6.0\n5.3 1.2 5.0\n4.2 6.1 1.0", // 3p frontiers
+  "5 6\n2.3 3.2 3.0\n1.3 2.1 2.0\n1.1 4.3 4.0", // 3p homelands
+  "3 6\n1.3 2.2 1.0\n2.3 1.2 2.0\n1.1 2.1 4.0", // 3p core conflict
+
+  "3\n4.1 6.3 1.0\n4.3 5.3 6.0\n5.1 1.3 4.0\n6.1 1.1 5.0", // 4p mix up 1
+  "4\n5.3 3.1 2.0\n3.3 5.2 1.0\n2.3 1.3 3.0\n1.1 2.1 5.0", // 4p mix up 2
+  "5\n1.3 3.2 2.0\n2.3 6.3 3.0\n4.2 2.1 6.0\n1.1 6.1 4.0", // 4p frontiers
+  "6\n3.3 5.2 1.0\n1.1 3.1 2.0\n1.3 4.3 3.0\n4.1 2.2 5.0", // 4p mix up 3
+];
+const setup = base.filter((d) => /^ARCS-\dSETUP/.test(d.id));
 modify("assets/Templates/cards/setup.json", (json) => {
-  json["CardNames"] = {}; // TODO
+  json["CardNames"] = names(setup);
+  json["CardMetadata"] = Object.fromEntries(setupMetadata.entries());
   return json;
 });
+image("assets/Textures/cards/setup.jpg", setup, 4);
+image(
+  "assets/Textures/cards/setup-back.jpg",
+  setup,
+  4,
+  undefined,
+  (c, i) => ["2SETUP", "3SETUP", "4SETUP"][Math.floor(i / 4)],
+);
 
 // bc.json: base court
 modify("assets/Templates/cards/bc.json", (json) => {
@@ -364,8 +390,8 @@ for (let i = 1; i <= 24; i++) {
   image(
     `assets/Textures/campaign/f${n}b.jpg`,
     fate,
-    7,
-    4096,
+    undefined,
+    undefined,
     (c) => c.flipSide?.replace("ARCS-", "") ?? `F${i}`,
   );
 }
