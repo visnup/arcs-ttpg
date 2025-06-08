@@ -257,7 +257,14 @@ function followSetup(card: Card) {
 
 function createLabel(text: string, position: Vector, slot: number) {
   const dot = new DrawingLine();
-  dot.points = [position.add(new Vector(0, 0, 0.2))];
+  const scale = world.getAllTables()[0].getScale(); // unscale by table
+  dot.points = [
+    new Vector(
+      position.x / scale.x,
+      position.y / scale.x,
+      position.z / scale.z + 0.2,
+    ),
+  ];
   dot.thickness = 3;
   dot.color = world.getSlotColor(slot).lighten(-0.2);
   world.addDrawingLine(dot);
