@@ -127,6 +127,7 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
     for (const slot of second) gain[slot] = (gain[slot] || 0) + +power[1];
   }
   // Place indicators
+  const scale = world.getAllTables()[0].getScale(); // unscale by table
   const current = world
     .getObjectsByTemplateName("power")
     .filter((d) => world.isOnMap(d))
@@ -138,7 +139,9 @@ function previewScores(visible = !!refObject.getSavedData("previewScores")) {
     const score = current[slot] + g;
     const dot = new DrawingLine();
     const p = track[score - 1].add([0.9 + (seen[score] || 0), 0, 0]);
-    dot.points = [p.add([0, -0.1, 0]), p.add([0, +0.1, 0])];
+    dot.points = [p.add([0, -0.1, 0]), p.add([0, +0.1, 0])].map(
+      ({ x, y, z }) => new Vector(x / scale.x, y / scale.y, z / scale.z),
+    );
     dot.thickness = 0.2;
     dot.rounded = false;
     dot.color = world.getSlotColor(slot).lighten(-0.2);
