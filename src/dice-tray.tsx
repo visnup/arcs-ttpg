@@ -21,7 +21,6 @@ diceSummary.relativePositionX = diceSummary.relativePositionY = false;
 diceSummary.positionX = 50;
 diceSummary.positionY = 10;
 diceSummary.width = 210;
-diceSummary.height = 300;
 
 // Zone
 const zoneId = `zone-dice-${refObject.getId()}`;
@@ -67,24 +66,24 @@ globalEvents.onDiceRolled.add(() => {
 
 function sumDice() {
   // Total roll
+  const dice = zone.getOverlappingObjects().filter((d) => d instanceof Dice);
   const total: Record<string, number> = {};
-  for (const d of zone.getOverlappingObjects())
-    if (d instanceof Dice)
-      for (const f of d.getCurrentFaceMetadata().split(" "))
-        if (f) total[f] = (total[f] ?? 0) + 1;
+  for (const d of dice)
+    for (const f of d.getCurrentFaceMetadata().split(" "))
+      if (f) total[f] = (total[f] ?? 0) + 1;
   const rows = [
-    ["self", "Hit Your Ships"],
-    ["intercept", "Intercept\nYour Ships"],
+    ["self", "Hit Your Ships", 27],
+    ["intercept", "Intercept\nYour Ships", 49],
     [
       "hit",
       "Hit Ships First\n[size=10]then buildings if\nno ships remain[/size]",
+      57,
     ],
-    ["building", "Hit Buildings"],
-    ["key", "Raid Cards\n& Resources"],
-  ];
+    ["building", "Hit Buildings", 27],
+    ["key", "Raid Cards\n& Resources", 49],
+  ] as const;
   diceSummary.widget = render(
-    !Object.keys(total).length &&
-      zone.getOverlappingObjects().filter((o) => o !== refObject).length ? (
+    !Object.keys(total).length && dice.length ? (
       <text>All Faces Blank</text>
     ) : (
       <verticalbox gap={10}>
@@ -137,7 +136,13 @@ function sumDice() {
     ),
   );
   world.removeScreenUI(0);
-  if (Object.keys(total).length) world.addScreenUI(diceSummary);
+  if (dice.length) {
+    const height = rows
+      .filter(([key]) => key in total)
+      .reduce((sum, [, , height]) => sum + height + 10, 0);
+    diceSummary.height = height + 23;
+    world.addScreenUI(diceSummary);
+  }
 }
 
 function discard() {
