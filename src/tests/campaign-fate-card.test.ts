@@ -442,7 +442,7 @@ describe("campaign fate card", () => {
         })
         .find((d) => d);
       assert(!!fate, expected.id);
-      fate.setPosition(map.getPosition().add([0, 0, 1]));
+      fate.setPosition(map.getPosition().add([-0.2, 0, 1]));
       fate.snap();
       (fate as TestableCard).onSnapped.trigger(fate);
 
