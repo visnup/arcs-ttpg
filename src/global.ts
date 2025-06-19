@@ -10,9 +10,8 @@ import {
 } from "@tabletop-playground/api";
 import { hslToRgb, rgbToHsl } from "./lib/color";
 import { onChatMessage as handleMeeples } from "./lib/meeples";
-import { answerRulesQuestion } from "./lib/rules-chat";
+import { onChatMessage as handleRulesQuestion } from "./lib/rules-chat";
 import { onChatMessage as handleScreenshots } from "./lib/screenshots";
-import { captureException } from "./lib/sentry";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
 import type { Ambition } from "./map-board";
 import type { TestableObject } from "./test";
@@ -72,50 +71,10 @@ globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
   }
 });
 
-// Screenshot, meeple commands
+// Screenshot, meeple, rules chat commands
 globalEvents.onChatMessage.add(handleScreenshots);
 globalEvents.onChatMessage.add(handleMeeples);
-
-// Answer rules questions with AI
-const stalls = [
-  "Consulting the Imperial Council...",
-  "Calculating fleet movements...",
-  "Gathering intelligence from the Court...",
-  "Decoding messages from the Free States...",
-  "Analyzing battle reports...",
-  "Scanning the Reach...",
-  "Reviewing Imperial edicts...",
-  "Negotiating with the guilds...",
-  "Studying ancient relics...",
-  "Channeling psionic energy...",
-  "Mapping strategic positions...",
-  "Conferring with the Keepers...",
-  "Monitoring fleet deployments...",
-  "Searching the archives...",
-];
-function stall(message = "") {
-  world.broadcastChatMessage(
-    message || stalls[Math.floor(Math.random() * stalls.length)],
-  );
-}
-let lastQuestion = 0;
-globalEvents.onChatMessage.add(async (player, text) => {
-  if (text.startsWith("/rules ") || Date.now() - lastQuestion < 60e3) {
-    const timeout = setTimeout(() => stall("..."), 1e3);
-    const interval = setInterval(stall, 8e3);
-    try {
-      const reply = await answerRulesQuestion(text.replace(/^\/rules /, ""));
-      world.broadcastChatMessage("\n" + reply.content[0].text);
-      lastQuestion = Date.now();
-    } catch (e) {
-      world.broadcastChatMessage(`${e}`);
-      captureException(new Error(e), { tags: { component: "rules-chat" } });
-    } finally {
-      clearTimeout(timeout);
-      clearInterval(interval);
-    }
-  }
-});
+globalEvents.onChatMessage.add(handleRulesQuestion);
 
 // Extend GameWorld
 declare module "@tabletop-playground/api" {
