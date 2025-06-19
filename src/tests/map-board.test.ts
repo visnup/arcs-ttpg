@@ -589,10 +589,11 @@ const slot = (color: Color) =>
 
 function getScores() {
   const map = world.getObjectById("map")!;
+  const scale = world.getAllTables()[0].getScale(); // unscale by table
   const track = map
     .getAllSnapPoints()
     .filter((d) => d.getTags().includes("power"))
-    .map((p) => p.getGlobalPosition().y)
+    .map((p) => p.getGlobalPosition().y / scale.y)
     .sort((a, b) => a - b);
   const scores = [];
   for (const { color, points } of world.getDrawingLines())
