@@ -6,7 +6,6 @@ import {
 } from "@tabletop-playground/api";
 import { type Ambition } from "../map-board";
 
-type ActionCard = string; // "1 Construction"
 type GameData = {
   campaign: boolean;
   players: PlayerData[];
@@ -17,6 +16,7 @@ type GameData = {
   edicts?: string[];
   laws?: string[];
 };
+type ActionCard = string; // "1 Construction"
 type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB"; // | "912AAD";
 type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 type PlayerData = {
