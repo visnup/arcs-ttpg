@@ -265,7 +265,7 @@ function getLore() {
   return deck;
 }
 
-let rules: CardHolder;
+let rules = world.getObjectById("rules") as CardHolder | undefined;
 function addRule(card?: Card) {
   if (!rules) {
     const { y, z } =
@@ -278,6 +278,7 @@ function addRule(card?: Card) {
       y,
       z,
     ])! as CardHolder;
+    rules.setId("rules");
     rules.setScale([1, 1.5, 1]);
     rules.snapToGround();
     rules.freeze();

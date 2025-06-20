@@ -26,6 +26,7 @@
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@robertguglielmino/arcs-types": "^1.0.2",
     "@tabletop-playground/api": "^0.41.0",
     "@types/node": "^22.13.10",
     "eslint": "^9.22.0",

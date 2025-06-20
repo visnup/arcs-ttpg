@@ -485,6 +485,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@robertguglielmino/arcs-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@robertguglielmino/arcs-types/-/arcs-types-1.0.2.tgz#2e767d8379dc9db32b0ac1c564b3be6aa3f01e16"
+  integrity sha512-kY7ATk+UUm+qZ1shwmx/eDQpsKZumjT2HTOjNXTuPe9I4a0kOdZxJwefWg7HQlnnDrt/hJh7eoeMLYBayN1xfA==
+
 "@rollup/plugin-commonjs@^25.0.7":
   version "25.0.8"
   resolved "https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-25.0.8.tgz"
