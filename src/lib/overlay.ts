@@ -81,11 +81,15 @@ export function sync() {
     .filter((d) => world.isOnMap(d))
     .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
     .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
+  const starports = objects.starport.filter((d) => world.isOnTable(d));
+  const ships = objects.ship.filter((d) => world.isOnTable(d));
+  const agents = objects.agent.filter((d) => world.isOnTable(d));
   const rules = world.getObjectById("rules") as CardHolder | undefined;
 
   const data: GameData = {
     campaign: !!rules,
     players: objects.board.map((board) => {
+      const slot = board.getOwningPlayerSlot();
       const snaps = board.getAllSnapPoints();
       const snapped = [
         ...new Set(snaps.map((s) => s.getSnappedObject()).filter((d) => !!d)),
@@ -113,13 +117,14 @@ export function sync() {
           ?.getName(),
         color: board.getPrimaryColor().toHex().slice(0, 6) as PlayerColor,
         initiative: board === hasInitiative,
-        power: power[board.getOwningPlayerSlot()],
+        power: power[slot],
         resources,
         outrage,
         cities,
-        spaceports: 0, // todo
-        ships: 0, // todo
-        agents: 0, // todo
+        spaceports: starports.filter((d) => d.getOwningPlayerSlot() === slot)
+          .length,
+        ships: ships.filter((d) => d.getOwningPlayerSlot() === slot).length,
+        agents: agents.filter((d) => d.getOwningPlayerSlot() === slot).length,
         cards: [], // todo
         guild,
         objective: 0, // todo
