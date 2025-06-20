@@ -35,6 +35,7 @@ const faq = new Map(
 
 interface JsonObject {
   [key: string]: unknown;
+  Indices: number[];
   CardNames: Record<string, string>;
   CardMetadata: Record<string, string>;
   CardTags: Record<string, string[]>;
@@ -268,6 +269,23 @@ image(
   undefined,
   (c, i) => ["2SETUP", "3SETUP", "4SETUP"][Math.floor(i / 4)],
 );
+
+// action.json: action cards
+modify("assets/Templates/cards/action.json", (json) => {
+  const suits = [
+    "Construction",
+    "Administration",
+    "Aggression",
+    "Mobilization",
+  ];
+  json["CardNames"] = Object.fromEntries(
+    json["Indices"].map((i) => [
+      i,
+      `${(i % 7) + 1} ${suits[Math.floor(i / 7)]}`,
+    ]),
+  );
+  return json;
+});
 
 // bc.json: base court
 modify("assets/Templates/cards/bc.json", (json) => {
