@@ -55,22 +55,37 @@ const isGuild = (d: GameObject): d is Card =>
   d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
 const cardName = (d: Card) => d.getCardDetails().name.replace(/\n.*/s, "");
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"];
+const track = world
+  .getObjectById("map")!
+  .getAllSnapPoints()
+  .filter((p) => p.getTags().includes("power"))
+  .map((p) => p.getGlobalPosition())
+  .sort((a, b) => a.y - b.y);
 
 export function sync() {
-  const objects = world.getAllObjects();
+  const objects = world.getAllObjects().reduce(
+    (acc, d) => {
+      (acc[d.getTemplateName()] ||= []).push(d);
+      return acc;
+    },
+    {} as Record<string, GameObject[]>,
+  );
   const players = world.getAllPlayers();
   const initiative = world.getObjectById("initiative")!.getPosition();
-  const boards = objects.filter((d) => d.getTemplateName() === "board");
-  const hasInitiative = boards.sort(
+  const hasInitiative = objects.board.sort(
     (a, b) =>
       a.getPosition().distance(initiative) -
       b.getPosition().distance(initiative),
   )[0];
+  const power = objects.power
+    .filter((d) => world.isOnMap(d))
+    .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
+    .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
   const rules = world.getObjectById("rules") as CardHolder | undefined;
 
   const data: GameData = {
     campaign: !!rules,
-    players: boards.map((board) => {
+    players: objects.board.map((board) => {
       const snaps = board.getAllSnapPoints();
       const snapped = [
         ...new Set(snaps.map((s) => s.getSnappedObject()).filter((d) => !!d)),
@@ -98,7 +113,7 @@ export function sync() {
           ?.getName(),
         color: board.getPrimaryColor().toHex().slice(0, 6) as PlayerColor,
         initiative: board === hasInitiative,
-        power: 0, // todo
+        power: power[board.getOwningPlayerSlot()],
         resources,
         outrage,
         cities,
