@@ -6,10 +6,7 @@ import {
 } from "@tabletop-playground/api";
 import { type Ambition } from "../map-board";
 
-type ActionCard = {
-  suit: string; // todo: faithful
-  rank: number;
-};
+type ActionCard = string; // "1 Construction"
 type GameData = {
   campaign: boolean;
   players: PlayerData[];
@@ -110,6 +107,11 @@ export function sync() {
           ?.getOverlappingObjects()
           .filter(isGuild)
           .map(cardName) ?? [];
+      const cards =
+        (objects.cards as CardHolder[])
+          .find((d) => d.getOwningPlayerSlot() === slot)
+          ?.getCards()
+          .map(cardName) ?? [];
 
       return {
         name: players
@@ -125,7 +127,7 @@ export function sync() {
           .length,
         ships: ships.filter((d) => d.getOwningPlayerSlot() === slot).length,
         agents: agents.filter((d) => d.getOwningPlayerSlot() === slot).length,
-        cards: [], // todo
+        cards,
         guild,
         objective: 0, // todo
         favors: [], // todo
