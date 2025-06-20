@@ -20,8 +20,8 @@ type GameData = {
   edicts?: string[];
   laws?: string[];
 };
-type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB" | "912AAD";
-type PlayerRank = [PlayerColor, number];
+type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB"; // | "912AAD";
+type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 type PlayerData = {
   name?: string; // board can be present without player
   color: PlayerColor;
@@ -37,17 +37,17 @@ type PlayerData = {
   guild: string[];
   // campaign
   objective?: number;
-  favors?: PlayerRank[];
+  favors?: PlayerRank;
   titles?: string[];
 };
 type AmbitionData = {
   name: Ambition;
   declared: number[];
-  ranking: PlayerRank[];
+  ranking: PlayerRank;
 };
 type CourtData = {
   name: string;
-  agents: PlayerRank[];
+  agents: PlayerRank;
   // todo: attached
 };
 
