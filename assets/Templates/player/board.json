@@ -109,6 +109,73 @@
 	"SnapPointsGlobal": true,
 	"SnapPoints": [
 		{
+			"X": 2.8999999999999999,
+			"Y": -4.5,
+			"Z": 0.10000000000000001,
+			"Range": 1.5,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.8999999999999999,
+			"Y": -1.427,
+			"Z": 0.10000000000000001,
+			"Range": 1.5,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.8999999999999999,
+			"Y": 3.1000000000000001,
+			"Z": 0.10000000000000001,
+			"Range": 1.5,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building"
+			]
+		},
+		{
+			"X": 2.8999999999999999,
+			"Y": 7.6600000000000001,
+			"Z": 0.10000000000000001,
+			"Range": 1.5,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building",
+				"bonus:2"
+			]
+		},
+		{
+			"X": 2.8999999999999999,
+			"Y": 10.68,
+			"Z": 0.10000000000000001,
+			"Range": 1.5,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"building",
+				"bonus:3"
+			]
+		},
+		{
 			"X": 2.6499999999999999,
 			"Y": -10.52,
 			"Z": 0.10000000000000001,
@@ -193,100 +260,7 @@
 			]
 		},
 		{
-			"X": 2.8999999999999999,
-			"Y": -4.5,
-			"Z": 0.10000000000000001,
-			"Range": 1.5,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
-			"X": 2.8999999999999999,
-			"Y": -1.427,
-			"Z": 0.10000000000000001,
-			"Range": 1.5,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
-			"X": 2.8999999999999999,
-			"Y": 3.1000000000000001,
-			"Z": 0.10000000000000001,
-			"Range": 1.5,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building"
-			]
-		},
-		{
-			"X": 2.8999999999999999,
-			"Y": 7.6600000000000001,
-			"Z": 0.10000000000000001,
-			"Range": 1.5,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building",
-				"bonus:2"
-			]
-		},
-		{
-			"X": 2.8999999999999999,
-			"Y": 10.68,
-			"Z": 0.10000000000000001,
-			"Range": 1.5,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"building",
-				"bonus:3"
-			]
-		},
-		{
-			"X": -4.1900000000000004,
-			"Y": -6.8499999999999996,
-			"Z": 0.10000000000000001,
-			"Range": 1,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"agent"
-			]
-		},
-		{
-			"X": -3.0899999999999999,
-			"Y": -6.8499999999999996,
-			"Z": 0.10000000000000001,
-			"Range": 1,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"agent"
-			]
-		},
-		{
-			"X": -1.99,
+			"X": 0.20999999999999999,
 			"Y": -6.8499999999999996,
 			"Z": 0.10000000000000001,
 			"Range": 1,
@@ -312,7 +286,7 @@
 			]
 		},
 		{
-			"X": 0.20999999999999999,
+			"X": -1.99,
 			"Y": -6.8499999999999996,
 			"Z": 0.10000000000000001,
 			"Range": 1,
@@ -322,6 +296,45 @@
 			"FlipValidity": 0,
 			"Tags": [
 				"agent"
+			]
+		},
+		{
+			"X": -3.0899999999999999,
+			"Y": -6.8499999999999996,
+			"Z": 0.10000000000000001,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"agent"
+			]
+		},
+		{
+			"X": -4.1900000000000004,
+			"Y": -6.8499999999999996,
+			"Z": 0.10000000000000001,
+			"Range": 1,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"agent"
+			]
+		},
+		{
+			"X": 3.5,
+			"Y": -17,
+			"Z": 0.10000000000000001,
+			"Range": 2,
+			"SnapRotation": 2,
+			"RotationOffset": 0,
+			"Shape": 0,
+			"FlipValidity": 0,
+			"Tags": [
+				"title"
 			]
 		},
 		{
@@ -337,19 +350,6 @@
 			"Tags": [
 				"leader",
 				"fate"
-			]
-		},
-		{
-			"X": 3.5,
-			"Y": -17,
-			"Z": 0.10000000000000001,
-			"Range": 2,
-			"SnapRotation": 2,
-			"RotationOffset": 0,
-			"Shape": 0,
-			"FlipValidity": 0,
-			"Tags": [
-				"title"
 			]
 		}
 	],
