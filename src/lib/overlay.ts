@@ -33,6 +33,7 @@ type PlayerData = {
   cards: ActionCard[];
   guild: string[];
   // campaign
+  fate?: string;
   objective?: number;
   favors?: PlayerRank;
   titles?: string[];
@@ -78,6 +79,10 @@ export function sync() {
     .filter((d) => world.isOnMap(d))
     .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
     .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
+  const objective = objects.objective
+    .filter((d) => world.isOnMap(d))
+    .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
+    .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
   const starports = objects.starport.filter((d) => world.isOnTable(d));
   const ships = objects.ship.filter((d) => world.isOnTable(d));
   const agents = objects.agent.filter((d) => world.isOnTable(d));
@@ -99,7 +104,11 @@ export function sync() {
       ).length;
       const outrage = snaps
         .filter((s) => s.getTags().includes("agent"))
-        .map((s, i) => (s.getSnappedObject() ? outragable[i] : null))
+        .map((s, i) =>
+          s.getSnappedObject()?.getTemplateName() === "agent"
+            ? outragable[i]
+            : null,
+        )
         .filter((s) => s !== null);
       const guild =
         world
@@ -129,7 +138,8 @@ export function sync() {
         agents: agents.filter((d) => d.getOwningPlayerSlot() === slot).length,
         cards,
         guild,
-        objective: 0, // todo
+        fate: undefined, // todo
+        objective: objective[slot],
         favors: [], // todo
         titles: [], // todo
       };
