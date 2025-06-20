@@ -135,8 +135,14 @@ export function sync() {
     ambitions: [], // todo
     court: [], // todo
     discard: [], // todo
-    edicts: [], // todo
-    laws: [], // todo
+    edicts: rules
+      ?.getCards()
+      .filter((d) => d.getCardDetails().tags.includes("edict"))
+      .map(cardName),
+    laws: rules
+      ?.getCards()
+      .filter((d) => d.getCardDetails().tags.includes("law"))
+      .map(cardName),
   };
   console.log(JSON.stringify(data, null, 2));
 
