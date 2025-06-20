@@ -24,7 +24,7 @@ type PlayerData = {
   color: PlayerColor;
   initiative: boolean;
   power: number;
-  resources: string[];
+  resources: (string | null)[];
   outrage: string[];
   cities: number;
   spaceports: number;
@@ -80,7 +80,7 @@ export function sync() {
     .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
     .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
   const objective = objects.objective
-    .filter((d) => world.isOnMap(d))
+    ?.filter((d) => world.isOnMap(d))
     .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot())
     .map((d) => track.findIndex((p) => p.y > d.getPosition().y + 0.1));
   const starports = objects.starport.filter((d) => world.isOnTable(d));
@@ -93,14 +93,17 @@ export function sync() {
     players: objects.board.map((board) => {
       const slot = board.getOwningPlayerSlot();
       const snaps = board.getAllSnapPoints();
-      const snapped = [
-        ...new Set(snaps.map((s) => s.getSnappedObject()).filter((d) => !!d)),
-      ];
-      const resources = snapped
-        .filter((d) => d.getTemplateName() === "resource")
-        .map((d) => (d as Card).getCardDetails().name);
-      const cities = snapped.filter(
-        (d) => d.getTemplateName() === "city",
+      const resources = snaps
+        .filter((s) => s.getTags().includes("resource"))
+        .map((s) =>
+          s.getSnappedObject()?.getTemplateName() === "resource"
+            ? (s.getSnappedObject() as Card).getCardDetails().name
+            : null,
+        );
+      const cities = snaps.filter(
+        (s) =>
+          s.getTags().includes("building") &&
+          s.getSnappedObject()?.getTemplateName() === "city",
       ).length;
       const outrage = snaps
         .filter((s) => s.getTags().includes("agent"))
@@ -139,7 +142,7 @@ export function sync() {
         cards,
         guild,
         fate: undefined, // todo
-        objective: objective[slot],
+        objective: objective?.[slot],
         favors: [], // todo
         titles: [], // todo
       };
@@ -150,7 +153,7 @@ export function sync() {
     edicts: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("edict"))
-      .map(cardName),
+      .map(cardName), // todo: policy disambiguation
     laws: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("law"))
