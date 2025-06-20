@@ -191,13 +191,15 @@
 			"supply:weapon"
 		],
 		"17": [
-			"card"
+			"card",
+			"edict"
 		],
 		"18": [
 			"card"
 		],
 		"19": [
-			"card"
+			"card",
+			"law"
 		],
 		"20": [
 			"card"
@@ -218,7 +220,8 @@
 			"card"
 		],
 		"26": [
-			"card"
+			"card",
+			"law"
 		]
 	}
 }

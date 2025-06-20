@@ -122,10 +122,12 @@
 			"card"
 		],
 		"4": [
-			"card"
+			"card",
+			"law"
 		],
 		"5": [
-			"card"
+			"card",
+			"law"
 		],
 		"6": [
 			"card"
@@ -171,7 +173,8 @@
 			"card"
 		],
 		"20": [
-			"card"
+			"card",
+			"edict"
 		]
 	}
 }

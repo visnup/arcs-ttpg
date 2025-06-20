@@ -130,10 +130,12 @@
 			"card"
 		],
 		"8": [
-			"card"
+			"card",
+			"law"
 		],
 		"9": [
-			"card"
+			"card",
+			"law"
 		],
 		"10": [
 			"card"
@@ -157,10 +159,12 @@
 			"card"
 		],
 		"17": [
-			"card"
+			"card",
+			"law"
 		],
 		"18": [
-			"card"
+			"card",
+			"edict"
 		]
 	}
 }

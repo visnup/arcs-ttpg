@@ -230,6 +230,8 @@ function tags(cards: Card[]) {
                 ...(supply ? [`supply:${supply.toLowerCase()}`] : []),
                 ...(action ? ["action"] : []),
                 ...(captives ? ["captives"] : []),
+                ...(d.tags?.includes("Edict") ? ["edict"] : []),
+                ...(d.tags?.includes("Law") ? ["law"] : []),
               ],
       };
     }, {});

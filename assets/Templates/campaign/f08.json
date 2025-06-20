@@ -179,10 +179,12 @@
 			"action"
 		],
 		"12": [
-			"card"
+			"card",
+			"law"
 		],
 		"13": [
-			"card"
+			"card",
+			"law"
 		],
 		"14": [
 			"card"
@@ -203,13 +205,15 @@
 			"card"
 		],
 		"20": [
-			"card"
+			"card",
+			"edict"
 		],
 		"21": [
 			"card"
 		],
 		"22": [
-			"card"
+			"card",
+			"law"
 		],
 		"23": [
 			"card"
@@ -221,19 +225,23 @@
 			"card"
 		],
 		"26": [
-			"card"
+			"card",
+			"edict"
 		],
 		"27": [
-			"card"
+			"card",
+			"law"
 		],
 		"28": [
 			"card"
 		],
 		"29": [
-			"card"
+			"card",
+			"law"
 		],
 		"30": [
-			"card"
+			"card",
+			"law"
 		]
 	}
 }
