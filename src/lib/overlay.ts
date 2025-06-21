@@ -51,7 +51,8 @@ type CourtData = {
 
 const isGuild = (d: GameObject): d is Card =>
   d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
-const cardName = (d: Card) => d.getCardDetails().name.replace(/\n.*/s, "");
+const cardName = (d: Card | undefined) =>
+  d?.getCardDetails().name.replace(/\n.*/s, "");
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"];
 const track = world
   .getObjectById("map")!
@@ -124,6 +125,23 @@ export function sync() {
           .find((d) => d.getOwningPlayerSlot() === slot)
           ?.getCards()
           .map(cardName) ?? [];
+      const zone =
+        world
+          .getZoneById(`zone-player-${board.getId()}`)
+          ?.getOverlappingObjects() ?? [];
+      const fate = cardName(
+        zone.filter(
+          (d): d is Card =>
+            d.getTemplateName() === "fate" && !(d as Card).isInHolder(),
+        )[0],
+      );
+      const titles =
+        zone
+          .filter(
+            (d): d is Card =>
+              d instanceof Card && d.getCardDetails().tags.includes("title"),
+          )
+          .map(cardName) ?? [];
 
       return {
         name: players
@@ -141,10 +159,10 @@ export function sync() {
         agents: agents.filter((d) => d.getOwningPlayerSlot() === slot).length,
         cards,
         guild,
-        fate: undefined, // todo
+        fate,
         objective: objective?.[slot],
         favors: [], // todo
-        titles: [], // todo
+        titles,
       };
     }),
     ambitions: [], // todo
