@@ -52,10 +52,11 @@ type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 
 const isGuild = (d: GameObject): d is Card =>
   d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
-function cardName(d: undefined): undefined;
-function cardName(d: Card): string | null;
-function cardName(d: Card | undefined) {
+function cardId(d: undefined): undefined;
+function cardId(d: Card): string | null;
+function cardId(d: Card | undefined) {
   if (!d) return undefined;
+  // todo: card ids instead of names
   return d.isFaceUp() ? d.getCardDetails().name.replace(/\n.*/s, "") : null;
 }
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"] as const;
@@ -125,17 +126,17 @@ export function sync() {
           .getZoneById(`zone-player-court-${board.getId()}`)
           ?.getOverlappingObjects()
           .filter(isGuild)
-          .map(cardName) ?? [];
+          .map(cardId) ?? [];
       const cards =
         (objects.cards as CardHolder[])
           .find((d) => d.getOwningPlayerSlot() === slot)
           ?.getCards()
-          .map(cardName) ?? [];
+          .map(cardId) ?? [];
       const zone =
         world
           .getZoneById(`zone-player-${board.getId()}`)
           ?.getOverlappingObjects() ?? [];
-      const fate = cardName(
+      const fate = cardId(
         zone.filter(
           (d): d is Card =>
             d.getTemplateName() === "fate" && !(d as Card).isInHolder(),
@@ -147,7 +148,7 @@ export function sync() {
             (d): d is Card =>
               d instanceof Card && d.getCardDetails().tags.includes("title"),
           )
-          .map(cardName) ?? [];
+          .map(cardId) ?? [];
 
       return {
         name: players
@@ -173,15 +174,15 @@ export function sync() {
     }),
     ambitions: [], // todo
     court: [], // todo
-    discard: discard.getCards().map(cardName),
+    discard: discard.getCards().map(cardId),
     edicts: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("edict"))
-      .map(cardName), // todo: policy disambiguation
+      .map(cardId), // todo: policy disambiguation
     laws: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("law"))
-      .map(cardName),
+      .map(cardId),
   };
   console.log(JSON.stringify(data, null, 2));
 
