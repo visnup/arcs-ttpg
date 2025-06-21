@@ -4,6 +4,7 @@ import {
   type CardHolder,
   type GameObject,
 } from "@tabletop-playground/api";
+import { type CourtZone } from "../court";
 import { type Ambition } from "../map-board";
 
 type GameData = {
@@ -42,7 +43,7 @@ type AmbitionData = {
 };
 type CourtData = {
   id: CardId;
-  agents: PlayerRank;
+  influence: PlayerRank;
   // todo: attached
 };
 type CardId = string | null; // "1 Construction", null = face down
@@ -93,7 +94,18 @@ export function sync() {
   const starports = objects.starport.filter((d) => world.isOnTable(d));
   const ships = objects.ship.filter((d) => world.isOnTable(d));
   const agents = objects.agent.filter((d) => world.isOnTable(d));
-  const discard = objects.discard[0] as CardHolder;
+  const discard = (objects.discard[0] as CardHolder).getCards().map(cardId);
+  const court = objects.court[0]
+    .getAllSnapPoints()
+    .map((s, i) => {
+      const card = s.getSnappedObject() as Card | undefined;
+      if (!card || !card.isFaceUp()) return;
+      const zone: CourtZone = world.getZoneById(
+        `zone-court-${objects.court[0].getId()}-${i}`,
+      )!;
+      return { id: cardId(card), influence: zone.tallies! };
+    })
+    .filter((d) => !!d);
   const rules = world.getObjectById("rules") as CardHolder | undefined;
 
   const data: GameData = {
@@ -173,8 +185,8 @@ export function sync() {
       };
     }),
     ambitions: [], // todo
-    court: [], // todo
-    discard: discard.getCards().map(cardId),
+    court,
+    discard,
     edicts: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("edict"))

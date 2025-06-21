@@ -17,13 +17,14 @@ import { Tally } from "./lib/tally";
 const refObject = _refObject;
 const registered = new WeakSet<GameObject>();
 
-// Zones for each card
-const zones = new Set<Zone>();
-const widgets = new Map<Zone, VerticalBox>();
+// Zones for each card. Shove tallies and widget onto the zone object.
+export type CourtZone = Zone & { widget?: VerticalBox; tallies?: number[] };
+const zones = new Set<CourtZone>();
 const { x, y } = refObject.getSize();
 for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
   const zoneId = `zone-court-${refObject.getId()}-${i}`;
-  const zone = world.getZoneById(zoneId) ?? world.createZone([0, 0, 0]);
+  const zone: CourtZone =
+    world.getZoneById(zoneId) ?? world.createZone([0, 0, 0]);
   zones.add(zone);
   const size = new Vector(x * 1.6, y / refObject.getAllSnapPoints().length, 5);
   zone.setId(zoneId);
@@ -44,24 +45,23 @@ for (const [i, snap] of refObject.getAllSnapPoints().entries()) {
       <verticalbox halign={HorizontalAlignment.Center} gap={15} />,
     ),
   });
-  widgets.set(zone, ui.widget as VerticalBox);
+  zone.widget = ui.widget as VerticalBox;
   refObject.addUI(ui);
 
   tallyAgents(zone);
   for (const o of zone.getOverlappingObjects()) canSecureCard(zone, o);
 }
 
-function tallyAgents(zone: Zone) {
-  const tallies = [0, 0, 0, 0];
+function tallyAgents(zone: CourtZone) {
+  const tallies = (zone.tallies = [0, 0, 0, 0]);
   for (const obj of zone.getOverlappingObjects())
     if (obj.getTemplateName() === "agent") tallies[obj.getOwningPlayerSlot()]++;
-  const widget = widgets.get(zone)!;
-  widget.removeAllChildren();
+  zone.widget?.removeAllChildren();
   for (const [slot, value] of [...tallies.entries()].sort(
     (a, b) => b[1] - a[1],
   ))
     if (value)
-      widget.addChild(
+      zone.widget?.addChild(
         render(
           <Tally
             value={value}
