@@ -51,8 +51,11 @@ type CourtData = {
 
 const isGuild = (d: GameObject): d is Card =>
   d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
-const cardName = (d: Card | undefined) =>
-  d?.getCardDetails().name.replace(/\n.*/s, "");
+function cardName(d: undefined): undefined;
+function cardName(d: Card): string;
+function cardName(d: Card | undefined) {
+  return d?.getCardDetails().name.replace(/\n.*/s, "");
+}
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"];
 const track = world
   .getObjectById("map")!
