@@ -29,7 +29,8 @@ type PlayerData = {
   ships: number;
   agents: number;
   cards: CardId[];
-  guild: CardId[];
+  court: CardId[];
+  leader?: CardId;
   // campaign
   fate?: CardId;
   objective?: number;
@@ -51,10 +52,14 @@ type Resource = "fuel" | "material" | "weapon" | "relic" | "psionic";
 type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB"; // | "912AAD";
 type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 
-const isGuild = (d: GameObject): d is Card =>
-  d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
+const isCourt = (d: GameObject): d is Card =>
+  d instanceof Card &&
+  d.getStackSize() === 1 &&
+  /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName()) &&
+  !d.getCardDetails().tags.includes("setup");
 function cardId(d: undefined): undefined;
-function cardId(d: Card): string | null;
+function cardId(d: Card): CardId;
+function cardId(d: Card | undefined): CardId | undefined;
 function cardId(d: Card | undefined) {
   if (!d) return undefined;
   // todo: card ids instead of names
@@ -94,7 +99,9 @@ export function sync() {
   const starports = objects.starport.filter((d) => world.isOnTable(d));
   const ships = objects.ship.filter((d) => world.isOnTable(d));
   const agents = objects.agent.filter((d) => world.isOnTable(d));
-  const discard = (objects.discard[0] as CardHolder).getCards().map(cardId);
+  const discard = (objects.discard[0] as CardHolder)
+    .getCards()
+    .map<CardId>(cardId);
   const court = objects.court[0]
     .getAllSnapPoints()
     .map((s, i) => {
@@ -133,34 +140,46 @@ export function sync() {
             : null,
         )
         .filter((s) => s !== null);
-      const guild =
+      const court =
         world
           .getZoneById(`zone-player-court-${board.getId()}`)
           ?.getOverlappingObjects()
-          .filter(isGuild)
-          .map(cardId) ?? [];
+          .filter(isCourt)
+          .map<CardId>(cardId) ?? [];
       const cards =
         (objects.cards as CardHolder[])
           .find((d) => d.getOwningPlayerSlot() === slot)
           ?.getCards()
-          .map(cardId) ?? [];
+          .map<CardId>(cardId) ?? [];
       const zone =
         world
           .getZoneById(`zone-player-${board.getId()}`)
           ?.getOverlappingObjects() ?? [];
-      const fate = cardId(
-        zone.filter(
-          (d): d is Card =>
-            d.getTemplateName() === "fate" && !(d as Card).isInHolder(),
-        )[0],
+      const leader = zone.find(
+        (d): d is Card =>
+          d.getTemplateName() === "leader" && !(d as Card).isInHolder(),
       );
-      const titles =
-        zone
-          .filter(
-            (d): d is Card =>
-              d instanceof Card && d.getCardDetails().tags.includes("title"),
-          )
-          .map(cardId) ?? [];
+      const fate = zone.find(
+        (d): d is Card =>
+          d.getTemplateName() === "fate" && !(d as Card).isInHolder(),
+      );
+      const titles = zone
+        .filter(
+          (d): d is Card =>
+            d instanceof Card && d.getCardDetails().tags.includes("title"),
+        )
+        .map<CardId>(cardId);
+      const favors = fate
+        ? world
+            .boxTrace(
+              fate.getPosition(),
+              fate.getPosition().add([0, 0, 1]),
+              fate.getExtent(false, false),
+            )
+            .map((h) => h.object)
+            .filter((d) => d.getTemplateName() === "agent")
+            .reduce((s, d) => (s[d.getOwningPlayerSlot()]++, s), [0, 0, 0, 0])
+        : undefined;
 
       return {
         name: players
@@ -177,10 +196,11 @@ export function sync() {
         ships: ships.filter((d) => d.getOwningPlayerSlot() === slot).length,
         agents: agents.filter((d) => d.getOwningPlayerSlot() === slot).length,
         cards,
-        guild,
-        fate,
+        court,
+        leader: cardId(leader),
+        fate: cardId(fate),
         objective: objective?.[slot],
-        favors: [], // todo
+        favors,
         titles,
       };
     }),
@@ -190,11 +210,11 @@ export function sync() {
     edicts: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("edict"))
-      .map(cardId), // todo: policy disambiguation
+      .map<CardId>(cardId),
     laws: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("law"))
-      .map(cardId),
+      .map<CardId>(cardId),
   };
   console.log(JSON.stringify(data, null, 2));
 
