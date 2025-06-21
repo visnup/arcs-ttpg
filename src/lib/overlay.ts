@@ -11,52 +11,54 @@ type GameData = {
   players: PlayerData[];
   ambitions: AmbitionData[];
   court: CourtData[];
-  discard: ActionCard[];
+  discard: CardId[];
   // campaign
-  edicts?: string[];
-  laws?: string[];
+  edicts?: CardId[];
+  laws?: CardId[];
 };
-type ActionCard = string; // "1 Construction"
-type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB"; // | "912AAD";
-type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 type PlayerData = {
   name?: string; // board can be present without player
   color: PlayerColor;
   initiative: boolean;
   power: number;
-  resources: (string | null)[];
-  outrage: string[];
+  resources: (Resource | null)[];
+  outrage: Resource[];
   cities: number;
   spaceports: number;
   ships: number;
   agents: number;
-  cards: ActionCard[];
-  guild: string[];
+  cards: CardId[];
+  guild: CardId[];
   // campaign
-  fate?: string;
+  fate?: CardId;
   objective?: number;
   favors?: PlayerRank;
-  titles?: string[];
+  titles?: CardId[];
 };
 type AmbitionData = {
-  name: Ambition;
+  id: Ambition;
   declared: number[];
   ranking: PlayerRank;
 };
 type CourtData = {
-  name: string;
+  id: CardId;
   agents: PlayerRank;
   // todo: attached
 };
+type CardId = string | null; // "1 Construction", null = face down
+type Resource = "fuel" | "material" | "weapon" | "relic" | "psionic";
+type PlayerColor = "FFB700" | "0095A9" | "E1533D" | "D7D2CB"; // | "912AAD";
+type PlayerRank = number[]; // [2, 1, 7, 8] = yellow=2, blue=1, red=7, white=8
 
 const isGuild = (d: GameObject): d is Card =>
   d instanceof Card && /^(bc|cc|lore|f\d+)$/.test(d.getTemplateName());
 function cardName(d: undefined): undefined;
-function cardName(d: Card): string;
+function cardName(d: Card): string | null;
 function cardName(d: Card | undefined) {
-  return d?.getCardDetails().name.replace(/\n.*/s, "");
+  if (!d) return undefined;
+  return d.isFaceUp() ? d.getCardDetails().name.replace(/\n.*/s, "") : null;
 }
-const outragable = ["material", "fuel", "weapon", "relic", "psionic"];
+const outragable = ["material", "fuel", "weapon", "relic", "psionic"] as const;
 const track = world
   .getObjectById("map")!
   .getAllSnapPoints()
@@ -90,6 +92,7 @@ export function sync() {
   const starports = objects.starport.filter((d) => world.isOnTable(d));
   const ships = objects.ship.filter((d) => world.isOnTable(d));
   const agents = objects.agent.filter((d) => world.isOnTable(d));
+  const discard = objects.discard[0] as CardHolder;
   const rules = world.getObjectById("rules") as CardHolder | undefined;
 
   const data: GameData = {
@@ -101,7 +104,7 @@ export function sync() {
         .filter((s) => s.getTags().includes("resource"))
         .map((s) =>
           s.getSnappedObject()?.getTemplateName() === "resource"
-            ? (s.getSnappedObject() as Card).getCardDetails().name
+            ? ((s.getSnappedObject() as Card).getCardDetails().name as Resource)
             : null,
         );
       const cities = snaps.filter(
@@ -170,7 +173,7 @@ export function sync() {
     }),
     ambitions: [], // todo
     court: [], // todo
-    discard: [], // todo
+    discard: discard.getCards().map(cardName),
     edicts: rules
       ?.getCards()
       .filter((d) => d.getCardDetails().tags.includes("edict"))
