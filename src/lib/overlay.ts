@@ -73,7 +73,8 @@ const track = world
   .map((p) => p.getGlobalPosition())
   .sort((a, b) => a.y - b.y);
 
-export function sync() {
+let endpoint = "http://localhost:8080/postkey_ttpg";
+export async function sync() {
   const objects = world.getAllObjects().reduce(
     (acc, d) => {
       (acc[d.getTemplateName()] ||= []).push(d);
@@ -218,9 +219,18 @@ export function sync() {
   };
   console.log(JSON.stringify(data, null, 2));
 
-  fetch("https://localhost:8080/postkey_ttpg", {
+  const res = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
+
+  console.log(res.status);
+}
+
+export async function onChatMessage(player: unknown, message: string) {
+  if (!message.startsWith("/sync")) return;
+  const url = message.split(/\s+/)[1]?.trim();
+  if (url) endpoint = url;
+  await sync();
 }

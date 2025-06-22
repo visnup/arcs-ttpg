@@ -10,7 +10,7 @@ import {
 } from "@tabletop-playground/api";
 import { hslToRgb, rgbToHsl } from "./lib/color";
 import { onChatMessage as handleMeeples } from "./lib/meeples";
-import { sync } from "./lib/overlay";
+import { onChatMessage as handleSync, sync } from "./lib/overlay";
 import { onChatMessage as handleRulesQuestion } from "./lib/rules-chat";
 import { onChatMessage as handleScreenshots } from "./lib/screenshots";
 import { TriggerableMulticastDelegate } from "./lib/triggerable-multicast-delegate";
@@ -79,6 +79,7 @@ globalEvents.onScriptButtonPressed.add((player: Player, index: number) => {
 globalEvents.onChatMessage.add(handleScreenshots);
 globalEvents.onChatMessage.add(handleMeeples);
 globalEvents.onChatMessage.add(handleRulesQuestion);
+globalEvents.onChatMessage.add(handleSync);
 
 // Extend GameWorld
 declare module "@tabletop-playground/api" {
