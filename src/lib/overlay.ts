@@ -62,8 +62,34 @@ function cardId(d: Card): CardId;
 function cardId(d: Card | undefined): CardId | undefined;
 function cardId(d: Card | undefined) {
   if (!d) return undefined;
-  // todo: card ids instead of names
-  return d.isFaceUp() ? d.getCardDetails().name.replace(/\n.*/s, "") : null;
+  const { index, name } = d.getCardDetails();
+  const id = String(index + 1).padStart(2, "0");
+  const template = d.getTemplateName();
+  if (template === "dc") return `ARCS-AID${id}${d.isFaceUp() ? "A" : "B"}`;
+  if (!d.isFaceUp()) return null;
+  switch (d.getTemplateName()) {
+    case "bc":
+      return `ARCS-BC${id}`;
+    case "cc":
+      return `ARCS-CC${id}`;
+    case "fate":
+      return `ARCS-FATE${id}`;
+    case "setup":
+      return `ARCS-${Math.floor(index / 4) + 2}SETUP0${(index % 4) + 1}`;
+    case "leader":
+      return d.getTemplateId() === "E98E64EE1C419179627D158CFF565C59"
+        ? `ARCS-LEAD${id}`
+        : `ARCS-LEAD${String(index + 9).padStart(2, "0")}`;
+    case "lore":
+      return d.getTemplateId() === "13966E46F44AE8B1ADDB90A45D11FD01"
+        ? `ARCS-LORE${id}`
+        : `ARCS-LORE${String(index + 15).padStart(2, "0")}`;
+    default: {
+      const m = template.match(/^f0?(\d+)$/);
+      if (m) return `ARCS-FATE${m[1]}${String(index + 1).padStart(2, "0")}`;
+      return name.replace(/\n.*/s, "");
+    }
+  }
 }
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"] as const;
 const track = world
