@@ -6,6 +6,7 @@ import {
 } from "@tabletop-playground/api";
 import { type CourtZone } from "../court";
 import { type Ambition } from "../map-board";
+import { type AmbitionZone } from "./ambition-section";
 
 type GameData = {
   campaign: boolean;
@@ -91,6 +92,8 @@ function cardId(d: Card | undefined) {
     }
   }
 }
+
+const declarable = ["tycoon", "tyrant", "warlord", "keeper", "empath"] as const;
 const outragable = ["material", "fuel", "weapon", "relic", "psionic"] as const;
 const track = world
   .getObjectById("map")!
@@ -140,6 +143,23 @@ export async function sync() {
       return { id: cardId(card), influence: zone.tallies! };
     })
     .filter((d) => !!d);
+  const ambitions = world
+    .getAllZones()
+    .filter((z) => z.getId().startsWith("zone-ambition-"))
+    .map((z) => {
+      const [, i] = z.getId().match(/^zone-ambition-(.*)$/)!;
+      const id = declarable[+i] ?? i;
+      const declared = z
+        .getOverlappingObjects()
+        .filter((d): d is Card => d.getTemplateName() === "ambition")
+        .map((d) => +d.getCardDetails().metadata[d.isFaceUp() ? 2 : 0]);
+      const { tallies } = z as AmbitionZone;
+      const ranking = [...tallies!].reduce(
+        (acc, [i, v]) => ((acc[i] = v), acc),
+        [] as number[],
+      );
+      return { id, declared, ranking };
+    });
   const rules = world.getObjectById("rules") as CardHolder | undefined;
 
   const data: GameData = {
@@ -231,7 +251,7 @@ export async function sync() {
         titles,
       };
     }),
-    ambitions: [], // todo
+    ambitions,
     court,
     discard,
     edicts: rules

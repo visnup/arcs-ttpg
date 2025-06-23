@@ -16,6 +16,8 @@ let chapterEnded = true;
 globalEvents.onChapterEnded.add(() => (chapterEnded = true));
 globalEvents.onRoundStarted.add(() => (chapterEnded = false));
 
+export type AmbitionZone = Zone & { tallies?: Map<number, number> };
+
 export class AmbitionSection {
   refObject: GameObject;
   offset: number | string;
@@ -23,7 +25,7 @@ export class AmbitionSection {
   tallies = new Map<number, number>();
   widget = new HorizontalBox();
   position: Vector;
-  zone: Zone;
+  zone: AmbitionZone;
 
   constructor(refObject: GameObject, offset: number | string) {
     this.refObject = refObject;
@@ -57,6 +59,7 @@ export class AmbitionSection {
     this.zone.setScale(
       typeof this.offset === "string" ? [4.3, 7, 2] : [4.3, 10, 2],
     );
+    this.zone.tallies = this.tallies;
     this.zone.onBeginOverlap.add(this.render);
     this.zone.onEndOverlap.add(this.render);
     if (this.offset === 1 || this.offset === 2)
