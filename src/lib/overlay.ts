@@ -102,7 +102,7 @@ const track = world
   .map((p) => p.getGlobalPosition())
   .sort((a, b) => a.y - b.y);
 
-let endpoint = "http://localhost:8080/postkey_ttpg";
+let endpoint = "http://localhost:8080/postkey_ttpg?key=buddy";
 export async function sync() {
   const objects = world.getAllObjects().reduce(
     (acc, d) => {
