@@ -103,6 +103,7 @@ const track = world
   .sort((a, b) => a.y - b.y);
 
 let endpoint = "http://localhost:8080/postkey_ttpg?key=buddy";
+let timeout: ReturnType<typeof setTimeout> | undefined;
 export async function sync() {
   const objects = world.getAllObjects().reduce(
     (acc, d) => {
@@ -263,20 +264,31 @@ export async function sync() {
       .filter((d) => d.getCardDetails().tags.includes("law"))
       .map<CardId>(cardId),
   };
-  console.log(JSON.stringify(data, null, 2));
+  // console.log(JSON.stringify(data, null, 2));
 
-  const res = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
+  try {
+    await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    // console.log(res.status);
+  } catch (e) {
+    console.error(e);
+  }
 
-  console.log(res.status);
+  timeout = setTimeout(() => sync(), 5000);
+}
+
+export function stopSync() {
+  clearTimeout(timeout);
+  timeout = undefined;
 }
 
 export async function onChatMessage(player: unknown, message: string) {
   if (!message.startsWith("/sync")) return;
   const url = message.split(/\s+/)[1]?.trim();
+  if (url === "stop") return stopSync();
   if (url) endpoint = url;
   await sync();
 }
