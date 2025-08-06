@@ -148,6 +148,8 @@ export async function sync() {
     .getAllZones()
     .filter((z) => z.getId().startsWith("zone-ambition-"))
     .map((z) => {
+      console.log(z.getId());
+      console.log("z.getId()");
       const [, i] = z.getId().match(/^zone-ambition-(.*)$/)!;
       const id = declarable[+i] ?? i;
       const declared = z
@@ -155,10 +157,13 @@ export async function sync() {
         .filter((d): d is Card => d.getTemplateName() === "ambition")
         .map((d) => +d.getCardDetails().metadata[d.isFaceUp() ? 2 : 0]);
       const { tallies } = z as AmbitionZone;
-      const ranking = [...tallies!].reduce(
-        (acc, [i, v]) => ((acc[i] = v), acc),
-        [] as number[],
-      );
+      players.map(p => console.log(p.getSlot()));
+      const ranking = objects.board.map((board) => {
+        const slot = board.getOwningPlayerSlot();
+        const tallyEntry = [...tallies!].find(([i, v]) => i === slot);
+        return tallyEntry ? tallyEntry[1] : 0;
+      });
+      console.log(ranking);
       return { id, declared, ranking };
     });
   const rules = world.getObjectById("rules") as CardHolder | undefined;
