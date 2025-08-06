@@ -155,7 +155,6 @@ export async function sync() {
         .filter((d): d is Card => d.getTemplateName() === "ambition")
         .map((d) => +d.getCardDetails().metadata[d.isFaceUp() ? 2 : 0]);
       const { tallies } = z as AmbitionZone;
-      players.map(p => console.log(p.getSlot()));
       const ranking = objects.board.map((board) => {
         const slot = board.getOwningPlayerSlot();
         const tallyEntry = [...tallies!].find(([i, v]) => i === slot);
