@@ -205,6 +205,7 @@ Tests are located in `src/tests/` with a custom test framework:
 - **Template matching**: Regex for card types (e.g., `/^(bc|cc|lore|f\d+)$/`)
 - **Vector operations**: Chain vector operations (e.g., `obj.getPosition().add([0, 0, 1])`)
 - **Slot-based player tracking**: Use player slots (0-3) as indices for arrays
+- **Math for conditionals**: Use `Math.max()` / `Math.min()` to simplify conditional index logic (e.g., `array[Math.max(index, 0)]` instead of ternary)
 
 ### ESLint Configuration
 

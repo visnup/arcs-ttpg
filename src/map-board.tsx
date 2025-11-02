@@ -313,20 +313,22 @@ class Turns {
     if (this.pauseStart || this.turn === -2) return;
     const elapsed = Date.now() - this.turnStart - this.pauseTime;
     const p = Math.min(elapsed / this.turnTime, 1);
+    const cardPlayed = this.snaps[Math.max(this.turn, 0)]?.getSnappedObject();
     const color: [number, number, number, number] =
-      p >= 1 ? [0.412, 0.188, 0.153, 1] : [1, 1, 1, 1];
+      p >= 1 && !cardPlayed ? [0.412, 0.188, 0.153, 1] : [1, 1, 1, 1];
     for (const bar of this.bars)
       bar.current
         ?.setProgress(p)
         .setBarColor(color)
-        .setVisible(this.turnTime > 0);
+        .setVisible(this.turnTime > 0 && !cardPlayed);
     this.timerText.current
       ?.setText(
         ` ${animation.charAt(Math.floor(elapsed / 1000) % animation.length)} `,
       )
-      .setTextColor(color);
+      .setTextColor(color)
+      .setVisible(!cardPlayed);
     if (this.turnTime > 0 && p >= 1) {
-      if (!this.dinged) {
+      if (!this.dinged && !cardPlayed) {
         ding.play();
         this.dinged = true;
       }
