@@ -124,6 +124,8 @@ Tests are located in `src/tests/` with a custom test framework:
 
 ## Coding Style
 
+**Philosophy**: This is a single-author codebase that values brevity, cleverness, and convention over verbosity. Code should be short and concise. Prefer implicit understanding through established patterns over explicit documentation. Trust that idiomatic TypeScript and functional patterns communicate intent. Leverage language features and conventions to write dense, expressive code rather than explanatory prose.
+
 ### Import Organization
 
 - **Type imports separated**: Use `import type` for type-only imports (enforced by ESLint rule `@typescript-eslint/consistent-type-imports`)
@@ -180,7 +182,7 @@ Tests are located in `src/tests/` with a custom test framework:
 
 ### Formatting
 
-- **No semicolons**: Rely on ASI (Automatic Semicolon Insertion)
+- **Semicolons**: Always use semicolons (enforced by prettier)
 - **2-space indentation**: Standard prettier default
 - **Single quotes**: For strings (prettier default)
 - **Trailing commas**: In multiline structures (prettier default)
