@@ -162,6 +162,8 @@ class Turns {
   pauseTime = 0;
   dinged = true;
   turnTime = 120_000;
+  chapterStartTime = 120_000;
+  playerTurnTime = 30_000;
 
   snaps: SnapPoint[];
   widgets: HorizontalBox[];
@@ -267,7 +269,12 @@ class Turns {
       this.turnStart = saved.turnStart;
       this.pauseStart = saved.pauseStart;
       this.pauseTime = saved.pauseTime;
-      this.turnTime = saved.turnTime;
+      if (saved.chapterStartTime !== undefined)
+        this.chapterStartTime = saved.chapterStartTime;
+      if (saved.playerTurnTime !== undefined)
+        this.playerTurnTime = saved.playerTurnTime;
+      this.turnTime =
+        saved.turn === -1 ? this.chapterStartTime : this.playerTurnTime;
     }
   }
 
@@ -290,8 +297,6 @@ class Turns {
     if (this.turn === -2) return;
     // Remove start chapter timer
     if (this.turn === -1) this.widgets[-1].removeChildAt(1);
-    // Unpause
-    this.pauseStart = 0;
     // Catch up to current turn
     const behind = this.snaps.findIndex((d) => d === p) - this.turn;
     for (let i = 0; i < behind; i++) this.nextTurn();
@@ -336,6 +341,7 @@ class Turns {
     this.#turn = value;
     this.turnStart = Date.now();
     this.pauseTime = this.pauseStart = 0; // Unpause
+    this.turnTime = value === -1 ? this.chapterStartTime : this.playerTurnTime;
     this.tickBars();
     this.showMessage();
     this.save();
@@ -475,7 +481,8 @@ class Turns {
             turnStart: this.turnStart,
             pauseStart: this.pauseStart,
             pauseTime: this.pauseTime,
-            turnTime: this.turnTime,
+            chapterStartTime: this.chapterStartTime,
+            playerTurnTime: this.playerTurnTime,
           }),
       "turns",
     );
@@ -486,7 +493,8 @@ class Turns {
     turnStart: number;
     pauseStart: number;
     pauseTime: number;
-    turnTime: number;
+    chapterStartTime?: number;
+    playerTurnTime?: number;
   } | null {
     return JSON.parse(refObject.getSavedData("turns") || "null");
   }
