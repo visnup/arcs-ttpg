@@ -157,7 +157,7 @@ export async function sync() {
       const { tallies } = z as AmbitionZone;
       const ranking = objects.board.map((board) => {
         const slot = board.getOwningPlayerSlot();
-        const tallyEntry = [...tallies!].find(([i, v]) => i === slot);
+        const tallyEntry = [...tallies!].find(([i, _v]) => i === slot);
         return tallyEntry ? tallyEntry[1] : 0;
       });
       return { id, declared, ranking };
