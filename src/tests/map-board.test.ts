@@ -381,7 +381,8 @@ describe("map board", () => {
     const map = world.getObjectById("map") as TestableBoard;
 
     // set timer low
-    map.turns.turnTime = 500;
+    map.turns.chapterStartTime = 500;
+    map.turns.playerTurnTime = 500;
 
     const decks = world
       .getObjectsByTemplateName<Card>("action")
@@ -532,7 +533,7 @@ describe("map board", () => {
     await assertEventually(() => map.turns.pauseStart > 0, "paused again");
   });
 
-  test("unpause on lead card", async () => {
+  test("stays paused on lead card", async () => {
     const map = world.getObjectById("map") as TestableBoard;
 
     // deal
@@ -544,7 +545,8 @@ describe("map board", () => {
     // 1p turn, pause
     map.turns.startRound();
     map.turns.pause();
-    assert(map.turns.pauseStart !== 0, "paused");
+    const pausedAt = map.turns.pauseStart;
+    assert(pausedAt !== 0, "paused");
     assertEqual(
       getTurnUI(),
       [
@@ -563,7 +565,7 @@ describe("map board", () => {
       "1p turn, paused",
     );
 
-    // lead card
+    // lead card - should stay paused (no auto-unpause anymore)
     const holders = world
       .getObjectsByTemplateName<CardHolder>("cards")
       .sort((a, b) => a.getOwningPlayerSlot() - b.getOwningPlayerSlot());
@@ -573,7 +575,7 @@ describe("map board", () => {
       .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
     await playCard(holders[0].removeAt(0)!, snaps[0]);
-    await assertEqualEventually(() => map.turns.pauseStart, 0, "unpaused");
+    assertEqual(map.turns.pauseStart, pausedAt, "stays paused");
   });
 });
 
