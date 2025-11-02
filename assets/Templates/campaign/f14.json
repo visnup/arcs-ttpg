@@ -72,17 +72,17 @@
 	],
 	"CardNames": {
 		"0": "Pacifist Act II Setup",
-		"1": "Witnesses\n\nQ: Do you have to control Witnesses to Catapult move them?\nA: Yes. The control requisite still applies to Catapult Moves.\n\nQ: Do you have to flip a Witness token in Prelude to declare Empath?\nA: Yes. You must do the first part to declare Empath.",
+		"1": "Witnesses\n\nQ: Do you have to control Witnesses to Catapult move them?\nA: Yes!\n\nQ: When I move Loyal ships, can I move a Witness along with them even if I am not taking a Catapult move?\nA: Yes.",
 		"2": "Well of Empathy",
 		"3": "Pacifist Act II Resolution",
-		"4": "Psionic Liaisons",
+		"4": "Psionic Liaisons\n\nQ: Can I use Dealmakers or other sources of extra influence to gain more Psionic?\nA: No. This card can only be triggered once, for spending the action pip from Copy to influence.",
 		"5": "Itinerant Empaths",
 		"6": "Itinerant Empaths",
 		"7": "Pacifist Act III Setup",
-		"8": "Empathy for All",
-		"9": "Empathy for All",
+		"8": "Empathy for All\n\nQ: How does the harm rule work with battle?\nA: Resolve it after dealing hits but before resolving raids. Always do this, even if no hits are dealt!",
+		"9": "Empathy for All\n\nQ: How does the harm rule work with battle?\nA: Resolve it after dealing hits but before resolving raids. Always do this, even if no hits are dealt!",
 		"10": "Reconcile with the Outraged\n\nQ: How does this interact with Psionic Monopoly?\nA: The consent of the Monopoly holder is still required to give Psionic. As noted on Monopoly Consent, consent can be forced by returning their Favor in the Call to Order.",
-		"11": "Rebuke of the Empaths"
+		"11": "Rebuke of the Empaths\n\nQ: What happens when there are not enough Psionic in the supply?\nA: The player with initiative chooses who gains Psionic."
 	},
 	"CardMetadata": {
 		"0": "16 14 12",

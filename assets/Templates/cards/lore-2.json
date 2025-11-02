@@ -75,14 +75,14 @@
 		13
 	],
 	"CardNames": {
-		"0": "Predictive Sensors",
+		"0": "Predictive Sensors\n\nQ: Can I use the move from this card to initiate a Catapult move? \nA: No, this card lets you move into the battle system to participate in the battle.",
 		"1": "Force Beams\n\nQ: Does this trigger Gate Ports?\nA: No, since this ignores move modifiers.\n\nQ: Can you use Force Beams to do a Catapult Move?\nA: No, Force Beams is strictly to an adjacent system. It cannot start a Catapult move.\n\nQ: How does this interact with Passages & The Twisted Passage?\nA: You can use Force Beams to Guide ships into the Twisted Passage, but not out of it.",
 		"2": "Raider Exosuits\n\nQ: When the defender has no buildings on the map and I could collect more than 1 raid die, am I restricted by Raider Exosuits?\nA: If the defender doesn't have any building on the map, you are not subject to the raid dice limit and can collect more than one raid die.",
 		"3": "Survival Overrides\n\nQ: Can I use this to simply destroy one of my own ships, even if it does not destroy a non-Loyal one?\nA: Sure, if you want. Bash it into a planet or asteroid.",
 		"4": "Empath's Vision",
 		"5": "Empath's Bond\n\nQ: How does Empath's Bond interact with the Empire, who is not a Rival?\nA: This card should have errata provided to change the final sentence to \"*Build ships damaged in systems controlled by anyone else.*\"",
 		"6": "Keeper's Trust\n\nQ: Does this interact with Cartel cards?\nA: A player has the resources on Cartel cards. This means Keeper's Trust applies to those resources.",
-		"7": "Keeper's Solidarity\n\nQ: How does this interact with Cartel cards?\nA: A player has the resources on Cartel cards. This means Keeper's Solidarity applies to those resources.",
+		"7": "Keeper's Solidarity\n\nQ: What counts as resources I have?\nA: Everything in your play area, including resources on cards, even if frozen.",
 		"8": "Warlord's Cruelty",
 		"9": "Warlord's Terror",
 		"10": "Tyrant's Ego",

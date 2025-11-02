@@ -72,7 +72,7 @@
 	"CardNames": {
 		"0": "Peacekeeper Act II Setup",
 		"1": "Oath of Peace\n\nQ: What happens if I am a Member of the Commonwealth and the Commonwealth scores Warlord with the Commonwealth Ambition on it?\nA: You do not score any Power for it. Your unscored Power is *not* scored by other Members.",
-		"2": "Arsenal Keepers",
+		"2": "Arsenal Keepers\n\nQ: Can I place resources I gain from the supply, such as through taxing, on Arsenal Keepers?\nA: Yes!",
 		"3": "Peacekeeper Act II Resolution",
 		"4": "Arms Interest",
 		"5": "Arms Interest",
@@ -80,7 +80,7 @@
 		"7": "Ceasefires\n\nQ: If a player plays a non-Aggression card to battle in a cluster at Peace, do they need to spend 1 or 2 Weapons? Is it one weapon per flip if a player wants to flip more than 1 Ceasefire token?\nA: It would cost 2 weapons: One to apply Battle to the Action Card via the standard Prelude ability of a Weapon, and one to flip the Ceasefire token. It is also one Weapon per flip.",
 		"8": "Empire Balks at Peace",
 		"9": "Peace Dividends",
-		"10": "Peace Accords"
+		"10": "Peace Accords\n\nQ: If I control two systems in a cluster, do I need the consent of other players to Broker Peace?\nA: Nope!\n\nQ: If I control one system, a second player controls one, and a third player controls two, can I Broker Peace?\nA: Yes! You just need the consent of either of those players."
 	},
 	"CardMetadata": {
 		"0": "18 16 14",

@@ -119,7 +119,7 @@
 		"9": "Spacing Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
 		"10": "Arms Union\n\nQ: When do you collect the action card?\nA: At the end of the round, after all players have finished their turns.\n\nQ: Can this be stolen once it has been played but not resolved?\nA: Only cards in the holder's play area can be stolen, so once played this card cannot be stolen.",
 		"11": "Prison Wardens",
-		"12": "Skirmishers\n\nQ: Can I reroll this multiple times?\nA: No, only once.",
+		"12": "Skirmishers\n\nQ: Can I reroll this multiple times?\nA: No, only once.\n\nQ: What counts as resources I have?\nA: Everything in your play area, including resources on cards, even if frozen.",
 		"13": "Court Enforcers",
 		"14": "Loyal Marines",
 		"15": "Lattice Spies\n\nQ: Can I discard this even if I cannot seize?\nA: Yes. Any card that says you can discard it to do something else can simply be discarded.",

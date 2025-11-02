@@ -91,7 +91,7 @@
 	],
 	"CardNames": {
 		"0": "Believer Act I Setup",
-		"1": "Faithful Disciples",
+		"1": "Faithful Disciples\n\nQ: Can I use the extra action from this card to trigger effects like Material Liaisons a second time?\nA: No. You can only trigger such effects from the action gained from the Copy itself.",
 		"2": "Spreading the Faith\n\nQ: If we are playing with split discard piles, where do I scrap from?\nA: The facedown pile. If there is none, shuffle the face-up pile to form a facedown pile first.",
 		"3": "Faithful Action Card",
 		"4": "Faithful Action Card",
@@ -110,7 +110,7 @@
 		"17": "The Prodigal One",
 		"18": "Secret Order",
 		"19": "Believer Act II Setup",
-		"20": "Set Doctrine",
+		"20": "Set Doctrine\n\nQ: How do I resolve this if someone used the Prelude action of The Young Light or The Prophet this round?\nA: The previous holder resolves it. The round ends when everyone finishes their turn, so the card should return to their play area before Set Doctrine is resolved.",
 		"21": "Doctrine of Zeal",
 		"22": "Doctrinal Faith\n\nQ: What happens if I declare an ambition without an Ideal but there are no Ideal markers left in the supply?\nA: Do not place an Ideal marker on it. You can still declare it.",
 		"23": "Believer Act II Resolution",

@@ -65,7 +65,7 @@
 	],
 	"CardNames": {
 		"0": "Survivalist Act III Setup",
-		"1": "Vow of Survival\n\nQ: If I win the Commonwealth Ambition, how much Power do I gain?\nA: You gain Power for second place alone.",
+		"1": "Vow of Survival\n\nQ: Can I ever gain the city Power bonus with this card?\nA: No.\n\nQ: If I win the Commonwealth Ambition as a non-Member, how much Power do I gain?\nA: You gain Power for second place alone.\n\nQ: If the Commonwealth wins the Commonwealth Ambition and I am a Member, how much Power do I gain?\nA: For scoring purpose, you did not win the ambition, so you gain the same power as the other Commonwealth members.",
 		"2": "Building Bunkers",
 		"3": "Bunkers\n\nQ: Can I repair my bunkers once they are damaged?\nA: Yes!\n\nQ: Do bunkers protect my other buildings on the planet from being raided?\nA: Nope. Bunkers by themselves do not enable raiding.",
 		"4": "Captive Release"
