@@ -45,35 +45,45 @@ The codebase follows a component-based architecture where each game piece is a s
 
 **Core Game Components:**
 - `src/map-board.tsx` - Main game board with ambition tracking and zone management
-- `src/action-deck.tsx` - Action card deck with custom dealing and shuffling behavior
-- `src/player-board.ts` - Individual player boards
+- `src/action-deck.tsx` - Action card deck with dealing, seizing, and surpassing behavior
+- `src/discard-holder.tsx` - Action card discard pile with Discard/End Chapter button logic
+- `src/player-board.ts` - Individual player boards with ambition zones and captive tracking
 - `src/court.tsx` - Court card management
 - `src/dice-tray.tsx` - Dice rolling interface
 
 **Game Pieces:**
 - `src/ship.ts`, `src/resource.ts`, `src/building-tile.ts` - Physical game pieces
-- `src/ambition-marker.ts`, `src/power-marker.ts`, `src/initiative-marker.ts` - Game state markers
+- `src/agent.ts`, `src/die.ts` - Agent tokens and individual dice
+- `src/ambition-marker.ts`, `src/ambition-declared.ts`, `src/power-marker.ts`, `src/initiative-marker.ts` - Game state markers
 - `src/first-regent-tile.ts`, `src/set-tile.ts` - Special tiles
+- `src/note.ts` - In-game sticky note that renders its description as text
+- `src/player-cards-holder.ts` - Player hand holder; auto-sorts action cards and triggers tally on Guild Supremacy insert
 
 **Card Decks:**
 - `src/setup-deck.tsx`, `src/leader-deck.tsx`, `src/lore-deck.tsx`, `src/campaign-fate-card.tsx`, `src/chapter.tsx`, `src/blight-deck.ts` - Various card deck implementations
 
+**Test Runner:**
+- `src/test.tsx` - In-game test UI object; discovers and runs `*.test.js` files, renders per-suite buttons with pass/fail indicators
+
 ### Library Utilities
 
 `src/lib/` contains shared utilities:
-- `setup.ts` - Game setup helpers (shuffledSlots, coordinate helpers)
-- `triggerable-multicast-delegate.ts` - Event system implementation
+- `setup.ts` - Game setup helpers (shuffledSlots, coordinate helpers, `removeNotes`)
+- `triggerable-multicast-delegate.ts` - Event system with throttling support
 - `overlay.ts` - Overlay sync functionality with external display
 - `screenshots.ts` - Screenshot capture via chat commands
-- `rules-chat.ts` - Rules question handling
-- `meeples.ts` - Meeple management
-- `ai.ts` - AI player support
-- `ambition-section.tsx` - Ambition UI component
-- `tally.tsx` - Score tallying UI
+- `rules-chat.ts` - Routes rules questions to Claude Haiku
+- `meeples.ts` - Converts between token and miniature representations via chat commands
+- `ai.ts` - Claude API integration for rules Q&A (uses prompt caching with ephemeral cache control)
+- `ambition-section.tsx` - Ambition rank UI with tallying mechanics
+- `tally.tsx` - Score tallying UI component
 - `color.ts` - Color conversion utilities (HSL/RGB)
-- `local-snaps.ts` - Snap point management
-- `discard-to-origin.ts` - Card discard behavior
-- `pdfs.ts` - PDF handling
+- `local-snaps.ts` - Smart snap point management (disables snaps when occupied)
+- `discard-to-origin.ts` - Saves initial position/rotation; discards objects back to origin
+- `pdfs.ts` - Extracts rulebook text for AI context
+- `reset.ts` - Save/restore game object state for test setup/teardown
+- `sentry.ts` - Error reporting integration (imported but commented out in global.ts)
+- `sorted-index.ts` - Binary search utility for sorted array insertion
 
 ### JSX and UI
 
@@ -86,9 +96,11 @@ UI components use `jsx-in-ttpg` library's `render()` and hooks like `useRef()`.
 ### Testing
 
 Tests are located in `src/tests/` with a custom test framework:
-- `suite.ts` - Test runner with `describe()`, `test()`, `beforeEach()`, `afterEach()`, `skip()`
-- `assert.ts` - Custom assertions
-- Tests can be triggered in-game using script buttons (triple-press buttons 9 or 10)
+- `suite.ts` - Test runner with `describe()`, `test()`, `test.only()`, `beforeEach()`, `afterEach()`, `skip()`
+- `assert.ts` - Custom assertions: `assert()`, `assertEqual()`, `assertStrictEqual()`, `assertEventually()`, `assertEqualEventually()`
+- `setup.ts` - `getCounts()` helper for object inventory tracking
+- `tally.ts` - Tally UI testing helpers
+- Tests run via `src/test.tsx` — a physical in-game object with per-suite buttons and a "Run all" button
 - Individual test files follow pattern `*.test.ts`
 
 ### Asset Processing
@@ -125,6 +137,8 @@ Tests are located in `src/tests/` with a custom test framework:
 ## Coding Style
 
 **Philosophy**: This is a single-author codebase that values brevity, cleverness, and convention over verbosity. Code should be short and concise. Prefer implicit understanding through established patterns over explicit documentation. Trust that idiomatic TypeScript and functional patterns communicate intent. Leverage language features and conventions to write dense, expressive code rather than explanatory prose.
+
+Lean on TTPG APIs before writing custom logic: use `world.boxTrace()` for spatial queries, snap points for placement, `CardHolder` for ordered collections, zones for overlap detection, and `getSavedData()`/`setSavedData()` for persistence. Reach for a platform primitive before implementing a general solution.
 
 ### Import Organization
 
