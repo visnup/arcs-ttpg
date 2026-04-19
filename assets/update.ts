@@ -47,7 +47,7 @@ async function image(
   path: string,
   cards: Card[],
   columns = 7,
-  width = 4096,
+  width = 2048,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   f = (c: Card, i: number) => c.image,
 ) {
