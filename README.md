@@ -16,3 +16,12 @@ To setup this project locally,
 4. Run `yarn watch`
 5. Open Tabletop Playground and open the Editor and the Arcs (dev) package
 6. See https://api.tabletop-playground.com and https://tabletop-playground.com/knowledge-base/scripting-basics/
+
+## Debugging
+
+**Packages directory** — configured in `ttpgcfg.local.json` (git-ignored). On macOS:
+```
+/Users/<username>/Library/Application Support/Epic/TabletopPlayground/Packages
+```
+
+**Log files** — `~/Library/Logs/TabletopPlayground/TabletopPlayground.log` (plus timestamped backups)
