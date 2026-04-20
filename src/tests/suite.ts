@@ -37,13 +37,13 @@ export function describe(description: string, fn: () => void) {
   suites.push(suite);
 }
 
-let before: (() => void)[] = [];
-export function beforeEach(fn: () => void, keep = false) {
+let before: (() => void | Promise<void>)[] = [];
+export function beforeEach(fn: () => void | Promise<void>, keep = false) {
   Object.assign(fn, { keep });
   before.push(fn);
 }
-let after: (() => void)[] = [];
-export function afterEach(fn: () => void, keep = false) {
+let after: (() => void | Promise<void>)[] = [];
+export function afterEach(fn: () => void | Promise<void>, keep = false) {
   Object.assign(fn, { keep });
   after.push(fn);
 }
@@ -51,7 +51,7 @@ export function afterEach(fn: () => void, keep = false) {
 export function test(description: string, fn: () => Promise<void> | void) {
   currentSuite?.tests.push(async () => {
     try {
-      for (const b of before) b();
+      for (const b of before) await b();
       await fn();
       return { description, ok: true };
     } catch (error) {
@@ -71,7 +71,7 @@ export function test(description: string, fn: () => Promise<void> | void) {
       return { description, ok: false, error };
     } finally {
       await new Promise((r) => setTimeout(r, 0));
-      for (const a of after) a();
+      for (const a of after) await a();
     }
   });
 }

@@ -21,7 +21,7 @@ describe("action deck", () => {
   let decks: Card[];
   let holders: CardHolder[];
   let snaps: SnapPoint[];
-  beforeEach(() => {
+  beforeEach(async () => {
     decks = world
       .getObjectsByTemplateName<Card>("action")
       .sort((a, b) => b.getStackSize() - a.getStackSize());
@@ -36,6 +36,8 @@ describe("action deck", () => {
       .getAllSnapPoints()
       .filter((p) => p.getTags().find((t) => t.startsWith("turn:")))
       .sort((a, b) => a.getLocalPosition().x - b.getLocalPosition().x);
+    // Wait for deal to settle?
+    await new Promise((r) => process.nextTick(r));
   });
 
   async function playCard(
