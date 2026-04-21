@@ -2,6 +2,7 @@
 /assets/Thumbnails/
 /logs
 /node_modules/
+/tmp/
 /wip/assets
 /wip/cards/*.yml
 /wip/screenshots/
