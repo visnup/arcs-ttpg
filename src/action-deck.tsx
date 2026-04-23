@@ -190,8 +190,6 @@ function onReleased(card: Card) {
       }),
     );
     assignOnce(card, "next", seizeInitiative);
-    // Bug workaround: make sure card is intersecting zone after UI added
-    card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
   } else if (isFaceUp && isSurpassing(card)) {
     // Surpass
     const slot = getSlot(card);
@@ -219,8 +217,6 @@ function onReleased(card: Card) {
       }),
     );
     assignOnce(card, "discard", takeInitiative);
-    // Bug workaround: make sure card is intersecting zone after UI added
-    card.setPosition(card.getPosition().add(new Vector(0, 0, 0.1)));
     for (const c of getSurpassing()) if (c !== card) c.removeUI(0);
   }
 }
